@@ -1,0 +1,9 @@
+<testsuites name="results">
+  <testsuite name="all" package="all">
+    <property name="random_seed" value="1784096434" />
+    <testcase name="test_reset" classname="test_ultrasonic_capture" file="/home/smdadmin/hermes_workspace/projects/IP-005/v6/06_verification/tb-ultrasonic_capture/test_ultrasonic_capture.py" lineno="23" time="0.0007884502410888672" sim_time_ns="70.0" ratio_time="88781.75990323556" />
+    <testcase name="test_register_rw" classname="test_ultrasonic_capture" file="/home/smdadmin/hermes_workspace/projects/IP-005/v6/06_verification/tb-ultrasonic_capture/test_ultrasonic_capture.py" lineno="38" time="0.0007376670837402344" sim_time_ns="121.0" ratio_time="164030.63477698772" />
+    <testcase name="test_functional" classname="test_ultrasonic_capture" file="/home/smdadmin/hermes_workspace/projects/IP-005/v6/06_verification/tb-ultrasonic_capture/test_ultrasonic_capture.py" lineno="60" time="0.013032674789428711" sim_time_ns="9201.0" ratio_time="705994.7515504089" />
+    <testcase name="test_ack_handshake" classname="test_ultrasonic_capture" file="/home/smdadmin/hermes_workspace/projects/IP-005/v6/06_verification/tb-ultrasonic_capture/test_ultrasonic_capture.py" lineno="83" time="0.0005695819854736328" sim_time_ns="121.0" ratio_time="212436.49393051487" />
+  </testsuite>
+</testsuites>

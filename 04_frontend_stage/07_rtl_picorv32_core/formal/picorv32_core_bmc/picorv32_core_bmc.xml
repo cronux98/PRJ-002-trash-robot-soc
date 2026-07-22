@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+<testsuite timestamp="2026-07-15T05:39:06" hostname="smdtest02" package="picorv32_core" id="0" name="bmc" tests="23" errors="0" failures="0" time="15" skipped="0">
+<properties>
+<property name="os" value="Linux"/>
+<property name="expect" value="PASS"/>
+<property name="status" value="PASS"/>
+</properties>
+<testcase classname="bmc" name="build execution" time="0">
+</testcase>
+<testcase classname="bmc" name="Property ASSERT in picorv32 at picorv32_core.v:2124.5-2124.28" time="0" type="ASSERT" location="picorv32_core.v:2124.5-2124.28" id="_witness_.check_assert_picorv32_core_v_2124_705">
+</testcase>
+<testcase classname="bmc" name="Property ASSERT in picorv32 at picorv32_core.v:2136.4-2136.15" time="0" type="ASSERT" location="picorv32_core.v:2136.4-2136.15" id="_witness_.check_assert_picorv32_core_v_2136_715">
+</testcase>
+<testcase classname="bmc" name="Property ASSERT in picorv32 at picorv32_core.v:2154.4-2154.21" time="0" type="ASSERT" location="picorv32_core.v:2154.4-2154.21" id="_witness_.check_assert_picorv32_core_v_2154_717">
+</testcase>
+<testcase classname="bmc" name="Property ASSERT in picorv32 at picorv32_core.v:2155.4-2155.40" time="0" type="ASSERT" location="picorv32_core.v:2155.4-2155.40" id="_witness_.check_assert_picorv32_core_v_2155_718">
+</testcase>
+<testcase classname="bmc" name="Property ASSERT in picorv32 at picorv32_core.v:2156.4-2156.26" time="0" type="ASSERT" location="picorv32_core.v:2156.4-2156.26" id="_witness_.check_assert_picorv32_core_v_2156_720">
+</testcase>
+<testcase classname="bmc" name="Property ASSERT in picorv32 at picorv32_core.v:2159.4-2159.21" time="0" type="ASSERT" location="picorv32_core.v:2159.4-2159.21" id="_witness_.check_assert_picorv32_core_v_2159_722">
+</testcase>
+<testcase classname="bmc" name="Property ASSERT in picorv32 at picorv32_core.v:2160.4-2160.40" time="0" type="ASSERT" location="picorv32_core.v:2160.4-2160.40" id="_witness_.check_assert_picorv32_core_v_2160_723">
+</testcase>
+<testcase classname="bmc" name="Property ASSERT in picorv32 at picorv32_core.v:2161.4-2161.42" time="0" type="ASSERT" location="picorv32_core.v:2161.4-2161.42" id="_witness_.check_assert_picorv32_core_v_2161_725">
+</testcase>
+<testcase classname="bmc" name="Property ASSERT in picorv32 at picorv32_core.v:2162.4-2162.42" time="0" type="ASSERT" location="picorv32_core.v:2162.4-2162.42" id="_witness_.check_assert_picorv32_core_v_2162_727">
+</testcase>
+<testcase classname="bmc" name="Property ASSERT in picorv32 at picorv32_core.v:2165.4-2165.35" time="0" type="ASSERT" location="picorv32_core.v:2165.4-2165.35" id="_witness_.check_assert_picorv32_core_v_2165_730">
+</testcase>
+<testcase classname="bmc" name="Property ASSERT in picorv32 at picorv32_core.v:556.5-556.26" time="0" type="ASSERT" location="picorv32_core.v:556.5-556.26" id="_witness_.check_assert_picorv32_core_v_556_122">
+</testcase>
+<testcase classname="bmc" name="Property ASSERT in picorv32 at picorv32_core.v:559.5-559.26" time="0" type="ASSERT" location="picorv32_core.v:559.5-559.26" id="_witness_.check_assert_picorv32_core_v_559_125">
+</testcase>
+<testcase classname="bmc" name="Property ASSERT in picorv32 at picorv32_core.v:562.5-562.46" time="0" type="ASSERT" location="picorv32_core.v:562.5-562.46" id="_witness_.check_assert_picorv32_core_v_562_127">
+</testcase>
+<testcase classname="bmc" name="Property ASSERT in picorv32 at picorv32_core.v:565.5-565.63" time="0" type="ASSERT" location="picorv32_core.v:565.5-565.63" id="_witness_.check_assert_picorv32_core_v_565_131">
+</testcase>
+<testcase classname="bmc" name="Property ASSERT in picorv32 at picorv32_core.v:568.5-568.41" time="0" type="ASSERT" location="picorv32_core.v:568.5-568.41" id="_witness_.check_assert_picorv32_core_v_568_138">
+</testcase>
+<testcase classname="bmc" name="Property ASSERT in picorv32 at picorv32_core.v:603.6-603.28" time="0" type="ASSERT" location="picorv32_core.v:603.6-603.28" id="_witness_.check_assert_picorv32_core_v_603_152">
+</testcase>
+<testcase classname="bmc" name="Property ASSERT in picorv32 at picorv32_core.v:604.6-604.61" time="0" type="ASSERT" location="picorv32_core.v:604.6-604.61" id="_witness_.check_assert_picorv32_core_v_604_154">
+</testcase>
+<testcase classname="bmc" name="Property ASSERT in picorv32 at picorv32_core.v:605.6-605.59" time="0" type="ASSERT" location="picorv32_core.v:605.6-605.59" id="_witness_.check_assert_picorv32_core_v_605_157">
+</testcase>
+<testcase classname="bmc" name="Property ASSERT in picorv32 at picorv32_core.v:606.6-606.60" time="0" type="ASSERT" location="picorv32_core.v:606.6-606.60" id="_witness_.check_assert_picorv32_core_v_606_160">
+</testcase>
+<testcase classname="bmc" name="Property ASSERT in picorv32 at picorv32_core.v:629.6-629.28" time="0" type="ASSERT" location="picorv32_core.v:629.6-629.28" id="_witness_.check_assert_picorv32_core_v_629_172">
+</testcase>
+<testcase classname="bmc" name="Property ASSERT in picorv32 at picorv32_core.v:630.6-630.26" time="0" type="ASSERT" location="picorv32_core.v:630.6-630.26" id="_witness_.check_assert_picorv32_core_v_630_174">
+</testcase>
+<testcase classname="bmc" name="Property ASSERT in picorv32 at picorv32_core.v:637.6-637.28" time="0" type="ASSERT" location="picorv32_core.v:637.6-637.28" id="_witness_.check_assert_picorv32_core_v_637_175">
+</testcase>
+<testcase classname="bmc" name="Property ASSERT in picorv32 at picorv32_core.v:638.6-638.29" time="0" type="ASSERT" location="picorv32_core.v:638.6-638.29" id="_witness_.check_assert_picorv32_core_v_638_177">
+</testcase>
+<system-out>SBY  5:39:00 [picorv32_core_bmc] Removing directory '/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/formal/picorv32_core_bmc'.
+SBY  5:39:00 [picorv32_core_bmc] Copy '/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v' to '/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/formal/picorv32_core_bmc/src/picorv32_core.v'.
+SBY  5:39:00 [picorv32_core_bmc] engine_0: smtbmc yices
+SBY  5:39:00 [picorv32_core_bmc] base: starting process &quot;cd picorv32_core_bmc/src; yosys -ql ../model/design.log ../model/design.ys&quot;
+SBY  5:39:01 [picorv32_core_bmc] base: finished (returncode=0)
+SBY  5:39:01 [picorv32_core_bmc] prep: starting process &quot;cd picorv32_core_bmc/model; yosys -ql design_prep.log design_prep.ys&quot;
+SBY  5:39:01 [picorv32_core_bmc] prep: finished (returncode=0)
+SBY  5:39:01 [picorv32_core_bmc] smt2: starting process &quot;cd picorv32_core_bmc/model; yosys -ql design_smt2.log design_smt2.ys&quot;
+SBY  5:39:01 [picorv32_core_bmc] smt2: finished (returncode=0)
+SBY  5:39:01 [picorv32_core_bmc] engine_0: starting process &quot;cd picorv32_core_bmc; /home/smdadmin/oss-cad-suite/bin/yosys-smtbmc -s yices --presat --unroll --noprogress -t 20  --append 0 --dump-vcd engine_0/trace.vcd --dump-yw engine_0/trace.yw --dump-vlogtb engine_0/trace_tb.v --dump-smtc engine_0/trace.smtc model/design_smt2.smt2&quot;
+SBY  5:39:01 [picorv32_core_bmc] engine_0: ##   0:00:00  Solver: yices
+SBY  5:39:01 [picorv32_core_bmc] engine_0: ##   0:00:00  Checking assumptions in step 0..
+SBY  5:39:01 [picorv32_core_bmc] engine_0: ##   0:00:00  Checking assertions in step 0..
+SBY  5:39:02 [picorv32_core_bmc] engine_0: ##   0:00:00  Checking assumptions in step 1..
+SBY  5:39:02 [picorv32_core_bmc] engine_0: ##   0:00:00  Checking assertions in step 1..
+SBY  5:39:02 [picorv32_core_bmc] engine_0: ##   0:00:00  Checking assumptions in step 2..
+SBY  5:39:02 [picorv32_core_bmc] engine_0: ##   0:00:00  Checking assertions in step 2..
+SBY  5:39:02 [picorv32_core_bmc] engine_0: ##   0:00:00  Checking assumptions in step 3..
+SBY  5:39:02 [picorv32_core_bmc] engine_0: ##   0:00:00  Checking assertions in step 3..
+SBY  5:39:02 [picorv32_core_bmc] engine_0: ##   0:00:00  Checking assumptions in step 4..
+SBY  5:39:02 [picorv32_core_bmc] engine_0: ##   0:00:00  Checking assertions in step 4..
+SBY  5:39:02 [picorv32_core_bmc] engine_0: ##   0:00:00  Checking assumptions in step 5..
+SBY  5:39:02 [picorv32_core_bmc] engine_0: ##   0:00:00  Checking assertions in step 5..
+SBY  5:39:02 [picorv32_core_bmc] engine_0: ##   0:00:00  Checking assumptions in step 6..
+SBY  5:39:02 [picorv32_core_bmc] engine_0: ##   0:00:00  Checking assertions in step 6..
+SBY  5:39:02 [picorv32_core_bmc] engine_0: ##   0:00:00  Checking assumptions in step 7..
+SBY  5:39:02 [picorv32_core_bmc] engine_0: ##   0:00:00  Checking assertions in step 7..
+SBY  5:39:02 [picorv32_core_bmc] engine_0: ##   0:00:00  Checking assumptions in step 8..
+SBY  5:39:02 [picorv32_core_bmc] engine_0: ##   0:00:00  Checking assertions in step 8..
+SBY  5:39:02 [picorv32_core_bmc] engine_0: ##   0:00:00  Checking assumptions in step 9..
+SBY  5:39:02 [picorv32_core_bmc] engine_0: ##   0:00:00  Checking assertions in step 9..
+SBY  5:39:02 [picorv32_core_bmc] engine_0: ##   0:00:00  Checking assumptions in step 10..
+SBY  5:39:02 [picorv32_core_bmc] engine_0: ##   0:00:00  Checking assertions in step 10..
+SBY  5:39:02 [picorv32_core_bmc] engine_0: ##   0:00:01  Checking assumptions in step 11..
+SBY  5:39:02 [picorv32_core_bmc] engine_0: ##   0:00:01  Checking assertions in step 11..
+SBY  5:39:03 [picorv32_core_bmc] engine_0: ##   0:00:01  Checking assumptions in step 12..
+SBY  5:39:03 [picorv32_core_bmc] engine_0: ##   0:00:01  Checking assertions in step 12..
+SBY  5:39:03 [picorv32_core_bmc] engine_0: ##   0:00:01  Checking assumptions in step 13..
+SBY  5:39:03 [picorv32_core_bmc] engine_0: ##   0:00:01  Checking assertions in step 13..
+SBY  5:39:03 [picorv32_core_bmc] engine_0: ##   0:00:01  Checking assumptions in step 14..
+SBY  5:39:03 [picorv32_core_bmc] engine_0: ##   0:00:01  Checking assertions in step 14..
+SBY  5:39:03 [picorv32_core_bmc] engine_0: ##   0:00:01  Checking assumptions in step 15..
+SBY  5:39:03 [picorv32_core_bmc] engine_0: ##   0:00:02  Checking assertions in step 15..
+SBY  5:39:04 [picorv32_core_bmc] engine_0: ##   0:00:02  Checking assumptions in step 16..
+SBY  5:39:04 [picorv32_core_bmc] engine_0: ##   0:00:02  Checking assertions in step 16..
+SBY  5:39:04 [picorv32_core_bmc] engine_0: ##   0:00:02  Checking assumptions in step 17..
+SBY  5:39:04 [picorv32_core_bmc] engine_0: ##   0:00:02  Checking assertions in step 17..
+SBY  5:39:05 [picorv32_core_bmc] engine_0: ##   0:00:03  Checking assumptions in step 18..
+SBY  5:39:05 [picorv32_core_bmc] engine_0: ##   0:00:03  Checking assertions in step 18..
+SBY  5:39:05 [picorv32_core_bmc] engine_0: ##   0:00:03  Checking assumptions in step 19..
+SBY  5:39:05 [picorv32_core_bmc] engine_0: ##   0:00:03  Checking assertions in step 19..
+SBY  5:39:06 [picorv32_core_bmc] engine_0: ##   0:00:04  Status: passed
+SBY  5:39:06 [picorv32_core_bmc] engine_0: finished (returncode=0)
+SBY  5:39:06 [picorv32_core_bmc] engine_0: Status returned by engine: pass
+SBY  5:39:06 [picorv32_core_bmc] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:05 (5)
+SBY  5:39:06 [picorv32_core_bmc] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:15 (15)
+SBY  5:39:06 [picorv32_core_bmc] summary: engine_0 (smtbmc yices) returned pass
+SBY  5:39:06 [picorv32_core_bmc] summary: engine_0 did not produce any traces
+SBY  5:39:06 [picorv32_core_bmc] DONE (PASS, rc=0)
+</system-out>
+<system-err>
+</system-err>
+</testsuite>
+</testsuites>

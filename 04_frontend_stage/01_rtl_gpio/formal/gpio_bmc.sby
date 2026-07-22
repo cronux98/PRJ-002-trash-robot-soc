@@ -1,0 +1,16 @@
+[tasks]
+bmc
+
+[options]
+bmc: mode bmc
+bmc: depth 20
+
+[engines]
+bmc: smtbmc z3
+
+[script]
+read -formal gpio.v
+prep -top gpio
+
+[files]
+../rtl/gpio.v

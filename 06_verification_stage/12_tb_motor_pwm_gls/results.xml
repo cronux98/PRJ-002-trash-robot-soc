@@ -1,0 +1,9 @@
+<testsuites name="results">
+  <testsuite name="all" package="all">
+    <property name="random_seed" value="1784094940" />
+    <testcase name="test_reset" classname="test_motor_pwm" file="/home/smdadmin/hermes_workspace/projects/IP-005/v6/06_verification/tb-motor_pwm_gls/test_motor_pwm.py" lineno="16" time="0.0022253990173339844" sim_time_ns="70.0" ratio_time="31455.033211913436" />
+    <testcase name="test_register_rw" classname="test_motor_pwm" file="/home/smdadmin/hermes_workspace/projects/IP-005/v6/06_verification/tb-motor_pwm_gls/test_motor_pwm.py" lineno="32" time="0.0025131702423095703" sim_time_ns="181.0" ratio_time="72020.58855896025" />
+    <testcase name="test_functional" classname="test_motor_pwm" file="/home/smdadmin/hermes_workspace/projects/IP-005/v6/06_verification/tb-motor_pwm_gls/test_motor_pwm.py" lineno="54" time="0.00814199447631836" sim_time_ns="1141.0" ratio_time="140137.6534114202" />
+    <testcase name="test_ack_handshake" classname="test_motor_pwm" file="/home/smdadmin/hermes_workspace/projects/IP-005/v6/06_verification/tb-motor_pwm_gls/test_motor_pwm.py" lineno="79" time="0.0014772415161132812" sim_time_ns="121.0" ratio_time="81909.42285345384" />
+  </testsuite>
+</testsuites>

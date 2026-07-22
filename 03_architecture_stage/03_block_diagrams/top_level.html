@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IP-005 v6 — Trash Robot SoC Block Diagram</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #0d1117; color: #c9d1d9; font-family: 'Segoe UI', system-ui, sans-serif; padding: 40px; display: flex; justify-content: center; }
+.diagram { max-width: 1200px; width: 100%; }
+.diagram h1 { color: #58a6ff; font-size: 1.6em; margin-bottom: 4px; border-bottom: 1px solid #21262d; padding-bottom: 12px; }
+.diagram h2 { color: #8b949e; font-size: 0.9em; font-weight: normal; margin-bottom: 24px; }
+.module { border: 1px solid #30363d; border-radius: 6px; padding: 10px 14px; margin: 4px; font-size: 0.78em; text-align: center; background: #161b22; }
+.module.core { border-color: #58a6ff; background: #161b22; min-width: 180px; }
+.module.memory { border-color: #3fb950; min-width: 130px; }
+.module.interconnect { border-color: #d2991d; min-width: 160px; }
+.module.peripheral { border-color: #8b949e; min-width: 120px; }
+.module.governance { border-color: #bc8cff; min-width: 120px; }
+.module .name { font-weight: 600; color: #e6edf3; }
+.module .addr { color: #8b949e; font-family: monospace; font-size: 0.85em; margin-top: 2px; }
+.module .type { color: #484f58; font-size: 0.8em; text-transform: uppercase; letter-spacing: 0.5px; }
+.row { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; margin: 8px 0; }
+.arrow { text-align: center; color: #484f58; font-size: 1.2em; padding: 2px 0; }
+.arrow span { color: #d2991d; }
+.bus-label { color: #d2991d; font-size: 0.7em; font-family: monospace; padding: 2px 6px; border: 1px dashed #d2991d; border-radius: 3px; display: inline-block; margin: 4px 0; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 8px; margin-top: 16px; }
+.legend { display: flex; gap: 16px; margin: 12px 0; font-size: 0.75em; flex-wrap: wrap; }
+.legend .dot { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 4px; }
+</style>
+</head>
+<body>
+<div class="diagram">
+<h1>IP-005 v6 — Trash Robot SoC Architecture</h1>
+<h2>PicoRV32 RV32IM | Wishbone B4 | 33.3 MHz sky130A | 14 Slaves | 512B SRAM</h2>
+
+<div class="legend">
+<span><span class="dot" style="background:#58a6ff"></span> Processor</span>
+<span><span class="dot" style="background:#3fb950"></span> Memory</span>
+<span><span class="dot" style="background:#d2991d"></span> Interconnect</span>
+<span><span class="dot" style="background:#8b949e"></span> Peripheral</span>
+<span><span class="dot" style="background:#bc8cff"></span> Governance</span>
+</div>
+
+<!-- Processor -->
+<div class="row">
+  <div class="module core">
+    <div class="type">Processor</div>
+    <div class="name">PicoRV32</div>
+    <div class="addr">RV32IM | 2-3 stage</div>
+    <div class="bus-label">WB Master</div>
+  </div>
+</div>
+
+<div class="arrow"><span>▼</span> wb_cyc, wb_stb, wb_adr[15:0], wb_dat[31:0], wb_sel[3:0]</div>
+
+<!-- Interconnect -->
+<div class="row">
+  <div class="module interconnect">
+    <div class="type">Interconnect</div>
+    <div class="name">wb_interconnect</div>
+    <div class="addr">1→14 decode | adr[15:12]</div>
+    <div class="bus-label">BUG-004: Registered read-data mux</div>
+  </div>
+</div>
+
+<div class="arrow"><span>▼</span> 14 slave ports</div>
+
+<!-- SRAM + First Row Peripherals -->
+<div class="row">
+  <div class="module memory">
+    <div class="type">Memory</div>
+    <div class="name">sram_512b</div>
+    <div class="addr">0x0000-0x0FFF</div>
+  </div>
+  <div class="module peripheral">
+    <div class="type">Peripheral</div>
+    <div class="name">uart</div>
+    <div class="addr">0x2000</div>
+  </div>
+  <div class="module peripheral">
+    <div class="type">Peripheral</div>
+    <div class="name">i2c_hx711</div>
+    <div class="addr">0x4000</div>
+  </div>
+  <div class="module peripheral">
+    <div class="type">Peripheral</div>
+    <div class="name">gpio</div>
+    <div class="addr">0x5000</div>
+  </div>
+</div>
+
+<!-- Second Row Peripherals -->
+<div class="row">
+  <div class="module peripheral">
+    <div class="type">Peripheral</div>
+    <div class="name">timer</div>
+    <div class="addr">0x6000</div>
+  </div>
+  <div class="module peripheral">
+    <div class="type">Peripheral</div>
+    <div class="name">motor_pwm</div>
+    <div class="addr">0x7000</div>
+  </div>
+  <div class="module peripheral">
+    <div class="type">Peripheral</div>
+    <div class="name">ultrasonic</div>
+    <div class="addr">0x8000</div>
+  </div>
+  <div class="module peripheral">
+    <div class="type">Peripheral</div>
+    <div class="name">weight_detect</div>
+    <div class="addr">0x9000</div>
+  </div>
+</div>
+
+<!-- Third Row Peripherals -->
+<div class="row">
+  <div class="module peripheral">
+    <div class="type">Peripheral</div>
+    <div class="name">i2c_ina219</div>
+    <div class="addr">0xA000</div>
+  </div>
+  <div class="module peripheral">
+    <div class="type">Peripheral</div>
+    <div class="name">i2c_ds3231</div>
+    <div class="addr">0xB000</div>
+  </div>
+  <div class="module governance">
+    <div class="type">Governance</div>
+    <div class="name">interrupt_ctrl</div>
+    <div class="addr">0xC000</div>
+  </div>
+  <div class="module governance">
+    <div class="type">Governance</div>
+    <div class="name">watchdog</div>
+    <div class="addr">0xD000</div>
+  </div>
+  <div class="module governance">
+    <div class="type">Governance</div>
+    <div class="name">power_mgr</div>
+    <div class="addr">0xE000</div>
+  </div>
+</div>
+
+<!-- Interrupt routing -->
+<div style="margin-top:20px; padding:10px; border:1px solid #21262d; border-radius:6px; font-size:0.75em;">
+  <strong style="color:#bc8cff;">Interrupt Routing:</strong>
+  <span style="color:#8b949e">
+    Timer(0) UART(1-2) GPIO[0-2](3-5) Motor(6) Ultrasonic(7) Weight(8) I2C×3(9-11) WDT(12) Power(13) GPIO[3](14) →
+  </span>
+  <span style="color:#d2991d">interrupt_ctrl (16-ch fixed priority)</span> →
+  <span style="color:#58a6ff">PicoRV32 IRQ</span>
+</div>
+
+<!-- Sleep/Wake -->
+<div style="margin-top:8px; padding:10px; border:1px solid #21262d; border-radius:6px; font-size:0.75em;">
+  <strong style="color:#bc8cff;">Power FSM:</strong>
+  <span style="color:#8b949e">ACTIVE → (WFI) SLEEP → (RTC|Button) WAKE → ACTIVE</span>
+  <span style="color:#484f58; margin-left:12px;">|</span>
+  <strong style="color:#d2991d;">Clock:</strong> 33.3 MHz single domain, no CDC
+  <span style="color:#484f58; margin-left:12px;">|</span>
+  <strong style="color:#3fb950;">Reset:</strong> Active-low async assert, sync deassert
+</div>
+
+<!-- Stats -->
+<div style="margin-top:16px; font-size:0.7em; color:#484f58; display:flex; gap:24px; flex-wrap:wrap;">
+  <span>PDK: sky130A</span><span>1.8V core</span><span>16-bit addr</span><span>32-bit data</span>
+  <span>~17K RTL cells</span><span>~27K placed cells</span><span>Est. 1.3 mm²</span>
+  <span>V5 GDS: 1.17 mm², DRC 0</span>
+</div>
+
+</div>
+</body>
+</html>

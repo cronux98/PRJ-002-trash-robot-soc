@@ -1,0 +1,267 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.65+71 (git sha1 e56c6a954, clang++ 18.1.8 -fPIC -O3)
+
+-- Executing script file `design_prep.ys' --
+
+1. Executing RTLIL frontend.
+Input filename: design.il
+
+2. Executing SCC pass (detecting logic loops).
+Found 0 SCCs in module trash_robot_soc.
+Found 0 SCCs.
+
+3. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+
+4. Executing MEMORY_NORDFF pass (extracting $dff cells from memories).
+
+5. Executing ASYNC2SYNC pass.
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$46440 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=\picorv32_inst.mem_wdata [6:0], Q=\i2c_ds3231_inst.addr_reg
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$46449 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=$flatten\uart_inst.$procmux$43902_Y, Q=\uart_inst.tx_state
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$46458 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=\picorv32_inst.mem_wdata [0], Q=\weight_inst.ctrl_direction
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$46461 ($adffe): ARST=\pm_inst.sys_rst_n_o, D={ \uart_inst.uart_rx_d \uart_inst.rx_shift_reg [7:1] }, Q=\uart_inst.rx_shift_reg
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$46464 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=\picorv32_inst.mem_wdata [23:0], Q=\weight_inst.threshold
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$46467 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=\picorv32_inst.mem_wdata [2:0], Q=\uart_inst.ctrl_reg
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$46470 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=$flatten\uart_inst.$procmux$43862_Y, Q=\uart_inst.rx_bit_count
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$46479 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=\picorv32_inst.mem_wdata [23:0], Q=\weight_inst.weight_value
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$46482 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=1'1, Q=\uart_inst.status_reg [2]
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$46487 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=1'1, Q=\uart_inst.status_reg [3]
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$46493 ($adff): ARST=\pm_inst.sys_rst_n_o, D=$flatten\uart_inst.$0\status_reg[7:0] [1:0], Q=\uart_inst.status_reg [1:0]
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$46494 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=\uart_inst.rx_shift_reg, Q=\uart_inst.rxdata_reg
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$46497 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=$flatten\i2c_ds3231_inst.$procmux$2132_Y, Q=\i2c_ds3231_inst.wb_dat_o
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$46502 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=\picorv32_inst.mem_wdata [7:0], Q=\uart_inst.txdata_reg
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$46505 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=$flatten\uart_inst.$procmux$43871_Y, Q=\uart_inst.rx_state
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$46520 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=\picorv32_inst.mem_wdata [1], Q=\weight_inst.ctrl_irq_en
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$46523 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=$flatten\i2c_ds3231_inst.$procmux$1993_Y, Q=\i2c_ds3231_inst.fsm_state
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$46534 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=$flatten\uart_inst.$procmux$43887_Y, Q=\uart_inst.tx_shift_reg
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$46541 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=$flatten\weight_inst.$procmux$1809_Y, Q=\weight_inst.wb_dat_o
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$46546 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=$flatten\uart_inst.$procmux$43976_Y, Q=\uart_inst.wb_dat_o
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$46551 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=$flatten\uart_inst.$procmux$43986_Y, Q=\uart_inst.uart_tx
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$46554 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=1'1, Q=\wdt_inst.ctrl_locked
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$46562 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=1'1, Q=\i2c_ds3231_inst.status [2]
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$46567 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=$flatten\i2c_ds3231_inst.$procmux$1856_Y, Q=\i2c_ds3231_inst.status [3]
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$46570 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=$flatten\i2c_ds3231_inst.$procmux$1884_Y, Q=\i2c_ds3231_inst.status [0]
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$46575 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=$flatten\i2c_ds3231_inst.$procmux$1876_Y, Q=\i2c_ds3231_inst.status [1]
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$46606 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=\picorv32_inst.mem_wdata [15:0], Q=\intc_inst.edge_cfg
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$46652 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=\picorv32_inst.mem_wdata [3:0], Q=\i2c_ds3231_inst.ctrl
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$46839 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=$flatten\uart_inst.$procmux$43895_Y, Q=\uart_inst.tx_bit_count
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$46874 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=$flatten\i2c_hx711_inst.$procmux$1918_Y, Q=\i2c_hx711_inst.sda_out
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$46881 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=\picorv32_inst.mem_wdata [2], Q=\i2c_hx711_inst.rw_bit
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$46884 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=$flatten\i2c_hx711_inst.$procmux$1938_Y, Q=\i2c_scl
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$46890 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=\picorv32_inst.mem_wdata [6:0], Q=\i2c_hx711_inst.addr_reg
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$46903 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=1'1, Q=\i2c_hx711_inst.status [2]
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$46908 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=$flatten\i2c_ds3231_inst.$procmux$1856_Y, Q=\i2c_hx711_inst.status [3]
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$46911 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=$flatten\i2c_hx711_inst.$procmux$1884_Y, Q=\i2c_hx711_inst.status [0]
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$46916 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=$flatten\i2c_hx711_inst.$procmux$1876_Y, Q=\i2c_hx711_inst.status [1]
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$46936 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=$flatten\i2c_ina219_inst.$procmux$1918_Y, Q=\i2c_ina219_inst.sda_out
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$46947 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=\picorv32_inst.mem_wdata [3:0], Q=\i2c_hx711_inst.ctrl
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$46957 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=\picorv32_inst.mem_wdata [2], Q=\i2c_ina219_inst.rw_bit
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$46960 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=\picorv32_inst.mem_wdata [7:0], Q=\i2c_hx711_inst.divider
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$46972 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=$flatten\i2c_hx711_inst.$procmux$2132_Y, Q=\i2c_hx711_inst.wb_dat_o
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$46977 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=$flatten\i2c_hx711_inst.$procmux$1993_Y, Q=\i2c_hx711_inst.fsm_state
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$46988 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=$flatten\i2c_ina219_inst.$procmux$1938_Y, Q=\i2c_scl
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$46989 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=\picorv32_inst.mem_wdata [6:0], Q=\i2c_ina219_inst.addr_reg
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$46992 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=1'1, Q=\i2c_ina219_inst.status [2]
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$46997 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=$flatten\i2c_ds3231_inst.$procmux$1856_Y, Q=\i2c_ina219_inst.status [3]
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$47000 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=$flatten\i2c_ina219_inst.$procmux$1884_Y, Q=\i2c_ina219_inst.status [0]
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$47005 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=$flatten\i2c_ina219_inst.$procmux$1876_Y, Q=\i2c_ina219_inst.status [1]
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$47021 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=\picorv32_inst.mem_wdata [3:0], Q=\i2c_ina219_inst.ctrl
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$47037 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=\picorv32_inst.mem_wdata [7:0], Q=\i2c_ina219_inst.divider
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$47079 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=$flatten\i2c_ina219_inst.$procmux$2132_Y, Q=\i2c_ina219_inst.wb_dat_o
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$47087 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=$flatten\i2c_ina219_inst.$procmux$1993_Y, Q=\i2c_ina219_inst.fsm_state
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$47162 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=$flatten\wb_inst.$0\m_wb_dat_o[31:0], Q=\wb_inst.m_wb_dat_o
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$47813 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=\picorv32_inst.mem_wdata [15:0], Q=\motor_inst.duty_b
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$47828 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=\picorv32_inst.mem_wdata [15:0], Q=\motor_inst.duty_a
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$47879 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=\picorv32_inst.mem_wdata [7:0], Q=\motor_inst.ctrl
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$47882 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=\picorv32_inst.mem_wdata [15:0], Q=\motor_inst.duty_d
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$47993 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=\picorv32_inst.mem_wdata [15:0], Q=\motor_inst.duty_c
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$48044 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=$flatten\motor_inst.$procmux$44052_Y, Q=\motor_inst.wb_dat_o
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$48721 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=$flatten\sram_inst.$4$mem2reg_rd$\mem$sram_512b.v:44$233_DATA[31:0]$288, Q=\sram_inst.wb_dat_o
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$48726 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=$flatten\intc_inst.$procmux$1752_Y, Q=\intc_inst.wb_dat_o
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$48731 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=$flatten\ultra_inst.$0\ch1_echo_prev[0:0], Q=\ultra_inst.ch1_echo_prev
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$48738 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=$flatten\ultra_inst.$4\calc_distance$func$ultrasonic_capture.v:183$124.$result[15:0]$176, Q=\ultra_inst.ch1_dist_val
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$48741 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=\ultra_inst.ch1_echo_cnt [15:0], Q=\ultra_inst.ch1_echo_val
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$48744 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=$flatten\ultra_inst.$0\ch1_echo_cnt[19:0], Q=\ultra_inst.ch1_echo_cnt
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$48753 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=$flatten\ultra_inst.$0\ch1_trig_cnt[15:0], Q=\ultra_inst.ch1_trig_cnt
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$48762 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=$flatten\ultra_inst.$0\ch1_state[1:0], Q=\ultra_inst.ch1_state
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$48773 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=$flatten\ultra_inst.$0\ch0_echo_prev[0:0], Q=\ultra_inst.ch0_echo_prev
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$48780 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=$flatten\ultra_inst.$4\calc_distance$func$ultrasonic_capture.v:143$123.$result[15:0]$157, Q=\ultra_inst.ch0_dist_val
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$48783 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=\ultra_inst.ch0_echo_cnt [15:0], Q=\ultra_inst.ch0_echo_val
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$48786 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=$flatten\ultra_inst.$0\ch0_echo_cnt[19:0], Q=\ultra_inst.ch0_echo_cnt
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$48795 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=$flatten\ultra_inst.$0\ch0_trig_cnt[15:0], Q=\ultra_inst.ch0_trig_cnt
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$48804 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=$flatten\ultra_inst.$0\ch0_state[1:0], Q=\ultra_inst.ch0_state
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$48815 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=$flatten\ultra_inst.$procmux$44289_Y, Q=\ultra_inst.wb_dat_o
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$48820 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=\picorv32_inst.mem_wdata [15:0], Q=\intc_inst.enable
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$48823 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=\picorv32_inst.mem_wdata [7:0], Q=\i2c_ds3231_inst.divider
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$48826 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=\picorv32_inst.mem_wdata [11:0], Q=\gpio_inst.out_reg
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$48829 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=\picorv32_inst.mem_wdata [11:0], Q=\gpio_inst.dir_reg
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$48832 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=$flatten\gpio_inst.$procmux$44327_Y, Q=\gpio_inst.wb_dat_o
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$48837 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=\picorv32_inst.mem_wdata [11:0], Q=\gpio_inst.irq_cfg
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$48849 ($adffe): ARST=\rst_ni, D=$flatten\pm_inst.$procmux$1842_Y, Q=\pm_inst.wb_dat_o
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$48854 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=\picorv32_inst.mem_wdata, Q=\timer_inst.compare_a
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$48857 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=\picorv32_inst.mem_wdata, Q=\timer_inst.reload
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$48860 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=\picorv32_inst.mem_wdata [0], Q=\timer_inst.ctrl_enable
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$48863 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=\picorv32_inst.mem_wdata [1], Q=\timer_inst.ctrl_auto_reload
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$48866 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=$flatten\timer_inst.$procmux$44455_Y, Q=\timer_inst.wb_dat_o
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$48871 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=\picorv32_inst.mem_wdata, Q=\timer_inst.compare_b
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$48877 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=$flatten\wdt_inst.$0\rst_pulse_cnt[7:0], Q=\wdt_inst.rst_pulse_cnt
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$48884 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=$flatten\wdt_inst.$0\rst_out_n[0:0], Q=\wdt_inst.rst_out_n
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$48893 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=$flatten\i2c_ds3231_inst.$procmux$1918_Y, Q=\i2c_ds3231_inst.sda_out
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$48900 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=\picorv32_inst.mem_wdata, Q=\wdt_inst.timeout_val
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$48903 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=\picorv32_inst.mem_wdata [2], Q=\i2c_ds3231_inst.rw_bit
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$48906 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=$flatten\wdt_inst.$procmux$1714_Y, Q=\wdt_inst.wb_dat_o
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$48911 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=$flatten\i2c_ds3231_inst.$procmux$1938_Y, Q=\i2c_scl
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$48948 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=$flatten\i2c_ds3231_inst.$procmux$1970_Y, Q=\i2c_ds3231_inst.bit_cnt
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$48959 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=$flatten\i2c_ds3231_inst.$procmux$1947_Y, Q=\i2c_ds3231_inst.shift_reg
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$48964 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=$flatten\i2c_ds3231_inst.$procmux$1903_Y, Q=\i2c_ds3231_inst.sda_oe
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$48973 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=$flatten\i2c_hx711_inst.$procmux$1947_Y, Q=\i2c_hx711_inst.shift_reg
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$48978 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=$flatten\i2c_hx711_inst.$procmux$1903_Y, Q=\i2c_hx711_inst.sda_oe
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$48983 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=$flatten\i2c_hx711_inst.$procmux$1970_Y, Q=\i2c_hx711_inst.bit_cnt
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$48988 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=$flatten\i2c_ina219_inst.$procmux$1947_Y, Q=\i2c_ina219_inst.shift_reg
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$48993 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=$flatten\i2c_ina219_inst.$procmux$1903_Y, Q=\i2c_ina219_inst.sda_oe
+Replacing trash_robot_soc.$auto$ff.cc:337:slice$48998 ($adffe): ARST=\pm_inst.sys_rst_n_o, D=$flatten\i2c_ina219_inst.$procmux$1970_Y, Q=\i2c_ina219_inst.bit_cnt
+Replacing trash_robot_soc.$flatten\gpio_inst.$procdff$46178 ($adff): ARST=\pm_inst.sys_rst_n_o, D=\gpio_inst.out_reg, Q=\gpio_inst.gpio_o
+Replacing trash_robot_soc.$flatten\gpio_inst.$procdff$46183 ($adff): ARST=\pm_inst.sys_rst_n_o, D=\gpio_inst.dir_reg, Q=\gpio_inst.gpio_oe
+Replacing trash_robot_soc.$flatten\gpio_inst.$procdff$46193 ($adff): ARST=\pm_inst.sys_rst_n_o, D=$flatten\gpio_inst.$0\wb_ack_o[0:0], Q=\gpio_inst.wb_ack_o
+Replacing trash_robot_soc.$flatten\gpio_inst.$procdff$46198 ($adff): ARST=\pm_inst.sys_rst_n_o, D=$flatten\gpio_inst.$0\irq_pin[0:0], Q=\gpio_inst.irq_pin
+Replacing trash_robot_soc.$flatten\gpio_inst.$procdff$46218 ($adff): ARST=\pm_inst.sys_rst_n_o, D=\gpio_inst.gpio_sync2, Q=\gpio_inst.gpio_prev
+Replacing trash_robot_soc.$flatten\gpio_inst.$procdff$46223 ($adff): ARST=\pm_inst.sys_rst_n_o, D=\gpio_i, Q=\gpio_inst.gpio_sync1
+Replacing trash_robot_soc.$flatten\gpio_inst.$procdff$46228 ($adff): ARST=\pm_inst.sys_rst_n_o, D=\gpio_inst.gpio_sync1, Q=\gpio_inst.gpio_sync2
+Replacing trash_robot_soc.$flatten\i2c_ds3231_inst.$procdff$44647 ($adff): ARST=\pm_inst.sys_rst_n_o, D=$flatten\i2c_ds3231_inst.$0\wb_ack_o[0:0], Q=\i2c_ds3231_inst.wb_ack_o
+Replacing trash_robot_soc.$flatten\i2c_ds3231_inst.$procdff$44652 ($adff): ARST=\pm_inst.sys_rst_n_o, D=$flatten\i2c_ds3231_inst.$0\irq_done[0:0], Q=\i2c_ds3231_inst.irq_done
+Replacing trash_robot_soc.$flatten\i2c_ds3231_inst.$procdff$44662 ($adff): ARST=\pm_inst.sys_rst_n_o, D=$flatten\i2c_ds3231_inst.$0\clk_cnt[7:0], Q=\i2c_ds3231_inst.clk_cnt
+Replacing trash_robot_soc.$flatten\i2c_ds3231_inst.$procdff$44682 ($adff): ARST=\pm_inst.sys_rst_n_o, D=$flatten\i2c_ds3231_inst.$0\data_reg[7:0], Q=\i2c_ds3231_inst.data_reg
+Replacing trash_robot_soc.$flatten\i2c_ds3231_inst.$procdff$44687 ($adff): ARST=\pm_inst.sys_rst_n_o, D=$flatten\i2c_ds3231_inst.$0\start_cmd[0:0], Q=\i2c_ds3231_inst.start_cmd
+Replacing trash_robot_soc.$flatten\i2c_ds3231_inst.$procdff$44692 ($adff): ARST=\pm_inst.sys_rst_n_o, D=$flatten\i2c_ds3231_inst.$0\stop_cmd[0:0], Q=\i2c_ds3231_inst.stop_cmd
+Replacing trash_robot_soc.$flatten\i2c_hx711_inst.$procdff$44647 ($adff): ARST=\pm_inst.sys_rst_n_o, D=$flatten\i2c_hx711_inst.$0\wb_ack_o[0:0], Q=\i2c_hx711_inst.wb_ack_o
+Replacing trash_robot_soc.$flatten\i2c_hx711_inst.$procdff$44652 ($adff): ARST=\pm_inst.sys_rst_n_o, D=$flatten\i2c_hx711_inst.$0\irq_done[0:0], Q=\i2c_hx711_inst.irq_done
+Replacing trash_robot_soc.$flatten\i2c_hx711_inst.$procdff$44662 ($adff): ARST=\pm_inst.sys_rst_n_o, D=$flatten\i2c_hx711_inst.$0\clk_cnt[7:0], Q=\i2c_hx711_inst.clk_cnt
+Replacing trash_robot_soc.$flatten\i2c_hx711_inst.$procdff$44682 ($adff): ARST=\pm_inst.sys_rst_n_o, D=$flatten\i2c_hx711_inst.$0\data_reg[7:0], Q=\i2c_hx711_inst.data_reg
+Replacing trash_robot_soc.$flatten\i2c_hx711_inst.$procdff$44687 ($adff): ARST=\pm_inst.sys_rst_n_o, D=$flatten\i2c_hx711_inst.$0\start_cmd[0:0], Q=\i2c_hx711_inst.start_cmd
+Replacing trash_robot_soc.$flatten\i2c_hx711_inst.$procdff$44692 ($adff): ARST=\pm_inst.sys_rst_n_o, D=$flatten\i2c_hx711_inst.$0\stop_cmd[0:0], Q=\i2c_hx711_inst.stop_cmd
+Replacing trash_robot_soc.$flatten\i2c_ina219_inst.$procdff$44647 ($adff): ARST=\pm_inst.sys_rst_n_o, D=$flatten\i2c_ina219_inst.$0\wb_ack_o[0:0], Q=\i2c_ina219_inst.wb_ack_o
+Replacing trash_robot_soc.$flatten\i2c_ina219_inst.$procdff$44652 ($adff): ARST=\pm_inst.sys_rst_n_o, D=$flatten\i2c_ina219_inst.$0\irq_done[0:0], Q=\i2c_ina219_inst.irq_done
+Replacing trash_robot_soc.$flatten\i2c_ina219_inst.$procdff$44662 ($adff): ARST=\pm_inst.sys_rst_n_o, D=$flatten\i2c_ina219_inst.$0\clk_cnt[7:0], Q=\i2c_ina219_inst.clk_cnt
+Replacing trash_robot_soc.$flatten\i2c_ina219_inst.$procdff$44682 ($adff): ARST=\pm_inst.sys_rst_n_o, D=$flatten\i2c_ina219_inst.$0\data_reg[7:0], Q=\i2c_ina219_inst.data_reg
+Replacing trash_robot_soc.$flatten\i2c_ina219_inst.$procdff$44687 ($adff): ARST=\pm_inst.sys_rst_n_o, D=$flatten\i2c_ina219_inst.$0\start_cmd[0:0], Q=\i2c_ina219_inst.start_cmd
+Replacing trash_robot_soc.$flatten\i2c_ina219_inst.$procdff$44692 ($adff): ARST=\pm_inst.sys_rst_n_o, D=$flatten\i2c_ina219_inst.$0\stop_cmd[0:0], Q=\i2c_ina219_inst.stop_cmd
+Replacing trash_robot_soc.$flatten\intc_inst.$procdff$44532 ($adff): ARST=\pm_inst.sys_rst_n_o, D=$flatten\intc_inst.$0\wb_ack_o[0:0], Q=\intc_inst.wb_ack_o
+Replacing trash_robot_soc.$flatten\intc_inst.$procdff$44537 ($adff): ARST=\pm_inst.sys_rst_n_o, D=$flatten\intc_inst.$0\irq_out[0:0], Q=\intc_inst.irq_out
+Replacing trash_robot_soc.$flatten\intc_inst.$procdff$44542 ($adff): ARST=\pm_inst.sys_rst_n_o, D=$flatten\intc_inst.$0\pending[15:0], Q=\intc_inst.pending
+Replacing trash_robot_soc.$flatten\intc_inst.$procdff$44557 ($adff): ARST=\pm_inst.sys_rst_n_o, D={ \intc_inst.irq_in [15:12] \i2c_ds3231_inst.irq_done \i2c_ina219_inst.irq_done \weight_inst.irq_thresh \wdt_inst.irq_warn \timer_inst.irq_cmpb \timer_inst.irq_cmpa \gpio_inst.irq_pin \ultra_inst.irq_done \motor_inst.irq_fault \i2c_hx711_inst.irq_done \uart_inst.irq_tx \uart_inst.irq_rx }, Q=\intc_inst.irq_in_prev
+Replacing trash_robot_soc.$flatten\motor_inst.$procdff$45993 ($adff): ARST=\pm_inst.sys_rst_n_o, D=$flatten\motor_inst.$0\wb_ack_o[0:0], Q=\motor_inst.wb_ack_o
+Replacing trash_robot_soc.$flatten\motor_inst.$procdff$45998 ($adff): ARST=\pm_inst.sys_rst_n_o, D=\motor_inst.ctrl [7:4], Q=\motor_inst.pwm_a
+Replacing trash_robot_soc.$flatten\motor_inst.$procdff$46003 ($adff): ARST=\pm_inst.sys_rst_n_o, D=$flatten\motor_inst.$0\pwm_b[3:0], Q=\motor_inst.pwm_b
+Replacing trash_robot_soc.$flatten\motor_inst.$procdff$46008 ($adff): ARST=\pm_inst.sys_rst_n_o, D=$flatten\motor_inst.$0\irq_fault[0:0], Q=\motor_inst.irq_fault
+Replacing trash_robot_soc.$flatten\motor_inst.$procdff$46038 ($adff): ARST=\pm_inst.sys_rst_n_o, D=$flatten\motor_inst.$0\status_fault[3:0], Q=\motor_inst.status_fault
+Replacing trash_robot_soc.$flatten\motor_inst.$procdff$46043 ($adff): ARST=\pm_inst.sys_rst_n_o, D=$flatten\motor_inst.$0\pwm_cnt[15:0], Q=\motor_inst.pwm_cnt
+Replacing trash_robot_soc.$flatten\pm_inst.$procdff$44607 ($adff): ARST=\rst_ni, D=\pm_inst.sync_ff2, Q=\pm_inst.sys_rst_n_o
+Replacing trash_robot_soc.$flatten\pm_inst.$procdff$44617 ($adff): ARST=\rst_ni, D=$flatten\pm_inst.$0\wb_ack_o[0:0], Q=\pm_inst.wb_ack_o
+Replacing trash_robot_soc.$flatten\pm_inst.$procdff$44622 ($adff): ARST=\rst_ni, D=$flatten\pm_inst.$0\ext_rst_flag[0:0], Q=\pm_inst.ext_rst_flag
+Replacing trash_robot_soc.$flatten\pm_inst.$procdff$44627 ($adff): ARST=\rst_ni, D=$flatten\pm_inst.$0\wdt_rst_flag[0:0], Q=\pm_inst.wdt_rst_flag
+Replacing trash_robot_soc.$flatten\pm_inst.$procdff$44632 ($adff): ARST=\pm_inst.int_rst_n, D=1'1, Q=\pm_inst.sync_ff1
+Replacing trash_robot_soc.$flatten\pm_inst.$procdff$44637 ($adff): ARST=\pm_inst.int_rst_n, D=\pm_inst.sync_ff1, Q=\pm_inst.sync_ff2
+Replacing trash_robot_soc.$flatten\sram_inst.$procdff$44932 ($adff): ARST=\pm_inst.sys_rst_n_o, D=$flatten\sram_inst.$0\wb_ack_o[0:0], Q=\sram_inst.wb_ack_o
+Replacing trash_robot_soc.$flatten\timer_inst.$procdff$46238 ($adff): ARST=\pm_inst.sys_rst_n_o, D=$flatten\timer_inst.$0\wb_ack_o[0:0], Q=\timer_inst.wb_ack_o
+Replacing trash_robot_soc.$flatten\timer_inst.$procdff$46243 ($adff): ARST=\pm_inst.sys_rst_n_o, D=$flatten\timer_inst.$0\irq_cmpa[0:0], Q=\timer_inst.irq_cmpa
+Replacing trash_robot_soc.$flatten\timer_inst.$procdff$46248 ($adff): ARST=\pm_inst.sys_rst_n_o, D=$flatten\timer_inst.$0\irq_cmpb[0:0], Q=\timer_inst.irq_cmpb
+Replacing trash_robot_soc.$flatten\timer_inst.$procdff$46258 ($adff): ARST=\pm_inst.sys_rst_n_o, D=$flatten\timer_inst.$0\counter[31:0], Q=\timer_inst.counter
+Replacing trash_robot_soc.$flatten\timer_inst.$procdff$46283 ($adff): ARST=\pm_inst.sys_rst_n_o, D=$flatten\timer_inst.$0\status_cmpa[0:0], Q=\timer_inst.status_cmpa
+Replacing trash_robot_soc.$flatten\timer_inst.$procdff$46288 ($adff): ARST=\pm_inst.sys_rst_n_o, D=$flatten\timer_inst.$0\status_cmpb[0:0], Q=\timer_inst.status_cmpb
+Replacing trash_robot_soc.$flatten\timer_inst.$procdff$46293 ($adff): ARST=\pm_inst.sys_rst_n_o, D=$flatten\timer_inst.$0\status_wrap[0:0], Q=\timer_inst.status_wrap
+Replacing trash_robot_soc.$flatten\uart_inst.$procdff$45893 ($adff): ARST=\pm_inst.sys_rst_n_o, D=$flatten\uart_inst.$0\wb_ack_o[0:0], Q=\uart_inst.wb_ack_o
+Replacing trash_robot_soc.$flatten\uart_inst.$procdff$45898 ($adff): ARST=\pm_inst.sys_rst_n_o, D=$flatten\uart_inst.$0\irq_tx[0:0], Q=\uart_inst.irq_tx
+Replacing trash_robot_soc.$flatten\uart_inst.$procdff$45903 ($adff): ARST=\pm_inst.sys_rst_n_o, D=$flatten\uart_inst.$0\irq_rx[0:0], Q=\uart_inst.irq_rx
+Replacing trash_robot_soc.$flatten\uart_inst.$procdff$45928 ($adff): ARST=\pm_inst.sys_rst_n_o, D=$flatten\uart_inst.$0\tx_pending[0:0], Q=\uart_inst.tx_pending
+Replacing trash_robot_soc.$flatten\uart_inst.$procdff$45933 ($adff): ARST=\pm_inst.sys_rst_n_o, D=$flatten\uart_inst.$0\baud_counter[15:0], Q=\uart_inst.baud_counter
+Replacing trash_robot_soc.$flatten\uart_inst.$procdff$45938 ($adff): ARST=\pm_inst.sys_rst_n_o, D=$flatten\uart_inst.$0\rx_timer[15:0], Q=\uart_inst.rx_timer
+Replacing trash_robot_soc.$flatten\uart_inst.$procdff$45973 ($adff): ARST=\pm_inst.sys_rst_n_o, D=\uart_inst.uart_rx_sync, Q=\uart_inst.uart_rx_d
+Replacing trash_robot_soc.$flatten\uart_inst.$procdff$45978 ($adff): ARST=\pm_inst.sys_rst_n_o, D=\uart_rx, Q=\uart_inst.uart_rx_sync
+Replacing trash_robot_soc.$flatten\uart_inst.$procdff$45983 ($adff): ARST=\pm_inst.sys_rst_n_o, D=$flatten\uart_inst.$0\rx_done_pulse[0:0], Q=\uart_inst.rx_done_pulse
+Replacing trash_robot_soc.$flatten\ultra_inst.$procdff$46053 ($adff): ARST=\pm_inst.sys_rst_n_o, D=$flatten\ultra_inst.$0\wb_ack_o[0:0], Q=\ultra_inst.wb_ack_o
+Replacing trash_robot_soc.$flatten\ultra_inst.$procdff$46058 ($adff): ARST=\pm_inst.sys_rst_n_o, D=$flatten\ultra_inst.$0\irq_done[0:0], Q=\ultra_inst.irq_done
+Replacing trash_robot_soc.$flatten\ultra_inst.$procdff$46063 ($adff): ARST=\pm_inst.sys_rst_n_o, D=$flatten\ultra_inst.$0\trig_o[1:0], Q=\ultra_inst.trig_o
+Replacing trash_robot_soc.$flatten\ultra_inst.$procdff$46098 ($adff): ARST=\pm_inst.sys_rst_n_o, D=$flatten\ultra_inst.$0\ch0_start[0:0], Q=\ultra_inst.ch0_start
+Replacing trash_robot_soc.$flatten\ultra_inst.$procdff$46133 ($adff): ARST=\pm_inst.sys_rst_n_o, D=$flatten\ultra_inst.$0\ch1_start[0:0], Q=\ultra_inst.ch1_start
+Replacing trash_robot_soc.$flatten\ultra_inst.$procdff$46138 ($adff): ARST=\pm_inst.sys_rst_n_o, D=\echo, Q=\ultra_inst.echo_sync1
+Replacing trash_robot_soc.$flatten\ultra_inst.$procdff$46143 ($adff): ARST=\pm_inst.sys_rst_n_o, D=\ultra_inst.echo_sync1, Q=\ultra_inst.echo_sync2
+Replacing trash_robot_soc.$flatten\wdt_inst.$procdff$44487 ($adff): ARST=\pm_inst.sys_rst_n_o, D=$flatten\wdt_inst.$0\wb_ack_o[0:0], Q=\wdt_inst.wb_ack_o
+Replacing trash_robot_soc.$flatten\wdt_inst.$procdff$44492 ($adff): ARST=\pm_inst.sys_rst_n_o, D=$flatten\wdt_inst.$0\irq_warn[0:0], Q=\wdt_inst.irq_warn
+Replacing trash_robot_soc.$flatten\wdt_inst.$procdff$44517 ($adff): ARST=\pm_inst.sys_rst_n_o, D=$flatten\wdt_inst.$0\counter[31:0], Q=\wdt_inst.counter
+Replacing trash_robot_soc.$flatten\weight_inst.$procdff$44567 ($adff): ARST=\pm_inst.sys_rst_n_o, D=$flatten\weight_inst.$0\wb_ack_o[0:0], Q=\weight_inst.wb_ack_o
+Replacing trash_robot_soc.$flatten\weight_inst.$procdff$44572 ($adff): ARST=\pm_inst.sys_rst_n_o, D=$flatten\weight_inst.$0\irq_thresh[0:0], Q=\weight_inst.irq_thresh
+Replacing trash_robot_soc.$flatten\weight_inst.$procdff$44597 ($adff): ARST=\pm_inst.sys_rst_n_o, D=\weight_inst.weight_above, Q=\weight_inst.status_above
+Replacing trash_robot_soc.$flatten\weight_inst.$procdff$44602 ($adff): ARST=\pm_inst.sys_rst_n_o, D=$flatten\weight_inst.$0\status_irq_flag[0:0], Q=\weight_inst.status_irq_flag
+
+6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \trash_robot_soc..
+Removed 71 unused cells and 71 unused wires.
+<suppressed ~72 debug messages>
+
+7. Executing FORMALFF pass.
+
+8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \trash_robot_soc..
+Removed 98 unused cells and 99 unused wires.
+<suppressed ~106 debug messages>
+
+9. Executing CHECK pass (checking for obvious problems).
+Checking module trash_robot_soc...
+Warning: multiple conflicting drivers for trash_robot_soc.\i2c_sda:
+    port Y[0] of cell $flatten\i2c_ds3231_inst.$ternary$i2c_master.v:70$14 ($mux)
+    port Y[0] of cell $flatten\i2c_hx711_inst.$ternary$i2c_master.v:70$14 ($mux)
+    port Y[0] of cell $flatten\i2c_ina219_inst.$ternary$i2c_master.v:70$14 ($mux)
+    module input i2c_sda[0]
+Warning: multiple conflicting drivers for trash_robot_soc.\i2c_scl:
+    port Y[0] of cell $auto$async2sync.cc:262:execute$49073 ($mux)
+    port Y[0] of cell $auto$async2sync.cc:262:execute$49097 ($mux)
+    port Y[0] of cell $auto$async2sync.cc:262:execute$49199 ($mux)
+    module input i2c_scl[0]
+Warning: Wire trash_robot_soc.\wdt_rst_n is used but has no driver.
+Warning: Wire trash_robot_soc.\intc_inst.irq_in [15] is used but has no driver.
+Warning: Wire trash_robot_soc.\intc_inst.irq_in [14] is used but has no driver.
+Warning: Wire trash_robot_soc.\intc_inst.irq_in [13] is used but has no driver.
+Warning: Wire trash_robot_soc.\intc_inst.irq_in [12] is used but has no driver.
+Found and reported 7 problems.
+
+10. Executing SETUNDEF pass (replace undef values with defined constants).
+
+11. Executing OPT pass (performing simple optimizations).
+
+11.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module trash_robot_soc.
+
+11.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\trash_robot_soc'.
+Computing hashes of 4371 cells of `\trash_robot_soc'.
+Finding duplicate cells in `\trash_robot_soc'.
+Computing hashes of 4366 cells of `\trash_robot_soc'.
+Finding duplicate cells in `\trash_robot_soc'.
+<suppressed ~15 debug messages>
+Removed a total of 5 cells.
+
+11.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+11.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \trash_robot_soc..
+Removed 9 unused cells and 26 unused wires.
+<suppressed ~17 debug messages>
+
+11.5. Finished fast OPT passes.
+
+12. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \trash_robot_soc..
+Removed 0 unused cells and 385 unused wires.
+<suppressed ~1 debug messages>
+
+13. Executing RTLIL backend.
+Output filename: ../model/design_prep.il
+
+Warnings: 7 unique messages, 7 total
+End of script. Logfile hash: 3f70a75d8a, time: 0.68s, user: 0.69s, system: 0.03s, MEM: 48.22 MB peak
+Yosys 0.65+71 (git sha1 e56c6a954, clang++ 18.1.8 -fPIC -O3)
+Time spent: 43% 4x opt_clean (0 sec), 17% 1x check (0 sec), ...

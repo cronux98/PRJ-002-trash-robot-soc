@@ -1,0 +1,1651 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.65+71 (git sha1 e56c6a954, clang++ 18.1.8 -fPIC -O3)
+
+-- Executing script file `/tmp/equiv_motor_pwm.ys' --
+
+1. Executing Verilog-2005 frontend: /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v
+Parsing Verilog input from `/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v' to AST representation.
+Generating RTLIL representation for module `\motor_pwm'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm_ctrl.v
+Parsing Verilog input from `/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm_ctrl.v' to AST representation.
+Generating RTLIL representation for module `\motor_pwm_ctrl'.
+Warning: Replacing memory \fsm_state with list of registers. See /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm_ctrl.v:77
+Warning: Replacing memory \dead_counter with list of registers. See /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm_ctrl.v:76
+Warning: Replacing memory \pwm_counter with list of registers. See /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm_ctrl.v:75
+Warning: Replacing memory \dead_time_reg with list of registers. See /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm_ctrl.v:215
+Warning: Replacing memory \duty_reg with list of registers. See /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm_ctrl.v:211
+Warning: Replacing memory \period_reg with list of registers. See /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm_ctrl.v:207
+Note: Assuming pure combinatorial block at /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm_ctrl.v:135.5-166.8 in
+compliance with IEC 62142(E):2005 / IEEE Std. 1364.1(E):2002. Recommending
+use of @* instead of @(...) for better match of synthesis and simulation.
+Successfully finished Verilog frontend.
+
+3. Executing HIERARCHY pass (managing design hierarchy).
+
+3.1. Analyzing design hierarchy..
+Top module:  \motor_pwm
+
+3.2. Analyzing design hierarchy..
+Top module:  \motor_pwm
+Removing unused module `\motor_pwm_ctrl'.
+Removed 1 unused modules.
+
+4. Executing PROC pass (convert processes to netlists).
+
+4.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+4.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 4 switch rules as full_case in process $proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:54$10 in module motor_pwm.
+Removed a total of 0 dead cases.
+
+4.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 6 redundant assignments.
+Promoted 0 assignments to connections.
+
+4.4. Executing PROC_INIT pass (extract init attributes).
+
+4.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \rst_ni in `\motor_pwm.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:54$10'.
+
+4.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~5 debug messages>
+
+4.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\motor_pwm.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:54$10'.
+     1/18: $0\pwm_cnt[15:0]
+     2/18: $0\irq_fault[0:0]
+     3/18: $0\status_fault[3:0]
+     4/18: $0\pwm_b[3:0] [3]
+     5/18: $0\pwm_a[3:0] [3]
+     6/18: $0\pwm_b[3:0] [2]
+     7/18: $0\pwm_a[3:0] [2]
+     8/18: $0\pwm_b[3:0] [1]
+     9/18: $0\pwm_a[3:0] [1]
+    10/18: $0\pwm_b[3:0] [0]
+    11/18: $0\pwm_a[3:0] [0]
+    12/18: $0\wb_ack_o[0:0]
+    13/18: $0\ctrl[7:0]
+    14/18: $0\duty_d[15:0]
+    15/18: $0\duty_c[15:0]
+    16/18: $0\duty_b[15:0]
+    17/18: $0\duty_a[15:0]
+    18/18: $0\wb_dat_o[31:0]
+
+4.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+4.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\motor_pwm.\wb_dat_o' using process `\motor_pwm.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:54$10'.
+  created $adff cell `$procdff$244' with positive edge clock and positive level reset.
+Creating register for signal `\motor_pwm.\wb_ack_o' using process `\motor_pwm.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:54$10'.
+  created $adff cell `$procdff$249' with positive edge clock and positive level reset.
+Creating register for signal `\motor_pwm.\pwm_a' using process `\motor_pwm.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:54$10'.
+  created $adff cell `$procdff$254' with positive edge clock and positive level reset.
+Creating register for signal `\motor_pwm.\pwm_b' using process `\motor_pwm.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:54$10'.
+  created $adff cell `$procdff$259' with positive edge clock and positive level reset.
+Creating register for signal `\motor_pwm.\irq_fault' using process `\motor_pwm.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:54$10'.
+  created $adff cell `$procdff$264' with positive edge clock and positive level reset.
+Creating register for signal `\motor_pwm.\duty_a' using process `\motor_pwm.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:54$10'.
+  created $adff cell `$procdff$269' with positive edge clock and positive level reset.
+Creating register for signal `\motor_pwm.\duty_b' using process `\motor_pwm.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:54$10'.
+  created $adff cell `$procdff$274' with positive edge clock and positive level reset.
+Creating register for signal `\motor_pwm.\duty_c' using process `\motor_pwm.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:54$10'.
+  created $adff cell `$procdff$279' with positive edge clock and positive level reset.
+Creating register for signal `\motor_pwm.\duty_d' using process `\motor_pwm.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:54$10'.
+  created $adff cell `$procdff$284' with positive edge clock and positive level reset.
+Creating register for signal `\motor_pwm.\ctrl' using process `\motor_pwm.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:54$10'.
+  created $adff cell `$procdff$289' with positive edge clock and positive level reset.
+Creating register for signal `\motor_pwm.\status_fault' using process `\motor_pwm.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:54$10'.
+  created $adff cell `$procdff$294' with positive edge clock and positive level reset.
+Creating register for signal `\motor_pwm.\pwm_cnt' using process `\motor_pwm.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:54$10'.
+  created $adff cell `$procdff$299' with positive edge clock and positive level reset.
+
+4.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+4.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 5 empty switches in `\motor_pwm.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:54$10'.
+Removing empty process `motor_pwm.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:54$10'.
+Cleaned up 5 empty switches.
+
+4.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module motor_pwm.
+<suppressed ~26 debug messages>
+
+5. Executing OPT pass (performing simple optimizations).
+
+5.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module motor_pwm.
+
+5.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\motor_pwm'.
+Computing hashes of 84 cells of `\motor_pwm'.
+Finding duplicate cells in `\motor_pwm'.
+Computing hashes of 67 cells of `\motor_pwm'.
+Finding duplicate cells in `\motor_pwm'.
+<suppressed ~51 debug messages>
+Removed a total of 17 cells.
+
+5.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \motor_pwm..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~40 debug messages>
+
+5.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \motor_pwm.
+Performed a total of 0 changes.
+
+5.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\motor_pwm'.
+Computing hashes of 67 cells of `\motor_pwm'.
+Finding duplicate cells in `\motor_pwm'.
+Removed a total of 0 cells.
+
+5.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $procdff$284 ($adff) from module motor_pwm (D = \wb_dat_i [15:0], Q = \duty_d).
+Adding EN signal on $procdff$269 ($adff) from module motor_pwm (D = \wb_dat_i [15:0], Q = \duty_a).
+Adding EN signal on $procdff$279 ($adff) from module motor_pwm (D = \wb_dat_i [15:0], Q = \duty_c).
+Adding EN signal on $procdff$274 ($adff) from module motor_pwm (D = \wb_dat_i [15:0], Q = \duty_b).
+Adding EN signal on $procdff$244 ($adff) from module motor_pwm (D = $procmux$228_Y, Q = \wb_dat_o).
+Adding EN signal on $procdff$289 ($adff) from module motor_pwm (D = \wb_dat_i [7:0], Q = \ctrl).
+
+5.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \motor_pwm..
+Removed 20 unused cells and 85 unused wires.
+<suppressed ~22 debug messages>
+
+5.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module motor_pwm.
+
+5.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+5.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \motor_pwm..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~18 debug messages>
+
+5.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \motor_pwm.
+Performed a total of 0 changes.
+
+5.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\motor_pwm'.
+Computing hashes of 54 cells of `\motor_pwm'.
+Finding duplicate cells in `\motor_pwm'.
+Removed a total of 0 cells.
+
+5.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \motor_pwm..
+
+5.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module motor_pwm.
+
+5.16. Finished fast OPT passes. (There is nothing left to do.)
+
+6. Executing ASYNC2SYNC pass.
+Replacing motor_pwm.$auto$ff.cc:337:slice$306 ($adffe): ARST=\rst_ni, D=\wb_dat_i [15:0], Q=\duty_c
+Replacing motor_pwm.$auto$ff.cc:337:slice$309 ($adffe): ARST=\rst_ni, D=\wb_dat_i [15:0], Q=\duty_b
+Replacing motor_pwm.$procdff$264 ($adff): ARST=\rst_ni, D=$0\irq_fault[0:0], Q=\irq_fault
+Replacing motor_pwm.$procdff$259 ($adff): ARST=\rst_ni, D=$0\pwm_b[3:0], Q=\pwm_b
+Replacing motor_pwm.$auto$ff.cc:337:slice$312 ($adffe): ARST=\rst_ni, D=$procmux$228_Y, Q=\wb_dat_o
+Replacing motor_pwm.$procdff$294 ($adff): ARST=\rst_ni, D=$0\status_fault[3:0], Q=\status_fault
+Replacing motor_pwm.$procdff$299 ($adff): ARST=\rst_ni, D=$0\pwm_cnt[15:0], Q=\pwm_cnt
+Replacing motor_pwm.$procdff$249 ($adff): ARST=\rst_ni, D=$0\wb_ack_o[0:0], Q=\wb_ack_o
+Replacing motor_pwm.$auto$ff.cc:337:slice$317 ($adffe): ARST=\rst_ni, D=\wb_dat_i [7:0], Q=\ctrl
+Replacing motor_pwm.$auto$ff.cc:337:slice$303 ($adffe): ARST=\rst_ni, D=\wb_dat_i [15:0], Q=\duty_a
+Replacing motor_pwm.$procdff$254 ($adff): ARST=\rst_ni, D=\ctrl [7:4], Q=\pwm_a
+Replacing motor_pwm.$auto$ff.cc:337:slice$300 ($adffe): ARST=\rst_ni, D=\wb_dat_i [15:0], Q=\duty_d
+
+7. Executing MEMORY pass.
+
+7.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+7.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+7.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+7.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+7.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+7.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \motor_pwm..
+
+7.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+7.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+7.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \motor_pwm..
+
+7.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+7.11. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+8. Executing OPT pass (performing simple optimizations).
+
+8.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module motor_pwm.
+
+8.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\motor_pwm'.
+Computing hashes of 66 cells of `\motor_pwm'.
+Finding duplicate cells in `\motor_pwm'.
+Removed a total of 0 cells.
+
+8.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \motor_pwm..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~42 debug messages>
+
+8.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \motor_pwm.
+Performed a total of 0 changes.
+
+8.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\motor_pwm'.
+Computing hashes of 66 cells of `\motor_pwm'.
+Finding duplicate cells in `\motor_pwm'.
+Removed a total of 0 cells.
+
+8.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding SRST signal on $procdff$299 ($sdff) from module motor_pwm (D = $add$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:76$13_Y, Q = $auto$async2sync.cc:253:execute$332, rval = 16'0000000000000000).
+
+8.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \motor_pwm..
+Removed 1 unused cells and 1 unused wires.
+<suppressed ~2 debug messages>
+
+8.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module motor_pwm.
+
+8.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+8.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \motor_pwm..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~40 debug messages>
+
+8.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \motor_pwm.
+Performed a total of 0 changes.
+
+8.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\motor_pwm'.
+Computing hashes of 67 cells of `\motor_pwm'.
+Finding duplicate cells in `\motor_pwm'.
+Removed a total of 0 cells.
+
+8.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+8.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \motor_pwm..
+
+8.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module motor_pwm.
+
+8.16. Finished fast OPT passes. (There is nothing left to do.)
+
+9. Executing TECHMAP pass (map to technology primitives).
+
+9.1. Executing Verilog-2005 frontend: /home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v
+Parsing Verilog input from `/home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu_brent_kung'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `$__div_mod_u'.
+Generating RTLIL representation for module `$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Generating RTLIL representation for module `$connect'.
+Generating RTLIL representation for module `$input_port'.
+Successfully finished Verilog frontend.
+
+9.2. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $reduce_or.
+Using extmapper simplemap for cells of type $not.
+Using extmapper simplemap for cells of type $sdff.
+Using extmapper simplemap for cells of type $mux.
+Using extmapper simplemap for cells of type $reduce_and.
+Using extmapper simplemap for cells of type $sdffe.
+Running "alumacc" on wrapper $extern:wrap:$gt:Y_WIDTH=1:B_WIDTH=16:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$gt:Y_WIDTH=1:B_WIDTH=16:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$gt:Y_WIDTH=1:B_WIDTH=16:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Running "alumacc" on wrapper $extern:wrap:$ge:Y_WIDTH=1:B_WIDTH=16:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$ge:Y_WIDTH=1:B_WIDTH=16:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$ge:Y_WIDTH=1:B_WIDTH=16:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Running "alumacc" on wrapper $extern:wrap:$add:Y_WIDTH=16:B_WIDTH=16:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$add:Y_WIDTH=16:B_WIDTH=16:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$add:Y_WIDTH=16:B_WIDTH=16:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Running "alumacc" on wrapper $extern:wrap:$lt:Y_WIDTH=1:B_WIDTH=16:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$lt:Y_WIDTH=1:B_WIDTH=16:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$lt:Y_WIDTH=1:B_WIDTH=16:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Using extmapper simplemap for cells of type $logic_and.
+Using extmapper simplemap for cells of type $or.
+Using extmapper simplemap for cells of type $logic_not.
+Using extmapper simplemap for cells of type $eq.
+Using template $paramod$c96def1cdcef2eee3c62e5dfb7ba2dd09c9f74dd\_90_pmux for cells of type $pmux.
+Using template $paramod$6df0329addda9228fcc2546de2aaf14ad26c98e1\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $and.
+Using extmapper simplemap for cells of type $xor.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000010000 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000010000 for cells of type $lcu.
+Using extmapper simplemap for cells of type $pos.
+No more expansions possible.
+<suppressed ~1215 debug messages>
+
+10. Executing OPT pass (performing simple optimizations).
+
+10.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module motor_pwm.
+<suppressed ~1342 debug messages>
+
+10.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\motor_pwm'.
+Computing hashes of 1633 cells of `\motor_pwm'.
+Finding duplicate cells in `\motor_pwm'.
+Computing hashes of 1566 cells of `\motor_pwm'.
+Finding duplicate cells in `\motor_pwm'.
+Computing hashes of 1535 cells of `\motor_pwm'.
+Finding duplicate cells in `\motor_pwm'.
+Computing hashes of 1530 cells of `\motor_pwm'.
+Finding duplicate cells in `\motor_pwm'.
+<suppressed ~309 debug messages>
+Removed a total of 103 cells.
+
+10.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \motor_pwm..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+10.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \motor_pwm.
+Performed a total of 0 changes.
+
+10.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\motor_pwm'.
+Computing hashes of 1530 cells of `\motor_pwm'.
+Finding duplicate cells in `\motor_pwm'.
+Removed a total of 0 cells.
+
+10.6. Executing OPT_DFF pass (perform DFF optimizations).
+Setting constant 0-bit at position 0 on $auto$ff.cc:337:slice$622 ($_SDFFE_PN0P_) from module motor_pwm.
+
+10.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \motor_pwm..
+Removed 344 unused cells and 923 unused wires.
+<suppressed ~345 debug messages>
+
+10.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module motor_pwm.
+<suppressed ~1 debug messages>
+
+10.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+10.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \motor_pwm..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+10.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \motor_pwm.
+Performed a total of 0 changes.
+
+10.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\motor_pwm'.
+Computing hashes of 1184 cells of `\motor_pwm'.
+Finding duplicate cells in `\motor_pwm'.
+Removed a total of 0 cells.
+
+10.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+10.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \motor_pwm..
+
+10.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module motor_pwm.
+
+10.16. Finished fast OPT passes. (There is nothing left to do.)
+
+11. Executing FLATTEN pass (flatten design).
+
+12. Executing OPT pass (performing simple optimizations).
+
+12.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module motor_pwm.
+
+12.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\motor_pwm'.
+Computing hashes of 1184 cells of `\motor_pwm'.
+Finding duplicate cells in `\motor_pwm'.
+Removed a total of 0 cells.
+
+12.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \motor_pwm..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+12.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \motor_pwm.
+Performed a total of 0 changes.
+
+12.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\motor_pwm'.
+Computing hashes of 1184 cells of `\motor_pwm'.
+Finding duplicate cells in `\motor_pwm'.
+Removed a total of 0 cells.
+
+12.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+12.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \motor_pwm..
+
+12.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module motor_pwm.
+
+12.9. Finished fast OPT passes. (There is nothing left to do.)
+
+13. Executing Liberty frontend: /home/smdadmin/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130B/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+Imported 428 cell types from liberty file.
+
+14. Executing Verilog-2005 frontend: /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/synth/motor_pwm_netlist.v
+Parsing Verilog input from `/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/synth/motor_pwm_netlist.v' to AST representation.
+Generating RTLIL representation for module `\motor_pwm'.
+Successfully finished Verilog frontend.
+
+15. Executing HIERARCHY pass (managing design hierarchy).
+
+15.1. Analyzing design hierarchy..
+Top module:  \motor_pwm
+
+15.2. Analyzing design hierarchy..
+Top module:  \motor_pwm
+Removed 0 unused modules.
+
+16. Executing PROC pass (convert processes to netlists).
+
+16.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+16.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed a total of 0 dead cases.
+
+16.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 0 assignments to connections.
+
+16.4. Executing PROC_INIT pass (extract init attributes).
+
+16.5. Executing PROC_ARST pass (detect async resets in processes).
+
+16.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+
+16.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+
+16.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+16.9. Executing PROC_DFF pass (convert process syncs to FFs).
+
+16.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+16.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+16.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module motor_pwm.
+
+17. Executing OPT pass (performing simple optimizations).
+
+17.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module motor_pwm.
+
+17.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\motor_pwm'.
+Computing hashes of 460 cells of `\motor_pwm'.
+Finding duplicate cells in `\motor_pwm'.
+Removed a total of 0 cells.
+
+17.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \motor_pwm..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+17.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \motor_pwm.
+Performed a total of 0 changes.
+
+17.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\motor_pwm'.
+Computing hashes of 460 cells of `\motor_pwm'.
+Finding duplicate cells in `\motor_pwm'.
+Removed a total of 0 cells.
+
+17.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+17.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \motor_pwm..
+Removed 0 unused cells and 586 unused wires.
+<suppressed ~1 debug messages>
+
+17.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module motor_pwm.
+
+17.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+17.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \motor_pwm..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+17.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \motor_pwm.
+Performed a total of 0 changes.
+
+17.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\motor_pwm'.
+Computing hashes of 460 cells of `\motor_pwm'.
+Finding duplicate cells in `\motor_pwm'.
+Removed a total of 0 cells.
+
+17.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+17.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \motor_pwm..
+
+17.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module motor_pwm.
+
+17.16. Finished fast OPT passes. (There is nothing left to do.)
+
+18. Executing ASYNC2SYNC pass.
+
+19. Executing MEMORY pass.
+
+19.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+19.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+19.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+19.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+19.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+19.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \motor_pwm..
+
+19.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+19.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+19.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \motor_pwm..
+
+19.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+19.11. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+20. Executing OPT pass (performing simple optimizations).
+
+20.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module motor_pwm.
+
+20.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\motor_pwm'.
+Computing hashes of 460 cells of `\motor_pwm'.
+Finding duplicate cells in `\motor_pwm'.
+Removed a total of 0 cells.
+
+20.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \motor_pwm..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+20.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \motor_pwm.
+Performed a total of 0 changes.
+
+20.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\motor_pwm'.
+Computing hashes of 460 cells of `\motor_pwm'.
+Finding duplicate cells in `\motor_pwm'.
+Removed a total of 0 cells.
+
+20.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+20.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \motor_pwm..
+
+20.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module motor_pwm.
+
+20.9. Finished fast OPT passes. (There is nothing left to do.)
+
+21. Executing TECHMAP pass (map to technology primitives).
+
+21.1. Executing Verilog-2005 frontend: /home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v
+Parsing Verilog input from `/home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu_brent_kung'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `$__div_mod_u'.
+Generating RTLIL representation for module `$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Generating RTLIL representation for module `$connect'.
+Generating RTLIL representation for module `$input_port'.
+Successfully finished Verilog frontend.
+
+21.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~77 debug messages>
+
+22. Executing OPT pass (performing simple optimizations).
+
+22.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module motor_pwm.
+
+22.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\motor_pwm'.
+Computing hashes of 460 cells of `\motor_pwm'.
+Finding duplicate cells in `\motor_pwm'.
+Removed a total of 0 cells.
+
+22.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \motor_pwm..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+22.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \motor_pwm.
+Performed a total of 0 changes.
+
+22.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\motor_pwm'.
+Computing hashes of 460 cells of `\motor_pwm'.
+Finding duplicate cells in `\motor_pwm'.
+Removed a total of 0 cells.
+
+22.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+22.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \motor_pwm..
+
+22.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module motor_pwm.
+
+22.9. Finished fast OPT passes. (There is nothing left to do.)
+
+23. Executing FLATTEN pass (flatten design).
+
+24. Executing OPT pass (performing simple optimizations).
+
+24.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module motor_pwm.
+
+24.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\motor_pwm'.
+Computing hashes of 460 cells of `\motor_pwm'.
+Finding duplicate cells in `\motor_pwm'.
+Removed a total of 0 cells.
+
+24.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \motor_pwm..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+24.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \motor_pwm.
+Performed a total of 0 changes.
+
+24.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\motor_pwm'.
+Computing hashes of 460 cells of `\motor_pwm'.
+Finding duplicate cells in `\motor_pwm'.
+Removed a total of 0 cells.
+
+24.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+24.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \motor_pwm..
+
+24.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module motor_pwm.
+
+24.9. Finished fast OPT passes. (There is nothing left to do.)
+
+25. Executing EQUIV_MAKE pass (creating equiv checking module).
+Presumably equivalent wires: pwm_cnt_gold (\pwm_cnt_gold), pwm_cnt_gate ({ 5'00000 \_0894__gate \_0903__gate \_0902__gate \_0901__gate \_0900__gate \_0899__gate \_0898__gate \_0897__gate \_0896__gate \_0895__gate \_0893__gate }) -> pwm_cnt
+Presumably equivalent wires: status_fault_gold (\status_fault_gold), status_fault_gate ({ \_0907__gate \_0906__gate \_0905__gate \_0904__gate }) -> status_fault
+Presumably equivalent wires: ctrl_gold (\ctrl_gold), ctrl_gate ({ \_0586__gate \_0585__gate \_0584__gate \_0583__gate \_0582__gate \_0581__gate \_0580__gate \_0579__gate }) -> ctrl
+Presumably equivalent wires: duty_d_gold (\duty_d_gold), duty_d_gate ({ \_0641__gate \_0640__gate \_0639__gate \_0638__gate \_0637__gate \_0636__gate \_0650__gate \_0649__gate \_0648__gate \_0647__gate \_0646__gate \_0645__gate \_0644__gate \_0643__gate \_0642__gate \_0635__gate }) -> duty_d
+Presumably equivalent wires: duty_c_gold (\duty_c_gold), duty_c_gate ({ \_0625__gate \_0624__gate \_0623__gate \_0622__gate \_0621__gate \_0620__gate \_0634__gate \_0633__gate \_0632__gate \_0631__gate \_0630__gate \_0629__gate \_0628__gate \_0627__gate \_0626__gate \_0619__gate }) -> duty_c
+Presumably equivalent wires: duty_b_gold (\duty_b_gold), duty_b_gate ({ \_0609__gate \_0608__gate \_0607__gate \_0606__gate \_0605__gate \_0604__gate \_0618__gate \_0617__gate \_0616__gate \_0615__gate \_0614__gate \_0613__gate \_0612__gate \_0611__gate \_0610__gate \_0603__gate }) -> duty_b
+Presumably equivalent wires: duty_a_gold (\duty_a_gold), duty_a_gate ({ \_0593__gate \_0592__gate \_0591__gate \_0590__gate \_0589__gate \_0588__gate \_0602__gate \_0601__gate \_0600__gate \_0599__gate \_0598__gate \_0597__gate \_0596__gate \_0595__gate \_0594__gate \_0587__gate }) -> duty_a
+Presumably equivalent wires: irq_fault_gold (\irq_fault_gold), irq_fault_gate (\irq_fault_gate) -> irq_fault
+Presumably equivalent wires: fault_i_gold (\fault_i_gold), fault_i_gate (\fault_i_gate) -> fault_i
+Presumably equivalent wires: pwm_b_gold (\pwm_b_gold), pwm_b_gate (\pwm_b_gate) -> pwm_b
+Presumably equivalent wires: pwm_a_gold (\pwm_a_gold), pwm_a_gate (\pwm_a_gate) -> pwm_a
+Presumably equivalent wires: wb_ack_o_gold (\wb_ack_o_gold), wb_ack_o_gate (\wb_ack_o_gate) -> wb_ack_o
+Presumably equivalent wires: wb_cyc_i_gold (\wb_cyc_i_gold), wb_cyc_i_gate (\wb_cyc_i_gate) -> wb_cyc_i
+Presumably equivalent wires: wb_stb_i_gold (\wb_stb_i_gold), wb_stb_i_gate (\wb_stb_i_gate) -> wb_stb_i
+Presumably equivalent wires: wb_we_i_gold (\wb_we_i_gold), wb_we_i_gate (\wb_we_i_gate) -> wb_we_i
+Presumably equivalent wires: wb_sel_i_gold (\wb_sel_i_gold), wb_sel_i_gate (\wb_sel_i_gate) -> wb_sel_i
+Presumably equivalent wires: wb_dat_o_gold ({ 16'0000000000000000 \wb_dat_o_gold [15:0] }), wb_dat_o_gate ({ 16'0000000000000000 \_0935__gate \_0934__gate \_0933__gate \_0932__gate \_0931__gate \_0930__gate \_0944__gate \_0943__gate \_0942__gate \_0941__gate \_0940__gate \_0939__gate \_0938__gate \_0937__gate \_0936__gate \_0929__gate }) -> wb_dat_o
+Presumably equivalent wires: wb_dat_i_gold (\wb_dat_i_gold), wb_dat_i_gate (\wb_dat_i_gate) -> wb_dat_i
+Presumably equivalent wires: wb_adr_i_gold (\wb_adr_i_gold), wb_adr_i_gate (\wb_adr_i_gate) -> wb_adr_i
+Presumably equivalent wires: rst_ni_gold (\rst_ni_gold), rst_ni_gate (\rst_ni_gate) -> rst_ni
+Presumably equivalent wires: clk_i_gold (\clk_i_gold), clk_i_gate (\clk_i_gate) -> clk_i
+Changing input Q of cell _1480__gate (sky130_fd_sc_hd__dfrtp_1): \irq_fault_gate -> \irq_fault
+Changing input Q of cell _1479__gate (sky130_fd_sc_hd__dfrtp_1): \pwm_b_gate [3] -> \pwm_b [3]
+Changing input Q of cell _1478__gate (sky130_fd_sc_hd__dfrtp_1): \pwm_b_gate [2] -> \pwm_b [2]
+Changing input Q of cell _1477__gate (sky130_fd_sc_hd__dfrtp_1): \pwm_b_gate [1] -> \pwm_b [1]
+Changing input Q of cell _1476__gate (sky130_fd_sc_hd__dfrtp_1): \pwm_b_gate [0] -> \pwm_b [0]
+Changing input Q of cell _1475__gate (sky130_fd_sc_hd__dfrtp_1): \pwm_a_gate [3] -> \pwm_a [3]
+Changing input Q of cell _1474__gate (sky130_fd_sc_hd__dfrtp_1): \pwm_a_gate [2] -> \pwm_a [2]
+Changing input Q of cell _1473__gate (sky130_fd_sc_hd__dfrtp_1): \pwm_a_gate [1] -> \pwm_a [1]
+Changing input Q of cell _1472__gate (sky130_fd_sc_hd__dfrtp_1): \pwm_a_gate [0] -> \pwm_a [0]
+Changing input Q of cell _1471__gate (sky130_fd_sc_hd__dfrtp_1): \wb_ack_o_gate -> \wb_ack_o
+Changing input Q of cell _1398__gate (sky130_fd_sc_hd__dfrtp_1): \_0935__gate -> \wb_dat_o [15]
+Changing input Q of cell _1397__gate (sky130_fd_sc_hd__dfrtp_1): \_0934__gate -> \wb_dat_o [14]
+Changing input Q of cell _1396__gate (sky130_fd_sc_hd__dfrtp_1): \_0933__gate -> \wb_dat_o [13]
+Changing input Q of cell _1395__gate (sky130_fd_sc_hd__dfrtp_1): \_0932__gate -> \wb_dat_o [12]
+Changing input Q of cell _1394__gate (sky130_fd_sc_hd__dfrtp_1): \_0931__gate -> \wb_dat_o [11]
+Changing input Q of cell _1393__gate (sky130_fd_sc_hd__dfrtp_1): \_0930__gate -> \wb_dat_o [10]
+Changing input Q of cell _1392__gate (sky130_fd_sc_hd__dfrtp_1): \_0944__gate -> \wb_dat_o [9]
+Changing input Q of cell _1391__gate (sky130_fd_sc_hd__dfrtp_1): \_0943__gate -> \wb_dat_o [8]
+Changing input Q of cell _1390__gate (sky130_fd_sc_hd__dfrtp_1): \_0942__gate -> \wb_dat_o [7]
+Changing input Q of cell _1389__gate (sky130_fd_sc_hd__dfrtp_1): \_0941__gate -> \wb_dat_o [6]
+Changing input Q of cell _1388__gate (sky130_fd_sc_hd__dfrtp_1): \_0940__gate -> \wb_dat_o [5]
+Changing input Q of cell _1387__gate (sky130_fd_sc_hd__dfrtp_1): \_0939__gate -> \wb_dat_o [4]
+Changing input Q of cell _1386__gate (sky130_fd_sc_hd__dfrtp_1): \_0938__gate -> \wb_dat_o [3]
+Changing input Q of cell _1385__gate (sky130_fd_sc_hd__dfrtp_1): \_0937__gate -> \wb_dat_o [2]
+Changing input Q of cell _1384__gate (sky130_fd_sc_hd__dfrtp_1): \_0936__gate -> \wb_dat_o [1]
+Changing input Q of cell _1383__gate (sky130_fd_sc_hd__dfrtp_1): \_0929__gate -> \wb_dat_o [0]
+Changing input A of cell _1379__gate (sky130_fd_sc_hd__nor2_1): \_0935__gate -> \wb_dat_o [15]
+Changing input A of cell _1312__gate (sky130_fd_sc_hd__nor2_1): \_0929__gate -> \wb_dat_o [0]
+Changing input A of cell _1307__gate (sky130_fd_sc_hd__nor2_1): \_0936__gate -> \wb_dat_o [1]
+Changing input A of cell _1302__gate (sky130_fd_sc_hd__nor2_1): \_0937__gate -> \wb_dat_o [2]
+Changing input A of cell _1296__gate (sky130_fd_sc_hd__nor2_1): \_0938__gate -> \wb_dat_o [3]
+Changing input A1 of cell _1295__gate (sky130_fd_sc_hd__a21o_1): \_0939__gate -> \wb_dat_o [4]
+Changing input A of cell _1288__gate (sky130_fd_sc_hd__nor2_1): \_0940__gate -> \wb_dat_o [5]
+Changing input A1 of cell _1286__gate (sky130_fd_sc_hd__a21o_1): \_0941__gate -> \wb_dat_o [6]
+Changing input A of cell _1279__gate (sky130_fd_sc_hd__nor2_1): \_0942__gate -> \wb_dat_o [7]
+Changing input A of cell _1275__gate (sky130_fd_sc_hd__nor2_1): \_0943__gate -> \wb_dat_o [8]
+Changing input A of cell _1271__gate (sky130_fd_sc_hd__nor2_1): \_0944__gate -> \wb_dat_o [9]
+Changing input A of cell _1267__gate (sky130_fd_sc_hd__nor2_1): \_0930__gate -> \wb_dat_o [10]
+Changing input A of cell _1261__gate (sky130_fd_sc_hd__nor2_1): \_0931__gate -> \wb_dat_o [11]
+Changing input A of cell _1259__gate (sky130_fd_sc_hd__nor2_1): \_0932__gate -> \wb_dat_o [12]
+Changing input A of cell _1255__gate (sky130_fd_sc_hd__nor2_1): \_0933__gate -> \wb_dat_o [13]
+Changing input A of cell _1249__gate (sky130_fd_sc_hd__nor2_1): \_0934__gate -> \wb_dat_o [14]
+Changing input A of cell _1049__gate (sky130_fd_sc_hd__or3_1): \wb_ack_o_gate -> \wb_ack_o
+Changing input A of cell _1048__gate (sky130_fd_sc_hd__nor3_1): \wb_ack_o_gate -> \wb_ack_o
+Changing input A of cell _1045__gate (sky130_fd_sc_hd__nor2_1): \wb_ack_o_gate -> \wb_ack_o
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2652_gold ($_XOR_): \pwm_cnt_gold [14] -> \pwm_cnt [14]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2359_gold ($_XOR_): \pwm_cnt_gold [11] -> \pwm_cnt [11]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$3422_gold ($_OR_): \duty_b_gold [13] -> \duty_b [13]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$3703_gold ($_NOT_): \pwm_cnt_gold [12] -> \pwm_cnt [12]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2343_gold ($_AND_): \pwm_cnt_gold [11] -> \pwm_cnt [11]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2344_gold ($_AND_): \pwm_cnt_gold [12] -> \pwm_cnt [12]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2361_gold ($_XOR_): \pwm_cnt_gold [13] -> \pwm_cnt [13]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$3621_gold ($_NOT_): \duty_b_gold [2] -> \duty_b [2]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2488_gold ($_AND_): \pwm_cnt_gold [11] -> \pwm_cnt [11]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1847_gold ($_XOR_): \pwm_cnt_gold [2] -> \pwm_cnt [2]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2347_gold ($_AND_): \pwm_cnt_gold [15] -> \pwm_cnt [15]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$3567_gold ($_OR_): \duty_a_gold [13] -> \duty_a [13]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$3665_gold ($_NOT_): \duty_d_gold [4] -> \duty_d [4]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2195_gold ($_AND_): \pwm_cnt_gold [8] -> \pwm_cnt [8]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2189_gold ($_AND_): \pwm_cnt_gold [2] -> \pwm_cnt [2]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2187_gold ($_AND_): \pwm_cnt_gold [0] -> \pwm_cnt [0]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2201_gold ($_AND_): \pwm_cnt_gold [14] -> \pwm_cnt [14]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2207_gold ($_XOR_): \pwm_cnt_gold [4] -> \pwm_cnt [4]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1848_gold ($_XOR_): \pwm_cnt_gold [3] -> \pwm_cnt [3]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2632_gold ($_AND_): \pwm_cnt_gold [10] -> \pwm_cnt [10]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$3419_gold ($_OR_): \duty_b_gold [15] -> \duty_b [15]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2499_gold ($_XOR_): \pwm_cnt_gold [6] -> \pwm_cnt [6]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$3427_gold ($_AND_): \duty_b_gold [9] -> \duty_b [9]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$3635_gold ($_NOT_): \duty_b_gold [14] -> \duty_b [14]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2192_gold ($_AND_): \pwm_cnt_gold [5] -> \pwm_cnt [5]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$3435_gold ($_AND_): \duty_b_gold [4] -> \duty_b [4]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$3663_gold ($_NOT_): \duty_d_gold [5] -> \duty_d [5]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$1846_gold ($_XOR_): \pwm_cnt_gold [0] -> \pwm_cnt [0]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1846_gold ($_XOR_): \pwm_cnt_gold [1] -> \pwm_cnt [1]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$3603_gold ($_NOT_): \duty_a_gold [11] -> \duty_a [11]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2202_gold ($_AND_): \pwm_cnt_gold [15] -> \pwm_cnt [15]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2481_gold ($_AND_): \pwm_cnt_gold [4] -> \pwm_cnt [4]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$3627_gold ($_NOT_): \duty_b_gold [11] -> \duty_b [11]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2859_gold ($_AND_): \pwm_cnt_gold [6] -> \pwm_cnt [6]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2492_gold ($_AND_): \pwm_cnt_gold [15] -> \pwm_cnt [15]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2478_gold ($_AND_): \pwm_cnt_gold [1] -> \pwm_cnt [1]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$3675_gold ($_NOT_): \duty_d_gold [11] -> \duty_d [11]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$3671_gold ($_NOT_): \duty_d_gold [6] -> \duty_d [6]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2334_gold ($_AND_): \pwm_cnt_gold [2] -> \pwm_cnt [2]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2194_gold ($_AND_): \pwm_cnt_gold [7] -> \pwm_cnt [7]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$3438_gold ($_AND_): \duty_b_gold [2] -> \duty_b [2]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2337_gold ($_AND_): \pwm_cnt_gold [5] -> \pwm_cnt [5]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$3147_gold ($_OR_): \duty_d_gold [3] -> \duty_d [3]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$3597_gold ($_NOT_): \duty_a_gold [2] -> \duty_a [2]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$3577_gold ($_AND_): \duty_a_gold [6] -> \duty_a [6]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$3577_gold ($_AND_): \duty_a_gold [7] -> \duty_a [7]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$3707_gold ($_NOT_): \pwm_cnt_gold [14] -> \pwm_cnt [14]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$3432_gold ($_AND_): \duty_b_gold [6] -> \duty_b [6]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$3432_gold ($_AND_): \duty_b_gold [7] -> \duty_b [7]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$3284_gold ($_AND_): \duty_c_gold [8] -> \duty_c [8]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$3284_gold ($_AND_): \duty_c_gold [9] -> \duty_c [9]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2345_gold ($_AND_): \pwm_cnt_gold [13] -> \pwm_cnt [13]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2637_gold ($_AND_): \pwm_cnt_gold [15] -> \pwm_cnt [15]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2484_gold ($_AND_): \pwm_cnt_gold [7] -> \pwm_cnt [7]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2504_gold ($_XOR_): \pwm_cnt_gold [11] -> \pwm_cnt [11]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2490_gold ($_AND_): \pwm_cnt_gold [13] -> \pwm_cnt [13]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2480_gold ($_AND_): \pwm_cnt_gold [3] -> \pwm_cnt [3]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1850_gold ($_XOR_): \pwm_cnt_gold [5] -> \pwm_cnt [5]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2212_gold ($_XOR_): \pwm_cnt_gold [9] -> \pwm_cnt [9]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$3572_gold ($_AND_): \duty_a_gold [9] -> \duty_a [9]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$3601_gold ($_NOT_): \duty_a_gold [8] -> \duty_a [8]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$3613_gold ($_NOT_): \duty_b_gold [1] -> \duty_b [1]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$3589_gold ($_NOT_): \duty_a_gold [1] -> \duty_a [1]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$3649_gold ($_NOT_): \duty_c_gold [8] -> \duty_c [8]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1494_gold ($_AND_): \status_fault_gold [3] -> \status_fault [3]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1493_gold ($_AND_): \status_fault_gold [2] -> \status_fault [2]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1492_gold ($_AND_): \status_fault_gold [1] -> \status_fault [1]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1491_gold ($_AND_): \status_fault_gold [0] -> \status_fault [0]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$3295_gold ($_OR_): \duty_c_gold [1] -> \duty_c [1]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2626_gold ($_AND_): \pwm_cnt_gold [4] -> \pwm_cnt [4]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$2841_gold ($_AND_): \pwm_cnt_gold [12] -> \pwm_cnt [12]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2841_gold ($_AND_): \pwm_cnt_gold [13] -> \pwm_cnt [13]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$3677_gold ($_NOT_): \duty_d_gold [13] -> \duty_d [13]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$3679_gold ($_NOT_): \duty_d_gold [12] -> \duty_d [12]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$3430_gold ($_AND_): \duty_b_gold [7] -> \duty_b [7]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2206_gold ($_XOR_): \pwm_cnt_gold [3] -> \pwm_cnt [3]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$3142_gold ($_AND_): \duty_d_gold [6] -> \duty_d [6]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$3142_gold ($_AND_): \duty_d_gold [7] -> \duty_d [7]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$3130_gold ($_AND_): \duty_d_gold [14] -> \duty_d [14]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2823_gold ($_AND_): \pwm_cnt_gold [14] -> \pwm_cnt [14]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1849_gold ($_XOR_): \pwm_cnt_gold [4] -> \pwm_cnt [4]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$3645_gold ($_NOT_): \duty_c_gold [2] -> \duty_c [2]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$3653_gold ($_NOT_): \duty_c_gold [13] -> \duty_c [13]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2211_gold ($_XOR_): \pwm_cnt_gold [8] -> \pwm_cnt [8]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2358_gold ($_XOR_): \pwm_cnt_gold [10] -> \pwm_cnt [10]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$3582_gold ($_OR_): \duty_a_gold [3] -> \duty_a [3]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1466_gold ($_AND_): \ctrl_gold [7] -> \ctrl [7]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1465_gold ($_AND_): \ctrl_gold [6] -> \ctrl [6]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1464_gold ($_AND_): \ctrl_gold [5] -> \ctrl [5]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1463_gold ($_AND_): \ctrl_gold [4] -> \ctrl [4]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1462_gold ($_AND_): \ctrl_gold [3] -> \ctrl [3]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1461_gold ($_AND_): \ctrl_gold [2] -> \ctrl [2]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1460_gold ($_AND_): \ctrl_gold [1] -> \ctrl [1]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1459_gold ($_AND_): \ctrl_gold [0] -> \ctrl [0]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2348_gold ($_XOR_): \pwm_cnt_gold [0] -> \pwm_cnt [0]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2355_gold ($_XOR_): \pwm_cnt_gold [7] -> \pwm_cnt [7]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2332_gold ($_AND_): \pwm_cnt_gold [0] -> \pwm_cnt [0]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$3287_gold ($_AND_): \duty_c_gold [6] -> \duty_c [6]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$3287_gold ($_AND_): \duty_c_gold [7] -> \duty_c [7]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$3275_gold ($_AND_): \duty_c_gold [14] -> \duty_c [14]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2352_gold ($_XOR_): \pwm_cnt_gold [4] -> \pwm_cnt [4]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2650_gold ($_XOR_): \pwm_cnt_gold [12] -> \pwm_cnt [12]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$3134_gold ($_AND_): \duty_d_gold [10] -> \duty_d [10]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1442_gold ($_AND_): \duty_d_gold [15] -> \duty_d [15]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1441_gold ($_AND_): \duty_d_gold [14] -> \duty_d [14]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1440_gold ($_AND_): \duty_d_gold [13] -> \duty_d [13]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1439_gold ($_AND_): \duty_d_gold [12] -> \duty_d [12]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1438_gold ($_AND_): \duty_d_gold [11] -> \duty_d [11]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1437_gold ($_AND_): \duty_d_gold [10] -> \duty_d [10]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1436_gold ($_AND_): \duty_d_gold [9] -> \duty_d [9]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1435_gold ($_AND_): \duty_d_gold [8] -> \duty_d [8]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1434_gold ($_AND_): \duty_d_gold [7] -> \duty_d [7]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1433_gold ($_AND_): \duty_d_gold [6] -> \duty_d [6]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1432_gold ($_AND_): \duty_d_gold [5] -> \duty_d [5]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1431_gold ($_AND_): \duty_d_gold [4] -> \duty_d [4]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1430_gold ($_AND_): \duty_d_gold [3] -> \duty_d [3]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1429_gold ($_AND_): \duty_d_gold [2] -> \duty_d [2]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1428_gold ($_AND_): \duty_d_gold [1] -> \duty_d [1]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1427_gold ($_AND_): \duty_d_gold [0] -> \duty_d [0]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$3555_gold ($_OR_): \duty_a_gold [11] -> \duty_a [11]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$3693_gold ($_NOT_): \pwm_cnt_gold [2] -> \pwm_cnt [2]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2635_gold ($_AND_): \pwm_cnt_gold [13] -> \pwm_cnt [13]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$3274_gold ($_OR_): \duty_c_gold [15] -> \duty_c [15]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$2844_gold ($_AND_): \pwm_cnt_gold [10] -> \pwm_cnt [10]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2844_gold ($_AND_): \pwm_cnt_gold [11] -> \pwm_cnt [11]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$3719_gold ($_NOT_): \pwm_cnt_gold [0] -> \pwm_cnt [0]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2356_gold ($_XOR_): \pwm_cnt_gold [8] -> \pwm_cnt [8]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2193_gold ($_AND_): \pwm_cnt_gold [6] -> \pwm_cnt [6]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$3145_gold ($_AND_): \duty_d_gold [4] -> \duty_d [4]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$3133_gold ($_AND_): \duty_d_gold [12] -> \duty_d [12]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1410_gold ($_AND_): \duty_c_gold [15] -> \duty_c [15]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1409_gold ($_AND_): \duty_c_gold [14] -> \duty_c [14]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1408_gold ($_AND_): \duty_c_gold [13] -> \duty_c [13]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1407_gold ($_AND_): \duty_c_gold [12] -> \duty_c [12]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1406_gold ($_AND_): \duty_c_gold [11] -> \duty_c [11]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1405_gold ($_AND_): \duty_c_gold [10] -> \duty_c [10]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1404_gold ($_AND_): \duty_c_gold [9] -> \duty_c [9]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1403_gold ($_AND_): \duty_c_gold [8] -> \duty_c [8]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1402_gold ($_AND_): \duty_c_gold [7] -> \duty_c [7]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1401_gold ($_AND_): \duty_c_gold [6] -> \duty_c [6]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1400_gold ($_AND_): \duty_c_gold [5] -> \duty_c [5]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1399_gold ($_AND_): \duty_c_gold [4] -> \duty_c [4]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1398_gold ($_AND_): \duty_c_gold [3] -> \duty_c [3]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1397_gold ($_AND_): \duty_c_gold [2] -> \duty_c [2]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1396_gold ($_AND_): \duty_c_gold [1] -> \duty_c [1]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1395_gold ($_AND_): \duty_c_gold [0] -> \duty_c [0]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2338_gold ($_AND_): \pwm_cnt_gold [6] -> \pwm_cnt [6]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$3605_gold ($_NOT_): \duty_a_gold [13] -> \duty_a [13]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$3292_gold ($_OR_): \duty_c_gold [3] -> \duty_c [3]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1852_gold ($_XOR_): \pwm_cnt_gold [7] -> \pwm_cnt [7]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2340_gold ($_AND_): \pwm_cnt_gold [8] -> \pwm_cnt [8]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2624_gold ($_AND_): \pwm_cnt_gold [2] -> \pwm_cnt [2]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$3139_gold ($_AND_): \duty_d_gold [8] -> \duty_d [8]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$3139_gold ($_AND_): \duty_d_gold [9] -> \duty_d [9]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1378_gold ($_AND_): \duty_b_gold [15] -> \duty_b [15]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1377_gold ($_AND_): \duty_b_gold [14] -> \duty_b [14]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1376_gold ($_AND_): \duty_b_gold [13] -> \duty_b [13]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1375_gold ($_AND_): \duty_b_gold [12] -> \duty_b [12]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1374_gold ($_AND_): \duty_b_gold [11] -> \duty_b [11]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1373_gold ($_AND_): \duty_b_gold [10] -> \duty_b [10]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1372_gold ($_AND_): \duty_b_gold [9] -> \duty_b [9]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1371_gold ($_AND_): \duty_b_gold [8] -> \duty_b [8]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1370_gold ($_AND_): \duty_b_gold [7] -> \duty_b [7]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1369_gold ($_AND_): \duty_b_gold [6] -> \duty_b [6]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1368_gold ($_AND_): \duty_b_gold [5] -> \duty_b [5]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1367_gold ($_AND_): \duty_b_gold [4] -> \duty_b [4]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1366_gold ($_AND_): \duty_b_gold [3] -> \duty_b [3]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1365_gold ($_AND_): \duty_b_gold [2] -> \duty_b [2]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1364_gold ($_AND_): \duty_b_gold [1] -> \duty_b [1]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1363_gold ($_AND_): \duty_b_gold [0] -> \duty_b [0]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2487_gold ($_AND_): \pwm_cnt_gold [10] -> \pwm_cnt [10]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2336_gold ($_AND_): \pwm_cnt_gold [4] -> \pwm_cnt [4]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$3279_gold ($_AND_): \duty_c_gold [10] -> \duty_c [10]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$3689_gold ($_NOT_): \pwm_cnt_gold [4] -> \pwm_cnt [4]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2342_gold ($_AND_): \pwm_cnt_gold [10] -> \pwm_cnt [10]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$3429_gold ($_AND_): \duty_b_gold [8] -> \duty_b [8]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$3429_gold ($_AND_): \duty_b_gold [9] -> \duty_b [9]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$3150_gold ($_OR_): \duty_d_gold [1] -> \duty_d [1]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$3667_gold ($_NOT_): \duty_d_gold [3] -> \duty_d [3]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1346_gold ($_AND_): \duty_a_gold [15] -> \duty_a [15]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1345_gold ($_AND_): \duty_a_gold [14] -> \duty_a [14]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1344_gold ($_AND_): \duty_a_gold [13] -> \duty_a [13]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1343_gold ($_AND_): \duty_a_gold [12] -> \duty_a [12]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1342_gold ($_AND_): \duty_a_gold [11] -> \duty_a [11]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1341_gold ($_AND_): \duty_a_gold [10] -> \duty_a [10]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1340_gold ($_AND_): \duty_a_gold [9] -> \duty_a [9]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1339_gold ($_AND_): \duty_a_gold [8] -> \duty_a [8]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1338_gold ($_AND_): \duty_a_gold [7] -> \duty_a [7]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1337_gold ($_AND_): \duty_a_gold [6] -> \duty_a [6]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1336_gold ($_AND_): \duty_a_gold [5] -> \duty_a [5]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1335_gold ($_AND_): \duty_a_gold [4] -> \duty_a [4]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1334_gold ($_AND_): \duty_a_gold [3] -> \duty_a [3]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1333_gold ($_AND_): \duty_a_gold [2] -> \duty_a [2]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1332_gold ($_AND_): \duty_a_gold [1] -> \duty_a [1]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1331_gold ($_AND_): \duty_a_gold [0] -> \duty_a [0]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$3647_gold ($_NOT_): \duty_c_gold [6] -> \duty_c [6]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$3619_gold ($_NOT_): \duty_b_gold [3] -> \duty_b [3]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$3699_gold ($_NOT_): \pwm_cnt_gold [11] -> \pwm_cnt [11]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2629_gold ($_AND_): \pwm_cnt_gold [7] -> \pwm_cnt [7]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$3580_gold ($_AND_): \duty_a_gold [4] -> \duty_a [4]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$3574_gold ($_AND_): \duty_a_gold [8] -> \duty_a [8]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$3574_gold ($_AND_): \duty_a_gold [9] -> \duty_a [9]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$3564_gold ($_OR_): \duty_a_gold [15] -> \duty_a [15]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$3641_gold ($_NOT_): \duty_c_gold [4] -> \duty_c [4]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2341_gold ($_AND_): \pwm_cnt_gold [9] -> \pwm_cnt [9]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2811_gold ($_AND_): \pwm_cnt_gold [12] -> \pwm_cnt [12]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$3583_gold ($_AND_): \duty_a_gold [2] -> \duty_a [2]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2213_gold ($_XOR_): \pwm_cnt_gold [10] -> \pwm_cnt [10]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2214_gold ($_XOR_): \pwm_cnt_gold [11] -> \pwm_cnt [11]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2215_gold ($_XOR_): \pwm_cnt_gold [12] -> \pwm_cnt [12]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2216_gold ($_XOR_): \pwm_cnt_gold [13] -> \pwm_cnt [13]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2217_gold ($_XOR_): \pwm_cnt_gold [14] -> \pwm_cnt [14]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1851_gold ($_XOR_): \pwm_cnt_gold [6] -> \pwm_cnt [6]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$3120_gold ($_OR_): \duty_d_gold [11] -> \duty_d [11]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$3132_gold ($_OR_): \duty_d_gold [13] -> \duty_d [13]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$3129_gold ($_OR_): \duty_d_gold [15] -> \duty_d [15]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$3140_gold ($_AND_): \duty_d_gold [7] -> \duty_d [7]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$3137_gold ($_AND_): \duty_d_gold [9] -> \duty_d [9]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$3144_gold ($_OR_): \duty_d_gold [5] -> \duty_d [5]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$3625_gold ($_NOT_): \duty_b_gold [8] -> \duty_b [8]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2191_gold ($_AND_): \pwm_cnt_gold [4] -> \pwm_cnt [4]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2623_gold ($_AND_): \pwm_cnt_gold [1] -> \pwm_cnt [1]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2628_gold ($_AND_): \pwm_cnt_gold [6] -> \pwm_cnt [6]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2493_gold ($_XOR_): \pwm_cnt_gold [0] -> \pwm_cnt [0]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2204_gold ($_XOR_): \pwm_cnt_gold [1] -> \pwm_cnt [1]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2491_gold ($_AND_): \pwm_cnt_gold [14] -> \pwm_cnt [14]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2483_gold ($_AND_): \pwm_cnt_gold [6] -> \pwm_cnt [6]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2486_gold ($_AND_): \pwm_cnt_gold [9] -> \pwm_cnt [9]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$3440_gold ($_OR_): \duty_b_gold [1] -> \duty_b [1]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2190_gold ($_AND_): \pwm_cnt_gold [3] -> \pwm_cnt [3]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$3673_gold ($_NOT_): \duty_d_gold [8] -> \duty_d [8]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2507_gold ($_XOR_): \pwm_cnt_gold [14] -> \pwm_cnt [14]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2346_gold ($_AND_): \pwm_cnt_gold [14] -> \pwm_cnt [14]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$3569_gold ($_AND_): \duty_a_gold [10] -> \duty_a [10]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$3278_gold ($_AND_): \duty_c_gold [12] -> \duty_c [12]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$3285_gold ($_AND_): \duty_c_gold [7] -> \duty_c [7]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$3282_gold ($_AND_): \duty_c_gold [9] -> \duty_c [9]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$3293_gold ($_AND_): \duty_c_gold [2] -> \duty_c [2]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$3290_gold ($_AND_): \duty_c_gold [4] -> \duty_c [4]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2645_gold ($_XOR_): \pwm_cnt_gold [7] -> \pwm_cnt [7]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2351_gold ($_XOR_): \pwm_cnt_gold [3] -> \pwm_cnt [3]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$3423_gold ($_AND_): \duty_b_gold [12] -> \duty_b [12]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2639_gold ($_XOR_): \pwm_cnt_gold [1] -> \pwm_cnt [1]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2648_gold ($_XOR_): \pwm_cnt_gold [10] -> \pwm_cnt [10]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$3683_gold ($_NOT_): \duty_d_gold [14] -> \duty_d [14]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2188_gold ($_AND_): \pwm_cnt_gold [1] -> \pwm_cnt [1]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2353_gold ($_XOR_): \pwm_cnt_gold [5] -> \pwm_cnt [5]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2651_gold ($_XOR_): \pwm_cnt_gold [13] -> \pwm_cnt [13]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$3615_gold ($_NOT_): \duty_b_gold [5] -> \duty_b [5]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2210_gold ($_XOR_): \pwm_cnt_gold [7] -> \pwm_cnt [7]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2625_gold ($_AND_): \pwm_cnt_gold [3] -> \pwm_cnt [3]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$3659_gold ($_NOT_): \duty_c_gold [14] -> \duty_c [14]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$3424_gold ($_AND_): \duty_b_gold [10] -> \duty_b [10]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$3410_gold ($_OR_): \duty_b_gold [11] -> \duty_b [11]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2631_gold ($_AND_): \pwm_cnt_gold [9] -> \pwm_cnt [9]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2634_gold ($_AND_): \pwm_cnt_gold [12] -> \pwm_cnt [12]
+Changing input A of cell $auto$simplemap.cc:157:simplemap_reduce$1056_gold ($_AND_): \duty_a_gold [0] -> \duty_a [0]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$3651_gold ($_NOT_): \duty_c_gold [11] -> \duty_c [11]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$3591_gold ($_NOT_): \duty_a_gold [5] -> \duty_a [5]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$3599_gold ($_NOT_): \duty_a_gold [6] -> \duty_a [6]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$3609_gold ($_NOT_): \duty_a_gold [15] -> \duty_a [15]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$3607_gold ($_NOT_): \duty_a_gold [12] -> \duty_a [12]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$3434_gold ($_OR_): \duty_b_gold [5] -> \duty_b [5]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$3623_gold ($_NOT_): \duty_b_gold [6] -> \duty_b [6]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2647_gold ($_XOR_): \pwm_cnt_gold [9] -> \pwm_cnt [9]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2644_gold ($_XOR_): \pwm_cnt_gold [6] -> \pwm_cnt [6]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2479_gold ($_AND_): \pwm_cnt_gold [2] -> \pwm_cnt [2]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$3568_gold ($_AND_): \duty_a_gold [12] -> \duty_a [12]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2506_gold ($_XOR_): \pwm_cnt_gold [13] -> \pwm_cnt [13]
+Changing input A of cell $auto$simplemap.cc:157:simplemap_reduce$1034_gold ($_AND_): \duty_b_gold [0] -> \duty_b [0]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2350_gold ($_XOR_): \pwm_cnt_gold [2] -> \pwm_cnt [2]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2638_gold ($_XOR_): \pwm_cnt_gold [0] -> \pwm_cnt [0]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$3633_gold ($_NOT_): \duty_b_gold [15] -> \duty_b [15]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$3701_gold ($_NOT_): \pwm_cnt_gold [13] -> \pwm_cnt [13]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$2856_gold ($_AND_): \pwm_cnt_gold [2] -> \pwm_cnt [2]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2856_gold ($_AND_): \pwm_cnt_gold [3] -> \pwm_cnt [3]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2804_gold ($_AND_): \pwm_cnt_gold [2] -> \pwm_cnt [2]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2496_gold ($_XOR_): \pwm_cnt_gold [3] -> \pwm_cnt [3]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2495_gold ($_XOR_): \pwm_cnt_gold [2] -> \pwm_cnt [2]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2630_gold ($_AND_): \pwm_cnt_gold [8] -> \pwm_cnt [8]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2633_gold ($_AND_): \pwm_cnt_gold [11] -> \pwm_cnt [11]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$3611_gold ($_NOT_): \duty_a_gold [14] -> \duty_a [14]
+Changing input A of cell $auto$simplemap.cc:157:simplemap_reduce$1012_gold ($_AND_): \duty_c_gold [0] -> \duty_c [0]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$3687_gold ($_NOT_): \pwm_cnt_gold [5] -> \pwm_cnt [5]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$3575_gold ($_AND_): \duty_a_gold [7] -> \duty_a [7]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2622_gold ($_AND_): \pwm_cnt_gold [0] -> \pwm_cnt [0]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$3657_gold ($_NOT_): \duty_c_gold [15] -> \duty_c [15]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2636_gold ($_AND_): \pwm_cnt_gold [14] -> \pwm_cnt [14]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2649_gold ($_XOR_): \pwm_cnt_gold [11] -> \pwm_cnt [11]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2209_gold ($_XOR_): \pwm_cnt_gold [6] -> \pwm_cnt [6]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2802_gold ($_AND_): \pwm_cnt_gold [10] -> \pwm_cnt [10]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2801_gold ($_AND_): \pwm_cnt_gold [4] -> \pwm_cnt [4]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2646_gold ($_XOR_): \pwm_cnt_gold [8] -> \pwm_cnt [8]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2643_gold ($_XOR_): \pwm_cnt_gold [5] -> \pwm_cnt [5]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2642_gold ($_XOR_): \pwm_cnt_gold [4] -> \pwm_cnt [4]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2477_gold ($_AND_): \pwm_cnt_gold [0] -> \pwm_cnt [0]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$3005_gold ($_OR_): \pwm_cnt_gold [1] -> \pwm_cnt [1]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$3003_gold ($_AND_): \pwm_cnt_gold [2] -> \pwm_cnt [2]
+Changing input A of cell $auto$simplemap.cc:157:simplemap_reduce$990_gold ($_AND_): \duty_d_gold [0] -> \duty_d [0]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$3631_gold ($_NOT_): \duty_b_gold [12] -> \duty_b [12]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$3002_gold ($_OR_): \pwm_cnt_gold [3] -> \pwm_cnt [3]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2485_gold ($_AND_): \pwm_cnt_gold [8] -> \pwm_cnt [8]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$3681_gold ($_NOT_): \duty_d_gold [15] -> \duty_d [15]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2482_gold ($_AND_): \pwm_cnt_gold [5] -> \pwm_cnt [5]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$3579_gold ($_OR_): \duty_a_gold [5] -> \duty_a [5]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$3000_gold ($_AND_): \pwm_cnt_gold [4] -> \pwm_cnt [4]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2999_gold ($_OR_): \pwm_cnt_gold [5] -> \pwm_cnt [5]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$2997_gold ($_AND_): \pwm_cnt_gold [6] -> \pwm_cnt [6]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2997_gold ($_AND_): \pwm_cnt_gold [7] -> \pwm_cnt [7]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2360_gold ($_XOR_): \pwm_cnt_gold [12] -> \pwm_cnt [12]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2995_gold ($_AND_): \pwm_cnt_gold [7] -> \pwm_cnt [7]
+Changing input A of cell $auto$simplemap.cc:157:simplemap_reduce$967_gold ($_AND_): \pwm_cnt_gold [0] -> \pwm_cnt [0]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2198_gold ($_AND_): \pwm_cnt_gold [11] -> \pwm_cnt [11]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$2994_gold ($_AND_): \pwm_cnt_gold [8] -> \pwm_cnt [8]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2994_gold ($_AND_): \pwm_cnt_gold [9] -> \pwm_cnt [9]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$3669_gold ($_NOT_): \duty_d_gold [2] -> \duty_d [2]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$3705_gold ($_NOT_): \pwm_cnt_gold [15] -> \pwm_cnt [15]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$3585_gold ($_OR_): \duty_a_gold [1] -> \duty_a [1]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$3655_gold ($_NOT_): \duty_c_gold [12] -> \duty_c [12]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$2861_gold ($_AND_): \pwm_cnt_gold [0] -> \pwm_cnt [0]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2861_gold ($_AND_): \pwm_cnt_gold [1] -> \pwm_cnt [1]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2489_gold ($_AND_): \pwm_cnt_gold [12] -> \pwm_cnt [12]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$3639_gold ($_NOT_): \duty_c_gold [5] -> \duty_c [5]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2494_gold ($_XOR_): \pwm_cnt_gold [1] -> \pwm_cnt [1]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$2853_gold ($_AND_): \pwm_cnt_gold [4] -> \pwm_cnt [4]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2853_gold ($_AND_): \pwm_cnt_gold [5] -> \pwm_cnt [5]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$3420_gold ($_AND_): \duty_b_gold [14] -> \duty_b [14]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2653_gold ($_XOR_): \pwm_cnt_gold [15] -> \pwm_cnt [15]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2205_gold ($_XOR_): \pwm_cnt_gold [2] -> \pwm_cnt [2]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2362_gold ($_XOR_): \pwm_cnt_gold [14] -> \pwm_cnt [14]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2508_gold ($_XOR_): \pwm_cnt_gold [15] -> \pwm_cnt [15]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$3617_gold ($_NOT_): \duty_b_gold [4] -> \duty_b [4]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$3637_gold ($_NOT_): \duty_c_gold [1] -> \duty_c [1]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2363_gold ($_XOR_): \pwm_cnt_gold [15] -> \pwm_cnt [15]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2641_gold ($_XOR_): \pwm_cnt_gold [3] -> \pwm_cnt [3]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2218_gold ($_XOR_): \pwm_cnt_gold [15] -> \pwm_cnt [15]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$3643_gold ($_NOT_): \duty_c_gold [3] -> \duty_c [3]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2505_gold ($_XOR_): \pwm_cnt_gold [12] -> \pwm_cnt [12]
+Changing input D of cell $auto$ff.cc:337:slice$945_gold ($_SDFF_PN0_): \ctrl_gold [6] -> \ctrl [6]
+Changing input D of cell $auto$ff.cc:337:slice$944_gold ($_SDFF_PN0_): \ctrl_gold [5] -> \ctrl [5]
+Changing input D of cell $auto$ff.cc:337:slice$943_gold ($_SDFF_PN0_): \ctrl_gold [4] -> \ctrl [4]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2640_gold ($_XOR_): \pwm_cnt_gold [2] -> \pwm_cnt [2]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$3437_gold ($_OR_): \duty_b_gold [3] -> \duty_b [3]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$3697_gold ($_NOT_): \pwm_cnt_gold [8] -> \pwm_cnt [8]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2199_gold ($_AND_): \pwm_cnt_gold [12] -> \pwm_cnt [12]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2992_gold ($_AND_): \pwm_cnt_gold [9] -> \pwm_cnt [9]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2196_gold ($_AND_): \pwm_cnt_gold [9] -> \pwm_cnt [9]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2335_gold ($_AND_): \pwm_cnt_gold [3] -> \pwm_cnt [3]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$3595_gold ($_NOT_): \duty_a_gold [3] -> \duty_a [3]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$3148_gold ($_AND_): \duty_d_gold [2] -> \duty_d [2]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$3565_gold ($_AND_): \duty_a_gold [14] -> \duty_a [14]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2503_gold ($_XOR_): \pwm_cnt_gold [10] -> \pwm_cnt [10]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2497_gold ($_XOR_): \pwm_cnt_gold [4] -> \pwm_cnt [4]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$3265_gold ($_OR_): \duty_c_gold [11] -> \duty_c [11]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$3277_gold ($_OR_): \duty_c_gold [13] -> \duty_c [13]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$3289_gold ($_OR_): \duty_c_gold [5] -> \duty_c [5]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2339_gold ($_AND_): \pwm_cnt_gold [7] -> \pwm_cnt [7]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2333_gold ($_AND_): \pwm_cnt_gold [1] -> \pwm_cnt [1]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$3691_gold ($_NOT_): \pwm_cnt_gold [3] -> \pwm_cnt [3]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2208_gold ($_XOR_): \pwm_cnt_gold [5] -> \pwm_cnt [5]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2200_gold ($_AND_): \pwm_cnt_gold [13] -> \pwm_cnt [13]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$2989_gold ($_AND_): \pwm_cnt_gold [10] -> \pwm_cnt [10]
+Changing input B of cell $auto$simplemap.cc:157:simplemap_reduce$813_gold ($_OR_): \status_fault_gold [3] -> \status_fault [3]
+Changing input A of cell $auto$simplemap.cc:157:simplemap_reduce$813_gold ($_OR_): \status_fault_gold [2] -> \status_fault [2]
+Changing input B of cell $auto$simplemap.cc:157:simplemap_reduce$812_gold ($_OR_): \status_fault_gold [1] -> \status_fault [1]
+Changing input A of cell $auto$simplemap.cc:157:simplemap_reduce$812_gold ($_OR_): \status_fault_gold [0] -> \status_fault [0]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$809_gold ($_OR_): \status_fault_gold [2] -> \status_fault [2]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$808_gold ($_OR_): \status_fault_gold [1] -> \status_fault [1]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$807_gold ($_OR_): \status_fault_gold [0] -> \status_fault [0]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$778_gold ($_MUX_): \duty_d_gold [14] -> \duty_d [14]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$777_gold ($_MUX_): \duty_d_gold [13] -> \duty_d [13]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$776_gold ($_MUX_): \duty_d_gold [12] -> \duty_d [12]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$775_gold ($_MUX_): \duty_d_gold [11] -> \duty_d [11]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$774_gold ($_MUX_): \duty_d_gold [10] -> \duty_d [10]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$773_gold ($_MUX_): \duty_d_gold [9] -> \duty_d [9]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$772_gold ($_MUX_): \duty_d_gold [8] -> \duty_d [8]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$771_gold ($_MUX_): \duty_d_gold [7] -> \duty_d [7]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$770_gold ($_MUX_): \duty_d_gold [6] -> \duty_d [6]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$769_gold ($_MUX_): \duty_d_gold [5] -> \duty_d [5]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$768_gold ($_MUX_): \duty_d_gold [4] -> \duty_d [4]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$767_gold ($_MUX_): \duty_d_gold [3] -> \duty_d [3]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$766_gold ($_MUX_): \duty_d_gold [2] -> \duty_d [2]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$765_gold ($_MUX_): \duty_d_gold [1] -> \duty_d [1]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$764_gold ($_MUX_): \duty_d_gold [0] -> \duty_d [0]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$3629_gold ($_NOT_): \duty_b_gold [13] -> \duty_b [13]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$762_gold ($_MUX_): \duty_c_gold [14] -> \duty_c [14]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$761_gold ($_MUX_): \duty_c_gold [13] -> \duty_c [13]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$760_gold ($_MUX_): \duty_c_gold [12] -> \duty_c [12]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$759_gold ($_MUX_): \duty_c_gold [11] -> \duty_c [11]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$758_gold ($_MUX_): \duty_c_gold [10] -> \duty_c [10]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$757_gold ($_MUX_): \duty_c_gold [9] -> \duty_c [9]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$756_gold ($_MUX_): \duty_c_gold [8] -> \duty_c [8]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$755_gold ($_MUX_): \duty_c_gold [7] -> \duty_c [7]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$754_gold ($_MUX_): \duty_c_gold [6] -> \duty_c [6]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$753_gold ($_MUX_): \duty_c_gold [5] -> \duty_c [5]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$752_gold ($_MUX_): \duty_c_gold [4] -> \duty_c [4]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$751_gold ($_MUX_): \duty_c_gold [3] -> \duty_c [3]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$750_gold ($_MUX_): \duty_c_gold [2] -> \duty_c [2]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$749_gold ($_MUX_): \duty_c_gold [1] -> \duty_c [1]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$748_gold ($_MUX_): \duty_c_gold [0] -> \duty_c [0]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$3695_gold ($_NOT_): \pwm_cnt_gold [6] -> \pwm_cnt [6]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$746_gold ($_MUX_): \duty_b_gold [14] -> \duty_b [14]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$745_gold ($_MUX_): \duty_b_gold [13] -> \duty_b [13]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$744_gold ($_MUX_): \duty_b_gold [12] -> \duty_b [12]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$743_gold ($_MUX_): \duty_b_gold [11] -> \duty_b [11]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$742_gold ($_MUX_): \duty_b_gold [10] -> \duty_b [10]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$741_gold ($_MUX_): \duty_b_gold [9] -> \duty_b [9]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$740_gold ($_MUX_): \duty_b_gold [8] -> \duty_b [8]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$739_gold ($_MUX_): \duty_b_gold [7] -> \duty_b [7]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$738_gold ($_MUX_): \duty_b_gold [6] -> \duty_b [6]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$737_gold ($_MUX_): \duty_b_gold [5] -> \duty_b [5]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$736_gold ($_MUX_): \duty_b_gold [4] -> \duty_b [4]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$735_gold ($_MUX_): \duty_b_gold [3] -> \duty_b [3]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$734_gold ($_MUX_): \duty_b_gold [2] -> \duty_b [2]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$733_gold ($_MUX_): \duty_b_gold [1] -> \duty_b [1]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$732_gold ($_MUX_): \duty_b_gold [0] -> \duty_b [0]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2799_gold ($_AND_): \pwm_cnt_gold [8] -> \pwm_cnt [8]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$730_gold ($_MUX_): \duty_a_gold [14] -> \duty_a [14]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$729_gold ($_MUX_): \duty_a_gold [13] -> \duty_a [13]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$728_gold ($_MUX_): \duty_a_gold [12] -> \duty_a [12]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$727_gold ($_MUX_): \duty_a_gold [11] -> \duty_a [11]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$726_gold ($_MUX_): \duty_a_gold [10] -> \duty_a [10]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$725_gold ($_MUX_): \duty_a_gold [9] -> \duty_a [9]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$724_gold ($_MUX_): \duty_a_gold [8] -> \duty_a [8]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$723_gold ($_MUX_): \duty_a_gold [7] -> \duty_a [7]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$722_gold ($_MUX_): \duty_a_gold [6] -> \duty_a [6]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$721_gold ($_MUX_): \duty_a_gold [5] -> \duty_a [5]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$720_gold ($_MUX_): \duty_a_gold [4] -> \duty_a [4]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$719_gold ($_MUX_): \duty_a_gold [3] -> \duty_a [3]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$718_gold ($_MUX_): \duty_a_gold [2] -> \duty_a [2]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$717_gold ($_MUX_): \duty_a_gold [1] -> \duty_a [1]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$716_gold ($_MUX_): \duty_a_gold [0] -> \duty_a [0]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2627_gold ($_AND_): \pwm_cnt_gold [5] -> \pwm_cnt [5]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$2988_gold ($_AND_): \pwm_cnt_gold [12] -> \pwm_cnt [12]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2987_gold ($_OR_): \pwm_cnt_gold [13] -> \pwm_cnt [13]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$2985_gold ($_AND_): \pwm_cnt_gold [14] -> \pwm_cnt [14]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2984_gold ($_OR_): \pwm_cnt_gold [15] -> \pwm_cnt [15]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$3685_gold ($_NOT_): \pwm_cnt_gold [1] -> \pwm_cnt [1]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2975_gold ($_OR_): \pwm_cnt_gold [11] -> \pwm_cnt [11]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2354_gold ($_XOR_): \pwm_cnt_gold [6] -> \pwm_cnt [6]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2349_gold ($_XOR_): \pwm_cnt_gold [1] -> \pwm_cnt [1]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2357_gold ($_XOR_): \pwm_cnt_gold [9] -> \pwm_cnt [9]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1860_gold ($_XOR_): \pwm_cnt_gold [15] -> \pwm_cnt [15]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1859_gold ($_XOR_): \pwm_cnt_gold [14] -> \pwm_cnt [14]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2498_gold ($_XOR_): \pwm_cnt_gold [5] -> \pwm_cnt [5]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1858_gold ($_XOR_): \pwm_cnt_gold [13] -> \pwm_cnt [13]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1857_gold ($_XOR_): \pwm_cnt_gold [12] -> \pwm_cnt [12]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1856_gold ($_XOR_): \pwm_cnt_gold [11] -> \pwm_cnt [11]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1855_gold ($_XOR_): \pwm_cnt_gold [10] -> \pwm_cnt [10]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1854_gold ($_XOR_): \pwm_cnt_gold [9] -> \pwm_cnt [9]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1853_gold ($_XOR_): \pwm_cnt_gold [8] -> \pwm_cnt [8]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2502_gold ($_XOR_): \pwm_cnt_gold [9] -> \pwm_cnt [9]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2501_gold ($_XOR_): \pwm_cnt_gold [8] -> \pwm_cnt [8]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2203_gold ($_XOR_): \pwm_cnt_gold [0] -> \pwm_cnt [0]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2500_gold ($_XOR_): \pwm_cnt_gold [7] -> \pwm_cnt [7]
+Changing input D of cell $auto$ff.cc:337:slice$946_gold ($_SDFF_PN0_): \ctrl_gold [7] -> \ctrl [7]
+Changing input A of cell $auto$simplemap.cc:227:simplemap_lognot$817_gold ($_NOT_): \wb_ack_o_gold -> \wb_ack_o
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$810_gold ($_OR_): \status_fault_gold [3] -> \status_fault [3]
+Changing input A of cell $auto$simplemap.cc:256:simplemap_logbin$806_gold ($_AND_): \ctrl_gold [3] -> \ctrl [3]
+Changing input A of cell $auto$simplemap.cc:256:simplemap_logbin$805_gold ($_AND_): \ctrl_gold [2] -> \ctrl [2]
+Changing input A of cell $auto$simplemap.cc:256:simplemap_logbin$804_gold ($_AND_): \ctrl_gold [1] -> \ctrl [1]
+Changing input A of cell $auto$simplemap.cc:256:simplemap_logbin$803_gold ($_AND_): \ctrl_gold [0] -> \ctrl [0]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$3661_gold ($_NOT_): \duty_d_gold [1] -> \duty_d [1]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$779_gold ($_MUX_): \duty_d_gold [15] -> \duty_d [15]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2197_gold ($_AND_): \pwm_cnt_gold [10] -> \pwm_cnt [10]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$763_gold ($_MUX_): \duty_c_gold [15] -> \duty_c [15]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$747_gold ($_MUX_): \duty_b_gold [15] -> \duty_b [15]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$731_gold ($_MUX_): \duty_a_gold [15] -> \duty_a [15]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$3593_gold ($_NOT_): \duty_a_gold [4] -> \duty_a [4]
+Setting undriven nets to undef: $techmap$gt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:51$6.$auto$alumacc.cc:512:replace_alu$705.CO_gold [2]
+Setting undriven nets to undef: $techmap$gt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:51$6.$auto$alumacc.cc:512:replace_alu$705.CO_gold [6:4]
+Setting undriven nets to undef: $techmap$gt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:51$6.$auto$alumacc.cc:512:replace_alu$705.CO_gold [14:8]
+Setting undriven nets to undef: $techmap$gt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:52$8.$auto$alumacc.cc:512:replace_alu$705.CO_gold [2]
+Setting undriven nets to undef: $techmap$gt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:52$8.$auto$alumacc.cc:512:replace_alu$705.CO_gold [6:4]
+Setting undriven nets to undef: $techmap$gt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:52$8.$auto$alumacc.cc:512:replace_alu$705.CO_gold [14:8]
+Setting undriven nets to undef: $techmap$ge$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:73$12.$auto$alumacc.cc:512:replace_alu$781.CO_gold [2]
+Setting undriven nets to undef: $techmap$ge$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:73$12.$auto$alumacc.cc:512:replace_alu$781.CO_gold [6:4]
+Setting undriven nets to undef: $techmap$ge$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:73$12.$auto$alumacc.cc:512:replace_alu$781.CO_gold [14:8]
+Setting undriven nets to undef: $techmap$add$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:76$13.$auto$alumacc.cc:512:replace_alu$794.CO_gold [15]
+Setting undriven nets to undef: $techmap$lt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:81$14.$auto$alumacc.cc:512:replace_alu$798.CO_gold [2]
+Setting undriven nets to undef: $techmap$lt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:81$14.$auto$alumacc.cc:512:replace_alu$798.CO_gold [6:4]
+Setting undriven nets to undef: $techmap$lt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:81$14.$auto$alumacc.cc:512:replace_alu$798.CO_gold [14:8]
+Setting undriven nets to undef: $techmap$lt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:84$16.$auto$alumacc.cc:512:replace_alu$798.CO_gold [2]
+Setting undriven nets to undef: $techmap$lt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:84$16.$auto$alumacc.cc:512:replace_alu$798.CO_gold [6:4]
+Setting undriven nets to undef: $techmap$lt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:84$16.$auto$alumacc.cc:512:replace_alu$798.CO_gold [14:8]
+Setting undriven nets to undef: $techmap$lt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:87$18.$auto$alumacc.cc:512:replace_alu$798.CO_gold [2]
+Setting undriven nets to undef: $techmap$lt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:87$18.$auto$alumacc.cc:512:replace_alu$798.CO_gold [6:4]
+Setting undriven nets to undef: $techmap$lt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:87$18.$auto$alumacc.cc:512:replace_alu$798.CO_gold [14:8]
+Setting undriven nets to undef: $techmap$lt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:90$20.$auto$alumacc.cc:512:replace_alu$798.CO_gold [2]
+Setting undriven nets to undef: $techmap$lt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:90$20.$auto$alumacc.cc:512:replace_alu$798.CO_gold [6:4]
+Setting undriven nets to undef: $techmap$lt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:90$20.$auto$alumacc.cc:512:replace_alu$798.CO_gold [14:8]
+Setting undriven nets to undef: $techmap$gt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:49$2.$auto$alumacc.cc:512:replace_alu$705.CO_gold [2]
+Setting undriven nets to undef: $techmap$gt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:49$2.$auto$alumacc.cc:512:replace_alu$705.CO_gold [6:4]
+Setting undriven nets to undef: $techmap$gt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:49$2.$auto$alumacc.cc:512:replace_alu$705.CO_gold [14:8]
+Setting undriven nets to undef: $techmap$gt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:50$4.$auto$alumacc.cc:512:replace_alu$705.CO_gold [2]
+Setting undriven nets to undef: $techmap$gt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:50$4.$auto$alumacc.cc:512:replace_alu$705.CO_gold [6:4]
+Setting undriven nets to undef: $techmap$gt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:50$4.$auto$alumacc.cc:512:replace_alu$705.CO_gold [14:8]
+Setting undriven nets to undef: \wb_ack_o_gate
+Setting undriven nets to undef: \pwm_a_gate
+Setting undriven nets to undef: \pwm_b_gate
+Setting undriven nets to undef: \irq_fault_gate
+Setting undriven nets to undef: \_0944__gate
+Setting undriven nets to undef: \_0943__gate
+Setting undriven nets to undef: \_0942__gate
+Setting undriven nets to undef: \_0941__gate
+Setting undriven nets to undef: \_0940__gate
+Setting undriven nets to undef: \_0939__gate
+Setting undriven nets to undef: \_0938__gate
+Setting undriven nets to undef: \_0937__gate
+Setting undriven nets to undef: \_0936__gate
+Setting undriven nets to undef: \_0935__gate
+Setting undriven nets to undef: \_0934__gate
+Setting undriven nets to undef: \_0933__gate
+Setting undriven nets to undef: \_0932__gate
+Setting undriven nets to undef: \_0931__gate
+Setting undriven nets to undef: \_0930__gate
+Setting undriven nets to undef: \_0929__gate
+
+26. Executing EQUIV_SIMPLE pass.
+Found 134 unproven $equiv cells (12 groups) in motor_pwm:
+ Grouping SAT models for \wb_dat_o:
+  Trying to prove $equiv for \wb_dat_o [0]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [1]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [2]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [3]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [4]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [5]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [6]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [7]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [8]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [9]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [10]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [11]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [12]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [13]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [14]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [15]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [16]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [17]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [18]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [19]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [20]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [21]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [22]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [23]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [24]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [25]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [26]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [27]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [28]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [29]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [30]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [31]:ezsat
+ success!
+  Trying to prove $equiv for \wb_ack_o:ezsat
+ failed.
+ Grouping SAT models for \pwm_a:
+  Trying to prove $equiv for \pwm_a [0]:ezsat
+ failed.
+  Trying to prove $equiv for \pwm_a [1]:ezsat
+ failed.
+  Trying to prove $equiv for \pwm_a [2]:ezsat
+ failed.
+  Trying to prove $equiv for \pwm_a [3]:ezsat
+ failed.
+ Grouping SAT models for \pwm_b:
+  Trying to prove $equiv for \pwm_b [0]:ezsat
+ failed.
+  Trying to prove $equiv for \pwm_b [1]:ezsat
+ failed.
+  Trying to prove $equiv for \pwm_b [2]:ezsat
+ failed.
+  Trying to prove $equiv for \pwm_b [3]:ezsat
+ failed.
+  Trying to prove $equiv for \irq_fault:ezsat
+ failed.
+ Grouping SAT models for \duty_a:
+  Trying to prove $equiv for \duty_a [0]:ezsat
+ failed.
+  Trying to prove $equiv for \duty_a [1]:ezsat
+ failed.
+  Trying to prove $equiv for \duty_a [2]:ezsat
+ failed.
+  Trying to prove $equiv for \duty_a [3]:ezsat
+ failed.
+  Trying to prove $equiv for \duty_a [4]:ezsat
+ failed.
+  Trying to prove $equiv for \duty_a [5]:ezsat
+ failed.
+  Trying to prove $equiv for \duty_a [6]:ezsat
+ failed.
+  Trying to prove $equiv for \duty_a [7]:ezsat
+ failed.
+  Trying to prove $equiv for \duty_a [8]:ezsat
+ failed.
+  Trying to prove $equiv for \duty_a [9]:ezsat
+ failed.
+  Trying to prove $equiv for \duty_a [10]:ezsat
+ failed.
+  Trying to prove $equiv for \duty_a [11]:ezsat
+ failed.
+  Trying to prove $equiv for \duty_a [12]:ezsat
+ failed.
+  Trying to prove $equiv for \duty_a [13]:ezsat
+ failed.
+  Trying to prove $equiv for \duty_a [14]:ezsat
+ failed.
+  Trying to prove $equiv for \duty_a [15]:ezsat
+ failed.
+ Grouping SAT models for \duty_b:
+  Trying to prove $equiv for \duty_b [0]:ezsat
+ failed.
+  Trying to prove $equiv for \duty_b [1]:ezsat
+ failed.
+  Trying to prove $equiv for \duty_b [2]:ezsat
+ failed.
+  Trying to prove $equiv for \duty_b [3]:ezsat
+ failed.
+  Trying to prove $equiv for \duty_b [4]:ezsat
+ failed.
+  Trying to prove $equiv for \duty_b [5]:ezsat
+ failed.
+  Trying to prove $equiv for \duty_b [6]:ezsat
+ failed.
+  Trying to prove $equiv for \duty_b [7]:ezsat
+ failed.
+  Trying to prove $equiv for \duty_b [8]:ezsat
+ failed.
+  Trying to prove $equiv for \duty_b [9]:ezsat
+ failed.
+  Trying to prove $equiv for \duty_b [10]:ezsat
+ failed.
+  Trying to prove $equiv for \duty_b [11]:ezsat
+ failed.
+  Trying to prove $equiv for \duty_b [12]:ezsat
+ failed.
+  Trying to prove $equiv for \duty_b [13]:ezsat
+ failed.
+  Trying to prove $equiv for \duty_b [14]:ezsat
+ failed.
+  Trying to prove $equiv for \duty_b [15]:ezsat
+ failed.
+ Grouping SAT models for \duty_c:
+  Trying to prove $equiv for \duty_c [0]:ezsat
+ failed.
+  Trying to prove $equiv for \duty_c [1]:ezsat
+ failed.
+  Trying to prove $equiv for \duty_c [2]:ezsat
+ failed.
+  Trying to prove $equiv for \duty_c [3]:ezsat
+ failed.
+  Trying to prove $equiv for \duty_c [4]:ezsat
+ failed.
+  Trying to prove $equiv for \duty_c [5]:ezsat
+ failed.
+  Trying to prove $equiv for \duty_c [6]:ezsat
+ failed.
+  Trying to prove $equiv for \duty_c [7]:ezsat
+ failed.
+  Trying to prove $equiv for \duty_c [8]:ezsat
+ failed.
+  Trying to prove $equiv for \duty_c [9]:ezsat
+ failed.
+  Trying to prove $equiv for \duty_c [10]:ezsat
+ failed.
+  Trying to prove $equiv for \duty_c [11]:ezsat
+ failed.
+  Trying to prove $equiv for \duty_c [12]:ezsat
+ failed.
+  Trying to prove $equiv for \duty_c [13]:ezsat
+ failed.
+  Trying to prove $equiv for \duty_c [14]:ezsat
+ failed.
+  Trying to prove $equiv for \duty_c [15]:ezsat
+ failed.
+ Grouping SAT models for \duty_d:
+  Trying to prove $equiv for \duty_d [0]:ezsat
+ failed.
+  Trying to prove $equiv for \duty_d [1]:ezsat
+ failed.
+  Trying to prove $equiv for \duty_d [2]:ezsat
+ failed.
+  Trying to prove $equiv for \duty_d [3]:ezsat
+ failed.
+  Trying to prove $equiv for \duty_d [4]:ezsat
+ failed.
+  Trying to prove $equiv for \duty_d [5]:ezsat
+ failed.
+  Trying to prove $equiv for \duty_d [6]:ezsat
+ failed.
+  Trying to prove $equiv for \duty_d [7]:ezsat
+ failed.
+  Trying to prove $equiv for \duty_d [8]:ezsat
+ failed.
+  Trying to prove $equiv for \duty_d [9]:ezsat
+ failed.
+  Trying to prove $equiv for \duty_d [10]:ezsat
+ failed.
+  Trying to prove $equiv for \duty_d [11]:ezsat
+ failed.
+  Trying to prove $equiv for \duty_d [12]:ezsat
+ failed.
+  Trying to prove $equiv for \duty_d [13]:ezsat
+ failed.
+  Trying to prove $equiv for \duty_d [14]:ezsat
+ failed.
+  Trying to prove $equiv for \duty_d [15]:ezsat
+ failed.
+ Grouping SAT models for \ctrl:
+  Trying to prove $equiv for \ctrl [0]:ezsat
+ failed.
+  Trying to prove $equiv for \ctrl [1]:ezsat
+ failed.
+  Trying to prove $equiv for \ctrl [2]:ezsat
+ failed.
+  Trying to prove $equiv for \ctrl [3]:ezsat
+ failed.
+  Trying to prove $equiv for \ctrl [4]:ezsat
+ failed.
+  Trying to prove $equiv for \ctrl [5]:ezsat
+ failed.
+  Trying to prove $equiv for \ctrl [6]:ezsat
+ failed.
+  Trying to prove $equiv for \ctrl [7]:ezsat
+ failed.
+ Grouping SAT models for \status_fault:
+  Trying to prove $equiv for \status_fault [0]:ezsat
+ failed.
+  Trying to prove $equiv for \status_fault [1]:ezsat
+ failed.
+  Trying to prove $equiv for \status_fault [2]:ezsat
+ failed.
+  Trying to prove $equiv for \status_fault [3]:ezsat
+ failed.
+ Grouping SAT models for \pwm_cnt:
+  Trying to prove $equiv for \pwm_cnt [0]:ezsat
+ failed.
+  Trying to prove $equiv for \pwm_cnt [1]:ezsat
+ failed.
+  Trying to prove $equiv for \pwm_cnt [2]:ezsat
+ failed.
+  Trying to prove $equiv for \pwm_cnt [3]:ezsat
+ failed.
+  Trying to prove $equiv for \pwm_cnt [4]:ezsat
+ failed.
+  Trying to prove $equiv for \pwm_cnt [5]:ezsat
+ failed.
+  Trying to prove $equiv for \pwm_cnt [6]:ezsat
+ failed.
+  Trying to prove $equiv for \pwm_cnt [7]:ezsat
+ failed.
+  Trying to prove $equiv for \pwm_cnt [8]:ezsat
+ failed.
+  Trying to prove $equiv for \pwm_cnt [9]:ezsat
+ failed.
+  Trying to prove $equiv for \pwm_cnt [10]:ezsat
+ failed.
+  Trying to prove $equiv for \pwm_cnt [11]:ezsat
+ failed.
+  Trying to prove $equiv for \pwm_cnt [12]:ezsat
+ failed.
+  Trying to prove $equiv for \pwm_cnt [13]:ezsat
+ failed.
+  Trying to prove $equiv for \pwm_cnt [14]:ezsat
+ failed.
+  Trying to prove $equiv for \pwm_cnt [15]:ezsat
+ failed.
+Proved 16 previously unproven $equiv cells.
+
+27. Executing EQUIV_INDUCT pass.
+Found 118 unproven $equiv cells in module motor_pwm:

@@ -1,0 +1,10 @@
+SIM = verilator
+TOPLEVEL_LANG = verilog
+COMPILE_ARGS = --coverage --coverage-line --coverage-toggle -Wno-fatal -Wno-WIDTH -Wno-UNUSED -Wno-UNOPTFLAT -Wno-DECLFILENAME -Wno-PINCONNECTEMPTY -Wno-PINMISSING -Wno-TIMESCALEMOD
+EXTRA_ARGS = --trace --trace-vcd
+
+include $(shell cocotb-config --makefiles)/Makefile.sim
+TOPLEVEL_LANG = verilog
+VERILOG_SOURCES = ../../03_frontend-stage/rtl-weight_detect/rtl/weight_detect.v
+TOPLEVEL = weight_detect
+COCOTB_TEST_MODULES = test_weight_detect

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>IP-005 v6 — Top-Level Block Diagram</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #0d1117; color: #c9d1d9; font-family: 'Courier New', monospace; padding: 24px; }
+h1 { color: #58a6ff; font-size: 18px; margin-bottom: 16px; text-align: center; }
+.diagram { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; align-items: flex-start; }
+.column { display: flex; flex-direction: column; gap: 8px; min-width: 200px; }
+.module { border: 1px solid #30363d; border-radius: 6px; padding: 12px 16px; background: #161b22; }
+.module.top { border-color: #58a6ff; background: #0d419d22; }
+.module.cpu { border-color: #3fb950; }
+.module.mem { border-color: #d29922; }
+.module.periph { border-color: #8b949e; }
+.module.gov { border-color: #f85149; }
+.module .name { font-weight: bold; font-size: 14px; }
+.module .desc { font-size: 11px; color: #8b949e; margin-top: 4px; }
+.label { font-size: 12px; color: #8b949e; text-align: center; margin: 8px 0; }
+.arrow { text-align: center; color: #58a6ff; font-size: 14px; margin: 4px 0; }
+.bus { border: 2px dashed #30363d; border-radius: 8px; padding: 12px; background: #161b2233; }
+.bus .title { text-align: center; color: #58a6ff; font-size: 13px; font-weight: bold; margin-bottom: 8px; }
+.bus .signals { font-size: 10px; color: #8b949e; text-align: center; }
+.section-title { color: #58a6ff; font-size: 14px; margin: 20px 0 10px 0; text-align: center; width: 100%; }
+</style>
+</head>
+<body>
+<h1>IP-005 v6 — Trash Robot SoC Top-Level Block Diagram</h1>
+
+<div class="section-title">PicoRV32 + Wishbone B4 Shared Bus + 14 Slave Peripherals</div>
+
+<div class="diagram">
+
+<div class="column">
+  <div class="module cpu">
+    <div class="name">picorv32_core</div>
+    <div class="desc">RV32IM CPU<br>Wishbone master<br>33.3 MHz</div>
+  </div>
+  <div class="arrow">▼ wb_adr[15:0] ▼</div>
+  <div class="bus">
+    <div class="title">wb_interconnect</div>
+    <div class="signals">Combinational decode<br>wb_adr[15:12] → 16 slots<br>1 master, 14 slaves</div>
+  </div>
+</div>
+
+<div class="column">
+  <div class="module mem">
+    <div class="name">sram_512b</div>
+    <div class="desc">0x0000-0x01FF<br>128×32 words<br>Von Neumann</div>
+  </div>
+</div>
+
+<div class="column">
+  <div class="module periph">
+    <div class="name">uart</div>
+    <div class="desc">0x2000<br>TX/RX/BAUD<br>ESP32-C3 link</div>
+  </div>
+  <div class="module periph">
+    <div class="name">i2c_master_hx711</div>
+    <div class="desc">0x4000<br>Weight sensor<br>HX711 interface</div>
+  </div>
+  <div class="module periph">
+    <div class="name">i2c_master_ina219</div>
+    <div class="desc">0xA000<br>Solar monitor<br>INA219 interface</div>
+  </div>
+  <div class="module periph">
+    <div class="name">i2c_master_ds3231</div>
+    <div class="desc">0xB000<br>Hardware RTC<br>DS3231 interface</div>
+  </div>
+</div>
+
+<div class="column">
+  <div class="module periph">
+    <div class="name">gpio</div>
+    <div class="desc">0x5000<br>16-bit I/O<br>Bump sensors, button</div>
+  </div>
+  <div class="module periph">
+    <div class="name">timer</div>
+    <div class="desc">0x6000<br>32-bit counter<br>Aux PWM channels</div>
+  </div>
+  <div class="module periph">
+    <div class="name">motor_pwm</div>
+    <div class="desc">0x7000<br>4-ch DRV8833<br>PHASE/ENABLE</div>
+  </div>
+  <div class="module periph">
+    <div class="name">ultrasonic_capture</div>
+    <div class="desc">0x8000<br>HC-SR04 ×2<br>20-bit echo</div>
+  </div>
+  <div class="module periph">
+    <div class="name">weight_detect</div>
+    <div class="desc">0x9000<br>HX711 threshold<br>Safety interlock</div>
+  </div>
+</div>
+
+<div class="column">
+  <div class="module gov">
+    <div class="name">watchdog</div>
+    <div class="desc">0xD000<br>Dual-stage<br>magic-key reload</div>
+  </div>
+  <div class="module gov">
+    <div class="name">interrupt_ctrl</div>
+    <div class="desc">0xC000<br>16-channel<br>priority encoder</div>
+  </div>
+  <div class="module gov">
+    <div class="name">power_mgr</div>
+    <div class="desc">0xE000<br>Clock gating<br>sleep/wake FSM</div>
+  </div>
+</div>
+
+</div>
+
+<div class="section-title">External Interfaces</div>
+<div class="diagram" style="justify-content: center;">
+  <div class="module" style="border-color: #a371f7;">
+    <div class="name" style="color: #a371f7;">External I/O</div>
+    <div class="desc">UART TX/RX · I²C SCL/SDA · GPIO[15:0]<br>PWM_A[3:0] · PWM_B[3:0] · FAULT[3:0]<br>TRIG[1:0] · ECHO[1:0]</div>
+  </div>
+</div>
+
+<p style="text-align:center; color:#484f58; font-size:10px; margin-top: 24px;">
+IP-005 v6 · sky130A · 33.3 MHz · Wishbone B4 · Caravel harness
+</p>
+</body>
+</html>

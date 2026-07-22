@@ -1,0 +1,9 @@
+<testsuites name="results">
+  <testsuite name="all" package="all">
+    <property name="random_seed" value="0" />
+    <testcase name="test_reset" classname="test_wb_interconnect" file="test_wb_interconnect.py" time="0.001" sim_time_ns="51.0" />
+    <testcase name="test_address_decode" classname="test_wb_interconnect" file="test_wb_interconnect.py" time="0.003" sim_time_ns="420.0" />
+    <testcase name="test_read_data_mux" classname="test_wb_interconnect" file="test_wb_interconnect.py" time="0.001" sim_time_ns="81.0" />
+    <testcase name="test_default_slave" classname="test_wb_interconnect" file="test_wb_interconnect.py" time="0.001" sim_time_ns="81.0" />
+  </testsuite>
+</testsuites>

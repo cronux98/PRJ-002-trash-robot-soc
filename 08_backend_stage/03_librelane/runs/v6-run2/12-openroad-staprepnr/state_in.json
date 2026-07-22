@@ -1,0 +1,14 @@
+{
+    "json_h": "/home/user/hermes_workspace/projects/IP-005/v6/04_backend-stage/librelane/runs/v6-run2/05-yosys-jsonheader/trash_robot_soc.h.json",
+    "nl": "/home/user/hermes_workspace/projects/IP-005/v6/04_backend-stage/librelane/runs/v6-run2/06-yosys-synthesis/trash_robot_soc.nl.v",
+    "metrics": {
+        "design__lint_error__count": 0,
+        "design__lint_timing_construct__count": 0,
+        "design__lint_warning__count": 449,
+        "design__inferred_latch__count": 0,
+        "design__instance__count": 31367,
+        "design__instance__area": 402035.584,
+        "design__instance_unmapped__count": 0,
+        "synthesis__check_error__count": 4
+    }
+}

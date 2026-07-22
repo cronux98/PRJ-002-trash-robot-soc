@@ -1,0 +1,8 @@
+# running in weight_detect_bmc/src/
+read -formal weight_detect.v
+prep -top weight_detect
+
+hierarchy -smtcheck
+rename -witness
+write_jny -no-connections ../model/design.json
+write_rtlil ../model/design.il

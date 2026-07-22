@@ -1,0 +1,8 @@
+# running in power_mgr_bmc/src/
+read -formal power_mgr.v
+prep -top power_mgr
+
+hierarchy -smtcheck
+rename -witness
+write_jny -no-connections ../model/design.json
+write_rtlil ../model/design.il

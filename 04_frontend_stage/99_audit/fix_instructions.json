@@ -1,0 +1,71 @@
+{
+  "audit_session": "3527b763-1d09-45e5-b5c9-922369225a3c",
+  "retry": 0,
+  "timestamp": "2026-07-15T06:30:00Z",
+  "cost": 0.298972,
+  "verdict": "FAIL",
+  "stage": "03_frontend-stage",
+  "project": "IP-005",
+  "failed_checks": [
+    "3.3 Lint is clean (0 errors)",
+    "3.4 Formal results exist for every module",
+    "3.5 Formal BMC depth >= 20 for every module",
+    "3.9 verify_test_artifacts.sh exits 0"
+  ],
+  "findings": [
+    "trash_robot_soc.v:356 instantiates rgb_led_pwm, which the V5\u2192V6 change removed \u2014 verilator reports 1 ERROR, 'Cannot find file containing module: rgb_led_pwm'. This single defect is the root cause of checks 3.3 and 3.4 failing and contributes to 3.5.",
+    "picorv32_core formal is incomplete: BMC depth 10 (requires 20+) and the induction task is absent, leaving only bmc and cover PASS versus the bmc/cover/induction set proven for the other 14 modules.",
+    "trash_robot_soc has 0 formal PASS results. The .sby files exist but produced no proofs, and its BMC depth is configured at 10.",
+    "verify_test_artifacts.sh exit code was never captured. Evidence confirms the file exists but not that it ran or succeeded, so check 3.9 is undeterminable and fails by Anti-Hallucination Rule 3.",
+    "INTEGRITY CONCERN \u2014 RESULT.md claims '16/16 modules PASS' and 'Lint PASS (verilator 0 err) 16/16'. The supplied evidence shows 1 verilator error in trash_robot_soc. RESULT.md's own line 'Formal BMC20 verified: 2/16' also contradicts the evidence block, which shows 14/16 modules at depth 20. RESULT.md is internally inconsistent with the audit evidence in both directions and should not be relied on by downstream stages until reconciled.",
+    "CAVEAT \u2014 trash_robot_soc synthesis reports 0 ERRORs despite verilator being unable to resolve rgb_led_pwm. A missing submodule that lints as an error but synthesizes clean means synthesis black-boxed it. Cell count is 26,639 (7,134 DFFs), matching v5's regressed 26K figure that Stage 6 check 6.4 flags against a 55K baseline. Recheck the cell count after the 3.3 fix; the black-boxing may be understating the true gate count.",
+    "CAVEAT \u2014 all 16 equivalence checks are CONDITIONAL PASS against a documented sky130 SAT limitation, with GLS designated authoritative. Check 3.8 passes on the literal rubric grep, but no module has a true equivalence proof. If Stage 4 check 4.7 (GLS results exist) fails, this stage has no equivalence evidence at all and 3.8 must be re-scored FAIL."
+  ],
+  "summary": "4 of 9 mandatory checks failed (3.3 lint, 3.4 formal results, 3.5 BMC depth, 3.9 verify script exit code) \u2014 4 fixes generated. One RTL defect (stale rgb_led_pwm instantiation at trash_robot_soc.v:356) is the root cause of most failures. RESULT.md's 16/16 PASS claim is contradicted by the evidence and flagged as an integrity concern.",
+  "fixes": [
+    {
+      "check": "3.3 Lint is clean (0 errors)",
+      "evidence": "verilator: 15/16 modules 0 errors; trash_robot_soc has 1 ERROR \u2014 \"Cannot find file containing module: 'rgb_led_pwm'\" at trash_robot_soc.v:356. iverilog: 0 errors (does not elaborate the missing module, so it masks the defect). RESULT.md claims 'Lint PASS (verilator 0 err) 16/16' \u2014 contradicted by the evidence.",
+      "fix": {
+        "type": "RTL_FIX",
+        "description": "Remove the stale rgb_led_pwm instantiation from trash_robot_soc.v:356 \u2014 the module was deleted in the V5\u2192V6 change but its instance was left behind",
+        "action": "1. Inspect the instantiation and its port connections: `sed -n '345,375p' /home/user/hermes_workspace/projects/IP-005/v6/03_frontend-stage/trash_robot_soc/rtl/trash_robot_soc.v`. 2. Delete the entire rgb_led_pwm instance block (instantiation keyword through the closing `);`). 3. Delete any wire/reg declarations that were driven or consumed only by that instance, and remove its slave port from the wb_interconnect connection list if one was reserved for it \u2014 note RESULT.md states wb_interconnect was expanded 12\u219213 slaves, so confirm the 13th slave is one of the new I2C instances and not an orphaned RGB slot. 4. Re-run verilator lint and confirm 0 errors. 5. Re-run synthesis for trash_robot_soc and compare the cell count against the 26,639 baseline in RESULT.md.",
+        "file": "/home/user/hermes_workspace/projects/IP-005/v6/03_frontend-stage/trash_robot_soc/rtl/trash_robot_soc.v",
+        "command": "cd /home/user/hermes_workspace/projects/IP-005/v6/03_frontend-stage && sed -n '345,375p' trash_robot_soc/rtl/trash_robot_soc.v && grep -rn 'rgb_led_pwm\\|rgb_' trash_robot_soc/rtl/ wb_interconnect/rtl/"
+      }
+    },
+    {
+      "check": "3.4 Formal results exist for every module",
+      "evidence": "15/16 modules have formal results. trash_robot_soc: 0 PASS \u2014 .sby files exist but no PASS results were produced (consistent with the elaboration failure in 3.3). Additionally picorv32_core has only 2 PASS (bmc, cover) \u2014 induction task is missing, so its formal result set is incomplete relative to the bmc/cover/induction set produced by the other 14 modules.",
+      "fix": {
+        "type": "STAGE_FIX",
+        "description": "Run formal for trash_robot_soc (blocked on the 3.3 RTL fix) and add the missing induction task for picorv32_core",
+        "action": "1. Apply the 3.3 RTL_FIX first \u2014 formal cannot elaborate trash_robot_soc while rgb_led_pwm is unresolved, which is why 0 PASS were produced. 2. Re-run the existing .sby flow for trash_robot_soc and confirm bmc, cover, and induction all report PASS. 3. For picorv32_core, add an `[tasks]` induction entry to its .sby (mirroring the induction stanza used by wb_interconnect or timer) and re-run. 4. Confirm results.xml is written for both modules.",
+        "file": "/home/user/hermes_workspace/projects/IP-005/v6/03_frontend-stage/formal/trash_robot_soc/trash_robot_soc.sby",
+        "command": "cd /home/user/hermes_workspace/projects/IP-005/v6/03_frontend-stage/formal/trash_robot_soc && sby -f trash_robot_soc.sby && grep -c 'PASS' trash_robot_soc/logfile.txt"
+      }
+    },
+    {
+      "check": "3.5 Formal BMC depth >= 20 for every module",
+      "evidence": "14/16 at depth 20. picorv32_core: BMC depth 10 (need 20+). trash_robot_soc: BMC depth 10 (need 20+) and no PASS at any depth. Unreachable-Threshold Rule checked and NOT triggered: threshold is 20, half is 10, and both modules sit at exactly 10 \u2014 not below half \u2014 so this is a STAGE_FIX, not a waiver escalation.",
+      "fix": {
+        "type": "STAGE_FIX",
+        "description": "Raise BMC depth from 10 to 20 for picorv32_core and trash_robot_soc and re-run formal",
+        "action": "1. In each module's .sby, change the bmc task depth from 10 to 20 (`depth 20` under the [options] section for the bmc task). 2. Re-run sby for both modules. 3. Verify the recorded depth in each results.xml is >= 20 before claiming PASS. 4. trash_robot_soc depends on the 3.3 RTL fix landing first. 5. If picorv32_core BMC at depth 20 exceeds the solver timeout, do NOT lower the depth and re-audit \u2014 report the timeout with wall-clock evidence so a waiver decision can be made against the IP-005 v5 picoRV32 precedent.",
+        "file": "/home/user/hermes_workspace/projects/IP-005/v6/03_frontend-stage/formal/picorv32_core/picorv32_core.sby",
+        "command": "cd /home/user/hermes_workspace/projects/IP-005/v6/03_frontend-stage/formal && sed -i 's/^depth 10$/depth 20/' picorv32_core/picorv32_core.sby trash_robot_soc/trash_robot_soc.sby && grep -n 'depth' picorv32_core/picorv32_core.sby trash_robot_soc/trash_robot_soc.sby && sby -f picorv32_core/picorv32_core.sby"
+      }
+    },
+    {
+      "check": "3.9 verify_test_artifacts.sh exits 0",
+      "evidence": "Script existence confirmed at /home/user/hermes_workspace/projects/IP-005/v6/03_frontend-stage/verify_test_artifacts.sh, but no exit code appears anywhere in the supplied evidence. The rubric requires the exit status, not the file. Per Anti-Hallucination Rule 3 (undeterminable verdict \u2192 FAIL) and Rule 4 (a file with the right name is not evidence of a successful run), this cannot be scored PASS.",
+      "fix": {
+        "type": "STAGE_FIX",
+        "description": "Execute verify_test_artifacts.sh and record its exit code as audit evidence",
+        "action": "1. Run the script from the stage root and capture both stdout and the exit status. 2. Paste the literal exit code into the stage evidence block \u2014 an exit code of 0 is the only thing that satisfies check 3.9. 3. Run this AFTER the 3.3/3.4/3.5 fixes land, since the script is likely to assert on the formal artifacts that are currently missing for trash_robot_soc.",
+        "file": "/home/user/hermes_workspace/projects/IP-005/v6/03_frontend-stage/verify_test_artifacts.sh",
+        "command": "cd /home/user/hermes_workspace/projects/IP-005/v6/03_frontend-stage && bash verify_test_artifacts.sh; echo \"EXIT_CODE=$?\""
+      }
+    }
+  ]
+}

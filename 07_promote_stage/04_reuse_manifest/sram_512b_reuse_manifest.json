@@ -1,0 +1,43 @@
+{
+  "module": "sram_512b",
+  "provenance_type": "self",
+  "source_project": "IP-005 v6",
+  "source_date": "2026-07-15",
+  "promotion_verdict": "PROMOTED",
+  "category": "memory",
+  "research_path": "research/memory/sram_512b/",
+  "qualification": {
+    "lint": "PASS (0 errors)",
+    "formal_bmc": "PASS (timed out deep)",
+    "formal_status": "COND",
+    "synthesis": "PASS (0 latches, 0 unmapped cells)",
+    "equivalence": "CONDITIONAL PASS (sky130 SAT limitation \u2014 documented)",
+    "verification_rtl": "5/5 PASS",
+    "verification_gls": "5/5 PASS",
+    "coverage_tier": "A",
+    "coverage_line_pct": 100,
+    "coverage_toggle_pct": 77.0,
+    "coverage_toggle_bins": 226
+  },
+  "metrics": {
+    "cell_count": 7478,
+    "dff_count": 4129,
+    "total_cells": 7478
+  },
+  "interface": {
+    "bus_protocol": "Wishbone B4",
+    "clock_domain": "sys_clk",
+    "ports": [
+      "wb_clk_i",
+      "wb_rst_i",
+      "wb_adr_i[8:0]",
+      "wb_dat_i[31:0]",
+      "wb_dat_o[31:0]",
+      "wb_we_i",
+      "wb_sel_i[3:0]",
+      "wb_stb_i",
+      "wb_ack_o"
+    ]
+  },
+  "dependencies": []
+}

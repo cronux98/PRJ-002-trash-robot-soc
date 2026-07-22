@@ -1,0 +1,848 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.65+71 (git sha1 e56c6a954, clang++ 18.1.8 -fPIC -O3)
+
+-- Executing script file `/tmp/equiv_power_mgr.ys' --
+
+1. Executing Verilog-2005 frontend: /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-power_mgr/rtl/power_mgr.v
+Parsing Verilog input from `/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-power_mgr/rtl/power_mgr.v' to AST representation.
+Generating RTLIL representation for module `\power_mgr'.
+Successfully finished Verilog frontend.
+
+2. Executing HIERARCHY pass (managing design hierarchy).
+
+2.1. Analyzing design hierarchy..
+Top module:  \power_mgr
+
+2.2. Analyzing design hierarchy..
+Top module:  \power_mgr
+Removed 0 unused modules.
+
+3. Executing PROC pass (convert processes to netlists).
+
+3.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 2 switch rules as full_case in process $proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-power_mgr/rtl/power_mgr.v:60$5 in module power_mgr.
+Marked 1 switch rules as full_case in process $proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-power_mgr/rtl/power_mgr.v:47$3 in module power_mgr.
+Removed a total of 0 dead cases.
+
+3.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 4 redundant assignments.
+Promoted 0 assignments to connections.
+
+3.4. Executing PROC_INIT pass (extract init attributes).
+
+3.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \rst_ni in `\power_mgr.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-power_mgr/rtl/power_mgr.v:60$5'.
+Found async reset \int_rst_n in `\power_mgr.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-power_mgr/rtl/power_mgr.v:47$3'.
+
+3.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~5 debug messages>
+
+3.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\power_mgr.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-power_mgr/rtl/power_mgr.v:60$5'.
+     1/5: $0\sys_rst_n_o[0:0]
+     2/5: $0\wb_ack_o[0:0]
+     3/5: $0\wdt_rst_flag[0:0]
+     4/5: $0\ext_rst_flag[0:0]
+     5/5: $0\wb_dat_o[31:0]
+Creating decoders for process `\power_mgr.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-power_mgr/rtl/power_mgr.v:47$3'.
+     1/2: $0\sync_ff2[0:0]
+     2/2: $0\sync_ff1[0:0]
+
+3.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+3.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\power_mgr.\wb_dat_o' using process `\power_mgr.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-power_mgr/rtl/power_mgr.v:60$5'.
+  created $adff cell `$procdff$47' with positive edge clock and positive level reset.
+Creating register for signal `\power_mgr.\wb_ack_o' using process `\power_mgr.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-power_mgr/rtl/power_mgr.v:60$5'.
+  created $adff cell `$procdff$52' with positive edge clock and positive level reset.
+Creating register for signal `\power_mgr.\sys_rst_n_o' using process `\power_mgr.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-power_mgr/rtl/power_mgr.v:60$5'.
+  created $adff cell `$procdff$57' with positive edge clock and positive level reset.
+Creating register for signal `\power_mgr.\ext_rst_flag' using process `\power_mgr.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-power_mgr/rtl/power_mgr.v:60$5'.
+  created $adff cell `$procdff$62' with positive edge clock and positive level reset.
+Creating register for signal `\power_mgr.\wdt_rst_flag' using process `\power_mgr.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-power_mgr/rtl/power_mgr.v:60$5'.
+  created $adff cell `$procdff$67' with positive edge clock and positive level reset.
+Creating register for signal `\power_mgr.\sync_ff1' using process `\power_mgr.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-power_mgr/rtl/power_mgr.v:47$3'.
+  created $adff cell `$procdff$72' with positive edge clock and positive level reset.
+Creating register for signal `\power_mgr.\sync_ff2' using process `\power_mgr.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-power_mgr/rtl/power_mgr.v:47$3'.
+  created $adff cell `$procdff$77' with positive edge clock and positive level reset.
+
+3.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+3.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 5 empty switches in `\power_mgr.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-power_mgr/rtl/power_mgr.v:60$5'.
+Removing empty process `power_mgr.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-power_mgr/rtl/power_mgr.v:60$5'.
+Removing empty process `power_mgr.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-power_mgr/rtl/power_mgr.v:47$3'.
+Cleaned up 5 empty switches.
+
+3.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module power_mgr.
+<suppressed ~22 debug messages>
+
+4. Executing OPT pass (performing simple optimizations).
+
+4.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module power_mgr.
+
+4.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\power_mgr'.
+Computing hashes of 40 cells of `\power_mgr'.
+Finding duplicate cells in `\power_mgr'.
+Computing hashes of 33 cells of `\power_mgr'.
+Finding duplicate cells in `\power_mgr'.
+<suppressed ~21 debug messages>
+Removed a total of 7 cells.
+
+4.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \power_mgr..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~24 debug messages>
+
+4.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \power_mgr.
+Performed a total of 0 changes.
+
+4.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\power_mgr'.
+Computing hashes of 33 cells of `\power_mgr'.
+Finding duplicate cells in `\power_mgr'.
+Removed a total of 0 cells.
+
+4.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $procdff$47 ($adff) from module power_mgr (D = $procmux$36_Y, Q = \wb_dat_o).
+
+4.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \power_mgr..
+Removed 10 unused cells and 42 unused wires.
+<suppressed ~12 debug messages>
+
+4.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module power_mgr.
+
+4.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+4.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \power_mgr..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~22 debug messages>
+
+4.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \power_mgr.
+Performed a total of 0 changes.
+
+4.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\power_mgr'.
+Computing hashes of 25 cells of `\power_mgr'.
+Finding duplicate cells in `\power_mgr'.
+Removed a total of 0 cells.
+
+4.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \power_mgr..
+
+4.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module power_mgr.
+
+4.16. Finished fast OPT passes. (There is nothing left to do.)
+
+5. Executing ASYNC2SYNC pass.
+Replacing power_mgr.$procdff$57 ($adff): ARST=\rst_ni, D=\sync_ff2, Q=\sys_rst_n_o
+Replacing power_mgr.$procdff$77 ($adff): ARST=\int_rst_n, D=\sync_ff1, Q=\sync_ff2
+Replacing power_mgr.$procdff$67 ($adff): ARST=\rst_ni, D=$0\wdt_rst_flag[0:0], Q=\wdt_rst_flag
+Replacing power_mgr.$auto$ff.cc:337:slice$78 ($adffe): ARST=\rst_ni, D=$procmux$36_Y, Q=\wb_dat_o
+Replacing power_mgr.$procdff$72 ($adff): ARST=\int_rst_n, D=1'1, Q=\sync_ff1
+Replacing power_mgr.$procdff$62 ($adff): ARST=\rst_ni, D=$0\ext_rst_flag[0:0], Q=\ext_rst_flag
+Replacing power_mgr.$procdff$52 ($adff): ARST=\rst_ni, D=$0\wb_ack_o[0:0], Q=\wb_ack_o
+
+6. Executing MEMORY pass.
+
+6.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+6.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+6.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+6.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+6.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+6.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \power_mgr..
+
+6.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+6.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+6.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \power_mgr..
+
+6.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+6.11. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+7. Executing OPT pass (performing simple optimizations).
+
+7.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module power_mgr.
+
+7.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\power_mgr'.
+Computing hashes of 32 cells of `\power_mgr'.
+Finding duplicate cells in `\power_mgr'.
+Removed a total of 0 cells.
+
+7.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \power_mgr..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~46 debug messages>
+
+7.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \power_mgr.
+Performed a total of 0 changes.
+
+7.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\power_mgr'.
+Computing hashes of 32 cells of `\power_mgr'.
+Finding duplicate cells in `\power_mgr'.
+Removed a total of 0 cells.
+
+7.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding SRST signal on $procdff$57 ($sdff) from module power_mgr (D = $auto$async2sync.cc:253:execute$85, Q = $auto$async2sync.cc:253:execute$83, rval = 1'0).
+Adding SRST signal on $procdff$77 ($sdff) from module power_mgr (D = $auto$async2sync.cc:253:execute$91, Q = $auto$async2sync.cc:253:execute$85, rval = 1'0).
+
+7.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \power_mgr..
+Removed 2 unused cells and 3 unused wires.
+<suppressed ~5 debug messages>
+
+7.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module power_mgr.
+
+7.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+7.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \power_mgr..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~42 debug messages>
+
+7.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \power_mgr.
+Performed a total of 0 changes.
+
+7.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\power_mgr'.
+Computing hashes of 31 cells of `\power_mgr'.
+Finding duplicate cells in `\power_mgr'.
+Removed a total of 0 cells.
+
+7.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+7.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \power_mgr..
+
+7.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module power_mgr.
+
+7.16. Finished fast OPT passes. (There is nothing left to do.)
+
+8. Executing TECHMAP pass (map to technology primitives).
+
+8.1. Executing Verilog-2005 frontend: /home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v
+Parsing Verilog input from `/home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu_brent_kung'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `$__div_mod_u'.
+Generating RTLIL representation for module `$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Generating RTLIL representation for module `$connect'.
+Generating RTLIL representation for module `$input_port'.
+Successfully finished Verilog frontend.
+
+8.2. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $sdff.
+Using extmapper simplemap for cells of type $reduce_and.
+Using extmapper simplemap for cells of type $mux.
+Using extmapper simplemap for cells of type $not.
+Using extmapper simplemap for cells of type $sdffe.
+Using extmapper simplemap for cells of type $and.
+Using extmapper simplemap for cells of type $logic_and.
+Using extmapper simplemap for cells of type $logic_not.
+Using extmapper simplemap for cells of type $eq.
+Using template $paramod$8fabc56b80a569262acfc42757a02ca0b8e91278\_90_pmux for cells of type $pmux.
+Using extmapper simplemap for cells of type $reduce_or.
+No more expansions possible.
+<suppressed ~157 debug messages>
+
+9. Executing OPT pass (performing simple optimizations).
+
+9.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module power_mgr.
+<suppressed ~129 debug messages>
+
+9.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\power_mgr'.
+Computing hashes of 102 cells of `\power_mgr'.
+Finding duplicate cells in `\power_mgr'.
+Computing hashes of 73 cells of `\power_mgr'.
+Finding duplicate cells in `\power_mgr'.
+Computing hashes of 44 cells of `\power_mgr'.
+Finding duplicate cells in `\power_mgr'.
+<suppressed ~174 debug messages>
+Removed a total of 58 cells.
+
+9.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \power_mgr..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+9.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \power_mgr.
+Performed a total of 0 changes.
+
+9.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\power_mgr'.
+Computing hashes of 44 cells of `\power_mgr'.
+Finding duplicate cells in `\power_mgr'.
+Removed a total of 0 cells.
+
+9.6. Executing OPT_DFF pass (perform DFF optimizations).
+Setting constant 0-bit at position 0 on $auto$ff.cc:337:slice$249 ($_SDFFE_PN0P_) from module power_mgr.
+
+9.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \power_mgr..
+Removed 0 unused cells and 110 unused wires.
+<suppressed ~1 debug messages>
+
+9.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module power_mgr.
+<suppressed ~1 debug messages>
+
+9.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+9.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \power_mgr..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+9.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \power_mgr.
+Performed a total of 0 changes.
+
+9.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\power_mgr'.
+Computing hashes of 42 cells of `\power_mgr'.
+Finding duplicate cells in `\power_mgr'.
+Removed a total of 0 cells.
+
+9.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+9.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \power_mgr..
+
+9.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module power_mgr.
+
+9.16. Finished fast OPT passes. (There is nothing left to do.)
+
+10. Executing FLATTEN pass (flatten design).
+
+11. Executing OPT pass (performing simple optimizations).
+
+11.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module power_mgr.
+
+11.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\power_mgr'.
+Computing hashes of 42 cells of `\power_mgr'.
+Finding duplicate cells in `\power_mgr'.
+Removed a total of 0 cells.
+
+11.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \power_mgr..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+11.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \power_mgr.
+Performed a total of 0 changes.
+
+11.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\power_mgr'.
+Computing hashes of 42 cells of `\power_mgr'.
+Finding duplicate cells in `\power_mgr'.
+Removed a total of 0 cells.
+
+11.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+11.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \power_mgr..
+
+11.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module power_mgr.
+
+11.9. Finished fast OPT passes. (There is nothing left to do.)
+
+12. Executing Liberty frontend: /home/smdadmin/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130B/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+Imported 428 cell types from liberty file.
+
+13. Executing Verilog-2005 frontend: /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-power_mgr/synth/power_mgr_netlist.v
+Parsing Verilog input from `/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-power_mgr/synth/power_mgr_netlist.v' to AST representation.
+Generating RTLIL representation for module `\power_mgr'.
+Successfully finished Verilog frontend.
+
+14. Executing HIERARCHY pass (managing design hierarchy).
+
+14.1. Analyzing design hierarchy..
+Top module:  \power_mgr
+
+14.2. Analyzing design hierarchy..
+Top module:  \power_mgr
+Removed 0 unused modules.
+
+15. Executing PROC pass (convert processes to netlists).
+
+15.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+15.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed a total of 0 dead cases.
+
+15.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 0 assignments to connections.
+
+15.4. Executing PROC_INIT pass (extract init attributes).
+
+15.5. Executing PROC_ARST pass (detect async resets in processes).
+
+15.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+
+15.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+
+15.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+15.9. Executing PROC_DFF pass (convert process syncs to FFs).
+
+15.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+15.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+15.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module power_mgr.
+
+16. Executing OPT pass (performing simple optimizations).
+
+16.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module power_mgr.
+
+16.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\power_mgr'.
+Computing hashes of 22 cells of `\power_mgr'.
+Finding duplicate cells in `\power_mgr'.
+Removed a total of 0 cells.
+
+16.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \power_mgr..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+16.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \power_mgr.
+Performed a total of 0 changes.
+
+16.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\power_mgr'.
+Computing hashes of 22 cells of `\power_mgr'.
+Finding duplicate cells in `\power_mgr'.
+Removed a total of 0 cells.
+
+16.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+16.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \power_mgr..
+Removed 0 unused cells and 23 unused wires.
+<suppressed ~1 debug messages>
+
+16.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module power_mgr.
+
+16.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+16.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \power_mgr..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+16.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \power_mgr.
+Performed a total of 0 changes.
+
+16.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\power_mgr'.
+Computing hashes of 22 cells of `\power_mgr'.
+Finding duplicate cells in `\power_mgr'.
+Removed a total of 0 cells.
+
+16.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+16.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \power_mgr..
+
+16.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module power_mgr.
+
+16.16. Finished fast OPT passes. (There is nothing left to do.)
+
+17. Executing ASYNC2SYNC pass.
+
+18. Executing MEMORY pass.
+
+18.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+18.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+18.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+18.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+18.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+18.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \power_mgr..
+
+18.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+18.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+18.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \power_mgr..
+
+18.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+18.11. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+19. Executing OPT pass (performing simple optimizations).
+
+19.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module power_mgr.
+
+19.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\power_mgr'.
+Computing hashes of 22 cells of `\power_mgr'.
+Finding duplicate cells in `\power_mgr'.
+Removed a total of 0 cells.
+
+19.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \power_mgr..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+19.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \power_mgr.
+Performed a total of 0 changes.
+
+19.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\power_mgr'.
+Computing hashes of 22 cells of `\power_mgr'.
+Finding duplicate cells in `\power_mgr'.
+Removed a total of 0 cells.
+
+19.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+19.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \power_mgr..
+
+19.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module power_mgr.
+
+19.9. Finished fast OPT passes. (There is nothing left to do.)
+
+20. Executing TECHMAP pass (map to technology primitives).
+
+20.1. Executing Verilog-2005 frontend: /home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v
+Parsing Verilog input from `/home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu_brent_kung'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `$__div_mod_u'.
+Generating RTLIL representation for module `$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Generating RTLIL representation for module `$connect'.
+Generating RTLIL representation for module `$input_port'.
+Successfully finished Verilog frontend.
+
+20.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~77 debug messages>
+
+21. Executing OPT pass (performing simple optimizations).
+
+21.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module power_mgr.
+
+21.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\power_mgr'.
+Computing hashes of 22 cells of `\power_mgr'.
+Finding duplicate cells in `\power_mgr'.
+Removed a total of 0 cells.
+
+21.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \power_mgr..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+21.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \power_mgr.
+Performed a total of 0 changes.
+
+21.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\power_mgr'.
+Computing hashes of 22 cells of `\power_mgr'.
+Finding duplicate cells in `\power_mgr'.
+Removed a total of 0 cells.
+
+21.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+21.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \power_mgr..
+
+21.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module power_mgr.
+
+21.9. Finished fast OPT passes. (There is nothing left to do.)
+
+22. Executing FLATTEN pass (flatten design).
+
+23. Executing OPT pass (performing simple optimizations).
+
+23.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module power_mgr.
+
+23.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\power_mgr'.
+Computing hashes of 22 cells of `\power_mgr'.
+Finding duplicate cells in `\power_mgr'.
+Removed a total of 0 cells.
+
+23.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \power_mgr..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+23.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \power_mgr.
+Performed a total of 0 changes.
+
+23.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\power_mgr'.
+Computing hashes of 22 cells of `\power_mgr'.
+Finding duplicate cells in `\power_mgr'.
+Removed a total of 0 cells.
+
+23.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+23.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \power_mgr..
+
+23.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module power_mgr.
+
+23.9. Finished fast OPT passes. (There is nothing left to do.)
+
+24. Executing EQUIV_MAKE pass (creating equiv checking module).
+Presumably equivalent wires: int_rst_n_gold (\int_rst_n_gold), int_rst_n_gate (\_18__gate) -> int_rst_n
+Presumably equivalent wires: wdt_rst_flag_gold (\wdt_rst_flag_gold), wdt_rst_flag_gate (\_36__gate) -> wdt_rst_flag
+Presumably equivalent wires: ext_rst_flag_gold (\ext_rst_flag_gold), ext_rst_flag_gate (\_16__gate) -> ext_rst_flag
+Presumably equivalent wires: clk_en_o_gold (1'1), clk_en_o_gate (1'1) -> clk_en_o
+Presumably equivalent wires: sys_rst_n_o_gold (\sys_rst_n_o_gold), sys_rst_n_o_gate (\sys_rst_n_o_gate) -> sys_rst_n_o
+Presumably equivalent wires: sys_clk_i_gold (\sys_clk_i_gold), sys_clk_i_gate (\sys_clk_i_gate) -> sys_clk_i
+Presumably equivalent wires: wdt_rst_n_gold (\wdt_rst_n_gold), wdt_rst_n_gate (\wdt_rst_n_gate) -> wdt_rst_n
+Presumably equivalent wires: ext_rst_n_gold (\ext_rst_n_gold), ext_rst_n_gate (\ext_rst_n_gate) -> ext_rst_n
+Presumably equivalent wires: wb_ack_o_gold (\wb_ack_o_gold), wb_ack_o_gate (\wb_ack_o_gate) -> wb_ack_o
+Presumably equivalent wires: wb_cyc_i_gold (\wb_cyc_i_gold), wb_cyc_i_gate (\wb_cyc_i_gate) -> wb_cyc_i
+Presumably equivalent wires: wb_stb_i_gold (\wb_stb_i_gold), wb_stb_i_gate (\wb_stb_i_gate) -> wb_stb_i
+Presumably equivalent wires: wb_we_i_gold (\wb_we_i_gold), wb_we_i_gate (\wb_we_i_gate) -> wb_we_i
+Presumably equivalent wires: wb_sel_i_gold (\wb_sel_i_gold), wb_sel_i_gate (\wb_sel_i_gate) -> wb_sel_i
+Presumably equivalent wires: wb_dat_o_gold ({ 30'000000000000000000000000000000 \wb_dat_o_gold [1:0] }), wb_dat_o_gate ({ 30'000000000000000000000000000000 \_33__gate \_32__gate }) -> wb_dat_o
+Presumably equivalent wires: wb_dat_i_gold (\wb_dat_i_gold), wb_dat_i_gate (\wb_dat_i_gate) -> wb_dat_i
+Presumably equivalent wires: wb_adr_i_gold (\wb_adr_i_gold), wb_adr_i_gate (\wb_adr_i_gate) -> wb_adr_i
+Presumably equivalent wires: rst_ni_gold (\rst_ni_gold), rst_ni_gate (\rst_ni_gate) -> rst_ni
+Presumably equivalent wires: clk_i_gold (\clk_i_gold), clk_i_gate (\clk_i_gate) -> clk_i
+Changing input Q of cell _58__gate (sky130_fd_sc_hd__dfrtp_1): \sys_rst_n_o_gate -> \sys_rst_n_o
+Changing input Q of cell _57__gate (sky130_fd_sc_hd__dfrtp_1): \wb_ack_o_gate -> \wb_ack_o
+Changing input Q of cell _56__gate (sky130_fd_sc_hd__dfrtp_1): \_33__gate -> \wb_dat_o [1]
+Changing input Q of cell _55__gate (sky130_fd_sc_hd__dfrtp_1): \_32__gate -> \wb_dat_o [0]
+Changing input A1 of cell _53__gate (sky130_fd_sc_hd__mux2i_1): \_32__gate -> \wb_dat_o [0]
+Changing input A1 of cell _51__gate (sky130_fd_sc_hd__a22o_1): \_33__gate -> \wb_dat_o [1]
+Changing input A_N of cell _46__gate (sky130_fd_sc_hd__nand4bb_1): \wb_ack_o_gate -> \wb_ack_o
+Changing input A of cell _44__gate (sky130_fd_sc_hd__nor2_1): \wb_ack_o_gate -> \wb_ack_o
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$387_gold ($_AND_): \wdt_rst_flag_gold -> \wdt_rst_flag
+Changing input R of cell $auto$ff.cc:337:slice$321_gold ($_SDFF_PN0_): \int_rst_n_gold -> \int_rst_n
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$386_gold ($_AND_): \ext_rst_flag_gold -> \ext_rst_flag
+Changing input R of cell $auto$ff.cc:337:slice$176_gold ($_SDFF_PN0_): \int_rst_n_gold -> \int_rst_n
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$260_gold ($_MUX_): \ext_rst_flag_gold -> \ext_rst_flag
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$256_gold ($_MUX_): \wdt_rst_flag_gold -> \wdt_rst_flag
+Changing input A of cell $auto$simplemap.cc:227:simplemap_lognot$253_gold ($_NOT_): \wb_ack_o_gold -> \wb_ack_o
+Changing input B of cell $auto$simplemap.cc:157:simplemap_reduce$178_gold ($_AND_): \int_rst_n_gold -> \int_rst_n
+Setting undriven nets to undef: \_33__gate
+Setting undriven nets to undef: \_32__gate
+Setting undriven nets to undef: \sys_rst_n_o_gate
+Setting undriven nets to undef: \wb_ack_o_gate
+
+25. Executing EQUIV_SIMPLE pass.
+Found 38 unproven $equiv cells (7 groups) in power_mgr:
+ Grouping SAT models for \wb_dat_o:
+  Trying to prove $equiv for \wb_dat_o [0]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [1]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [2]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [3]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [4]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [5]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [6]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [7]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [8]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [9]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [10]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [11]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [12]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [13]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [14]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [15]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [16]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [17]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [18]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [19]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [20]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [21]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [22]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [23]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [24]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [25]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [26]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [27]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [28]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [29]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [30]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [31]:ezsat
+ success!
+  Trying to prove $equiv for \wb_ack_o:ezsat
+ failed.
+  Trying to prove $equiv for \sys_rst_n_o:ezsat
+ failed.
+  Trying to prove $equiv for \clk_en_o:ezsat
+ success!
+  Trying to prove $equiv for \ext_rst_flag:ezsat
+ failed.
+  Trying to prove $equiv for \wdt_rst_flag:ezsat
+ failed.
+  Trying to prove $equiv for \int_rst_n:ezsat
+ failed.
+Proved 31 previously unproven $equiv cells.
+
+26. Executing EQUIV_INDUCT pass.
+Found 7 unproven $equiv cells in module power_mgr:

@@ -1,0 +1,5 @@
+`verilator_config
+lint_off -rule DECLFILENAME
+lint_off -rule EOFNEWLINE
+lint_off -rule UNDRIVEN -file "/home/smdadmin/hermes_workspace/projects/IP-005/v6/04_backend-stage/librelane/runs/v6-run2/tmp/4affc89fa7674ab597170e1d61299384.bb.v"
+lint_off -rule UNUSEDSIGNAL -file "/home/smdadmin/hermes_workspace/projects/IP-005/v6/04_backend-stage/librelane/runs/v6-run2/tmp/4affc89fa7674ab597170e1d61299384.bb.v"

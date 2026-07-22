@@ -1,0 +1,71 @@
+196. Printing statistics.
+
+=== trash_robot_soc ===
+
+        +----------Local Count, excluding submodules.
+        | 
+    33250 wires
+    41659 wire bits
+      463 public wires
+     7818 public wire bits
+       16 ports
+       60 port bits
+    40703 cells
+    10805   $_ANDNOT_
+     2035   $_AND_
+      794   $_DFFE_PN0P_
+       78   $_DFFE_PN1P_
+     5483   $_DFFE_PP_
+      314   $_DFF_PN0_
+       14   $_DFF_PN1_
+      160   $_DFF_P_
+     4331   $_MUX_
+     1091   $_NAND_
+     1142   $_NOR_
+      777   $_NOT_
+      558   $_ORNOT_
+     8797   $_OR_
+       37   $_SDFFCE_PN0P_
+       97   $_SDFFCE_PP0P_
+        3   $_SDFFCE_PP1P_
+      162   $_SDFFE_PN0P_
+        4   $_SDFFE_PN1N_
+       34   $_SDFFE_PN1P_
+        1   $_SDFFE_PP0P_
+        3   $_SDFFE_PP1P_
+       64   $_SDFF_PN0_
+        9   $_SDFF_PN1_
+        3   $_SDFF_PP0_
+        3   $_TBUF_
+     1225   $_XNOR_
+     2679   $_XOR_
+
+   Area for cell type $_ANDNOT_ is unknown!
+   Area for cell type $_AND_ is unknown!
+   Area for cell type $_DFFE_PN0P_ is unknown!
+   Area for cell type $_DFFE_PN1P_ is unknown!
+   Area for cell type $_DFFE_PP_ is unknown!
+   Area for cell type $_DFF_PN0_ is unknown!
+   Area for cell type $_DFF_PN1_ is unknown!
+   Area for cell type $_DFF_P_ is unknown!
+   Area for cell type $_MUX_ is unknown!
+   Area for cell type $_NAND_ is unknown!
+   Area for cell type $_NOR_ is unknown!
+   Area for cell type $_NOT_ is unknown!
+   Area for cell type $_ORNOT_ is unknown!
+   Area for cell type $_OR_ is unknown!
+   Area for cell type $_SDFFCE_PN0P_ is unknown!
+   Area for cell type $_SDFFCE_PP0P_ is unknown!
+   Area for cell type $_SDFFCE_PP1P_ is unknown!
+   Area for cell type $_SDFFE_PN0P_ is unknown!
+   Area for cell type $_SDFFE_PN1N_ is unknown!
+   Area for cell type $_SDFFE_PN1P_ is unknown!
+   Area for cell type $_SDFFE_PP0P_ is unknown!
+   Area for cell type $_SDFFE_PP1P_ is unknown!
+   Area for cell type $_SDFF_PN0_ is unknown!
+   Area for cell type $_SDFF_PN1_ is unknown!
+   Area for cell type $_SDFF_PP0_ is unknown!
+   Area for cell type $_TBUF_ is unknown!
+   Area for cell type $_XNOR_ is unknown!
+   Area for cell type $_XOR_ is unknown!
+

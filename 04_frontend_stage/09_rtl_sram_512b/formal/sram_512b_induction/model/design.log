@@ -1,0 +1,1121 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.65+71 (git sha1 e56c6a954, clang++ 18.1.8 -fPIC -O3)
+
+-- Executing script file `../model/design.ys' --
+
+1. Executing Verilog-2005 frontend: sram_512b.v
+Parsing formal SystemVerilog input from `sram_512b.v' to AST representation.
+Storing AST representation for module `$abstract\sram_512b'.
+Successfully finished Verilog frontend.
+
+2. Executing PREP pass.
+
+2.1. Executing HIERARCHY pass (managing design hierarchy).
+
+2.2. Executing AST frontend in derive mode using pre-parsed AST for module `\sram_512b'.
+Generating RTLIL representation for module `\sram_512b'.
+Warning: Replacing memory \mem with list of registers. See sram_512b.v:39
+
+2.2.1. Analyzing design hierarchy..
+Top module:  \sram_512b
+
+2.2.2. Analyzing design hierarchy..
+Top module:  \sram_512b
+Removing unused module `$abstract\sram_512b'.
+Removed 1 unused modules.
+
+2.3. Executing PROC pass (convert processes to netlists).
+
+2.3.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+2.3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed 1 dead cases from process $proc$sram_512b.v:32$7 in module sram_512b.
+Marked 12 switch rules as full_case in process $proc$sram_512b.v:32$7 in module sram_512b.
+Removed a total of 1 dead cases.
+
+2.3.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 1 redundant assignment.
+Promoted 10 assignments to connections.
+
+2.3.4. Executing PROC_INIT pass (extract init attributes).
+
+2.3.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \rst_ni in `\sram_512b.$proc$sram_512b.v:32$7'.
+
+2.3.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~11 debug messages>
+
+2.3.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\sram_512b.$proc$sram_512b.v:32$7'.
+     1/553: $4$mem2reg_rd$\mem$sram_512b.v:44$5_DATA[31:0]$60
+     2/553: $4$mem2reg_wr$\mem$sram_512b.v:42$4_ADDR[6:0]$58
+     3/553: $4$mem2reg_wr$\mem$sram_512b.v:42$4_DATA[31:0]$59
+     4/553: $0\mem[127][31:0] [31:24]
+     5/553: $0\mem[127][31:0] [23:16]
+     6/553: $0\mem[126][31:0] [23:16]
+     7/553: $0\mem[125][31:0] [23:16]
+     8/553: $0\mem[124][31:0] [23:16]
+     9/553: $0\mem[123][31:0] [23:16]
+    10/553: $0\mem[122][31:0] [23:16]
+    11/553: $0\mem[121][31:0] [23:16]
+    12/553: $0\mem[120][31:0] [23:16]
+    13/553: $0\mem[119][31:0] [23:16]
+    14/553: $0\mem[118][31:0] [23:16]
+    15/553: $0\mem[117][31:0] [23:16]
+    16/553: $0\mem[116][31:0] [23:16]
+    17/553: $0\mem[115][31:0] [23:16]
+    18/553: $0\mem[114][31:0] [23:16]
+    19/553: $0\mem[113][31:0] [23:16]
+    20/553: $0\mem[112][31:0] [23:16]
+    21/553: $0\mem[111][31:0] [23:16]
+    22/553: $0\mem[110][31:0] [23:16]
+    23/553: $0\mem[109][31:0] [23:16]
+    24/553: $0\mem[108][31:0] [23:16]
+    25/553: $0\mem[107][31:0] [23:16]
+    26/553: $0\mem[106][31:0] [23:16]
+    27/553: $0\mem[105][31:0] [23:16]
+    28/553: $0\mem[104][31:0] [23:16]
+    29/553: $0\mem[103][31:0] [23:16]
+    30/553: $0\mem[102][31:0] [23:16]
+    31/553: $0\mem[101][31:0] [23:16]
+    32/553: $0\mem[100][31:0] [23:16]
+    33/553: $0\mem[99][31:0] [23:16]
+    34/553: $0\mem[98][31:0] [23:16]
+    35/553: $0\mem[97][31:0] [23:16]
+    36/553: $0\mem[96][31:0] [23:16]
+    37/553: $0\mem[95][31:0] [23:16]
+    38/553: $0\mem[94][31:0] [23:16]
+    39/553: $0\mem[93][31:0] [23:16]
+    40/553: $0\mem[92][31:0] [23:16]
+    41/553: $0\mem[91][31:0] [23:16]
+    42/553: $0\mem[90][31:0] [23:16]
+    43/553: $0\mem[89][31:0] [23:16]
+    44/553: $0\mem[88][31:0] [23:16]
+    45/553: $0\mem[87][31:0] [23:16]
+    46/553: $0\mem[86][31:0] [23:16]
+    47/553: $0\mem[85][31:0] [23:16]
+    48/553: $0\mem[84][31:0] [23:16]
+    49/553: $0\mem[83][31:0] [23:16]
+    50/553: $0\mem[82][31:0] [23:16]
+    51/553: $0\mem[81][31:0] [23:16]
+    52/553: $0\mem[80][31:0] [23:16]
+    53/553: $0\mem[79][31:0] [23:16]
+    54/553: $0\mem[78][31:0] [23:16]
+    55/553: $0\mem[77][31:0] [23:16]
+    56/553: $0\mem[76][31:0] [23:16]
+    57/553: $0\mem[75][31:0] [23:16]
+    58/553: $0\mem[74][31:0] [23:16]
+    59/553: $0\mem[73][31:0] [23:16]
+    60/553: $0\mem[72][31:0] [23:16]
+    61/553: $0\mem[71][31:0] [23:16]
+    62/553: $0\mem[70][31:0] [23:16]
+    63/553: $0\mem[69][31:0] [23:16]
+    64/553: $0\mem[68][31:0] [23:16]
+    65/553: $0\mem[67][31:0] [23:16]
+    66/553: $0\mem[66][31:0] [23:16]
+    67/553: $0\mem[65][31:0] [23:16]
+    68/553: $0\mem[64][31:0] [23:16]
+    69/553: $0\mem[63][31:0] [23:16]
+    70/553: $0\mem[62][31:0] [23:16]
+    71/553: $0\mem[61][31:0] [23:16]
+    72/553: $0\mem[60][31:0] [23:16]
+    73/553: $0\mem[59][31:0] [23:16]
+    74/553: $0\mem[58][31:0] [23:16]
+    75/553: $0\mem[57][31:0] [23:16]
+    76/553: $0\mem[56][31:0] [23:16]
+    77/553: $0\mem[55][31:0] [23:16]
+    78/553: $0\mem[54][31:0] [23:16]
+    79/553: $0\mem[53][31:0] [23:16]
+    80/553: $0\mem[52][31:0] [23:16]
+    81/553: $0\mem[51][31:0] [23:16]
+    82/553: $0\mem[50][31:0] [23:16]
+    83/553: $0\mem[49][31:0] [23:16]
+    84/553: $0\mem[48][31:0] [23:16]
+    85/553: $0\mem[47][31:0] [23:16]
+    86/553: $0\mem[46][31:0] [23:16]
+    87/553: $0\mem[45][31:0] [23:16]
+    88/553: $0\mem[44][31:0] [23:16]
+    89/553: $0\mem[43][31:0] [23:16]
+    90/553: $0\mem[42][31:0] [23:16]
+    91/553: $0\mem[41][31:0] [23:16]
+    92/553: $0\mem[40][31:0] [23:16]
+    93/553: $0\mem[39][31:0] [23:16]
+    94/553: $0\mem[38][31:0] [23:16]
+    95/553: $0\mem[37][31:0] [23:16]
+    96/553: $0\mem[36][31:0] [23:16]
+    97/553: $0\mem[35][31:0] [23:16]
+    98/553: $0\mem[34][31:0] [23:16]
+    99/553: $0\mem[33][31:0] [23:16]
+   100/553: $0\mem[32][31:0] [23:16]
+   101/553: $0\mem[31][31:0] [23:16]
+   102/553: $0\mem[30][31:0] [23:16]
+   103/553: $0\mem[29][31:0] [23:16]
+   104/553: $0\mem[28][31:0] [23:16]
+   105/553: $0\mem[27][31:0] [23:16]
+   106/553: $0\mem[26][31:0] [23:16]
+   107/553: $0\mem[25][31:0] [23:16]
+   108/553: $0\mem[24][31:0] [23:16]
+   109/553: $0\mem[23][31:0] [23:16]
+   110/553: $0\mem[22][31:0] [23:16]
+   111/553: $0\mem[21][31:0] [23:16]
+   112/553: $0\mem[20][31:0] [23:16]
+   113/553: $0\mem[19][31:0] [23:16]
+   114/553: $0\mem[18][31:0] [23:16]
+   115/553: $0\mem[17][31:0] [23:16]
+   116/553: $0\mem[16][31:0] [23:16]
+   117/553: $0\mem[15][31:0] [23:16]
+   118/553: $0\mem[14][31:0] [23:16]
+   119/553: $0\mem[13][31:0] [23:16]
+   120/553: $0\mem[12][31:0] [23:16]
+   121/553: $0\mem[11][31:0] [23:16]
+   122/553: $0\mem[10][31:0] [23:16]
+   123/553: $0\mem[9][31:0] [23:16]
+   124/553: $0\mem[8][31:0] [23:16]
+   125/553: $0\mem[7][31:0] [23:16]
+   126/553: $0\mem[6][31:0] [23:16]
+   127/553: $0\mem[5][31:0] [23:16]
+   128/553: $0\mem[4][31:0] [23:16]
+   129/553: $0\mem[3][31:0] [23:16]
+   130/553: $0\mem[2][31:0] [23:16]
+   131/553: $0\mem[1][31:0] [23:16]
+   132/553: $0\mem[0][31:0] [23:16]
+   133/553: $4$mem2reg_wr$\mem$sram_512b.v:41$3_DATA[31:0]$57
+   134/553: $0\mem[126][31:0] [31:24]
+   135/553: $0\mem[127][31:0] [15:8]
+   136/553: $0\mem[126][31:0] [15:8]
+   137/553: $0\mem[125][31:0] [15:8]
+   138/553: $0\mem[124][31:0] [15:8]
+   139/553: $0\mem[123][31:0] [15:8]
+   140/553: $0\mem[122][31:0] [15:8]
+   141/553: $0\mem[121][31:0] [15:8]
+   142/553: $0\mem[120][31:0] [15:8]
+   143/553: $0\mem[119][31:0] [15:8]
+   144/553: $0\mem[118][31:0] [15:8]
+   145/553: $0\mem[117][31:0] [15:8]
+   146/553: $0\mem[116][31:0] [15:8]
+   147/553: $0\mem[115][31:0] [15:8]
+   148/553: $0\mem[114][31:0] [15:8]
+   149/553: $0\mem[113][31:0] [15:8]
+   150/553: $0\mem[112][31:0] [15:8]
+   151/553: $0\mem[111][31:0] [15:8]
+   152/553: $0\mem[110][31:0] [15:8]
+   153/553: $0\mem[109][31:0] [15:8]
+   154/553: $0\mem[108][31:0] [15:8]
+   155/553: $0\mem[107][31:0] [15:8]
+   156/553: $0\mem[106][31:0] [15:8]
+   157/553: $0\mem[105][31:0] [15:8]
+   158/553: $0\mem[104][31:0] [15:8]
+   159/553: $0\mem[103][31:0] [15:8]
+   160/553: $0\mem[102][31:0] [15:8]
+   161/553: $0\mem[101][31:0] [15:8]
+   162/553: $0\mem[100][31:0] [15:8]
+   163/553: $0\mem[99][31:0] [15:8]
+   164/553: $0\mem[98][31:0] [15:8]
+   165/553: $0\mem[97][31:0] [15:8]
+   166/553: $0\mem[96][31:0] [15:8]
+   167/553: $0\mem[95][31:0] [15:8]
+   168/553: $0\mem[94][31:0] [15:8]
+   169/553: $0\mem[93][31:0] [15:8]
+   170/553: $0\mem[92][31:0] [15:8]
+   171/553: $0\mem[91][31:0] [15:8]
+   172/553: $0\mem[90][31:0] [15:8]
+   173/553: $0\mem[89][31:0] [15:8]
+   174/553: $0\mem[88][31:0] [15:8]
+   175/553: $0\mem[87][31:0] [15:8]
+   176/553: $0\mem[86][31:0] [15:8]
+   177/553: $0\mem[85][31:0] [15:8]
+   178/553: $0\mem[84][31:0] [15:8]
+   179/553: $0\mem[83][31:0] [15:8]
+   180/553: $0\mem[82][31:0] [15:8]
+   181/553: $0\mem[81][31:0] [15:8]
+   182/553: $0\mem[80][31:0] [15:8]
+   183/553: $0\mem[79][31:0] [15:8]
+   184/553: $0\mem[78][31:0] [15:8]
+   185/553: $0\mem[77][31:0] [15:8]
+   186/553: $0\mem[76][31:0] [15:8]
+   187/553: $0\mem[75][31:0] [15:8]
+   188/553: $0\mem[74][31:0] [15:8]
+   189/553: $0\mem[73][31:0] [15:8]
+   190/553: $0\mem[72][31:0] [15:8]
+   191/553: $0\mem[71][31:0] [15:8]
+   192/553: $0\mem[70][31:0] [15:8]
+   193/553: $0\mem[69][31:0] [15:8]
+   194/553: $0\mem[68][31:0] [15:8]
+   195/553: $0\mem[67][31:0] [15:8]
+   196/553: $0\mem[66][31:0] [15:8]
+   197/553: $0\mem[65][31:0] [15:8]
+   198/553: $0\mem[64][31:0] [15:8]
+   199/553: $0\mem[63][31:0] [15:8]
+   200/553: $0\mem[62][31:0] [15:8]
+   201/553: $0\mem[61][31:0] [15:8]
+   202/553: $0\mem[60][31:0] [15:8]
+   203/553: $0\mem[59][31:0] [15:8]
+   204/553: $0\mem[58][31:0] [15:8]
+   205/553: $0\mem[57][31:0] [15:8]
+   206/553: $0\mem[56][31:0] [15:8]
+   207/553: $0\mem[55][31:0] [15:8]
+   208/553: $0\mem[54][31:0] [15:8]
+   209/553: $0\mem[53][31:0] [15:8]
+   210/553: $0\mem[52][31:0] [15:8]
+   211/553: $0\mem[51][31:0] [15:8]
+   212/553: $0\mem[50][31:0] [15:8]
+   213/553: $0\mem[49][31:0] [15:8]
+   214/553: $0\mem[48][31:0] [15:8]
+   215/553: $0\mem[47][31:0] [15:8]
+   216/553: $0\mem[46][31:0] [15:8]
+   217/553: $0\mem[45][31:0] [15:8]
+   218/553: $0\mem[44][31:0] [15:8]
+   219/553: $0\mem[43][31:0] [15:8]
+   220/553: $0\mem[42][31:0] [15:8]
+   221/553: $0\mem[41][31:0] [15:8]
+   222/553: $0\mem[40][31:0] [15:8]
+   223/553: $0\mem[39][31:0] [15:8]
+   224/553: $0\mem[38][31:0] [15:8]
+   225/553: $0\mem[37][31:0] [15:8]
+   226/553: $0\mem[36][31:0] [15:8]
+   227/553: $0\mem[35][31:0] [15:8]
+   228/553: $0\mem[34][31:0] [15:8]
+   229/553: $0\mem[33][31:0] [15:8]
+   230/553: $0\mem[32][31:0] [15:8]
+   231/553: $0\mem[31][31:0] [15:8]
+   232/553: $0\mem[30][31:0] [15:8]
+   233/553: $0\mem[29][31:0] [15:8]
+   234/553: $0\mem[28][31:0] [15:8]
+   235/553: $0\mem[27][31:0] [15:8]
+   236/553: $0\mem[26][31:0] [15:8]
+   237/553: $0\mem[25][31:0] [15:8]
+   238/553: $0\mem[24][31:0] [15:8]
+   239/553: $0\mem[23][31:0] [15:8]
+   240/553: $0\mem[22][31:0] [15:8]
+   241/553: $0\mem[21][31:0] [15:8]
+   242/553: $0\mem[20][31:0] [15:8]
+   243/553: $0\mem[19][31:0] [15:8]
+   244/553: $0\mem[18][31:0] [15:8]
+   245/553: $0\mem[17][31:0] [15:8]
+   246/553: $0\mem[16][31:0] [15:8]
+   247/553: $0\mem[15][31:0] [15:8]
+   248/553: $0\mem[14][31:0] [15:8]
+   249/553: $0\mem[13][31:0] [15:8]
+   250/553: $0\mem[12][31:0] [15:8]
+   251/553: $0\mem[11][31:0] [15:8]
+   252/553: $0\mem[10][31:0] [15:8]
+   253/553: $0\mem[9][31:0] [15:8]
+   254/553: $0\mem[8][31:0] [15:8]
+   255/553: $0\mem[7][31:0] [15:8]
+   256/553: $0\mem[6][31:0] [15:8]
+   257/553: $0\mem[5][31:0] [15:8]
+   258/553: $0\mem[4][31:0] [15:8]
+   259/553: $0\mem[3][31:0] [15:8]
+   260/553: $0\mem[2][31:0] [15:8]
+   261/553: $0\mem[1][31:0] [15:8]
+   262/553: $0\mem[0][31:0] [15:8]
+   263/553: $4$mem2reg_wr$\mem$sram_512b.v:40$2_DATA[31:0]$55
+   264/553: $0\mem[125][31:0] [31:24]
+   265/553: $0\mem[127][31:0] [7:0]
+   266/553: $0\mem[126][31:0] [7:0]
+   267/553: $0\mem[125][31:0] [7:0]
+   268/553: $0\mem[124][31:0] [7:0]
+   269/553: $0\mem[123][31:0] [7:0]
+   270/553: $0\mem[122][31:0] [7:0]
+   271/553: $0\mem[121][31:0] [7:0]
+   272/553: $0\mem[120][31:0] [7:0]
+   273/553: $0\mem[119][31:0] [7:0]
+   274/553: $0\mem[118][31:0] [7:0]
+   275/553: $0\mem[117][31:0] [7:0]
+   276/553: $0\mem[116][31:0] [7:0]
+   277/553: $0\mem[115][31:0] [7:0]
+   278/553: $0\mem[114][31:0] [7:0]
+   279/553: $0\mem[113][31:0] [7:0]
+   280/553: $0\mem[112][31:0] [7:0]
+   281/553: $0\mem[111][31:0] [7:0]
+   282/553: $0\mem[110][31:0] [7:0]
+   283/553: $0\mem[109][31:0] [7:0]
+   284/553: $0\mem[108][31:0] [7:0]
+   285/553: $0\mem[107][31:0] [7:0]
+   286/553: $0\mem[106][31:0] [7:0]
+   287/553: $0\mem[105][31:0] [7:0]
+   288/553: $0\mem[104][31:0] [7:0]
+   289/553: $0\mem[103][31:0] [7:0]
+   290/553: $0\mem[102][31:0] [7:0]
+   291/553: $0\mem[101][31:0] [7:0]
+   292/553: $0\mem[100][31:0] [7:0]
+   293/553: $0\mem[99][31:0] [7:0]
+   294/553: $0\mem[98][31:0] [7:0]
+   295/553: $0\mem[97][31:0] [7:0]
+   296/553: $0\mem[96][31:0] [7:0]
+   297/553: $0\mem[95][31:0] [7:0]
+   298/553: $0\mem[94][31:0] [7:0]
+   299/553: $0\mem[93][31:0] [7:0]
+   300/553: $0\mem[92][31:0] [7:0]
+   301/553: $0\mem[91][31:0] [7:0]
+   302/553: $0\mem[90][31:0] [7:0]
+   303/553: $0\mem[89][31:0] [7:0]
+   304/553: $0\mem[88][31:0] [7:0]
+   305/553: $0\mem[87][31:0] [7:0]
+   306/553: $0\mem[86][31:0] [7:0]
+   307/553: $0\mem[85][31:0] [7:0]
+   308/553: $0\mem[84][31:0] [7:0]
+   309/553: $0\mem[83][31:0] [7:0]
+   310/553: $0\mem[82][31:0] [7:0]
+   311/553: $0\mem[81][31:0] [7:0]
+   312/553: $0\mem[80][31:0] [7:0]
+   313/553: $0\mem[79][31:0] [7:0]
+   314/553: $0\mem[78][31:0] [7:0]
+   315/553: $0\mem[77][31:0] [7:0]
+   316/553: $0\mem[76][31:0] [7:0]
+   317/553: $0\mem[75][31:0] [7:0]
+   318/553: $0\mem[74][31:0] [7:0]
+   319/553: $0\mem[73][31:0] [7:0]
+   320/553: $0\mem[72][31:0] [7:0]
+   321/553: $0\mem[71][31:0] [7:0]
+   322/553: $0\mem[70][31:0] [7:0]
+   323/553: $0\mem[69][31:0] [7:0]
+   324/553: $0\mem[68][31:0] [7:0]
+   325/553: $0\mem[67][31:0] [7:0]
+   326/553: $0\mem[66][31:0] [7:0]
+   327/553: $0\mem[65][31:0] [7:0]
+   328/553: $0\mem[64][31:0] [7:0]
+   329/553: $0\mem[63][31:0] [7:0]
+   330/553: $0\mem[62][31:0] [7:0]
+   331/553: $0\mem[61][31:0] [7:0]
+   332/553: $0\mem[60][31:0] [7:0]
+   333/553: $0\mem[59][31:0] [7:0]
+   334/553: $0\mem[58][31:0] [7:0]
+   335/553: $0\mem[57][31:0] [7:0]
+   336/553: $0\mem[56][31:0] [7:0]
+   337/553: $0\mem[55][31:0] [7:0]
+   338/553: $0\mem[54][31:0] [7:0]
+   339/553: $0\mem[53][31:0] [7:0]
+   340/553: $0\mem[52][31:0] [7:0]
+   341/553: $0\mem[51][31:0] [7:0]
+   342/553: $0\mem[50][31:0] [7:0]
+   343/553: $0\mem[49][31:0] [7:0]
+   344/553: $0\mem[48][31:0] [7:0]
+   345/553: $0\mem[47][31:0] [7:0]
+   346/553: $0\mem[46][31:0] [7:0]
+   347/553: $0\mem[45][31:0] [7:0]
+   348/553: $0\mem[44][31:0] [7:0]
+   349/553: $0\mem[43][31:0] [7:0]
+   350/553: $0\mem[42][31:0] [7:0]
+   351/553: $0\mem[41][31:0] [7:0]
+   352/553: $0\mem[40][31:0] [7:0]
+   353/553: $0\mem[39][31:0] [7:0]
+   354/553: $0\mem[38][31:0] [7:0]
+   355/553: $0\mem[37][31:0] [7:0]
+   356/553: $0\mem[36][31:0] [7:0]
+   357/553: $0\mem[35][31:0] [7:0]
+   358/553: $0\mem[34][31:0] [7:0]
+   359/553: $0\mem[33][31:0] [7:0]
+   360/553: $0\mem[32][31:0] [7:0]
+   361/553: $0\mem[31][31:0] [7:0]
+   362/553: $0\mem[30][31:0] [7:0]
+   363/553: $0\mem[29][31:0] [7:0]
+   364/553: $0\mem[28][31:0] [7:0]
+   365/553: $0\mem[27][31:0] [7:0]
+   366/553: $0\mem[26][31:0] [7:0]
+   367/553: $0\mem[25][31:0] [7:0]
+   368/553: $0\mem[24][31:0] [7:0]
+   369/553: $0\mem[23][31:0] [7:0]
+   370/553: $0\mem[22][31:0] [7:0]
+   371/553: $0\mem[21][31:0] [7:0]
+   372/553: $0\mem[20][31:0] [7:0]
+   373/553: $0\mem[19][31:0] [7:0]
+   374/553: $0\mem[18][31:0] [7:0]
+   375/553: $0\mem[17][31:0] [7:0]
+   376/553: $0\mem[16][31:0] [7:0]
+   377/553: $0\mem[15][31:0] [7:0]
+   378/553: $0\mem[14][31:0] [7:0]
+   379/553: $0\mem[13][31:0] [7:0]
+   380/553: $0\mem[12][31:0] [7:0]
+   381/553: $0\mem[11][31:0] [7:0]
+   382/553: $0\mem[10][31:0] [7:0]
+   383/553: $0\mem[9][31:0] [7:0]
+   384/553: $0\mem[8][31:0] [7:0]
+   385/553: $0\mem[7][31:0] [7:0]
+   386/553: $0\mem[6][31:0] [7:0]
+   387/553: $0\mem[5][31:0] [7:0]
+   388/553: $0\mem[4][31:0] [7:0]
+   389/553: $0\mem[3][31:0] [7:0]
+   390/553: $0\mem[2][31:0] [7:0]
+   391/553: $0\mem[1][31:0] [7:0]
+   392/553: $0\mem[0][31:0] [7:0]
+   393/553: $4$mem2reg_wr$\mem$sram_512b.v:39$1_DATA[31:0]$53
+   394/553: $3$mem2reg_wr$\mem$sram_512b.v:42$4_DATA[31:0]$49
+   395/553: $3$mem2reg_wr$\mem$sram_512b.v:42$4_ADDR[6:0]$48
+   396/553: $3$mem2reg_wr$\mem$sram_512b.v:41$3_DATA[31:0]$47
+   397/553: $3$mem2reg_wr$\mem$sram_512b.v:41$3_ADDR[6:0]$46
+   398/553: $3$mem2reg_wr$\mem$sram_512b.v:40$2_DATA[31:0]$45
+   399/553: $3$mem2reg_wr$\mem$sram_512b.v:40$2_ADDR[6:0]$44
+   400/553: $3$mem2reg_wr$\mem$sram_512b.v:39$1_DATA[31:0]$43
+   401/553: $3$mem2reg_wr$\mem$sram_512b.v:39$1_ADDR[6:0]$42
+   402/553: $3$mem2reg_rd$\mem$sram_512b.v:44$5_DATA[31:0]$51
+   403/553: $3$mem2reg_rd$\mem$sram_512b.v:44$5_ADDR[6:0]$50
+   404/553: $2$mem2reg_rd$\mem$sram_512b.v:44$5_DATA[31:0]$41
+   405/553: $2$mem2reg_rd$\mem$sram_512b.v:44$5_ADDR[6:0]$40
+   406/553: $2$mem2reg_wr$\mem$sram_512b.v:42$4_DATA[31:0]$39
+   407/553: $2$mem2reg_wr$\mem$sram_512b.v:42$4_ADDR[6:0]$38
+   408/553: $2$mem2reg_wr$\mem$sram_512b.v:41$3_DATA[31:0]$37
+   409/553: $2$mem2reg_wr$\mem$sram_512b.v:41$3_ADDR[6:0]$36
+   410/553: $2$mem2reg_wr$\mem$sram_512b.v:40$2_DATA[31:0]$35
+   411/553: $2$mem2reg_wr$\mem$sram_512b.v:40$2_ADDR[6:0]$34
+   412/553: $2$mem2reg_wr$\mem$sram_512b.v:39$1_DATA[31:0]$33
+   413/553: $2$mem2reg_wr$\mem$sram_512b.v:39$1_ADDR[6:0]$32
+   414/553: $0\wb_ack_o[0:0]
+   415/553: $1$mem2reg_rd$\mem$sram_512b.v:44$5_DATA[31:0]$28
+   416/553: $1$mem2reg_rd$\mem$sram_512b.v:44$5_ADDR[6:0]$27
+   417/553: $1$mem2reg_wr$\mem$sram_512b.v:42$4_DATA[31:0]$26
+   418/553: $1$mem2reg_wr$\mem$sram_512b.v:42$4_ADDR[6:0]$25
+   419/553: $1$mem2reg_wr$\mem$sram_512b.v:41$3_DATA[31:0]$24
+   420/553: $1$mem2reg_wr$\mem$sram_512b.v:41$3_ADDR[6:0]$23
+   421/553: $1$mem2reg_wr$\mem$sram_512b.v:40$2_DATA[31:0]$22
+   422/553: $1$mem2reg_wr$\mem$sram_512b.v:40$2_ADDR[6:0]$21
+   423/553: $1$mem2reg_wr$\mem$sram_512b.v:39$1_DATA[31:0]$20
+   424/553: $1$mem2reg_wr$\mem$sram_512b.v:39$1_ADDR[6:0]$19
+   425/553: $0\mem[124][31:0] [31:24]
+   426/553: $0\mem[123][31:0] [31:24]
+   427/553: $0\mem[122][31:0] [31:24]
+   428/553: $0\mem[121][31:0] [31:24]
+   429/553: $0\mem[120][31:0] [31:24]
+   430/553: $0\mem[119][31:0] [31:24]
+   431/553: $0\mem[118][31:0] [31:24]
+   432/553: $0\mem[117][31:0] [31:24]
+   433/553: $0\mem[116][31:0] [31:24]
+   434/553: $0\mem[115][31:0] [31:24]
+   435/553: $0\mem[114][31:0] [31:24]
+   436/553: $0\mem[113][31:0] [31:24]
+   437/553: $0\mem[112][31:0] [31:24]
+   438/553: $0\mem[111][31:0] [31:24]
+   439/553: $0\mem[110][31:0] [31:24]
+   440/553: $0\mem[109][31:0] [31:24]
+   441/553: $0\mem[108][31:0] [31:24]
+   442/553: $0\mem[107][31:0] [31:24]
+   443/553: $0\mem[106][31:0] [31:24]
+   444/553: $0\mem[105][31:0] [31:24]
+   445/553: $0\mem[104][31:0] [31:24]
+   446/553: $0\mem[103][31:0] [31:24]
+   447/553: $0\mem[102][31:0] [31:24]
+   448/553: $0\mem[101][31:0] [31:24]
+   449/553: $0\mem[100][31:0] [31:24]
+   450/553: $0\mem[99][31:0] [31:24]
+   451/553: $0\mem[98][31:0] [31:24]
+   452/553: $0\mem[97][31:0] [31:24]
+   453/553: $0\mem[96][31:0] [31:24]
+   454/553: $0\mem[95][31:0] [31:24]
+   455/553: $0\mem[94][31:0] [31:24]
+   456/553: $0\mem[93][31:0] [31:24]
+   457/553: $0\mem[92][31:0] [31:24]
+   458/553: $0\mem[91][31:0] [31:24]
+   459/553: $0\mem[90][31:0] [31:24]
+   460/553: $0\mem[89][31:0] [31:24]
+   461/553: $0\mem[88][31:0] [31:24]
+   462/553: $0\mem[87][31:0] [31:24]
+   463/553: $0\mem[86][31:0] [31:24]
+   464/553: $0\mem[85][31:0] [31:24]
+   465/553: $0\mem[84][31:0] [31:24]
+   466/553: $0\mem[83][31:0] [31:24]
+   467/553: $0\mem[82][31:0] [31:24]
+   468/553: $0\mem[81][31:0] [31:24]
+   469/553: $0\mem[80][31:0] [31:24]
+   470/553: $0\mem[79][31:0] [31:24]
+   471/553: $0\mem[78][31:0] [31:24]
+   472/553: $0\mem[77][31:0] [31:24]
+   473/553: $0\mem[76][31:0] [31:24]
+   474/553: $0\mem[75][31:0] [31:24]
+   475/553: $0\mem[74][31:0] [31:24]
+   476/553: $0\mem[73][31:0] [31:24]
+   477/553: $0\mem[72][31:0] [31:24]
+   478/553: $0\mem[71][31:0] [31:24]
+   479/553: $0\mem[70][31:0] [31:24]
+   480/553: $0\mem[69][31:0] [31:24]
+   481/553: $0\mem[68][31:0] [31:24]
+   482/553: $0\mem[67][31:0] [31:24]
+   483/553: $0\mem[66][31:0] [31:24]
+   484/553: $0\mem[65][31:0] [31:24]
+   485/553: $0\mem[64][31:0] [31:24]
+   486/553: $0\mem[63][31:0] [31:24]
+   487/553: $0\mem[62][31:0] [31:24]
+   488/553: $0\mem[61][31:0] [31:24]
+   489/553: $0\mem[60][31:0] [31:24]
+   490/553: $0\mem[59][31:0] [31:24]
+   491/553: $0\mem[58][31:0] [31:24]
+   492/553: $0\mem[57][31:0] [31:24]
+   493/553: $0\mem[56][31:0] [31:24]
+   494/553: $0\mem[55][31:0] [31:24]
+   495/553: $0\mem[54][31:0] [31:24]
+   496/553: $0\mem[53][31:0] [31:24]
+   497/553: $0\mem[52][31:0] [31:24]
+   498/553: $0\mem[51][31:0] [31:24]
+   499/553: $0\mem[50][31:0] [31:24]
+   500/553: $0\mem[49][31:0] [31:24]
+   501/553: $0\mem[48][31:0] [31:24]
+   502/553: $0\mem[47][31:0] [31:24]
+   503/553: $0\mem[46][31:0] [31:24]
+   504/553: $0\mem[45][31:0] [31:24]
+   505/553: $0\mem[44][31:0] [31:24]
+   506/553: $0\mem[43][31:0] [31:24]
+   507/553: $0\mem[42][31:0] [31:24]
+   508/553: $0\mem[41][31:0] [31:24]
+   509/553: $0\mem[40][31:0] [31:24]
+   510/553: $0\mem[39][31:0] [31:24]
+   511/553: $0\mem[38][31:0] [31:24]
+   512/553: $0\mem[37][31:0] [31:24]
+   513/553: $0\mem[36][31:0] [31:24]
+   514/553: $0\mem[35][31:0] [31:24]
+   515/553: $0\mem[34][31:0] [31:24]
+   516/553: $0\mem[33][31:0] [31:24]
+   517/553: $0\mem[32][31:0] [31:24]
+   518/553: $0\mem[31][31:0] [31:24]
+   519/553: $0\mem[30][31:0] [31:24]
+   520/553: $0\mem[29][31:0] [31:24]
+   521/553: $0\mem[28][31:0] [31:24]
+   522/553: $0\mem[27][31:0] [31:24]
+   523/553: $0\mem[26][31:0] [31:24]
+   524/553: $0\mem[25][31:0] [31:24]
+   525/553: $0\mem[24][31:0] [31:24]
+   526/553: $0\mem[23][31:0] [31:24]
+   527/553: $0\mem[22][31:0] [31:24]
+   528/553: $0\mem[21][31:0] [31:24]
+   529/553: $0\mem[20][31:0] [31:24]
+   530/553: $0\mem[19][31:0] [31:24]
+   531/553: $0\mem[18][31:0] [31:24]
+   532/553: $0\mem[17][31:0] [31:24]
+   533/553: $0\mem[16][31:0] [31:24]
+   534/553: $0\mem[15][31:0] [31:24]
+   535/553: $0\mem[14][31:0] [31:24]
+   536/553: $0\mem[13][31:0] [31:24]
+   537/553: $0\mem[12][31:0] [31:24]
+   538/553: $0\mem[11][31:0] [31:24]
+   539/553: $0\mem[10][31:0] [31:24]
+   540/553: $0\mem[9][31:0] [31:24]
+   541/553: $0\mem[8][31:0] [31:24]
+   542/553: $0\mem[7][31:0] [31:24]
+   543/553: $0\mem[6][31:0] [31:24]
+   544/553: $0\mem[5][31:0] [31:24]
+   545/553: $0\mem[4][31:0] [31:24]
+   546/553: $0\mem[3][31:0] [31:24]
+   547/553: $0\mem[2][31:0] [31:24]
+   548/553: $0\mem[1][31:0] [31:24]
+   549/553: $0\mem[0][31:0] [31:24]
+   550/553: $4$mem2reg_wr$\mem$sram_512b.v:41$3_ADDR[6:0]$56
+   551/553: $4$mem2reg_wr$\mem$sram_512b.v:40$2_ADDR[6:0]$54
+   552/553: $4$mem2reg_wr$\mem$sram_512b.v:39$1_ADDR[6:0]$52
+   553/553: $0\wb_dat_o[31:0]
+
+2.3.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+2.3.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\sram_512b.\wb_dat_o' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $adff cell `$procdff$38515' with positive edge clock and positive level reset.
+Creating register for signal `\sram_512b.\wb_ack_o' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $adff cell `$procdff$38520' with positive edge clock and positive level reset.
+Creating register for signal `\sram_512b.\mem[0]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$38527' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[1]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$38534' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[2]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$38541' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[3]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$38548' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[4]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$38555' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[5]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$38562' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[6]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$38569' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[7]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$38576' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[8]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$38583' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[9]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$38590' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[10]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$38597' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[11]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$38604' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[12]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$38611' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[13]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$38618' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[14]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$38625' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[15]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$38632' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[16]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$38639' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[17]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$38646' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[18]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$38653' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[19]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$38660' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[20]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$38667' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[21]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$38674' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[22]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$38681' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[23]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$38688' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[24]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$38695' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[25]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$38702' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[26]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$38709' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[27]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$38716' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[28]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$38723' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[29]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$38730' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[30]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$38737' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[31]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$38744' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[32]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$38751' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[33]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$38758' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[34]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$38765' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[35]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$38772' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[36]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$38779' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[37]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$38786' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[38]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$38793' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[39]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$38800' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[40]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$38807' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[41]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$38814' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[42]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$38821' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[43]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$38828' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[44]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$38835' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[45]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$38842' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[46]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$38849' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[47]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$38856' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[48]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$38863' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[49]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$38870' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[50]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$38877' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[51]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$38884' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[52]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$38891' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[53]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$38898' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[54]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$38905' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[55]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$38912' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[56]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$38919' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[57]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$38926' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[58]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$38933' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[59]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$38940' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[60]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$38947' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[61]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$38954' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[62]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$38961' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[63]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$38968' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[64]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$38975' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[65]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$38982' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[66]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$38989' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[67]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$38996' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[68]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$39003' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[69]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$39010' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[70]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$39017' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[71]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$39024' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[72]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$39031' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[73]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$39038' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[74]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$39045' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[75]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$39052' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[76]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$39059' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[77]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$39066' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[78]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$39073' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[79]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$39080' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[80]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$39087' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[81]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$39094' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[82]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$39101' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[83]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$39108' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[84]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$39115' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[85]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$39122' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[86]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$39129' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[87]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$39136' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[88]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$39143' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[89]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$39150' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[90]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$39157' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[91]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$39164' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[92]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$39171' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[93]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$39178' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[94]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$39185' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[95]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$39192' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[96]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$39199' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[97]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$39206' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[98]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$39213' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[99]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$39220' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[100]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$39227' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[101]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$39234' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[102]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$39241' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[103]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$39248' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[104]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$39255' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[105]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$39262' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[106]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$39269' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[107]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$39276' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[108]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$39283' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[109]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$39290' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[110]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$39297' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[111]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$39304' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[112]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$39311' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[113]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$39318' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[114]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$39325' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[115]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$39332' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[116]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$39339' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[117]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$39346' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[118]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$39353' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[119]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$39360' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[120]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$39367' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[121]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$39374' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[122]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$39381' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[123]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$39388' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[124]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$39395' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[125]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$39402' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[126]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$39409' with positive edge clock.
+Creating register for signal `\sram_512b.\mem[127]' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $dff cell `$procdff$39416' with positive edge clock.
+Creating register for signal `\sram_512b.$mem2reg_wr$\mem$sram_512b.v:39$1_ADDR' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $adff cell `$procdff$39421' with positive edge clock and positive level reset.
+Creating register for signal `\sram_512b.$mem2reg_wr$\mem$sram_512b.v:39$1_DATA' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $adff cell `$procdff$39426' with positive edge clock and positive level reset.
+Creating register for signal `\sram_512b.$mem2reg_wr$\mem$sram_512b.v:40$2_ADDR' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $adff cell `$procdff$39431' with positive edge clock and positive level reset.
+Creating register for signal `\sram_512b.$mem2reg_wr$\mem$sram_512b.v:40$2_DATA' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $adff cell `$procdff$39436' with positive edge clock and positive level reset.
+Creating register for signal `\sram_512b.$mem2reg_wr$\mem$sram_512b.v:41$3_ADDR' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $adff cell `$procdff$39441' with positive edge clock and positive level reset.
+Creating register for signal `\sram_512b.$mem2reg_wr$\mem$sram_512b.v:41$3_DATA' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $adff cell `$procdff$39446' with positive edge clock and positive level reset.
+Creating register for signal `\sram_512b.$mem2reg_wr$\mem$sram_512b.v:42$4_ADDR' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $adff cell `$procdff$39451' with positive edge clock and positive level reset.
+Creating register for signal `\sram_512b.$mem2reg_wr$\mem$sram_512b.v:42$4_DATA' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $adff cell `$procdff$39456' with positive edge clock and positive level reset.
+Creating register for signal `\sram_512b.$mem2reg_rd$\mem$sram_512b.v:44$5_ADDR' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $adff cell `$procdff$39461' with positive edge clock and positive level reset.
+Creating register for signal `\sram_512b.$mem2reg_rd$\mem$sram_512b.v:44$5_DATA' using process `\sram_512b.$proc$sram_512b.v:32$7'.
+  created $adff cell `$procdff$39466' with positive edge clock and positive level reset.
+
+2.3.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+2.3.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 11 empty switches in `\sram_512b.$proc$sram_512b.v:32$7'.
+Removing empty process `sram_512b.$proc$sram_512b.v:32$7'.
+Cleaned up 11 empty switches.
+
+2.3.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module sram_512b.
+<suppressed ~285 debug messages>
+
+2.4. Executing FUTURE pass.
+
+2.5. Executing OPT_EXPR pass (perform const folding).
+Optimizing module sram_512b.
+
+2.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \sram_512b..
+Removed 206 unused cells and 2505 unused wires.
+<suppressed ~208 debug messages>
+
+2.7. Executing CHECK pass (checking for obvious problems).
+Checking module sram_512b...
+Found and reported 0 problems.
+
+2.8. Executing OPT pass (performing simple optimizations).
+
+2.8.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module sram_512b.
+
+2.8.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\sram_512b'.
+Computing hashes of 2955 cells of `\sram_512b'.
+Finding duplicate cells in `\sram_512b'.
+Computing hashes of 2443 cells of `\sram_512b'.
+Finding duplicate cells in `\sram_512b'.
+<suppressed ~1536 debug messages>
+Removed a total of 512 cells.
+
+2.8.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \sram_512b..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 2/2 on $mux $procmux$194.
+    dead port 1/2 on $mux $procmux$192.
+Removed 2 multiplexer ports.
+<suppressed ~2312 debug messages>
+
+2.8.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \sram_512b.
+Performed a total of 0 changes.
+
+2.8.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\sram_512b'.
+Computing hashes of 2441 cells of `\sram_512b'.
+Finding duplicate cells in `\sram_512b'.
+Removed a total of 0 cells.
+
+2.8.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \sram_512b..
+Removed 0 unused cells and 514 unused wires.
+<suppressed ~1 debug messages>
+
+2.8.7. Executing OPT_EXPR pass (perform const folding).
+Optimizing module sram_512b.
+
+2.8.8. Rerunning OPT passes. (Maybe there is more to do..)
+
+2.8.9. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \sram_512b..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~2310 debug messages>
+
+2.8.10. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \sram_512b.
+Performed a total of 0 changes.
+
+2.8.11. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\sram_512b'.
+Computing hashes of 2441 cells of `\sram_512b'.
+Finding duplicate cells in `\sram_512b'.
+Removed a total of 0 cells.
+
+2.8.12. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \sram_512b..
+
+2.8.13. Executing OPT_EXPR pass (perform const folding).
+Optimizing module sram_512b.
+
+2.8.14. Finished fast OPT passes. (There is nothing left to do.)
+
+2.9. Executing WREDUCE pass (reducing word size of cells).
+Removed top 1 bits (of 7) from port B of cell sram_512b.$procmux$31730_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell sram_512b.$procmux$31806_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell sram_512b.$procmux$31883_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell sram_512b.$procmux$31961_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell sram_512b.$procmux$32040_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell sram_512b.$procmux$32120_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell sram_512b.$procmux$32201_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell sram_512b.$procmux$32283_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell sram_512b.$procmux$32366_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell sram_512b.$procmux$32450_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell sram_512b.$procmux$32535_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell sram_512b.$procmux$32621_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell sram_512b.$procmux$32708_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell sram_512b.$procmux$32796_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell sram_512b.$procmux$32885_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell sram_512b.$procmux$32975_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell sram_512b.$procmux$33066_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell sram_512b.$procmux$33158_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell sram_512b.$procmux$33251_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell sram_512b.$procmux$33345_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell sram_512b.$procmux$33440_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell sram_512b.$procmux$33536_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell sram_512b.$procmux$33633_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell sram_512b.$procmux$33731_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell sram_512b.$procmux$33830_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell sram_512b.$procmux$33930_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell sram_512b.$procmux$34031_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell sram_512b.$procmux$34133_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell sram_512b.$procmux$34236_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell sram_512b.$procmux$34340_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell sram_512b.$procmux$34445_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell sram_512b.$procmux$34551_CMP0 ($eq).
+Removed top 2 bits (of 7) from port B of cell sram_512b.$procmux$34658_CMP0 ($eq).
+Removed top 2 bits (of 7) from port B of cell sram_512b.$procmux$34766_CMP0 ($eq).
+Removed top 2 bits (of 7) from port B of cell sram_512b.$procmux$34875_CMP0 ($eq).
+Removed top 2 bits (of 7) from port B of cell sram_512b.$procmux$34985_CMP0 ($eq).
+Removed top 2 bits (of 7) from port B of cell sram_512b.$procmux$35096_CMP0 ($eq).
+Removed top 2 bits (of 7) from port B of cell sram_512b.$procmux$35208_CMP0 ($eq).
+Removed top 2 bits (of 7) from port B of cell sram_512b.$procmux$35321_CMP0 ($eq).
+Removed top 2 bits (of 7) from port B of cell sram_512b.$procmux$35435_CMP0 ($eq).
+Removed top 2 bits (of 7) from port B of cell sram_512b.$procmux$35550_CMP0 ($eq).
+Removed top 2 bits (of 7) from port B of cell sram_512b.$procmux$35666_CMP0 ($eq).
+Removed top 2 bits (of 7) from port B of cell sram_512b.$procmux$35783_CMP0 ($eq).
+Removed top 2 bits (of 7) from port B of cell sram_512b.$procmux$35901_CMP0 ($eq).
+Removed top 2 bits (of 7) from port B of cell sram_512b.$procmux$36020_CMP0 ($eq).
+Removed top 2 bits (of 7) from port B of cell sram_512b.$procmux$36140_CMP0 ($eq).
+Removed top 2 bits (of 7) from port B of cell sram_512b.$procmux$36261_CMP0 ($eq).
+Removed top 2 bits (of 7) from port B of cell sram_512b.$procmux$36383_CMP0 ($eq).
+Removed top 3 bits (of 7) from port B of cell sram_512b.$procmux$36506_CMP0 ($eq).
+Removed top 3 bits (of 7) from port B of cell sram_512b.$procmux$36630_CMP0 ($eq).
+Removed top 3 bits (of 7) from port B of cell sram_512b.$procmux$36755_CMP0 ($eq).
+Removed top 3 bits (of 7) from port B of cell sram_512b.$procmux$36881_CMP0 ($eq).
+Removed top 3 bits (of 7) from port B of cell sram_512b.$procmux$37008_CMP0 ($eq).
+Removed top 3 bits (of 7) from port B of cell sram_512b.$procmux$37136_CMP0 ($eq).
+Removed top 3 bits (of 7) from port B of cell sram_512b.$procmux$37265_CMP0 ($eq).
+Removed top 3 bits (of 7) from port B of cell sram_512b.$procmux$37395_CMP0 ($eq).
+Removed top 4 bits (of 7) from port B of cell sram_512b.$procmux$37526_CMP0 ($eq).
+Removed top 4 bits (of 7) from port B of cell sram_512b.$procmux$37658_CMP0 ($eq).
+Removed top 4 bits (of 7) from port B of cell sram_512b.$procmux$37791_CMP0 ($eq).
+Removed top 4 bits (of 7) from port B of cell sram_512b.$procmux$37925_CMP0 ($eq).
+Removed top 5 bits (of 7) from port B of cell sram_512b.$procmux$38060_CMP0 ($eq).
+Removed top 5 bits (of 7) from port B of cell sram_512b.$procmux$38196_CMP0 ($eq).
+Removed top 6 bits (of 7) from port B of cell sram_512b.$procmux$38333_CMP0 ($eq).
+
+2.10. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \sram_512b..
+
+2.11. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+2.12. Executing OPT pass (performing simple optimizations).
+
+2.12.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module sram_512b.
+
+2.12.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\sram_512b'.
+Computing hashes of 2441 cells of `\sram_512b'.
+Finding duplicate cells in `\sram_512b'.
+Removed a total of 0 cells.
+
+2.12.3. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \sram_512b..
+
+2.12.4. Finished fast OPT passes.
+
+2.13. Executing SORT pass.
+
+2.14. Printing statistics.
+
+=== sram_512b ===
+
+        +----------Local Count, excluding submodules.
+        | 
+     2066 wires
+    24917 wire bits
+      139 public wires
+     4209 public wire bits
+       10 ports
+      106 port bits
+     2441 cells
+        2   $adff
+      128   $dff
+      127   $eq
+        2   $logic_and
+        2   $logic_not
+     2179   $mux
+        1   $pmux
+
+2.15. Executing CHECK pass (checking for obvious problems).
+Checking module sram_512b...
+Found and reported 0 problems.
+
+3. Executing HIERARCHY pass (managing design hierarchy).
+Attribute `top' found on module `sram_512b'. Setting top module to sram_512b.
+
+3.1. Analyzing design hierarchy..
+Top module:  \sram_512b
+
+3.2. Analyzing design hierarchy..
+Top module:  \sram_512b
+Removed 0 unused modules.
+
+4. Executing jny backend.
+
+5. Executing RTLIL backend.
+Output filename: ../model/design.il
+
+Warnings: 1 unique messages, 1 total
+End of script. Logfile hash: e6298e1f1b, time: 1.25s, user: 1.10s, system: 0.06s, MEM: 41.02 MB peak
+Yosys 0.65+71 (git sha1 e56c6a954, clang++ 18.1.8 -fPIC -O3)
+Time spent: 25% 5x opt_clean (0 sec), 13% 2x check (0 sec), ...

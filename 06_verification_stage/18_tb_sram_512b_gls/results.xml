@@ -1,0 +1,10 @@
+<testsuites name="results">
+  <testsuite name="all" package="all">
+    <property name="random_seed" value="1784094951" />
+    <testcase name="test_reset" classname="test_sram_512b" file="/home/smdadmin/hermes_workspace/projects/IP-005/v6/06_verification/tb-sram_512b_gls/test_sram_512b.py" lineno="13" time="0.02137899398803711" sim_time_ns="70.0" ratio_time="3274.2419984387197" />
+    <testcase name="test_read_after_write" classname="test_sram_512b" file="/home/smdadmin/hermes_workspace/projects/IP-005/v6/06_verification/tb-sram_512b_gls/test_sram_512b.py" lineno="28" time="0.48409533500671387" sim_time_ns="5181.0" ratio_time="10702.4373616989" />
+    <testcase name="test_byte_write" classname="test_sram_512b" file="/home/smdadmin/hermes_workspace/projects/IP-005/v6/06_verification/tb-sram_512b_gls/test_sram_512b.py" lineno="45" time="0.019747018814086914" sim_time_ns="181.0" ratio_time="9165.940525203743" />
+    <testcase name="test_address_wrap" classname="test_sram_512b" file="/home/smdadmin/hermes_workspace/projects/IP-005/v6/06_verification/tb-sram_512b_gls/test_sram_512b.py" lineno="66" time="0.012367486953735352" sim_time_ns="121.0" ratio_time="9783.717618028646" />
+    <testcase name="test_ack_handshake" classname="test_sram_512b" file="/home/smdadmin/hermes_workspace/projects/IP-005/v6/06_verification/tb-sram_512b_gls/test_sram_512b.py" lineno="80" time="0.01063847541809082" sim_time_ns="121.0" ratio_time="11373.81017906367" />
+  </testsuite>
+</testsuites>

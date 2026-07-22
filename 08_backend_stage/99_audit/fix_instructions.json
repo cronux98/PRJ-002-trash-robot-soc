@@ -1,0 +1,40 @@
+{
+  "audit_session": "82a3b9e6-919b-4a43-97af-0c74e98d6ac3",
+  "retry": 0,
+  "timestamp": "2026-07-15T10:00:00Z",
+  "cost": 0.27792500000000003,
+  "verdict": "FAIL",
+  "summary": "8/10 checks passed \u2014 2 failed (7.4 missing STA report artifact, 7.7 12,877 max_slew violations + log/metrics contradiction), 2 fixes generated",
+  "findings": [
+    "7.7 BLOCKER: 12,877 max_slew violations reported in metrics.json. Geometric DRC (magic/klayout/route) is clean at 0, but 12,877 nets violating max transition is not a signoff-clean database. Triage the constraint before re-running PD \u2014 WNS=0/TNS=0 on all 9 corners alongside 12,877 slew violations points to an over-tight or mis-scoped set_max_transition rather than a routing defect.",
+    "7.7 INTEGRITY CONCERN: the PD iteration log states 'no max slew/cap violations' while metrics.json reports 12,877 max_slew and 48 max_cap. Tool output contradicts the narrative log. This is the same class of defect Stage 8.4 flags (a report is not evidence) and must be reconciled \u2014 the log claim cannot be trusted for this stage.",
+    "7.7: 313 antenna violations are directly attributable to antenna repair being disabled in config. This is a known consequence of the current settings, not an unexplained result.",
+    "7.4: No STA report artifact exists in the stage output directory. STA demonstrably ran (9-corner WNS/TNS in metrics.json, 9 SDF files at ~21.8MB each), so this is a missing-artifact failure, not a missing-analysis failure. Reports are most likely sitting unpublished in a LibreLane step subdirectory.",
+    "Timing closure itself is solid: setup worst slack +1.737ns and hold worst slack +0.105ns, both clean across all 9 corners at 30ns clock. Hold margin of 105ps on min_ff_n40C is thin but positive.",
+    "Config note (not a rubric check): ERROR_ON_SYNTH_CHECKS=false with synthesis_check_errors=4 (I2C tri-state, documented skip). flow_errors=0. Recorded for traceability \u2014 the tri-state skip is pre-existing and accepted upstream of this stage."
+  ],
+  "fixes": [
+    {
+      "check": "7.4 STA report exists",
+      "evidence": "No file matching *sta* or *timing* found in 07_results/librelane/. Timing data exists only inside metrics.json; 9 SDF files (~21.8MB each) confirm STA was executed across 9 corners, but no human-readable signoff report artifact was emitted to the stage output directory. The rubric check is literal ('stat <dir>/*sta* or <dir>/*timing*') and no such file exists \u2014 FAIL on the artifact, NOT on the analysis. Severity: low (documentation/artifact gap, timing itself is closed per 7.5/7.6).",
+      "fix": {
+        "type": "STAGE_FIX",
+        "description": "Publish the per-corner STA signoff reports from the LibreLane step directories into the stage output root",
+        "action": "LibreLane writes STA reports inside its numbered step directories (e.g. *-openroad-stapostpnr/), not at the flow root. Step 1: locate them with the find command below. Step 2: if .rpt/.log files are found, copy them to 07_results/librelane/sta/ so the rubric's stat <dir>/*sta* check resolves. Step 3: if NO report files exist anywhere (STA ran but reports were suppressed), re-run only the post-PnR STA signoff step against the existing netlist (nl/trash_robot_soc.nl.v) and the 3 SPEF corners \u2014 do NOT re-run place & route, the GDS is final. Do not synthesize a report from metrics.json values; that would be fabricated evidence, not a tool-generated report.",
+        "file": "~/hermes_workspace/projects/IP-005/v6/07_results/librelane/metrics.json",
+        "command": "cd ~/hermes_workspace/projects/IP-005/v6/07_results/librelane && find . -type f \\( -iname '*sta*.rpt' -o -iname '*sta*.log' -o -iname '*timing*.rpt' -o -iname '*.min.rpt' -o -iname '*.max.rpt' \\) | head -50 && mkdir -p sta && find . -path ./sta -prune -o -type f \\( -iname '*sta*.rpt' -o -iname '*timing*.rpt' \\) -exec cp {} sta/ \\;"
+      }
+    },
+    {
+      "check": "7.7 DRC clean (0 violations)",
+      "evidence": "Geometric DRC is genuinely clean: route_drc_errors=0, magic_drc=0, klayout_drc=0, design_violations=0. HOWEVER metrics.json also reports 12,877 max_slew violations, 48 max_cap, 316 max_fanout, and 313 antenna violations. These are design-rule violations reported by signoff STA, and 12,877 nets violating the PDK max-transition rule is not a signoff-clean database. Scoring this PASS because the rubric's grep only targets drc/*.rpt would let the letter of the check conceal a real blocker. Additional integrity concern: the PD iteration log asserts 'no max slew/cap violations', which directly contradicts metrics.json \u2014 one of the two is wrong, and the log is the unverified narrative while metrics.json is tool output.",
+      "fix": {
+        "type": "STAGE_FIX",
+        "description": "Resolve or waive 12,877 max_slew + 48 max_cap + 316 max_fanout + 313 antenna violations, and reconcile the PD log's contradictory claim",
+        "action": "Step 1 (TRIAGE FIRST \u2014 do not blindly re-run): confirm whether the max_slew count is real or a constraint artifact. Extract the max_transition/max_capacitance constraints actually applied and compare against the PDK default. 12,877 slew violations coexisting with WNS=0/TNS=0 across all 9 corners is the signature of an over-tight or wrongly-scoped set_max_transition, not of a broken route \u2014 if the constraint is wrong, the fix is the constraint, and re-running repair_design would burn a full PD iteration for nothing. Step 2: if the constraint is correct and the violations are real, re-run PD with repair enabled \u2014 antenna repair is currently DISABLED in config, which fully explains the 313 antenna violations (they are a direct, expected consequence of that switch, not a mystery). Re-enable antenna repair and allow the resizer to fix max slew/cap/fanout. Step 3: if the violations are real but accepted for this tapeout, they require a documented waiver with an explicit exclusion list \u2014 not a log line asserting they do not exist. Step 4 (mandatory regardless of 1-3): correct the PD iteration log. Its 'no max slew/cap violations' claim is contradicted by tool output and must be reconciled before this stage is re-audited; an unverified narrative overriding tool metrics is the exact failure mode Stage 8.4 exists to catch.",
+        "file": "~/hermes_workspace/projects/IP-005/v6/07_results/librelane/metrics.json",
+        "command": "cd ~/hermes_workspace/projects/IP-005/v6/07_results/librelane && python3 -c \"import json;m=json.load(open('metrics.json'));print(json.dumps({k:v for k,v in m.items() if any(s in k.lower() for s in ('slew','cap','fanout','antenna','transition'))},indent=2))\" && find . -maxdepth 2 -name 'config.json' -o -maxdepth 2 -name 'resolved.json' | head && grep -rniE 'max_transition|MAX_TRANSITION|set_max_transition|GRT_ANTENNA|RUN_ANTENNA' --include='*.json' --include='*.sdc' --include='*.tcl' . | head -30"
+      }
+    }
+  ]
+}

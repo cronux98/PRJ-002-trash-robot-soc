@@ -1,0 +1,181 @@
+{
+  "status": "COMPLETE",
+  "metrics": {
+    "L3.1": {
+      "value": 2249255,
+      "unit": "tokens",
+      "detail": "MEASURED: 2,249,255 input tokens across 52 sessions (14 early + 38 main pipeline). Source: per-profile state.db session tables."
+    },
+    "L3.2": {
+      "value": 759498,
+      "unit": "tokens",
+      "detail": "MEASURED: 759,498 output tokens."
+    },
+    "L3.3": {
+      "value": 1075,
+      "unit": "api_calls",
+      "detail": "MEASURED: 1075 API calls. Some sessions may report 0 (older Hermes). Source: state.db."
+    },
+    "L3.4": {
+      "value": 23341,
+      "unit": "seconds",
+      "detail": "MEASURED: 23341s (6.48h) main BA start to Audit Caravel complete. Doc excluded (still running)."
+    },
+    "L3.5": {
+      "value": 1.6392,
+      "unit": "USD",
+      "detail": "MEASURED: $1.6392 @ DeepSeek Pro $0.435/M in, $0.87/M out. All deepseek-v4-pro."
+    },
+    "L3.6": {
+      "value": "see per_stage",
+      "detail": "MEASURED: per-stage cost includes auditor + rework sessions mapped to stages."
+    },
+    "L3.7": {
+      "value": "6/9",
+      "detail": "MEASURED: 6/9 stages passed without rework. BA, Spec, Arch, Promote, PD, Caravel = first pass. RTL (+2 rework), Verify (+2 rework), SoC (+1 rework) needed iterations."
+    },
+    "L3.8": {
+      "value": "see per_stage.iterations",
+      "detail": "MEASURED: total work-task iterations per stage (done + archived-with-session). RTL=3, Verify=3, SoC=2, others=1."
+    },
+    "L3.9": {
+      "value": 1,
+      "detail": "MEASURED: 1 blocked event. t_63f835b0 (Audit REWORK: Verify Retry 2) blocked then archived."
+    },
+    "L3.10": {
+      "value": {
+        "archived": 53,
+        "reclaimed": 9,
+        "blocked": 1,
+        "timed_out": 1
+      },
+      "detail": "MEASURED: event distribution from task_events. 53 archived (early batch + rework), 9 reclaimed (dispatch retries), 1 blocked, 1 timed_out."
+    }
+  },
+  "per_stage": [
+    {
+      "stage": "BA",
+      "cost_usd": 0.0483,
+      "tokens_in": 51314,
+      "tokens_out": 29852,
+      "api_calls": 42,
+      "sessions": 2,
+      "iterations": 1,
+      "rework_iterations": 0,
+      "archived_no_work": 1
+    },
+    {
+      "stage": "Spec",
+      "cost_usd": 0.0949,
+      "tokens_in": 88597,
+      "tokens_out": 64788,
+      "api_calls": 64,
+      "sessions": 2,
+      "iterations": 1,
+      "rework_iterations": 0,
+      "archived_no_work": 2
+    },
+    {
+      "stage": "Arch",
+      "cost_usd": 0.088,
+      "tokens_in": 98569,
+      "tokens_out": 51878,
+      "api_calls": 40,
+      "sessions": 2,
+      "iterations": 1,
+      "rework_iterations": 0,
+      "archived_no_work": 2
+    },
+    {
+      "stage": "RTL",
+      "cost_usd": 0.2699,
+      "tokens_in": 367160,
+      "tokens_out": 126677,
+      "api_calls": 205,
+      "sessions": 6,
+      "iterations": 3,
+      "rework_iterations": 2,
+      "archived_no_work": 2
+    },
+    {
+      "stage": "Verify",
+      "cost_usd": 0.2386,
+      "tokens_in": 318011,
+      "tokens_out": 115219,
+      "api_calls": 206,
+      "sessions": 6,
+      "iterations": 3,
+      "rework_iterations": 2,
+      "archived_no_work": 2
+    },
+    {
+      "stage": "Promote",
+      "cost_usd": 0.0776,
+      "tokens_in": 97007,
+      "tokens_out": 40742,
+      "api_calls": 51,
+      "sessions": 2,
+      "iterations": 1,
+      "rework_iterations": 0,
+      "archived_no_work": 6
+    },
+    {
+      "stage": "SoC",
+      "cost_usd": 0.1526,
+      "tokens_in": 195664,
+      "tokens_out": 77546,
+      "api_calls": 106,
+      "sessions": 4,
+      "iterations": 2,
+      "rework_iterations": 1,
+      "archived_no_work": 4
+    },
+    {
+      "stage": "PD",
+      "cost_usd": 0.1376,
+      "tokens_in": 167368,
+      "tokens_out": 74522,
+      "api_calls": 131,
+      "sessions": 5,
+      "iterations": 1,
+      "rework_iterations": 0,
+      "archived_no_work": 4
+    },
+    {
+      "stage": "Caravel",
+      "cost_usd": 0.0728,
+      "tokens_in": 100984,
+      "tokens_out": 33197,
+      "api_calls": 56,
+      "sessions": 2,
+      "iterations": 1,
+      "rework_iterations": 0,
+      "archived_no_work": 4
+    },
+    {
+      "stage": "Doc",
+      "cost_usd": 0.1947,
+      "tokens_in": 263033,
+      "tokens_out": 92258,
+      "api_calls": 81,
+      "sessions": 7,
+      "iterations": 0,
+      "rework_iterations": 0,
+      "archived_no_work": 0
+    }
+  ],
+  "missing": [],
+  "notes": [
+    "Early abandoned dispatch: 14 sessions, 501,548 in + 52,819 out tokens, $0.26. Batch created at ~1784089121, abandoned and never completed.",
+    "Main pipeline: 38 sessions, 1,747,707 in + 706,679 out tokens, $1.38.",
+    "RTL: 3 iterations (main RTL + 2 RTL Frontend reworks). Audit FAIL triggered 2 rework cycles.",
+    "Verify: 3 iterations (main Verify + 2 reworks). Rework tasks archived but sessions consumed tokens.",
+    "SoC: 2 iterations (main SoC + 1 integration rework). Audit FAIL triggered rework.",
+    "Promote: 1 successful iteration. 4 archived attempts had 0 session cost (dispatcher retries).",
+    "PD: 1 main iteration. 2 audit attempts (first archived, second passed).",
+    "Doc stage still running (t_a790be45) — current token counts included, may grow.",
+    "Pricing: DeepSeek Pro $0.435/M input, $0.87/M output. All 52 sessions used deepseek-v4-pro. No Flash detected.",
+    "Source: ~/.hermes/profiles/{assignee}/state.db session tables + ~/.hermes/kanban.db task/event tables.",
+    "79 total v6-related tasks (transitive closure). 52 spawned sessions (14 early + 38 main)."
+  ]
+}

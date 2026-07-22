@@ -1,0 +1,210 @@
+{
+  "project": "IP-005",
+  "version": "v6",
+  "date": "2026-07-15",
+  "design": "Trash Robot SoC",
+  "pipeline_mode": "FULL",
+  "reuse_summary": {
+    "total_modules": 16,
+    "source_internal": 16,
+    "source_external": 1,
+    "source_new": 0,
+    "reuse_ratio": 1.0,
+    "notes": "All 16 modules carry forward design heritage from IP-005 v5 (GDS-proven). v6 runs full pipeline on all modules (not REUSE-only like v5). PicoRV32 sourced from YosysHQ (ISC license)."
+  },
+  "modules": [
+    {
+      "id": 1,
+      "name": "picorv32_core",
+      "category": "processor",
+      "interface": "Wishbone B4 master",
+      "source": "GitHub/YosysHQ (ISC license)",
+      "v5_source": "REUSE (external IP)",
+      "v6_status": "FULL_PIPELINE",
+      "priority_reference": "https://github.com/YosysHQ/picorv32",
+      "estimated_cells": 3200
+    },
+    {
+      "id": 2,
+      "name": "sram_512b",
+      "category": "memory",
+      "interface": "Wishbone B4 slave",
+      "source": "IP-005 v5",
+      "v5_source": "REUSE",
+      "v6_status": "FULL_PIPELINE",
+      "priority_reference": "IP-005 v5 architecture",
+      "estimated_cells": 7430
+    },
+    {
+      "id": 3,
+      "name": "wb_interconnect",
+      "category": "interface",
+      "interface": "Wishbone B4 fabric",
+      "source": "IP-005 v5",
+      "v5_source": "REUSE",
+      "v6_status": "FULL_PIPELINE",
+      "priority_reference": "Wishbone B4 specification",
+      "estimated_cells": 314
+    },
+    {
+      "id": 4,
+      "name": "uart",
+      "category": "peripheral",
+      "interface": "Wishbone B4 slave + UART TX/RX",
+      "source": "IP-005 v5 (Wishbone-wrapped OpenTitan UART)",
+      "v5_source": "REUSE",
+      "v6_status": "FULL_PIPELINE",
+      "priority_reference": "OpenTitan (https://github.com/lowRISC/opentitan)",
+      "estimated_cells": 800
+    },
+    {
+      "id": 5,
+      "name": "i2c_master_hx711",
+      "category": "peripheral",
+      "interface": "Wishbone B4 slave + I²C",
+      "source": "IP-005 v5 (×3 instantiations)",
+      "v5_source": "REUSE",
+      "v6_status": "FULL_PIPELINE",
+      "priority_reference": "NXP I²C Bus Specification v6.0",
+      "estimated_cells": 285
+    },
+    {
+      "id": 6,
+      "name": "i2c_master_ina219",
+      "category": "peripheral",
+      "interface": "Wishbone B4 slave + I²C",
+      "source": "IP-005 v5 (×3 instantiations)",
+      "v5_source": "REUSE",
+      "v6_status": "FULL_PIPELINE",
+      "priority_reference": "NXP I²C Bus Specification v6.0",
+      "estimated_cells": 285
+    },
+    {
+      "id": 7,
+      "name": "i2c_master_ds3231",
+      "category": "peripheral",
+      "interface": "Wishbone B4 slave + I²C",
+      "source": "IP-005 v5 (×3 instantiations)",
+      "v5_source": "REUSE",
+      "v6_status": "FULL_PIPELINE",
+      "priority_reference": "NXP I²C Bus Specification v6.0",
+      "estimated_cells": 285
+    },
+    {
+      "id": 8,
+      "name": "gpio",
+      "category": "peripheral",
+      "interface": "Wishbone B4 slave + 16-bit I/O",
+      "source": "IP-005 v5",
+      "v5_source": "REUSE",
+      "v6_status": "FULL_PIPELINE",
+      "priority_reference": "OpenTitan GPIO (https://github.com/lowRISC/opentitan)",
+      "estimated_cells": 554
+    },
+    {
+      "id": 9,
+      "name": "timer",
+      "category": "peripheral",
+      "interface": "Wishbone B4 slave",
+      "source": "IP-005 v5",
+      "v5_source": "REUSE",
+      "v6_status": "FULL_PIPELINE",
+      "priority_reference": "RISC-V mtime/mtimecmp specification",
+      "estimated_cells": 1373
+    },
+    {
+      "id": 10,
+      "name": "motor_pwm",
+      "category": "peripheral",
+      "interface": "Wishbone B4 slave + DRV8833",
+      "source": "IP-005 v5",
+      "v5_source": "REUSE",
+      "v6_status": "FULL_PIPELINE",
+      "priority_reference": "TI DRV8833 datasheet",
+      "estimated_cells": 470
+    },
+    {
+      "id": 11,
+      "name": "ultrasonic_capture",
+      "category": "peripheral",
+      "interface": "Wishbone B4 slave + HC-SR04",
+      "source": "IP-005 v5",
+      "v5_source": "REUSE",
+      "v6_status": "FULL_PIPELINE",
+      "priority_reference": "HC-SR04 datasheet",
+      "estimated_cells": 1314
+    },
+    {
+      "id": 12,
+      "name": "weight_detect",
+      "category": "peripheral",
+      "interface": "Wishbone B4 slave + HX711",
+      "source": "IP-005 v5",
+      "v5_source": "REUSE",
+      "v6_status": "FULL_PIPELINE",
+      "priority_reference": "HX711 24-bit ADC datasheet",
+      "estimated_cells": 342
+    },
+    {
+      "id": 13,
+      "name": "watchdog",
+      "category": "governance",
+      "interface": "Wishbone B4 slave",
+      "source": "IP-005 v5",
+      "v5_source": "REUSE",
+      "v6_status": "FULL_PIPELINE",
+      "priority_reference": "ARM IHI 0033C Watchdog Timer",
+      "estimated_cells": 444
+    },
+    {
+      "id": 14,
+      "name": "interrupt_ctrl",
+      "category": "governance",
+      "interface": "Wishbone B4 slave",
+      "source": "IP-005 v5",
+      "v5_source": "REUSE",
+      "v6_status": "FULL_PIPELINE",
+      "priority_reference": "RISC-V PLIC specification",
+      "estimated_cells": 280
+    },
+    {
+      "id": 15,
+      "name": "power_mgr",
+      "category": "governance",
+      "interface": "Wishbone B4 slave",
+      "source": "IP-005 v5",
+      "v5_source": "REUSE",
+      "v6_status": "FULL_PIPELINE",
+      "priority_reference": "ARM IHI 0048 Power Policy Unit",
+      "estimated_cells": 193
+    },
+    {
+      "id": 16,
+      "name": "trash_robot_top",
+      "category": "top-level",
+      "interface": "Wishbone B4 + Caravel GPIO",
+      "source": "IP-005 v5 (integration)",
+      "v5_source": "REUSE",
+      "v6_status": "FULL_PIPELINE",
+      "priority_reference": "Caravel harness (https://github.com/efabless/caravel_user_project)",
+      "estimated_cells": 0
+    }
+  ],
+  "v5_reference": {
+    "path": "/home/user/hermes_workspace/projects/IP-005/v5/",
+    "gds_validated": true,
+    "die_area": "1.17 mm²",
+    "placed_cells": 26798,
+    "drc_violations": 0,
+    "lvs_match": true,
+    "pd_runtime": "3.5 hours"
+  },
+  "golden_model": {
+    "language": "Python 3",
+    "tests_total": 81,
+    "tests_passed": 81,
+    "deterministic": true,
+    "modules_covered": 10,
+    "output_path": "01_planning-stage/golden_models/golden_output.json"
+  }
+}

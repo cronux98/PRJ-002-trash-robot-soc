@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>IP-005 v6 — Interrupt Routing</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #0d1117; color: #c9d1d9; font-family: 'Courier New', monospace; padding: 24px; }
+h1 { color: #58a6ff; font-size: 18px; margin-bottom: 16px; text-align: center; }
+.grid { display: flex; flex-direction: column; gap: 3px; max-width: 700px; margin: 0 auto; }
+.header { display: flex; font-size: 11px; color: #8b949e; font-weight: bold; margin-bottom: 4px; }
+.header .ch { width: 30px; }
+.header .src { flex: 2; }
+.header .pri { width: 60px; text-align: center; }
+.header .desc { flex: 3; }
+.row { display: flex; align-items: center; font-size: 11px; padding: 3px 5px; border-radius: 3px; }
+.row.high { background: #da363320; }
+.row.med { background: #d2992220; }
+.row.low { background: #3fb95020; }
+.row .ch { width: 30px; color: #58a6ff; font-weight: bold; }
+.row .src { flex: 2; }
+.row .pri { width: 60px; text-align: center; }
+.row .desc { flex: 3; color: #8b949e; }
+.pri-high { color: #f85149; font-weight: bold; }
+.pri-med { color: #d29922; }
+.pri-low { color: #3fb950; }
+.route { text-align: center; margin: 16px 0; max-width: 700px; margin: 16px auto; }
+.route .box { display: inline-block; border: 1px solid #30363d; border-radius: 4px; padding: 8px 16px; margin: 4px; font-size: 12px; }
+.route .arrow { color: #58a6ff; font-size: 16px; }
+.irq-src { background: #161b22; }
+.irq-ctrl { background: #0d419d22; border-color: #58a6ff; }
+.irq-dst { background: #3fb95020; border-color: #3fb950; }
+.legend { display: flex; gap: 16px; justify-content: center; margin-top: 12px; font-size: 11px; }
+</style>
+</head>
+<body>
+<h1>IP-005 v6 — Interrupt Routing (16 Channels)</h1>
+
+<div class="route">
+  <span class="box irq-src">Peripheral<br>irq_o[15:0]</span>
+  <span class="arrow">→</span>
+  <span class="box irq-ctrl">interrupt_ctrl<br>Priority encoder<br>Masking · Vector</span>
+  <span class="arrow">→</span>
+  <span class="box irq-dst">irq_out →<br>PicoRV32 IRQ</span>
+</div>
+
+<div class="header">
+  <span class="ch">#</span>
+  <span class="src">Source</span>
+  <span class="pri">Priority</span>
+  <span class="desc">Description</span>
+</div>
+
+<div class="grid">
+  <div class="row high"><span class="ch">0</span><span class="src">timer</span><span class="pri pri-high">HIGH</span><span class="desc">Timer overflow</span></div>
+  <div class="row high"><span class="ch">1</span><span class="src">uart</span><span class="pri pri-high">HIGH</span><span class="desc">UART RX ready</span></div>
+  <div class="row med"><span class="ch">2</span><span class="src">uart</span><span class="pri pri-med">MED</span><span class="desc">UART TX done</span></div>
+  <div class="row high"><span class="ch">3</span><span class="src">gpio[0]</span><span class="pri pri-high">HIGH</span><span class="desc">Bump sensor front</span></div>
+  <div class="row high"><span class="ch">4</span><span class="src">gpio[1]</span><span class="pri pri-high">HIGH</span><span class="desc">Bump sensor rear</span></div>
+  <div class="row med"><span class="ch">5</span><span class="src">gpio[2]</span><span class="pri pri-med">MED</span><span class="desc">User button</span></div>
+  <div class="row med"><span class="ch">6</span><span class="src">motor_pwm</span><span class="pri pri-med">MED</span><span class="desc">DRV8833 fault</span></div>
+  <div class="row med"><span class="ch">7</span><span class="src">ultrasonic_capture</span><span class="pri pri-med">MED</span><span class="desc">Echo capture done</span></div>
+  <div class="row med"><span class="ch">8</span><span class="src">weight_detect</span><span class="pri pri-med">MED</span><span class="desc">Weight threshold</span></div>
+  <div class="row low"><span class="ch">9</span><span class="src">i2c_master_hx711</span><span class="pri pri-low">LOW</span><span class="desc">I²C HX711 done</span></div>
+  <div class="row low"><span class="ch">10</span><span class="src">i2c_master_ina219</span><span class="pri pri-low">LOW</span><span class="desc">I²C INA219 done</span></div>
+  <div class="row low"><span class="ch">11</span><span class="src">i2c_master_ds3231</span><span class="pri pri-low">LOW</span><span class="desc">I²C DS3231 done</span></div>
+  <div class="row high"><span class="ch">12</span><span class="src">watchdog</span><span class="pri pri-high">HIGH</span><span class="desc">WDT warning timeout</span></div>
+  <div class="row low"><span class="ch">13</span><span class="src">power_mgr</span><span class="pri pri-low">LOW</span><span class="desc">Sleep/wake change</span></div>
+  <div class="row low"><span class="ch">14</span><span class="src">gpio[3]</span><span class="pri pri-low">LOW</span><span class="desc">Reserved</span></div>
+  <div class="row low"><span class="ch">15</span><span class="src">—</span><span class="pri pri-low">LOW</span><span class="desc">Reserved</span></div>
+</div>
+
+<div class="legend">
+  <span class="pri-high">HIGH (5 sources)</span>
+  <span class="pri-med">MED (5 sources)</span>
+  <span class="pri-low">LOW (6 sources)</span>
+</div>
+
+<p style="text-align:center; color:#484f58; font-size:10px; margin-top: 16px;">
+Fixed priority: Ch 0 (highest) → Ch 15 (lowest) · Software-maskable · Latched pending · Vector register read
+</p>
+</body>
+</html>

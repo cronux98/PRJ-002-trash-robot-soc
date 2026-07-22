@@ -1,0 +1,403 @@
+{
+  "project": "IP-005",
+  "version": "v6",
+  "total_tests": 81,
+  "total_passed": 81,
+  "verdict": "PASS",
+  "modules": {
+    "uart": {
+      "tests_run": 7,
+      "tests_passed": 7,
+      "results": [
+        {
+          "test": "baud_accuracy",
+          "result": "PASS"
+        },
+        {
+          "test": "tx_write",
+          "result": "PASS"
+        },
+        {
+          "test": "tx_done",
+          "result": "PASS"
+        },
+        {
+          "test": "rx_receive",
+          "result": "PASS"
+        },
+        {
+          "test": "rx_read",
+          "result": "PASS"
+        },
+        {
+          "test": "parity_error",
+          "result": "PASS"
+        },
+        {
+          "test": "max_roundtrip",
+          "result": "PASS"
+        }
+      ],
+      "verdict": "PASS"
+    },
+    "i2c_master": {
+      "tests_run": 7,
+      "tests_passed": 7,
+      "results": [
+        {
+          "test": "start_addr",
+          "result": "PASS"
+        },
+        {
+          "test": "write_byte",
+          "result": "PASS"
+        },
+        {
+          "test": "read_byte",
+          "result": "PASS"
+        },
+        {
+          "test": "stop",
+          "result": "PASS"
+        },
+        {
+          "test": "nack_err",
+          "result": "PASS"
+        },
+        {
+          "test": "multi_write",
+          "result": "PASS"
+        },
+        {
+          "test": "prescaler",
+          "result": "PASS"
+        }
+      ],
+      "verdict": "PASS"
+    },
+    "gpio": {
+      "tests_run": 5,
+      "tests_passed": 5,
+      "results": [
+        {
+          "test": "output",
+          "result": "PASS"
+        },
+        {
+          "test": "input_read",
+          "result": "PASS"
+        },
+        {
+          "test": "edge_input",
+          "result": "PASS"
+        },
+        {
+          "test": "all_ones",
+          "result": "PASS"
+        },
+        {
+          "test": "all_zeros",
+          "result": "PASS"
+        }
+      ],
+      "verdict": "PASS"
+    },
+    "timer": {
+      "tests_run": 9,
+      "tests_passed": 9,
+      "results": [
+        {
+          "test": "init_zero",
+          "result": "PASS"
+        },
+        {
+          "test": "tick_50",
+          "result": "PASS"
+        },
+        {
+          "test": "compare_irq",
+          "result": "PASS"
+        },
+        {
+          "test": "irq_clear",
+          "result": "PASS"
+        },
+        {
+          "test": "wrap",
+          "result": "PASS"
+        },
+        {
+          "test": "pwm_high",
+          "result": "PASS"
+        },
+        {
+          "test": "pwm_low",
+          "result": "PASS"
+        },
+        {
+          "test": "disabled",
+          "result": "PASS"
+        },
+        {
+          "test": "pwm_disabled",
+          "result": "PASS"
+        }
+      ],
+      "verdict": "PASS"
+    },
+    "motor_pwm": {
+      "tests_run": 11,
+      "tests_passed": 11,
+      "results": [
+        {
+          "test": "init_off",
+          "result": "PASS"
+        },
+        {
+          "test": "forward_high",
+          "result": "PASS"
+        },
+        {
+          "test": "forward_low",
+          "result": "PASS"
+        },
+        {
+          "test": "full_duty",
+          "result": "PASS"
+        },
+        {
+          "test": "full_duty_end",
+          "result": "PASS"
+        },
+        {
+          "test": "zero_duty",
+          "result": "PASS"
+        },
+        {
+          "test": "fault_stops",
+          "result": "PASS"
+        },
+        {
+          "test": "fault_cleared",
+          "result": "PASS"
+        },
+        {
+          "test": "disable",
+          "result": "PASS"
+        },
+        {
+          "test": "multi_ch",
+          "result": "PASS"
+        },
+        {
+          "test": "freq_accuracy",
+          "result": "PASS"
+        }
+      ],
+      "verdict": "PASS"
+    },
+    "ultrasonic_capture": {
+      "tests_run": 7,
+      "tests_passed": 7,
+      "results": [
+        {
+          "test": "trigger",
+          "result": "PASS"
+        },
+        {
+          "test": "echo_rise",
+          "result": "PASS"
+        },
+        {
+          "test": "tick_count",
+          "result": "PASS"
+        },
+        {
+          "test": "echo_fall",
+          "result": "PASS"
+        },
+        {
+          "test": "distance",
+          "result": "PASS"
+        },
+        {
+          "test": "timeout",
+          "result": "PASS"
+        },
+        {
+          "test": "dual_ch",
+          "result": "PASS"
+        }
+      ],
+      "verdict": "PASS"
+    },
+    "weight_detect": {
+      "tests_run": 8,
+      "tests_passed": 8,
+      "results": [
+        {
+          "test": "below",
+          "result": "PASS"
+        },
+        {
+          "test": "above",
+          "result": "PASS"
+        },
+        {
+          "test": "return_below",
+          "result": "PASS"
+        },
+        {
+          "test": "at_thresh",
+          "result": "PASS"
+        },
+        {
+          "test": "at_thresh_plus1",
+          "result": "PASS"
+        },
+        {
+          "test": "max_value",
+          "result": "PASS"
+        },
+        {
+          "test": "zero",
+          "result": "PASS"
+        },
+        {
+          "test": "thresh_change",
+          "result": "PASS"
+        }
+      ],
+      "verdict": "PASS"
+    },
+    "watchdog": {
+      "tests_run": 9,
+      "tests_passed": 9,
+      "results": [
+        {
+          "test": "tick500",
+          "result": "PASS"
+        },
+        {
+          "test": "warning",
+          "result": "PASS"
+        },
+        {
+          "test": "reset",
+          "result": "PASS"
+        },
+        {
+          "test": "feed",
+          "result": "PASS"
+        },
+        {
+          "test": "wrong_key",
+          "result": "PASS"
+        },
+        {
+          "test": "disable_debug",
+          "result": "PASS"
+        },
+        {
+          "test": "rearm_warn",
+          "result": "PASS"
+        },
+        {
+          "test": "rearm_after_feed",
+          "result": "PASS"
+        },
+        {
+          "test": "reset_polarity",
+          "result": "PASS"
+        }
+      ],
+      "verdict": "PASS"
+    },
+    "interrupt_ctrl": {
+      "tests_run": 9,
+      "tests_passed": 9,
+      "results": [
+        {
+          "test": "no_irqs",
+          "result": "PASS"
+        },
+        {
+          "test": "single_irq",
+          "result": "PASS"
+        },
+        {
+          "test": "ack_clear",
+          "result": "PASS"
+        },
+        {
+          "test": "priority",
+          "result": "PASS"
+        },
+        {
+          "test": "fallback",
+          "result": "PASS"
+        },
+        {
+          "test": "disabled",
+          "result": "PASS"
+        },
+        {
+          "test": "highest_pending",
+          "result": "PASS"
+        },
+        {
+          "test": "ch15",
+          "result": "PASS"
+        },
+        {
+          "test": "multi_pending",
+          "result": "PASS"
+        }
+      ],
+      "verdict": "PASS"
+    },
+    "power_mgr": {
+      "tests_run": 9,
+      "tests_passed": 9,
+      "results": [
+        {
+          "test": "init_active",
+          "result": "PASS"
+        },
+        {
+          "test": "mod0_clk",
+          "result": "PASS"
+        },
+        {
+          "test": "go_sleep",
+          "result": "PASS"
+        },
+        {
+          "test": "all_gated",
+          "result": "PASS"
+        },
+        {
+          "test": "rtc_wake",
+          "result": "PASS"
+        },
+        {
+          "test": "wake_active",
+          "result": "PASS"
+        },
+        {
+          "test": "button_wake",
+          "result": "PASS"
+        },
+        {
+          "test": "dual_wake",
+          "result": "PASS"
+        },
+        {
+          "test": "dual_wake_resolve",
+          "result": "PASS"
+        }
+      ],
+      "verdict": "PASS"
+    }
+  }
+}

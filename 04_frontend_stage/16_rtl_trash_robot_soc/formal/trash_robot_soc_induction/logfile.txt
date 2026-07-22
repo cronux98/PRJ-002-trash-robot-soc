@@ -1,0 +1,52 @@
+SBY  5:42:37 [trash_robot_soc_bmc] Removing directory '/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-trash_robot_soc/formal/trash_robot_soc_bmc'.
+SBY  5:42:37 [trash_robot_soc_induction] Removing directory '/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-trash_robot_soc/formal/trash_robot_soc_induction'.
+SBY  5:42:37 [trash_robot_soc_induction] Copy '/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-gpio/rtl/gpio.v' to '/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-trash_robot_soc/formal/trash_robot_soc_induction/src/gpio.v'.
+SBY  5:42:37 [trash_robot_soc_induction] Copy '/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_ina219/rtl/i2c_controller.v' to '/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-trash_robot_soc/formal/trash_robot_soc_induction/src/i2c_controller.v'.
+SBY  5:42:37 [trash_robot_soc_induction] Copy '/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_ina219/rtl/i2c_master.v' to '/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-trash_robot_soc/formal/trash_robot_soc_induction/src/i2c_master.v'.
+SBY  5:42:37 [trash_robot_soc_induction] Copy '/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-interrupt_ctrl/rtl/intc.v' to '/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-trash_robot_soc/formal/trash_robot_soc_induction/src/intc.v'.
+SBY  5:42:37 [trash_robot_soc_induction] Copy '/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-interrupt_ctrl/rtl/interrupt_ctrl.v' to '/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-trash_robot_soc/formal/trash_robot_soc_induction/src/interrupt_ctrl.v'.
+SBY  5:42:37 [trash_robot_soc_induction] Copy '/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm_ctrl.v' to '/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-trash_robot_soc/formal/trash_robot_soc_induction/src/motor_pwm_ctrl.v'.
+SBY  5:42:37 [trash_robot_soc_induction] Copy '/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v' to '/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-trash_robot_soc/formal/trash_robot_soc_induction/src/motor_pwm.v'.
+SBY  5:42:37 [trash_robot_soc_induction] Copy '/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v' to '/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-trash_robot_soc/formal/trash_robot_soc_induction/src/picorv32_core.v'.
+SBY  5:42:37 [trash_robot_soc_induction] Copy '/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-power_mgr/rtl/power_mgr.v' to '/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-trash_robot_soc/formal/trash_robot_soc_induction/src/power_mgr.v'.
+SBY  5:42:37 [trash_robot_soc_induction] Copy '/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v' to '/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-trash_robot_soc/formal/trash_robot_soc_induction/src/sram_512b.v'.
+SBY  5:42:37 [trash_robot_soc_induction] Copy '/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-timer/rtl/timer_pwm.v' to '/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-trash_robot_soc/formal/trash_robot_soc_induction/src/timer_pwm.v'.
+SBY  5:42:37 [trash_robot_soc_induction] Copy '/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-timer/rtl/timer.v' to '/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-trash_robot_soc/formal/trash_robot_soc_induction/src/timer.v'.
+SBY  5:42:37 [trash_robot_soc_induction] Copy '/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-uart/rtl/uart.v' to '/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-trash_robot_soc/formal/trash_robot_soc_induction/src/uart.v'.
+SBY  5:42:37 [trash_robot_soc_induction] Copy '/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v' to '/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-trash_robot_soc/formal/trash_robot_soc_induction/src/ultrasonic_capture.v'.
+SBY  5:42:37 [trash_robot_soc_induction] Copy '/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_fsm.v' to '/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-trash_robot_soc/formal/trash_robot_soc_induction/src/ultrasonic_fsm.v'.
+SBY  5:42:37 [trash_robot_soc_induction] Copy '/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-watchdog/rtl/watchdog.v' to '/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-trash_robot_soc/formal/trash_robot_soc_induction/src/watchdog.v'.
+SBY  5:42:37 [trash_robot_soc_induction] Copy '/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-wb_interconnect/rtl/wb_interconnect.v' to '/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-trash_robot_soc/formal/trash_robot_soc_induction/src/wb_interconnect.v'.
+SBY  5:42:37 [trash_robot_soc_induction] Copy '/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-weight_detect/rtl/weight_detect.v' to '/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-trash_robot_soc/formal/trash_robot_soc_induction/src/weight_detect.v'.
+SBY  5:42:37 [trash_robot_soc_induction] Copy '/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-trash_robot_soc/rtl/trash_robot_soc.v' to '/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-trash_robot_soc/formal/trash_robot_soc_induction/src/trash_robot_soc.v'.
+SBY  5:42:37 [trash_robot_soc_induction] engine_0: smtbmc yices
+SBY  5:42:37 [trash_robot_soc_induction] base: starting process "cd trash_robot_soc_induction/src; yosys -ql ../model/design.log ../model/design.ys"
+SBY  5:42:37 [trash_robot_soc_induction] base: i2c_master.v:69: Warning: Yosys has only limited support for tri-state logic at the moment.
+SBY  5:42:38 [trash_robot_soc_induction] base: Warning: Replacing memory \mem with list of registers. See sram_512b.v:39
+SBY  5:42:40 [trash_robot_soc_induction] base: finished (returncode=0)
+SBY  5:42:40 [trash_robot_soc_induction] prep: starting process "cd trash_robot_soc_induction/model; yosys -ql design_prep.log design_prep.ys"
+SBY  5:42:40 [trash_robot_soc_induction] prep: Warning: multiple conflicting drivers for trash_robot_soc.\i2c_sda:
+SBY  5:42:40 [trash_robot_soc_induction] prep: port Y[0] of cell $flatten\i2c_ds3231_inst.$ternary$i2c_master.v:70$14 ($mux)
+SBY  5:42:40 [trash_robot_soc_induction] prep: port Y[0] of cell $flatten\i2c_hx711_inst.$ternary$i2c_master.v:70$14 ($mux)
+SBY  5:42:40 [trash_robot_soc_induction] prep: port Y[0] of cell $flatten\i2c_ina219_inst.$ternary$i2c_master.v:70$14 ($mux)
+SBY  5:42:40 [trash_robot_soc_induction] prep: module input i2c_sda[0]
+SBY  5:42:40 [trash_robot_soc_induction] prep: Warning: multiple conflicting drivers for trash_robot_soc.\i2c_scl:
+SBY  5:42:40 [trash_robot_soc_induction] prep: port Y[0] of cell $auto$async2sync.cc:262:execute$49073 ($mux)
+SBY  5:42:40 [trash_robot_soc_induction] prep: port Y[0] of cell $auto$async2sync.cc:262:execute$49097 ($mux)
+SBY  5:42:40 [trash_robot_soc_induction] prep: port Y[0] of cell $auto$async2sync.cc:262:execute$49199 ($mux)
+SBY  5:42:40 [trash_robot_soc_induction] prep: module input i2c_scl[0]
+SBY  5:42:40 [trash_robot_soc_induction] prep: Warning: Wire trash_robot_soc.\wdt_rst_n is used but has no driver.
+SBY  5:42:40 [trash_robot_soc_induction] prep: Warning: Wire trash_robot_soc.\intc_inst.irq_in [15] is used but has no driver.
+SBY  5:42:40 [trash_robot_soc_induction] prep: Warning: Wire trash_robot_soc.\intc_inst.irq_in [14] is used but has no driver.
+SBY  5:42:40 [trash_robot_soc_induction] prep: Warning: Wire trash_robot_soc.\intc_inst.irq_in [13] is used but has no driver.
+SBY  5:42:40 [trash_robot_soc_induction] prep: Warning: Wire trash_robot_soc.\intc_inst.irq_in [12] is used but has no driver.
+SBY  5:42:41 [trash_robot_soc_induction] prep: finished (returncode=0)
+SBY  5:42:41 [trash_robot_soc_induction] smt2: starting process "cd trash_robot_soc_induction/model; yosys -ql design_smt2.log design_smt2.ys"
+SBY  5:42:41 [trash_robot_soc_induction] smt2: ERROR: Found multiple drivers for \i2c_scl.
+SBY  5:42:41 [trash_robot_soc_induction] smt2: finished (returncode=1)
+SBY  5:42:41 [trash_robot_soc_induction] smt2: task failed. ERROR.
+SBY  5:42:41 [trash_robot_soc_induction] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:03 (3)
+SBY  5:42:41 [trash_robot_soc_induction] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:09 (9)
+SBY  5:42:41 [trash_robot_soc_induction] summary: engine_0 (smtbmc yices) did not return a status
+SBY  5:42:41 [trash_robot_soc_induction] summary: engine_0 did not produce any traces
+SBY  5:42:41 [trash_robot_soc_induction] DONE (ERROR, rc=16)

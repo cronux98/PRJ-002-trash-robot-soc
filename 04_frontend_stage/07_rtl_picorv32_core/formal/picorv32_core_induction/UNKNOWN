@@ -1,0 +1,7 @@
+Elapsed clock time [H:MM:SS (secs)]: 0:00:05 (5)
+Elapsed process time [H:MM:SS (secs)]: 0:00:11 (11)
+engine_0 (smtbmc yices) returned pass for basecase
+engine_0 (smtbmc yices) returned FAIL for induction
+counterexample trace [induction]: engine_0/trace_induct.vcd
+counterexample trace [induction]: engine_0/trace_induct.yw
+  failed assertion picorv32._witness_.check_assert_picorv32_core_v_2165_730 at picorv32_core.v:2165.4-2165.35

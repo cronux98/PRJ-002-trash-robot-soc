@@ -1,0 +1,64 @@
+{
+  "module": "trash_robot_soc",
+  "provenance_type": "self",
+  "source_project": "IP-005 v6",
+  "source_date": "2026-07-15",
+  "promotion_verdict": "CONDITIONAL",
+  "category": "usecases",
+  "research_path": "research/usecases/trash_robot_soc/",
+  "qualification": {
+    "lint": "PASS (0 errors)",
+    "formal_bmc": "FAIL (I2C inout SMT2 limitation)",
+    "formal_status": "COND",
+    "synthesis": "PASS (0 latches, 0 unmapped cells)",
+    "equivalence": "CONDITIONAL PASS (sky130 SAT limitation \u2014 documented)",
+    "verification_rtl": "4/4 PASS",
+    "verification_gls": "4/4 PASS",
+    "coverage_tier": "C",
+    "coverage_line_pct": null,
+    "coverage_toggle_pct": null,
+    "coverage_toggle_bins": 2000
+  },
+  "metrics": {
+    "cell_count": 26639,
+    "dff_count": 7134,
+    "total_cells": 26639
+  },
+  "interface": {
+    "bus_protocol": "Wishbone B4 (internal)",
+    "clock_domain": "clk (external, 12 MHz typical)",
+    "ports": [
+      "clk",
+      "rst_n",
+      "gpio[31:0]",
+      "uart_tx",
+      "uart_rx",
+      "scl",
+      "sda",
+      "pwm_out[3:0]",
+      "dir_out[3:0]",
+      "trig[3:0]",
+      "echo[3:0]",
+      "sensor_in[23:0]",
+      "wdt_rst_n",
+      "sys_rst_n_o",
+      "irq_out"
+    ]
+  },
+  "dependencies": [
+    "picorv32_core",
+    "gpio",
+    "i2c_master",
+    "interrupt_ctrl",
+    "motor_pwm",
+    "power_mgr",
+    "sram_512b",
+    "timer",
+    "uart",
+    "ultrasonic_capture",
+    "watchdog",
+    "wb_interconnect",
+    "weight_detect"
+  ],
+  "conditions": "Formal FAIL due to I2C inout ports unsupported by SMT2 generation (documented infrastructure limitation). Bug #V6-001: wdt_rst_n output unassigned (fix: add assign wdt_rst_n = wdt_rst_n_int;). TB workaround in place. GLS 4/4 PASS."
+}

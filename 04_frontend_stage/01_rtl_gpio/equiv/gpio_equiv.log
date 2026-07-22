@@ -1,0 +1,1207 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.65+71 (git sha1 e56c6a954, clang++ 18.1.8 -fPIC -O3)
+
+-- Executing script file `/tmp/equiv_gpio.ys' --
+
+1. Executing Verilog-2005 frontend: /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-gpio/rtl/gpio.v
+Parsing Verilog input from `/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-gpio/rtl/gpio.v' to AST representation.
+Generating RTLIL representation for module `\gpio'.
+Successfully finished Verilog frontend.
+
+2. Executing HIERARCHY pass (managing design hierarchy).
+
+2.1. Analyzing design hierarchy..
+Top module:  \gpio
+
+2.2. Analyzing design hierarchy..
+Top module:  \gpio
+Removed 0 unused modules.
+
+3. Executing PROC pass (convert processes to netlists).
+
+3.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 3 switch rules as full_case in process $proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-gpio/rtl/gpio.v:67$7 in module gpio.
+Marked 1 switch rules as full_case in process $proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-gpio/rtl/gpio.v:58$5 in module gpio.
+Marked 1 switch rules as full_case in process $proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-gpio/rtl/gpio.v:43$2 in module gpio.
+Removed a total of 0 dead cases.
+
+3.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 7 redundant assignments.
+Promoted 0 assignments to connections.
+
+3.4. Executing PROC_INIT pass (extract init attributes).
+
+3.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \rst_ni in `\gpio.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-gpio/rtl/gpio.v:67$7'.
+Found async reset \rst_ni in `\gpio.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-gpio/rtl/gpio.v:58$5'.
+Found async reset \rst_ni in `\gpio.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-gpio/rtl/gpio.v:43$2'.
+
+3.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~4 debug messages>
+
+3.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\gpio.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-gpio/rtl/gpio.v:67$7'.
+     1/8: $0\irq_pin[0:0]
+     2/8: $0\gpio_oe[11:0]
+     3/8: $0\gpio_o[11:0]
+     4/8: $0\wb_ack_o[0:0]
+     5/8: $0\irq_cfg[11:0]
+     6/8: $0\out_reg[11:0]
+     7/8: $0\dir_reg[11:0]
+     8/8: $0\wb_dat_o[31:0]
+Creating decoders for process `\gpio.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-gpio/rtl/gpio.v:58$5'.
+     1/1: $0\gpio_prev[11:0]
+Creating decoders for process `\gpio.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-gpio/rtl/gpio.v:43$2'.
+     1/2: $0\gpio_sync2[11:0]
+     2/2: $0\gpio_sync1[11:0]
+
+3.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+3.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\gpio.\wb_dat_o' using process `\gpio.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-gpio/rtl/gpio.v:67$7'.
+  created $adff cell `$procdff$55' with positive edge clock and positive level reset.
+Creating register for signal `\gpio.\wb_ack_o' using process `\gpio.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-gpio/rtl/gpio.v:67$7'.
+  created $adff cell `$procdff$60' with positive edge clock and positive level reset.
+Creating register for signal `\gpio.\gpio_o' using process `\gpio.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-gpio/rtl/gpio.v:67$7'.
+  created $adff cell `$procdff$65' with positive edge clock and positive level reset.
+Creating register for signal `\gpio.\gpio_oe' using process `\gpio.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-gpio/rtl/gpio.v:67$7'.
+  created $adff cell `$procdff$70' with positive edge clock and positive level reset.
+Creating register for signal `\gpio.\irq_pin' using process `\gpio.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-gpio/rtl/gpio.v:67$7'.
+  created $adff cell `$procdff$75' with positive edge clock and positive level reset.
+Creating register for signal `\gpio.\dir_reg' using process `\gpio.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-gpio/rtl/gpio.v:67$7'.
+  created $adff cell `$procdff$80' with positive edge clock and positive level reset.
+Creating register for signal `\gpio.\out_reg' using process `\gpio.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-gpio/rtl/gpio.v:67$7'.
+  created $adff cell `$procdff$85' with positive edge clock and positive level reset.
+Creating register for signal `\gpio.\irq_cfg' using process `\gpio.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-gpio/rtl/gpio.v:67$7'.
+  created $adff cell `$procdff$90' with positive edge clock and positive level reset.
+Creating register for signal `\gpio.\gpio_prev' using process `\gpio.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-gpio/rtl/gpio.v:58$5'.
+  created $adff cell `$procdff$95' with positive edge clock and positive level reset.
+Creating register for signal `\gpio.\gpio_sync1' using process `\gpio.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-gpio/rtl/gpio.v:43$2'.
+  created $adff cell `$procdff$100' with positive edge clock and positive level reset.
+Creating register for signal `\gpio.\gpio_sync2' using process `\gpio.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-gpio/rtl/gpio.v:43$2'.
+  created $adff cell `$procdff$105' with positive edge clock and positive level reset.
+
+3.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+3.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 4 empty switches in `\gpio.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-gpio/rtl/gpio.v:67$7'.
+Removing empty process `gpio.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-gpio/rtl/gpio.v:67$7'.
+Removing empty process `gpio.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-gpio/rtl/gpio.v:58$5'.
+Removing empty process `gpio.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-gpio/rtl/gpio.v:43$2'.
+Cleaned up 4 empty switches.
+
+3.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module gpio.
+<suppressed ~23 debug messages>
+
+4. Executing OPT pass (performing simple optimizations).
+
+4.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module gpio.
+
+4.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\gpio'.
+Computing hashes of 52 cells of `\gpio'.
+Finding duplicate cells in `\gpio'.
+Computing hashes of 37 cells of `\gpio'.
+Finding duplicate cells in `\gpio'.
+<suppressed ~45 debug messages>
+Removed a total of 15 cells.
+
+4.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \gpio..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~18 debug messages>
+
+4.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \gpio.
+Performed a total of 0 changes.
+
+4.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\gpio'.
+Computing hashes of 37 cells of `\gpio'.
+Finding duplicate cells in `\gpio'.
+Removed a total of 0 cells.
+
+4.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $procdff$85 ($adff) from module gpio (D = \wb_dat_i [11:0], Q = \out_reg).
+Adding EN signal on $procdff$80 ($adff) from module gpio (D = \wb_dat_i [11:0], Q = \dir_reg).
+Adding EN signal on $procdff$55 ($adff) from module gpio (D = $procmux$41_Y, Q = \wb_dat_o).
+Adding EN signal on $procdff$90 ($adff) from module gpio (D = \wb_dat_i [11:0], Q = \irq_cfg).
+
+4.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \gpio..
+Removed 14 unused cells and 62 unused wires.
+<suppressed ~16 debug messages>
+
+4.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module gpio.
+
+4.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+4.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \gpio..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~4 debug messages>
+
+4.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \gpio.
+Performed a total of 0 changes.
+
+4.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\gpio'.
+Computing hashes of 28 cells of `\gpio'.
+Finding duplicate cells in `\gpio'.
+Removed a total of 0 cells.
+
+4.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \gpio..
+
+4.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module gpio.
+
+4.16. Finished fast OPT passes. (There is nothing left to do.)
+
+5. Executing ASYNC2SYNC pass.
+Replacing gpio.$procdff$100 ($adff): ARST=\rst_ni, D=\gpio_i, Q=\gpio_sync1
+Replacing gpio.$auto$ff.cc:337:slice$112 ($adffe): ARST=\rst_ni, D=$procmux$41_Y, Q=\wb_dat_o
+Replacing gpio.$procdff$70 ($adff): ARST=\rst_ni, D=\dir_reg, Q=\gpio_oe
+Replacing gpio.$procdff$95 ($adff): ARST=\rst_ni, D=\gpio_sync2, Q=\gpio_prev
+Replacing gpio.$auto$ff.cc:337:slice$117 ($adffe): ARST=\rst_ni, D=\wb_dat_i [11:0], Q=\irq_cfg
+Replacing gpio.$procdff$60 ($adff): ARST=\rst_ni, D=$0\wb_ack_o[0:0], Q=\wb_ack_o
+Replacing gpio.$auto$ff.cc:337:slice$109 ($adffe): ARST=\rst_ni, D=\wb_dat_i [11:0], Q=\dir_reg
+Replacing gpio.$procdff$75 ($adff): ARST=\rst_ni, D=$0\irq_pin[0:0], Q=\irq_pin
+Replacing gpio.$auto$ff.cc:337:slice$106 ($adffe): ARST=\rst_ni, D=\wb_dat_i [11:0], Q=\out_reg
+Replacing gpio.$procdff$65 ($adff): ARST=\rst_ni, D=\out_reg, Q=\gpio_o
+Replacing gpio.$procdff$105 ($adff): ARST=\rst_ni, D=\gpio_sync1, Q=\gpio_sync2
+
+6. Executing MEMORY pass.
+
+6.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+6.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+6.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+6.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+6.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+6.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \gpio..
+
+6.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+6.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+6.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \gpio..
+
+6.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+6.11. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+7. Executing OPT pass (performing simple optimizations).
+
+7.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module gpio.
+
+7.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\gpio'.
+Computing hashes of 39 cells of `\gpio'.
+Finding duplicate cells in `\gpio'.
+Removed a total of 0 cells.
+
+7.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \gpio..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~26 debug messages>
+
+7.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \gpio.
+Performed a total of 0 changes.
+
+7.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\gpio'.
+Computing hashes of 39 cells of `\gpio'.
+Finding duplicate cells in `\gpio'.
+Removed a total of 0 cells.
+
+7.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding SRST signal on $procdff$105 ($sdff) from module gpio (D = $auto$async2sync.cc:253:execute$120, Q = $auto$async2sync.cc:253:execute$140, rval = 12'000000000000).
+
+7.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \gpio..
+Removed 1 unused cells and 1 unused wires.
+<suppressed ~2 debug messages>
+
+7.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module gpio.
+
+7.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+7.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \gpio..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~24 debug messages>
+
+7.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \gpio.
+Performed a total of 0 changes.
+
+7.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\gpio'.
+Computing hashes of 38 cells of `\gpio'.
+Finding duplicate cells in `\gpio'.
+Removed a total of 0 cells.
+
+7.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+7.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \gpio..
+
+7.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module gpio.
+
+7.16. Finished fast OPT passes. (There is nothing left to do.)
+
+8. Executing TECHMAP pass (map to technology primitives).
+
+8.1. Executing Verilog-2005 frontend: /home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v
+Parsing Verilog input from `/home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu_brent_kung'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `$__div_mod_u'.
+Generating RTLIL representation for module `$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Generating RTLIL representation for module `$connect'.
+Generating RTLIL representation for module `$input_port'.
+Successfully finished Verilog frontend.
+
+8.2. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $sdff.
+Using extmapper simplemap for cells of type $mux.
+Using extmapper simplemap for cells of type $reduce_and.
+Using extmapper simplemap for cells of type $sdffe.
+Using extmapper simplemap for cells of type $not.
+Using extmapper simplemap for cells of type $xor.
+Using extmapper simplemap for cells of type $and.
+Using extmapper simplemap for cells of type $reduce_or.
+Using extmapper simplemap for cells of type $logic_and.
+Using extmapper simplemap for cells of type $logic_not.
+Using extmapper simplemap for cells of type $eq.
+Using template $paramod$b098bc6f249c0ac91c4d6e19d54b23c285914115\_90_pmux for cells of type $pmux.
+No more expansions possible.
+<suppressed ~166 debug messages>
+
+9. Executing OPT pass (performing simple optimizations).
+
+9.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module gpio.
+<suppressed ~170 debug messages>
+
+9.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\gpio'.
+Computing hashes of 409 cells of `\gpio'.
+Finding duplicate cells in `\gpio'.
+Computing hashes of 386 cells of `\gpio'.
+Finding duplicate cells in `\gpio'.
+Computing hashes of 367 cells of `\gpio'.
+Finding duplicate cells in `\gpio'.
+<suppressed ~126 debug messages>
+Removed a total of 42 cells.
+
+9.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \gpio..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+9.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \gpio.
+Performed a total of 0 changes.
+
+9.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\gpio'.
+Computing hashes of 367 cells of `\gpio'.
+Finding duplicate cells in `\gpio'.
+Removed a total of 0 cells.
+
+9.6. Executing OPT_DFF pass (perform DFF optimizations).
+Setting constant 0-bit at position 0 on $auto$ff.cc:337:slice$397 ($_SDFFE_PN0P_) from module gpio.
+
+9.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \gpio..
+Removed 0 unused cells and 145 unused wires.
+<suppressed ~1 debug messages>
+
+9.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module gpio.
+<suppressed ~1 debug messages>
+
+9.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+9.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \gpio..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+9.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \gpio.
+Performed a total of 0 changes.
+
+9.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\gpio'.
+Computing hashes of 365 cells of `\gpio'.
+Finding duplicate cells in `\gpio'.
+Removed a total of 0 cells.
+
+9.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+9.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \gpio..
+
+9.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module gpio.
+
+9.16. Finished fast OPT passes. (There is nothing left to do.)
+
+10. Executing FLATTEN pass (flatten design).
+
+11. Executing OPT pass (performing simple optimizations).
+
+11.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module gpio.
+
+11.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\gpio'.
+Computing hashes of 365 cells of `\gpio'.
+Finding duplicate cells in `\gpio'.
+Removed a total of 0 cells.
+
+11.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \gpio..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+11.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \gpio.
+Performed a total of 0 changes.
+
+11.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\gpio'.
+Computing hashes of 365 cells of `\gpio'.
+Finding duplicate cells in `\gpio'.
+Removed a total of 0 cells.
+
+11.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+11.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \gpio..
+
+11.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module gpio.
+
+11.9. Finished fast OPT passes. (There is nothing left to do.)
+
+12. Executing Liberty frontend: /home/smdadmin/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130B/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+Imported 428 cell types from liberty file.
+
+13. Executing Verilog-2005 frontend: /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-gpio/synth/gpio_netlist.v
+Parsing Verilog input from `/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-gpio/synth/gpio_netlist.v' to AST representation.
+Generating RTLIL representation for module `\gpio'.
+Successfully finished Verilog frontend.
+
+14. Executing HIERARCHY pass (managing design hierarchy).
+
+14.1. Analyzing design hierarchy..
+Top module:  \gpio
+
+14.2. Analyzing design hierarchy..
+Top module:  \gpio
+Removed 0 unused modules.
+
+15. Executing PROC pass (convert processes to netlists).
+
+15.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+15.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed a total of 0 dead cases.
+
+15.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 0 assignments to connections.
+
+15.4. Executing PROC_INIT pass (extract init attributes).
+
+15.5. Executing PROC_ARST pass (detect async resets in processes).
+
+15.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+
+15.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+
+15.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+15.9. Executing PROC_DFF pass (convert process syncs to FFs).
+
+15.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+15.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+15.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module gpio.
+
+16. Executing OPT pass (performing simple optimizations).
+
+16.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module gpio.
+
+16.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\gpio'.
+Computing hashes of 231 cells of `\gpio'.
+Finding duplicate cells in `\gpio'.
+Removed a total of 0 cells.
+
+16.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \gpio..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+16.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \gpio.
+Performed a total of 0 changes.
+
+16.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\gpio'.
+Computing hashes of 231 cells of `\gpio'.
+Finding duplicate cells in `\gpio'.
+Removed a total of 0 cells.
+
+16.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+16.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \gpio..
+Removed 0 unused cells and 210 unused wires.
+<suppressed ~1 debug messages>
+
+16.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module gpio.
+
+16.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+16.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \gpio..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+16.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \gpio.
+Performed a total of 0 changes.
+
+16.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\gpio'.
+Computing hashes of 231 cells of `\gpio'.
+Finding duplicate cells in `\gpio'.
+Removed a total of 0 cells.
+
+16.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+16.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \gpio..
+
+16.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module gpio.
+
+16.16. Finished fast OPT passes. (There is nothing left to do.)
+
+17. Executing ASYNC2SYNC pass.
+
+18. Executing MEMORY pass.
+
+18.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+18.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+18.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+18.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+18.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+18.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \gpio..
+
+18.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+18.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+18.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \gpio..
+
+18.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+18.11. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+19. Executing OPT pass (performing simple optimizations).
+
+19.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module gpio.
+
+19.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\gpio'.
+Computing hashes of 231 cells of `\gpio'.
+Finding duplicate cells in `\gpio'.
+Removed a total of 0 cells.
+
+19.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \gpio..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+19.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \gpio.
+Performed a total of 0 changes.
+
+19.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\gpio'.
+Computing hashes of 231 cells of `\gpio'.
+Finding duplicate cells in `\gpio'.
+Removed a total of 0 cells.
+
+19.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+19.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \gpio..
+
+19.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module gpio.
+
+19.9. Finished fast OPT passes. (There is nothing left to do.)
+
+20. Executing TECHMAP pass (map to technology primitives).
+
+20.1. Executing Verilog-2005 frontend: /home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v
+Parsing Verilog input from `/home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu_brent_kung'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `$__div_mod_u'.
+Generating RTLIL representation for module `$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Generating RTLIL representation for module `$connect'.
+Generating RTLIL representation for module `$input_port'.
+Successfully finished Verilog frontend.
+
+20.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~77 debug messages>
+
+21. Executing OPT pass (performing simple optimizations).
+
+21.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module gpio.
+
+21.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\gpio'.
+Computing hashes of 231 cells of `\gpio'.
+Finding duplicate cells in `\gpio'.
+Removed a total of 0 cells.
+
+21.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \gpio..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+21.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \gpio.
+Performed a total of 0 changes.
+
+21.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\gpio'.
+Computing hashes of 231 cells of `\gpio'.
+Finding duplicate cells in `\gpio'.
+Removed a total of 0 cells.
+
+21.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+21.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \gpio..
+
+21.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module gpio.
+
+21.9. Finished fast OPT passes. (There is nothing left to do.)
+
+22. Executing FLATTEN pass (flatten design).
+
+23. Executing OPT pass (performing simple optimizations).
+
+23.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module gpio.
+
+23.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\gpio'.
+Computing hashes of 231 cells of `\gpio'.
+Finding duplicate cells in `\gpio'.
+Removed a total of 0 cells.
+
+23.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \gpio..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+23.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \gpio.
+Performed a total of 0 changes.
+
+23.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\gpio'.
+Computing hashes of 231 cells of `\gpio'.
+Finding duplicate cells in `\gpio'.
+Removed a total of 0 cells.
+
+23.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+23.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \gpio..
+
+23.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module gpio.
+
+23.9. Finished fast OPT passes. (There is nothing left to do.)
+
+24. Executing EQUIV_MAKE pass (creating equiv checking module).
+Presumably equivalent wires: gpio_prev_gold (\gpio_prev_gold), gpio_prev_gate ({ \_206__gate \_205__gate \_215__gate \_214__gate \_213__gate \_212__gate \_211__gate \_210__gate \_209__gate \_208__gate \_207__gate \_204__gate }) -> gpio_prev
+Presumably equivalent wires: gpio_sync2_gold (\gpio_sync2_gold), gpio_sync2_gate ({ \_218__gate \_217__gate \_227__gate \_226__gate \_225__gate \_224__gate \_223__gate \_222__gate \_221__gate \_220__gate \_219__gate \_216__gate }) -> gpio_sync2
+Presumably equivalent wires: irq_cfg_gold (\irq_cfg_gold), irq_cfg_gate ({ \_230__gate \_229__gate \_239__gate \_238__gate \_237__gate \_236__gate \_235__gate \_234__gate \_233__gate \_232__gate \_231__gate \_228__gate }) -> irq_cfg
+Presumably equivalent wires: out_reg_gold (\out_reg_gold), out_reg_gate ({ \_313__gate \_312__gate \_322__gate \_321__gate \_320__gate \_319__gate \_318__gate \_317__gate \_316__gate \_315__gate \_314__gate \_311__gate }) -> out_reg
+Presumably equivalent wires: dir_reg_gold (\dir_reg_gold), dir_reg_gate ({ \_194__gate \_193__gate \_203__gate \_202__gate \_201__gate \_200__gate \_199__gate \_198__gate \_197__gate \_196__gate \_195__gate \_192__gate }) -> dir_reg
+Presumably equivalent wires: irq_pin_gold (\irq_pin_gold), irq_pin_gate (\irq_pin_gate) -> irq_pin
+Presumably equivalent wires: gpio_oe_gold (\gpio_oe_gold), gpio_oe_gate (\gpio_oe_gate) -> gpio_oe
+Presumably equivalent wires: gpio_o_gold (\gpio_o_gold), gpio_o_gate (\gpio_o_gate) -> gpio_o
+Presumably equivalent wires: gpio_i_gold (\gpio_i_gold), gpio_i_gate (\gpio_i_gate) -> gpio_i
+Presumably equivalent wires: wb_ack_o_gold (\wb_ack_o_gold), wb_ack_o_gate (\wb_ack_o_gate) -> wb_ack_o
+Presumably equivalent wires: wb_cyc_i_gold (\wb_cyc_i_gold), wb_cyc_i_gate (\wb_cyc_i_gate) -> wb_cyc_i
+Presumably equivalent wires: wb_stb_i_gold (\wb_stb_i_gold), wb_stb_i_gate (\wb_stb_i_gate) -> wb_stb_i
+Presumably equivalent wires: wb_we_i_gold (\wb_we_i_gold), wb_we_i_gate (\wb_we_i_gate) -> wb_we_i
+Presumably equivalent wires: wb_sel_i_gold (\wb_sel_i_gold), wb_sel_i_gate (\wb_sel_i_gate) -> wb_sel_i
+Presumably equivalent wires: wb_dat_o_gold ({ 20'00000000000000000000 \wb_dat_o_gold [11:0] }), wb_dat_o_gate ({ 20'00000000000000000000 \_342__gate \_341__gate \_351__gate \_350__gate \_349__gate \_348__gate \_347__gate \_346__gate \_345__gate \_344__gate \_343__gate \_340__gate }) -> wb_dat_o
+Presumably equivalent wires: wb_dat_i_gold (\wb_dat_i_gold), wb_dat_i_gate (\wb_dat_i_gate) -> wb_dat_i
+Presumably equivalent wires: wb_adr_i_gold (\wb_adr_i_gold), wb_adr_i_gate (\wb_adr_i_gate) -> wb_adr_i
+Presumably equivalent wires: rst_ni_gold (\rst_ni_gold), rst_ni_gate (\rst_ni_gate) -> rst_ni
+Presumably equivalent wires: clk_i_gold (\clk_i_gold), clk_i_gate (\clk_i_gate) -> clk_i
+Changing input Q of cell _597__gate (sky130_fd_sc_hd__dfrtp_1): \irq_pin_gate -> \irq_pin
+Changing input Q of cell _596__gate (sky130_fd_sc_hd__dfrtp_1): \gpio_oe_gate [11] -> \gpio_oe [11]
+Changing input Q of cell _595__gate (sky130_fd_sc_hd__dfrtp_1): \gpio_oe_gate [10] -> \gpio_oe [10]
+Changing input Q of cell _594__gate (sky130_fd_sc_hd__dfrtp_1): \gpio_oe_gate [9] -> \gpio_oe [9]
+Changing input Q of cell _593__gate (sky130_fd_sc_hd__dfrtp_1): \gpio_oe_gate [8] -> \gpio_oe [8]
+Changing input Q of cell _592__gate (sky130_fd_sc_hd__dfrtp_1): \gpio_oe_gate [7] -> \gpio_oe [7]
+Changing input Q of cell _591__gate (sky130_fd_sc_hd__dfrtp_1): \gpio_oe_gate [6] -> \gpio_oe [6]
+Changing input Q of cell _590__gate (sky130_fd_sc_hd__dfrtp_1): \gpio_oe_gate [5] -> \gpio_oe [5]
+Changing input Q of cell _589__gate (sky130_fd_sc_hd__dfrtp_1): \gpio_oe_gate [4] -> \gpio_oe [4]
+Changing input Q of cell _588__gate (sky130_fd_sc_hd__dfrtp_1): \gpio_oe_gate [3] -> \gpio_oe [3]
+Changing input Q of cell _587__gate (sky130_fd_sc_hd__dfrtp_1): \gpio_oe_gate [2] -> \gpio_oe [2]
+Changing input Q of cell _586__gate (sky130_fd_sc_hd__dfrtp_1): \gpio_oe_gate [1] -> \gpio_oe [1]
+Changing input Q of cell _585__gate (sky130_fd_sc_hd__dfrtp_1): \gpio_oe_gate [0] -> \gpio_oe [0]
+Changing input Q of cell _584__gate (sky130_fd_sc_hd__dfrtp_1): \gpio_o_gate [11] -> \gpio_o [11]
+Changing input Q of cell _583__gate (sky130_fd_sc_hd__dfrtp_1): \gpio_o_gate [10] -> \gpio_o [10]
+Changing input Q of cell _582__gate (sky130_fd_sc_hd__dfrtp_1): \gpio_o_gate [9] -> \gpio_o [9]
+Changing input Q of cell _581__gate (sky130_fd_sc_hd__dfrtp_1): \gpio_o_gate [8] -> \gpio_o [8]
+Changing input Q of cell _580__gate (sky130_fd_sc_hd__dfrtp_1): \gpio_o_gate [7] -> \gpio_o [7]
+Changing input Q of cell _579__gate (sky130_fd_sc_hd__dfrtp_1): \gpio_o_gate [6] -> \gpio_o [6]
+Changing input Q of cell _578__gate (sky130_fd_sc_hd__dfrtp_1): \gpio_o_gate [5] -> \gpio_o [5]
+Changing input Q of cell _577__gate (sky130_fd_sc_hd__dfrtp_1): \gpio_o_gate [4] -> \gpio_o [4]
+Changing input Q of cell _576__gate (sky130_fd_sc_hd__dfrtp_1): \gpio_o_gate [3] -> \gpio_o [3]
+Changing input Q of cell _575__gate (sky130_fd_sc_hd__dfrtp_1): \gpio_o_gate [2] -> \gpio_o [2]
+Changing input Q of cell _574__gate (sky130_fd_sc_hd__dfrtp_1): \gpio_o_gate [1] -> \gpio_o [1]
+Changing input Q of cell _573__gate (sky130_fd_sc_hd__dfrtp_1): \gpio_o_gate [0] -> \gpio_o [0]
+Changing input Q of cell _572__gate (sky130_fd_sc_hd__dfrtp_1): \wb_ack_o_gate -> \wb_ack_o
+Changing input Q of cell _535__gate (sky130_fd_sc_hd__dfrtp_1): \_342__gate -> \wb_dat_o [11]
+Changing input Q of cell _534__gate (sky130_fd_sc_hd__dfrtp_1): \_341__gate -> \wb_dat_o [10]
+Changing input Q of cell _533__gate (sky130_fd_sc_hd__dfrtp_1): \_351__gate -> \wb_dat_o [9]
+Changing input Q of cell _532__gate (sky130_fd_sc_hd__dfrtp_1): \_350__gate -> \wb_dat_o [8]
+Changing input Q of cell _531__gate (sky130_fd_sc_hd__dfrtp_1): \_349__gate -> \wb_dat_o [7]
+Changing input Q of cell _530__gate (sky130_fd_sc_hd__dfrtp_1): \_348__gate -> \wb_dat_o [6]
+Changing input Q of cell _529__gate (sky130_fd_sc_hd__dfrtp_1): \_347__gate -> \wb_dat_o [5]
+Changing input Q of cell _528__gate (sky130_fd_sc_hd__dfrtp_1): \_346__gate -> \wb_dat_o [4]
+Changing input Q of cell _527__gate (sky130_fd_sc_hd__dfrtp_1): \_345__gate -> \wb_dat_o [3]
+Changing input Q of cell _526__gate (sky130_fd_sc_hd__dfrtp_1): \_344__gate -> \wb_dat_o [2]
+Changing input Q of cell _525__gate (sky130_fd_sc_hd__dfrtp_1): \_343__gate -> \wb_dat_o [1]
+Changing input Q of cell _524__gate (sky130_fd_sc_hd__dfrtp_1): \_340__gate -> \wb_dat_o [0]
+Changing input A of cell _521__gate (sky130_fd_sc_hd__nor2_1): \_342__gate -> \wb_dat_o [11]
+Changing input A of cell _515__gate (sky130_fd_sc_hd__nor2_1): \_340__gate -> \wb_dat_o [0]
+Changing input A of cell _511__gate (sky130_fd_sc_hd__nor2_1): \_343__gate -> \wb_dat_o [1]
+Changing input A of cell _507__gate (sky130_fd_sc_hd__nor2_1): \_344__gate -> \wb_dat_o [2]
+Changing input A of cell _503__gate (sky130_fd_sc_hd__nor2_1): \_345__gate -> \wb_dat_o [3]
+Changing input A of cell _499__gate (sky130_fd_sc_hd__nor2_1): \_346__gate -> \wb_dat_o [4]
+Changing input A of cell _495__gate (sky130_fd_sc_hd__nor2_1): \_347__gate -> \wb_dat_o [5]
+Changing input A of cell _491__gate (sky130_fd_sc_hd__nor2_1): \_348__gate -> \wb_dat_o [6]
+Changing input A of cell _487__gate (sky130_fd_sc_hd__nor2_1): \_349__gate -> \wb_dat_o [7]
+Changing input A of cell _483__gate (sky130_fd_sc_hd__nor2_1): \_350__gate -> \wb_dat_o [8]
+Changing input A of cell _478__gate (sky130_fd_sc_hd__nor2_1): \_351__gate -> \wb_dat_o [9]
+Changing input A of cell _474__gate (sky130_fd_sc_hd__nor2_1): \_341__gate -> \wb_dat_o [10]
+Changing input A_N of cell _403__gate (sky130_fd_sc_hd__and3b_1): \wb_ack_o_gate -> \wb_ack_o
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$807_gold ($_AND_): \out_reg_gold [9] -> \out_reg [9]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$836_gold ($_AND_): \dir_reg_gold [6] -> \dir_reg [6]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$799_gold ($_AND_): \out_reg_gold [1] -> \out_reg [1]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$774_gold ($_AND_): \gpio_sync2_gold [8] -> \gpio_sync2 [8]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$865_gold ($_AND_): \irq_cfg_gold [3] -> \irq_cfg [3]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$840_gold ($_AND_): \dir_reg_gold [10] -> \dir_reg [10]
+Changing input D of cell $auto$ff.cc:337:slice$592_gold ($_SDFF_PN0_): \gpio_sync2_gold [10] -> \gpio_sync2 [10]
+Changing input D of cell $auto$ff.cc:337:slice$591_gold ($_SDFF_PN0_): \gpio_sync2_gold [9] -> \gpio_sync2 [9]
+Changing input D of cell $auto$ff.cc:337:slice$590_gold ($_SDFF_PN0_): \gpio_sync2_gold [8] -> \gpio_sync2 [8]
+Changing input D of cell $auto$ff.cc:337:slice$589_gold ($_SDFF_PN0_): \gpio_sync2_gold [7] -> \gpio_sync2 [7]
+Changing input D of cell $auto$ff.cc:337:slice$588_gold ($_SDFF_PN0_): \gpio_sync2_gold [6] -> \gpio_sync2 [6]
+Changing input D of cell $auto$ff.cc:337:slice$587_gold ($_SDFF_PN0_): \gpio_sync2_gold [5] -> \gpio_sync2 [5]
+Changing input D of cell $auto$ff.cc:337:slice$586_gold ($_SDFF_PN0_): \gpio_sync2_gold [4] -> \gpio_sync2 [4]
+Changing input D of cell $auto$ff.cc:337:slice$585_gold ($_SDFF_PN0_): \gpio_sync2_gold [3] -> \gpio_sync2 [3]
+Changing input D of cell $auto$ff.cc:337:slice$584_gold ($_SDFF_PN0_): \gpio_sync2_gold [2] -> \gpio_sync2 [2]
+Changing input D of cell $auto$ff.cc:337:slice$583_gold ($_SDFF_PN0_): \gpio_sync2_gold [1] -> \gpio_sync2 [1]
+Changing input D of cell $auto$ff.cc:337:slice$582_gold ($_SDFF_PN0_): \gpio_sync2_gold [0] -> \gpio_sync2 [0]
+Changing input D of cell $auto$ff.cc:337:slice$579_gold ($_SDFF_PN0_): \dir_reg_gold [10] -> \dir_reg [10]
+Changing input D of cell $auto$ff.cc:337:slice$578_gold ($_SDFF_PN0_): \dir_reg_gold [9] -> \dir_reg [9]
+Changing input D of cell $auto$ff.cc:337:slice$577_gold ($_SDFF_PN0_): \dir_reg_gold [8] -> \dir_reg [8]
+Changing input D of cell $auto$ff.cc:337:slice$576_gold ($_SDFF_PN0_): \dir_reg_gold [7] -> \dir_reg [7]
+Changing input D of cell $auto$ff.cc:337:slice$575_gold ($_SDFF_PN0_): \dir_reg_gold [6] -> \dir_reg [6]
+Changing input D of cell $auto$ff.cc:337:slice$574_gold ($_SDFF_PN0_): \dir_reg_gold [5] -> \dir_reg [5]
+Changing input D of cell $auto$ff.cc:337:slice$573_gold ($_SDFF_PN0_): \dir_reg_gold [4] -> \dir_reg [4]
+Changing input D of cell $auto$ff.cc:337:slice$572_gold ($_SDFF_PN0_): \dir_reg_gold [3] -> \dir_reg [3]
+Changing input D of cell $auto$ff.cc:337:slice$571_gold ($_SDFF_PN0_): \dir_reg_gold [2] -> \dir_reg [2]
+Changing input D of cell $auto$ff.cc:337:slice$570_gold ($_SDFF_PN0_): \dir_reg_gold [1] -> \dir_reg [1]
+Changing input D of cell $auto$ff.cc:337:slice$569_gold ($_SDFF_PN0_): \dir_reg_gold [0] -> \dir_reg [0]
+Changing input D of cell $auto$ff.cc:337:slice$567_gold ($_SDFF_PN0_): \out_reg_gold [10] -> \out_reg [10]
+Changing input D of cell $auto$ff.cc:337:slice$566_gold ($_SDFF_PN0_): \out_reg_gold [9] -> \out_reg [9]
+Changing input D of cell $auto$ff.cc:337:slice$565_gold ($_SDFF_PN0_): \out_reg_gold [8] -> \out_reg [8]
+Changing input D of cell $auto$ff.cc:337:slice$564_gold ($_SDFF_PN0_): \out_reg_gold [7] -> \out_reg [7]
+Changing input D of cell $auto$ff.cc:337:slice$563_gold ($_SDFF_PN0_): \out_reg_gold [6] -> \out_reg [6]
+Changing input D of cell $auto$ff.cc:337:slice$562_gold ($_SDFF_PN0_): \out_reg_gold [5] -> \out_reg [5]
+Changing input D of cell $auto$ff.cc:337:slice$561_gold ($_SDFF_PN0_): \out_reg_gold [4] -> \out_reg [4]
+Changing input D of cell $auto$ff.cc:337:slice$560_gold ($_SDFF_PN0_): \out_reg_gold [3] -> \out_reg [3]
+Changing input D of cell $auto$ff.cc:337:slice$559_gold ($_SDFF_PN0_): \out_reg_gold [2] -> \out_reg [2]
+Changing input D of cell $auto$ff.cc:337:slice$558_gold ($_SDFF_PN0_): \out_reg_gold [1] -> \out_reg [1]
+Changing input D of cell $auto$ff.cc:337:slice$557_gold ($_SDFF_PN0_): \out_reg_gold [0] -> \out_reg [0]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$872_gold ($_AND_): \irq_cfg_gold [10] -> \irq_cfg [10]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$839_gold ($_AND_): \dir_reg_gold [9] -> \dir_reg [9]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$873_gold ($_AND_): \irq_cfg_gold [11] -> \irq_cfg [11]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$767_gold ($_AND_): \gpio_sync2_gold [1] -> \gpio_sync2 [1]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$775_gold ($_AND_): \gpio_sync2_gold [9] -> \gpio_sync2 [9]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$805_gold ($_AND_): \out_reg_gold [7] -> \out_reg [7]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$871_gold ($_AND_): \irq_cfg_gold [9] -> \irq_cfg [9]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$800_gold ($_AND_): \out_reg_gold [2] -> \out_reg [2]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$808_gold ($_AND_): \out_reg_gold [10] -> \out_reg [10]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$798_gold ($_AND_): \out_reg_gold [0] -> \out_reg [0]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$773_gold ($_AND_): \gpio_sync2_gold [7] -> \gpio_sync2 [7]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$833_gold ($_AND_): \dir_reg_gold [3] -> \dir_reg [3]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$841_gold ($_AND_): \dir_reg_gold [11] -> \dir_reg [11]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$831_gold ($_AND_): \dir_reg_gold [1] -> \dir_reg [1]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$777_gold ($_AND_): \gpio_sync2_gold [11] -> \gpio_sync2 [11]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$866_gold ($_AND_): \irq_cfg_gold [4] -> \irq_cfg [4]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$766_gold ($_AND_): \gpio_sync2_gold [0] -> \gpio_sync2 [0]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$832_gold ($_AND_): \dir_reg_gold [2] -> \dir_reg [2]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$769_gold ($_AND_): \gpio_sync2_gold [3] -> \gpio_sync2 [3]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$453_gold ($_AND_): \irq_cfg_gold [10] -> \irq_cfg [10]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$452_gold ($_AND_): \irq_cfg_gold [9] -> \irq_cfg [9]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$451_gold ($_AND_): \irq_cfg_gold [8] -> \irq_cfg [8]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$450_gold ($_AND_): \irq_cfg_gold [7] -> \irq_cfg [7]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$449_gold ($_AND_): \irq_cfg_gold [6] -> \irq_cfg [6]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$448_gold ($_AND_): \irq_cfg_gold [5] -> \irq_cfg [5]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$447_gold ($_AND_): \irq_cfg_gold [4] -> \irq_cfg [4]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$446_gold ($_AND_): \irq_cfg_gold [3] -> \irq_cfg [3]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$445_gold ($_AND_): \irq_cfg_gold [2] -> \irq_cfg [2]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$444_gold ($_AND_): \irq_cfg_gold [1] -> \irq_cfg [1]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$443_gold ($_AND_): \irq_cfg_gold [0] -> \irq_cfg [0]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$441_gold ($_XOR_): \gpio_prev_gold [10] -> \gpio_prev [10]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$441_gold ($_XOR_): \gpio_sync2_gold [10] -> \gpio_sync2 [10]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$440_gold ($_XOR_): \gpio_prev_gold [9] -> \gpio_prev [9]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$440_gold ($_XOR_): \gpio_sync2_gold [9] -> \gpio_sync2 [9]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$439_gold ($_XOR_): \gpio_prev_gold [8] -> \gpio_prev [8]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$439_gold ($_XOR_): \gpio_sync2_gold [8] -> \gpio_sync2 [8]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$438_gold ($_XOR_): \gpio_prev_gold [7] -> \gpio_prev [7]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$438_gold ($_XOR_): \gpio_sync2_gold [7] -> \gpio_sync2 [7]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$437_gold ($_XOR_): \gpio_prev_gold [6] -> \gpio_prev [6]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$437_gold ($_XOR_): \gpio_sync2_gold [6] -> \gpio_sync2 [6]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$436_gold ($_XOR_): \gpio_prev_gold [5] -> \gpio_prev [5]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$436_gold ($_XOR_): \gpio_sync2_gold [5] -> \gpio_sync2 [5]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$435_gold ($_XOR_): \gpio_prev_gold [4] -> \gpio_prev [4]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$435_gold ($_XOR_): \gpio_sync2_gold [4] -> \gpio_sync2 [4]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$434_gold ($_XOR_): \gpio_prev_gold [3] -> \gpio_prev [3]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$434_gold ($_XOR_): \gpio_sync2_gold [3] -> \gpio_sync2 [3]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$433_gold ($_XOR_): \gpio_prev_gold [2] -> \gpio_prev [2]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$433_gold ($_XOR_): \gpio_sync2_gold [2] -> \gpio_sync2 [2]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$432_gold ($_XOR_): \gpio_prev_gold [1] -> \gpio_prev [1]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$432_gold ($_XOR_): \gpio_sync2_gold [1] -> \gpio_sync2 [1]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$431_gold ($_XOR_): \gpio_prev_gold [0] -> \gpio_prev [0]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$431_gold ($_XOR_): \gpio_sync2_gold [0] -> \gpio_sync2 [0]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$867_gold ($_AND_): \irq_cfg_gold [5] -> \irq_cfg [5]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$771_gold ($_AND_): \gpio_sync2_gold [5] -> \gpio_sync2 [5]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$768_gold ($_AND_): \gpio_sync2_gold [2] -> \gpio_sync2 [2]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$772_gold ($_AND_): \gpio_sync2_gold [6] -> \gpio_sync2 [6]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$776_gold ($_AND_): \gpio_sync2_gold [10] -> \gpio_sync2 [10]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$838_gold ($_AND_): \dir_reg_gold [8] -> \dir_reg [8]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$803_gold ($_AND_): \out_reg_gold [5] -> \out_reg [5]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$804_gold ($_AND_): \out_reg_gold [6] -> \out_reg [6]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$801_gold ($_AND_): \out_reg_gold [3] -> \out_reg [3]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$869_gold ($_AND_): \irq_cfg_gold [7] -> \irq_cfg [7]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$809_gold ($_AND_): \out_reg_gold [11] -> \out_reg [11]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$802_gold ($_AND_): \out_reg_gold [4] -> \out_reg [4]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$864_gold ($_AND_): \irq_cfg_gold [2] -> \irq_cfg [2]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$806_gold ($_AND_): \out_reg_gold [8] -> \out_reg [8]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$830_gold ($_AND_): \dir_reg_gold [0] -> \dir_reg [0]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$837_gold ($_AND_): \dir_reg_gold [7] -> \dir_reg [7]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$834_gold ($_AND_): \dir_reg_gold [4] -> \dir_reg [4]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$868_gold ($_AND_): \irq_cfg_gold [6] -> \irq_cfg [6]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$835_gold ($_AND_): \dir_reg_gold [5] -> \dir_reg [5]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$862_gold ($_AND_): \irq_cfg_gold [0] -> \irq_cfg [0]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$863_gold ($_AND_): \irq_cfg_gold [1] -> \irq_cfg [1]
+Changing input D of cell $auto$ff.cc:337:slice$568_gold ($_SDFF_PN0_): \out_reg_gold [11] -> \out_reg [11]
+Changing input D of cell $auto$ff.cc:337:slice$593_gold ($_SDFF_PN0_): \gpio_sync2_gold [11] -> \gpio_sync2 [11]
+Changing input D of cell $auto$ff.cc:337:slice$580_gold ($_SDFF_PN0_): \dir_reg_gold [11] -> \dir_reg [11]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$870_gold ($_AND_): \irq_cfg_gold [8] -> \irq_cfg [8]
+Changing input A of cell $auto$simplemap.cc:227:simplemap_lognot$471_gold ($_NOT_): \wb_ack_o_gold -> \wb_ack_o
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$454_gold ($_AND_): \irq_cfg_gold [11] -> \irq_cfg [11]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$442_gold ($_XOR_): \gpio_prev_gold [11] -> \gpio_prev [11]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$442_gold ($_XOR_): \gpio_sync2_gold [11] -> \gpio_sync2 [11]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$770_gold ($_AND_): \gpio_sync2_gold [4] -> \gpio_sync2 [4]
+Setting undriven nets to undef: \wb_ack_o_gate
+Setting undriven nets to undef: \gpio_o_gate
+Setting undriven nets to undef: \gpio_oe_gate
+Setting undriven nets to undef: \irq_pin_gate
+Setting undriven nets to undef: \_351__gate
+Setting undriven nets to undef: \_350__gate
+Setting undriven nets to undef: \_349__gate
+Setting undriven nets to undef: \_348__gate
+Setting undriven nets to undef: \_347__gate
+Setting undriven nets to undef: \_346__gate
+Setting undriven nets to undef: \_345__gate
+Setting undriven nets to undef: \_344__gate
+Setting undriven nets to undef: \_343__gate
+Setting undriven nets to undef: \_342__gate
+Setting undriven nets to undef: \_341__gate
+Setting undriven nets to undef: \_340__gate
+
+25. Executing EQUIV_SIMPLE pass.
+Found 118 unproven $equiv cells (10 groups) in gpio:
+ Grouping SAT models for \wb_dat_o:
+  Trying to prove $equiv for \wb_dat_o [0]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [1]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [2]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [3]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [4]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [5]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [6]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [7]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [8]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [9]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [10]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [11]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [12]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [13]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [14]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [15]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [16]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [17]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [18]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [19]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [20]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [21]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [22]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [23]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [24]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [25]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [26]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [27]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [28]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [29]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [30]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [31]:ezsat
+ success!
+  Trying to prove $equiv for \wb_ack_o:ezsat
+ failed.
+ Grouping SAT models for \gpio_o:
+  Trying to prove $equiv for \gpio_o [0]:ezsat
+ failed.
+  Trying to prove $equiv for \gpio_o [1]:ezsat
+ failed.
+  Trying to prove $equiv for \gpio_o [2]:ezsat
+ failed.
+  Trying to prove $equiv for \gpio_o [3]:ezsat
+ failed.
+  Trying to prove $equiv for \gpio_o [4]:ezsat
+ failed.
+  Trying to prove $equiv for \gpio_o [5]:ezsat
+ failed.
+  Trying to prove $equiv for \gpio_o [6]:ezsat
+ failed.
+  Trying to prove $equiv for \gpio_o [7]:ezsat
+ failed.
+  Trying to prove $equiv for \gpio_o [8]:ezsat
+ failed.
+  Trying to prove $equiv for \gpio_o [9]:ezsat
+ failed.
+  Trying to prove $equiv for \gpio_o [10]:ezsat
+ failed.
+  Trying to prove $equiv for \gpio_o [11]:ezsat
+ failed.
+ Grouping SAT models for \gpio_oe:
+  Trying to prove $equiv for \gpio_oe [0]:ezsat
+ failed.
+  Trying to prove $equiv for \gpio_oe [1]:ezsat
+ failed.
+  Trying to prove $equiv for \gpio_oe [2]:ezsat
+ failed.
+  Trying to prove $equiv for \gpio_oe [3]:ezsat
+ failed.
+  Trying to prove $equiv for \gpio_oe [4]:ezsat
+ failed.
+  Trying to prove $equiv for \gpio_oe [5]:ezsat
+ failed.
+  Trying to prove $equiv for \gpio_oe [6]:ezsat
+ failed.
+  Trying to prove $equiv for \gpio_oe [7]:ezsat
+ failed.
+  Trying to prove $equiv for \gpio_oe [8]:ezsat
+ failed.
+  Trying to prove $equiv for \gpio_oe [9]:ezsat
+ failed.
+  Trying to prove $equiv for \gpio_oe [10]:ezsat
+ failed.
+  Trying to prove $equiv for \gpio_oe [11]:ezsat
+ failed.
+  Trying to prove $equiv for \irq_pin:ezsat
+ failed.
+ Grouping SAT models for \dir_reg:
+  Trying to prove $equiv for \dir_reg [0]:ezsat
+ failed.
+  Trying to prove $equiv for \dir_reg [1]:ezsat
+ failed.
+  Trying to prove $equiv for \dir_reg [2]:ezsat
+ failed.
+  Trying to prove $equiv for \dir_reg [3]:ezsat
+ failed.
+  Trying to prove $equiv for \dir_reg [4]:ezsat
+ failed.
+  Trying to prove $equiv for \dir_reg [5]:ezsat
+ failed.
+  Trying to prove $equiv for \dir_reg [6]:ezsat
+ failed.
+  Trying to prove $equiv for \dir_reg [7]:ezsat
+ failed.
+  Trying to prove $equiv for \dir_reg [8]:ezsat
+ failed.
+  Trying to prove $equiv for \dir_reg [9]:ezsat
+ failed.
+  Trying to prove $equiv for \dir_reg [10]:ezsat
+ failed.
+  Trying to prove $equiv for \dir_reg [11]:ezsat
+ failed.
+ Grouping SAT models for \out_reg:
+  Trying to prove $equiv for \out_reg [0]:ezsat
+ failed.
+  Trying to prove $equiv for \out_reg [1]:ezsat
+ failed.
+  Trying to prove $equiv for \out_reg [2]:ezsat
+ failed.
+  Trying to prove $equiv for \out_reg [3]:ezsat
+ failed.
+  Trying to prove $equiv for \out_reg [4]:ezsat
+ failed.
+  Trying to prove $equiv for \out_reg [5]:ezsat
+ failed.
+  Trying to prove $equiv for \out_reg [6]:ezsat
+ failed.
+  Trying to prove $equiv for \out_reg [7]:ezsat
+ failed.
+  Trying to prove $equiv for \out_reg [8]:ezsat
+ failed.
+  Trying to prove $equiv for \out_reg [9]:ezsat
+ failed.
+  Trying to prove $equiv for \out_reg [10]:ezsat
+ failed.
+  Trying to prove $equiv for \out_reg [11]:ezsat
+ failed.
+ Grouping SAT models for \irq_cfg:
+  Trying to prove $equiv for \irq_cfg [0]:ezsat
+ failed.
+  Trying to prove $equiv for \irq_cfg [1]:ezsat
+ failed.
+  Trying to prove $equiv for \irq_cfg [2]:ezsat
+ failed.
+  Trying to prove $equiv for \irq_cfg [3]:ezsat
+ failed.
+  Trying to prove $equiv for \irq_cfg [4]:ezsat
+ failed.
+  Trying to prove $equiv for \irq_cfg [5]:ezsat
+ failed.
+  Trying to prove $equiv for \irq_cfg [6]:ezsat
+ failed.
+  Trying to prove $equiv for \irq_cfg [7]:ezsat
+ failed.
+  Trying to prove $equiv for \irq_cfg [8]:ezsat
+ failed.
+  Trying to prove $equiv for \irq_cfg [9]:ezsat
+ failed.
+  Trying to prove $equiv for \irq_cfg [10]:ezsat
+ failed.
+  Trying to prove $equiv for \irq_cfg [11]:ezsat
+ failed.
+ Grouping SAT models for \gpio_sync2:
+  Trying to prove $equiv for \gpio_sync2 [0]:ezsat
+ failed.
+  Trying to prove $equiv for \gpio_sync2 [1]:ezsat
+ failed.
+  Trying to prove $equiv for \gpio_sync2 [2]:ezsat
+ failed.
+  Trying to prove $equiv for \gpio_sync2 [3]:ezsat
+ failed.
+  Trying to prove $equiv for \gpio_sync2 [4]:ezsat
+ failed.
+  Trying to prove $equiv for \gpio_sync2 [5]:ezsat
+ failed.
+  Trying to prove $equiv for \gpio_sync2 [6]:ezsat
+ failed.
+  Trying to prove $equiv for \gpio_sync2 [7]:ezsat
+ failed.
+  Trying to prove $equiv for \gpio_sync2 [8]:ezsat
+ failed.
+  Trying to prove $equiv for \gpio_sync2 [9]:ezsat
+ failed.
+  Trying to prove $equiv for \gpio_sync2 [10]:ezsat
+ failed.
+  Trying to prove $equiv for \gpio_sync2 [11]:ezsat
+ failed.
+ Grouping SAT models for \gpio_prev:
+  Trying to prove $equiv for \gpio_prev [0]:ezsat
+ failed.
+  Trying to prove $equiv for \gpio_prev [1]:ezsat
+ failed.
+  Trying to prove $equiv for \gpio_prev [2]:ezsat
+ failed.
+  Trying to prove $equiv for \gpio_prev [3]:ezsat
+ failed.
+  Trying to prove $equiv for \gpio_prev [4]:ezsat
+ failed.
+  Trying to prove $equiv for \gpio_prev [5]:ezsat
+ failed.
+  Trying to prove $equiv for \gpio_prev [6]:ezsat
+ failed.
+  Trying to prove $equiv for \gpio_prev [7]:ezsat
+ failed.
+  Trying to prove $equiv for \gpio_prev [8]:ezsat
+ failed.
+  Trying to prove $equiv for \gpio_prev [9]:ezsat
+ failed.
+  Trying to prove $equiv for \gpio_prev [10]:ezsat
+ failed.
+  Trying to prove $equiv for \gpio_prev [11]:ezsat
+ failed.
+Proved 20 previously unproven $equiv cells.
+
+26. Executing EQUIV_INDUCT pass.
+Found 98 unproven $equiv cells in module gpio:

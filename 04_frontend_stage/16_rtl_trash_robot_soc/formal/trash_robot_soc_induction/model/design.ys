@@ -1,0 +1,11 @@
+# running in trash_robot_soc_induction/src/
+read -formal *.v
+hierarchy -top trash_robot_soc
+proc
+flatten
+opt
+
+hierarchy -smtcheck
+rename -witness
+write_jny -no-connections ../model/design.json
+write_rtlil ../model/design.il

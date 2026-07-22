@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+<testsuite timestamp="2026-07-15T05:42:41" hostname="smdtest02" package="trash_robot_soc" id="0" name="cover" tests="23" errors="1" failures="0" time="10" skipped="23">
+<properties>
+<property name="os" value="Linux"/>
+<property name="expect" value="PASS"/>
+<property name="status" value="ERROR"/>
+</properties>
+<testcase classname="cover" name="build execution" time="0">
+<error type="ERROR"/>
+</testcase>
+<testcase classname="cover" name="Property ASSERT in trash_robot_soc at picorv32_core.v:2124.5-2124.28" time="0" type="ASSERT" location="picorv32_core.v:2124.5-2124.28" id="_witness_.check_flatten_picorv32_inst__assert_picorv32_core_v_2124_1107">
+<skipped />
+</testcase>
+<testcase classname="cover" name="Property ASSERT in trash_robot_soc at picorv32_core.v:2136.4-2136.15" time="0" type="ASSERT" location="picorv32_core.v:2136.4-2136.15" id="_witness_.check_flatten_picorv32_inst__assert_picorv32_core_v_2136_1117">
+<skipped />
+</testcase>
+<testcase classname="cover" name="Property ASSERT in trash_robot_soc at picorv32_core.v:2154.4-2154.21" time="0" type="ASSERT" location="picorv32_core.v:2154.4-2154.21" id="_witness_.check_flatten_picorv32_inst__assert_picorv32_core_v_2154_1119">
+<skipped />
+</testcase>
+<testcase classname="cover" name="Property ASSERT in trash_robot_soc at picorv32_core.v:2155.4-2155.40" time="0" type="ASSERT" location="picorv32_core.v:2155.4-2155.40" id="_witness_.check_flatten_picorv32_inst__assert_picorv32_core_v_2155_1120">
+<skipped />
+</testcase>
+<testcase classname="cover" name="Property ASSERT in trash_robot_soc at picorv32_core.v:2156.4-2156.26" time="0" type="ASSERT" location="picorv32_core.v:2156.4-2156.26" id="_witness_.check_flatten_picorv32_inst__assert_picorv32_core_v_2156_1122">
+<skipped />
+</testcase>
+<testcase classname="cover" name="Property ASSERT in trash_robot_soc at picorv32_core.v:2159.4-2159.21" time="0" type="ASSERT" location="picorv32_core.v:2159.4-2159.21" id="_witness_.check_flatten_picorv32_inst__assert_picorv32_core_v_2159_1124">
+<skipped />
+</testcase>
+<testcase classname="cover" name="Property ASSERT in trash_robot_soc at picorv32_core.v:2160.4-2160.40" time="0" type="ASSERT" location="picorv32_core.v:2160.4-2160.40" id="_witness_.check_flatten_picorv32_inst__assert_picorv32_core_v_2160_1125">
+<skipped />
+</testcase>
+<testcase classname="cover" name="Property ASSERT in trash_robot_soc at picorv32_core.v:2161.4-2161.42" time="0" type="ASSERT" location="picorv32_core.v:2161.4-2161.42" id="_witness_.check_flatten_picorv32_inst__assert_picorv32_core_v_2161_1127">
+<skipped />
+</testcase>
+<testcase classname="cover" name="Property ASSERT in trash_robot_soc at picorv32_core.v:2162.4-2162.42" time="0" type="ASSERT" location="picorv32_core.v:2162.4-2162.42" id="_witness_.check_flatten_picorv32_inst__assert_picorv32_core_v_2162_1129">
+<skipped />
+</testcase>
+<testcase classname="cover" name="Property ASSERT in trash_robot_soc at picorv32_core.v:2165.4-2165.35" time="0" type="ASSERT" location="picorv32_core.v:2165.4-2165.35" id="_witness_.check_flatten_picorv32_inst__assert_picorv32_core_v_2165_1132">
+<skipped />
+</testcase>
+<testcase classname="cover" name="Property ASSERT in trash_robot_soc at picorv32_core.v:556.5-556.26" time="0" type="ASSERT" location="picorv32_core.v:556.5-556.26" id="_witness_.check_flatten_picorv32_inst__assert_picorv32_core_v_556_511">
+<skipped />
+</testcase>
+<testcase classname="cover" name="Property ASSERT in trash_robot_soc at picorv32_core.v:559.5-559.26" time="0" type="ASSERT" location="picorv32_core.v:559.5-559.26" id="_witness_.check_flatten_picorv32_inst__assert_picorv32_core_v_559_514">
+<skipped />
+</testcase>
+<testcase classname="cover" name="Property ASSERT in trash_robot_soc at picorv32_core.v:562.5-562.46" time="0" type="ASSERT" location="picorv32_core.v:562.5-562.46" id="_witness_.check_flatten_picorv32_inst__assert_picorv32_core_v_562_516">
+<skipped />
+</testcase>
+<testcase classname="cover" name="Property ASSERT in trash_robot_soc at picorv32_core.v:565.5-565.63" time="0" type="ASSERT" location="picorv32_core.v:565.5-565.63" id="_witness_.check_flatten_picorv32_inst__assert_picorv32_core_v_565_520">
+<skipped />
+</testcase>
+<testcase classname="cover" name="Property ASSERT in trash_robot_soc at picorv32_core.v:568.5-568.41" time="0" type="ASSERT" location="picorv32_core.v:568.5-568.41" id="_witness_.check_flatten_picorv32_inst__assert_picorv32_core_v_568_527">
+<skipped />
+</testcase>
+<testcase classname="cover" name="Property ASSERT in trash_robot_soc at picorv32_core.v:603.6-603.28" time="0" type="ASSERT" location="picorv32_core.v:603.6-603.28" id="_witness_.check_flatten_picorv32_inst__assert_picorv32_core_v_603_541">
+<skipped />
+</testcase>
+<testcase classname="cover" name="Property ASSERT in trash_robot_soc at picorv32_core.v:604.6-604.61" time="0" type="ASSERT" location="picorv32_core.v:604.6-604.61" id="_witness_.check_flatten_picorv32_inst__assert_picorv32_core_v_604_543">
+<skipped />
+</testcase>
+<testcase classname="cover" name="Property ASSERT in trash_robot_soc at picorv32_core.v:605.6-605.59" time="0" type="ASSERT" location="picorv32_core.v:605.6-605.59" id="_witness_.check_flatten_picorv32_inst__assert_picorv32_core_v_605_546">
+<skipped />
+</testcase>
+<testcase classname="cover" name="Property ASSERT in trash_robot_soc at picorv32_core.v:606.6-606.60" time="0" type="ASSERT" location="picorv32_core.v:606.6-606.60" id="_witness_.check_flatten_picorv32_inst__assert_picorv32_core_v_606_549">
+<skipped />
+</testcase>
+<testcase classname="cover" name="Property ASSERT in trash_robot_soc at picorv32_core.v:629.6-629.28" time="0" type="ASSERT" location="picorv32_core.v:629.6-629.28" id="_witness_.check_flatten_picorv32_inst__assert_picorv32_core_v_629_561">
+<skipped />
+</testcase>
+<testcase classname="cover" name="Property ASSERT in trash_robot_soc at picorv32_core.v:630.6-630.26" time="0" type="ASSERT" location="picorv32_core.v:630.6-630.26" id="_witness_.check_flatten_picorv32_inst__assert_picorv32_core_v_630_563">
+<skipped />
+</testcase>
+<testcase classname="cover" name="Property ASSERT in trash_robot_soc at picorv32_core.v:637.6-637.28" time="0" type="ASSERT" location="picorv32_core.v:637.6-637.28" id="_witness_.check_flatten_picorv32_inst__assert_picorv32_core_v_637_564">
+<skipped />
+</testcase>
+<testcase classname="cover" name="Property ASSERT in trash_robot_soc at picorv32_core.v:638.6-638.29" time="0" type="ASSERT" location="picorv32_core.v:638.6-638.29" id="_witness_.check_flatten_picorv32_inst__assert_picorv32_core_v_638_566">
+<skipped />
+</testcase>
+<system-out>SBY  5:42:37 [trash_robot_soc_bmc] Removing directory '/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-trash_robot_soc/formal/trash_robot_soc_bmc'.
+SBY  5:42:37 [trash_robot_soc_induction] Removing directory '/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-trash_robot_soc/formal/trash_robot_soc_induction'.
+SBY  5:42:37 [trash_robot_soc_cover] Removing directory '/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-trash_robot_soc/formal/trash_robot_soc_cover'.
+SBY  5:42:37 [trash_robot_soc_cover] Copy '/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-gpio/rtl/gpio.v' to '/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-trash_robot_soc/formal/trash_robot_soc_cover/src/gpio.v'.
+SBY  5:42:37 [trash_robot_soc_cover] Copy '/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_ina219/rtl/i2c_controller.v' to '/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-trash_robot_soc/formal/trash_robot_soc_cover/src/i2c_controller.v'.
+SBY  5:42:37 [trash_robot_soc_cover] Copy '/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_ina219/rtl/i2c_master.v' to '/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-trash_robot_soc/formal/trash_robot_soc_cover/src/i2c_master.v'.
+SBY  5:42:37 [trash_robot_soc_cover] Copy '/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-interrupt_ctrl/rtl/intc.v' to '/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-trash_robot_soc/formal/trash_robot_soc_cover/src/intc.v'.
+SBY  5:42:37 [trash_robot_soc_cover] Copy '/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-interrupt_ctrl/rtl/interrupt_ctrl.v' to '/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-trash_robot_soc/formal/trash_robot_soc_cover/src/interrupt_ctrl.v'.
+SBY  5:42:37 [trash_robot_soc_cover] Copy '/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm_ctrl.v' to '/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-trash_robot_soc/formal/trash_robot_soc_cover/src/motor_pwm_ctrl.v'.
+SBY  5:42:37 [trash_robot_soc_cover] Copy '/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v' to '/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-trash_robot_soc/formal/trash_robot_soc_cover/src/motor_pwm.v'.
+SBY  5:42:37 [trash_robot_soc_cover] Copy '/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v' to '/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-trash_robot_soc/formal/trash_robot_soc_cover/src/picorv32_core.v'.
+SBY  5:42:37 [trash_robot_soc_cover] Copy '/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-power_mgr/rtl/power_mgr.v' to '/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-trash_robot_soc/formal/trash_robot_soc_cover/src/power_mgr.v'.
+SBY  5:42:37 [trash_robot_soc_cover] Copy '/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v' to '/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-trash_robot_soc/formal/trash_robot_soc_cover/src/sram_512b.v'.
+SBY  5:42:37 [trash_robot_soc_cover] Copy '/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-timer/rtl/timer_pwm.v' to '/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-trash_robot_soc/formal/trash_robot_soc_cover/src/timer_pwm.v'.
+SBY  5:42:37 [trash_robot_soc_cover] Copy '/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-timer/rtl/timer.v' to '/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-trash_robot_soc/formal/trash_robot_soc_cover/src/timer.v'.
+SBY  5:42:37 [trash_robot_soc_cover] Copy '/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-uart/rtl/uart.v' to '/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-trash_robot_soc/formal/trash_robot_soc_cover/src/uart.v'.
+SBY  5:42:37 [trash_robot_soc_cover] Copy '/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v' to '/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-trash_robot_soc/formal/trash_robot_soc_cover/src/ultrasonic_capture.v'.
+SBY  5:42:37 [trash_robot_soc_cover] Copy '/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_fsm.v' to '/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-trash_robot_soc/formal/trash_robot_soc_cover/src/ultrasonic_fsm.v'.
+SBY  5:42:37 [trash_robot_soc_cover] Copy '/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-watchdog/rtl/watchdog.v' to '/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-trash_robot_soc/formal/trash_robot_soc_cover/src/watchdog.v'.
+SBY  5:42:37 [trash_robot_soc_cover] Copy '/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-wb_interconnect/rtl/wb_interconnect.v' to '/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-trash_robot_soc/formal/trash_robot_soc_cover/src/wb_interconnect.v'.
+SBY  5:42:37 [trash_robot_soc_cover] Copy '/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-weight_detect/rtl/weight_detect.v' to '/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-trash_robot_soc/formal/trash_robot_soc_cover/src/weight_detect.v'.
+SBY  5:42:37 [trash_robot_soc_cover] Copy '/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-trash_robot_soc/rtl/trash_robot_soc.v' to '/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-trash_robot_soc/formal/trash_robot_soc_cover/src/trash_robot_soc.v'.
+SBY  5:42:37 [trash_robot_soc_cover] engine_0: smtbmc yices
+SBY  5:42:37 [trash_robot_soc_cover] base: starting process &quot;cd trash_robot_soc_cover/src; yosys -ql ../model/design.log ../model/design.ys&quot;
+SBY  5:42:37 [trash_robot_soc_cover] base: i2c_master.v:69: Warning: Yosys has only limited support for tri-state logic at the moment.
+SBY  5:42:38 [trash_robot_soc_cover] base: Warning: Replacing memory \mem with list of registers. See sram_512b.v:39
+SBY  5:42:40 [trash_robot_soc_cover] base: finished (returncode=0)
+SBY  5:42:40 [trash_robot_soc_cover] prep: starting process &quot;cd trash_robot_soc_cover/model; yosys -ql design_prep.log design_prep.ys&quot;
+SBY  5:42:41 [trash_robot_soc_cover] prep: Warning: multiple conflicting drivers for trash_robot_soc.\i2c_sda:
+SBY  5:42:41 [trash_robot_soc_cover] prep: port Y[0] of cell $flatten\i2c_ds3231_inst.$ternary$i2c_master.v:70$14 ($mux)
+SBY  5:42:41 [trash_robot_soc_cover] prep: port Y[0] of cell $flatten\i2c_hx711_inst.$ternary$i2c_master.v:70$14 ($mux)
+SBY  5:42:41 [trash_robot_soc_cover] prep: port Y[0] of cell $flatten\i2c_ina219_inst.$ternary$i2c_master.v:70$14 ($mux)
+SBY  5:42:41 [trash_robot_soc_cover] prep: module input i2c_sda[0]
+SBY  5:42:41 [trash_robot_soc_cover] prep: Warning: multiple conflicting drivers for trash_robot_soc.\i2c_scl:
+SBY  5:42:41 [trash_robot_soc_cover] prep: port Y[0] of cell $auto$async2sync.cc:262:execute$49073 ($mux)
+SBY  5:42:41 [trash_robot_soc_cover] prep: port Y[0] of cell $auto$async2sync.cc:262:execute$49097 ($mux)
+SBY  5:42:41 [trash_robot_soc_cover] prep: port Y[0] of cell $auto$async2sync.cc:262:execute$49199 ($mux)
+SBY  5:42:41 [trash_robot_soc_cover] prep: module input i2c_scl[0]
+SBY  5:42:41 [trash_robot_soc_cover] prep: Warning: Wire trash_robot_soc.\wdt_rst_n is used but has no driver.
+SBY  5:42:41 [trash_robot_soc_cover] prep: Warning: Wire trash_robot_soc.\intc_inst.irq_in [15] is used but has no driver.
+SBY  5:42:41 [trash_robot_soc_cover] prep: Warning: Wire trash_robot_soc.\intc_inst.irq_in [14] is used but has no driver.
+SBY  5:42:41 [trash_robot_soc_cover] prep: Warning: Wire trash_robot_soc.\intc_inst.irq_in [13] is used but has no driver.
+SBY  5:42:41 [trash_robot_soc_cover] prep: Warning: Wire trash_robot_soc.\intc_inst.irq_in [12] is used but has no driver.
+SBY  5:42:41 [trash_robot_soc_cover] prep: finished (returncode=0)
+SBY  5:42:41 [trash_robot_soc_cover] smt2: starting process &quot;cd trash_robot_soc_cover/model; yosys -ql design_smt2.log design_smt2.ys&quot;
+SBY  5:42:41 [trash_robot_soc_cover] smt2: ERROR: Found multiple drivers for \i2c_scl.
+SBY  5:42:41 [trash_robot_soc_cover] smt2: finished (returncode=1)
+SBY  5:42:41 [trash_robot_soc_cover] smt2: task failed. ERROR.
+SBY  5:42:41 [trash_robot_soc_cover] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:03 (3)
+SBY  5:42:41 [trash_robot_soc_cover] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:10 (10)
+SBY  5:42:41 [trash_robot_soc_cover] summary: engine_0 (smtbmc yices) did not return a status
+SBY  5:42:41 [trash_robot_soc_cover] summary: engine_0 did not produce any traces
+SBY  5:42:41 [trash_robot_soc_cover] DONE (ERROR, rc=16)
+</system-out>
+<system-err>
+</system-err>
+</testsuite>
+</testsuites>

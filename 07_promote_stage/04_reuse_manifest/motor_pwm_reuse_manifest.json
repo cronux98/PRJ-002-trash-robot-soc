@@ -1,0 +1,45 @@
+{
+  "module": "motor_pwm",
+  "provenance_type": "self",
+  "source_project": "IP-005 v6",
+  "source_date": "2026-07-15",
+  "promotion_verdict": "PROMOTED",
+  "category": "peripherals",
+  "research_path": "research/peripherals/motor_pwm/",
+  "qualification": {
+    "lint": "PASS (0 errors)",
+    "formal_bmc": "PASS (config.sby)",
+    "formal_status": "COND",
+    "synthesis": "PASS (0 latches, 0 unmapped cells)",
+    "equivalence": "CONDITIONAL PASS (sky130 SAT limitation \u2014 documented)",
+    "verification_rtl": "4/4 PASS",
+    "verification_gls": "4/4 PASS",
+    "coverage_tier": "A",
+    "coverage_line_pct": null,
+    "coverage_toggle_pct": null,
+    "coverage_toggle_bins": 500
+  },
+  "metrics": {
+    "cell_count": 460,
+    "dff_count": 113,
+    "total_cells": 460
+  },
+  "interface": {
+    "bus_protocol": "Wishbone B4",
+    "clock_domain": "sys_clk",
+    "ports": [
+      "wb_clk_i",
+      "wb_rst_i",
+      "wb_adr_i[3:0]",
+      "wb_dat_i[31:0]",
+      "wb_dat_o[31:0]",
+      "wb_we_i",
+      "wb_sel_i[3:0]",
+      "wb_stb_i",
+      "wb_ack_o",
+      "pwm_out[3:0]",
+      "dir_out[3:0]"
+    ]
+  },
+  "dependencies": []
+}

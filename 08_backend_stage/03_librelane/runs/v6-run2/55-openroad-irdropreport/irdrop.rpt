@@ -1,0 +1,26 @@
++ analyze_power_grid -net VPWR -voltage_file /home/smdadmin/hermes_workspace/projects/IP-005/v6/04_backend-stage/librelane/runs/v6-run2/55-openroad-irdropreport/net-VPWR.csv
+[INFO PSM-0040] All shapes on net VPWR are connected.
+########## IR report #################
+Net              : VPWR
+Corner           : nom_tt_025C_1v80
+Total power      : 1.71e-02 W
+Supply voltage   : 1.80e+00 V
+Worstcase voltage: 1.80e+00 V
+Average voltage  : 1.80e+00 V
+Average IR drop  : 4.63e-05 V
+Worstcase IR drop: 3.29e-04 V
+Percentage drop  : 0.02 %
+######################################
++ analyze_power_grid -net VGND -voltage_file /home/smdadmin/hermes_workspace/projects/IP-005/v6/04_backend-stage/librelane/runs/v6-run2/55-openroad-irdropreport/net-VGND.csv
+[INFO PSM-0040] All shapes on net VGND are connected.
+########## IR report #################
+Net              : VGND
+Corner           : nom_tt_025C_1v80
+Total power      : 1.71e-02 W
+Supply voltage   : 0.00e+00 V
+Worstcase voltage: 2.49e-04 V
+Average voltage  : 4.63e-05 V
+Average IR drop  : 4.63e-05 V
+Worstcase IR drop: 2.49e-04 V
+Percentage drop  : 0.01 %
+######################################

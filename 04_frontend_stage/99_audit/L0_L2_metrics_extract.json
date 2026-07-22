@@ -1,0 +1,151 @@
+{
+  "status": "PARTIAL",
+  "extraction_date": "2026-07-15",
+  "extraction_method": "Full filesystem audit of all 16 rtl-*/ directories — verified PASS/ERROR/UNKNOWN files on disk, lint log contents, equiv log tails, synth netlist presence",
+  "metrics": {
+    "L0.7": {
+      "value": "16/16 PASS",
+      "description": "Icarus Verilog compilation — 0 errors across all modules",
+      "source": "grep -ci 'error' on all 38 lint/*_iverilog.log files (16 modules + 3 i2c_master duplicates for ds3231/hx711/ina219 + 2 extra synth lint logs for trash_robot_soc)",
+      "verified": true
+    },
+    "L0.8": {
+      "value": "16/16 PASS",
+      "description": "Verilator lint — 0 %Error occurrences across all modules",
+      "source": "grep -ci '%Error' on all 34 lint/*_verilator.log files (16 modules + 3 i2c_master duplicates + 2 extra synth lint logs for trash_robot_soc)",
+      "verified": true
+    },
+    "L0.9": {
+      "value": "PARTIAL",
+      "description": "Top-level trash_robot_soc: Lint PASS (0 errors iverilog+verilator). Synthesis PASS (26,639 cells, 7,134 DFFs netlist exists). Formal ALL ERROR (ESC-001: 'Found multiple drivers for \\\\i2c_scl' across 3 i2c_master instances sharing SCL/SDA inout ports). Equiv CONDITIONAL (11,241 unproven cells, script completed without errors). verify_test_artifacts.sh exits 0.",
+      "source": "rtl-trash_robot_soc/ formal ERROR files (bmc/cover/induction), synth netlist on disk, equiv log tail",
+      "verified": true
+    },
+    "L2.4": {
+      "value": "15/16 PASS",
+      "description": "FSM cover PASS — cover states reachable at depth 20 for 15/16 leaf modules",
+      "source": "formal/*_cover/PASS files on disk (verified by find command)",
+      "failures": ["trash_robot_soc: cover ERROR (ESC-001)"],
+      "verified": true
+    },
+    "L2.5": {
+      "value": "15/16 PASS",
+      "description": "Formal BMC PASS at depth 20",
+      "source": "formal/*_bmc/PASS files on disk (verified by find command)",
+      "failures": ["trash_robot_soc: BMC ERROR (ESC-001, rc=16)"],
+      "verified": true,
+      "note": "gpio, uart, sram_512b have duplicate bmc_bmc directories with additional PASS files"
+    },
+    "L2.6": {
+      "value": "14/16 PASS",
+      "description": "Formal k-induction proof PASS",
+      "source": "formal/*_induction/PASS files on disk (verified by find command)",
+      "failures": [
+        "trash_robot_soc: induction ERROR (ESC-001)",
+        "picorv32_core: induction UNKNOWN (ESC-002) — basecase passes, induction FAIL at step 0, assertion at picorv32_core.v:2165.4-2165.35"
+      ],
+      "verified": true
+    },
+    "L2.7": {
+      "value": "15/16 PASS",
+      "description": "Formal cover PASS — same as L2.4 (cover depth 20)",
+      "source": "formal/*_cover/PASS files on disk",
+      "failures": ["trash_robot_soc: cover ERROR (ESC-001)"],
+      "verified": true
+    },
+    "L2.8": {
+      "value": "0/16 equiv/PASS files (16/16 CONDITIONAL)",
+      "description": "No equiv/PASS files exist on disk for ANY module. All 16 equiv/*.log files complete without errors but have unproven cells. This is documented CONDITIONAL PASS due to sky130 SAT limitation — ezsat cannot fully prove sky130 flip-flop equivalence. GLS is designated authoritative per asic-frontend skill 5b.",
+      "source": "equiv/*.log file tails showing 'Found N unproven $equiv cells' — all 16 logs end with unproven cells count",
+      "unproven_cells_by_module": {
+        "gpio": 98,
+        "i2c_ds3231": 72,
+        "i2c_hx711": 72,
+        "i2c_ina219": 72,
+        "interrupt_ctrl": 82,
+        "motor_pwm": 118,
+        "picorv32_core": 1914,
+        "power_mgr": 7,
+        "sram_512b": 4129,
+        "timer": 168,
+        "trash_robot_soc": 11241,
+        "uart": 89,
+        "ultrasonic_capture": 162,
+        "watchdog": 109,
+        "wb_interconnect": 60,
+        "weight_detect": 79
+      },
+      "verified": true
+    }
+  },
+  "modules": [
+    {"name": "gpio", "pipeline": "FULL_PIPELINE", "v5_source": "REUSE", "rtl": true, "lint_iverilog_err": 0, "lint_verilator_err": 0, "bmc": "PASS", "induction": "PASS", "cover": "PASS", "equiv": "CONDITIONAL (98 unproven)", "synth_netlist": true},
+    {"name": "i2c_ds3231", "pipeline": "FULL_PIPELINE", "v5_source": "REUSE", "rtl": true, "lint_iverilog_err": 0, "lint_verilator_err": 0, "bmc": "PASS", "induction": "PASS", "cover": "PASS", "equiv": "CONDITIONAL (72 unproven)", "synth_netlist": true, "note": "shares i2c_master RTL with hx711/ina219"},
+    {"name": "i2c_hx711", "pipeline": "FULL_PIPELINE", "v5_source": "REUSE", "rtl": true, "lint_iverilog_err": 0, "lint_verilator_err": 0, "bmc": "PASS", "induction": "PASS", "cover": "PASS", "equiv": "CONDITIONAL (72 unproven)", "synth_netlist": true, "note": "shares i2c_master RTL with ds3231/ina219"},
+    {"name": "i2c_ina219", "pipeline": "FULL_PIPELINE", "v5_source": "REUSE", "rtl": true, "lint_iverilog_err": 0, "lint_verilator_err": 0, "bmc": "PASS", "induction": "PASS", "cover": "PASS", "equiv": "CONDITIONAL (72 unproven)", "synth_netlist": true, "note": "shares i2c_master RTL with ds3231/hx711"},
+    {"name": "interrupt_ctrl", "pipeline": "FULL_PIPELINE", "v5_source": "REUSE", "rtl": true, "lint_iverilog_err": 0, "lint_verilator_err": 0, "bmc": "PASS", "induction": "PASS", "cover": "PASS", "equiv": "CONDITIONAL (82 unproven)", "synth_netlist": true},
+    {"name": "motor_pwm", "pipeline": "FULL_PIPELINE", "v5_source": "REUSE", "rtl": true, "lint_iverilog_err": 0, "lint_verilator_err": 0, "bmc": "PASS", "induction": "PASS", "cover": "PASS", "equiv": "CONDITIONAL (118 unproven)", "synth_netlist": true},
+    {"name": "picorv32_core", "pipeline": "FULL_PIPELINE", "v5_source": "external (YosysHQ)", "rtl": true, "lint_iverilog_err": 0, "lint_verilator_err": 0, "bmc": "PASS", "induction": "UNKNOWN", "cover": "PASS", "equiv": "CONDITIONAL (1914 unproven)", "synth_netlist": true, "note": "ESC-002: induction FAIL at step 0"},
+    {"name": "power_mgr", "pipeline": "FULL_PIPELINE", "v5_source": "REUSE", "rtl": true, "lint_iverilog_err": 0, "lint_verilator_err": 0, "bmc": "PASS", "induction": "PASS", "cover": "PASS", "equiv": "CONDITIONAL (7 unproven)", "synth_netlist": true},
+    {"name": "sram_512b", "pipeline": "FULL_PIPELINE", "v5_source": "REUSE", "rtl": true, "lint_iverilog_err": 0, "lint_verilator_err": 0, "bmc": "PASS", "induction": "PASS", "cover": "PASS", "equiv": "CONDITIONAL (4129 unproven)", "synth_netlist": true},
+    {"name": "timer", "pipeline": "FULL_PIPELINE", "v5_source": "REUSE", "rtl": true, "lint_iverilog_err": 0, "lint_verilator_err": 0, "bmc": "PASS", "induction": "PASS", "cover": "PASS", "equiv": "CONDITIONAL (168 unproven)", "synth_netlist": true},
+    {"name": "trash_robot_soc", "pipeline": "FULL_PIPELINE", "v5_source": "REUSE", "rtl": true, "lint_iverilog_err": 0, "lint_verilator_err": 0, "bmc": "ERROR", "induction": "ERROR", "cover": "ERROR", "equiv": "CONDITIONAL (11241 unproven)", "synth_netlist": true, "note": "ESC-001: SMT2 inout port limitation"},
+    {"name": "uart", "pipeline": "FULL_PIPELINE", "v5_source": "REUSE", "rtl": true, "lint_iverilog_err": 0, "lint_verilator_err": 0, "bmc": "PASS", "induction": "PASS", "cover": "PASS", "equiv": "CONDITIONAL (89 unproven)", "synth_netlist": true},
+    {"name": "ultrasonic_capture", "pipeline": "FULL_PIPELINE", "v5_source": "REUSE", "rtl": true, "lint_iverilog_err": 0, "lint_verilator_err": 0, "bmc": "PASS", "induction": "PASS", "cover": "PASS", "equiv": "CONDITIONAL (162 unproven)", "synth_netlist": true},
+    {"name": "watchdog", "pipeline": "FULL_PIPELINE", "v5_source": "REUSE", "rtl": true, "lint_iverilog_err": 0, "lint_verilator_err": 0, "bmc": "PASS", "induction": "PASS", "cover": "PASS", "equiv": "CONDITIONAL (109 unproven)", "synth_netlist": true},
+    {"name": "wb_interconnect", "pipeline": "FULL_PIPELINE", "v5_source": "REUSE", "rtl": true, "lint_iverilog_err": 0, "lint_verilator_err": 0, "bmc": "PASS", "induction": "PASS", "cover": "PASS", "equiv": "CONDITIONAL (60 unproven)", "synth_netlist": true},
+    {"name": "weight_detect", "pipeline": "FULL_PIPELINE", "v5_source": "REUSE", "rtl": true, "lint_iverilog_err": 0, "lint_verilator_err": 0, "bmc": "PASS", "induction": "PASS", "cover": "PASS", "equiv": "CONDITIONAL (79 unproven)", "synth_netlist": true}
+  ],
+  "counts": {
+    "total_modules": 16,
+    "full_pipeline_modules": 16,
+    "reuse_only_modules": 0,
+    "create_from_scratch": 0,
+    "carry_forward_from_v5": 15,
+    "external_ip": 1,
+    "bmc_pass": 15,
+    "bmc_error": 1,
+    "induction_pass": 14,
+    "induction_unknown": 1,
+    "induction_error": 1,
+    "cover_pass": 15,
+    "cover_error": 1,
+    "equiv_pass_files": 0,
+    "equiv_conditional": 16,
+    "lint_iverilog_errors": 0,
+    "lint_verilator_errors": 0,
+    "synth_netlists": 17
+  },
+  "bugs": [
+    {
+      "id": "ESC-001",
+      "module": "trash_robot_soc",
+      "type": "SKILL_FIX",
+      "severity": "BLOCKING",
+      "description": "SMT2 backend cannot model inout ports. All 3 formal tasks (bmc/cover/induction) ERROR with 'Found multiple drivers for \\\\i2c_scl'. Three i2c_master instances (hx711, ina219, ds3231) share SCL/SDA via inout. .sby configs exist, depth=20, all 23 RTL files included. Status: escalated per escalated_audit.json, unresolved. Formal infrastructure exists but no PASS achievable.",
+      "verified_on_disk": true
+    },
+    {
+      "id": "ESC-002",
+      "module": "picorv32_core",
+      "type": "SKILL_FIX",
+      "severity": "NON_BLOCKING",
+      "description": "Temporal induction FAIL at step 0. Basecase passes (depth 20), induction step fails on assertion at picorv32_core.v:2165.4-2165.35. BMC PASS at depth 20, cover PASS. UNKNOWN file exists at rtl-picorv32_core/formal/picorv32_core_induction/UNKNOWN. Escalated per escalated_audit.json, unresolved.",
+      "verified_on_disk": true
+    }
+  ],
+  "missing": [
+    "L2.8: 0/16 equiv/PASS files exist — all equiv are CONDITIONAL PASS due to sky130 SAT limitation (ezsat cannot prove sky130 flip-flop equivalence). GLS designated authoritative per RESULT.md.",
+    "L0.9: trash_robot_soc formal cannot complete (ESC-001) — SMT2 inout port limitation blocks bmc/cover/induction proofs. This is a tool limitation, not RTL defect."
+  ],
+  "sources_verified": [
+    "RESULT.md — read 70 lines, cross-checked against filesystem",
+    "escalated_audit.json — read 92 lines (retry 0-2 history, final PASS_WITH_ESCALATION, 8/9 checks passed)",
+    "reuse_manifest.json (01_planning-stage) — read 210 lines, all 16 modules FULL_PIPELINE",
+    "All 16 lint/ directories — 38 iverilog + 34 verilator log files, grep-confirmed 0 errors",
+    "All 16 formal/ directories — 15 BMC PASS, 14 induction PASS, 15 cover PASS, 3 ERROR (trash_robot_soc), 1 UNKNOWN (picorv32 induction)",
+    "All 16 synth/ directories — 17 netlist files (trash_robot_soc has 1, picorv32_core has 2)",
+    "All 16 equiv/ directories — 16 log files with unproven cells (range 7-11,241), 0 PASS files",
+    "verify_test_artifacts.sh — exists, verified by escalated_audit.json as exit 0"
+  ]
+}

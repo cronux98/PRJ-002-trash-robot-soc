@@ -1,0 +1,9 @@
+<testsuites name="results">
+  <testsuite name="all" package="all">
+    <property name="random_seed" value="1784094929" />
+    <testcase name="test_reset" classname="test_i2c_hx711" file="/home/smdadmin/hermes_workspace/projects/IP-005/v6/06_verification/tb-i2c_hx711_gls/test_i2c_hx711.py" lineno="13" time="0.001722574234008789" sim_time_ns="70.0" ratio_time="40636.855363321796" />
+    <testcase name="test_register_rw" classname="test_i2c_hx711" file="/home/smdadmin/hermes_workspace/projects/IP-005/v6/06_verification/tb-i2c_hx711_gls/test_i2c_hx711.py" lineno="27" time="0.0025446414947509766" sim_time_ns="200.99999999999997" ratio_time="78989.5159748899" />
+    <testcase name="test_fsm_start_stop" classname="test_i2c_hx711" file="/home/smdadmin/hermes_workspace/projects/IP-005/v6/06_verification/tb-i2c_hx711_gls/test_i2c_hx711.py" lineno="54" time="0.028838396072387695" sim_time_ns="5141.0" ratio_time="178269.27638747654" />
+    <testcase name="test_ack_handshake" classname="test_i2c_hx711" file="/home/smdadmin/hermes_workspace/projects/IP-005/v6/06_verification/tb-i2c_hx711_gls/test_i2c_hx711.py" lineno="77" time="0.0013484954833984375" sim_time_ns="121.0" ratio_time="89729.62942008486" />
+  </testsuite>
+</testsuites>

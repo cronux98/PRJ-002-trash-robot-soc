@@ -1,0 +1,47 @@
+{
+  "module": "ultrasonic_capture",
+  "provenance_type": "self",
+  "source_project": "IP-005 v6",
+  "source_date": "2026-07-15",
+  "promotion_verdict": "CONDITIONAL",
+  "category": "peripherals",
+  "research_path": "research/peripherals/ultrasonic_capture/",
+  "qualification": {
+    "lint": "PASS (0 errors)",
+    "formal_bmc": "PASS (config.sby)",
+    "formal_status": "COND",
+    "synthesis": "PASS (0 latches, 0 unmapped cells)",
+    "equivalence": "CONDITIONAL PASS (sky130 SAT limitation \u2014 documented)",
+    "verification_rtl": "4/4 PASS",
+    "verification_gls": "3/4 PASS",
+    "coverage_tier": "B",
+    "coverage_line_pct": null,
+    "coverage_toggle_pct": null,
+    "coverage_toggle_bins": 600
+  },
+  "metrics": {
+    "cell_count": 1305,
+    "dff_count": 154,
+    "total_cells": 1305
+  },
+  "interface": {
+    "bus_protocol": "Wishbone B4",
+    "clock_domain": "sys_clk",
+    "ports": [
+      "wb_clk_i",
+      "wb_rst_i",
+      "wb_adr_i[3:0]",
+      "wb_dat_i[31:0]",
+      "wb_dat_o[31:0]",
+      "wb_we_i",
+      "wb_sel_i[3:0]",
+      "wb_stb_i",
+      "wb_ack_o",
+      "trig[3:0]",
+      "echo[3:0]",
+      "irq_o"
+    ]
+  },
+  "dependencies": [],
+  "conditions": "GLS waiver W4: zero-delay gate-level echo edge detection artifact. RTL 4/4 PASS. With real clock tree insertion from P&R, echo edge is captured."
+}

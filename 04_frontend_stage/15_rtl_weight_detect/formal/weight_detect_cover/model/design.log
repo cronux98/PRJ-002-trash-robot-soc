@@ -1,0 +1,254 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.65+71 (git sha1 e56c6a954, clang++ 18.1.8 -fPIC -O3)
+
+-- Executing script file `../model/design.ys' --
+
+1. Executing Verilog-2005 frontend: weight_detect.v
+Parsing formal SystemVerilog input from `weight_detect.v' to AST representation.
+Storing AST representation for module `$abstract\weight_detect'.
+Successfully finished Verilog frontend.
+
+2. Executing PREP pass.
+
+2.1. Executing HIERARCHY pass (managing design hierarchy).
+
+2.2. Executing AST frontend in derive mode using pre-parsed AST for module `\weight_detect'.
+Generating RTLIL representation for module `\weight_detect'.
+
+2.2.1. Analyzing design hierarchy..
+Top module:  \weight_detect
+
+2.2.2. Analyzing design hierarchy..
+Top module:  \weight_detect
+Removing unused module `$abstract\weight_detect'.
+Removed 1 unused modules.
+
+2.3. Executing PROC pass (convert processes to netlists).
+
+2.3.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+2.3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 4 switch rules as full_case in process $proc$weight_detect.v:43$3 in module weight_detect.
+Removed a total of 0 dead cases.
+
+2.3.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 3 redundant assignments.
+Promoted 0 assignments to connections.
+
+2.3.4. Executing PROC_INIT pass (extract init attributes).
+
+2.3.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \rst_ni in `\weight_detect.$proc$weight_detect.v:43$3'.
+
+2.3.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~7 debug messages>
+
+2.3.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\weight_detect.$proc$weight_detect.v:43$3'.
+     1/9: $0\irq_thresh[0:0]
+     2/9: $0\status_above[0:0]
+     3/9: $0\wb_ack_o[0:0]
+     4/9: $0\status_irq_flag[0:0]
+     5/9: $0\ctrl_irq_en[0:0]
+     6/9: $0\ctrl_direction[0:0]
+     7/9: $0\threshold[23:0]
+     8/9: $0\weight_value[23:0]
+     9/9: $0\wb_dat_o[31:0]
+
+2.3.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+2.3.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\weight_detect.\wb_dat_o' using process `\weight_detect.$proc$weight_detect.v:43$3'.
+  created $adff cell `$procdff$74' with positive edge clock and positive level reset.
+Creating register for signal `\weight_detect.\wb_ack_o' using process `\weight_detect.$proc$weight_detect.v:43$3'.
+  created $adff cell `$procdff$79' with positive edge clock and positive level reset.
+Creating register for signal `\weight_detect.\irq_thresh' using process `\weight_detect.$proc$weight_detect.v:43$3'.
+  created $adff cell `$procdff$84' with positive edge clock and positive level reset.
+Creating register for signal `\weight_detect.\weight_value' using process `\weight_detect.$proc$weight_detect.v:43$3'.
+  created $adff cell `$procdff$89' with positive edge clock and positive level reset.
+Creating register for signal `\weight_detect.\threshold' using process `\weight_detect.$proc$weight_detect.v:43$3'.
+  created $adff cell `$procdff$94' with positive edge clock and positive level reset.
+Creating register for signal `\weight_detect.\ctrl_direction' using process `\weight_detect.$proc$weight_detect.v:43$3'.
+  created $adff cell `$procdff$99' with positive edge clock and positive level reset.
+Creating register for signal `\weight_detect.\ctrl_irq_en' using process `\weight_detect.$proc$weight_detect.v:43$3'.
+  created $adff cell `$procdff$104' with positive edge clock and positive level reset.
+Creating register for signal `\weight_detect.\status_above' using process `\weight_detect.$proc$weight_detect.v:43$3'.
+  created $adff cell `$procdff$109' with positive edge clock and positive level reset.
+Creating register for signal `\weight_detect.\status_irq_flag' using process `\weight_detect.$proc$weight_detect.v:43$3'.
+  created $adff cell `$procdff$114' with positive edge clock and positive level reset.
+
+2.3.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+2.3.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 7 empty switches in `\weight_detect.$proc$weight_detect.v:43$3'.
+Removing empty process `weight_detect.$proc$weight_detect.v:43$3'.
+Cleaned up 7 empty switches.
+
+2.3.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module weight_detect.
+<suppressed ~20 debug messages>
+
+2.4. Executing FUTURE pass.
+
+2.5. Executing OPT_EXPR pass (perform const folding).
+Optimizing module weight_detect.
+
+2.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \weight_detect..
+Removed 11 unused cells and 47 unused wires.
+<suppressed ~13 debug messages>
+
+2.7. Executing CHECK pass (checking for obvious problems).
+Checking module weight_detect...
+Found and reported 0 problems.
+
+2.8. Executing OPT pass (performing simple optimizations).
+
+2.8.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module weight_detect.
+
+2.8.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\weight_detect'.
+Computing hashes of 48 cells of `\weight_detect'.
+Finding duplicate cells in `\weight_detect'.
+Computing hashes of 43 cells of `\weight_detect'.
+Finding duplicate cells in `\weight_detect'.
+<suppressed ~15 debug messages>
+Removed a total of 5 cells.
+
+2.8.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \weight_detect..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~39 debug messages>
+
+2.8.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \weight_detect.
+Performed a total of 0 changes.
+
+2.8.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\weight_detect'.
+Computing hashes of 43 cells of `\weight_detect'.
+Finding duplicate cells in `\weight_detect'.
+Removed a total of 0 cells.
+
+2.8.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \weight_detect..
+Removed 0 unused cells and 5 unused wires.
+<suppressed ~1 debug messages>
+
+2.8.7. Executing OPT_EXPR pass (perform const folding).
+Optimizing module weight_detect.
+
+2.8.8. Rerunning OPT passes. (Maybe there is more to do..)
+
+2.8.9. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \weight_detect..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~39 debug messages>
+
+2.8.10. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \weight_detect.
+Performed a total of 0 changes.
+
+2.8.11. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\weight_detect'.
+Computing hashes of 43 cells of `\weight_detect'.
+Finding duplicate cells in `\weight_detect'.
+Removed a total of 0 cells.
+
+2.8.12. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \weight_detect..
+
+2.8.13. Executing OPT_EXPR pass (perform const folding).
+Optimizing module weight_detect.
+
+2.8.14. Finished fast OPT passes. (There is nothing left to do.)
+
+2.9. Executing WREDUCE pass (reducing word size of cells).
+Removed top 1 bits (of 3) from port B of cell weight_detect.$procmux$61_CMP0 ($eq).
+Removed top 8 bits (of 32) from mux cell weight_detect.$procmux$60 ($pmux).
+Removed top 1 bits (of 3) from port B of cell weight_detect.$procmux$62_CMP0 ($eq).
+Removed top 2 bits (of 3) from port B of cell weight_detect.$procmux$63_CMP0 ($eq).
+Removed top 8 bits (of 32) from wire weight_detect.$procmux$60_Y.
+
+2.10. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \weight_detect..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+2.11. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+2.12. Executing OPT pass (performing simple optimizations).
+
+2.12.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module weight_detect.
+
+2.12.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\weight_detect'.
+Computing hashes of 43 cells of `\weight_detect'.
+Finding duplicate cells in `\weight_detect'.
+Removed a total of 0 cells.
+
+2.12.3. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \weight_detect..
+
+2.12.4. Finished fast OPT passes.
+
+2.13. Executing SORT pass.
+
+2.14. Printing statistics.
+
+=== weight_detect ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       51 wires
+      424 wire bits
+       18 public wires
+      160 public wire bits
+       11 ports
+      107 port bits
+       43 cells
+        9   $adff
+        3   $eq
+        1   $ge
+        5   $logic_and
+        3   $logic_not
+       21   $mux
+        1   $pmux
+
+2.15. Executing CHECK pass (checking for obvious problems).
+Checking module weight_detect...
+Found and reported 0 problems.
+
+3. Executing HIERARCHY pass (managing design hierarchy).
+Attribute `top' found on module `weight_detect'. Setting top module to weight_detect.
+
+3.1. Analyzing design hierarchy..
+Top module:  \weight_detect
+
+3.2. Analyzing design hierarchy..
+Top module:  \weight_detect
+Removed 0 unused modules.
+
+4. Executing jny backend.
+
+5. Executing RTLIL backend.
+Output filename: ../model/design.il
+
+End of script. Logfile hash: 03d5e75e78, time: 0.02s, user: 0.02s, system: 0.01s, MEM: 15.21 MB peak
+Yosys 0.65+71 (git sha1 e56c6a954, clang++ 18.1.8 -fPIC -O3)
+Time spent: 22% 5x opt_clean (0 sec), 11% 2x hierarchy (0 sec), ...

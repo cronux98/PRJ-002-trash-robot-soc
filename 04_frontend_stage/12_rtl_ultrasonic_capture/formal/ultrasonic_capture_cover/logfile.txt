@@ -1,0 +1,21 @@
+SBY 15:13:43 [ultrasonic_capture_bmc] Removing directory '/home/smdadmin/hermes_workspace/projects/IP-005/v5/03_frontend-stage/rtl-ultrasonic_capture/formal/ultrasonic_capture_bmc'.
+SBY 15:13:43 [ultrasonic_capture_induction] Removing directory '/home/smdadmin/hermes_workspace/projects/IP-005/v5/03_frontend-stage/rtl-ultrasonic_capture/formal/ultrasonic_capture_induction'.
+SBY 15:13:43 [ultrasonic_capture_cover] Removing directory '/home/smdadmin/hermes_workspace/projects/IP-005/v5/03_frontend-stage/rtl-ultrasonic_capture/formal/ultrasonic_capture_cover'.
+SBY 15:13:43 [ultrasonic_capture_cover] Copy '/home/smdadmin/hermes_workspace/projects/IP-005/v5/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v' to '/home/smdadmin/hermes_workspace/projects/IP-005/v5/03_frontend-stage/rtl-ultrasonic_capture/formal/ultrasonic_capture_cover/src/ultrasonic_capture.v'.
+SBY 15:13:43 [ultrasonic_capture_cover] engine_0: smtbmc yices
+SBY 15:13:43 [ultrasonic_capture_cover] base: starting process "cd ultrasonic_capture_cover/src; yosys -ql ../model/design.log ../model/design.ys"
+SBY 15:13:43 [ultrasonic_capture_cover] base: finished (returncode=0)
+SBY 15:13:43 [ultrasonic_capture_cover] prep: starting process "cd ultrasonic_capture_cover/model; yosys -ql design_prep.log design_prep.ys"
+SBY 15:13:43 [ultrasonic_capture_cover] prep: finished (returncode=0)
+SBY 15:13:43 [ultrasonic_capture_cover] smt2: starting process "cd ultrasonic_capture_cover/model; yosys -ql design_smt2.log design_smt2.ys"
+SBY 15:13:43 [ultrasonic_capture_cover] smt2: finished (returncode=0)
+SBY 15:13:43 [ultrasonic_capture_cover] engine_0: starting process "cd ultrasonic_capture_cover; /home/smdadmin/oss-cad-suite/bin/yosys-smtbmc -s yices --presat --unroll -c --noprogress -t 20  --append 0 --dump-vcd engine_0/trace%.vcd --dump-yw engine_0/trace%.yw --dump-vlogtb engine_0/trace%_tb.v --dump-smtc engine_0/trace%.smtc model/design_smt2.smt2"
+SBY 15:13:44 [ultrasonic_capture_cover] engine_0: ##   0:00:00  Solver: yices
+SBY 15:13:44 [ultrasonic_capture_cover] engine_0: ##   0:00:00  Status: passed
+SBY 15:13:44 [ultrasonic_capture_cover] engine_0: finished (returncode=0)
+SBY 15:13:44 [ultrasonic_capture_cover] engine_0: Status returned by engine: pass
+SBY 15:13:44 [ultrasonic_capture_cover] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 15:13:44 [ultrasonic_capture_cover] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 15:13:44 [ultrasonic_capture_cover] summary: engine_0 (smtbmc yices) returned pass
+SBY 15:13:44 [ultrasonic_capture_cover] summary: engine_0 did not produce any traces
+SBY 15:13:44 [ultrasonic_capture_cover] DONE (PASS, rc=0)

@@ -1,0 +1,1164 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.65+71 (git sha1 e56c6a954, clang++ 18.1.8 -fPIC -O3)
+
+-- Executing script file `/tmp/equiv_weight_detect.ys' --
+
+1. Executing Verilog-2005 frontend: /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-weight_detect/rtl/weight_detect.v
+Parsing Verilog input from `/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-weight_detect/rtl/weight_detect.v' to AST representation.
+Generating RTLIL representation for module `\weight_detect'.
+Successfully finished Verilog frontend.
+
+2. Executing HIERARCHY pass (managing design hierarchy).
+
+2.1. Analyzing design hierarchy..
+Top module:  \weight_detect
+
+2.2. Analyzing design hierarchy..
+Top module:  \weight_detect
+Removed 0 unused modules.
+
+3. Executing PROC pass (convert processes to netlists).
+
+3.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 4 switch rules as full_case in process $proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-weight_detect/rtl/weight_detect.v:43$3 in module weight_detect.
+Removed a total of 0 dead cases.
+
+3.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 3 redundant assignments.
+Promoted 0 assignments to connections.
+
+3.4. Executing PROC_INIT pass (extract init attributes).
+
+3.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \rst_ni in `\weight_detect.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-weight_detect/rtl/weight_detect.v:43$3'.
+
+3.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~7 debug messages>
+
+3.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\weight_detect.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-weight_detect/rtl/weight_detect.v:43$3'.
+     1/9: $0\irq_thresh[0:0]
+     2/9: $0\status_above[0:0]
+     3/9: $0\wb_ack_o[0:0]
+     4/9: $0\status_irq_flag[0:0]
+     5/9: $0\ctrl_irq_en[0:0]
+     6/9: $0\ctrl_direction[0:0]
+     7/9: $0\threshold[23:0]
+     8/9: $0\weight_value[23:0]
+     9/9: $0\wb_dat_o[31:0]
+
+3.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+3.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\weight_detect.\wb_dat_o' using process `\weight_detect.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-weight_detect/rtl/weight_detect.v:43$3'.
+  created $adff cell `$procdff$74' with positive edge clock and positive level reset.
+Creating register for signal `\weight_detect.\wb_ack_o' using process `\weight_detect.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-weight_detect/rtl/weight_detect.v:43$3'.
+  created $adff cell `$procdff$79' with positive edge clock and positive level reset.
+Creating register for signal `\weight_detect.\irq_thresh' using process `\weight_detect.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-weight_detect/rtl/weight_detect.v:43$3'.
+  created $adff cell `$procdff$84' with positive edge clock and positive level reset.
+Creating register for signal `\weight_detect.\weight_value' using process `\weight_detect.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-weight_detect/rtl/weight_detect.v:43$3'.
+  created $adff cell `$procdff$89' with positive edge clock and positive level reset.
+Creating register for signal `\weight_detect.\threshold' using process `\weight_detect.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-weight_detect/rtl/weight_detect.v:43$3'.
+  created $adff cell `$procdff$94' with positive edge clock and positive level reset.
+Creating register for signal `\weight_detect.\ctrl_direction' using process `\weight_detect.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-weight_detect/rtl/weight_detect.v:43$3'.
+  created $adff cell `$procdff$99' with positive edge clock and positive level reset.
+Creating register for signal `\weight_detect.\ctrl_irq_en' using process `\weight_detect.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-weight_detect/rtl/weight_detect.v:43$3'.
+  created $adff cell `$procdff$104' with positive edge clock and positive level reset.
+Creating register for signal `\weight_detect.\status_above' using process `\weight_detect.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-weight_detect/rtl/weight_detect.v:43$3'.
+  created $adff cell `$procdff$109' with positive edge clock and positive level reset.
+Creating register for signal `\weight_detect.\status_irq_flag' using process `\weight_detect.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-weight_detect/rtl/weight_detect.v:43$3'.
+  created $adff cell `$procdff$114' with positive edge clock and positive level reset.
+
+3.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+3.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 7 empty switches in `\weight_detect.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-weight_detect/rtl/weight_detect.v:43$3'.
+Removing empty process `weight_detect.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-weight_detect/rtl/weight_detect.v:43$3'.
+Cleaned up 7 empty switches.
+
+3.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module weight_detect.
+<suppressed ~20 debug messages>
+
+4. Executing OPT pass (performing simple optimizations).
+
+4.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module weight_detect.
+
+4.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\weight_detect'.
+Computing hashes of 59 cells of `\weight_detect'.
+Finding duplicate cells in `\weight_detect'.
+Computing hashes of 46 cells of `\weight_detect'.
+Finding duplicate cells in `\weight_detect'.
+<suppressed ~39 debug messages>
+Removed a total of 13 cells.
+
+4.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \weight_detect..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~39 debug messages>
+
+4.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \weight_detect.
+Performed a total of 0 changes.
+
+4.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\weight_detect'.
+Computing hashes of 46 cells of `\weight_detect'.
+Finding duplicate cells in `\weight_detect'.
+Removed a total of 0 cells.
+
+4.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $procdff$94 ($adff) from module weight_detect (D = \wb_dat_i [23:0], Q = \threshold).
+Adding EN signal on $procdff$104 ($adff) from module weight_detect (D = \wb_dat_i [1], Q = \ctrl_irq_en).
+Adding EN signal on $procdff$89 ($adff) from module weight_detect (D = \wb_dat_i [23:0], Q = \weight_value).
+Adding EN signal on $procdff$74 ($adff) from module weight_detect (D = $procmux$60_Y, Q = \wb_dat_o).
+Adding EN signal on $procdff$99 ($adff) from module weight_detect (D = \wb_dat_i [0], Q = \ctrl_direction).
+
+4.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \weight_detect..
+Removed 17 unused cells and 66 unused wires.
+<suppressed ~19 debug messages>
+
+4.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module weight_detect.
+
+4.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+4.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \weight_detect..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~21 debug messages>
+
+4.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \weight_detect.
+Performed a total of 0 changes.
+
+4.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\weight_detect'.
+Computing hashes of 35 cells of `\weight_detect'.
+Finding duplicate cells in `\weight_detect'.
+Computing hashes of 34 cells of `\weight_detect'.
+Finding duplicate cells in `\weight_detect'.
+<suppressed ~3 debug messages>
+Removed a total of 1 cells.
+
+4.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \weight_detect..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+4.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module weight_detect.
+
+4.16. Rerunning OPT passes. (Maybe there is more to do..)
+
+4.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \weight_detect..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~21 debug messages>
+
+4.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \weight_detect.
+Performed a total of 0 changes.
+
+4.19. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\weight_detect'.
+Computing hashes of 34 cells of `\weight_detect'.
+Finding duplicate cells in `\weight_detect'.
+Removed a total of 0 cells.
+
+4.20. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \weight_detect..
+
+4.22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module weight_detect.
+
+4.23. Finished fast OPT passes. (There is nothing left to do.)
+
+5. Executing ASYNC2SYNC pass.
+Replacing weight_detect.$procdff$109 ($adff): ARST=\rst_ni, D=\weight_above, Q=\status_above
+Replacing weight_detect.$auto$ff.cc:337:slice$121 ($adffe): ARST=\rst_ni, D=\wb_dat_i [23:0], Q=\weight_value
+Replacing weight_detect.$procdff$84 ($adff): ARST=\rst_ni, D=$0\irq_thresh[0:0], Q=\irq_thresh
+Replacing weight_detect.$auto$ff.cc:337:slice$124 ($adffe): ARST=\rst_ni, D=$procmux$60_Y, Q=\wb_dat_o
+Replacing weight_detect.$auto$ff.cc:337:slice$129 ($adffe): ARST=\rst_ni, D=\wb_dat_i [0], Q=\ctrl_direction
+Replacing weight_detect.$procdff$114 ($adff): ARST=\rst_ni, D=$0\status_irq_flag[0:0], Q=\status_irq_flag
+Replacing weight_detect.$auto$ff.cc:337:slice$118 ($adffe): ARST=\rst_ni, D=\wb_dat_i [1], Q=\ctrl_irq_en
+Replacing weight_detect.$auto$ff.cc:337:slice$115 ($adffe): ARST=\rst_ni, D=\wb_dat_i [23:0], Q=\threshold
+Replacing weight_detect.$procdff$79 ($adff): ARST=\rst_ni, D=$0\wb_ack_o[0:0], Q=\wb_ack_o
+
+6. Executing MEMORY pass.
+
+6.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+6.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+6.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+6.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+6.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+6.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \weight_detect..
+
+6.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+6.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+6.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \weight_detect..
+
+6.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+6.11. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+7. Executing OPT pass (performing simple optimizations).
+
+7.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module weight_detect.
+
+7.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\weight_detect'.
+Computing hashes of 43 cells of `\weight_detect'.
+Finding duplicate cells in `\weight_detect'.
+Removed a total of 0 cells.
+
+7.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \weight_detect..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~38 debug messages>
+
+7.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \weight_detect.
+Performed a total of 0 changes.
+
+7.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\weight_detect'.
+Computing hashes of 43 cells of `\weight_detect'.
+Finding duplicate cells in `\weight_detect'.
+Removed a total of 0 cells.
+
+7.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+7.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \weight_detect..
+
+7.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module weight_detect.
+
+7.9. Finished fast OPT passes. (There is nothing left to do.)
+
+8. Executing TECHMAP pass (map to technology primitives).
+
+8.1. Executing Verilog-2005 frontend: /home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v
+Parsing Verilog input from `/home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu_brent_kung'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `$__div_mod_u'.
+Generating RTLIL representation for module `$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Generating RTLIL representation for module `$connect'.
+Generating RTLIL representation for module `$input_port'.
+Successfully finished Verilog frontend.
+
+8.2. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $mux.
+Using extmapper simplemap for cells of type $reduce_and.
+Using extmapper simplemap for cells of type $sdffe.
+Using extmapper simplemap for cells of type $not.
+Running "alumacc" on wrapper $extern:wrap:$ge:Y_WIDTH=1:B_WIDTH=24:A_WIDTH=24:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$ge:Y_WIDTH=1:B_WIDTH=24:A_WIDTH=24:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$ge:Y_WIDTH=1:B_WIDTH=24:A_WIDTH=24:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Using extmapper simplemap for cells of type $logic_not.
+Using extmapper simplemap for cells of type $logic_and.
+Using extmapper simplemap for cells of type $eq.
+Using template $paramod$b098bc6f249c0ac91c4d6e19d54b23c285914115\_90_pmux for cells of type $pmux.
+Using extmapper simplemap for cells of type $sdff.
+Using extmapper simplemap for cells of type $or.
+Using template $paramod$e82d3fc1811c5751348a3964470632b35a435fc7\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $reduce_or.
+Using extmapper simplemap for cells of type $and.
+Using extmapper simplemap for cells of type $xor.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000011000 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000011000 for cells of type $lcu.
+Using extmapper simplemap for cells of type $pos.
+No more expansions possible.
+<suppressed ~467 debug messages>
+
+9. Executing OPT pass (performing simple optimizations).
+
+9.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module weight_detect.
+<suppressed ~262 debug messages>
+
+9.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\weight_detect'.
+Computing hashes of 540 cells of `\weight_detect'.
+Finding duplicate cells in `\weight_detect'.
+Computing hashes of 518 cells of `\weight_detect'.
+Finding duplicate cells in `\weight_detect'.
+Computing hashes of 506 cells of `\weight_detect'.
+Finding duplicate cells in `\weight_detect'.
+Computing hashes of 504 cells of `\weight_detect'.
+Finding duplicate cells in `\weight_detect'.
+<suppressed ~108 debug messages>
+Removed a total of 36 cells.
+
+9.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \weight_detect..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+9.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \weight_detect.
+Performed a total of 0 changes.
+
+9.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\weight_detect'.
+Computing hashes of 504 cells of `\weight_detect'.
+Finding duplicate cells in `\weight_detect'.
+Removed a total of 0 cells.
+
+9.6. Executing OPT_DFF pass (perform DFF optimizations).
+Setting constant 0-bit at position 0 on $auto$ff.cc:337:slice$349 ($_SDFFE_PN0P_) from module weight_detect.
+
+9.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \weight_detect..
+Removed 60 unused cells and 236 unused wires.
+<suppressed ~61 debug messages>
+
+9.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module weight_detect.
+<suppressed ~1 debug messages>
+
+9.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+9.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \weight_detect..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+9.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \weight_detect.
+Performed a total of 0 changes.
+
+9.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\weight_detect'.
+Computing hashes of 442 cells of `\weight_detect'.
+Finding duplicate cells in `\weight_detect'.
+Removed a total of 0 cells.
+
+9.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+9.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \weight_detect..
+
+9.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module weight_detect.
+
+9.16. Finished fast OPT passes. (There is nothing left to do.)
+
+10. Executing FLATTEN pass (flatten design).
+
+11. Executing OPT pass (performing simple optimizations).
+
+11.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module weight_detect.
+
+11.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\weight_detect'.
+Computing hashes of 442 cells of `\weight_detect'.
+Finding duplicate cells in `\weight_detect'.
+Removed a total of 0 cells.
+
+11.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \weight_detect..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+11.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \weight_detect.
+Performed a total of 0 changes.
+
+11.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\weight_detect'.
+Computing hashes of 442 cells of `\weight_detect'.
+Finding duplicate cells in `\weight_detect'.
+Removed a total of 0 cells.
+
+11.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+11.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \weight_detect..
+
+11.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module weight_detect.
+
+11.9. Finished fast OPT passes. (There is nothing left to do.)
+
+12. Executing Liberty frontend: /home/smdadmin/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130B/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+Imported 428 cell types from liberty file.
+
+13. Executing Verilog-2005 frontend: /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-weight_detect/synth/weight_detect_netlist.v
+Parsing Verilog input from `/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-weight_detect/synth/weight_detect_netlist.v' to AST representation.
+Generating RTLIL representation for module `\weight_detect'.
+Successfully finished Verilog frontend.
+
+14. Executing HIERARCHY pass (managing design hierarchy).
+
+14.1. Analyzing design hierarchy..
+Top module:  \weight_detect
+
+14.2. Analyzing design hierarchy..
+Top module:  \weight_detect
+Removed 0 unused modules.
+
+15. Executing PROC pass (convert processes to netlists).
+
+15.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+15.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed a total of 0 dead cases.
+
+15.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 0 assignments to connections.
+
+15.4. Executing PROC_INIT pass (extract init attributes).
+
+15.5. Executing PROC_ARST pass (detect async resets in processes).
+
+15.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+
+15.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+
+15.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+15.9. Executing PROC_DFF pass (convert process syncs to FFs).
+
+15.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+15.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+15.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module weight_detect.
+
+16. Executing OPT pass (performing simple optimizations).
+
+16.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module weight_detect.
+
+16.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\weight_detect'.
+Computing hashes of 316 cells of `\weight_detect'.
+Finding duplicate cells in `\weight_detect'.
+Removed a total of 0 cells.
+
+16.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \weight_detect..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+16.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \weight_detect.
+Performed a total of 0 changes.
+
+16.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\weight_detect'.
+Computing hashes of 316 cells of `\weight_detect'.
+Finding duplicate cells in `\weight_detect'.
+Removed a total of 0 cells.
+
+16.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+16.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \weight_detect..
+Removed 0 unused cells and 296 unused wires.
+<suppressed ~1 debug messages>
+
+16.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module weight_detect.
+
+16.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+16.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \weight_detect..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+16.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \weight_detect.
+Performed a total of 0 changes.
+
+16.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\weight_detect'.
+Computing hashes of 316 cells of `\weight_detect'.
+Finding duplicate cells in `\weight_detect'.
+Removed a total of 0 cells.
+
+16.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+16.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \weight_detect..
+
+16.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module weight_detect.
+
+16.16. Finished fast OPT passes. (There is nothing left to do.)
+
+17. Executing ASYNC2SYNC pass.
+
+18. Executing MEMORY pass.
+
+18.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+18.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+18.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+18.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+18.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+18.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \weight_detect..
+
+18.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+18.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+18.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \weight_detect..
+
+18.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+18.11. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+19. Executing OPT pass (performing simple optimizations).
+
+19.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module weight_detect.
+
+19.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\weight_detect'.
+Computing hashes of 316 cells of `\weight_detect'.
+Finding duplicate cells in `\weight_detect'.
+Removed a total of 0 cells.
+
+19.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \weight_detect..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+19.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \weight_detect.
+Performed a total of 0 changes.
+
+19.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\weight_detect'.
+Computing hashes of 316 cells of `\weight_detect'.
+Finding duplicate cells in `\weight_detect'.
+Removed a total of 0 cells.
+
+19.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+19.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \weight_detect..
+
+19.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module weight_detect.
+
+19.9. Finished fast OPT passes. (There is nothing left to do.)
+
+20. Executing TECHMAP pass (map to technology primitives).
+
+20.1. Executing Verilog-2005 frontend: /home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v
+Parsing Verilog input from `/home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu_brent_kung'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `$__div_mod_u'.
+Generating RTLIL representation for module `$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Generating RTLIL representation for module `$connect'.
+Generating RTLIL representation for module `$input_port'.
+Successfully finished Verilog frontend.
+
+20.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~77 debug messages>
+
+21. Executing OPT pass (performing simple optimizations).
+
+21.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module weight_detect.
+
+21.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\weight_detect'.
+Computing hashes of 316 cells of `\weight_detect'.
+Finding duplicate cells in `\weight_detect'.
+Removed a total of 0 cells.
+
+21.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \weight_detect..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+21.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \weight_detect.
+Performed a total of 0 changes.
+
+21.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\weight_detect'.
+Computing hashes of 316 cells of `\weight_detect'.
+Finding duplicate cells in `\weight_detect'.
+Removed a total of 0 cells.
+
+21.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+21.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \weight_detect..
+
+21.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module weight_detect.
+
+21.9. Finished fast OPT passes. (There is nothing left to do.)
+
+22. Executing FLATTEN pass (flatten design).
+
+23. Executing OPT pass (performing simple optimizations).
+
+23.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module weight_detect.
+
+23.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\weight_detect'.
+Computing hashes of 316 cells of `\weight_detect'.
+Finding duplicate cells in `\weight_detect'.
+Removed a total of 0 cells.
+
+23.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \weight_detect..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+23.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \weight_detect.
+Performed a total of 0 changes.
+
+23.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\weight_detect'.
+Computing hashes of 316 cells of `\weight_detect'.
+Finding duplicate cells in `\weight_detect'.
+Removed a total of 0 cells.
+
+23.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+23.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \weight_detect..
+
+23.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module weight_detect.
+
+23.9. Finished fast OPT passes. (There is nothing left to do.)
+
+24. Executing EQUIV_MAKE pass (creating equiv checking module).
+Presumably equivalent wires: weight_above_gold (\weight_above_gold), weight_above_gate (\_510__gate) -> weight_above
+Presumably equivalent wires: status_irq_flag_gold (\status_irq_flag_gold), status_irq_flag_gate (\_430__gate) -> status_irq_flag
+Presumably equivalent wires: status_above_gold (\status_above_gold), status_above_gate (\_429__gate) -> status_above
+Presumably equivalent wires: ctrl_irq_en_gold (\ctrl_irq_en_gold), ctrl_irq_en_gate (\_268__gate) -> ctrl_irq_en
+Presumably equivalent wires: ctrl_direction_gold (\ctrl_direction_gold), ctrl_direction_gate (\_267__gate) -> ctrl_direction
+Presumably equivalent wires: threshold_gold (\threshold_gold), threshold_gate ({ \_446__gate \_445__gate \_444__gate \_443__gate \_441__gate \_440__gate \_439__gate \_438__gate \_437__gate \_436__gate \_435__gate \_434__gate \_433__gate \_432__gate \_454__gate \_453__gate \_452__gate \_451__gate \_450__gate \_449__gate \_448__gate \_447__gate \_442__gate \_431__gate }) -> threshold
+Presumably equivalent wires: weight_value_gold (\weight_value_gold), weight_value_gate ({ \_526__gate \_525__gate \_524__gate \_523__gate \_521__gate \_520__gate \_519__gate \_518__gate \_517__gate \_516__gate \_515__gate \_514__gate \_513__gate \_512__gate \_534__gate \_533__gate \_532__gate \_531__gate \_530__gate \_529__gate \_528__gate \_527__gate \_522__gate \_511__gate }) -> weight_value
+Presumably equivalent wires: irq_thresh_gold (\irq_thresh_gold), irq_thresh_gate (\irq_thresh_gate) -> irq_thresh
+Presumably equivalent wires: wb_ack_o_gold (\wb_ack_o_gold), wb_ack_o_gate (\wb_ack_o_gate) -> wb_ack_o
+Presumably equivalent wires: wb_cyc_i_gold (\wb_cyc_i_gold), wb_cyc_i_gate (\wb_cyc_i_gate) -> wb_cyc_i
+Presumably equivalent wires: wb_stb_i_gold (\wb_stb_i_gold), wb_stb_i_gate (\wb_stb_i_gate) -> wb_stb_i
+Presumably equivalent wires: wb_we_i_gold (\wb_we_i_gold), wb_we_i_gate (\wb_we_i_gate) -> wb_we_i
+Presumably equivalent wires: wb_sel_i_gold (\wb_sel_i_gold), wb_sel_i_gate (\wb_sel_i_gate) -> wb_sel_i
+Presumably equivalent wires: wb_dat_o_gold ({ 8'00000000 \wb_dat_o_gold [23:0] }), wb_dat_o_gate ({ 8'00000000 \_499__gate \_498__gate \_497__gate \_496__gate \_494__gate \_493__gate \_492__gate \_491__gate \_490__gate \_489__gate \_488__gate \_487__gate \_486__gate \_485__gate \_507__gate \_506__gate \_505__gate \_504__gate \_503__gate \_502__gate \_501__gate \_500__gate \_495__gate \_484__gate }) -> wb_dat_o
+Presumably equivalent wires: wb_dat_i_gold (\wb_dat_i_gold), wb_dat_i_gate (\wb_dat_i_gate) -> wb_dat_i
+Presumably equivalent wires: wb_adr_i_gold (\wb_adr_i_gold), wb_adr_i_gate (\wb_adr_i_gate) -> wb_adr_i
+Presumably equivalent wires: rst_ni_gold (\rst_ni_gold), rst_ni_gate (\rst_ni_gate) -> rst_ni
+Presumably equivalent wires: clk_i_gold (\clk_i_gold), clk_i_gate (\clk_i_gate) -> clk_i
+Changing input Q of cell _923__gate (sky130_fd_sc_hd__dfrtp_1): \irq_thresh_gate -> \irq_thresh
+Changing input Q of cell _922__gate (sky130_fd_sc_hd__dfrtp_1): \wb_ack_o_gate -> \wb_ack_o
+Changing input Q of cell _871__gate (sky130_fd_sc_hd__dfrtp_1): \_499__gate -> \wb_dat_o [23]
+Changing input Q of cell _870__gate (sky130_fd_sc_hd__dfrtp_1): \_498__gate -> \wb_dat_o [22]
+Changing input Q of cell _869__gate (sky130_fd_sc_hd__dfrtp_1): \_497__gate -> \wb_dat_o [21]
+Changing input Q of cell _868__gate (sky130_fd_sc_hd__dfrtp_1): \_496__gate -> \wb_dat_o [20]
+Changing input Q of cell _867__gate (sky130_fd_sc_hd__dfrtp_1): \_494__gate -> \wb_dat_o [19]
+Changing input Q of cell _866__gate (sky130_fd_sc_hd__dfrtp_1): \_493__gate -> \wb_dat_o [18]
+Changing input Q of cell _865__gate (sky130_fd_sc_hd__dfrtp_1): \_492__gate -> \wb_dat_o [17]
+Changing input Q of cell _864__gate (sky130_fd_sc_hd__dfrtp_1): \_491__gate -> \wb_dat_o [16]
+Changing input Q of cell _863__gate (sky130_fd_sc_hd__dfrtp_1): \_490__gate -> \wb_dat_o [15]
+Changing input Q of cell _862__gate (sky130_fd_sc_hd__dfrtp_1): \_489__gate -> \wb_dat_o [14]
+Changing input Q of cell _861__gate (sky130_fd_sc_hd__dfrtp_1): \_488__gate -> \wb_dat_o [13]
+Changing input Q of cell _860__gate (sky130_fd_sc_hd__dfrtp_1): \_487__gate -> \wb_dat_o [12]
+Changing input Q of cell _859__gate (sky130_fd_sc_hd__dfrtp_1): \_486__gate -> \wb_dat_o [11]
+Changing input Q of cell _858__gate (sky130_fd_sc_hd__dfrtp_1): \_485__gate -> \wb_dat_o [10]
+Changing input Q of cell _857__gate (sky130_fd_sc_hd__dfrtp_1): \_507__gate -> \wb_dat_o [9]
+Changing input Q of cell _856__gate (sky130_fd_sc_hd__dfrtp_1): \_506__gate -> \wb_dat_o [8]
+Changing input Q of cell _855__gate (sky130_fd_sc_hd__dfrtp_1): \_505__gate -> \wb_dat_o [7]
+Changing input Q of cell _854__gate (sky130_fd_sc_hd__dfrtp_1): \_504__gate -> \wb_dat_o [6]
+Changing input Q of cell _853__gate (sky130_fd_sc_hd__dfrtp_1): \_503__gate -> \wb_dat_o [5]
+Changing input Q of cell _852__gate (sky130_fd_sc_hd__dfrtp_1): \_502__gate -> \wb_dat_o [4]
+Changing input Q of cell _851__gate (sky130_fd_sc_hd__dfrtp_1): \_501__gate -> \wb_dat_o [3]
+Changing input Q of cell _850__gate (sky130_fd_sc_hd__dfrtp_1): \_500__gate -> \wb_dat_o [2]
+Changing input Q of cell _849__gate (sky130_fd_sc_hd__dfrtp_1): \_495__gate -> \wb_dat_o [1]
+Changing input Q of cell _848__gate (sky130_fd_sc_hd__dfrtp_1): \_484__gate -> \wb_dat_o [0]
+Changing input A of cell _833__gate (sky130_fd_sc_hd__nor2_1): \_499__gate -> \wb_dat_o [23]
+Changing input A of cell _797__gate (sky130_fd_sc_hd__nor2_1): \_484__gate -> \wb_dat_o [0]
+Changing input A of cell _792__gate (sky130_fd_sc_hd__nor2_1): \_495__gate -> \wb_dat_o [1]
+Changing input A of cell _787__gate (sky130_fd_sc_hd__nor2_1): \_500__gate -> \wb_dat_o [2]
+Changing input A of cell _784__gate (sky130_fd_sc_hd__nor2_1): \_501__gate -> \wb_dat_o [3]
+Changing input A of cell _781__gate (sky130_fd_sc_hd__nor2_1): \_502__gate -> \wb_dat_o [4]
+Changing input A of cell _778__gate (sky130_fd_sc_hd__nor2_1): \_503__gate -> \wb_dat_o [5]
+Changing input A of cell _775__gate (sky130_fd_sc_hd__nor2_1): \_504__gate -> \wb_dat_o [6]
+Changing input A of cell _772__gate (sky130_fd_sc_hd__nor2_1): \_505__gate -> \wb_dat_o [7]
+Changing input A of cell _769__gate (sky130_fd_sc_hd__nor2_1): \_506__gate -> \wb_dat_o [8]
+Changing input A of cell _766__gate (sky130_fd_sc_hd__nor2_1): \_507__gate -> \wb_dat_o [9]
+Changing input A of cell _763__gate (sky130_fd_sc_hd__nor2_1): \_485__gate -> \wb_dat_o [10]
+Changing input A of cell _760__gate (sky130_fd_sc_hd__nor2_1): \_486__gate -> \wb_dat_o [11]
+Changing input A of cell _757__gate (sky130_fd_sc_hd__nor2_1): \_487__gate -> \wb_dat_o [12]
+Changing input A of cell _754__gate (sky130_fd_sc_hd__nor2_1): \_488__gate -> \wb_dat_o [13]
+Changing input A of cell _751__gate (sky130_fd_sc_hd__nor2_1): \_489__gate -> \wb_dat_o [14]
+Changing input A of cell _748__gate (sky130_fd_sc_hd__nor2_1): \_490__gate -> \wb_dat_o [15]
+Changing input A of cell _745__gate (sky130_fd_sc_hd__nor2_1): \_491__gate -> \wb_dat_o [16]
+Changing input A of cell _742__gate (sky130_fd_sc_hd__nor2_1): \_492__gate -> \wb_dat_o [17]
+Changing input A of cell _739__gate (sky130_fd_sc_hd__nor2_1): \_493__gate -> \wb_dat_o [18]
+Changing input A of cell _736__gate (sky130_fd_sc_hd__nor2_1): \_494__gate -> \wb_dat_o [19]
+Changing input A of cell _733__gate (sky130_fd_sc_hd__nor2_1): \_496__gate -> \wb_dat_o [20]
+Changing input A of cell _730__gate (sky130_fd_sc_hd__nor2_1): \_497__gate -> \wb_dat_o [21]
+Changing input A of cell _727__gate (sky130_fd_sc_hd__nor2_1): \_498__gate -> \wb_dat_o [22]
+Changing input A of cell _725__gate (sky130_fd_sc_hd__nor3_1): \wb_ack_o_gate -> \wb_ack_o
+Changing input A of cell _633__gate (sky130_fd_sc_hd__nor2_1): \wb_ack_o_gate -> \wb_ack_o
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1195_gold ($_XOR_): \weight_value_gold [12] -> \weight_value [12]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1160_gold ($_AND_): \weight_value_gold [1] -> \weight_value [1]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1189_gold ($_XOR_): \weight_value_gold [6] -> \weight_value [6]
+Changing input A of cell $auto$simplemap.cc:46:simplemap_not$1078_gold ($_NOT_): \threshold_gold [15] -> \threshold [15]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$783_gold ($_AND_): \ctrl_irq_en_gold -> \ctrl_irq_en
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$782_gold ($_AND_): \ctrl_direction_gold -> \ctrl_direction
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1174_gold ($_AND_): \weight_value_gold [15] -> \weight_value [15]
+Changing input A of cell $auto$simplemap.cc:46:simplemap_not$1081_gold ($_NOT_): \threshold_gold [18] -> \threshold [18]
+Changing input A of cell $auto$simplemap.cc:46:simplemap_not$1073_gold ($_NOT_): \threshold_gold [10] -> \threshold [10]
+Changing input A of cell $auto$simplemap.cc:46:simplemap_not$1065_gold ($_NOT_): \threshold_gold [2] -> \threshold [2]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1175_gold ($_AND_): \weight_value_gold [16] -> \weight_value [16]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1167_gold ($_AND_): \weight_value_gold [8] -> \weight_value [8]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1200_gold ($_XOR_): \weight_value_gold [17] -> \weight_value [17]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$773_gold ($_AND_): \threshold_gold [23] -> \threshold [23]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$772_gold ($_AND_): \threshold_gold [22] -> \threshold [22]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$771_gold ($_AND_): \threshold_gold [21] -> \threshold [21]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$770_gold ($_AND_): \threshold_gold [20] -> \threshold [20]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$769_gold ($_AND_): \threshold_gold [19] -> \threshold [19]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$768_gold ($_AND_): \threshold_gold [18] -> \threshold [18]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$767_gold ($_AND_): \threshold_gold [17] -> \threshold [17]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$766_gold ($_AND_): \threshold_gold [16] -> \threshold [16]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$765_gold ($_AND_): \threshold_gold [15] -> \threshold [15]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$764_gold ($_AND_): \threshold_gold [14] -> \threshold [14]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$763_gold ($_AND_): \threshold_gold [13] -> \threshold [13]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$762_gold ($_AND_): \threshold_gold [12] -> \threshold [12]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$761_gold ($_AND_): \threshold_gold [11] -> \threshold [11]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$760_gold ($_AND_): \threshold_gold [10] -> \threshold [10]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$759_gold ($_AND_): \threshold_gold [9] -> \threshold [9]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$758_gold ($_AND_): \threshold_gold [8] -> \threshold [8]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$757_gold ($_AND_): \threshold_gold [7] -> \threshold [7]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$756_gold ($_AND_): \threshold_gold [6] -> \threshold [6]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$755_gold ($_AND_): \threshold_gold [5] -> \threshold [5]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$754_gold ($_AND_): \threshold_gold [4] -> \threshold [4]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$753_gold ($_AND_): \threshold_gold [3] -> \threshold [3]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$752_gold ($_AND_): \threshold_gold [2] -> \threshold [2]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$751_gold ($_AND_): \threshold_gold [1] -> \threshold [1]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$750_gold ($_AND_): \threshold_gold [0] -> \threshold [0]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1176_gold ($_AND_): \weight_value_gold [17] -> \weight_value [17]
+Changing input A of cell $auto$simplemap.cc:46:simplemap_not$1080_gold ($_NOT_): \threshold_gold [17] -> \threshold [17]
+Changing input A of cell $auto$simplemap.cc:46:simplemap_not$1072_gold ($_NOT_): \threshold_gold [9] -> \threshold [9]
+Changing input A of cell $auto$simplemap.cc:46:simplemap_not$1064_gold ($_NOT_): \threshold_gold [1] -> \threshold [1]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1198_gold ($_XOR_): \weight_value_gold [15] -> \weight_value [15]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1171_gold ($_AND_): \weight_value_gold [12] -> \weight_value [12]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1205_gold ($_XOR_): \weight_value_gold [22] -> \weight_value [22]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$741_gold ($_AND_): \weight_value_gold [23] -> \weight_value [23]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$740_gold ($_AND_): \weight_value_gold [22] -> \weight_value [22]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$739_gold ($_AND_): \weight_value_gold [21] -> \weight_value [21]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$738_gold ($_AND_): \weight_value_gold [20] -> \weight_value [20]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$737_gold ($_AND_): \weight_value_gold [19] -> \weight_value [19]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$736_gold ($_AND_): \weight_value_gold [18] -> \weight_value [18]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$735_gold ($_AND_): \weight_value_gold [17] -> \weight_value [17]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$734_gold ($_AND_): \weight_value_gold [16] -> \weight_value [16]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$733_gold ($_AND_): \weight_value_gold [15] -> \weight_value [15]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$732_gold ($_AND_): \weight_value_gold [14] -> \weight_value [14]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$731_gold ($_AND_): \weight_value_gold [13] -> \weight_value [13]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$730_gold ($_AND_): \weight_value_gold [12] -> \weight_value [12]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$729_gold ($_AND_): \weight_value_gold [11] -> \weight_value [11]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$728_gold ($_AND_): \weight_value_gold [10] -> \weight_value [10]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$727_gold ($_AND_): \weight_value_gold [9] -> \weight_value [9]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$726_gold ($_AND_): \weight_value_gold [8] -> \weight_value [8]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$725_gold ($_AND_): \weight_value_gold [7] -> \weight_value [7]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$724_gold ($_AND_): \weight_value_gold [6] -> \weight_value [6]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$723_gold ($_AND_): \weight_value_gold [5] -> \weight_value [5]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$722_gold ($_AND_): \weight_value_gold [4] -> \weight_value [4]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$721_gold ($_AND_): \weight_value_gold [3] -> \weight_value [3]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$720_gold ($_AND_): \weight_value_gold [2] -> \weight_value [2]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$719_gold ($_AND_): \weight_value_gold [1] -> \weight_value [1]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$718_gold ($_AND_): \weight_value_gold [0] -> \weight_value [0]
+Changing input A of cell $auto$simplemap.cc:46:simplemap_not$1070_gold ($_NOT_): \threshold_gold [7] -> \threshold [7]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1196_gold ($_XOR_): \weight_value_gold [13] -> \weight_value [13]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1187_gold ($_XOR_): \weight_value_gold [4] -> \weight_value [4]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1172_gold ($_AND_): \weight_value_gold [13] -> \weight_value [13]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1166_gold ($_AND_): \weight_value_gold [7] -> \weight_value [7]
+Changing input A of cell $auto$simplemap.cc:46:simplemap_not$1063_gold ($_NOT_): \threshold_gold [0] -> \threshold [0]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1170_gold ($_AND_): \weight_value_gold [11] -> \weight_value [11]
+Changing input A of cell $auto$simplemap.cc:46:simplemap_not$1071_gold ($_NOT_): \threshold_gold [8] -> \threshold [8]
+Changing input A of cell $auto$simplemap.cc:46:simplemap_not$1068_gold ($_NOT_): \threshold_gold [5] -> \threshold [5]
+Changing input A of cell $auto$simplemap.cc:46:simplemap_not$1079_gold ($_NOT_): \threshold_gold [16] -> \threshold [16]
+Changing input A of cell $auto$simplemap.cc:46:simplemap_not$1076_gold ($_NOT_): \threshold_gold [13] -> \threshold [13]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1197_gold ($_XOR_): \weight_value_gold [14] -> \weight_value [14]
+Changing input A of cell $auto$simplemap.cc:46:simplemap_not$1084_gold ($_NOT_): \threshold_gold [21] -> \threshold [21]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1164_gold ($_AND_): \weight_value_gold [5] -> \weight_value [5]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1192_gold ($_XOR_): \weight_value_gold [9] -> \weight_value [9]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1173_gold ($_AND_): \weight_value_gold [14] -> \weight_value [14]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1206_gold ($_XOR_): \weight_value_gold [23] -> \weight_value [23]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1203_gold ($_XOR_): \weight_value_gold [20] -> \weight_value [20]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1179_gold ($_AND_): \weight_value_gold [20] -> \weight_value [20]
+Changing input A of cell $auto$simplemap.cc:46:simplemap_not$1082_gold ($_NOT_): \threshold_gold [19] -> \threshold [19]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1194_gold ($_XOR_): \weight_value_gold [11] -> \weight_value [11]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1161_gold ($_AND_): \weight_value_gold [2] -> \weight_value [2]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1182_gold ($_AND_): \weight_value_gold [23] -> \weight_value [23]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1181_gold ($_AND_): \weight_value_gold [22] -> \weight_value [22]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1199_gold ($_XOR_): \weight_value_gold [16] -> \weight_value [16]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1202_gold ($_XOR_): \weight_value_gold [19] -> \weight_value [19]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1186_gold ($_XOR_): \weight_value_gold [3] -> \weight_value [3]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1184_gold ($_XOR_): \weight_value_gold [1] -> \weight_value [1]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1191_gold ($_XOR_): \weight_value_gold [8] -> \weight_value [8]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1169_gold ($_AND_): \weight_value_gold [10] -> \weight_value [10]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1185_gold ($_XOR_): \weight_value_gold [2] -> \weight_value [2]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1168_gold ($_AND_): \weight_value_gold [9] -> \weight_value [9]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1190_gold ($_XOR_): \weight_value_gold [7] -> \weight_value [7]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1188_gold ($_XOR_): \weight_value_gold [5] -> \weight_value [5]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1159_gold ($_AND_): \weight_value_gold [0] -> \weight_value [0]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1204_gold ($_XOR_): \weight_value_gold [21] -> \weight_value [21]
+Changing input A of cell $auto$simplemap.cc:46:simplemap_not$1074_gold ($_NOT_): \threshold_gold [11] -> \threshold [11]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1178_gold ($_AND_): \weight_value_gold [19] -> \weight_value [19]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1180_gold ($_AND_): \weight_value_gold [21] -> \weight_value [21]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1163_gold ($_AND_): \weight_value_gold [4] -> \weight_value [4]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1162_gold ($_AND_): \weight_value_gold [3] -> \weight_value [3]
+Changing input A of cell $auto$simplemap.cc:46:simplemap_not$1067_gold ($_NOT_): \threshold_gold [4] -> \threshold [4]
+Changing input A of cell $auto$simplemap.cc:46:simplemap_not$1075_gold ($_NOT_): \threshold_gold [12] -> \threshold [12]
+Changing input A of cell $auto$simplemap.cc:46:simplemap_not$1083_gold ($_NOT_): \threshold_gold [20] -> \threshold [20]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1183_gold ($_XOR_): \weight_value_gold [0] -> \weight_value [0]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1193_gold ($_XOR_): \weight_value_gold [10] -> \weight_value [10]
+Changing input A of cell $auto$simplemap.cc:46:simplemap_not$1086_gold ($_NOT_): \threshold_gold [23] -> \threshold [23]
+Changing input A of cell $auto$simplemap.cc:46:simplemap_not$1066_gold ($_NOT_): \threshold_gold [3] -> \threshold [3]
+Changing input A of cell $auto$simplemap.cc:46:simplemap_not$1077_gold ($_NOT_): \threshold_gold [14] -> \threshold [14]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1201_gold ($_XOR_): \weight_value_gold [18] -> \weight_value [18]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$815_gold ($_AND_): \status_irq_flag_gold -> \status_irq_flag
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$814_gold ($_AND_): \status_above_gold -> \status_above
+Changing input A of cell $auto$simplemap.cc:46:simplemap_not$1085_gold ($_NOT_): \threshold_gold [22] -> \threshold [22]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1177_gold ($_AND_): \weight_value_gold [18] -> \weight_value [18]
+Changing input D of cell $auto$ff.cc:337:slice$520_gold ($_SDFF_PN0_): \weight_above_gold -> \weight_above
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$432_gold ($_MUX_): \ctrl_direction_gold -> \ctrl_direction
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$431_gold ($_MUX_): \status_irq_flag_gold -> \status_irq_flag
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$430_gold ($_MUX_): \status_irq_flag_gold -> \status_irq_flag
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1165_gold ($_AND_): \weight_value_gold [6] -> \weight_value [6]
+Changing input A of cell $auto$simplemap.cc:227:simplemap_lognot$427_gold ($_NOT_): \wb_ack_o_gold -> \wb_ack_o
+Changing input B of cell $auto$simplemap.cc:256:simplemap_logbin$425_gold ($_AND_): \ctrl_irq_en_gold -> \ctrl_irq_en
+Changing input A of cell $auto$simplemap.cc:256:simplemap_logbin$425_gold ($_AND_): \status_irq_flag_gold -> \status_irq_flag
+Changing input B of cell $auto$simplemap.cc:256:simplemap_logbin$424_gold ($_AND_): \ctrl_irq_en_gold -> \ctrl_irq_en
+Changing input A of cell $auto$simplemap.cc:256:simplemap_logbin$424_gold ($_AND_): \weight_above_gold -> \weight_above
+Changing input B of cell $auto$simplemap.cc:256:simplemap_logbin$423_gold ($_AND_): \ctrl_irq_en_gold -> \ctrl_irq_en
+Changing input A of cell $auto$simplemap.cc:227:simplemap_lognot$422_gold ($_NOT_): \weight_above_gold -> \weight_above
+Changing input A of cell $auto$simplemap.cc:46:simplemap_not$1069_gold ($_NOT_): \threshold_gold [6] -> \threshold [6]
+Setting undriven nets to undef: $techmap$ge$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-weight_detect/rtl/weight_detect.v:41$2.$auto$alumacc.cc:512:replace_alu$409.CO_gold [2]
+Setting undriven nets to undef: $techmap$ge$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-weight_detect/rtl/weight_detect.v:41$2.$auto$alumacc.cc:512:replace_alu$409.CO_gold [6:4]
+Setting undriven nets to undef: $techmap$ge$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-weight_detect/rtl/weight_detect.v:41$2.$auto$alumacc.cc:512:replace_alu$409.CO_gold [14:8]
+Setting undriven nets to undef: $techmap$ge$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-weight_detect/rtl/weight_detect.v:41$2.$auto$alumacc.cc:512:replace_alu$409.CO_gold [22:16]
+Setting undriven nets to undef: \wb_ack_o_gate
+Setting undriven nets to undef: \irq_thresh_gate
+Setting undriven nets to undef: \_507__gate
+Setting undriven nets to undef: \_506__gate
+Setting undriven nets to undef: \_505__gate
+Setting undriven nets to undef: \_504__gate
+Setting undriven nets to undef: \_503__gate
+Setting undriven nets to undef: \_502__gate
+Setting undriven nets to undef: \_501__gate
+Setting undriven nets to undef: \_500__gate
+Setting undriven nets to undef: \_499__gate
+Setting undriven nets to undef: \_498__gate
+Setting undriven nets to undef: \_497__gate
+Setting undriven nets to undef: \_496__gate
+Setting undriven nets to undef: \_495__gate
+Setting undriven nets to undef: \_494__gate
+Setting undriven nets to undef: \_493__gate
+Setting undriven nets to undef: \_492__gate
+Setting undriven nets to undef: \_491__gate
+Setting undriven nets to undef: \_490__gate
+Setting undriven nets to undef: \_489__gate
+Setting undriven nets to undef: \_488__gate
+Setting undriven nets to undef: \_487__gate
+Setting undriven nets to undef: \_486__gate
+Setting undriven nets to undef: \_485__gate
+Setting undriven nets to undef: \_484__gate
+
+25. Executing EQUIV_SIMPLE pass.
+Found 87 unproven $equiv cells (10 groups) in weight_detect:
+ Grouping SAT models for \wb_dat_o:
+  Trying to prove $equiv for \wb_dat_o [0]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [1]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [2]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [3]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [4]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [5]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [6]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [7]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [8]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [9]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [10]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [11]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [12]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [13]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [14]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [15]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [16]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [17]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [18]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [19]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [20]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [21]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [22]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [23]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [24]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [25]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [26]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [27]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [28]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [29]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [30]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [31]:ezsat
+ success!
+  Trying to prove $equiv for \wb_ack_o:ezsat
+ failed.
+  Trying to prove $equiv for \irq_thresh:ezsat
+ failed.
+ Grouping SAT models for \weight_value:
+  Trying to prove $equiv for \weight_value [0]:ezsat
+ failed.
+  Trying to prove $equiv for \weight_value [1]:ezsat
+ failed.
+  Trying to prove $equiv for \weight_value [2]:ezsat
+ failed.
+  Trying to prove $equiv for \weight_value [3]:ezsat
+ failed.
+  Trying to prove $equiv for \weight_value [4]:ezsat
+ failed.
+  Trying to prove $equiv for \weight_value [5]:ezsat
+ failed.
+  Trying to prove $equiv for \weight_value [6]:ezsat
+ failed.
+  Trying to prove $equiv for \weight_value [7]:ezsat
+ failed.
+  Trying to prove $equiv for \weight_value [8]:ezsat
+ failed.
+  Trying to prove $equiv for \weight_value [9]:ezsat
+ failed.
+  Trying to prove $equiv for \weight_value [10]:ezsat
+ failed.
+  Trying to prove $equiv for \weight_value [11]:ezsat
+ failed.
+  Trying to prove $equiv for \weight_value [12]:ezsat
+ failed.
+  Trying to prove $equiv for \weight_value [13]:ezsat
+ failed.
+  Trying to prove $equiv for \weight_value [14]:ezsat
+ failed.
+  Trying to prove $equiv for \weight_value [15]:ezsat
+ failed.
+  Trying to prove $equiv for \weight_value [16]:ezsat
+ failed.
+  Trying to prove $equiv for \weight_value [17]:ezsat
+ failed.
+  Trying to prove $equiv for \weight_value [18]:ezsat
+ failed.
+  Trying to prove $equiv for \weight_value [19]:ezsat
+ failed.
+  Trying to prove $equiv for \weight_value [20]:ezsat
+ failed.
+  Trying to prove $equiv for \weight_value [21]:ezsat
+ failed.
+  Trying to prove $equiv for \weight_value [22]:ezsat
+ failed.
+  Trying to prove $equiv for \weight_value [23]:ezsat
+ failed.
+ Grouping SAT models for \threshold:
+  Trying to prove $equiv for \threshold [0]:ezsat
+ failed.
+  Trying to prove $equiv for \threshold [1]:ezsat
+ failed.
+  Trying to prove $equiv for \threshold [2]:ezsat
+ failed.
+  Trying to prove $equiv for \threshold [3]:ezsat
+ failed.
+  Trying to prove $equiv for \threshold [4]:ezsat
+ failed.
+  Trying to prove $equiv for \threshold [5]:ezsat
+ failed.
+  Trying to prove $equiv for \threshold [6]:ezsat
+ failed.
+  Trying to prove $equiv for \threshold [7]:ezsat
+ failed.
+  Trying to prove $equiv for \threshold [8]:ezsat
+ failed.
+  Trying to prove $equiv for \threshold [9]:ezsat
+ failed.
+  Trying to prove $equiv for \threshold [10]:ezsat
+ failed.
+  Trying to prove $equiv for \threshold [11]:ezsat
+ failed.
+  Trying to prove $equiv for \threshold [12]:ezsat
+ failed.
+  Trying to prove $equiv for \threshold [13]:ezsat
+ failed.
+  Trying to prove $equiv for \threshold [14]:ezsat
+ failed.
+  Trying to prove $equiv for \threshold [15]:ezsat
+ failed.
+  Trying to prove $equiv for \threshold [16]:ezsat
+ failed.
+  Trying to prove $equiv for \threshold [17]:ezsat
+ failed.
+  Trying to prove $equiv for \threshold [18]:ezsat
+ failed.
+  Trying to prove $equiv for \threshold [19]:ezsat
+ failed.
+  Trying to prove $equiv for \threshold [20]:ezsat
+ failed.
+  Trying to prove $equiv for \threshold [21]:ezsat
+ failed.
+  Trying to prove $equiv for \threshold [22]:ezsat
+ failed.
+  Trying to prove $equiv for \threshold [23]:ezsat
+ failed.
+  Trying to prove $equiv for \ctrl_direction:ezsat
+ failed.
+  Trying to prove $equiv for \ctrl_irq_en:ezsat
+ failed.
+  Trying to prove $equiv for \status_above:ezsat
+ failed.
+  Trying to prove $equiv for \status_irq_flag:ezsat
+ failed.
+  Trying to prove $equiv for \weight_above:ezsat
+ failed.
+Proved 8 previously unproven $equiv cells.
+
+26. Executing EQUIV_INDUCT pass.
+Found 79 unproven $equiv cells in module weight_detect:

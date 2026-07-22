@@ -1,0 +1,25 @@
+%Warning-MULTITOP: /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_fsm.v:7:8: Multiple top level modules
+                                                                                                                                       : ... Suggest see manual; fix the duplicates, or use --top-module to select top.
+                   ... For warning description see https://verilator.org/warn/MULTITOP?v=5.049
+                   ... Use "/* verilator lint_off MULTITOP */" and lint_on around source to disable this message.
+                                                                                                                                       : ... Top module 'ultrasonic_capture'
+    7 | module ultrasonic_capture (
+      |        ^~~~~~~~~~~~~~~~~~
+                                                                                                                                       : ... Top module 'ultrasonic_fsm'
+    7 | module ultrasonic_fsm (
+      |        ^~~~~~~~~~~~~~
+%Warning-WIDTHEXPAND: /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_fsm.v:119:55: Operator GTE expects 32 or 21 bits on the LHS, but LHS's ARRAYSEL generates 5 bits.
+                                                                                                                                             : ... note: In instance 'ultrasonic_fsm'
+  119 |                                 if (glitch_filter[ch] >= MIN_ECHO_CYCLES - 1) begin
+      |                                                       ^~
+                      ... For warning description see https://verilator.org/warn/WIDTHEXPAND?v=5.049
+                      ... Use "/* verilator lint_off WIDTHEXPAND */" and lint_on around source to disable this message.
+%Warning-UNUSEDSIGNAL: /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_fsm.v:47:51: Signal is not used: 'echo_sync4'
+                                                                                                                                             : ... note: In instance 'ultrasonic_fsm'
+   47 |     reg [1:0] echo_sync1, echo_sync2, echo_sync3, echo_sync4;
+      |                                                   ^~~~~~~~~~
+                       ... For warning description see https://verilator.org/warn/UNUSEDSIGNAL?v=5.049
+                       ... Use "/* verilator lint_off UNUSEDSIGNAL */" and lint_on around source to disable this message.
+- V e r i l a t i o n   R e p o r t: Verilator 5.049 devel rev v5.048-4-ge4803f29b (mod)
+- Verilator: Built from 0.074 MB sources in 3 modules, into 0.056 MB in 3 C++ files needing 0.000 MB
+- Verilator: Walltime 0.017 s (elab=0.002, cvt=0.009, bld=0.000); cpu 0.017 s on 1 threads; allocated 21.500 MB

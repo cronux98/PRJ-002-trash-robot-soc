@@ -1,0 +1,8 @@
+# running in sram_512b_induction/src/
+read -formal sram_512b.v
+prep -top sram_512b
+
+hierarchy -smtcheck
+rename -witness
+write_jny -no-connections ../model/design.json
+write_rtlil ../model/design.il

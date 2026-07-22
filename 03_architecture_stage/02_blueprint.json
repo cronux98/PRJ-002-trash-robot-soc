@@ -1,0 +1,60 @@
+{
+  "design_name": "IP-005 v6 Trash Robot SoC",
+  "version": "v6",
+  "predecessor": "v5 (GDS-proven: 1.17 mm², DRC 0, LVS match, 26,798 cells)",
+  "project_type": "SoC",
+  "global_params": {
+    "DATA_WIDTH": 32,
+    "ADDR_WIDTH": 16,
+    "CLOCK_FREQ_MHZ": 33.3,
+    "RESET_POLARITY": "active_low",
+    "RESET_TYPE": "async_assert_sync_deassert",
+    "BUS_PROTOCOL": "Wishbone B4 classic",
+    "PDK": "sky130A",
+    "PACKAGE": "Caravel harness (Efabless chipIgnite MPW)"
+  },
+  "isa_definitions": {
+    "isa": "RV32IM",
+    "cpu_core": "PicoRV32 (YosysHQ)",
+    "license": "ISC",
+    "privilege_modes": ["Machine"],
+    "config": "ENABLE_MUL=1, ENABLE_DIV=1, ENABLE_IRQ=1"
+  },
+  "components": [
+    {"name": "picorv32_core", "type": "processor", "interfaces": [{"name": "wishbone_master", "protocol": "Wishbone", "direction": "out", "width_data": 32, "width_addr": 16}], "base_address": null, "clock_domain": "sys_clk", "reset_domain": "sys_rst", "depends_on": [], "cell_count_est": 3200},
+    {"name": "sram_512b", "type": "memory", "interfaces": [{"name": "wishbone_slave", "protocol": "Wishbone", "direction": "in", "width_data": 32, "width_addr": 9}], "base_address": "0x0000", "clock_domain": "sys_clk", "reset_domain": "sys_rst", "depends_on": ["wb_interconnect"], "cell_count_est": 7430},
+    {"name": "wb_interconnect", "type": "interconnect", "interfaces": [{"name": "wishbone_master", "protocol": "Wishbone", "direction": "in", "width_data": 32, "width_addr": 16}, {"name": "wishbone_slaves", "protocol": "Wishbone", "direction": "out", "width_data": 32, "width_addr": 16, "count": 14}], "base_address": null, "clock_domain": "sys_clk", "reset_domain": "sys_rst", "depends_on": [], "cell_count_est": 314},
+    {"name": "uart", "type": "peripheral", "interfaces": [{"name": "wishbone_slave", "protocol": "Wishbone", "direction": "in", "width_data": 32, "width_addr": 4}], "base_address": "0x2000", "clock_domain": "sys_clk", "reset_domain": "sys_rst", "depends_on": ["wb_interconnect"], "cell_count_est": 800},
+    {"name": "i2c_master_hx711", "type": "peripheral", "interfaces": [{"name": "wishbone_slave", "protocol": "Wishbone", "direction": "in", "width_data": 32, "width_addr": 4}, {"name": "i2c", "protocol": "I2C", "direction": "bidir"}], "base_address": "0x4000", "clock_domain": "sys_clk", "reset_domain": "sys_rst", "depends_on": ["wb_interconnect"], "cell_count_est": 285},
+    {"name": "i2c_master_ina219", "type": "peripheral", "interfaces": [{"name": "wishbone_slave", "protocol": "Wishbone", "direction": "in", "width_data": 32, "width_addr": 4}, {"name": "i2c", "protocol": "I2C", "direction": "bidir"}], "base_address": "0xA000", "clock_domain": "sys_clk", "reset_domain": "sys_rst", "depends_on": ["wb_interconnect"], "cell_count_est": 285},
+    {"name": "i2c_master_ds3231", "type": "peripheral", "interfaces": [{"name": "wishbone_slave", "protocol": "Wishbone", "direction": "in", "width_data": 32, "width_addr": 4}, {"name": "i2c", "protocol": "I2C", "direction": "bidir"}], "base_address": "0xB000", "clock_domain": "sys_clk", "reset_domain": "sys_rst", "depends_on": ["wb_interconnect"], "cell_count_est": 285},
+    {"name": "gpio", "type": "peripheral", "interfaces": [{"name": "wishbone_slave", "protocol": "Wishbone", "direction": "in", "width_data": 32, "width_addr": 4}], "base_address": "0x5000", "clock_domain": "sys_clk", "reset_domain": "sys_rst", "depends_on": ["wb_interconnect"], "cell_count_est": 554},
+    {"name": "timer", "type": "peripheral", "interfaces": [{"name": "wishbone_slave", "protocol": "Wishbone", "direction": "in", "width_data": 32, "width_addr": 4}], "base_address": "0x6000", "clock_domain": "sys_clk", "reset_domain": "sys_rst", "depends_on": ["wb_interconnect"], "cell_count_est": 1373},
+    {"name": "motor_pwm", "type": "peripheral", "interfaces": [{"name": "wishbone_slave", "protocol": "Wishbone", "direction": "in", "width_data": 32, "width_addr": 4}], "base_address": "0x7000", "clock_domain": "sys_clk", "reset_domain": "sys_rst", "depends_on": ["wb_interconnect"], "cell_count_est": 470},
+    {"name": "ultrasonic_capture", "type": "peripheral", "interfaces": [{"name": "wishbone_slave", "protocol": "Wishbone", "direction": "in", "width_data": 32, "width_addr": 4}], "base_address": "0x8000", "clock_domain": "sys_clk", "reset_domain": "sys_rst", "depends_on": ["wb_interconnect"], "cell_count_est": 1314},
+    {"name": "weight_detect", "type": "peripheral", "interfaces": [{"name": "wishbone_slave", "protocol": "Wishbone", "direction": "in", "width_data": 32, "width_addr": 4}], "base_address": "0x9000", "clock_domain": "sys_clk", "reset_domain": "sys_rst", "depends_on": ["wb_interconnect"], "cell_count_est": 342},
+    {"name": "watchdog", "type": "governance", "interfaces": [{"name": "wishbone_slave", "protocol": "Wishbone", "direction": "in", "width_data": 32, "width_addr": 4}], "base_address": "0xD000", "clock_domain": "sys_clk", "reset_domain": "sys_rst", "depends_on": ["wb_interconnect"], "cell_count_est": 444},
+    {"name": "interrupt_ctrl", "type": "governance", "interfaces": [{"name": "wishbone_slave", "protocol": "Wishbone", "direction": "in", "width_data": 32, "width_addr": 4}], "base_address": "0xC000", "clock_domain": "sys_clk", "reset_domain": "sys_rst", "depends_on": ["wb_interconnect"], "cell_count_est": 280},
+    {"name": "power_mgr", "type": "governance", "interfaces": [{"name": "wishbone_slave", "protocol": "Wishbone", "direction": "in", "width_data": 32, "width_addr": 4}], "base_address": "0xE000", "clock_domain": "sys_clk", "reset_domain": "sys_rst", "depends_on": ["wb_interconnect"], "cell_count_est": 193}
+  ],
+  "clock_domains": [{"name": "sys_clk", "frequency_mhz": 33.3, "source": "external_oscillator_caravel"}],
+  "reset_scheme": "async_active_low_sync_deassert",
+  "bus_topology": "shared_Wishbone_B4_combinational_decode",
+  "interrupt_map": [
+    {"source": "timer", "priority": 0, "channel": 0, "level": "HIGH"},
+    {"source": "uart_rx", "priority": 1, "channel": 1, "level": "HIGH"},
+    {"source": "uart_tx", "priority": 2, "channel": 2, "level": "MED"},
+    {"source": "gpio[0]", "priority": 3, "channel": 3, "level": "HIGH"},
+    {"source": "gpio[1]", "priority": 4, "channel": 4, "level": "HIGH"},
+    {"source": "gpio[2]", "priority": 5, "channel": 5, "level": "MED"},
+    {"source": "motor_pwm", "priority": 6, "channel": 6, "level": "MED"},
+    {"source": "ultrasonic_capture", "priority": 7, "channel": 7, "level": "MED"},
+    {"source": "weight_detect", "priority": 8, "channel": 8, "level": "MED"},
+    {"source": "i2c_hx711", "priority": 9, "channel": 9, "level": "LOW"},
+    {"source": "i2c_ina219", "priority": 10, "channel": 10, "level": "LOW"},
+    {"source": "i2c_ds3231", "priority": 11, "channel": 11, "level": "LOW"},
+    {"source": "watchdog", "priority": 12, "channel": 12, "level": "HIGH"},
+    {"source": "power_mgr", "priority": 13, "channel": 13, "level": "LOW"},
+    {"source": "gpio[3]", "priority": 14, "channel": 14, "level": "LOW"}
+  ]
+}

@@ -1,0 +1,14 @@
+
+209. Executing CHECK pass (checking for obvious problems).
+Checking module trash_robot_soc...
+Warning: multiple conflicting drivers for trash_robot_soc.\i2c_sda:
+    port Z[0] of cell $auto$simplemap.cc:331:simplemap_tribuf$77034._TECHMAP_EBUF_N_ (sky130_fd_sc_hd__ebufn_2)
+    port Z[0] of cell $auto$simplemap.cc:331:simplemap_tribuf$79559._TECHMAP_EBUF_N_ (sky130_fd_sc_hd__ebufn_2)
+    port Z[0] of cell $auto$simplemap.cc:331:simplemap_tribuf$79850._TECHMAP_EBUF_N_ (sky130_fd_sc_hd__ebufn_2)
+    module input i2c_sda[0]
+Warning: multiple conflicting drivers for trash_robot_soc.\i2c_scl:
+    port Q[0] of cell $auto$ff.cc:337:slice$53501 (sky130_fd_sc_hd__dfstp_2)
+    port Q[0] of cell $auto$ff.cc:337:slice$53682 (sky130_fd_sc_hd__dfstp_2)
+    port Q[0] of cell $auto$ff.cc:337:slice$53864 (sky130_fd_sc_hd__dfstp_2)
+    module input i2c_scl[0]
+Found and reported 2 problems.

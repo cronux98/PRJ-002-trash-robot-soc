@@ -1,0 +1,80 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.65+71 (git sha1 e56c6a954, clang++ 18.1.8 -fPIC -O3)
+
+-- Executing script file `design_prep.ys' --
+
+1. Executing RTLIL frontend.
+Input filename: design.il
+
+2. Executing SCC pass (detecting logic loops).
+Found 0 SCCs in module motor_pwm.
+Found 0 SCCs.
+
+3. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+
+4. Executing MEMORY_NORDFF pass (extracting $dff cells from memories).
+
+5. Executing ASYNC2SYNC pass.
+Replacing motor_pwm.$procdff$102 ($adff): ARST=\rst_ni, D=$0\wb_dat_o[31:0], Q=\wb_dat_o
+Replacing motor_pwm.$procdff$107 ($adff): ARST=\rst_ni, D=$0\wb_ack_o[0:0], Q=\wb_ack_o
+Replacing motor_pwm.$procdff$112 ($adff): ARST=\rst_ni, D=\ctrl [7:4], Q=\pwm_a
+Replacing motor_pwm.$procdff$117 ($adff): ARST=\rst_ni, D=$0\pwm_b[3:0], Q=\pwm_b
+Replacing motor_pwm.$procdff$122 ($adff): ARST=\rst_ni, D=$0\irq_fault[0:0], Q=\irq_fault
+Replacing motor_pwm.$procdff$127 ($adff): ARST=\rst_ni, D=$0\duty_a[15:0], Q=\duty_a
+Replacing motor_pwm.$procdff$132 ($adff): ARST=\rst_ni, D=$0\duty_b[15:0], Q=\duty_b
+Replacing motor_pwm.$procdff$137 ($adff): ARST=\rst_ni, D=$0\duty_c[15:0], Q=\duty_c
+Replacing motor_pwm.$procdff$142 ($adff): ARST=\rst_ni, D=$0\duty_d[15:0], Q=\duty_d
+Replacing motor_pwm.$procdff$147 ($adff): ARST=\rst_ni, D=$0\ctrl[7:0], Q=\ctrl
+Replacing motor_pwm.$procdff$152 ($adff): ARST=\rst_ni, D=$0\status_fault[3:0], Q=\status_fault
+Replacing motor_pwm.$procdff$157 ($adff): ARST=\rst_ni, D=$0\pwm_cnt[15:0], Q=\pwm_cnt
+
+6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \motor_pwm..
+
+7. Executing FORMALFF pass.
+
+8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \motor_pwm..
+Removed 1 unused cells and 1 unused wires.
+<suppressed ~2 debug messages>
+
+9. Executing CHECK pass (checking for obvious problems).
+Checking module motor_pwm...
+Found and reported 0 problems.
+
+10. Executing SETUNDEF pass (replace undef values with defined constants).
+
+11. Executing OPT pass (performing simple optimizations).
+
+11.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module motor_pwm.
+
+11.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\motor_pwm'.
+Computing hashes of 88 cells of `\motor_pwm'.
+Finding duplicate cells in `\motor_pwm'.
+Removed a total of 0 cells.
+
+11.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+11.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \motor_pwm..
+
+11.5. Finished fast OPT passes.
+
+12. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \motor_pwm..
+Removed 0 unused cells and 12 unused wires.
+<suppressed ~1 debug messages>
+
+13. Executing RTLIL backend.
+Output filename: ../model/design_prep.il
+
+End of script. Logfile hash: 86769ba076, time: 0.01s, user: 0.02s, system: 0.00s, MEM: 15.59 MB peak
+Yosys 0.65+71 (git sha1 e56c6a954, clang++ 18.1.8 -fPIC -O3)
+Time spent: 38% 4x opt_clean (0 sec), 14% 1x check (0 sec), ...

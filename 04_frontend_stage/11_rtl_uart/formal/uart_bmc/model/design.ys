@@ -1,0 +1,8 @@
+# running in uart_bmc/src/
+read -formal uart.v
+prep -top uart
+
+hierarchy -smtcheck
+rename -witness
+write_jny -no-connections ../model/design.json
+write_rtlil ../model/design.il

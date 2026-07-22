@@ -1,0 +1,1855 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.65+71 (git sha1 e56c6a954, clang++ 18.1.8 -fPIC -O3)
+
+-- Executing script file `/tmp/equiv_timer.ys' --
+
+1. Executing Verilog-2005 frontend: /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-timer/rtl/timer.v
+Parsing Verilog input from `/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-timer/rtl/timer.v' to AST representation.
+Generating RTLIL representation for module `\timer'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-timer/rtl/timer_pwm.v
+Parsing Verilog input from `/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-timer/rtl/timer_pwm.v' to AST representation.
+Generating RTLIL representation for module `\timer_pwm'.
+Warning: Replacing memory \duty_reg with list of registers. See /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-timer/rtl/timer_pwm.v:58
+Warning: Replacing memory \period_reg with list of registers. See /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-timer/rtl/timer_pwm.v:54
+Successfully finished Verilog frontend.
+
+3. Executing HIERARCHY pass (managing design hierarchy).
+
+3.1. Analyzing design hierarchy..
+Top module:  \timer
+
+3.2. Analyzing design hierarchy..
+Top module:  \timer
+Removing unused module `\timer_pwm'.
+Removed 1 unused modules.
+
+4. Executing PROC pass (convert processes to netlists).
+
+4.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+4.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 4 switch rules as full_case in process $proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-timer/rtl/timer.v:42$2 in module timer.
+Removed a total of 0 dead cases.
+
+4.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 3 redundant assignments.
+Promoted 0 assignments to connections.
+
+4.4. Executing PROC_INIT pass (extract init attributes).
+
+4.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \rst_ni in `\timer.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-timer/rtl/timer.v:42$2'.
+
+4.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~12 debug messages>
+
+4.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\timer.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-timer/rtl/timer.v:42$2'.
+     1/13: $0\irq_cmpb[0:0]
+     2/13: $0\irq_cmpa[0:0]
+     3/13: $0\wb_ack_o[0:0]
+     4/13: $0\status_wrap[0:0]
+     5/13: $0\status_cmpb[0:0]
+     6/13: $0\status_cmpa[0:0]
+     7/13: $0\ctrl_auto_reload[0:0]
+     8/13: $0\ctrl_enable[0:0]
+     9/13: $0\compare_b[31:0]
+    10/13: $0\compare_a[31:0]
+    11/13: $0\reload[31:0]
+    12/13: $0\counter[31:0]
+    13/13: $0\wb_dat_o[31:0]
+
+4.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+4.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\timer.\wb_dat_o' using process `\timer.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-timer/rtl/timer.v:42$2'.
+  created $adff cell `$procdff$170' with positive edge clock and positive level reset.
+Creating register for signal `\timer.\wb_ack_o' using process `\timer.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-timer/rtl/timer.v:42$2'.
+  created $adff cell `$procdff$175' with positive edge clock and positive level reset.
+Creating register for signal `\timer.\irq_cmpa' using process `\timer.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-timer/rtl/timer.v:42$2'.
+  created $adff cell `$procdff$180' with positive edge clock and positive level reset.
+Creating register for signal `\timer.\irq_cmpb' using process `\timer.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-timer/rtl/timer.v:42$2'.
+  created $adff cell `$procdff$185' with positive edge clock and positive level reset.
+Creating register for signal `\timer.\counter' using process `\timer.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-timer/rtl/timer.v:42$2'.
+  created $adff cell `$procdff$190' with positive edge clock and positive level reset.
+Creating register for signal `\timer.\reload' using process `\timer.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-timer/rtl/timer.v:42$2'.
+  created $adff cell `$procdff$195' with positive edge clock and positive level reset.
+Creating register for signal `\timer.\compare_a' using process `\timer.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-timer/rtl/timer.v:42$2'.
+  created $adff cell `$procdff$200' with positive edge clock and positive level reset.
+Creating register for signal `\timer.\compare_b' using process `\timer.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-timer/rtl/timer.v:42$2'.
+  created $adff cell `$procdff$205' with positive edge clock and positive level reset.
+Creating register for signal `\timer.\ctrl_enable' using process `\timer.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-timer/rtl/timer.v:42$2'.
+  created $adff cell `$procdff$210' with positive edge clock and positive level reset.
+Creating register for signal `\timer.\ctrl_auto_reload' using process `\timer.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-timer/rtl/timer.v:42$2'.
+  created $adff cell `$procdff$215' with positive edge clock and positive level reset.
+Creating register for signal `\timer.\status_cmpa' using process `\timer.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-timer/rtl/timer.v:42$2'.
+  created $adff cell `$procdff$220' with positive edge clock and positive level reset.
+Creating register for signal `\timer.\status_cmpb' using process `\timer.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-timer/rtl/timer.v:42$2'.
+  created $adff cell `$procdff$225' with positive edge clock and positive level reset.
+Creating register for signal `\timer.\status_wrap' using process `\timer.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-timer/rtl/timer.v:42$2'.
+  created $adff cell `$procdff$230' with positive edge clock and positive level reset.
+
+4.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+4.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 12 empty switches in `\timer.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-timer/rtl/timer.v:42$2'.
+Removing empty process `timer.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-timer/rtl/timer.v:42$2'.
+Cleaned up 12 empty switches.
+
+4.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module timer.
+<suppressed ~32 debug messages>
+
+5. Executing OPT pass (performing simple optimizations).
+
+5.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module timer.
+
+5.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\timer'.
+Computing hashes of 104 cells of `\timer'.
+Finding duplicate cells in `\timer'.
+Computing hashes of 82 cells of `\timer'.
+Finding duplicate cells in `\timer'.
+<suppressed ~66 debug messages>
+Removed a total of 22 cells.
+
+5.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \timer..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~102 debug messages>
+
+5.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \timer.
+Performed a total of 0 changes.
+
+5.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\timer'.
+Computing hashes of 82 cells of `\timer'.
+Finding duplicate cells in `\timer'.
+Removed a total of 0 cells.
+
+5.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $procdff$195 ($adff) from module timer (D = \wb_dat_i, Q = \reload).
+Adding EN signal on $procdff$205 ($adff) from module timer (D = \wb_dat_i, Q = \compare_b).
+Adding EN signal on $procdff$215 ($adff) from module timer (D = \wb_dat_i [1], Q = \ctrl_auto_reload).
+Adding EN signal on $procdff$200 ($adff) from module timer (D = \wb_dat_i, Q = \compare_a).
+Adding EN signal on $procdff$210 ($adff) from module timer (D = \wb_dat_i [0], Q = \ctrl_enable).
+Adding EN signal on $procdff$170 ($adff) from module timer (D = $procmux$154_Y, Q = \wb_dat_o).
+
+5.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \timer..
+Removed 20 unused cells and 107 unused wires.
+<suppressed ~22 debug messages>
+
+5.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module timer.
+
+5.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+5.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \timer..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~80 debug messages>
+
+5.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \timer.
+Performed a total of 0 changes.
+
+5.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\timer'.
+Computing hashes of 69 cells of `\timer'.
+Finding duplicate cells in `\timer'.
+Computing hashes of 68 cells of `\timer'.
+Finding duplicate cells in `\timer'.
+<suppressed ~3 debug messages>
+Removed a total of 1 cells.
+
+5.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \timer..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+5.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module timer.
+
+5.16. Rerunning OPT passes. (Maybe there is more to do..)
+
+5.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \timer..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~80 debug messages>
+
+5.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \timer.
+Performed a total of 0 changes.
+
+5.19. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\timer'.
+Computing hashes of 68 cells of `\timer'.
+Finding duplicate cells in `\timer'.
+Removed a total of 0 cells.
+
+5.20. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \timer..
+
+5.22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module timer.
+
+5.23. Finished fast OPT passes. (There is nothing left to do.)
+
+6. Executing ASYNC2SYNC pass.
+Replacing timer.$auto$ff.cc:337:slice$240 ($adffe): ARST=\rst_ni, D=\wb_dat_i, Q=\compare_a
+Replacing timer.$procdff$220 ($adff): ARST=\rst_ni, D=$0\status_cmpa[0:0], Q=\status_cmpa
+Replacing timer.$procdff$185 ($adff): ARST=\rst_ni, D=$0\irq_cmpb[0:0], Q=\irq_cmpb
+Replacing timer.$procdff$190 ($adff): ARST=\rst_ni, D=$0\counter[31:0], Q=\counter
+Replacing timer.$auto$ff.cc:337:slice$243 ($adffe): ARST=\rst_ni, D=\wb_dat_i [0], Q=\ctrl_enable
+Replacing timer.$auto$ff.cc:337:slice$237 ($adffe): ARST=\rst_ni, D=\wb_dat_i [1], Q=\ctrl_auto_reload
+Replacing timer.$auto$ff.cc:337:slice$246 ($adffe): ARST=\rst_ni, D=$procmux$154_Y, Q=\wb_dat_o
+Replacing timer.$auto$ff.cc:337:slice$234 ($adffe): ARST=\rst_ni, D=\wb_dat_i, Q=\compare_b
+Replacing timer.$procdff$180 ($adff): ARST=\rst_ni, D=$0\irq_cmpa[0:0], Q=\irq_cmpa
+Replacing timer.$procdff$225 ($adff): ARST=\rst_ni, D=$0\status_cmpb[0:0], Q=\status_cmpb
+Replacing timer.$auto$ff.cc:337:slice$231 ($adffe): ARST=\rst_ni, D=\wb_dat_i, Q=\reload
+Replacing timer.$procdff$175 ($adff): ARST=\rst_ni, D=$0\wb_ack_o[0:0], Q=\wb_ack_o
+Replacing timer.$procdff$230 ($adff): ARST=\rst_ni, D=$0\status_wrap[0:0], Q=\status_wrap
+
+7. Executing MEMORY pass.
+
+7.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+7.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+7.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+7.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+7.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+7.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \timer..
+
+7.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+7.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+7.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \timer..
+
+7.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+7.11. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+8. Executing OPT pass (performing simple optimizations).
+
+8.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module timer.
+
+8.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\timer'.
+Computing hashes of 81 cells of `\timer'.
+Finding duplicate cells in `\timer'.
+Removed a total of 0 cells.
+
+8.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \timer..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~144 debug messages>
+
+8.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \timer.
+Performed a total of 0 changes.
+
+8.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\timer'.
+Computing hashes of 81 cells of `\timer'.
+Finding duplicate cells in `\timer'.
+Removed a total of 0 cells.
+
+8.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding SRST signal on $procdff$185 ($sdff) from module timer (D = $procmux$36_Y, Q = $auto$async2sync.cc:253:execute$255, rval = 1'0).
+Adding SRST signal on $procdff$180 ($sdff) from module timer (D = $procmux$40_Y, Q = $auto$async2sync.cc:253:execute$267, rval = 1'0).
+
+8.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \timer..
+Removed 2 unused cells and 2 unused wires.
+<suppressed ~3 debug messages>
+
+8.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module timer.
+
+8.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+8.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \timer..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~142 debug messages>
+
+8.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \timer.
+Performed a total of 0 changes.
+
+8.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\timer'.
+Computing hashes of 81 cells of `\timer'.
+Finding duplicate cells in `\timer'.
+Computing hashes of 80 cells of `\timer'.
+Finding duplicate cells in `\timer'.
+<suppressed ~3 debug messages>
+Removed a total of 1 cells.
+
+8.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+8.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \timer..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+8.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module timer.
+
+8.16. Rerunning OPT passes. (Maybe there is more to do..)
+
+8.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \timer..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~142 debug messages>
+
+8.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \timer.
+Performed a total of 0 changes.
+
+8.19. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\timer'.
+Computing hashes of 80 cells of `\timer'.
+Finding duplicate cells in `\timer'.
+Removed a total of 0 cells.
+
+8.20. Executing OPT_DFF pass (perform DFF optimizations).
+
+8.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \timer..
+
+8.22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module timer.
+
+8.23. Finished fast OPT passes. (There is nothing left to do.)
+
+9. Executing TECHMAP pass (map to technology primitives).
+
+9.1. Executing Verilog-2005 frontend: /home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v
+Parsing Verilog input from `/home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu_brent_kung'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `$__div_mod_u'.
+Generating RTLIL representation for module `$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Generating RTLIL representation for module `$connect'.
+Generating RTLIL representation for module `$input_port'.
+Successfully finished Verilog frontend.
+
+9.2. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $sdff.
+Using extmapper simplemap for cells of type $reduce_and.
+Using extmapper simplemap for cells of type $mux.
+Using extmapper simplemap for cells of type $not.
+Using extmapper simplemap for cells of type $sdffe.
+Using extmapper simplemap for cells of type $logic_not.
+Using extmapper simplemap for cells of type $reduce_bool.
+Using extmapper simplemap for cells of type $logic_and.
+Running "alumacc" on wrapper $extern:wrap:$sub:Y_WIDTH=32:B_WIDTH=32:A_WIDTH=32:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$sub:Y_WIDTH=32:B_WIDTH=32:A_WIDTH=32:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$sub:Y_WIDTH=32:B_WIDTH=32:A_WIDTH=32:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Using extmapper simplemap for cells of type $eq.
+Using template $paramod$c96def1cdcef2eee3c62e5dfb7ba2dd09c9f74dd\_90_pmux for cells of type $pmux.
+Using template $paramod$fbc7873bff55778c0b3173955b7e4bce1d9d6834\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $reduce_or.
+Using extmapper simplemap for cells of type $and.
+Using extmapper simplemap for cells of type $xor.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000100000 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000100000 for cells of type $lcu.
+Using extmapper simplemap for cells of type $pos.
+Using extmapper simplemap for cells of type $or.
+No more expansions possible.
+<suppressed ~549 debug messages>
+
+10. Executing OPT pass (performing simple optimizations).
+
+10.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module timer.
+<suppressed ~432 debug messages>
+
+10.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\timer'.
+Computing hashes of 1285 cells of `\timer'.
+Finding duplicate cells in `\timer'.
+Computing hashes of 1261 cells of `\timer'.
+Finding duplicate cells in `\timer'.
+Computing hashes of 1252 cells of `\timer'.
+Finding duplicate cells in `\timer'.
+Computing hashes of 1248 cells of `\timer'.
+Finding duplicate cells in `\timer'.
+Computing hashes of 1246 cells of `\timer'.
+Finding duplicate cells in `\timer'.
+Computing hashes of 1245 cells of `\timer'.
+Finding duplicate cells in `\timer'.
+<suppressed ~120 debug messages>
+Removed a total of 40 cells.
+
+10.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \timer..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+10.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \timer.
+Performed a total of 0 changes.
+
+10.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\timer'.
+Computing hashes of 1245 cells of `\timer'.
+Finding duplicate cells in `\timer'.
+Removed a total of 0 cells.
+
+10.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+10.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \timer..
+Removed 15 unused cells and 268 unused wires.
+<suppressed ~16 debug messages>
+
+10.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module timer.
+
+10.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+10.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \timer..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+10.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \timer.
+Performed a total of 0 changes.
+
+10.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\timer'.
+Computing hashes of 1230 cells of `\timer'.
+Finding duplicate cells in `\timer'.
+Removed a total of 0 cells.
+
+10.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+10.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \timer..
+
+10.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module timer.
+
+10.16. Finished fast OPT passes. (There is nothing left to do.)
+
+11. Executing FLATTEN pass (flatten design).
+
+12. Executing OPT pass (performing simple optimizations).
+
+12.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module timer.
+
+12.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\timer'.
+Computing hashes of 1230 cells of `\timer'.
+Finding duplicate cells in `\timer'.
+Removed a total of 0 cells.
+
+12.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \timer..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+12.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \timer.
+Performed a total of 0 changes.
+
+12.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\timer'.
+Computing hashes of 1230 cells of `\timer'.
+Finding duplicate cells in `\timer'.
+Removed a total of 0 cells.
+
+12.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+12.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \timer..
+
+12.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module timer.
+
+12.9. Finished fast OPT passes. (There is nothing left to do.)
+
+13. Executing Liberty frontend: /home/smdadmin/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130B/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+Imported 428 cell types from liberty file.
+
+14. Executing Verilog-2005 frontend: /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-timer/synth/timer_netlist.v
+Parsing Verilog input from `/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-timer/synth/timer_netlist.v' to AST representation.
+Generating RTLIL representation for module `\timer'.
+Successfully finished Verilog frontend.
+
+15. Executing HIERARCHY pass (managing design hierarchy).
+
+15.1. Analyzing design hierarchy..
+Top module:  \timer
+
+15.2. Analyzing design hierarchy..
+Top module:  \timer
+Removed 0 unused modules.
+
+16. Executing PROC pass (convert processes to netlists).
+
+16.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+16.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed a total of 0 dead cases.
+
+16.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 0 assignments to connections.
+
+16.4. Executing PROC_INIT pass (extract init attributes).
+
+16.5. Executing PROC_ARST pass (detect async resets in processes).
+
+16.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+
+16.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+
+16.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+16.9. Executing PROC_DFF pass (convert process syncs to FFs).
+
+16.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+16.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+16.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module timer.
+
+17. Executing OPT pass (performing simple optimizations).
+
+17.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module timer.
+
+17.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\timer'.
+Computing hashes of 840 cells of `\timer'.
+Finding duplicate cells in `\timer'.
+Removed a total of 0 cells.
+
+17.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \timer..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+17.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \timer.
+Performed a total of 0 changes.
+
+17.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\timer'.
+Computing hashes of 840 cells of `\timer'.
+Finding duplicate cells in `\timer'.
+Removed a total of 0 cells.
+
+17.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+17.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \timer..
+Removed 0 unused cells and 878 unused wires.
+<suppressed ~1 debug messages>
+
+17.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module timer.
+
+17.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+17.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \timer..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+17.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \timer.
+Performed a total of 0 changes.
+
+17.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\timer'.
+Computing hashes of 840 cells of `\timer'.
+Finding duplicate cells in `\timer'.
+Removed a total of 0 cells.
+
+17.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+17.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \timer..
+
+17.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module timer.
+
+17.16. Finished fast OPT passes. (There is nothing left to do.)
+
+18. Executing ASYNC2SYNC pass.
+
+19. Executing MEMORY pass.
+
+19.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+19.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+19.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+19.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+19.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+19.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \timer..
+
+19.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+19.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+19.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \timer..
+
+19.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+19.11. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+20. Executing OPT pass (performing simple optimizations).
+
+20.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module timer.
+
+20.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\timer'.
+Computing hashes of 840 cells of `\timer'.
+Finding duplicate cells in `\timer'.
+Removed a total of 0 cells.
+
+20.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \timer..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+20.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \timer.
+Performed a total of 0 changes.
+
+20.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\timer'.
+Computing hashes of 840 cells of `\timer'.
+Finding duplicate cells in `\timer'.
+Removed a total of 0 cells.
+
+20.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+20.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \timer..
+
+20.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module timer.
+
+20.9. Finished fast OPT passes. (There is nothing left to do.)
+
+21. Executing TECHMAP pass (map to technology primitives).
+
+21.1. Executing Verilog-2005 frontend: /home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v
+Parsing Verilog input from `/home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu_brent_kung'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `$__div_mod_u'.
+Generating RTLIL representation for module `$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Generating RTLIL representation for module `$connect'.
+Generating RTLIL representation for module `$input_port'.
+Successfully finished Verilog frontend.
+
+21.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~77 debug messages>
+
+22. Executing OPT pass (performing simple optimizations).
+
+22.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module timer.
+
+22.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\timer'.
+Computing hashes of 840 cells of `\timer'.
+Finding duplicate cells in `\timer'.
+Removed a total of 0 cells.
+
+22.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \timer..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+22.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \timer.
+Performed a total of 0 changes.
+
+22.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\timer'.
+Computing hashes of 840 cells of `\timer'.
+Finding duplicate cells in `\timer'.
+Removed a total of 0 cells.
+
+22.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+22.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \timer..
+
+22.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module timer.
+
+22.9. Finished fast OPT passes. (There is nothing left to do.)
+
+23. Executing FLATTEN pass (flatten design).
+
+24. Executing OPT pass (performing simple optimizations).
+
+24.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module timer.
+
+24.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\timer'.
+Computing hashes of 840 cells of `\timer'.
+Finding duplicate cells in `\timer'.
+Removed a total of 0 cells.
+
+24.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \timer..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+24.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \timer.
+Performed a total of 0 changes.
+
+24.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\timer'.
+Computing hashes of 840 cells of `\timer'.
+Finding duplicate cells in `\timer'.
+Removed a total of 0 cells.
+
+24.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+24.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \timer..
+
+24.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module timer.
+
+24.9. Finished fast OPT passes. (There is nothing left to do.)
+
+25. Executing EQUIV_MAKE pass (creating equiv checking module).
+Presumably equivalent wires: status_wrap_gold (\status_wrap_gold), status_wrap_gate (\_1512__gate) -> status_wrap
+Presumably equivalent wires: status_cmpb_gold (\status_cmpb_gold), status_cmpb_gate (\_1511__gate) -> status_cmpb
+Presumably equivalent wires: status_cmpa_gold (\status_cmpa_gold), status_cmpa_gate (\_1510__gate) -> status_cmpa
+Presumably equivalent wires: ctrl_auto_reload_gold (\ctrl_auto_reload_gold), ctrl_auto_reload_gate (\_0972__gate) -> ctrl_auto_reload
+Presumably equivalent wires: ctrl_enable_gold (\ctrl_enable_gold), ctrl_enable_gate (\_0973__gate) -> ctrl_enable
+Presumably equivalent wires: compare_b_gold (\compare_b_gold), compare_b_gate ({ \_0932__gate \_0931__gate \_0929__gate \_0928__gate \_0927__gate \_0926__gate \_0925__gate \_0924__gate \_0923__gate \_0922__gate \_0921__gate \_0920__gate \_0918__gate \_0917__gate \_0916__gate \_0915__gate \_0914__gate \_0913__gate \_0912__gate \_0911__gate \_0910__gate \_0909__gate \_0939__gate \_0938__gate \_0937__gate \_0936__gate \_0935__gate \_0934__gate \_0933__gate \_0930__gate \_0919__gate \_0908__gate }) -> compare_b
+Presumably equivalent wires: compare_a_gold (\compare_a_gold), compare_a_gate ({ \_0900__gate \_0899__gate \_0897__gate \_0896__gate \_0895__gate \_0894__gate \_0893__gate \_0892__gate \_0891__gate \_0890__gate \_0889__gate \_0888__gate \_0886__gate \_0885__gate \_0884__gate \_0883__gate \_0882__gate \_0881__gate \_0880__gate \_0879__gate \_0878__gate \_0877__gate \_0907__gate \_0906__gate \_0905__gate \_0904__gate \_0903__gate \_0902__gate \_0901__gate \_0898__gate \_0887__gate \_0876__gate }) -> compare_a
+Presumably equivalent wires: reload_gold (\reload_gold), reload_gate ({ \_1502__gate \_1501__gate \_1499__gate \_1498__gate \_1497__gate \_1496__gate \_1495__gate \_1494__gate \_1493__gate \_1492__gate \_1491__gate \_1490__gate \_1488__gate \_1487__gate \_1486__gate \_1485__gate \_1484__gate \_1483__gate \_1482__gate \_1481__gate \_1480__gate \_1479__gate \_1509__gate \_1508__gate \_1507__gate \_1506__gate \_1505__gate \_1504__gate \_1503__gate \_1500__gate \_1489__gate \_1478__gate }) -> reload
+Presumably equivalent wires: counter_gold (\counter_gold), counter_gate ({ \_0964__gate \_0963__gate \_0961__gate \_0960__gate \_0959__gate \_0958__gate \_0957__gate \_0956__gate \_0955__gate \_0954__gate \_0953__gate \_0952__gate \_0950__gate \_0949__gate \_0948__gate \_0947__gate \_0946__gate \_0945__gate \_0944__gate \_0943__gate \_0942__gate \_0941__gate \_0971__gate \_0970__gate \_0969__gate \_0968__gate \_0967__gate \_0966__gate \_0965__gate \_0962__gate \_0951__gate \_0940__gate }) -> counter
+Presumably equivalent wires: irq_cmpb_gold (\irq_cmpb_gold), irq_cmpb_gate (\irq_cmpb_gate) -> irq_cmpb
+Presumably equivalent wires: irq_cmpa_gold (\irq_cmpa_gold), irq_cmpa_gate (\irq_cmpa_gate) -> irq_cmpa
+Presumably equivalent wires: wb_ack_o_gold (\wb_ack_o_gold), wb_ack_o_gate (\wb_ack_o_gate) -> wb_ack_o
+Presumably equivalent wires: wb_cyc_i_gold (\wb_cyc_i_gold), wb_cyc_i_gate (\wb_cyc_i_gate) -> wb_cyc_i
+Presumably equivalent wires: wb_stb_i_gold (\wb_stb_i_gold), wb_stb_i_gate (\wb_stb_i_gate) -> wb_stb_i
+Presumably equivalent wires: wb_we_i_gold (\wb_we_i_gold), wb_we_i_gate (\wb_we_i_gate) -> wb_we_i
+Presumably equivalent wires: wb_sel_i_gold (\wb_sel_i_gold), wb_sel_i_gate (\wb_sel_i_gate) -> wb_sel_i
+Presumably equivalent wires: wb_dat_o_gold (\wb_dat_o_gold), wb_dat_o_gate ({ \_1574__gate \_1573__gate \_1571__gate \_1570__gate \_1569__gate \_1568__gate \_1567__gate \_1566__gate \_1565__gate \_1564__gate \_1563__gate \_1562__gate \_1560__gate \_1559__gate \_1558__gate \_1557__gate \_1556__gate \_1555__gate \_1554__gate \_1553__gate \_1552__gate \_1551__gate \_1581__gate \_1580__gate \_1579__gate \_1578__gate \_1577__gate \_1576__gate \_1575__gate \_1572__gate \_1561__gate \_1550__gate }) -> wb_dat_o
+Presumably equivalent wires: wb_dat_i_gold (\wb_dat_i_gold), wb_dat_i_gate (\wb_dat_i_gate) -> wb_dat_i
+Presumably equivalent wires: wb_adr_i_gold (\wb_adr_i_gold), wb_adr_i_gate (\wb_adr_i_gate) -> wb_adr_i
+Presumably equivalent wires: rst_ni_gold (\rst_ni_gold), rst_ni_gate (\rst_ni_gate) -> rst_ni
+Presumably equivalent wires: clk_i_gold (\clk_i_gold), clk_i_gate (\clk_i_gate) -> clk_i
+Changing input Q of cell _2521__gate (sky130_fd_sc_hd__dfrtp_1): \_1574__gate -> \wb_dat_o [31]
+Changing input Q of cell _2520__gate (sky130_fd_sc_hd__dfrtp_1): \_1573__gate -> \wb_dat_o [30]
+Changing input Q of cell _2519__gate (sky130_fd_sc_hd__dfrtp_1): \_1571__gate -> \wb_dat_o [29]
+Changing input Q of cell _2518__gate (sky130_fd_sc_hd__dfrtp_1): \_1570__gate -> \wb_dat_o [28]
+Changing input Q of cell _2517__gate (sky130_fd_sc_hd__dfrtp_1): \_1569__gate -> \wb_dat_o [27]
+Changing input Q of cell _2516__gate (sky130_fd_sc_hd__dfrtp_1): \_1568__gate -> \wb_dat_o [26]
+Changing input Q of cell _2515__gate (sky130_fd_sc_hd__dfrtp_1): \_1567__gate -> \wb_dat_o [25]
+Changing input Q of cell _2514__gate (sky130_fd_sc_hd__dfrtp_1): \_1566__gate -> \wb_dat_o [24]
+Changing input Q of cell _2513__gate (sky130_fd_sc_hd__dfrtp_1): \_1565__gate -> \wb_dat_o [23]
+Changing input Q of cell _2512__gate (sky130_fd_sc_hd__dfrtp_1): \_1564__gate -> \wb_dat_o [22]
+Changing input Q of cell _2511__gate (sky130_fd_sc_hd__dfrtp_1): \_1563__gate -> \wb_dat_o [21]
+Changing input Q of cell _2510__gate (sky130_fd_sc_hd__dfrtp_1): \_1562__gate -> \wb_dat_o [20]
+Changing input Q of cell _2509__gate (sky130_fd_sc_hd__dfrtp_1): \_1560__gate -> \wb_dat_o [19]
+Changing input Q of cell _2508__gate (sky130_fd_sc_hd__dfrtp_1): \_1559__gate -> \wb_dat_o [18]
+Changing input Q of cell _2507__gate (sky130_fd_sc_hd__dfrtp_1): \_1558__gate -> \wb_dat_o [17]
+Changing input Q of cell _2506__gate (sky130_fd_sc_hd__dfrtp_1): \_1557__gate -> \wb_dat_o [16]
+Changing input Q of cell _2505__gate (sky130_fd_sc_hd__dfrtp_1): \_1556__gate -> \wb_dat_o [15]
+Changing input Q of cell _2504__gate (sky130_fd_sc_hd__dfrtp_1): \_1555__gate -> \wb_dat_o [14]
+Changing input Q of cell _2503__gate (sky130_fd_sc_hd__dfrtp_1): \_1554__gate -> \wb_dat_o [13]
+Changing input Q of cell _2502__gate (sky130_fd_sc_hd__dfrtp_1): \_1553__gate -> \wb_dat_o [12]
+Changing input Q of cell _2501__gate (sky130_fd_sc_hd__dfrtp_1): \_1552__gate -> \wb_dat_o [11]
+Changing input Q of cell _2500__gate (sky130_fd_sc_hd__dfrtp_1): \_1551__gate -> \wb_dat_o [10]
+Changing input Q of cell _2499__gate (sky130_fd_sc_hd__dfrtp_1): \_1581__gate -> \wb_dat_o [9]
+Changing input Q of cell _2498__gate (sky130_fd_sc_hd__dfrtp_1): \_1580__gate -> \wb_dat_o [8]
+Changing input Q of cell _2497__gate (sky130_fd_sc_hd__dfrtp_1): \_1579__gate -> \wb_dat_o [7]
+Changing input Q of cell _2496__gate (sky130_fd_sc_hd__dfrtp_1): \_1578__gate -> \wb_dat_o [6]
+Changing input Q of cell _2495__gate (sky130_fd_sc_hd__dfrtp_1): \_1577__gate -> \wb_dat_o [5]
+Changing input Q of cell _2494__gate (sky130_fd_sc_hd__dfrtp_1): \_1576__gate -> \wb_dat_o [4]
+Changing input Q of cell _2493__gate (sky130_fd_sc_hd__dfrtp_1): \_1575__gate -> \wb_dat_o [3]
+Changing input Q of cell _2492__gate (sky130_fd_sc_hd__dfrtp_1): \_1572__gate -> \wb_dat_o [2]
+Changing input Q of cell _2491__gate (sky130_fd_sc_hd__dfrtp_1): \_1561__gate -> \wb_dat_o [1]
+Changing input Q of cell _2490__gate (sky130_fd_sc_hd__dfrtp_1): \_1550__gate -> \wb_dat_o [0]
+Changing input Q of cell _2421__gate (sky130_fd_sc_hd__dfrtp_1): \irq_cmpb_gate -> \irq_cmpb
+Changing input Q of cell _2420__gate (sky130_fd_sc_hd__dfrtp_1): \irq_cmpa_gate -> \irq_cmpa
+Changing input Q of cell _2387__gate (sky130_fd_sc_hd__dfrtp_1): \wb_ack_o_gate -> \wb_ack_o
+Changing input A of cell _2358__gate (sky130_fd_sc_hd__nor2_1): \_1574__gate -> \wb_dat_o [31]
+Changing input A of cell _2250__gate (sky130_fd_sc_hd__nor2_1): \_1550__gate -> \wb_dat_o [0]
+Changing input A1 of cell _2248__gate (sky130_fd_sc_hd__o21a_1): \_1561__gate -> \wb_dat_o [1]
+Changing input A of cell _2239__gate (sky130_fd_sc_hd__nor2_1): \_1572__gate -> \wb_dat_o [2]
+Changing input A of cell _2236__gate (sky130_fd_sc_hd__nor2_1): \_1575__gate -> \wb_dat_o [3]
+Changing input A of cell _2232__gate (sky130_fd_sc_hd__nor2_1): \_1576__gate -> \wb_dat_o [4]
+Changing input A of cell _2228__gate (sky130_fd_sc_hd__nor2_1): \_1577__gate -> \wb_dat_o [5]
+Changing input A of cell _2224__gate (sky130_fd_sc_hd__nor2_1): \_1578__gate -> \wb_dat_o [6]
+Changing input A of cell _2220__gate (sky130_fd_sc_hd__nor2_1): \_1579__gate -> \wb_dat_o [7]
+Changing input A of cell _2215__gate (sky130_fd_sc_hd__nor2_1): \_1580__gate -> \wb_dat_o [8]
+Changing input A of cell _2212__gate (sky130_fd_sc_hd__nor2_1): \_1581__gate -> \wb_dat_o [9]
+Changing input A of cell _2208__gate (sky130_fd_sc_hd__nor2_1): \_1551__gate -> \wb_dat_o [10]
+Changing input A of cell _2204__gate (sky130_fd_sc_hd__nor2_1): \_1552__gate -> \wb_dat_o [11]
+Changing input A of cell _2200__gate (sky130_fd_sc_hd__nor2_1): \_1553__gate -> \wb_dat_o [12]
+Changing input A of cell _2196__gate (sky130_fd_sc_hd__nor2_1): \_1554__gate -> \wb_dat_o [13]
+Changing input A of cell _2192__gate (sky130_fd_sc_hd__nor2_1): \_1555__gate -> \wb_dat_o [14]
+Changing input A of cell _2188__gate (sky130_fd_sc_hd__nor2_1): \_1556__gate -> \wb_dat_o [15]
+Changing input A of cell _2184__gate (sky130_fd_sc_hd__nor2_1): \_1557__gate -> \wb_dat_o [16]
+Changing input A of cell _2180__gate (sky130_fd_sc_hd__nor2_1): \_1558__gate -> \wb_dat_o [17]
+Changing input A of cell _2175__gate (sky130_fd_sc_hd__nor2_1): \_1559__gate -> \wb_dat_o [18]
+Changing input A of cell _2172__gate (sky130_fd_sc_hd__nor2_1): \_1560__gate -> \wb_dat_o [19]
+Changing input A of cell _2168__gate (sky130_fd_sc_hd__nor2_1): \_1562__gate -> \wb_dat_o [20]
+Changing input A of cell _2163__gate (sky130_fd_sc_hd__nor2_1): \_1563__gate -> \wb_dat_o [21]
+Changing input A of cell _2160__gate (sky130_fd_sc_hd__nor2_1): \_1564__gate -> \wb_dat_o [22]
+Changing input A of cell _2156__gate (sky130_fd_sc_hd__nor2_1): \_1565__gate -> \wb_dat_o [23]
+Changing input A of cell _2152__gate (sky130_fd_sc_hd__nor2_1): \_1566__gate -> \wb_dat_o [24]
+Changing input A of cell _2148__gate (sky130_fd_sc_hd__nor2_1): \_1567__gate -> \wb_dat_o [25]
+Changing input A of cell _2143__gate (sky130_fd_sc_hd__nor2_1): \_1568__gate -> \wb_dat_o [26]
+Changing input A of cell _2140__gate (sky130_fd_sc_hd__nor2_1): \_1569__gate -> \wb_dat_o [27]
+Changing input A of cell _2136__gate (sky130_fd_sc_hd__nor2_1): \_1570__gate -> \wb_dat_o [28]
+Changing input A of cell _2132__gate (sky130_fd_sc_hd__nor2_1): \_1571__gate -> \wb_dat_o [29]
+Changing input A of cell _2128__gate (sky130_fd_sc_hd__nor2_1): \_1573__gate -> \wb_dat_o [30]
+Changing input A of cell _1762__gate (sky130_fd_sc_hd__lpflow_inputiso1p_1): \wb_ack_o_gate -> \wb_ack_o
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$1797_gold ($_XOR_): \counter_gold [0] -> \counter [0]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$2436_gold ($_NOT_): \counter_gold [0] -> \counter [0]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$2380_gold ($_NOT_): \counter_gold [15] -> \counter [15]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$2384_gold ($_NOT_): \counter_gold [13] -> \counter [13]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$2428_gold ($_NOT_): \counter_gold [29] -> \counter [29]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2367_gold ($_OR_): \counter_gold [3] -> \counter [3]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$2359_gold ($_AND_): \counter_gold [8] -> \counter [8]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2355_gold ($_OR_): \counter_gold [11] -> \counter [11]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$2347_gold ($_AND_): \counter_gold [16] -> \counter [16]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2343_gold ($_OR_): \counter_gold [19] -> \counter [19]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$2335_gold ($_AND_): \counter_gold [24] -> \counter [24]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2331_gold ($_OR_): \counter_gold [27] -> \counter [27]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2279_gold ($_OR_): \counter_gold [28] -> \counter [28]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1726_gold ($_AND_): \status_wrap_gold -> \status_wrap
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1725_gold ($_AND_): \status_cmpb_gold -> \status_cmpb
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1724_gold ($_AND_): \status_cmpa_gold -> \status_cmpa
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$2398_gold ($_NOT_): \counter_gold [6] -> \counter [6]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$2404_gold ($_NOT_): \counter_gold [3] -> \counter [3]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2370_gold ($_OR_): \counter_gold [1] -> \counter [1]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$2362_gold ($_AND_): \counter_gold [6] -> \counter [6]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2358_gold ($_OR_): \counter_gold [9] -> \counter [9]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$2350_gold ($_AND_): \counter_gold [14] -> \counter [14]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2346_gold ($_OR_): \counter_gold [17] -> \counter [17]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$2338_gold ($_AND_): \counter_gold [22] -> \counter [22]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2334_gold ($_OR_): \counter_gold [25] -> \counter [25]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2270_gold ($_OR_): \counter_gold [26] -> \counter [26]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1693_gold ($_AND_): \ctrl_auto_reload_gold -> \ctrl_auto_reload
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1692_gold ($_AND_): \ctrl_enable_gold -> \ctrl_enable
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1690_gold ($_AND_): \compare_b_gold [30] -> \compare_b [30]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1689_gold ($_AND_): \compare_b_gold [29] -> \compare_b [29]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1688_gold ($_AND_): \compare_b_gold [28] -> \compare_b [28]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1687_gold ($_AND_): \compare_b_gold [27] -> \compare_b [27]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1686_gold ($_AND_): \compare_b_gold [26] -> \compare_b [26]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1685_gold ($_AND_): \compare_b_gold [25] -> \compare_b [25]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1684_gold ($_AND_): \compare_b_gold [24] -> \compare_b [24]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1683_gold ($_AND_): \compare_b_gold [23] -> \compare_b [23]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1682_gold ($_AND_): \compare_b_gold [22] -> \compare_b [22]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1681_gold ($_AND_): \compare_b_gold [21] -> \compare_b [21]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1680_gold ($_AND_): \compare_b_gold [20] -> \compare_b [20]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1679_gold ($_AND_): \compare_b_gold [19] -> \compare_b [19]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1678_gold ($_AND_): \compare_b_gold [18] -> \compare_b [18]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1677_gold ($_AND_): \compare_b_gold [17] -> \compare_b [17]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1676_gold ($_AND_): \compare_b_gold [16] -> \compare_b [16]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1675_gold ($_AND_): \compare_b_gold [15] -> \compare_b [15]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1674_gold ($_AND_): \compare_b_gold [14] -> \compare_b [14]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1673_gold ($_AND_): \compare_b_gold [13] -> \compare_b [13]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1672_gold ($_AND_): \compare_b_gold [12] -> \compare_b [12]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1671_gold ($_AND_): \compare_b_gold [11] -> \compare_b [11]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1670_gold ($_AND_): \compare_b_gold [10] -> \compare_b [10]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1669_gold ($_AND_): \compare_b_gold [9] -> \compare_b [9]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1668_gold ($_AND_): \compare_b_gold [8] -> \compare_b [8]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1667_gold ($_AND_): \compare_b_gold [7] -> \compare_b [7]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1666_gold ($_AND_): \compare_b_gold [6] -> \compare_b [6]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1665_gold ($_AND_): \compare_b_gold [5] -> \compare_b [5]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1664_gold ($_AND_): \compare_b_gold [4] -> \compare_b [4]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1663_gold ($_AND_): \compare_b_gold [3] -> \compare_b [3]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1662_gold ($_AND_): \compare_b_gold [2] -> \compare_b [2]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1661_gold ($_AND_): \compare_b_gold [1] -> \compare_b [1]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1660_gold ($_AND_): \compare_b_gold [0] -> \compare_b [0]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1658_gold ($_AND_): \compare_a_gold [30] -> \compare_a [30]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1657_gold ($_AND_): \compare_a_gold [29] -> \compare_a [29]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1656_gold ($_AND_): \compare_a_gold [28] -> \compare_a [28]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1655_gold ($_AND_): \compare_a_gold [27] -> \compare_a [27]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1654_gold ($_AND_): \compare_a_gold [26] -> \compare_a [26]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1653_gold ($_AND_): \compare_a_gold [25] -> \compare_a [25]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1652_gold ($_AND_): \compare_a_gold [24] -> \compare_a [24]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1651_gold ($_AND_): \compare_a_gold [23] -> \compare_a [23]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1650_gold ($_AND_): \compare_a_gold [22] -> \compare_a [22]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1649_gold ($_AND_): \compare_a_gold [21] -> \compare_a [21]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1648_gold ($_AND_): \compare_a_gold [20] -> \compare_a [20]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1647_gold ($_AND_): \compare_a_gold [19] -> \compare_a [19]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1646_gold ($_AND_): \compare_a_gold [18] -> \compare_a [18]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1645_gold ($_AND_): \compare_a_gold [17] -> \compare_a [17]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1644_gold ($_AND_): \compare_a_gold [16] -> \compare_a [16]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1643_gold ($_AND_): \compare_a_gold [15] -> \compare_a [15]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1642_gold ($_AND_): \compare_a_gold [14] -> \compare_a [14]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1641_gold ($_AND_): \compare_a_gold [13] -> \compare_a [13]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1640_gold ($_AND_): \compare_a_gold [12] -> \compare_a [12]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1639_gold ($_AND_): \compare_a_gold [11] -> \compare_a [11]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1638_gold ($_AND_): \compare_a_gold [10] -> \compare_a [10]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1637_gold ($_AND_): \compare_a_gold [9] -> \compare_a [9]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1636_gold ($_AND_): \compare_a_gold [8] -> \compare_a [8]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1635_gold ($_AND_): \compare_a_gold [7] -> \compare_a [7]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1634_gold ($_AND_): \compare_a_gold [6] -> \compare_a [6]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1633_gold ($_AND_): \compare_a_gold [5] -> \compare_a [5]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1632_gold ($_AND_): \compare_a_gold [4] -> \compare_a [4]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1631_gold ($_AND_): \compare_a_gold [3] -> \compare_a [3]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1630_gold ($_AND_): \compare_a_gold [2] -> \compare_a [2]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1629_gold ($_AND_): \compare_a_gold [1] -> \compare_a [1]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1628_gold ($_AND_): \compare_a_gold [0] -> \compare_a [0]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1626_gold ($_AND_): \reload_gold [30] -> \reload [30]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1625_gold ($_AND_): \reload_gold [29] -> \reload [29]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1624_gold ($_AND_): \reload_gold [28] -> \reload [28]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1623_gold ($_AND_): \reload_gold [27] -> \reload [27]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1622_gold ($_AND_): \reload_gold [26] -> \reload [26]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1621_gold ($_AND_): \reload_gold [25] -> \reload [25]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1620_gold ($_AND_): \reload_gold [24] -> \reload [24]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1619_gold ($_AND_): \reload_gold [23] -> \reload [23]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1618_gold ($_AND_): \reload_gold [22] -> \reload [22]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1617_gold ($_AND_): \reload_gold [21] -> \reload [21]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1616_gold ($_AND_): \reload_gold [20] -> \reload [20]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1615_gold ($_AND_): \reload_gold [19] -> \reload [19]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1614_gold ($_AND_): \reload_gold [18] -> \reload [18]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1613_gold ($_AND_): \reload_gold [17] -> \reload [17]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1612_gold ($_AND_): \reload_gold [16] -> \reload [16]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1611_gold ($_AND_): \reload_gold [15] -> \reload [15]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1610_gold ($_AND_): \reload_gold [14] -> \reload [14]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1609_gold ($_AND_): \reload_gold [13] -> \reload [13]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1608_gold ($_AND_): \reload_gold [12] -> \reload [12]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1607_gold ($_AND_): \reload_gold [11] -> \reload [11]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1606_gold ($_AND_): \reload_gold [10] -> \reload [10]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1605_gold ($_AND_): \reload_gold [9] -> \reload [9]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1604_gold ($_AND_): \reload_gold [8] -> \reload [8]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1603_gold ($_AND_): \reload_gold [7] -> \reload [7]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1602_gold ($_AND_): \reload_gold [6] -> \reload [6]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1601_gold ($_AND_): \reload_gold [5] -> \reload [5]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1600_gold ($_AND_): \reload_gold [4] -> \reload [4]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1599_gold ($_AND_): \reload_gold [3] -> \reload [3]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1598_gold ($_AND_): \reload_gold [2] -> \reload [2]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1597_gold ($_AND_): \reload_gold [1] -> \reload [1]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1596_gold ($_AND_): \reload_gold [0] -> \reload [0]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1594_gold ($_AND_): \counter_gold [30] -> \counter [30]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1593_gold ($_AND_): \counter_gold [29] -> \counter [29]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1592_gold ($_AND_): \counter_gold [28] -> \counter [28]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1591_gold ($_AND_): \counter_gold [27] -> \counter [27]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1590_gold ($_AND_): \counter_gold [26] -> \counter [26]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1589_gold ($_AND_): \counter_gold [25] -> \counter [25]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1588_gold ($_AND_): \counter_gold [24] -> \counter [24]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1587_gold ($_AND_): \counter_gold [23] -> \counter [23]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1586_gold ($_AND_): \counter_gold [22] -> \counter [22]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1585_gold ($_AND_): \counter_gold [21] -> \counter [21]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1584_gold ($_AND_): \counter_gold [20] -> \counter [20]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1583_gold ($_AND_): \counter_gold [19] -> \counter [19]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1582_gold ($_AND_): \counter_gold [18] -> \counter [18]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1581_gold ($_AND_): \counter_gold [17] -> \counter [17]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1580_gold ($_AND_): \counter_gold [16] -> \counter [16]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1579_gold ($_AND_): \counter_gold [15] -> \counter [15]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1578_gold ($_AND_): \counter_gold [14] -> \counter [14]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1577_gold ($_AND_): \counter_gold [13] -> \counter [13]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1576_gold ($_AND_): \counter_gold [12] -> \counter [12]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1575_gold ($_AND_): \counter_gold [11] -> \counter [11]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1574_gold ($_AND_): \counter_gold [10] -> \counter [10]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1573_gold ($_AND_): \counter_gold [9] -> \counter [9]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1572_gold ($_AND_): \counter_gold [8] -> \counter [8]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1571_gold ($_AND_): \counter_gold [7] -> \counter [7]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1570_gold ($_AND_): \counter_gold [6] -> \counter [6]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1569_gold ($_AND_): \counter_gold [5] -> \counter [5]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1568_gold ($_AND_): \counter_gold [4] -> \counter [4]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1567_gold ($_AND_): \counter_gold [3] -> \counter [3]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1566_gold ($_AND_): \counter_gold [2] -> \counter [2]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1565_gold ($_AND_): \counter_gold [1] -> \counter [1]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1564_gold ($_AND_): \counter_gold [0] -> \counter [0]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2273_gold ($_OR_): \counter_gold [12] -> \counter [12]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2321_gold ($_OR_): \counter_gold [30] -> \counter [30]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2328_gold ($_OR_): \counter_gold [29] -> \counter [29]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$2329_gold ($_AND_): \counter_gold [28] -> \counter [28]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$2332_gold ($_AND_): \counter_gold [26] -> \counter [26]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2337_gold ($_OR_): \counter_gold [23] -> \counter [23]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2340_gold ($_OR_): \counter_gold [21] -> \counter [21]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$2341_gold ($_AND_): \counter_gold [20] -> \counter [20]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$2344_gold ($_AND_): \counter_gold [18] -> \counter [18]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2349_gold ($_OR_): \counter_gold [15] -> \counter [15]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2352_gold ($_OR_): \counter_gold [13] -> \counter [13]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$2353_gold ($_AND_): \counter_gold [12] -> \counter [12]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$2356_gold ($_AND_): \counter_gold [10] -> \counter [10]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2361_gold ($_OR_): \counter_gold [7] -> \counter [7]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2364_gold ($_OR_): \counter_gold [5] -> \counter [5]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$2365_gold ($_AND_): \counter_gold [4] -> \counter [4]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$2368_gold ($_AND_): \counter_gold [2] -> \counter [2]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$2414_gold ($_NOT_): \counter_gold [20] -> \counter [20]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$2378_gold ($_NOT_): \counter_gold [16] -> \counter [16]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$2396_gold ($_NOT_): \counter_gold [7] -> \counter [7]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$2420_gold ($_NOT_): \counter_gold [25] -> \counter [25]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$2430_gold ($_NOT_): \counter_gold [28] -> \counter [28]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$2392_gold ($_NOT_): \counter_gold [9] -> \counter [9]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$2412_gold ($_NOT_): \counter_gold [21] -> \counter [21]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$2371_gold ($_AND_): \counter_gold [0] -> \counter [0]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$2418_gold ($_NOT_): \counter_gold [22] -> \counter [22]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$2432_gold ($_NOT_): \counter_gold [31] -> \counter [31]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$2426_gold ($_NOT_): \counter_gold [26] -> \counter [26]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$2394_gold ($_NOT_): \counter_gold [8] -> \counter [8]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$2424_gold ($_NOT_): \counter_gold [27] -> \counter [27]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$2374_gold ($_NOT_): \counter_gold [1] -> \counter [1]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$2386_gold ($_NOT_): \counter_gold [12] -> \counter [12]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$2390_gold ($_NOT_): \counter_gold [10] -> \counter [10]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2261_gold ($_OR_): \counter_gold [24] -> \counter [24]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$2416_gold ($_NOT_): \counter_gold [23] -> \counter [23]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$2382_gold ($_NOT_): \counter_gold [14] -> \counter [14]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$2388_gold ($_NOT_): \counter_gold [11] -> \counter [11]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$2410_gold ($_NOT_): \counter_gold [19] -> \counter [19]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$2408_gold ($_NOT_): \counter_gold [18] -> \counter [18]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1691_gold ($_AND_): \compare_b_gold [31] -> \compare_b [31]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1659_gold ($_AND_): \compare_a_gold [31] -> \compare_a [31]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1627_gold ($_AND_): \reload_gold [31] -> \reload [31]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1595_gold ($_AND_): \counter_gold [31] -> \counter [31]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2238_gold ($_OR_): \counter_gold [6] -> \counter [6]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$2406_gold ($_NOT_): \counter_gold [2] -> \counter [2]
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$1061_gold ($_MUX_): \ctrl_enable_gold -> \ctrl_enable
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$1061_gold ($_MUX_): \counter_gold [30] -> \counter [30]
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$1060_gold ($_MUX_): \ctrl_enable_gold -> \ctrl_enable
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$1060_gold ($_MUX_): \counter_gold [29] -> \counter [29]
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$1059_gold ($_MUX_): \ctrl_enable_gold -> \ctrl_enable
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$1059_gold ($_MUX_): \counter_gold [28] -> \counter [28]
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$1058_gold ($_MUX_): \ctrl_enable_gold -> \ctrl_enable
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$1058_gold ($_MUX_): \counter_gold [27] -> \counter [27]
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$1057_gold ($_MUX_): \ctrl_enable_gold -> \ctrl_enable
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$1057_gold ($_MUX_): \counter_gold [26] -> \counter [26]
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$1056_gold ($_MUX_): \ctrl_enable_gold -> \ctrl_enable
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$1056_gold ($_MUX_): \counter_gold [25] -> \counter [25]
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$1055_gold ($_MUX_): \ctrl_enable_gold -> \ctrl_enable
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$1055_gold ($_MUX_): \counter_gold [24] -> \counter [24]
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$1054_gold ($_MUX_): \ctrl_enable_gold -> \ctrl_enable
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$1054_gold ($_MUX_): \counter_gold [23] -> \counter [23]
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$1053_gold ($_MUX_): \ctrl_enable_gold -> \ctrl_enable
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$1053_gold ($_MUX_): \counter_gold [22] -> \counter [22]
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$1052_gold ($_MUX_): \ctrl_enable_gold -> \ctrl_enable
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$1052_gold ($_MUX_): \counter_gold [21] -> \counter [21]
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$1051_gold ($_MUX_): \ctrl_enable_gold -> \ctrl_enable
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$1051_gold ($_MUX_): \counter_gold [20] -> \counter [20]
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$1050_gold ($_MUX_): \ctrl_enable_gold -> \ctrl_enable
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$1050_gold ($_MUX_): \counter_gold [19] -> \counter [19]
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$1049_gold ($_MUX_): \ctrl_enable_gold -> \ctrl_enable
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$1049_gold ($_MUX_): \counter_gold [18] -> \counter [18]
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$1048_gold ($_MUX_): \ctrl_enable_gold -> \ctrl_enable
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$1048_gold ($_MUX_): \counter_gold [17] -> \counter [17]
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$1047_gold ($_MUX_): \ctrl_enable_gold -> \ctrl_enable
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$1047_gold ($_MUX_): \counter_gold [16] -> \counter [16]
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$1046_gold ($_MUX_): \ctrl_enable_gold -> \ctrl_enable
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$1046_gold ($_MUX_): \counter_gold [15] -> \counter [15]
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$1045_gold ($_MUX_): \ctrl_enable_gold -> \ctrl_enable
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$1045_gold ($_MUX_): \counter_gold [14] -> \counter [14]
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$1044_gold ($_MUX_): \ctrl_enable_gold -> \ctrl_enable
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$1044_gold ($_MUX_): \counter_gold [13] -> \counter [13]
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$1043_gold ($_MUX_): \ctrl_enable_gold -> \ctrl_enable
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$1043_gold ($_MUX_): \counter_gold [12] -> \counter [12]
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$1042_gold ($_MUX_): \ctrl_enable_gold -> \ctrl_enable
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$1042_gold ($_MUX_): \counter_gold [11] -> \counter [11]
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$1041_gold ($_MUX_): \ctrl_enable_gold -> \ctrl_enable
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$1041_gold ($_MUX_): \counter_gold [10] -> \counter [10]
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$1040_gold ($_MUX_): \ctrl_enable_gold -> \ctrl_enable
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$1040_gold ($_MUX_): \counter_gold [9] -> \counter [9]
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$1039_gold ($_MUX_): \ctrl_enable_gold -> \ctrl_enable
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$1039_gold ($_MUX_): \counter_gold [8] -> \counter [8]
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$1038_gold ($_MUX_): \ctrl_enable_gold -> \ctrl_enable
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$1038_gold ($_MUX_): \counter_gold [7] -> \counter [7]
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$1037_gold ($_MUX_): \ctrl_enable_gold -> \ctrl_enable
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$1037_gold ($_MUX_): \counter_gold [6] -> \counter [6]
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$1036_gold ($_MUX_): \ctrl_enable_gold -> \ctrl_enable
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$1036_gold ($_MUX_): \counter_gold [5] -> \counter [5]
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$1035_gold ($_MUX_): \ctrl_enable_gold -> \ctrl_enable
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$1035_gold ($_MUX_): \counter_gold [4] -> \counter [4]
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$1034_gold ($_MUX_): \ctrl_enable_gold -> \ctrl_enable
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$1034_gold ($_MUX_): \counter_gold [3] -> \counter [3]
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$1033_gold ($_MUX_): \ctrl_enable_gold -> \ctrl_enable
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$1033_gold ($_MUX_): \counter_gold [2] -> \counter [2]
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$1032_gold ($_MUX_): \ctrl_enable_gold -> \ctrl_enable
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$1032_gold ($_MUX_): \counter_gold [1] -> \counter [1]
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$1031_gold ($_MUX_): \ctrl_enable_gold -> \ctrl_enable
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$1031_gold ($_MUX_): \counter_gold [0] -> \counter [0]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$997_gold ($_MUX_): \reload_gold [30] -> \reload [30]
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$997_gold ($_MUX_): \counter_gold [30] -> \counter [30]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$996_gold ($_MUX_): \reload_gold [29] -> \reload [29]
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$996_gold ($_MUX_): \counter_gold [29] -> \counter [29]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$995_gold ($_MUX_): \reload_gold [28] -> \reload [28]
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$995_gold ($_MUX_): \counter_gold [28] -> \counter [28]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$994_gold ($_MUX_): \reload_gold [27] -> \reload [27]
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$994_gold ($_MUX_): \counter_gold [27] -> \counter [27]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$993_gold ($_MUX_): \reload_gold [26] -> \reload [26]
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$993_gold ($_MUX_): \counter_gold [26] -> \counter [26]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$992_gold ($_MUX_): \reload_gold [25] -> \reload [25]
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$992_gold ($_MUX_): \counter_gold [25] -> \counter [25]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$991_gold ($_MUX_): \reload_gold [24] -> \reload [24]
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$991_gold ($_MUX_): \counter_gold [24] -> \counter [24]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$990_gold ($_MUX_): \reload_gold [23] -> \reload [23]
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$990_gold ($_MUX_): \counter_gold [23] -> \counter [23]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$989_gold ($_MUX_): \reload_gold [22] -> \reload [22]
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$989_gold ($_MUX_): \counter_gold [22] -> \counter [22]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$988_gold ($_MUX_): \reload_gold [21] -> \reload [21]
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$988_gold ($_MUX_): \counter_gold [21] -> \counter [21]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$987_gold ($_MUX_): \reload_gold [20] -> \reload [20]
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$987_gold ($_MUX_): \counter_gold [20] -> \counter [20]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$986_gold ($_MUX_): \reload_gold [19] -> \reload [19]
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$986_gold ($_MUX_): \counter_gold [19] -> \counter [19]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$985_gold ($_MUX_): \reload_gold [18] -> \reload [18]
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$985_gold ($_MUX_): \counter_gold [18] -> \counter [18]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$984_gold ($_MUX_): \reload_gold [17] -> \reload [17]
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$984_gold ($_MUX_): \counter_gold [17] -> \counter [17]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$983_gold ($_MUX_): \reload_gold [16] -> \reload [16]
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$983_gold ($_MUX_): \counter_gold [16] -> \counter [16]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$982_gold ($_MUX_): \reload_gold [15] -> \reload [15]
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$982_gold ($_MUX_): \counter_gold [15] -> \counter [15]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$981_gold ($_MUX_): \reload_gold [14] -> \reload [14]
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$981_gold ($_MUX_): \counter_gold [14] -> \counter [14]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$980_gold ($_MUX_): \reload_gold [13] -> \reload [13]
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$980_gold ($_MUX_): \counter_gold [13] -> \counter [13]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$979_gold ($_MUX_): \reload_gold [12] -> \reload [12]
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$979_gold ($_MUX_): \counter_gold [12] -> \counter [12]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$978_gold ($_MUX_): \reload_gold [11] -> \reload [11]
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$978_gold ($_MUX_): \counter_gold [11] -> \counter [11]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$977_gold ($_MUX_): \reload_gold [10] -> \reload [10]
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$977_gold ($_MUX_): \counter_gold [10] -> \counter [10]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$976_gold ($_MUX_): \reload_gold [9] -> \reload [9]
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$976_gold ($_MUX_): \counter_gold [9] -> \counter [9]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$975_gold ($_MUX_): \reload_gold [8] -> \reload [8]
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$975_gold ($_MUX_): \counter_gold [8] -> \counter [8]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$974_gold ($_MUX_): \reload_gold [7] -> \reload [7]
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$974_gold ($_MUX_): \counter_gold [7] -> \counter [7]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$973_gold ($_MUX_): \reload_gold [6] -> \reload [6]
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$973_gold ($_MUX_): \counter_gold [6] -> \counter [6]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$972_gold ($_MUX_): \reload_gold [5] -> \reload [5]
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$972_gold ($_MUX_): \counter_gold [5] -> \counter [5]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$971_gold ($_MUX_): \reload_gold [4] -> \reload [4]
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$971_gold ($_MUX_): \counter_gold [4] -> \counter [4]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$970_gold ($_MUX_): \reload_gold [3] -> \reload [3]
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$970_gold ($_MUX_): \counter_gold [3] -> \counter [3]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$969_gold ($_MUX_): \reload_gold [2] -> \reload [2]
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$969_gold ($_MUX_): \counter_gold [2] -> \counter [2]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$968_gold ($_MUX_): \reload_gold [1] -> \reload [1]
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$968_gold ($_MUX_): \counter_gold [1] -> \counter [1]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$967_gold ($_MUX_): \reload_gold [0] -> \reload [0]
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$967_gold ($_MUX_): \counter_gold [0] -> \counter [0]
+Changing input B of cell $auto$simplemap.cc:157:simplemap_reduce$921_gold ($_OR_): \counter_gold [31] -> \counter [31]
+Changing input A of cell $auto$simplemap.cc:157:simplemap_reduce$921_gold ($_OR_): \counter_gold [30] -> \counter [30]
+Changing input B of cell $auto$simplemap.cc:157:simplemap_reduce$920_gold ($_OR_): \counter_gold [29] -> \counter [29]
+Changing input A of cell $auto$simplemap.cc:157:simplemap_reduce$920_gold ($_OR_): \counter_gold [28] -> \counter [28]
+Changing input B of cell $auto$simplemap.cc:157:simplemap_reduce$919_gold ($_OR_): \counter_gold [27] -> \counter [27]
+Changing input A of cell $auto$simplemap.cc:157:simplemap_reduce$919_gold ($_OR_): \counter_gold [26] -> \counter [26]
+Changing input B of cell $auto$simplemap.cc:157:simplemap_reduce$918_gold ($_OR_): \counter_gold [25] -> \counter [25]
+Changing input A of cell $auto$simplemap.cc:157:simplemap_reduce$918_gold ($_OR_): \counter_gold [24] -> \counter [24]
+Changing input B of cell $auto$simplemap.cc:157:simplemap_reduce$917_gold ($_OR_): \counter_gold [23] -> \counter [23]
+Changing input A of cell $auto$simplemap.cc:157:simplemap_reduce$917_gold ($_OR_): \counter_gold [22] -> \counter [22]
+Changing input B of cell $auto$simplemap.cc:157:simplemap_reduce$916_gold ($_OR_): \counter_gold [21] -> \counter [21]
+Changing input A of cell $auto$simplemap.cc:157:simplemap_reduce$916_gold ($_OR_): \counter_gold [20] -> \counter [20]
+Changing input B of cell $auto$simplemap.cc:157:simplemap_reduce$915_gold ($_OR_): \counter_gold [19] -> \counter [19]
+Changing input A of cell $auto$simplemap.cc:157:simplemap_reduce$915_gold ($_OR_): \counter_gold [18] -> \counter [18]
+Changing input B of cell $auto$simplemap.cc:157:simplemap_reduce$914_gold ($_OR_): \counter_gold [17] -> \counter [17]
+Changing input A of cell $auto$simplemap.cc:157:simplemap_reduce$914_gold ($_OR_): \counter_gold [16] -> \counter [16]
+Changing input B of cell $auto$simplemap.cc:157:simplemap_reduce$913_gold ($_OR_): \counter_gold [15] -> \counter [15]
+Changing input A of cell $auto$simplemap.cc:157:simplemap_reduce$913_gold ($_OR_): \counter_gold [14] -> \counter [14]
+Changing input B of cell $auto$simplemap.cc:157:simplemap_reduce$912_gold ($_OR_): \counter_gold [13] -> \counter [13]
+Changing input A of cell $auto$simplemap.cc:157:simplemap_reduce$912_gold ($_OR_): \counter_gold [12] -> \counter [12]
+Changing input B of cell $auto$simplemap.cc:157:simplemap_reduce$911_gold ($_OR_): \counter_gold [11] -> \counter [11]
+Changing input A of cell $auto$simplemap.cc:157:simplemap_reduce$911_gold ($_OR_): \counter_gold [10] -> \counter [10]
+Changing input B of cell $auto$simplemap.cc:157:simplemap_reduce$910_gold ($_OR_): \counter_gold [9] -> \counter [9]
+Changing input A of cell $auto$simplemap.cc:157:simplemap_reduce$910_gold ($_OR_): \counter_gold [8] -> \counter [8]
+Changing input B of cell $auto$simplemap.cc:157:simplemap_reduce$909_gold ($_OR_): \counter_gold [7] -> \counter [7]
+Changing input A of cell $auto$simplemap.cc:157:simplemap_reduce$909_gold ($_OR_): \counter_gold [6] -> \counter [6]
+Changing input B of cell $auto$simplemap.cc:157:simplemap_reduce$908_gold ($_OR_): \counter_gold [5] -> \counter [5]
+Changing input A of cell $auto$simplemap.cc:157:simplemap_reduce$908_gold ($_OR_): \counter_gold [4] -> \counter [4]
+Changing input B of cell $auto$simplemap.cc:157:simplemap_reduce$907_gold ($_OR_): \counter_gold [3] -> \counter [3]
+Changing input A of cell $auto$simplemap.cc:157:simplemap_reduce$907_gold ($_OR_): \counter_gold [2] -> \counter [2]
+Changing input B of cell $auto$simplemap.cc:157:simplemap_reduce$906_gold ($_OR_): \counter_gold [1] -> \counter [1]
+Changing input A of cell $auto$simplemap.cc:157:simplemap_reduce$906_gold ($_OR_): \counter_gold [0] -> \counter [0]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$863_gold ($_XOR_): \compare_b_gold [30] -> \compare_b [30]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$863_gold ($_XOR_): \counter_gold [30] -> \counter [30]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$862_gold ($_XOR_): \compare_b_gold [29] -> \compare_b [29]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$862_gold ($_XOR_): \counter_gold [29] -> \counter [29]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$861_gold ($_XOR_): \compare_b_gold [28] -> \compare_b [28]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$861_gold ($_XOR_): \counter_gold [28] -> \counter [28]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$860_gold ($_XOR_): \compare_b_gold [27] -> \compare_b [27]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$860_gold ($_XOR_): \counter_gold [27] -> \counter [27]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$859_gold ($_XOR_): \compare_b_gold [26] -> \compare_b [26]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$859_gold ($_XOR_): \counter_gold [26] -> \counter [26]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$858_gold ($_XOR_): \compare_b_gold [25] -> \compare_b [25]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$858_gold ($_XOR_): \counter_gold [25] -> \counter [25]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$857_gold ($_XOR_): \compare_b_gold [24] -> \compare_b [24]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$857_gold ($_XOR_): \counter_gold [24] -> \counter [24]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$856_gold ($_XOR_): \compare_b_gold [23] -> \compare_b [23]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$856_gold ($_XOR_): \counter_gold [23] -> \counter [23]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$855_gold ($_XOR_): \compare_b_gold [22] -> \compare_b [22]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$855_gold ($_XOR_): \counter_gold [22] -> \counter [22]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$854_gold ($_XOR_): \compare_b_gold [21] -> \compare_b [21]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$854_gold ($_XOR_): \counter_gold [21] -> \counter [21]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$853_gold ($_XOR_): \compare_b_gold [20] -> \compare_b [20]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$853_gold ($_XOR_): \counter_gold [20] -> \counter [20]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$852_gold ($_XOR_): \compare_b_gold [19] -> \compare_b [19]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$852_gold ($_XOR_): \counter_gold [19] -> \counter [19]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$851_gold ($_XOR_): \compare_b_gold [18] -> \compare_b [18]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$851_gold ($_XOR_): \counter_gold [18] -> \counter [18]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$850_gold ($_XOR_): \compare_b_gold [17] -> \compare_b [17]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$850_gold ($_XOR_): \counter_gold [17] -> \counter [17]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$849_gold ($_XOR_): \compare_b_gold [16] -> \compare_b [16]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$849_gold ($_XOR_): \counter_gold [16] -> \counter [16]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$848_gold ($_XOR_): \compare_b_gold [15] -> \compare_b [15]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$848_gold ($_XOR_): \counter_gold [15] -> \counter [15]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$847_gold ($_XOR_): \compare_b_gold [14] -> \compare_b [14]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$847_gold ($_XOR_): \counter_gold [14] -> \counter [14]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$846_gold ($_XOR_): \compare_b_gold [13] -> \compare_b [13]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$846_gold ($_XOR_): \counter_gold [13] -> \counter [13]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$845_gold ($_XOR_): \compare_b_gold [12] -> \compare_b [12]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$845_gold ($_XOR_): \counter_gold [12] -> \counter [12]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$844_gold ($_XOR_): \compare_b_gold [11] -> \compare_b [11]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$844_gold ($_XOR_): \counter_gold [11] -> \counter [11]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$843_gold ($_XOR_): \compare_b_gold [10] -> \compare_b [10]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$843_gold ($_XOR_): \counter_gold [10] -> \counter [10]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$842_gold ($_XOR_): \compare_b_gold [9] -> \compare_b [9]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$842_gold ($_XOR_): \counter_gold [9] -> \counter [9]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$841_gold ($_XOR_): \compare_b_gold [8] -> \compare_b [8]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$841_gold ($_XOR_): \counter_gold [8] -> \counter [8]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$840_gold ($_XOR_): \compare_b_gold [7] -> \compare_b [7]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$840_gold ($_XOR_): \counter_gold [7] -> \counter [7]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$839_gold ($_XOR_): \compare_b_gold [6] -> \compare_b [6]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$839_gold ($_XOR_): \counter_gold [6] -> \counter [6]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$838_gold ($_XOR_): \compare_b_gold [5] -> \compare_b [5]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$838_gold ($_XOR_): \counter_gold [5] -> \counter [5]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$837_gold ($_XOR_): \compare_b_gold [4] -> \compare_b [4]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$837_gold ($_XOR_): \counter_gold [4] -> \counter [4]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$836_gold ($_XOR_): \compare_b_gold [3] -> \compare_b [3]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$836_gold ($_XOR_): \counter_gold [3] -> \counter [3]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$835_gold ($_XOR_): \compare_b_gold [2] -> \compare_b [2]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$835_gold ($_XOR_): \counter_gold [2] -> \counter [2]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$834_gold ($_XOR_): \compare_b_gold [1] -> \compare_b [1]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$834_gold ($_XOR_): \counter_gold [1] -> \counter [1]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$833_gold ($_XOR_): \compare_b_gold [0] -> \compare_b [0]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$833_gold ($_XOR_): \counter_gold [0] -> \counter [0]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$864_gold ($_XOR_): \compare_b_gold [31] -> \compare_b [31]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$864_gold ($_XOR_): \counter_gold [31] -> \counter [31]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$788_gold ($_XOR_): \compare_a_gold [30] -> \compare_a [30]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$788_gold ($_XOR_): \counter_gold [30] -> \counter [30]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$787_gold ($_XOR_): \compare_a_gold [29] -> \compare_a [29]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$787_gold ($_XOR_): \counter_gold [29] -> \counter [29]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$786_gold ($_XOR_): \compare_a_gold [28] -> \compare_a [28]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$786_gold ($_XOR_): \counter_gold [28] -> \counter [28]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$785_gold ($_XOR_): \compare_a_gold [27] -> \compare_a [27]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$785_gold ($_XOR_): \counter_gold [27] -> \counter [27]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$784_gold ($_XOR_): \compare_a_gold [26] -> \compare_a [26]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$784_gold ($_XOR_): \counter_gold [26] -> \counter [26]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$783_gold ($_XOR_): \compare_a_gold [25] -> \compare_a [25]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$783_gold ($_XOR_): \counter_gold [25] -> \counter [25]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$782_gold ($_XOR_): \compare_a_gold [24] -> \compare_a [24]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$782_gold ($_XOR_): \counter_gold [24] -> \counter [24]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$781_gold ($_XOR_): \compare_a_gold [23] -> \compare_a [23]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$781_gold ($_XOR_): \counter_gold [23] -> \counter [23]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$780_gold ($_XOR_): \compare_a_gold [22] -> \compare_a [22]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$780_gold ($_XOR_): \counter_gold [22] -> \counter [22]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$779_gold ($_XOR_): \compare_a_gold [21] -> \compare_a [21]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$779_gold ($_XOR_): \counter_gold [21] -> \counter [21]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$778_gold ($_XOR_): \compare_a_gold [20] -> \compare_a [20]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$778_gold ($_XOR_): \counter_gold [20] -> \counter [20]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$777_gold ($_XOR_): \compare_a_gold [19] -> \compare_a [19]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$777_gold ($_XOR_): \counter_gold [19] -> \counter [19]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$776_gold ($_XOR_): \compare_a_gold [18] -> \compare_a [18]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$776_gold ($_XOR_): \counter_gold [18] -> \counter [18]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$775_gold ($_XOR_): \compare_a_gold [17] -> \compare_a [17]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$775_gold ($_XOR_): \counter_gold [17] -> \counter [17]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$774_gold ($_XOR_): \compare_a_gold [16] -> \compare_a [16]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$774_gold ($_XOR_): \counter_gold [16] -> \counter [16]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$773_gold ($_XOR_): \compare_a_gold [15] -> \compare_a [15]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$773_gold ($_XOR_): \counter_gold [15] -> \counter [15]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$772_gold ($_XOR_): \compare_a_gold [14] -> \compare_a [14]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$772_gold ($_XOR_): \counter_gold [14] -> \counter [14]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$771_gold ($_XOR_): \compare_a_gold [13] -> \compare_a [13]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$771_gold ($_XOR_): \counter_gold [13] -> \counter [13]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$770_gold ($_XOR_): \compare_a_gold [12] -> \compare_a [12]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$770_gold ($_XOR_): \counter_gold [12] -> \counter [12]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$769_gold ($_XOR_): \compare_a_gold [11] -> \compare_a [11]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$769_gold ($_XOR_): \counter_gold [11] -> \counter [11]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$768_gold ($_XOR_): \compare_a_gold [10] -> \compare_a [10]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$768_gold ($_XOR_): \counter_gold [10] -> \counter [10]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$767_gold ($_XOR_): \compare_a_gold [9] -> \compare_a [9]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$767_gold ($_XOR_): \counter_gold [9] -> \counter [9]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$766_gold ($_XOR_): \compare_a_gold [8] -> \compare_a [8]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$766_gold ($_XOR_): \counter_gold [8] -> \counter [8]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$765_gold ($_XOR_): \compare_a_gold [7] -> \compare_a [7]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$765_gold ($_XOR_): \counter_gold [7] -> \counter [7]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$764_gold ($_XOR_): \compare_a_gold [6] -> \compare_a [6]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$764_gold ($_XOR_): \counter_gold [6] -> \counter [6]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$763_gold ($_XOR_): \compare_a_gold [5] -> \compare_a [5]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$763_gold ($_XOR_): \counter_gold [5] -> \counter [5]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$762_gold ($_XOR_): \compare_a_gold [4] -> \compare_a [4]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$762_gold ($_XOR_): \counter_gold [4] -> \counter [4]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$761_gold ($_XOR_): \compare_a_gold [3] -> \compare_a [3]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$761_gold ($_XOR_): \counter_gold [3] -> \counter [3]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$760_gold ($_XOR_): \compare_a_gold [2] -> \compare_a [2]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$760_gold ($_XOR_): \counter_gold [2] -> \counter [2]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$759_gold ($_XOR_): \compare_a_gold [1] -> \compare_a [1]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$759_gold ($_XOR_): \counter_gold [1] -> \counter [1]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$758_gold ($_XOR_): \compare_a_gold [0] -> \compare_a [0]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$758_gold ($_XOR_): \counter_gold [0] -> \counter [0]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$789_gold ($_XOR_): \compare_a_gold [31] -> \compare_a [31]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$789_gold ($_XOR_): \counter_gold [31] -> \counter [31]
+Changing input B of cell $auto$simplemap.cc:157:simplemap_reduce$732_gold ($_OR_): \reload_gold [31] -> \reload [31]
+Changing input A of cell $auto$simplemap.cc:157:simplemap_reduce$732_gold ($_OR_): \reload_gold [30] -> \reload [30]
+Changing input B of cell $auto$simplemap.cc:157:simplemap_reduce$731_gold ($_OR_): \reload_gold [29] -> \reload [29]
+Changing input A of cell $auto$simplemap.cc:157:simplemap_reduce$731_gold ($_OR_): \reload_gold [28] -> \reload [28]
+Changing input B of cell $auto$simplemap.cc:157:simplemap_reduce$730_gold ($_OR_): \reload_gold [27] -> \reload [27]
+Changing input A of cell $auto$simplemap.cc:157:simplemap_reduce$730_gold ($_OR_): \reload_gold [26] -> \reload [26]
+Changing input B of cell $auto$simplemap.cc:157:simplemap_reduce$729_gold ($_OR_): \reload_gold [25] -> \reload [25]
+Changing input A of cell $auto$simplemap.cc:157:simplemap_reduce$729_gold ($_OR_): \reload_gold [24] -> \reload [24]
+Changing input B of cell $auto$simplemap.cc:157:simplemap_reduce$728_gold ($_OR_): \reload_gold [23] -> \reload [23]
+Changing input A of cell $auto$simplemap.cc:157:simplemap_reduce$728_gold ($_OR_): \reload_gold [22] -> \reload [22]
+Changing input B of cell $auto$simplemap.cc:157:simplemap_reduce$727_gold ($_OR_): \reload_gold [21] -> \reload [21]
+Changing input A of cell $auto$simplemap.cc:157:simplemap_reduce$727_gold ($_OR_): \reload_gold [20] -> \reload [20]
+Changing input B of cell $auto$simplemap.cc:157:simplemap_reduce$726_gold ($_OR_): \reload_gold [19] -> \reload [19]
+Changing input A of cell $auto$simplemap.cc:157:simplemap_reduce$726_gold ($_OR_): \reload_gold [18] -> \reload [18]
+Changing input B of cell $auto$simplemap.cc:157:simplemap_reduce$725_gold ($_OR_): \reload_gold [17] -> \reload [17]
+Changing input A of cell $auto$simplemap.cc:157:simplemap_reduce$725_gold ($_OR_): \reload_gold [16] -> \reload [16]
+Changing input B of cell $auto$simplemap.cc:157:simplemap_reduce$724_gold ($_OR_): \reload_gold [15] -> \reload [15]
+Changing input A of cell $auto$simplemap.cc:157:simplemap_reduce$724_gold ($_OR_): \reload_gold [14] -> \reload [14]
+Changing input B of cell $auto$simplemap.cc:157:simplemap_reduce$723_gold ($_OR_): \reload_gold [13] -> \reload [13]
+Changing input A of cell $auto$simplemap.cc:157:simplemap_reduce$723_gold ($_OR_): \reload_gold [12] -> \reload [12]
+Changing input B of cell $auto$simplemap.cc:157:simplemap_reduce$722_gold ($_OR_): \reload_gold [11] -> \reload [11]
+Changing input A of cell $auto$simplemap.cc:157:simplemap_reduce$722_gold ($_OR_): \reload_gold [10] -> \reload [10]
+Changing input B of cell $auto$simplemap.cc:157:simplemap_reduce$721_gold ($_OR_): \reload_gold [9] -> \reload [9]
+Changing input A of cell $auto$simplemap.cc:157:simplemap_reduce$721_gold ($_OR_): \reload_gold [8] -> \reload [8]
+Changing input B of cell $auto$simplemap.cc:157:simplemap_reduce$720_gold ($_OR_): \reload_gold [7] -> \reload [7]
+Changing input A of cell $auto$simplemap.cc:157:simplemap_reduce$720_gold ($_OR_): \reload_gold [6] -> \reload [6]
+Changing input B of cell $auto$simplemap.cc:157:simplemap_reduce$719_gold ($_OR_): \reload_gold [5] -> \reload [5]
+Changing input A of cell $auto$simplemap.cc:157:simplemap_reduce$719_gold ($_OR_): \reload_gold [4] -> \reload [4]
+Changing input B of cell $auto$simplemap.cc:157:simplemap_reduce$718_gold ($_OR_): \reload_gold [3] -> \reload [3]
+Changing input A of cell $auto$simplemap.cc:157:simplemap_reduce$718_gold ($_OR_): \reload_gold [2] -> \reload [2]
+Changing input B of cell $auto$simplemap.cc:157:simplemap_reduce$717_gold ($_OR_): \reload_gold [1] -> \reload [1]
+Changing input A of cell $auto$simplemap.cc:157:simplemap_reduce$717_gold ($_OR_): \reload_gold [0] -> \reload [0]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$2434_gold ($_NOT_): \counter_gold [30] -> \counter [30]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$2422_gold ($_NOT_): \counter_gold [24] -> \counter [24]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2237_gold ($_OR_): \counter_gold [16] -> \counter [16]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2235_gold ($_OR_): \counter_gold [8] -> \counter [8]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2234_gold ($_OR_): \counter_gold [18] -> \counter [18]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2232_gold ($_OR_): \counter_gold [10] -> \counter [10]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$2376_gold ($_NOT_): \counter_gold [17] -> \counter [17]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$2402_gold ($_NOT_): \counter_gold [4] -> \counter [4]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2252_gold ($_OR_): \counter_gold [22] -> \counter [22]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2246_gold ($_OR_): \counter_gold [14] -> \counter [14]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2244_gold ($_OR_): \counter_gold [2] -> \counter [2]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2243_gold ($_OR_): \counter_gold [20] -> \counter [20]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2241_gold ($_OR_): \counter_gold [4] -> \counter [4]
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$1062_gold ($_MUX_): \ctrl_enable_gold -> \ctrl_enable
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$1062_gold ($_MUX_): \counter_gold [31] -> \counter [31]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$998_gold ($_MUX_): \reload_gold [31] -> \reload [31]
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$998_gold ($_MUX_): \counter_gold [31] -> \counter [31]
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$962_gold ($_MUX_): \ctrl_enable_gold -> \ctrl_enable
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$962_gold ($_MUX_): \status_cmpa_gold -> \status_cmpa
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$961_gold ($_MUX_): \status_cmpa_gold -> \status_cmpa
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$956_gold ($_MUX_): \ctrl_enable_gold -> \ctrl_enable
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$956_gold ($_MUX_): \status_cmpb_gold -> \status_cmpb
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$955_gold ($_MUX_): \status_cmpb_gold -> \status_cmpb
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$950_gold ($_MUX_): \ctrl_enable_gold -> \ctrl_enable
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$950_gold ($_MUX_): \status_wrap_gold -> \status_wrap
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$949_gold ($_MUX_): \status_wrap_gold -> \status_wrap
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$948_gold ($_MUX_): \status_wrap_gold -> \status_wrap
+Changing input B of cell $auto$simplemap.cc:157:simplemap_reduce$360_gold ($_AND_): \ctrl_enable_gold -> \ctrl_enable
+Changing input A of cell $auto$simplemap.cc:227:simplemap_lognot$943_gold ($_NOT_): \wb_ack_o_gold -> \wb_ack_o
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$2400_gold ($_NOT_): \counter_gold [5] -> \counter [5]
+Changing input A of cell $auto$simplemap.cc:256:simplemap_logbin$752_gold ($_AND_): \ctrl_auto_reload_gold -> \ctrl_auto_reload
+Setting undriven nets to undef: $techmap$sub$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-timer/rtl/timer.v:70$7.$auto$alumacc.cc:512:replace_alu$753.CO_gold [31]
+Setting undriven nets to undef: \wb_ack_o_gate
+Setting undriven nets to undef: \irq_cmpa_gate
+Setting undriven nets to undef: \irq_cmpb_gate
+Setting undriven nets to undef: \_1581__gate
+Setting undriven nets to undef: \_1580__gate
+Setting undriven nets to undef: \_1579__gate
+Setting undriven nets to undef: \_1578__gate
+Setting undriven nets to undef: \_1577__gate
+Setting undriven nets to undef: \_1576__gate
+Setting undriven nets to undef: \_1575__gate
+Setting undriven nets to undef: \_1574__gate
+Setting undriven nets to undef: \_1573__gate
+Setting undriven nets to undef: \_1572__gate
+Setting undriven nets to undef: \_1571__gate
+Setting undriven nets to undef: \_1570__gate
+Setting undriven nets to undef: \_1569__gate
+Setting undriven nets to undef: \_1568__gate
+Setting undriven nets to undef: \_1567__gate
+Setting undriven nets to undef: \_1566__gate
+Setting undriven nets to undef: \_1565__gate
+Setting undriven nets to undef: \_1564__gate
+Setting undriven nets to undef: \_1563__gate
+Setting undriven nets to undef: \_1562__gate
+Setting undriven nets to undef: \_1561__gate
+Setting undriven nets to undef: \_1560__gate
+Setting undriven nets to undef: \_1559__gate
+Setting undriven nets to undef: \_1558__gate
+Setting undriven nets to undef: \_1557__gate
+Setting undriven nets to undef: \_1556__gate
+Setting undriven nets to undef: \_1555__gate
+Setting undriven nets to undef: \_1554__gate
+Setting undriven nets to undef: \_1553__gate
+Setting undriven nets to undef: \_1552__gate
+Setting undriven nets to undef: \_1551__gate
+Setting undriven nets to undef: \_1550__gate
+
+26. Executing EQUIV_SIMPLE pass.
+Found 168 unproven $equiv cells (13 groups) in timer:
+ Grouping SAT models for \wb_dat_o:
+  Trying to prove $equiv for \wb_dat_o [0]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [1]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [2]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [3]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [4]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [5]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [6]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [7]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [8]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [9]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [10]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [11]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [12]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [13]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [14]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [15]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [16]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [17]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [18]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [19]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [20]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [21]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [22]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [23]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [24]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [25]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [26]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [27]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [28]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [29]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [30]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [31]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_ack_o:ezsat
+ failed.
+  Trying to prove $equiv for \irq_cmpa:ezsat
+ failed.
+  Trying to prove $equiv for \irq_cmpb:ezsat
+ failed.
+ Grouping SAT models for \counter:
+  Trying to prove $equiv for \counter [0]:ezsat
+ failed.
+  Trying to prove $equiv for \counter [1]:ezsat
+ failed.
+  Trying to prove $equiv for \counter [2]:ezsat
+ failed.
+  Trying to prove $equiv for \counter [3]:ezsat
+ failed.
+  Trying to prove $equiv for \counter [4]:ezsat
+ failed.
+  Trying to prove $equiv for \counter [5]:ezsat
+ failed.
+  Trying to prove $equiv for \counter [6]:ezsat
+ failed.
+  Trying to prove $equiv for \counter [7]:ezsat
+ failed.
+  Trying to prove $equiv for \counter [8]:ezsat
+ failed.
+  Trying to prove $equiv for \counter [9]:ezsat
+ failed.
+  Trying to prove $equiv for \counter [10]:ezsat
+ failed.
+  Trying to prove $equiv for \counter [11]:ezsat
+ failed.
+  Trying to prove $equiv for \counter [12]:ezsat
+ failed.
+  Trying to prove $equiv for \counter [13]:ezsat
+ failed.
+  Trying to prove $equiv for \counter [14]:ezsat
+ failed.
+  Trying to prove $equiv for \counter [15]:ezsat
+ failed.
+  Trying to prove $equiv for \counter [16]:ezsat
+ failed.
+  Trying to prove $equiv for \counter [17]:ezsat
+ failed.
+  Trying to prove $equiv for \counter [18]:ezsat
+ failed.
+  Trying to prove $equiv for \counter [19]:ezsat
+ failed.
+  Trying to prove $equiv for \counter [20]:ezsat
+ failed.
+  Trying to prove $equiv for \counter [21]:ezsat
+ failed.
+  Trying to prove $equiv for \counter [22]:ezsat
+ failed.
+  Trying to prove $equiv for \counter [23]:ezsat
+ failed.
+  Trying to prove $equiv for \counter [24]:ezsat
+ failed.
+  Trying to prove $equiv for \counter [25]:ezsat
+ failed.
+  Trying to prove $equiv for \counter [26]:ezsat
+ failed.
+  Trying to prove $equiv for \counter [27]:ezsat
+ failed.
+  Trying to prove $equiv for \counter [28]:ezsat
+ failed.
+  Trying to prove $equiv for \counter [29]:ezsat
+ failed.
+  Trying to prove $equiv for \counter [30]:ezsat
+ failed.
+  Trying to prove $equiv for \counter [31]:ezsat
+ failed.
+ Grouping SAT models for \reload:
+  Trying to prove $equiv for \reload [0]:ezsat
+ failed.
+  Trying to prove $equiv for \reload [1]:ezsat
+ failed.
+  Trying to prove $equiv for \reload [2]:ezsat
+ failed.
+  Trying to prove $equiv for \reload [3]:ezsat
+ failed.
+  Trying to prove $equiv for \reload [4]:ezsat
+ failed.
+  Trying to prove $equiv for \reload [5]:ezsat
+ failed.
+  Trying to prove $equiv for \reload [6]:ezsat
+ failed.
+  Trying to prove $equiv for \reload [7]:ezsat
+ failed.
+  Trying to prove $equiv for \reload [8]:ezsat
+ failed.
+  Trying to prove $equiv for \reload [9]:ezsat
+ failed.
+  Trying to prove $equiv for \reload [10]:ezsat
+ failed.
+  Trying to prove $equiv for \reload [11]:ezsat
+ failed.
+  Trying to prove $equiv for \reload [12]:ezsat
+ failed.
+  Trying to prove $equiv for \reload [13]:ezsat
+ failed.
+  Trying to prove $equiv for \reload [14]:ezsat
+ failed.
+  Trying to prove $equiv for \reload [15]:ezsat
+ failed.
+  Trying to prove $equiv for \reload [16]:ezsat
+ failed.
+  Trying to prove $equiv for \reload [17]:ezsat
+ failed.
+  Trying to prove $equiv for \reload [18]:ezsat
+ failed.
+  Trying to prove $equiv for \reload [19]:ezsat
+ failed.
+  Trying to prove $equiv for \reload [20]:ezsat
+ failed.
+  Trying to prove $equiv for \reload [21]:ezsat
+ failed.
+  Trying to prove $equiv for \reload [22]:ezsat
+ failed.
+  Trying to prove $equiv for \reload [23]:ezsat
+ failed.
+  Trying to prove $equiv for \reload [24]:ezsat
+ failed.
+  Trying to prove $equiv for \reload [25]:ezsat
+ failed.
+  Trying to prove $equiv for \reload [26]:ezsat
+ failed.
+  Trying to prove $equiv for \reload [27]:ezsat
+ failed.
+  Trying to prove $equiv for \reload [28]:ezsat
+ failed.
+  Trying to prove $equiv for \reload [29]:ezsat
+ failed.
+  Trying to prove $equiv for \reload [30]:ezsat
+ failed.
+  Trying to prove $equiv for \reload [31]:ezsat
+ failed.
+ Grouping SAT models for \compare_a:
+  Trying to prove $equiv for \compare_a [0]:ezsat
+ failed.
+  Trying to prove $equiv for \compare_a [1]:ezsat
+ failed.
+  Trying to prove $equiv for \compare_a [2]:ezsat
+ failed.
+  Trying to prove $equiv for \compare_a [3]:ezsat
+ failed.
+  Trying to prove $equiv for \compare_a [4]:ezsat
+ failed.
+  Trying to prove $equiv for \compare_a [5]:ezsat
+ failed.
+  Trying to prove $equiv for \compare_a [6]:ezsat
+ failed.
+  Trying to prove $equiv for \compare_a [7]:ezsat
+ failed.
+  Trying to prove $equiv for \compare_a [8]:ezsat
+ failed.
+  Trying to prove $equiv for \compare_a [9]:ezsat
+ failed.
+  Trying to prove $equiv for \compare_a [10]:ezsat
+ failed.
+  Trying to prove $equiv for \compare_a [11]:ezsat
+ failed.
+  Trying to prove $equiv for \compare_a [12]:ezsat
+ failed.
+  Trying to prove $equiv for \compare_a [13]:ezsat
+ failed.
+  Trying to prove $equiv for \compare_a [14]:ezsat
+ failed.
+  Trying to prove $equiv for \compare_a [15]:ezsat
+ failed.
+  Trying to prove $equiv for \compare_a [16]:ezsat
+ failed.
+  Trying to prove $equiv for \compare_a [17]:ezsat
+ failed.
+  Trying to prove $equiv for \compare_a [18]:ezsat
+ failed.
+  Trying to prove $equiv for \compare_a [19]:ezsat
+ failed.
+  Trying to prove $equiv for \compare_a [20]:ezsat
+ failed.
+  Trying to prove $equiv for \compare_a [21]:ezsat
+ failed.
+  Trying to prove $equiv for \compare_a [22]:ezsat
+ failed.
+  Trying to prove $equiv for \compare_a [23]:ezsat
+ failed.
+  Trying to prove $equiv for \compare_a [24]:ezsat
+ failed.
+  Trying to prove $equiv for \compare_a [25]:ezsat
+ failed.
+  Trying to prove $equiv for \compare_a [26]:ezsat
+ failed.
+  Trying to prove $equiv for \compare_a [27]:ezsat
+ failed.
+  Trying to prove $equiv for \compare_a [28]:ezsat
+ failed.
+  Trying to prove $equiv for \compare_a [29]:ezsat
+ failed.
+  Trying to prove $equiv for \compare_a [30]:ezsat
+ failed.
+  Trying to prove $equiv for \compare_a [31]:ezsat
+ failed.
+ Grouping SAT models for \compare_b:
+  Trying to prove $equiv for \compare_b [0]:ezsat
+ failed.
+  Trying to prove $equiv for \compare_b [1]:ezsat
+ failed.
+  Trying to prove $equiv for \compare_b [2]:ezsat
+ failed.
+  Trying to prove $equiv for \compare_b [3]:ezsat
+ failed.
+  Trying to prove $equiv for \compare_b [4]:ezsat
+ failed.
+  Trying to prove $equiv for \compare_b [5]:ezsat
+ failed.
+  Trying to prove $equiv for \compare_b [6]:ezsat
+ failed.
+  Trying to prove $equiv for \compare_b [7]:ezsat
+ failed.
+  Trying to prove $equiv for \compare_b [8]:ezsat
+ failed.
+  Trying to prove $equiv for \compare_b [9]:ezsat
+ failed.
+  Trying to prove $equiv for \compare_b [10]:ezsat
+ failed.
+  Trying to prove $equiv for \compare_b [11]:ezsat
+ failed.
+  Trying to prove $equiv for \compare_b [12]:ezsat
+ failed.
+  Trying to prove $equiv for \compare_b [13]:ezsat
+ failed.
+  Trying to prove $equiv for \compare_b [14]:ezsat
+ failed.
+  Trying to prove $equiv for \compare_b [15]:ezsat
+ failed.
+  Trying to prove $equiv for \compare_b [16]:ezsat
+ failed.
+  Trying to prove $equiv for \compare_b [17]:ezsat
+ failed.
+  Trying to prove $equiv for \compare_b [18]:ezsat
+ failed.
+  Trying to prove $equiv for \compare_b [19]:ezsat
+ failed.
+  Trying to prove $equiv for \compare_b [20]:ezsat
+ failed.
+  Trying to prove $equiv for \compare_b [21]:ezsat
+ failed.
+  Trying to prove $equiv for \compare_b [22]:ezsat
+ failed.
+  Trying to prove $equiv for \compare_b [23]:ezsat
+ failed.
+  Trying to prove $equiv for \compare_b [24]:ezsat
+ failed.
+  Trying to prove $equiv for \compare_b [25]:ezsat
+ failed.
+  Trying to prove $equiv for \compare_b [26]:ezsat
+ failed.
+  Trying to prove $equiv for \compare_b [27]:ezsat
+ failed.
+  Trying to prove $equiv for \compare_b [28]:ezsat
+ failed.
+  Trying to prove $equiv for \compare_b [29]:ezsat
+ failed.
+  Trying to prove $equiv for \compare_b [30]:ezsat
+ failed.
+  Trying to prove $equiv for \compare_b [31]:ezsat
+ failed.
+  Trying to prove $equiv for \ctrl_enable:ezsat
+ failed.
+  Trying to prove $equiv for \ctrl_auto_reload:ezsat
+ failed.
+  Trying to prove $equiv for \status_cmpa:ezsat
+ failed.
+  Trying to prove $equiv for \status_cmpb:ezsat
+ failed.
+  Trying to prove $equiv for \status_wrap:ezsat
+ failed.
+Proved 0 previously unproven $equiv cells.
+
+27. Executing EQUIV_INDUCT pass.
+Found 168 unproven $equiv cells in module timer:

@@ -1,0 +1,13 @@
+[options]
+mode cover
+depth 20
+
+[engines]
+smtbmc yices
+
+[script]
+read -formal picorv32_core.v
+prep -top picorv32
+
+[files]
+/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v

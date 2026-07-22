@@ -1,0 +1,16 @@
+[tasks]
+bmc
+
+[options]
+bmc: mode bmc
+bmc: depth 20
+
+[engines]
+bmc: smtbmc z3
+
+[script]
+read -formal uart.v
+prep -top uart
+
+[files]
+/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-uart/rtl/uart.v

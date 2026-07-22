@@ -1,0 +1,44 @@
+rtl-power_mgr/rtl/power_mgr.v:7: warning: timescale for power_mgr inherited from another file.
+rtl-picorv32_core/rtl/picorv32_core.v:25: ...: The inherited timescale is here.
+rtl-sram_512b/rtl/sram_512b.v:7: warning: timescale for sram_512b inherited from another file.
+rtl-picorv32_core/rtl/picorv32_core.v:25: ...: The inherited timescale is here.
+rtl-timer/rtl/timer_pwm.v:7: warning: timescale for timer_pwm inherited from another file.
+rtl-picorv32_core/rtl/picorv32_core.v:25: ...: The inherited timescale is here.
+rtl-timer/rtl/timer.v:7: warning: timescale for timer inherited from another file.
+rtl-picorv32_core/rtl/picorv32_core.v:25: ...: The inherited timescale is here.
+rtl-uart/rtl/uart.v:7: warning: timescale for uart inherited from another file.
+rtl-picorv32_core/rtl/picorv32_core.v:25: ...: The inherited timescale is here.
+rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:7: warning: timescale for ultrasonic_capture inherited from another file.
+rtl-picorv32_core/rtl/picorv32_core.v:25: ...: The inherited timescale is here.
+rtl-ultrasonic_capture/rtl/ultrasonic_fsm.v:7: warning: timescale for ultrasonic_fsm inherited from another file.
+rtl-picorv32_core/rtl/picorv32_core.v:25: ...: The inherited timescale is here.
+rtl-watchdog/rtl/watchdog.v:7: warning: timescale for watchdog inherited from another file.
+rtl-picorv32_core/rtl/picorv32_core.v:25: ...: The inherited timescale is here.
+rtl-wb_interconnect/rtl/wb_interconnect.v:7: warning: timescale for wb_interconnect inherited from another file.
+rtl-picorv32_core/rtl/picorv32_core.v:25: ...: The inherited timescale is here.
+rtl-weight_detect/rtl/weight_detect.v:7: warning: timescale for weight_detect inherited from another file.
+rtl-picorv32_core/rtl/picorv32_core.v:25: ...: The inherited timescale is here.
+rtl-trash_robot_soc/rtl/trash_robot_soc.v:11: warning: timescale for trash_robot_soc inherited from another file.
+rtl-picorv32_core/rtl/picorv32_core.v:25: ...: The inherited timescale is here.
+rtl-i2c_hx711/rtl/i2c_controller.v:7: warning: timescale for i2c_controller inherited from another file.
+rtl-picorv32_core/rtl/picorv32_core.v:25: ...: The inherited timescale is here.
+rtl-i2c_hx711/rtl/i2c_master.v:7: warning: timescale for i2c_master inherited from another file.
+rtl-picorv32_core/rtl/picorv32_core.v:25: ...: The inherited timescale is here.
+warning: Some design elements have no explicit time unit and/or
+       : time precision. This may cause confusing timing results.
+       : Affected design elements are:
+       :   -- module gpio declared here: rtl-gpio/rtl/gpio.v:7
+       :   -- module intc declared here: rtl-interrupt_ctrl/rtl/intc.v:7
+       :   -- module interrupt_ctrl declared here: rtl-interrupt_ctrl/rtl/interrupt_ctrl.v:7
+       :   -- module motor_pwm declared here: rtl-motor_pwm/rtl/motor_pwm.v:7
+       :   -- module motor_pwm_ctrl declared here: rtl-motor_pwm/rtl/motor_pwm_ctrl.v:6
+rtl-picorv32_core/rtl/picorv32_core.v:1354: warning: @* is sensitive to all 32 words in array 'cpuregs'.
+rtl-picorv32_core/rtl/picorv32_core.v:1355: warning: @* is sensitive to all 32 words in array 'cpuregs'.
+rtl-picorv32_core/rtl/picorv32_core.v:1354: warning: @* is sensitive to all 32 words in array 'cpuregs'.
+rtl-picorv32_core/rtl/picorv32_core.v:1355: warning: @* is sensitive to all 32 words in array 'cpuregs'.
+rtl-picorv32_core/rtl/picorv32_core.v:1354: warning: @* is sensitive to all 32 words in array 'cpuregs'.
+rtl-picorv32_core/rtl/picorv32_core.v:1355: warning: @* is sensitive to all 32 words in array 'cpuregs'.
+rtl-trash_robot_soc/rtl/trash_robot_soc.v:107: warning: Instantiating module picorv32 with dangling input port 20 (pcpi_wr) floating.
+rtl-trash_robot_soc/rtl/trash_robot_soc.v:107: warning: Instantiating module picorv32 with dangling input port 21 (pcpi_rd) floating.
+rtl-trash_robot_soc/rtl/trash_robot_soc.v:107: warning: Instantiating module picorv32 with dangling input port 22 (pcpi_wait) floating.
+rtl-trash_robot_soc/rtl/trash_robot_soc.v:107: warning: Instantiating module picorv32 with dangling input port 23 (pcpi_ready) floating.

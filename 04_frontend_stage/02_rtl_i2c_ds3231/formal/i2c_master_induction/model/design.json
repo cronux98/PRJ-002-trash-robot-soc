@@ -1,0 +1,1640 @@
+{
+  "$schema": "https://raw.githubusercontent.com/YosysHQ/yosys/main/misc/jny.schema.json",
+  "generator": "Yosys 0.65+71 (git sha1 e56c6a954, clang++ 18.1.8 -fPIC -O3)",
+  "version": "0.0.1",
+  "invocation": "write_jny -no-connections ../model/design.json ",
+  "features": ["attributes", "properties"],
+  "modules": [
+      {
+        "name": "i2c_master",
+        "cell_sorts": [
+          {
+            "type": "$sub",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [8, 0]
+                },
+                {
+                  "name": "B",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [8, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$sub$i2c_master.v:101$7",
+                  "attributes": {
+                    "src": "i2c_master.v:101.28-101.42"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000001000",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000001000"
+                  }
+                },
+                {
+                  "name": "$sub$i2c_master.v:184$14",
+                  "attributes": {
+                    "src": "i2c_master.v:184.40-184.54"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000100",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000100"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$eq",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [4, 0]
+                },
+                {
+                  "name": "B",
+                  "direction": "io",
+                  "range": [3, 0]
+                },
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$procmux$168_CMP0",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "i2c_master.v:192.24-192.24|i2c_master.v:105.17-209.24"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000100",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000011",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$180_CMP0",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "i2c_master.v:153.24-153.24|i2c_master.v:105.17-209.24"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000100",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000011",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$187_CMP0",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "i2c_master.v:136.24-136.24|i2c_master.v:105.17-209.24"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000100",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$191_CMP0",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "i2c_master.v:124.24-124.24|i2c_master.v:105.17-209.24"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000100",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$192_CMP0",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "i2c_master.v:116.24-116.24|i2c_master.v:105.17-209.24"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000100",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$216_CMP0",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "i2c_master.v:165.24-165.24|i2c_master.v:105.17-209.24"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000100",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000011",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$265_CMP0",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "i2c_master.v:178.24-178.24|i2c_master.v:105.17-209.24"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000100",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000011",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$307_CMP0",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "i2c_master.v:244.69-244.69|i2c_master.v:240.21-247.28"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000011",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000011",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$308_CMP0",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "i2c_master.v:243.69-243.69|i2c_master.v:240.21-247.28"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000011",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$309_CMP0",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "i2c_master.v:242.67-242.67|i2c_master.v:240.21-247.28"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000011",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$310_CMP0",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "i2c_master.v:241.65-241.65|i2c_master.v:240.21-247.28"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000011",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$93_CMP0",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "i2c_master.v:197.24-197.24|i2c_master.v:105.17-209.24"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000100",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000100",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$pmux",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [8, 0]
+                },
+                {
+                  "name": "B",
+                  "direction": "io",
+                  "range": [32, 0]
+                },
+                {
+                  "name": "S",
+                  "direction": "io",
+                  "range": [4, 0]
+                },
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [8, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$procmux$121",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "i2c_master.v:178.24-178.24|i2c_master.v:105.17-209.24"
+                  },
+                  "parameters": {
+                    "S_WIDTH": "00000000000000000000000000000100",
+                    "WIDTH": "00000000000000000000000000001000"
+                  }
+                },
+                {
+                  "name": "$procmux$144",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "i2c_master.v:178.24-178.24|i2c_master.v:105.17-209.24"
+                  },
+                  "parameters": {
+                    "S_WIDTH": "00000000000000000000000000000100",
+                    "WIDTH": "00000000000000000000000000000100"
+                  }
+                },
+                {
+                  "name": "$procmux$167",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "i2c_master.v:192.24-192.24|i2c_master.v:105.17-209.24"
+                  },
+                  "parameters": {
+                    "S_WIDTH": "00000000000000000000000000001000",
+                    "WIDTH": "00000000000000000000000000000100"
+                  }
+                },
+                {
+                  "name": "$procmux$306",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "i2c_master.v:244.69-244.69|i2c_master.v:240.21-247.28"
+                  },
+                  "parameters": {
+                    "S_WIDTH": "00000000000000000000000000000101",
+                    "WIDTH": "00000000000000000000000000001000"
+                  }
+                },
+                {
+                  "name": "$procmux$50",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "i2c_master.v:197.24-197.24|i2c_master.v:105.17-209.24"
+                  },
+                  "parameters": {
+                    "S_WIDTH": "00000000000000000000000000000010",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$58",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "i2c_master.v:197.24-197.24|i2c_master.v:105.17-209.24"
+                  },
+                  "parameters": {
+                    "S_WIDTH": "00000000000000000000000000000010",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$77",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "i2c_master.v:178.24-178.24|i2c_master.v:105.17-209.24"
+                  },
+                  "parameters": {
+                    "S_WIDTH": "00000000000000000000000000000100",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$92",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "i2c_master.v:197.24-197.24|i2c_master.v:105.17-209.24"
+                  },
+                  "parameters": {
+                    "S_WIDTH": "00000000000000000000000000000100",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$adff",
+            "ports": [
+                {
+                  "name": "ARST",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "CLK",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "D",
+                  "direction": "io",
+                  "range": [32, 0]
+                },
+                {
+                  "name": "Q",
+                  "direction": "",
+                  "range": [32, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$procdff$321",
+                  "attributes": {
+                    "src": "i2c_master.v:72.5-251.8"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "00000000000000000000000000000000",
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000100000"
+                  }
+                },
+                {
+                  "name": "$procdff$326",
+                  "attributes": {
+                    "src": "i2c_master.v:72.5-251.8"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "0",
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procdff$331",
+                  "attributes": {
+                    "src": "i2c_master.v:72.5-251.8"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "0",
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procdff$336",
+                  "attributes": {
+                    "src": "i2c_master.v:72.5-251.8"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "10100110",
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000001000"
+                  }
+                },
+                {
+                  "name": "$procdff$341",
+                  "attributes": {
+                    "src": "i2c_master.v:72.5-251.8"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "00000000",
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000001000"
+                  }
+                },
+                {
+                  "name": "$procdff$346",
+                  "attributes": {
+                    "src": "i2c_master.v:72.5-251.8"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "0000",
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000100"
+                  }
+                },
+                {
+                  "name": "$procdff$351",
+                  "attributes": {
+                    "src": "i2c_master.v:72.5-251.8"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "0000",
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000100"
+                  }
+                },
+                {
+                  "name": "$procdff$356",
+                  "attributes": {
+                    "src": "i2c_master.v:72.5-251.8"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "0000000",
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$procdff$361",
+                  "attributes": {
+                    "src": "i2c_master.v:72.5-251.8"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "00000000",
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000001000"
+                  }
+                },
+                {
+                  "name": "$procdff$366",
+                  "attributes": {
+                    "src": "i2c_master.v:72.5-251.8"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "0",
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procdff$371",
+                  "attributes": {
+                    "src": "i2c_master.v:72.5-251.8"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "0",
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procdff$376",
+                  "attributes": {
+                    "src": "i2c_master.v:72.5-251.8"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "0",
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procdff$381",
+                  "attributes": {
+                    "src": "i2c_master.v:72.5-251.8"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "0000",
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000100"
+                  }
+                },
+                {
+                  "name": "$procdff$386",
+                  "attributes": {
+                    "src": "i2c_master.v:72.5-251.8"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "0000",
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000100"
+                  }
+                },
+                {
+                  "name": "$procdff$391",
+                  "attributes": {
+                    "src": "i2c_master.v:72.5-251.8"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "00000000",
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000001000"
+                  }
+                },
+                {
+                  "name": "$procdff$396",
+                  "attributes": {
+                    "src": "i2c_master.v:72.5-251.8"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "1",
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procdff$401",
+                  "attributes": {
+                    "src": "i2c_master.v:72.5-251.8"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "1",
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procdff$406",
+                  "attributes": {
+                    "src": "i2c_master.v:72.5-251.8"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "1",
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procdff$411",
+                  "attributes": {
+                    "src": "i2c_master.v:72.5-251.8"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "1",
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$mux",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "B",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "S",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$procmux$109",
+                  "attributes": {
+                    "src": "i2c_master.v:104.17-104.27|i2c_master.v:104.13-220.16"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$112",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "i2c_master.v:212.21-212.67|i2c_master.v:212.17-215.37"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$114",
+                  "attributes": {
+                    "src": "i2c_master.v:104.17-104.27|i2c_master.v:104.13-220.16"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$124",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "i2c_master.v:170.29-170.37|i2c_master.v:170.25-177.28"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000001000"
+                  }
+                },
+                {
+                  "name": "$procmux$132",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "i2c_master.v:127.29-127.40|i2c_master.v:127.25-135.28"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000001000"
+                  }
+                },
+                {
+                  "name": "$procmux$136",
+                  "attributes": {
+                    "src": "i2c_master.v:104.17-104.27|i2c_master.v:104.13-220.16"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000001000"
+                  }
+                },
+                {
+                  "name": "$procmux$147",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "i2c_master.v:170.29-170.37|i2c_master.v:170.25-177.28"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000100"
+                  }
+                },
+                {
+                  "name": "$procmux$155",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "i2c_master.v:141.29-141.33|i2c_master.v:141.25-152.28"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000100"
+                  }
+                },
+                {
+                  "name": "$procmux$159",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "i2c_master.v:127.29-127.40|i2c_master.v:127.25-135.28"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000100"
+                  }
+                },
+                {
+                  "name": "$procmux$163",
+                  "attributes": {
+                    "src": "i2c_master.v:104.17-104.27|i2c_master.v:104.13-220.16"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000100"
+                  }
+                },
+                {
+                  "name": "$procmux$170",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "i2c_master.v:182.29-182.40|i2c_master.v:182.25-191.28"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000100"
+                  }
+                },
+                {
+                  "name": "$procmux$174",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "i2c_master.v:170.29-170.37|i2c_master.v:170.25-177.28"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000100"
+                  }
+                },
+                {
+                  "name": "$procmux$178",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "i2c_master.v:156.29-156.40|i2c_master.v:156.25-164.28"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000100"
+                  }
+                },
+                {
+                  "name": "$procmux$183",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "i2c_master.v:144.33-144.39|i2c_master.v:144.29-147.58"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000010"
+                  }
+                },
+                {
+                  "name": "$procmux$185",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "i2c_master.v:141.29-141.33|i2c_master.v:141.25-152.28"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000100"
+                  }
+                },
+                {
+                  "name": "$procmux$189",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "i2c_master.v:127.29-127.40|i2c_master.v:127.25-135.28"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000100"
+                  }
+                },
+                {
+                  "name": "$procmux$193",
+                  "attributes": {
+                    "src": "i2c_master.v:110.29-110.38|i2c_master.v:110.25-115.28"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000100"
+                  }
+                },
+                {
+                  "name": "$procmux$196",
+                  "attributes": {
+                    "src": "i2c_master.v:104.17-104.27|i2c_master.v:104.13-220.16"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000100"
+                  }
+                },
+                {
+                  "name": "$procmux$202",
+                  "attributes": {
+                    "src": "i2c_master.v:227.41-227.41|i2c_master.v:227.21-238.28"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$204",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "i2c_master.v:226.21-226.28|i2c_master.v:226.17-248.20"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$206",
+                  "attributes": {
+                    "src": "i2c_master.v:223.17-223.50|i2c_master.v:223.13-249.16"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$215",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "i2c_master.v:165.24-165.24|i2c_master.v:105.17-209.24"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$217",
+                  "attributes": {
+                    "src": "i2c_master.v:104.17-104.27|i2c_master.v:104.13-220.16"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$223",
+                  "attributes": {
+                    "src": "i2c_master.v:231.33-231.44|i2c_master.v:231.29-231.64"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$225",
+                  "attributes": {
+                    "src": "i2c_master.v:227.41-227.41|i2c_master.v:227.21-238.28"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$227",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "i2c_master.v:226.21-226.28|i2c_master.v:226.17-248.20"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$229",
+                  "attributes": {
+                    "src": "i2c_master.v:223.17-223.50|i2c_master.v:223.13-249.16"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$242",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "i2c_master.v:105.33-105.33|i2c_master.v:105.17-209.24"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$244",
+                  "attributes": {
+                    "src": "i2c_master.v:104.17-104.27|i2c_master.v:104.13-220.16"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$250",
+                  "attributes": {
+                    "src": "i2c_master.v:230.33-230.44|i2c_master.v:230.29-230.64"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$252",
+                  "attributes": {
+                    "src": "i2c_master.v:227.41-227.41|i2c_master.v:227.21-238.28"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$254",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "i2c_master.v:226.21-226.28|i2c_master.v:226.17-248.20"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$256",
+                  "attributes": {
+                    "src": "i2c_master.v:223.17-223.50|i2c_master.v:223.13-249.16"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$262",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "i2c_master.v:182.29-182.40|i2c_master.v:182.25-191.28"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000001000"
+                  }
+                },
+                {
+                  "name": "$procmux$264",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "i2c_master.v:178.24-178.24|i2c_master.v:105.17-209.24"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000001000"
+                  }
+                },
+                {
+                  "name": "$procmux$266",
+                  "attributes": {
+                    "src": "i2c_master.v:104.17-104.27|i2c_master.v:104.13-220.16"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000001000"
+                  }
+                },
+                {
+                  "name": "$procmux$270",
+                  "attributes": {
+                    "src": "i2c_master.v:234.65-234.65|i2c_master.v:227.21-238.28"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000001000"
+                  }
+                },
+                {
+                  "name": "$procmux$272",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "i2c_master.v:226.21-226.28|i2c_master.v:226.17-248.20"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000001000"
+                  }
+                },
+                {
+                  "name": "$procmux$274",
+                  "attributes": {
+                    "src": "i2c_master.v:223.17-223.50|i2c_master.v:223.13-249.16"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000001000"
+                  }
+                },
+                {
+                  "name": "$procmux$279",
+                  "attributes": {
+                    "src": "i2c_master.v:233.28-233.28|i2c_master.v:227.21-238.28"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$procmux$281",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "i2c_master.v:226.21-226.28|i2c_master.v:226.17-248.20"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$procmux$283",
+                  "attributes": {
+                    "src": "i2c_master.v:223.17-223.50|i2c_master.v:223.13-249.16"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$procmux$286",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "i2c_master.v:98.17-98.27|i2c_master.v:98.13-101.43"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000001000"
+                  }
+                },
+                {
+                  "name": "$procmux$292",
+                  "attributes": {
+                    "src": "i2c_master.v:227.41-227.41|i2c_master.v:227.21-238.28"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000100"
+                  }
+                },
+                {
+                  "name": "$procmux$294",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "i2c_master.v:226.21-226.28|i2c_master.v:226.17-248.20"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000100"
+                  }
+                },
+                {
+                  "name": "$procmux$296",
+                  "attributes": {
+                    "src": "i2c_master.v:223.17-223.50|i2c_master.v:223.13-249.16"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000100"
+                  }
+                },
+                {
+                  "name": "$procmux$299",
+                  "attributes": {
+                    "src": "i2c_master.v:235.65-235.65|i2c_master.v:227.21-238.28"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000001000"
+                  }
+                },
+                {
+                  "name": "$procmux$30",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "i2c_master.v:141.29-141.33|i2c_master.v:141.25-152.28"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$301",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "i2c_master.v:226.21-226.28|i2c_master.v:226.17-248.20"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000001000"
+                  }
+                },
+                {
+                  "name": "$procmux$303",
+                  "attributes": {
+                    "src": "i2c_master.v:223.17-223.50|i2c_master.v:223.13-249.16"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000001000"
+                  }
+                },
+                {
+                  "name": "$procmux$313",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "i2c_master.v:226.21-226.28|i2c_master.v:226.17-248.20"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000100000"
+                  }
+                },
+                {
+                  "name": "$procmux$315",
+                  "attributes": {
+                    "src": "i2c_master.v:223.17-223.50|i2c_master.v:223.13-249.16"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000100000"
+                  }
+                },
+                {
+                  "name": "$procmux$32",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "i2c_master.v:136.24-136.24|i2c_master.v:105.17-209.24"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$34",
+                  "attributes": {
+                    "src": "i2c_master.v:104.17-104.27|i2c_master.v:104.13-220.16"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$43",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "i2c_master.v:141.29-141.33|i2c_master.v:141.25-152.28"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$45",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "i2c_master.v:136.24-136.24|i2c_master.v:105.17-209.24"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$47",
+                  "attributes": {
+                    "src": "i2c_master.v:104.17-104.27|i2c_master.v:104.13-220.16"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$52",
+                  "attributes": {
+                    "src": "i2c_master.v:110.29-110.38|i2c_master.v:110.25-115.28"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$55",
+                  "attributes": {
+                    "src": "i2c_master.v:104.17-104.27|i2c_master.v:104.13-220.16"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$60",
+                  "attributes": {
+                    "src": "i2c_master.v:110.29-110.38|i2c_master.v:110.25-115.28"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$63",
+                  "attributes": {
+                    "src": "i2c_master.v:104.17-104.27|i2c_master.v:104.13-220.16"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$65",
+                  "attributes": {
+                    "src": "i2c_master.v:218.21-218.41|i2c_master.v:218.17-219.38"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$67",
+                  "attributes": {
+                    "src": "i2c_master.v:104.17-104.27|i2c_master.v:104.13-220.16"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$69",
+                  "attributes": {
+                    "src": "i2c_master.v:223.17-223.50|i2c_master.v:223.13-249.16"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$75",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "i2c_master.v:182.29-182.40|i2c_master.v:182.25-191.28"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$86",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "i2c_master.v:127.29-127.40|i2c_master.v:127.25-135.28"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$89",
+                  "attributes": {
+                    "src": "i2c_master.v:104.17-104.27|i2c_master.v:104.13-220.16"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$96",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "i2c_master.v:182.29-182.40|i2c_master.v:182.25-191.28"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$ternary$i2c_master.v:69$3",
+                  "attributes": {
+                    "src": "i2c_master.v:69.18-69.41"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$ternary$i2c_master.v:70$4",
+                  "attributes": {
+                    "src": "i2c_master.v:70.18-70.41"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$reduce_bool",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [4, 0]
+                },
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$ne$i2c_master.v:212$15",
+                  "attributes": {
+                    "src": "i2c_master.v:212.21-212.42"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000100",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$logic_and",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "B",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$logic_and$i2c_master.v:212$17",
+                  "attributes": {
+                    "src": "i2c_master.v:212.21-212.67"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_and$i2c_master.v:218$19",
+                  "attributes": {
+                    "src": "i2c_master.v:218.21-218.41"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_and$i2c_master.v:223$20",
+                  "attributes": {
+                    "src": "i2c_master.v:223.17-223.37"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_and$i2c_master.v:223$22",
+                  "attributes": {
+                    "src": "i2c_master.v:223.17-223.50"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$ne",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [4, 0]
+                },
+                {
+                  "name": "B",
+                  "direction": "io",
+                  "range": [4, 0]
+                },
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$ne$i2c_master.v:212$16",
+                  "attributes": {
+                    "src": "i2c_master.v:212.46-212.67"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000100",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000100",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$gt",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [4, 0]
+                },
+                {
+                  "name": "B",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$gt$i2c_master.v:182$13",
+                  "attributes": {
+                    "src": "i2c_master.v:182.29-182.40"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000100",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$logic_not",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [8, 0]
+                },
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$eq$i2c_master.v:41$2",
+                  "attributes": {
+                    "src": "i2c_master.v:41.26-41.41"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000001000",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_not$i2c_master.v:223$21",
+                  "attributes": {
+                    "src": "i2c_master.v:223.41-223.50"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$243_CMP0",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "i2c_master.v:105.33-105.33|i2c_master.v:105.17-209.24"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000100",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$311_CMP0",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "i2c_master.v:240.41-240.41|i2c_master.v:240.21-247.28"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000011",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$not",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$not$i2c_master.v:213$18",
+                  "attributes": {
+                    "src": "i2c_master.v:213.32-213.40"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$reduce_or",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [4, 0]
+                },
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$auto$opt_reduce.cc:129:opt_pmux$414",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000100",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$auto$opt_reduce.cc:129:opt_pmux$416",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$auto$opt_reduce.cc:129:opt_pmux$418",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000011",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$auto$opt_reduce.cc:129:opt_pmux$422",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                }
+            ]
+          }
+        ],
+        "attributes": {
+            "hdlname": "i2c_master",
+            "top": "00000000000000000000000000000001",
+            "src": "i2c_master.v:7.1-253.10"
+        }
+      }
+  ]
+}

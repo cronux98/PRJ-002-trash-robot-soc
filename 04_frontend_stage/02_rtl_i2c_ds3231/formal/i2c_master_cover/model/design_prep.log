@@ -1,0 +1,87 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.65+71 (git sha1 e56c6a954, clang++ 18.1.8 -fPIC -O3)
+
+-- Executing script file `design_prep.ys' --
+
+1. Executing RTLIL frontend.
+Input filename: design.il
+
+2. Executing SCC pass (detecting logic loops).
+Found 0 SCCs in module i2c_master.
+Found 0 SCCs.
+
+3. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+
+4. Executing MEMORY_NORDFF pass (extracting $dff cells from memories).
+
+5. Executing ASYNC2SYNC pass.
+Replacing i2c_master.$procdff$321 ($adff): ARST=\rst_ni, D=$0\wb_dat_o[31:0], Q=\wb_dat_o
+Replacing i2c_master.$procdff$326 ($adff): ARST=\rst_ni, D=$0\wb_ack_o[0:0], Q=\wb_ack_o
+Replacing i2c_master.$procdff$331 ($adff): ARST=\rst_ni, D=$0\irq_done[0:0], Q=\irq_done
+Replacing i2c_master.$procdff$336 ($adff): ARST=\rst_ni, D=$0\divider[7:0], Q=\divider
+Replacing i2c_master.$procdff$341 ($adff): ARST=\rst_ni, D=$0\clk_cnt[7:0], Q=\clk_cnt
+Replacing i2c_master.$procdff$346 ($adff): ARST=\rst_ni, D=$0\ctrl[3:0], Q=\ctrl
+Replacing i2c_master.$procdff$351 ($adff): ARST=\rst_ni, D=$0\status[3:0], Q=\status
+Replacing i2c_master.$procdff$356 ($adff): ARST=\rst_ni, D=$0\addr_reg[6:0], Q=\addr_reg
+Replacing i2c_master.$procdff$361 ($adff): ARST=\rst_ni, D=$0\data_reg[7:0], Q=\data_reg
+Replacing i2c_master.$procdff$366 ($adff): ARST=\rst_ni, D=$0\start_cmd[0:0], Q=\start_cmd
+Replacing i2c_master.$procdff$371 ($adff): ARST=\rst_ni, D=$0\stop_cmd[0:0], Q=\stop_cmd
+Replacing i2c_master.$procdff$376 ($adff): ARST=\rst_ni, D=$0\rw_bit[0:0], Q=\rw_bit
+Replacing i2c_master.$procdff$381 ($adff): ARST=\rst_ni, D=$0\fsm_state[3:0], Q=\fsm_state
+Replacing i2c_master.$procdff$386 ($adff): ARST=\rst_ni, D=$0\bit_cnt[3:0], Q=\bit_cnt
+Replacing i2c_master.$procdff$391 ($adff): ARST=\rst_ni, D=$0\shift_reg[7:0], Q=\shift_reg
+Replacing i2c_master.$procdff$396 ($adff): ARST=\rst_ni, D=$0\scl_out[0:0], Q=\scl_out
+Replacing i2c_master.$procdff$401 ($adff): ARST=\rst_ni, D=$0\sda_out[0:0], Q=\sda_out
+Replacing i2c_master.$procdff$406 ($adff): ARST=\rst_ni, D=\scl_oe, Q=\scl_oe
+Replacing i2c_master.$procdff$411 ($adff): ARST=\rst_ni, D=$0\sda_oe[0:0], Q=\sda_oe
+
+6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \i2c_master..
+
+7. Executing FORMALFF pass.
+
+8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \i2c_master..
+Removed 1 unused cells and 1 unused wires.
+<suppressed ~2 debug messages>
+
+9. Executing CHECK pass (checking for obvious problems).
+Checking module i2c_master...
+Found and reported 0 problems.
+
+10. Executing SETUNDEF pass (replace undef values with defined constants).
+
+11. Executing OPT pass (performing simple optimizations).
+
+11.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module i2c_master.
+
+11.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\i2c_master'.
+Computing hashes of 165 cells of `\i2c_master'.
+Finding duplicate cells in `\i2c_master'.
+Removed a total of 0 cells.
+
+11.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+11.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \i2c_master..
+
+11.5. Finished fast OPT passes.
+
+12. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \i2c_master..
+Removed 0 unused cells and 19 unused wires.
+<suppressed ~1 debug messages>
+
+13. Executing RTLIL backend.
+Output filename: ../model/design_prep.il
+
+End of script. Logfile hash: 191e0944a4, time: 0.02s, user: 0.02s, system: 0.01s, MEM: 15.98 MB peak
+Yosys 0.65+71 (git sha1 e56c6a954, clang++ 18.1.8 -fPIC -O3)
+Time spent: 38% 4x opt_clean (0 sec), 11% 1x opt_dff (0 sec), ...

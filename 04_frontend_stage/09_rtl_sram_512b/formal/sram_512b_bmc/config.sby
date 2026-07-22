@@ -1,0 +1,13 @@
+[options]
+mode bmc
+depth 20
+
+[engines]
+smtbmc yices
+
+[script]
+read -formal sram_512b.v
+prep -top sram_512b
+
+[files]
+/home/smdadmin/hermes_workspace/projects/IP-005/v5/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v

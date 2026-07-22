@@ -1,0 +1,1154 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.65+71 (git sha1 e56c6a954, clang++ 18.1.8 -fPIC -O3)
+
+-- Executing script file `/tmp/equiv_interrupt_ctrl.ys' --
+
+1. Executing Verilog-2005 frontend: /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-interrupt_ctrl/rtl/intc.v
+Parsing Verilog input from `/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-interrupt_ctrl/rtl/intc.v' to AST representation.
+Generating RTLIL representation for module `\intc'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-interrupt_ctrl/rtl/interrupt_ctrl.v
+Parsing Verilog input from `/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-interrupt_ctrl/rtl/interrupt_ctrl.v' to AST representation.
+Generating RTLIL representation for module `\interrupt_ctrl'.
+Successfully finished Verilog frontend.
+
+3. Executing HIERARCHY pass (managing design hierarchy).
+
+3.1. Analyzing design hierarchy..
+Top module:  \interrupt_ctrl
+
+3.2. Analyzing design hierarchy..
+Top module:  \interrupt_ctrl
+Removing unused module `\intc'.
+Removed 1 unused modules.
+
+4. Executing PROC pass (convert processes to netlists).
+
+4.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+4.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 3 switch rules as full_case in process $proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-interrupt_ctrl/rtl/interrupt_ctrl.v:44$78 in module interrupt_ctrl.
+Removed a total of 0 dead cases.
+
+4.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 4 redundant assignments.
+Promoted 0 assignments to connections.
+
+4.4. Executing PROC_INIT pass (extract init attributes).
+
+4.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \rst_ni in `\interrupt_ctrl.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-interrupt_ctrl/rtl/interrupt_ctrl.v:44$78'.
+
+4.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~4 debug messages>
+
+4.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\interrupt_ctrl.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-interrupt_ctrl/rtl/interrupt_ctrl.v:44$78'.
+     1/7: $0\irq_out[0:0]
+     2/7: $0\pending[15:0]
+     3/7: $0\irq_in_prev[15:0]
+     4/7: $0\wb_ack_o[0:0]
+     5/7: $0\edge_cfg[15:0]
+     6/7: $0\enable[15:0]
+     7/7: $0\wb_dat_o[31:0]
+
+4.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+4.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\interrupt_ctrl.\wb_dat_o' using process `\interrupt_ctrl.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-interrupt_ctrl/rtl/interrupt_ctrl.v:44$78'.
+  created $adff cell `$procdff$135' with positive edge clock and positive level reset.
+Creating register for signal `\interrupt_ctrl.\wb_ack_o' using process `\interrupt_ctrl.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-interrupt_ctrl/rtl/interrupt_ctrl.v:44$78'.
+  created $adff cell `$procdff$140' with positive edge clock and positive level reset.
+Creating register for signal `\interrupt_ctrl.\irq_out' using process `\interrupt_ctrl.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-interrupt_ctrl/rtl/interrupt_ctrl.v:44$78'.
+  created $adff cell `$procdff$145' with positive edge clock and positive level reset.
+Creating register for signal `\interrupt_ctrl.\pending' using process `\interrupt_ctrl.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-interrupt_ctrl/rtl/interrupt_ctrl.v:44$78'.
+  created $adff cell `$procdff$150' with positive edge clock and positive level reset.
+Creating register for signal `\interrupt_ctrl.\enable' using process `\interrupt_ctrl.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-interrupt_ctrl/rtl/interrupt_ctrl.v:44$78'.
+  created $adff cell `$procdff$155' with positive edge clock and positive level reset.
+Creating register for signal `\interrupt_ctrl.\edge_cfg' using process `\interrupt_ctrl.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-interrupt_ctrl/rtl/interrupt_ctrl.v:44$78'.
+  created $adff cell `$procdff$160' with positive edge clock and positive level reset.
+Creating register for signal `\interrupt_ctrl.\irq_in_prev' using process `\interrupt_ctrl.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-interrupt_ctrl/rtl/interrupt_ctrl.v:44$78'.
+  created $adff cell `$procdff$165' with positive edge clock and positive level reset.
+
+4.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+4.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 4 empty switches in `\interrupt_ctrl.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-interrupt_ctrl/rtl/interrupt_ctrl.v:44$78'.
+Removing empty process `interrupt_ctrl.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-interrupt_ctrl/rtl/interrupt_ctrl.v:44$78'.
+Cleaned up 4 empty switches.
+
+4.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module interrupt_ctrl.
+<suppressed ~16 debug messages>
+
+5. Executing OPT pass (performing simple optimizations).
+
+5.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module interrupt_ctrl.
+
+5.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\interrupt_ctrl'.
+Computing hashes of 51 cells of `\interrupt_ctrl'.
+Finding duplicate cells in `\interrupt_ctrl'.
+Computing hashes of 42 cells of `\interrupt_ctrl'.
+Finding duplicate cells in `\interrupt_ctrl'.
+<suppressed ~27 debug messages>
+Removed a total of 9 cells.
+
+5.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \interrupt_ctrl..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~18 debug messages>
+
+5.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \interrupt_ctrl.
+Performed a total of 0 changes.
+
+5.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\interrupt_ctrl'.
+Computing hashes of 42 cells of `\interrupt_ctrl'.
+Finding duplicate cells in `\interrupt_ctrl'.
+Removed a total of 0 cells.
+
+5.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $procdff$155 ($adff) from module interrupt_ctrl (D = \wb_dat_i [15:0], Q = \enable).
+Adding EN signal on $procdff$135 ($adff) from module interrupt_ctrl (D = $procmux$122_Y, Q = \wb_dat_o).
+Adding EN signal on $procdff$160 ($adff) from module interrupt_ctrl (D = \wb_dat_i [15:0], Q = \edge_cfg).
+
+5.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \interrupt_ctrl..
+Removed 11 unused cells and 45 unused wires.
+<suppressed ~13 debug messages>
+
+5.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module interrupt_ctrl.
+
+5.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+5.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \interrupt_ctrl..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~8 debug messages>
+
+5.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \interrupt_ctrl.
+Performed a total of 0 changes.
+
+5.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\interrupt_ctrl'.
+Computing hashes of 35 cells of `\interrupt_ctrl'.
+Finding duplicate cells in `\interrupt_ctrl'.
+Removed a total of 0 cells.
+
+5.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \interrupt_ctrl..
+
+5.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module interrupt_ctrl.
+
+5.16. Finished fast OPT passes. (There is nothing left to do.)
+
+6. Executing ASYNC2SYNC pass.
+Replacing interrupt_ctrl.$procdff$145 ($adff): ARST=\rst_ni, D=$0\irq_out[0:0], Q=\irq_out
+Replacing interrupt_ctrl.$auto$ff.cc:337:slice$166 ($adffe): ARST=\rst_ni, D=\wb_dat_i [15:0], Q=\enable
+Replacing interrupt_ctrl.$auto$ff.cc:337:slice$169 ($adffe): ARST=\rst_ni, D=$procmux$122_Y, Q=\wb_dat_o
+Replacing interrupt_ctrl.$procdff$165 ($adff): ARST=\rst_ni, D=\irq_in, Q=\irq_in_prev
+Replacing interrupt_ctrl.$auto$ff.cc:337:slice$174 ($adffe): ARST=\rst_ni, D=\wb_dat_i [15:0], Q=\edge_cfg
+Replacing interrupt_ctrl.$procdff$150 ($adff): ARST=\rst_ni, D=$0\pending[15:0], Q=\pending
+Replacing interrupt_ctrl.$procdff$140 ($adff): ARST=\rst_ni, D=$0\wb_ack_o[0:0], Q=\wb_ack_o
+
+7. Executing MEMORY pass.
+
+7.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+7.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+7.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+7.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+7.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+7.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \interrupt_ctrl..
+
+7.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+7.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+7.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \interrupt_ctrl..
+
+7.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+7.11. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+8. Executing OPT pass (performing simple optimizations).
+
+8.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module interrupt_ctrl.
+
+8.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\interrupt_ctrl'.
+Computing hashes of 42 cells of `\interrupt_ctrl'.
+Finding duplicate cells in `\interrupt_ctrl'.
+Removed a total of 0 cells.
+
+8.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \interrupt_ctrl..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~22 debug messages>
+
+8.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \interrupt_ctrl.
+Performed a total of 0 changes.
+
+8.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\interrupt_ctrl'.
+Computing hashes of 42 cells of `\interrupt_ctrl'.
+Finding duplicate cells in `\interrupt_ctrl'.
+Removed a total of 0 cells.
+
+8.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+8.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \interrupt_ctrl..
+
+8.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module interrupt_ctrl.
+
+8.9. Finished fast OPT passes. (There is nothing left to do.)
+
+9. Executing TECHMAP pass (map to technology primitives).
+
+9.1. Executing Verilog-2005 frontend: /home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v
+Parsing Verilog input from `/home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu_brent_kung'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `$__div_mod_u'.
+Generating RTLIL representation for module `$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Generating RTLIL representation for module `$connect'.
+Generating RTLIL representation for module `$input_port'.
+Successfully finished Verilog frontend.
+
+9.2. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $mux.
+Using extmapper simplemap for cells of type $reduce_and.
+Using extmapper simplemap for cells of type $sdffe.
+Using extmapper simplemap for cells of type $not.
+Using extmapper simplemap for cells of type $and.
+Using extmapper simplemap for cells of type $or.
+Using extmapper simplemap for cells of type $reduce_or.
+Using extmapper simplemap for cells of type $logic_and.
+Using extmapper simplemap for cells of type $logic_not.
+Using extmapper simplemap for cells of type $eq.
+Using template $paramod$0d149ffe75563ef6fcc1a3dddc59d00af28651a7\_90_pmux for cells of type $pmux.
+Using template $paramod$54d740639e1393b22262823179ff783ea9f17a35\_90_pmux for cells of type $pmux.
+Using extmapper simplemap for cells of type $sdff.
+No more expansions possible.
+<suppressed ~202 debug messages>
+
+10. Executing OPT pass (performing simple optimizations).
+
+10.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module interrupt_ctrl.
+<suppressed ~106 debug messages>
+
+10.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\interrupt_ctrl'.
+Computing hashes of 607 cells of `\interrupt_ctrl'.
+Finding duplicate cells in `\interrupt_ctrl'.
+Computing hashes of 589 cells of `\interrupt_ctrl'.
+Finding duplicate cells in `\interrupt_ctrl'.
+Computing hashes of 574 cells of `\interrupt_ctrl'.
+Finding duplicate cells in `\interrupt_ctrl'.
+<suppressed ~99 debug messages>
+Removed a total of 33 cells.
+
+10.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \interrupt_ctrl..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+10.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \interrupt_ctrl.
+Performed a total of 0 changes.
+
+10.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\interrupt_ctrl'.
+Computing hashes of 574 cells of `\interrupt_ctrl'.
+Finding duplicate cells in `\interrupt_ctrl'.
+Removed a total of 0 cells.
+
+10.6. Executing OPT_DFF pass (perform DFF optimizations).
+Setting constant 0-bit at position 0 on $auto$ff.cc:337:slice$417 ($_SDFFE_PN0P_) from module interrupt_ctrl.
+
+10.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \interrupt_ctrl..
+Removed 0 unused cells and 194 unused wires.
+<suppressed ~1 debug messages>
+
+10.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module interrupt_ctrl.
+<suppressed ~1 debug messages>
+
+10.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+10.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \interrupt_ctrl..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+10.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \interrupt_ctrl.
+Performed a total of 0 changes.
+
+10.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\interrupt_ctrl'.
+Computing hashes of 572 cells of `\interrupt_ctrl'.
+Finding duplicate cells in `\interrupt_ctrl'.
+Removed a total of 0 cells.
+
+10.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+10.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \interrupt_ctrl..
+
+10.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module interrupt_ctrl.
+
+10.16. Finished fast OPT passes. (There is nothing left to do.)
+
+11. Executing FLATTEN pass (flatten design).
+
+12. Executing OPT pass (performing simple optimizations).
+
+12.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module interrupt_ctrl.
+
+12.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\interrupt_ctrl'.
+Computing hashes of 572 cells of `\interrupt_ctrl'.
+Finding duplicate cells in `\interrupt_ctrl'.
+Removed a total of 0 cells.
+
+12.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \interrupt_ctrl..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+12.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \interrupt_ctrl.
+Performed a total of 0 changes.
+
+12.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\interrupt_ctrl'.
+Computing hashes of 572 cells of `\interrupt_ctrl'.
+Finding duplicate cells in `\interrupt_ctrl'.
+Removed a total of 0 cells.
+
+12.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+12.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \interrupt_ctrl..
+
+12.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module interrupt_ctrl.
+
+12.9. Finished fast OPT passes. (There is nothing left to do.)
+
+13. Executing Liberty frontend: /home/smdadmin/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130B/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+Imported 428 cell types from liberty file.
+
+14. Executing Verilog-2005 frontend: /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-interrupt_ctrl/synth/interrupt_ctrl_netlist.v
+Parsing Verilog input from `/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-interrupt_ctrl/synth/interrupt_ctrl_netlist.v' to AST representation.
+Generating RTLIL representation for module `\interrupt_ctrl'.
+Successfully finished Verilog frontend.
+
+15. Executing HIERARCHY pass (managing design hierarchy).
+
+15.1. Analyzing design hierarchy..
+Top module:  \interrupt_ctrl
+
+15.2. Analyzing design hierarchy..
+Top module:  \interrupt_ctrl
+Removed 0 unused modules.
+
+16. Executing PROC pass (convert processes to netlists).
+
+16.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+16.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed a total of 0 dead cases.
+
+16.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 0 assignments to connections.
+
+16.4. Executing PROC_INIT pass (extract init attributes).
+
+16.5. Executing PROC_ARST pass (detect async resets in processes).
+
+16.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+
+16.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+
+16.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+16.9. Executing PROC_DFF pass (convert process syncs to FFs).
+
+16.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+16.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+16.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module interrupt_ctrl.
+
+17. Executing OPT pass (performing simple optimizations).
+
+17.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module interrupt_ctrl.
+
+17.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\interrupt_ctrl'.
+Computing hashes of 280 cells of `\interrupt_ctrl'.
+Finding duplicate cells in `\interrupt_ctrl'.
+Removed a total of 0 cells.
+
+17.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \interrupt_ctrl..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+17.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \interrupt_ctrl.
+Performed a total of 0 changes.
+
+17.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\interrupt_ctrl'.
+Computing hashes of 280 cells of `\interrupt_ctrl'.
+Finding duplicate cells in `\interrupt_ctrl'.
+Removed a total of 0 cells.
+
+17.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+17.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \interrupt_ctrl..
+Removed 0 unused cells and 280 unused wires.
+<suppressed ~1 debug messages>
+
+17.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module interrupt_ctrl.
+
+17.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+17.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \interrupt_ctrl..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+17.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \interrupt_ctrl.
+Performed a total of 0 changes.
+
+17.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\interrupt_ctrl'.
+Computing hashes of 280 cells of `\interrupt_ctrl'.
+Finding duplicate cells in `\interrupt_ctrl'.
+Removed a total of 0 cells.
+
+17.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+17.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \interrupt_ctrl..
+
+17.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module interrupt_ctrl.
+
+17.16. Finished fast OPT passes. (There is nothing left to do.)
+
+18. Executing ASYNC2SYNC pass.
+
+19. Executing MEMORY pass.
+
+19.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+19.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+19.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+19.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+19.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+19.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \interrupt_ctrl..
+
+19.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+19.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+19.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \interrupt_ctrl..
+
+19.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+19.11. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+20. Executing OPT pass (performing simple optimizations).
+
+20.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module interrupt_ctrl.
+
+20.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\interrupt_ctrl'.
+Computing hashes of 280 cells of `\interrupt_ctrl'.
+Finding duplicate cells in `\interrupt_ctrl'.
+Removed a total of 0 cells.
+
+20.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \interrupt_ctrl..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+20.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \interrupt_ctrl.
+Performed a total of 0 changes.
+
+20.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\interrupt_ctrl'.
+Computing hashes of 280 cells of `\interrupt_ctrl'.
+Finding duplicate cells in `\interrupt_ctrl'.
+Removed a total of 0 cells.
+
+20.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+20.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \interrupt_ctrl..
+
+20.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module interrupt_ctrl.
+
+20.9. Finished fast OPT passes. (There is nothing left to do.)
+
+21. Executing TECHMAP pass (map to technology primitives).
+
+21.1. Executing Verilog-2005 frontend: /home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v
+Parsing Verilog input from `/home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu_brent_kung'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `$__div_mod_u'.
+Generating RTLIL representation for module `$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Generating RTLIL representation for module `$connect'.
+Generating RTLIL representation for module `$input_port'.
+Successfully finished Verilog frontend.
+
+21.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~77 debug messages>
+
+22. Executing OPT pass (performing simple optimizations).
+
+22.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module interrupt_ctrl.
+
+22.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\interrupt_ctrl'.
+Computing hashes of 280 cells of `\interrupt_ctrl'.
+Finding duplicate cells in `\interrupt_ctrl'.
+Removed a total of 0 cells.
+
+22.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \interrupt_ctrl..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+22.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \interrupt_ctrl.
+Performed a total of 0 changes.
+
+22.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\interrupt_ctrl'.
+Computing hashes of 280 cells of `\interrupt_ctrl'.
+Finding duplicate cells in `\interrupt_ctrl'.
+Removed a total of 0 cells.
+
+22.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+22.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \interrupt_ctrl..
+
+22.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module interrupt_ctrl.
+
+22.9. Finished fast OPT passes. (There is nothing left to do.)
+
+23. Executing FLATTEN pass (flatten design).
+
+24. Executing OPT pass (performing simple optimizations).
+
+24.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module interrupt_ctrl.
+
+24.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\interrupt_ctrl'.
+Computing hashes of 280 cells of `\interrupt_ctrl'.
+Finding duplicate cells in `\interrupt_ctrl'.
+Removed a total of 0 cells.
+
+24.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \interrupt_ctrl..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+24.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \interrupt_ctrl.
+Performed a total of 0 changes.
+
+24.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\interrupt_ctrl'.
+Computing hashes of 280 cells of `\interrupt_ctrl'.
+Finding duplicate cells in `\interrupt_ctrl'.
+Removed a total of 0 cells.
+
+24.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+24.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \interrupt_ctrl..
+
+24.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module interrupt_ctrl.
+
+24.9. Finished fast OPT passes. (There is nothing left to do.)
+
+25. Executing EQUIV_MAKE pass (creating equiv checking module).
+Presumably equivalent wires: irq_in_prev_gold (\irq_in_prev_gold), irq_in_prev_gate ({ \_123__gate \_122__gate \_121__gate \_120__gate \_119__gate \_118__gate \_132__gate \_131__gate \_130__gate \_129__gate \_128__gate \_127__gate \_126__gate \_125__gate \_124__gate \_117__gate }) -> irq_in_prev
+Presumably equivalent wires: edge_cfg_gold (\edge_cfg_gold), edge_cfg_gate ({ \_075__gate \_074__gate \_073__gate \_072__gate \_071__gate \_070__gate \_084__gate \_083__gate \_082__gate \_081__gate \_080__gate \_079__gate \_078__gate \_077__gate \_076__gate \_069__gate }) -> edge_cfg
+Presumably equivalent wires: enable_gold (\enable_gold), enable_gate ({ \_091__gate \_090__gate \_089__gate \_088__gate \_087__gate \_086__gate \_100__gate \_099__gate \_098__gate \_097__gate \_096__gate \_095__gate \_094__gate \_093__gate \_092__gate \_085__gate }) -> enable
+Presumably equivalent wires: pending_gold (\pending_gold), pending_gate ({ \_271__gate \_270__gate \_269__gate \_268__gate \_267__gate \_266__gate \_280__gate \_279__gate \_278__gate \_277__gate \_276__gate \_275__gate \_274__gate \_273__gate \_272__gate \_265__gate }) -> pending
+Presumably equivalent wires: irq_out_gold (\irq_out_gold), irq_out_gate (\irq_out_gate) -> irq_out
+Presumably equivalent wires: irq_in_gold (\irq_in_gold), irq_in_gate (\irq_in_gate) -> irq_in
+Presumably equivalent wires: wb_ack_o_gold (\wb_ack_o_gold), wb_ack_o_gate (\wb_ack_o_gate) -> wb_ack_o
+Presumably equivalent wires: wb_cyc_i_gold (\wb_cyc_i_gold), wb_cyc_i_gate (\wb_cyc_i_gate) -> wb_cyc_i
+Presumably equivalent wires: wb_stb_i_gold (\wb_stb_i_gold), wb_stb_i_gate (\wb_stb_i_gate) -> wb_stb_i
+Presumably equivalent wires: wb_we_i_gold (\wb_we_i_gold), wb_we_i_gate (\wb_we_i_gate) -> wb_we_i
+Presumably equivalent wires: wb_sel_i_gold (\wb_sel_i_gold), wb_sel_i_gate (\wb_sel_i_gate) -> wb_sel_i
+Presumably equivalent wires: wb_dat_o_gold ({ 16'0000000000000000 \wb_dat_o_gold [15:0] }), wb_dat_o_gate ({ 16'0000000000000000 \_308__gate \_307__gate \_306__gate \_305__gate \_304__gate \_303__gate \_317__gate \_316__gate \_315__gate \_314__gate \_313__gate \_312__gate \_311__gate \_310__gate \_309__gate \_302__gate }) -> wb_dat_o
+Presumably equivalent wires: wb_dat_i_gold (\wb_dat_i_gold), wb_dat_i_gate (\wb_dat_i_gate) -> wb_dat_i
+Presumably equivalent wires: wb_adr_i_gold (\wb_adr_i_gold), wb_adr_i_gate (\wb_adr_i_gate) -> wb_adr_i
+Presumably equivalent wires: rst_ni_gold (\rst_ni_gold), rst_ni_gate (\rst_ni_gate) -> rst_ni
+Presumably equivalent wires: clk_i_gold (\clk_i_gold), clk_i_gate (\clk_i_gate) -> clk_i
+Changing input Q of cell _805__gate (sky130_fd_sc_hd__dfrtp_1): \irq_out_gate -> \irq_out
+Changing input Q of cell _804__gate (sky130_fd_sc_hd__dfrtp_1): \wb_ack_o_gate -> \wb_ack_o
+Changing input Q of cell _771__gate (sky130_fd_sc_hd__dfrtp_1): \_308__gate -> \wb_dat_o [15]
+Changing input Q of cell _770__gate (sky130_fd_sc_hd__dfrtp_1): \_307__gate -> \wb_dat_o [14]
+Changing input Q of cell _769__gate (sky130_fd_sc_hd__dfrtp_1): \_306__gate -> \wb_dat_o [13]
+Changing input Q of cell _768__gate (sky130_fd_sc_hd__dfrtp_1): \_305__gate -> \wb_dat_o [12]
+Changing input Q of cell _767__gate (sky130_fd_sc_hd__dfrtp_1): \_304__gate -> \wb_dat_o [11]
+Changing input Q of cell _766__gate (sky130_fd_sc_hd__dfrtp_1): \_303__gate -> \wb_dat_o [10]
+Changing input Q of cell _765__gate (sky130_fd_sc_hd__dfrtp_1): \_317__gate -> \wb_dat_o [9]
+Changing input Q of cell _764__gate (sky130_fd_sc_hd__dfrtp_1): \_316__gate -> \wb_dat_o [8]
+Changing input Q of cell _763__gate (sky130_fd_sc_hd__dfrtp_1): \_315__gate -> \wb_dat_o [7]
+Changing input Q of cell _762__gate (sky130_fd_sc_hd__dfrtp_1): \_314__gate -> \wb_dat_o [6]
+Changing input Q of cell _761__gate (sky130_fd_sc_hd__dfrtp_1): \_313__gate -> \wb_dat_o [5]
+Changing input Q of cell _760__gate (sky130_fd_sc_hd__dfrtp_1): \_312__gate -> \wb_dat_o [4]
+Changing input Q of cell _759__gate (sky130_fd_sc_hd__dfrtp_1): \_311__gate -> \wb_dat_o [3]
+Changing input Q of cell _758__gate (sky130_fd_sc_hd__dfrtp_1): \_310__gate -> \wb_dat_o [2]
+Changing input Q of cell _757__gate (sky130_fd_sc_hd__dfrtp_1): \_309__gate -> \wb_dat_o [1]
+Changing input Q of cell _756__gate (sky130_fd_sc_hd__dfrtp_1): \_302__gate -> \wb_dat_o [0]
+Changing input A of cell _753__gate (sky130_fd_sc_hd__nor2_1): \_308__gate -> \wb_dat_o [15]
+Changing input A of cell _748__gate (sky130_fd_sc_hd__nor2_1): \_302__gate -> \wb_dat_o [0]
+Changing input A of cell _744__gate (sky130_fd_sc_hd__nor2_1): \_309__gate -> \wb_dat_o [1]
+Changing input A of cell _740__gate (sky130_fd_sc_hd__nor2_1): \_310__gate -> \wb_dat_o [2]
+Changing input A of cell _736__gate (sky130_fd_sc_hd__nor2_1): \_311__gate -> \wb_dat_o [3]
+Changing input A of cell _732__gate (sky130_fd_sc_hd__nor2_1): \_312__gate -> \wb_dat_o [4]
+Changing input A of cell _728__gate (sky130_fd_sc_hd__nor2_1): \_313__gate -> \wb_dat_o [5]
+Changing input A of cell _724__gate (sky130_fd_sc_hd__nor2_1): \_314__gate -> \wb_dat_o [6]
+Changing input A of cell _720__gate (sky130_fd_sc_hd__nor2_1): \_315__gate -> \wb_dat_o [7]
+Changing input A of cell _716__gate (sky130_fd_sc_hd__nor2_1): \_316__gate -> \wb_dat_o [8]
+Changing input A of cell _712__gate (sky130_fd_sc_hd__nor2_1): \_317__gate -> \wb_dat_o [9]
+Changing input A of cell _708__gate (sky130_fd_sc_hd__nor2_1): \_303__gate -> \wb_dat_o [10]
+Changing input A of cell _704__gate (sky130_fd_sc_hd__nor2_1): \_304__gate -> \wb_dat_o [11]
+Changing input A of cell _700__gate (sky130_fd_sc_hd__nor2_1): \_305__gate -> \wb_dat_o [12]
+Changing input A of cell _696__gate (sky130_fd_sc_hd__nor2_1): \_306__gate -> \wb_dat_o [13]
+Changing input A of cell _692__gate (sky130_fd_sc_hd__nor2_1): \_307__gate -> \wb_dat_o [14]
+Changing input A_N of cell _558__gate (sky130_fd_sc_hd__and3b_1): \wb_ack_o_gate -> \wb_ack_o
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1049_gold ($_AND_): \enable_gold [2] -> \enable [2]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1055_gold ($_AND_): \enable_gold [8] -> \enable [8]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1061_gold ($_AND_): \enable_gold [14] -> \enable [14]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1080_gold ($_AND_): \edge_cfg_gold [1] -> \edge_cfg [1]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1086_gold ($_AND_): \edge_cfg_gold [7] -> \edge_cfg [7]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1092_gold ($_AND_): \edge_cfg_gold [13] -> \edge_cfg [13]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1053_gold ($_AND_): \enable_gold [6] -> \enable [6]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1090_gold ($_AND_): \edge_cfg_gold [11] -> \edge_cfg [11]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1082_gold ($_AND_): \edge_cfg_gold [3] -> \edge_cfg [3]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1059_gold ($_AND_): \enable_gold [12] -> \enable [12]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1088_gold ($_AND_): \edge_cfg_gold [9] -> \edge_cfg [9]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1051_gold ($_AND_): \enable_gold [4] -> \enable [4]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1048_gold ($_AND_): \enable_gold [1] -> \enable [1]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1054_gold ($_AND_): \enable_gold [7] -> \enable [7]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1060_gold ($_AND_): \enable_gold [13] -> \enable [13]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1062_gold ($_AND_): \enable_gold [15] -> \enable [15]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1081_gold ($_AND_): \edge_cfg_gold [2] -> \edge_cfg [2]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1079_gold ($_AND_): \edge_cfg_gold [0] -> \edge_cfg [0]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1085_gold ($_AND_): \edge_cfg_gold [6] -> \edge_cfg [6]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1091_gold ($_AND_): \edge_cfg_gold [12] -> \edge_cfg [12]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1057_gold ($_AND_): \enable_gold [10] -> \enable [10]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1094_gold ($_AND_): \edge_cfg_gold [15] -> \edge_cfg [15]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1056_gold ($_AND_): \enable_gold [9] -> \enable [9]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1047_gold ($_AND_): \enable_gold [0] -> \enable [0]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1084_gold ($_AND_): \edge_cfg_gold [5] -> \edge_cfg [5]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1083_gold ($_AND_): \edge_cfg_gold [4] -> \edge_cfg [4]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$635_gold ($_OR_): \pending_gold [14] -> \pending [14]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$634_gold ($_OR_): \pending_gold [13] -> \pending [13]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$633_gold ($_OR_): \pending_gold [12] -> \pending [12]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$632_gold ($_OR_): \pending_gold [11] -> \pending [11]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$631_gold ($_OR_): \pending_gold [10] -> \pending [10]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$630_gold ($_OR_): \pending_gold [9] -> \pending [9]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$629_gold ($_OR_): \pending_gold [8] -> \pending [8]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$628_gold ($_OR_): \pending_gold [7] -> \pending [7]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$627_gold ($_OR_): \pending_gold [6] -> \pending [6]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$626_gold ($_OR_): \pending_gold [5] -> \pending [5]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$625_gold ($_OR_): \pending_gold [4] -> \pending [4]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$624_gold ($_OR_): \pending_gold [3] -> \pending [3]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$623_gold ($_OR_): \pending_gold [2] -> \pending [2]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$622_gold ($_OR_): \pending_gold [1] -> \pending [1]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$621_gold ($_OR_): \pending_gold [0] -> \pending [0]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$619_gold ($_AND_): \pending_gold [14] -> \pending [14]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$618_gold ($_AND_): \pending_gold [13] -> \pending [13]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$617_gold ($_AND_): \pending_gold [12] -> \pending [12]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$616_gold ($_AND_): \pending_gold [11] -> \pending [11]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$615_gold ($_AND_): \pending_gold [10] -> \pending [10]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$614_gold ($_AND_): \pending_gold [9] -> \pending [9]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$613_gold ($_AND_): \pending_gold [8] -> \pending [8]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$612_gold ($_AND_): \pending_gold [7] -> \pending [7]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$611_gold ($_AND_): \pending_gold [6] -> \pending [6]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$610_gold ($_AND_): \pending_gold [5] -> \pending [5]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$609_gold ($_AND_): \pending_gold [4] -> \pending [4]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$608_gold ($_AND_): \pending_gold [3] -> \pending [3]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$607_gold ($_AND_): \pending_gold [2] -> \pending [2]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$606_gold ($_AND_): \pending_gold [1] -> \pending [1]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$605_gold ($_AND_): \pending_gold [0] -> \pending [0]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$565_gold ($_AND_): \enable_gold [14] -> \enable [14]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$565_gold ($_AND_): \pending_gold [14] -> \pending [14]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$564_gold ($_AND_): \enable_gold [13] -> \enable [13]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$564_gold ($_AND_): \pending_gold [13] -> \pending [13]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$563_gold ($_AND_): \enable_gold [12] -> \enable [12]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$563_gold ($_AND_): \pending_gold [12] -> \pending [12]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$562_gold ($_AND_): \enable_gold [11] -> \enable [11]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$562_gold ($_AND_): \pending_gold [11] -> \pending [11]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$561_gold ($_AND_): \enable_gold [10] -> \enable [10]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$561_gold ($_AND_): \pending_gold [10] -> \pending [10]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$560_gold ($_AND_): \enable_gold [9] -> \enable [9]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$560_gold ($_AND_): \pending_gold [9] -> \pending [9]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$559_gold ($_AND_): \enable_gold [8] -> \enable [8]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$559_gold ($_AND_): \pending_gold [8] -> \pending [8]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$558_gold ($_AND_): \enable_gold [7] -> \enable [7]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$558_gold ($_AND_): \pending_gold [7] -> \pending [7]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$557_gold ($_AND_): \enable_gold [6] -> \enable [6]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$557_gold ($_AND_): \pending_gold [6] -> \pending [6]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$556_gold ($_AND_): \enable_gold [5] -> \enable [5]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$556_gold ($_AND_): \pending_gold [5] -> \pending [5]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$555_gold ($_AND_): \enable_gold [4] -> \enable [4]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$555_gold ($_AND_): \pending_gold [4] -> \pending [4]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$554_gold ($_AND_): \enable_gold [3] -> \enable [3]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$554_gold ($_AND_): \pending_gold [3] -> \pending [3]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$553_gold ($_AND_): \enable_gold [2] -> \enable [2]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$553_gold ($_AND_): \pending_gold [2] -> \pending [2]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$552_gold ($_AND_): \enable_gold [1] -> \enable [1]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$552_gold ($_AND_): \pending_gold [1] -> \pending [1]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$551_gold ($_AND_): \enable_gold [0] -> \enable [0]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$551_gold ($_AND_): \pending_gold [0] -> \pending [0]
+Changing input A of cell $auto$simplemap.cc:46:simplemap_not$517_gold ($_NOT_): \edge_cfg_gold [14] -> \edge_cfg [14]
+Changing input A of cell $auto$simplemap.cc:46:simplemap_not$516_gold ($_NOT_): \edge_cfg_gold [13] -> \edge_cfg [13]
+Changing input A of cell $auto$simplemap.cc:46:simplemap_not$515_gold ($_NOT_): \edge_cfg_gold [12] -> \edge_cfg [12]
+Changing input A of cell $auto$simplemap.cc:46:simplemap_not$514_gold ($_NOT_): \edge_cfg_gold [11] -> \edge_cfg [11]
+Changing input A of cell $auto$simplemap.cc:46:simplemap_not$513_gold ($_NOT_): \edge_cfg_gold [10] -> \edge_cfg [10]
+Changing input A of cell $auto$simplemap.cc:46:simplemap_not$512_gold ($_NOT_): \edge_cfg_gold [9] -> \edge_cfg [9]
+Changing input A of cell $auto$simplemap.cc:46:simplemap_not$511_gold ($_NOT_): \edge_cfg_gold [8] -> \edge_cfg [8]
+Changing input A of cell $auto$simplemap.cc:46:simplemap_not$510_gold ($_NOT_): \edge_cfg_gold [7] -> \edge_cfg [7]
+Changing input A of cell $auto$simplemap.cc:46:simplemap_not$509_gold ($_NOT_): \edge_cfg_gold [6] -> \edge_cfg [6]
+Changing input A of cell $auto$simplemap.cc:46:simplemap_not$508_gold ($_NOT_): \edge_cfg_gold [5] -> \edge_cfg [5]
+Changing input A of cell $auto$simplemap.cc:46:simplemap_not$507_gold ($_NOT_): \edge_cfg_gold [4] -> \edge_cfg [4]
+Changing input A of cell $auto$simplemap.cc:46:simplemap_not$506_gold ($_NOT_): \edge_cfg_gold [3] -> \edge_cfg [3]
+Changing input A of cell $auto$simplemap.cc:46:simplemap_not$505_gold ($_NOT_): \edge_cfg_gold [2] -> \edge_cfg [2]
+Changing input A of cell $auto$simplemap.cc:46:simplemap_not$504_gold ($_NOT_): \edge_cfg_gold [1] -> \edge_cfg [1]
+Changing input A of cell $auto$simplemap.cc:46:simplemap_not$503_gold ($_NOT_): \edge_cfg_gold [0] -> \edge_cfg [0]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$501_gold ($_OR_): \pending_gold [14] -> \pending [14]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$500_gold ($_OR_): \pending_gold [13] -> \pending [13]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$499_gold ($_OR_): \pending_gold [12] -> \pending [12]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$498_gold ($_OR_): \pending_gold [11] -> \pending [11]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$497_gold ($_OR_): \pending_gold [10] -> \pending [10]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$496_gold ($_OR_): \pending_gold [9] -> \pending [9]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$495_gold ($_OR_): \pending_gold [8] -> \pending [8]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$494_gold ($_OR_): \pending_gold [7] -> \pending [7]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$493_gold ($_OR_): \pending_gold [6] -> \pending [6]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$492_gold ($_OR_): \pending_gold [5] -> \pending [5]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$491_gold ($_OR_): \pending_gold [4] -> \pending [4]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$490_gold ($_OR_): \pending_gold [3] -> \pending [3]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$489_gold ($_OR_): \pending_gold [2] -> \pending [2]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$488_gold ($_OR_): \pending_gold [1] -> \pending [1]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$487_gold ($_OR_): \pending_gold [0] -> \pending [0]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$485_gold ($_AND_): \edge_cfg_gold [14] -> \edge_cfg [14]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$484_gold ($_AND_): \edge_cfg_gold [13] -> \edge_cfg [13]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$483_gold ($_AND_): \edge_cfg_gold [12] -> \edge_cfg [12]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$482_gold ($_AND_): \edge_cfg_gold [11] -> \edge_cfg [11]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$481_gold ($_AND_): \edge_cfg_gold [10] -> \edge_cfg [10]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$480_gold ($_AND_): \edge_cfg_gold [9] -> \edge_cfg [9]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$479_gold ($_AND_): \edge_cfg_gold [8] -> \edge_cfg [8]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$478_gold ($_AND_): \edge_cfg_gold [7] -> \edge_cfg [7]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$477_gold ($_AND_): \edge_cfg_gold [6] -> \edge_cfg [6]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$476_gold ($_AND_): \edge_cfg_gold [5] -> \edge_cfg [5]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$475_gold ($_AND_): \edge_cfg_gold [4] -> \edge_cfg [4]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$474_gold ($_AND_): \edge_cfg_gold [3] -> \edge_cfg [3]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$473_gold ($_AND_): \edge_cfg_gold [2] -> \edge_cfg [2]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$472_gold ($_AND_): \edge_cfg_gold [1] -> \edge_cfg [1]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$471_gold ($_AND_): \edge_cfg_gold [0] -> \edge_cfg [0]
+Changing input A of cell $auto$simplemap.cc:46:simplemap_not$453_gold ($_NOT_): \irq_in_prev_gold [14] -> \irq_in_prev [14]
+Changing input A of cell $auto$simplemap.cc:46:simplemap_not$452_gold ($_NOT_): \irq_in_prev_gold [13] -> \irq_in_prev [13]
+Changing input A of cell $auto$simplemap.cc:46:simplemap_not$451_gold ($_NOT_): \irq_in_prev_gold [12] -> \irq_in_prev [12]
+Changing input A of cell $auto$simplemap.cc:46:simplemap_not$450_gold ($_NOT_): \irq_in_prev_gold [11] -> \irq_in_prev [11]
+Changing input A of cell $auto$simplemap.cc:46:simplemap_not$449_gold ($_NOT_): \irq_in_prev_gold [10] -> \irq_in_prev [10]
+Changing input A of cell $auto$simplemap.cc:46:simplemap_not$448_gold ($_NOT_): \irq_in_prev_gold [9] -> \irq_in_prev [9]
+Changing input A of cell $auto$simplemap.cc:46:simplemap_not$447_gold ($_NOT_): \irq_in_prev_gold [8] -> \irq_in_prev [8]
+Changing input A of cell $auto$simplemap.cc:46:simplemap_not$446_gold ($_NOT_): \irq_in_prev_gold [7] -> \irq_in_prev [7]
+Changing input A of cell $auto$simplemap.cc:46:simplemap_not$445_gold ($_NOT_): \irq_in_prev_gold [6] -> \irq_in_prev [6]
+Changing input A of cell $auto$simplemap.cc:46:simplemap_not$444_gold ($_NOT_): \irq_in_prev_gold [5] -> \irq_in_prev [5]
+Changing input A of cell $auto$simplemap.cc:46:simplemap_not$443_gold ($_NOT_): \irq_in_prev_gold [4] -> \irq_in_prev [4]
+Changing input A of cell $auto$simplemap.cc:46:simplemap_not$442_gold ($_NOT_): \irq_in_prev_gold [3] -> \irq_in_prev [3]
+Changing input A of cell $auto$simplemap.cc:46:simplemap_not$441_gold ($_NOT_): \irq_in_prev_gold [2] -> \irq_in_prev [2]
+Changing input A of cell $auto$simplemap.cc:46:simplemap_not$440_gold ($_NOT_): \irq_in_prev_gold [1] -> \irq_in_prev [1]
+Changing input A of cell $auto$simplemap.cc:46:simplemap_not$439_gold ($_NOT_): \irq_in_prev_gold [0] -> \irq_in_prev [0]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1087_gold ($_AND_): \edge_cfg_gold [8] -> \edge_cfg [8]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1050_gold ($_AND_): \enable_gold [3] -> \enable [3]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1058_gold ($_AND_): \enable_gold [11] -> \enable [11]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1052_gold ($_AND_): \enable_gold [5] -> \enable [5]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1093_gold ($_AND_): \edge_cfg_gold [14] -> \edge_cfg [14]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1030_gold ($_AND_): \pending_gold [15] -> \pending [15]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1029_gold ($_AND_): \pending_gold [14] -> \pending [14]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1028_gold ($_AND_): \pending_gold [13] -> \pending [13]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1027_gold ($_AND_): \pending_gold [12] -> \pending [12]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1026_gold ($_AND_): \pending_gold [11] -> \pending [11]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1025_gold ($_AND_): \pending_gold [10] -> \pending [10]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1024_gold ($_AND_): \pending_gold [9] -> \pending [9]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1023_gold ($_AND_): \pending_gold [8] -> \pending [8]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1022_gold ($_AND_): \pending_gold [7] -> \pending [7]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1021_gold ($_AND_): \pending_gold [6] -> \pending [6]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1019_gold ($_AND_): \pending_gold [4] -> \pending [4]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1018_gold ($_AND_): \pending_gold [3] -> \pending [3]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1017_gold ($_AND_): \pending_gold [2] -> \pending [2]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1016_gold ($_AND_): \pending_gold [1] -> \pending [1]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1015_gold ($_AND_): \pending_gold [0] -> \pending [0]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1020_gold ($_AND_): \pending_gold [5] -> \pending [5]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1089_gold ($_AND_): \edge_cfg_gold [10] -> \edge_cfg [10]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$636_gold ($_OR_): \pending_gold [15] -> \pending [15]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$620_gold ($_AND_): \pending_gold [15] -> \pending [15]
+Changing input A of cell $auto$simplemap.cc:227:simplemap_lognot$587_gold ($_NOT_): \wb_ack_o_gold -> \wb_ack_o
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$566_gold ($_AND_): \enable_gold [15] -> \enable [15]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$566_gold ($_AND_): \pending_gold [15] -> \pending [15]
+Changing input A of cell $auto$simplemap.cc:46:simplemap_not$518_gold ($_NOT_): \edge_cfg_gold [15] -> \edge_cfg [15]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$502_gold ($_OR_): \pending_gold [15] -> \pending [15]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$486_gold ($_AND_): \edge_cfg_gold [15] -> \edge_cfg [15]
+Changing input A of cell $auto$simplemap.cc:46:simplemap_not$454_gold ($_NOT_): \irq_in_prev_gold [15] -> \irq_in_prev [15]
+Setting undriven nets to undef: \wb_ack_o_gate
+Setting undriven nets to undef: \irq_out_gate
+Setting undriven nets to undef: \_314__gate
+Setting undriven nets to undef: \_315__gate
+Setting undriven nets to undef: \_316__gate
+Setting undriven nets to undef: \_317__gate
+Setting undriven nets to undef: \_302__gate
+Setting undriven nets to undef: \_303__gate
+Setting undriven nets to undef: \_304__gate
+Setting undriven nets to undef: \_305__gate
+Setting undriven nets to undef: \_306__gate
+Setting undriven nets to undef: \_307__gate
+Setting undriven nets to undef: \_308__gate
+Setting undriven nets to undef: \_309__gate
+Setting undriven nets to undef: \_310__gate
+Setting undriven nets to undef: \_311__gate
+Setting undriven nets to undef: \_312__gate
+Setting undriven nets to undef: \_313__gate
+
+26. Executing EQUIV_SIMPLE pass.
+Found 98 unproven $equiv cells (7 groups) in interrupt_ctrl:
+ Grouping SAT models for \wb_dat_o:
+  Trying to prove $equiv for \wb_dat_o [0]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [1]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [2]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [3]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [4]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [5]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [6]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [7]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [8]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [9]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [10]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [11]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [12]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [13]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [14]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [15]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [16]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [17]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [18]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [19]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [20]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [21]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [22]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [23]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [24]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [25]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [26]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [27]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [28]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [29]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [30]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [31]:ezsat
+ success!
+  Trying to prove $equiv for \wb_ack_o:ezsat
+ failed.
+  Trying to prove $equiv for \irq_out:ezsat
+ failed.
+ Grouping SAT models for \pending:
+  Trying to prove $equiv for \pending [0]:ezsat
+ failed.
+  Trying to prove $equiv for \pending [1]:ezsat
+ failed.
+  Trying to prove $equiv for \pending [2]:ezsat
+ failed.
+  Trying to prove $equiv for \pending [3]:ezsat
+ failed.
+  Trying to prove $equiv for \pending [4]:ezsat
+ failed.
+  Trying to prove $equiv for \pending [5]:ezsat
+ failed.
+  Trying to prove $equiv for \pending [6]:ezsat
+ failed.
+  Trying to prove $equiv for \pending [7]:ezsat
+ failed.
+  Trying to prove $equiv for \pending [8]:ezsat
+ failed.
+  Trying to prove $equiv for \pending [9]:ezsat
+ failed.
+  Trying to prove $equiv for \pending [10]:ezsat
+ failed.
+  Trying to prove $equiv for \pending [11]:ezsat
+ failed.
+  Trying to prove $equiv for \pending [12]:ezsat
+ failed.
+  Trying to prove $equiv for \pending [13]:ezsat
+ failed.
+  Trying to prove $equiv for \pending [14]:ezsat
+ failed.
+  Trying to prove $equiv for \pending [15]:ezsat
+ failed.
+ Grouping SAT models for \enable:
+  Trying to prove $equiv for \enable [0]:ezsat
+ failed.
+  Trying to prove $equiv for \enable [1]:ezsat
+ failed.
+  Trying to prove $equiv for \enable [2]:ezsat
+ failed.
+  Trying to prove $equiv for \enable [3]:ezsat
+ failed.
+  Trying to prove $equiv for \enable [4]:ezsat
+ failed.
+  Trying to prove $equiv for \enable [5]:ezsat
+ failed.
+  Trying to prove $equiv for \enable [6]:ezsat
+ failed.
+  Trying to prove $equiv for \enable [7]:ezsat
+ failed.
+  Trying to prove $equiv for \enable [8]:ezsat
+ failed.
+  Trying to prove $equiv for \enable [9]:ezsat
+ failed.
+  Trying to prove $equiv for \enable [10]:ezsat
+ failed.
+  Trying to prove $equiv for \enable [11]:ezsat
+ failed.
+  Trying to prove $equiv for \enable [12]:ezsat
+ failed.
+  Trying to prove $equiv for \enable [13]:ezsat
+ failed.
+  Trying to prove $equiv for \enable [14]:ezsat
+ failed.
+  Trying to prove $equiv for \enable [15]:ezsat
+ failed.
+ Grouping SAT models for \edge_cfg:
+  Trying to prove $equiv for \edge_cfg [0]:ezsat
+ failed.
+  Trying to prove $equiv for \edge_cfg [1]:ezsat
+ failed.
+  Trying to prove $equiv for \edge_cfg [2]:ezsat
+ failed.
+  Trying to prove $equiv for \edge_cfg [3]:ezsat
+ failed.
+  Trying to prove $equiv for \edge_cfg [4]:ezsat
+ failed.
+  Trying to prove $equiv for \edge_cfg [5]:ezsat
+ failed.
+  Trying to prove $equiv for \edge_cfg [6]:ezsat
+ failed.
+  Trying to prove $equiv for \edge_cfg [7]:ezsat
+ failed.
+  Trying to prove $equiv for \edge_cfg [8]:ezsat
+ failed.
+  Trying to prove $equiv for \edge_cfg [9]:ezsat
+ failed.
+  Trying to prove $equiv for \edge_cfg [10]:ezsat
+ failed.
+  Trying to prove $equiv for \edge_cfg [11]:ezsat
+ failed.
+  Trying to prove $equiv for \edge_cfg [12]:ezsat
+ failed.
+  Trying to prove $equiv for \edge_cfg [13]:ezsat
+ failed.
+  Trying to prove $equiv for \edge_cfg [14]:ezsat
+ failed.
+  Trying to prove $equiv for \edge_cfg [15]:ezsat
+ failed.
+ Grouping SAT models for \irq_in_prev:
+  Trying to prove $equiv for \irq_in_prev [0]:ezsat
+ failed.
+  Trying to prove $equiv for \irq_in_prev [1]:ezsat
+ failed.
+  Trying to prove $equiv for \irq_in_prev [2]:ezsat
+ failed.
+  Trying to prove $equiv for \irq_in_prev [3]:ezsat
+ failed.
+  Trying to prove $equiv for \irq_in_prev [4]:ezsat
+ failed.
+  Trying to prove $equiv for \irq_in_prev [5]:ezsat
+ failed.
+  Trying to prove $equiv for \irq_in_prev [6]:ezsat
+ failed.
+  Trying to prove $equiv for \irq_in_prev [7]:ezsat
+ failed.
+  Trying to prove $equiv for \irq_in_prev [8]:ezsat
+ failed.
+  Trying to prove $equiv for \irq_in_prev [9]:ezsat
+ failed.
+  Trying to prove $equiv for \irq_in_prev [10]:ezsat
+ failed.
+  Trying to prove $equiv for \irq_in_prev [11]:ezsat
+ failed.
+  Trying to prove $equiv for \irq_in_prev [12]:ezsat
+ failed.
+  Trying to prove $equiv for \irq_in_prev [13]:ezsat
+ failed.
+  Trying to prove $equiv for \irq_in_prev [14]:ezsat
+ failed.
+  Trying to prove $equiv for \irq_in_prev [15]:ezsat
+ failed.
+Proved 16 previously unproven $equiv cells.
+
+27. Executing EQUIV_INDUCT pass.
+Found 82 unproven $equiv cells in module interrupt_ctrl:

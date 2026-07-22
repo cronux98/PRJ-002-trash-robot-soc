@@ -1,0 +1,1375 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.65+71 (git sha1 e56c6a954, clang++ 18.1.8 -fPIC -O3)
+
+-- Executing script file `/tmp/equiv_i2c_master.ys' --
+
+1. Executing Verilog-2005 frontend: /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_ina219/rtl/i2c_controller.v
+Parsing Verilog input from `/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_ina219/rtl/i2c_controller.v' to AST representation.
+Generating RTLIL representation for module `\i2c_controller'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_ina219/rtl/i2c_master.v
+Parsing Verilog input from `/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_ina219/rtl/i2c_master.v' to AST representation.
+/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_ina219/rtl/i2c_master.v:69: Warning: Yosys has only limited support for tri-state logic at the moment.
+/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_ina219/rtl/i2c_master.v:70: Warning: Yosys has only limited support for tri-state logic at the moment.
+Generating RTLIL representation for module `\i2c_master'.
+Successfully finished Verilog frontend.
+
+3. Executing HIERARCHY pass (managing design hierarchy).
+
+3.1. Analyzing design hierarchy..
+Top module:  \i2c_master
+
+3.2. Analyzing design hierarchy..
+Top module:  \i2c_master
+Removing unused module `\i2c_controller'.
+Removed 1 unused modules.
+
+4. Executing PROC pass (convert processes to netlists).
+
+4.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+4.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 12 switch rules as full_case in process $proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_ina219/rtl/i2c_master.v:72$64 in module i2c_master.
+Removed a total of 0 dead cases.
+
+4.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 4 redundant assignments.
+Promoted 0 assignments to connections.
+
+4.4. Executing PROC_INIT pass (extract init attributes).
+
+4.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \rst_ni in `\i2c_master.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_ina219/rtl/i2c_master.v:72$64'.
+
+4.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~18 debug messages>
+
+4.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\i2c_master.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_ina219/rtl/i2c_master.v:72$64'.
+     1/22: $0\status[3:0] [3]
+     2/22: $0\status[3:0] [2]
+     3/22: $0\status[3:0] [1]
+     4/22: $0\status[3:0] [0]
+     5/22: $0\irq_done[0:0]
+     6/22: $0\wb_ack_o[0:0]
+     7/22: $0\sda_oe[0:0]
+     8/22: $0\scl_oe[0:0]
+     9/22: $0\sda_out[0:0]
+    10/22: $0\scl_out[0:0]
+    11/22: $0\bit_cnt[3:0]
+    12/22: $0\rw_bit[0:0]
+    13/22: $0\stop_cmd[0:0]
+    14/22: $0\start_cmd[0:0]
+    15/22: $0\data_reg[7:0]
+    16/22: $0\clk_cnt[7:0]
+    17/22: $0\ctrl[3:0]
+    18/22: $0\divider[7:0]
+    19/22: $0\shift_reg[7:0]
+    20/22: $0\fsm_state[3:0]
+    21/22: $0\addr_reg[6:0]
+    22/22: $0\wb_dat_o[31:0]
+
+4.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+4.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\i2c_master.\wb_dat_o' using process `\i2c_master.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_ina219/rtl/i2c_master.v:72$64'.
+  created $adff cell `$procdff$380' with positive edge clock and positive level reset.
+Creating register for signal `\i2c_master.\wb_ack_o' using process `\i2c_master.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_ina219/rtl/i2c_master.v:72$64'.
+  created $adff cell `$procdff$385' with positive edge clock and positive level reset.
+Creating register for signal `\i2c_master.\addr_reg' using process `\i2c_master.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_ina219/rtl/i2c_master.v:72$64'.
+  created $adff cell `$procdff$390' with positive edge clock and positive level reset.
+Creating register for signal `\i2c_master.\fsm_state' using process `\i2c_master.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_ina219/rtl/i2c_master.v:72$64'.
+  created $adff cell `$procdff$395' with positive edge clock and positive level reset.
+Creating register for signal `\i2c_master.\shift_reg' using process `\i2c_master.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_ina219/rtl/i2c_master.v:72$64'.
+  created $adff cell `$procdff$400' with positive edge clock and positive level reset.
+Creating register for signal `\i2c_master.\irq_done' using process `\i2c_master.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_ina219/rtl/i2c_master.v:72$64'.
+  created $adff cell `$procdff$405' with positive edge clock and positive level reset.
+Creating register for signal `\i2c_master.\divider' using process `\i2c_master.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_ina219/rtl/i2c_master.v:72$64'.
+  created $adff cell `$procdff$410' with positive edge clock and positive level reset.
+Creating register for signal `\i2c_master.\clk_cnt' using process `\i2c_master.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_ina219/rtl/i2c_master.v:72$64'.
+  created $adff cell `$procdff$415' with positive edge clock and positive level reset.
+Creating register for signal `\i2c_master.\ctrl' using process `\i2c_master.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_ina219/rtl/i2c_master.v:72$64'.
+  created $adff cell `$procdff$420' with positive edge clock and positive level reset.
+Creating register for signal `\i2c_master.\status' using process `\i2c_master.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_ina219/rtl/i2c_master.v:72$64'.
+  created $adff cell `$procdff$425' with positive edge clock and positive level reset.
+Creating register for signal `\i2c_master.\data_reg' using process `\i2c_master.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_ina219/rtl/i2c_master.v:72$64'.
+  created $adff cell `$procdff$430' with positive edge clock and positive level reset.
+Creating register for signal `\i2c_master.\start_cmd' using process `\i2c_master.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_ina219/rtl/i2c_master.v:72$64'.
+  created $adff cell `$procdff$435' with positive edge clock and positive level reset.
+Creating register for signal `\i2c_master.\stop_cmd' using process `\i2c_master.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_ina219/rtl/i2c_master.v:72$64'.
+  created $adff cell `$procdff$440' with positive edge clock and positive level reset.
+Creating register for signal `\i2c_master.\rw_bit' using process `\i2c_master.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_ina219/rtl/i2c_master.v:72$64'.
+  created $adff cell `$procdff$445' with positive edge clock and positive level reset.
+Creating register for signal `\i2c_master.\bit_cnt' using process `\i2c_master.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_ina219/rtl/i2c_master.v:72$64'.
+  created $adff cell `$procdff$450' with positive edge clock and positive level reset.
+Creating register for signal `\i2c_master.\scl_out' using process `\i2c_master.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_ina219/rtl/i2c_master.v:72$64'.
+  created $adff cell `$procdff$455' with positive edge clock and positive level reset.
+Creating register for signal `\i2c_master.\sda_out' using process `\i2c_master.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_ina219/rtl/i2c_master.v:72$64'.
+  created $adff cell `$procdff$460' with positive edge clock and positive level reset.
+Creating register for signal `\i2c_master.\scl_oe' using process `\i2c_master.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_ina219/rtl/i2c_master.v:72$64'.
+  created $adff cell `$procdff$465' with positive edge clock and positive level reset.
+Creating register for signal `\i2c_master.\sda_oe' using process `\i2c_master.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_ina219/rtl/i2c_master.v:72$64'.
+  created $adff cell `$procdff$470' with positive edge clock and positive level reset.
+
+4.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+4.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 18 empty switches in `\i2c_master.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_ina219/rtl/i2c_master.v:72$64'.
+Removing empty process `i2c_master.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_ina219/rtl/i2c_master.v:72$64'.
+Cleaned up 18 empty switches.
+
+4.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module i2c_master.
+<suppressed ~54 debug messages>
+
+5. Executing OPT pass (performing simple optimizations).
+
+5.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module i2c_master.
+
+5.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\i2c_master'.
+Computing hashes of 195 cells of `\i2c_master'.
+Finding duplicate cells in `\i2c_master'.
+Computing hashes of 133 cells of `\i2c_master'.
+Finding duplicate cells in `\i2c_master'.
+<suppressed ~186 debug messages>
+Removed a total of 62 cells.
+
+5.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \i2c_master..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+      Replacing known input bits on port A of cell $procmux$244: \start_cmd -> 1'0
+      Replacing known input bits on port A of cell $procmux$217: \stop_cmd -> 1'0
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~143 debug messages>
+
+5.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \i2c_master.
+    New ctrl vector for $pmux cell $procmux$151: { $auto$opt_reduce.cc:135:opt_pmux$476 $auto$opt_reduce.cc:135:opt_pmux$474 $procmux$329_CMP $auto$opt_reduce.cc:135:opt_pmux$472 }
+  Optimizing cells in module \i2c_master.
+Performed a total of 1 changes.
+
+5.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\i2c_master'.
+Computing hashes of 136 cells of `\i2c_master'.
+Finding duplicate cells in `\i2c_master'.
+Computing hashes of 132 cells of `\i2c_master'.
+Finding duplicate cells in `\i2c_master'.
+<suppressed ~12 debug messages>
+Removed a total of 4 cells.
+
+5.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $procdff$450 ($adff) from module i2c_master (D = $procmux$181_Y, Q = \bit_cnt).
+Adding EN signal on $procdff$410 ($adff) from module i2c_master (D = \wb_dat_i [7:0], Q = \divider).
+Adding EN signal on $procdff$380 ($adff) from module i2c_master (D = $procmux$365_Y, Q = \wb_dat_o).
+Adding EN signal on $procdff$460 ($adff) from module i2c_master (D = $procmux$151_Y, Q = \sda_out).
+Adding EN signal on $procdff$390 ($adff) from module i2c_master (D = \wb_dat_i [6:0], Q = \addr_reg).
+Handling D = Q on $procdff$465 ($adff) from module i2c_master (removing D path).
+Adding EN signal on $procdff$445 ($adff) from module i2c_master (D = \wb_dat_i [2], Q = \rw_bit).
+Adding EN signal on $procdff$395 ($adff) from module i2c_master (D = $procmux$324_Y, Q = \fsm_state).
+Adding EN signal on $procdff$420 ($adff) from module i2c_master (D = \wb_dat_i [3:0], Q = \ctrl).
+Adding EN signal on $procdff$400 ($adff) from module i2c_master (D = $procmux$305_Y, Q = \shift_reg).
+Adding EN signal on $procdff$455 ($adff) from module i2c_master (D = $procmux$171_Y, Q = \scl_out).
+Adding EN signal on $procdff$470 ($adff) from module i2c_master (D = $procmux$136_Y, Q = \sda_oe).
+Adding EN signal on $procdff$425 ($adff) from module i2c_master (D = 1'1, Q = \status [2]).
+Adding EN signal on $procdff$425 ($adff) from module i2c_master (D = $procmux$89_Y, Q = \status [3]).
+Adding EN signal on $procdff$425 ($adff) from module i2c_master (D = $procmux$109_Y, Q = \status [1]).
+Adding EN signal on $procdff$425 ($adff) from module i2c_master (D = $procmux$117_Y, Q = \status [0]).
+Setting constant 1-bit at position 0 on $procdff$465 ($dlatch) from module i2c_master.
+
+5.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \i2c_master..
+Removed 31 unused cells and 201 unused wires.
+<suppressed ~33 debug messages>
+
+5.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module i2c_master.
+<suppressed ~9 debug messages>
+
+5.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+5.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \i2c_master..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~99 debug messages>
+
+5.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \i2c_master.
+    New ctrl vector for $pmux cell $procmux$305: { $procmux$137_CMP $procmux$138_CMP $auto$opt_reduce.cc:135:opt_pmux$555 $procmux$166_CMP }
+    New ctrl vector for $pmux cell $procmux$181: { $auto$opt_reduce.cc:135:opt_pmux$557 $procmux$138_CMP $procmux$105_CMP $procmux$166_CMP }
+    New ctrl vector for $pmux cell $procmux$136: { $procmux$137_CMP $procmux$138_CMP $auto$opt_reduce.cc:135:opt_pmux$559 $procmux$105_CMP }
+  Optimizing cells in module \i2c_master.
+Performed a total of 3 changes.
+
+5.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\i2c_master'.
+Computing hashes of 134 cells of `\i2c_master'.
+Finding duplicate cells in `\i2c_master'.
+Computing hashes of 127 cells of `\i2c_master'.
+Finding duplicate cells in `\i2c_master'.
+<suppressed ~21 debug messages>
+Removed a total of 7 cells.
+
+5.13. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $auto$ff.cc:337:slice$477 ($adffe) from module i2c_master (D = $procmux$181_Y, Q = \bit_cnt).
+Adding EN signal on $auto$ff.cc:337:slice$521 ($adffe) from module i2c_master (D = $procmux$305_Y, Q = \shift_reg).
+Adding EN signal on $auto$ff.cc:337:slice$529 ($adffe) from module i2c_master (D = $procmux$136_Y, Q = \sda_oe).
+
+5.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \i2c_master..
+Removed 0 unused cells and 9 unused wires.
+<suppressed ~1 debug messages>
+
+5.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module i2c_master.
+
+5.16. Rerunning OPT passes. (Maybe there is more to do..)
+
+5.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \i2c_master..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~95 debug messages>
+
+5.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \i2c_master.
+    New input vector for $reduce_and cell $auto$opt_dff.cc:252:make_patterns_logic$564: { \i2c_clk_en $auto$opt_dff.cc:234:make_patterns_logic$478 $auto$opt_dff.cc:234:make_patterns_logic$480 $auto$opt_dff.cc:234:make_patterns_logic$482 $auto$opt_dff.cc:234:make_patterns_logic$561 }
+    New input vector for $reduce_and cell $auto$opt_dff.cc:252:make_patterns_logic$569: { \i2c_clk_en $auto$opt_dff.cc:234:make_patterns_logic$478 $auto$opt_dff.cc:234:make_patterns_logic$524 $auto$opt_dff.cc:234:make_patterns_logic$566 }
+    New input vector for $reduce_and cell $auto$opt_dff.cc:252:make_patterns_logic$574: { \i2c_clk_en $auto$opt_dff.cc:234:make_patterns_logic$530 $auto$opt_dff.cc:234:make_patterns_logic$571 }
+  Optimizing cells in module \i2c_master.
+Performed a total of 3 changes.
+
+5.19. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\i2c_master'.
+Computing hashes of 133 cells of `\i2c_master'.
+Finding duplicate cells in `\i2c_master'.
+Computing hashes of 132 cells of `\i2c_master'.
+Finding duplicate cells in `\i2c_master'.
+<suppressed ~3 debug messages>
+Removed a total of 1 cells.
+
+5.20. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \i2c_master..
+Removed 3 unused cells and 4 unused wires.
+<suppressed ~4 debug messages>
+
+5.22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module i2c_master.
+
+5.23. Rerunning OPT passes. (Maybe there is more to do..)
+
+5.24. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \i2c_master..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~97 debug messages>
+
+5.25. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \i2c_master.
+Performed a total of 0 changes.
+
+5.26. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\i2c_master'.
+Computing hashes of 129 cells of `\i2c_master'.
+Finding duplicate cells in `\i2c_master'.
+Removed a total of 0 cells.
+
+5.27. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.28. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \i2c_master..
+
+5.29. Executing OPT_EXPR pass (perform const folding).
+Optimizing module i2c_master.
+
+5.30. Finished fast OPT passes. (There is nothing left to do.)
+
+6. Executing ASYNC2SYNC pass.
+Replacing i2c_master.$auto$ff.cc:337:slice$549 ($adffe): ARST=\rst_ni, D=$procmux$117_Y, Q=\status [0]
+Replacing i2c_master.$procdff$405 ($adff): ARST=\rst_ni, D=$0\irq_done[0:0], Q=\irq_done
+Replacing i2c_master.$auto$ff.cc:337:slice$570 ($adffe): ARST=\rst_ni, D=$procmux$136_Y, Q=\sda_oe
+Replacing i2c_master.$auto$ff.cc:337:slice$528 ($adffe): ARST=\rst_ni, D=$procmux$171_Y, Q=\scl
+Replacing i2c_master.$auto$ff.cc:337:slice$565 ($adffe): ARST=\rst_ni, D=$procmux$305_Y, Q=\shift_reg
+Replacing i2c_master.$auto$ff.cc:337:slice$518 ($adffe): ARST=\rst_ni, D=\wb_dat_i [3:0], Q=\ctrl
+Replacing i2c_master.$auto$ff.cc:337:slice$507 ($adffe): ARST=\rst_ni, D=$procmux$324_Y, Q=\fsm_state
+Replacing i2c_master.$auto$ff.cc:337:slice$504 ($adffe): ARST=\rst_ni, D=\wb_dat_i [2], Q=\rw_bit
+Replacing i2c_master.$auto$ff.cc:337:slice$501 ($adffe): ARST=\rst_ni, D=\wb_dat_i [6:0], Q=\addr_reg
+Replacing i2c_master.$procdff$430 ($adff): ARST=\rst_ni, D=$0\data_reg[7:0], Q=\data_reg
+Replacing i2c_master.$procdff$415 ($adff): ARST=\rst_ni, D=$0\clk_cnt[7:0], Q=\clk_cnt
+Replacing i2c_master.$procdff$385 ($adff): ARST=\rst_ni, D=$0\wb_ack_o[0:0], Q=\wb_ack_o
+Replacing i2c_master.$procdff$435 ($adff): ARST=\rst_ni, D=$0\start_cmd[0:0], Q=\start_cmd
+Replacing i2c_master.$auto$ff.cc:337:slice$494 ($adffe): ARST=\rst_ni, D=$procmux$151_Y, Q=\sda_out
+Replacing i2c_master.$auto$ff.cc:337:slice$489 ($adffe): ARST=\rst_ni, D=$procmux$365_Y, Q=\wb_dat_o
+Replacing i2c_master.$procdff$440 ($adff): ARST=\rst_ni, D=$0\stop_cmd[0:0], Q=\stop_cmd
+Replacing i2c_master.$auto$ff.cc:337:slice$486 ($adffe): ARST=\rst_ni, D=\wb_dat_i [7:0], Q=\divider
+Replacing i2c_master.$auto$ff.cc:337:slice$560 ($adffe): ARST=\rst_ni, D=$procmux$181_Y, Q=\bit_cnt
+Replacing i2c_master.$auto$ff.cc:337:slice$534 ($adffe): ARST=\rst_ni, D=1'1, Q=\status [2]
+Replacing i2c_master.$auto$ff.cc:337:slice$539 ($adffe): ARST=\rst_ni, D=$procmux$89_Y, Q=\status [3]
+Replacing i2c_master.$auto$ff.cc:337:slice$542 ($adffe): ARST=\rst_ni, D=$procmux$109_Y, Q=\status [1]
+
+7. Executing MEMORY pass.
+
+7.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+7.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+7.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+7.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+7.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+7.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \i2c_master..
+
+7.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+7.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+7.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \i2c_master..
+
+7.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+7.11. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+8. Executing OPT pass (performing simple optimizations).
+
+8.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module i2c_master.
+
+8.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\i2c_master'.
+Computing hashes of 150 cells of `\i2c_master'.
+Finding duplicate cells in `\i2c_master'.
+Removed a total of 0 cells.
+
+8.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \i2c_master..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~160 debug messages>
+
+8.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \i2c_master.
+Performed a total of 0 changes.
+
+8.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\i2c_master'.
+Computing hashes of 150 cells of `\i2c_master'.
+Finding duplicate cells in `\i2c_master'.
+Removed a total of 0 cells.
+
+8.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding SRST signal on $procdff$405 ($sdff) from module i2c_master (D = $procmux$124_Y, Q = $auto$async2sync.cc:253:execute$577, rval = 1'0).
+
+8.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \i2c_master..
+Removed 1 unused cells and 1 unused wires.
+<suppressed ~2 debug messages>
+
+8.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module i2c_master.
+
+8.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+8.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \i2c_master..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~159 debug messages>
+
+8.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \i2c_master.
+Performed a total of 0 changes.
+
+8.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\i2c_master'.
+Computing hashes of 150 cells of `\i2c_master'.
+Finding duplicate cells in `\i2c_master'.
+Removed a total of 0 cells.
+
+8.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+8.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \i2c_master..
+
+8.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module i2c_master.
+
+8.16. Finished fast OPT passes. (There is nothing left to do.)
+
+9. Executing TECHMAP pass (map to technology primitives).
+
+9.1. Executing Verilog-2005 frontend: /home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v
+Parsing Verilog input from `/home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu_brent_kung'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `$__div_mod_u'.
+Generating RTLIL representation for module `$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Generating RTLIL representation for module `$connect'.
+Generating RTLIL representation for module `$input_port'.
+Successfully finished Verilog frontend.
+
+9.2. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $reduce_and.
+Using extmapper simplemap for cells of type $sdff.
+Using extmapper simplemap for cells of type $mux.
+Using extmapper simplemap for cells of type $ne.
+Using extmapper simplemap for cells of type $sdffe.
+Using extmapper simplemap for cells of type $reduce_or.
+Using extmapper simplemap for cells of type $reduce_bool.
+Using extmapper simplemap for cells of type $not.
+Using extmapper simplemap for cells of type $logic_not.
+Running "alumacc" on wrapper $extern:wrap:$sub:Y_WIDTH=8:B_WIDTH=8:A_WIDTH=8:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$sub:Y_WIDTH=8:B_WIDTH=8:A_WIDTH=8:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$sub:Y_WIDTH=8:B_WIDTH=8:A_WIDTH=8:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Running "alumacc" on wrapper $extern:wrap:$gt:Y_WIDTH=1:B_WIDTH=32:A_WIDTH=4:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$gt:Y_WIDTH=1:B_WIDTH=32:A_WIDTH=4:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$gt:Y_WIDTH=1:B_WIDTH=32:A_WIDTH=4:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Running "alumacc" on wrapper $extern:wrap:$sub:Y_WIDTH=4:B_WIDTH=4:A_WIDTH=4:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$sub:Y_WIDTH=4:B_WIDTH=4:A_WIDTH=4:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$sub:Y_WIDTH=4:B_WIDTH=4:A_WIDTH=4:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Using extmapper simplemap for cells of type $logic_and.
+Using template $paramod$c5c783b17ab1d780abfad8cfe6563a0a7b47a3b0\_90_pmux for cells of type $pmux.
+Using template $paramod$b3b6ac92d800c6f07aa48f510f923d86a674e5a7\_90_pmux for cells of type $pmux.
+Using extmapper simplemap for cells of type $eq.
+Using template $paramod$20d3ee62d72123142eb855d7ddafd835e31ba009\_90_pmux for cells of type $pmux.
+Using template $paramod$ee721315a7b0169d82611b9aea01747035b97792\_90_pmux for cells of type $pmux.
+Using template $paramod$b6ec48645094baeb70d6b93add0cdbbe7498ad3c\_90_pmux for cells of type $pmux.
+Using template $paramod$59b03ae2620a41577de8da5f5c97b2919e82362b\_90_pmux for cells of type $pmux.
+Using extmapper simplemap for cells of type $and.
+Using template $paramod$740b056ede97228d3eae64ea2fdc81f0a33e0fe7\_90_alu for cells of type $alu.
+Using template $paramod$a7817265ef3ab2ee43da53bbd8a90f6450d412d9\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $or.
+Using template $paramod$a1bc51c02ce12ac21eb18988e83292af48ed7d72\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $xor.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000000100 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000000100 for cells of type $lcu.
+Using extmapper simplemap for cells of type $pos.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000100000 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000100000 for cells of type $lcu.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000001000 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000001000 for cells of type $lcu.
+No more expansions possible.
+<suppressed ~1130 debug messages>
+
+10. Executing OPT pass (performing simple optimizations).
+
+10.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module i2c_master.
+<suppressed ~1001 debug messages>
+
+10.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\i2c_master'.
+Computing hashes of 804 cells of `\i2c_master'.
+Finding duplicate cells in `\i2c_master'.
+Computing hashes of 692 cells of `\i2c_master'.
+Finding duplicate cells in `\i2c_master'.
+Computing hashes of 642 cells of `\i2c_master'.
+Finding duplicate cells in `\i2c_master'.
+Computing hashes of 638 cells of `\i2c_master'.
+Finding duplicate cells in `\i2c_master'.
+<suppressed ~498 debug messages>
+Removed a total of 166 cells.
+
+10.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \i2c_master..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+10.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \i2c_master.
+Performed a total of 0 changes.
+
+10.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\i2c_master'.
+Computing hashes of 638 cells of `\i2c_master'.
+Finding duplicate cells in `\i2c_master'.
+Removed a total of 0 cells.
+
+10.6. Executing OPT_DFF pass (perform DFF optimizations).
+Setting constant 0-bit at position 0 on $auto$ff.cc:337:slice$985 ($_SDFFE_PN0P_) from module i2c_master.
+
+10.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \i2c_master..
+Removed 10 unused cells and 761 unused wires.
+<suppressed ~11 debug messages>
+
+10.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module i2c_master.
+<suppressed ~1 debug messages>
+
+10.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+10.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \i2c_master..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+10.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \i2c_master.
+Performed a total of 0 changes.
+
+10.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\i2c_master'.
+Computing hashes of 626 cells of `\i2c_master'.
+Finding duplicate cells in `\i2c_master'.
+Removed a total of 0 cells.
+
+10.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+10.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \i2c_master..
+
+10.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module i2c_master.
+
+10.16. Finished fast OPT passes. (There is nothing left to do.)
+
+11. Executing FLATTEN pass (flatten design).
+
+12. Executing OPT pass (performing simple optimizations).
+
+12.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module i2c_master.
+
+12.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\i2c_master'.
+Computing hashes of 626 cells of `\i2c_master'.
+Finding duplicate cells in `\i2c_master'.
+Removed a total of 0 cells.
+
+12.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \i2c_master..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+12.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \i2c_master.
+Performed a total of 0 changes.
+
+12.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\i2c_master'.
+Computing hashes of 626 cells of `\i2c_master'.
+Finding duplicate cells in `\i2c_master'.
+Removed a total of 0 cells.
+
+12.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+12.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \i2c_master..
+
+12.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module i2c_master.
+
+12.9. Finished fast OPT passes. (There is nothing left to do.)
+
+13. Executing Liberty frontend: /home/smdadmin/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130B/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+Imported 428 cell types from liberty file.
+
+14. Executing Verilog-2005 frontend: /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_ina219/synth/i2c_master_netlist.v
+Parsing Verilog input from `/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_ina219/synth/i2c_master_netlist.v' to AST representation.
+Generating RTLIL representation for module `\i2c_master'.
+Successfully finished Verilog frontend.
+
+15. Executing HIERARCHY pass (managing design hierarchy).
+
+15.1. Analyzing design hierarchy..
+Top module:  \i2c_master
+
+15.2. Analyzing design hierarchy..
+Top module:  \i2c_master
+Removed 0 unused modules.
+
+16. Executing PROC pass (convert processes to netlists).
+
+16.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+16.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed a total of 0 dead cases.
+
+16.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 0 assignments to connections.
+
+16.4. Executing PROC_INIT pass (extract init attributes).
+
+16.5. Executing PROC_ARST pass (detect async resets in processes).
+
+16.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+
+16.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+
+16.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+16.9. Executing PROC_DFF pass (convert process syncs to FFs).
+
+16.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+16.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+16.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module i2c_master.
+
+17. Executing OPT pass (performing simple optimizations).
+
+17.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module i2c_master.
+
+17.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\i2c_master'.
+Computing hashes of 280 cells of `\i2c_master'.
+Finding duplicate cells in `\i2c_master'.
+Removed a total of 0 cells.
+
+17.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \i2c_master..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+17.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \i2c_master.
+Performed a total of 0 changes.
+
+17.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\i2c_master'.
+Computing hashes of 280 cells of `\i2c_master'.
+Finding duplicate cells in `\i2c_master'.
+Removed a total of 0 cells.
+
+17.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+17.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \i2c_master..
+Removed 0 unused cells and 278 unused wires.
+<suppressed ~2 debug messages>
+
+17.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module i2c_master.
+
+17.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+17.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \i2c_master..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+17.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \i2c_master.
+Performed a total of 0 changes.
+
+17.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\i2c_master'.
+Computing hashes of 280 cells of `\i2c_master'.
+Finding duplicate cells in `\i2c_master'.
+Removed a total of 0 cells.
+
+17.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+17.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \i2c_master..
+
+17.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module i2c_master.
+
+17.16. Finished fast OPT passes. (There is nothing left to do.)
+
+18. Executing ASYNC2SYNC pass.
+
+19. Executing MEMORY pass.
+
+19.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+19.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+19.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+19.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+19.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+19.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \i2c_master..
+
+19.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+19.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+19.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \i2c_master..
+
+19.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+19.11. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+20. Executing OPT pass (performing simple optimizations).
+
+20.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module i2c_master.
+
+20.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\i2c_master'.
+Computing hashes of 280 cells of `\i2c_master'.
+Finding duplicate cells in `\i2c_master'.
+Removed a total of 0 cells.
+
+20.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \i2c_master..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+20.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \i2c_master.
+Performed a total of 0 changes.
+
+20.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\i2c_master'.
+Computing hashes of 280 cells of `\i2c_master'.
+Finding duplicate cells in `\i2c_master'.
+Removed a total of 0 cells.
+
+20.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+20.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \i2c_master..
+
+20.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module i2c_master.
+
+20.9. Finished fast OPT passes. (There is nothing left to do.)
+
+21. Executing TECHMAP pass (map to technology primitives).
+
+21.1. Executing Verilog-2005 frontend: /home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v
+Parsing Verilog input from `/home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu_brent_kung'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `$__div_mod_u'.
+Generating RTLIL representation for module `$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Generating RTLIL representation for module `$connect'.
+Generating RTLIL representation for module `$input_port'.
+Successfully finished Verilog frontend.
+
+21.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~77 debug messages>
+
+22. Executing OPT pass (performing simple optimizations).
+
+22.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module i2c_master.
+
+22.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\i2c_master'.
+Computing hashes of 280 cells of `\i2c_master'.
+Finding duplicate cells in `\i2c_master'.
+Removed a total of 0 cells.
+
+22.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \i2c_master..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+22.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \i2c_master.
+Performed a total of 0 changes.
+
+22.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\i2c_master'.
+Computing hashes of 280 cells of `\i2c_master'.
+Finding duplicate cells in `\i2c_master'.
+Removed a total of 0 cells.
+
+22.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+22.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \i2c_master..
+
+22.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module i2c_master.
+
+22.9. Finished fast OPT passes. (There is nothing left to do.)
+
+23. Executing FLATTEN pass (flatten design).
+
+24. Executing OPT pass (performing simple optimizations).
+
+24.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module i2c_master.
+
+24.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\i2c_master'.
+Computing hashes of 280 cells of `\i2c_master'.
+Finding duplicate cells in `\i2c_master'.
+Removed a total of 0 cells.
+
+24.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \i2c_master..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+24.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \i2c_master.
+Performed a total of 0 changes.
+
+24.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\i2c_master'.
+Computing hashes of 280 cells of `\i2c_master'.
+Finding duplicate cells in `\i2c_master'.
+Removed a total of 0 cells.
+
+24.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+24.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \i2c_master..
+
+24.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module i2c_master.
+
+24.9. Finished fast OPT passes. (There is nothing left to do.)
+
+25. Executing EQUIV_MAKE pass (creating equiv checking module).
+Presumably equivalent wires: scl_oe_gold (1'1), scl_oe_gate (1'1) -> scl_oe
+Presumably equivalent wires: sda_out_gold (\sda_out_gold), sda_out_gate (\sda_gate) -> sda_out
+Presumably equivalent wires: scl_out_gold (\scl_gold), scl_out_gate (\scl_gate) -> scl_out
+Presumably equivalent wires: shift_reg_gold (\shift_reg_gold), shift_reg_gate ({ \_470__gate \_469__gate \_468__gate \_467__gate \_466__gate \_465__gate \_464__gate \_463__gate }) -> shift_reg
+Presumably equivalent wires: bit_cnt_gold (\bit_cnt_gold), bit_cnt_gate ({ \_286__gate \_285__gate \_284__gate \_283__gate }) -> bit_cnt
+Presumably equivalent wires: fsm_state_gold (\fsm_state_gold), fsm_state_gate ({ \_318__gate \_317__gate \_316__gate \_315__gate }) -> fsm_state
+Presumably equivalent wires: rw_bit_gold (\rw_bit_gold), rw_bit_gate (\_297__gate) -> rw_bit
+Presumably equivalent wires: stop_cmd_gold (\stop_cmd_gold), stop_cmd_gate (\_476__gate) -> stop_cmd
+Presumably equivalent wires: start_cmd_gold (\start_cmd_gold), start_cmd_gate (\_471__gate) -> start_cmd
+Presumably equivalent wires: data_reg_gold (\data_reg_gold), data_reg_gate ({ \_306__gate \_305__gate \_304__gate \_303__gate \_302__gate \_301__gate \_300__gate \_299__gate }) -> data_reg
+Presumably equivalent wires: addr_reg_gold (\addr_reg_gold), addr_reg_gate ({ \_233__gate \_232__gate \_231__gate \_230__gate \_229__gate \_228__gate \_227__gate }) -> addr_reg
+Presumably equivalent wires: status_gold (\status_gold), status_gate ({ \_475__gate \_474__gate \_473__gate \_472__gate }) -> status
+Presumably equivalent wires: ctrl_gold ({ \ctrl_gold [3] \rw_bit_gold \ctrl_gold [1:0] }), ctrl_gate ({ \_298__gate \_297__gate \_296__gate \_295__gate }) -> ctrl
+Presumably equivalent wires: clk_cnt_gold (\clk_cnt_gold), clk_cnt_gate ({ \_294__gate \_293__gate \_292__gate \_291__gate \_290__gate \_289__gate \_288__gate \_287__gate }) -> clk_cnt
+Presumably equivalent wires: divider_gold (\divider_gold), divider_gate ({ \_314__gate \_313__gate \_312__gate \_311__gate \_310__gate \_309__gate \_308__gate \_307__gate }) -> divider
+Presumably equivalent wires: irq_done_gold (\irq_done_gold), irq_done_gate (\irq_done_gate) -> irq_done
+Presumably equivalent wires: sda_gold (\sda_gold), sda_gate (\sda_gate) -> sda
+Presumably equivalent wires: scl_gold (\scl_gold), scl_gate (\scl_gate) -> scl
+Presumably equivalent wires: wb_ack_o_gold (\wb_ack_o_gold), wb_ack_o_gate (\wb_ack_o_gate) -> wb_ack_o
+Presumably equivalent wires: wb_cyc_i_gold (\wb_cyc_i_gold), wb_cyc_i_gate (\wb_cyc_i_gate) -> wb_cyc_i
+Presumably equivalent wires: wb_stb_i_gold (\wb_stb_i_gold), wb_stb_i_gate (\wb_stb_i_gate) -> wb_stb_i
+Presumably equivalent wires: wb_we_i_gold (\wb_we_i_gold), wb_we_i_gate (\wb_we_i_gate) -> wb_we_i
+Presumably equivalent wires: wb_sel_i_gold (\wb_sel_i_gold), wb_sel_i_gate (\wb_sel_i_gate) -> wb_sel_i
+Presumably equivalent wires: wb_dat_o_gold ({ 24'000000000000000000000000 \wb_dat_o_gold [7:0] }), wb_dat_o_gate ({ 24'000000000000000000000000 \_497__gate \_496__gate \_495__gate \_494__gate \_493__gate \_492__gate \_491__gate \_490__gate }) -> wb_dat_o
+Presumably equivalent wires: wb_dat_i_gold (\wb_dat_i_gold), wb_dat_i_gate (\wb_dat_i_gate) -> wb_dat_i
+Presumably equivalent wires: wb_adr_i_gold (\wb_adr_i_gold), wb_adr_i_gate (\wb_adr_i_gate) -> wb_adr_i
+Presumably equivalent wires: rst_ni_gold (\rst_ni_gold), rst_ni_gate (\rst_ni_gate) -> rst_ni
+Presumably equivalent wires: clk_i_gold (\clk_i_gold), clk_i_gate (\clk_i_gate) -> clk_i
+Changing input Q of cell _824__gate (sky130_fd_sc_hd__dfstp_2): \scl_gate -> \scl
+Changing input Q of cell _796__gate (sky130_fd_sc_hd__dfstp_2): \sda_gate -> \sda
+Changing input Q of cell _791__gate (sky130_fd_sc_hd__dfrtp_1): \_497__gate -> \wb_dat_o [7]
+Changing input Q of cell _790__gate (sky130_fd_sc_hd__dfrtp_1): \_496__gate -> \wb_dat_o [6]
+Changing input Q of cell _789__gate (sky130_fd_sc_hd__dfrtp_1): \_495__gate -> \wb_dat_o [5]
+Changing input Q of cell _788__gate (sky130_fd_sc_hd__dfrtp_1): \_494__gate -> \wb_dat_o [4]
+Changing input Q of cell _787__gate (sky130_fd_sc_hd__dfrtp_1): \_493__gate -> \wb_dat_o [3]
+Changing input Q of cell _786__gate (sky130_fd_sc_hd__dfrtp_1): \_492__gate -> \wb_dat_o [2]
+Changing input Q of cell _785__gate (sky130_fd_sc_hd__dfrtp_1): \_491__gate -> \wb_dat_o [1]
+Changing input Q of cell _784__gate (sky130_fd_sc_hd__dfrtp_1): \_490__gate -> \wb_dat_o [0]
+Changing input Q of cell _765__gate (sky130_fd_sc_hd__dfrtp_1): \irq_done_gate -> \irq_done
+Changing input Q of cell _764__gate (sky130_fd_sc_hd__dfrtp_1): \wb_ack_o_gate -> \wb_ack_o
+Changing input B2 of cell _732__gate (sky130_fd_sc_hd__a22oi_1): \sda_gate -> \sda
+Changing input A of cell _727__gate (sky130_fd_sc_hd__nor2_1): \_497__gate -> \wb_dat_o [7]
+Changing input A of cell _702__gate (sky130_fd_sc_hd__nor2_1): \_490__gate -> \wb_dat_o [0]
+Changing input A of cell _696__gate (sky130_fd_sc_hd__nor2_1): \_491__gate -> \wb_dat_o [1]
+Changing input A0 of cell _694__gate (sky130_fd_sc_hd__mux2_1): \sda_gate -> \sda
+Changing input A of cell _688__gate (sky130_fd_sc_hd__nor2_1): \_492__gate -> \wb_dat_o [2]
+Changing input A of cell _682__gate (sky130_fd_sc_hd__nor2_1): \_493__gate -> \wb_dat_o [3]
+Changing input A of cell _678__gate (sky130_fd_sc_hd__nor2_1): \_494__gate -> \wb_dat_o [4]
+Changing input A of cell _674__gate (sky130_fd_sc_hd__nor2_1): \_495__gate -> \wb_dat_o [5]
+Changing input A of cell _670__gate (sky130_fd_sc_hd__nor2_1): \_496__gate -> \wb_dat_o [6]
+Changing input A of cell _666__gate (sky130_fd_sc_hd__nor3_1): \wb_ack_o_gate -> \wb_ack_o
+Changing input A1 of cell _665__gate (sky130_fd_sc_hd__o21ai_0): \scl_gate -> \scl
+Changing input B1 of cell _664__gate (sky130_fd_sc_hd__o21ai_0): \scl_gate -> \scl
+Changing input SLEEP of cell _662__gate (sky130_fd_sc_hd__lpflow_isobufsrc_1): \sda_gate -> \sda
+Changing input A of cell _647__gate (sky130_fd_sc_hd__nand2_1): \sda_gate -> \sda
+Changing input A1 of cell _612__gate (sky130_fd_sc_hd__mux2i_1): \sda_gate -> \sda
+Changing input A of cell _584__gate (sky130_fd_sc_hd__nor2_1): \wb_ack_o_gate -> \wb_ack_o
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2038_gold ($_AND_): \rw_bit_gold -> \rw_bit
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2102_gold ($_AND_): \addr_reg_gold [2] -> \addr_reg [2]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2936_gold ($_OR_): \bit_cnt_gold [3] -> \bit_cnt [3]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$3023_gold ($_NOT_): \clk_cnt_gold [6] -> \clk_cnt [6]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$3011_gold ($_NOT_): \clk_cnt_gold [1] -> \clk_cnt [1]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2134_gold ($_AND_): \data_reg_gold [2] -> \data_reg [2]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2138_gold ($_AND_): \data_reg_gold [6] -> \data_reg [6]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2166_gold ($_AND_): \divider_gold [2] -> \divider [2]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$2236_gold ($_XOR_): \bit_cnt_gold [0] -> \bit_cnt [0]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2135_gold ($_AND_): \data_reg_gold [3] -> \data_reg [3]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$3002_gold ($_AND_): \clk_cnt_gold [4] -> \clk_cnt [4]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$3005_gold ($_AND_): \clk_cnt_gold [2] -> \clk_cnt [2]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2165_gold ($_AND_): \divider_gold [1] -> \divider [1]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$3091_gold ($_NOT_): \bit_cnt_gold [2] -> \bit_cnt [2]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$2545_gold ($_XOR_): \clk_cnt_gold [0] -> \clk_cnt [0]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2630_gold ($_OR_): \bit_cnt_gold [2] -> \bit_cnt [2]
+Changing input B of cell $auto$simplemap.cc:198:logic_reduce$1385_gold ($_OR_): \fsm_state_gold [3] -> \fsm_state [3]
+Changing input A of cell $auto$simplemap.cc:198:logic_reduce$1385_gold ($_OR_): \fsm_state_gold [2] -> \fsm_state [2]
+Changing input B of cell $auto$simplemap.cc:198:logic_reduce$1384_gold ($_OR_): \fsm_state_gold [1] -> \fsm_state [1]
+Changing input A of cell $auto$simplemap.cc:198:logic_reduce$1384_gold ($_OR_): \fsm_state_gold [0] -> \fsm_state [0]
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$1381_gold ($_MUX_): \start_cmd_gold -> \start_cmd
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$1379_gold ($_MUX_): \start_cmd_gold -> \start_cmd
+Changing input B of cell $auto$simplemap.cc:157:simplemap_reduce$1373_gold ($_OR_): \fsm_state_gold [1] -> \fsm_state [1]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2039_gold ($_AND_): \ctrl_gold [3] -> \ctrl [3]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$3111_gold ($_NOT_): \fsm_state_gold [0] -> \fsm_state [0]
+Changing input A of cell $auto$simplemap.cc:157:simplemap_reduce$1358_gold ($_OR_): \fsm_state_gold [0] -> \fsm_state [0]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$3113_gold ($_NOT_): \fsm_state_gold [1] -> \fsm_state [1]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2170_gold ($_AND_): \divider_gold [6] -> \divider [6]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2101_gold ($_AND_): \addr_reg_gold [1] -> \addr_reg [1]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2983_gold ($_OR_): \clk_cnt_gold [2] -> \clk_cnt [2]
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$1328_gold ($_NOT_): \sda_gold -> \sda
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$1327_gold ($_MUX_): \sda_gold -> \sda
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$1327_gold ($_MUX_): \rw_bit_gold -> \rw_bit
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2100_gold ($_AND_): \addr_reg_gold [0] -> \addr_reg [0]
+Changing input B of cell $auto$simplemap.cc:157:simplemap_reduce$1317_gold ($_OR_): \fsm_state_gold [3] -> \fsm_state [3]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$3119_gold ($_NOT_): \fsm_state_gold [2] -> \fsm_state [2]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$3006_gold ($_OR_): \clk_cnt_gold [4] -> \clk_cnt [4]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$3007_gold ($_OR_): \clk_cnt_gold [1] -> \clk_cnt [1]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2169_gold ($_AND_): \divider_gold [5] -> \divider [5]
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$1286_gold ($_NOT_): \stop_cmd_gold -> \stop_cmd
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$3019_gold ($_NOT_): \clk_cnt_gold [5] -> \clk_cnt [5]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2139_gold ($_AND_): \data_reg_gold [7] -> \data_reg [7]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2103_gold ($_AND_): \addr_reg_gold [3] -> \addr_reg [3]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1789_gold ($_AND_): \stop_cmd_gold -> \stop_cmd
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1781_gold ($_AND_): \sda_gold -> \sda
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1711_gold ($_AND_): \addr_reg_gold [5] -> \addr_reg [5]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1710_gold ($_AND_): \addr_reg_gold [4] -> \addr_reg [4]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1709_gold ($_AND_): \addr_reg_gold [3] -> \addr_reg [3]
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$1234_gold ($_MUX_): \shift_reg_gold [5] -> \shift_reg [5]
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$1233_gold ($_MUX_): \shift_reg_gold [4] -> \shift_reg [4]
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$1232_gold ($_MUX_): \shift_reg_gold [3] -> \shift_reg [3]
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$1231_gold ($_MUX_): \shift_reg_gold [2] -> \shift_reg [2]
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$1230_gold ($_MUX_): \shift_reg_gold [1] -> \shift_reg [1]
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$1229_gold ($_MUX_): \shift_reg_gold [0] -> \shift_reg [0]
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$1226_gold ($_MUX_): \stop_cmd_gold -> \stop_cmd
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$1226_gold ($_MUX_): \data_reg_gold [6] -> \data_reg [6]
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$1225_gold ($_MUX_): \stop_cmd_gold -> \stop_cmd
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$1225_gold ($_MUX_): \data_reg_gold [5] -> \data_reg [5]
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$1224_gold ($_MUX_): \stop_cmd_gold -> \stop_cmd
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$1224_gold ($_MUX_): \data_reg_gold [4] -> \data_reg [4]
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$1223_gold ($_MUX_): \stop_cmd_gold -> \stop_cmd
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$1223_gold ($_MUX_): \data_reg_gold [3] -> \data_reg [3]
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$1222_gold ($_MUX_): \stop_cmd_gold -> \stop_cmd
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$1222_gold ($_MUX_): \data_reg_gold [2] -> \data_reg [2]
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$1221_gold ($_MUX_): \stop_cmd_gold -> \stop_cmd
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$1221_gold ($_MUX_): \data_reg_gold [1] -> \data_reg [1]
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$1220_gold ($_MUX_): \stop_cmd_gold -> \stop_cmd
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$1220_gold ($_MUX_): \data_reg_gold [0] -> \data_reg [0]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1712_gold ($_AND_): \addr_reg_gold [6] -> \addr_reg [6]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1688_gold ($_AND_): \shift_reg_gold [6] -> \shift_reg [6]
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$1204_gold ($_MUX_): \divider_gold [6] -> \divider [6]
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$1203_gold ($_MUX_): \divider_gold [5] -> \divider [5]
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$1202_gold ($_MUX_): \divider_gold [4] -> \divider [4]
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$1201_gold ($_MUX_): \divider_gold [3] -> \divider [3]
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$1200_gold ($_MUX_): \divider_gold [2] -> \divider [2]
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$1199_gold ($_MUX_): \divider_gold [1] -> \divider [1]
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$1198_gold ($_MUX_): \divider_gold [0] -> \divider [0]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$1172_gold ($_MUX_): \data_reg_gold [6] -> \data_reg [6]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$1171_gold ($_MUX_): \data_reg_gold [5] -> \data_reg [5]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$1170_gold ($_MUX_): \data_reg_gold [4] -> \data_reg [4]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$1169_gold ($_MUX_): \data_reg_gold [3] -> \data_reg [3]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$1168_gold ($_MUX_): \data_reg_gold [2] -> \data_reg [2]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$1167_gold ($_MUX_): \data_reg_gold [1] -> \data_reg [1]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$1166_gold ($_MUX_): \data_reg_gold [0] -> \data_reg [0]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$1164_gold ($_MUX_): \data_reg_gold [6] -> \data_reg [6]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$1163_gold ($_MUX_): \data_reg_gold [5] -> \data_reg [5]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$1162_gold ($_MUX_): \data_reg_gold [4] -> \data_reg [4]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$1161_gold ($_MUX_): \data_reg_gold [3] -> \data_reg [3]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$1160_gold ($_MUX_): \data_reg_gold [2] -> \data_reg [2]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$1159_gold ($_MUX_): \data_reg_gold [1] -> \data_reg [1]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$1158_gold ($_MUX_): \data_reg_gold [0] -> \data_reg [0]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$1156_gold ($_MUX_): \shift_reg_gold [5] -> \shift_reg [5]
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$1156_gold ($_MUX_): \data_reg_gold [6] -> \data_reg [6]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$1155_gold ($_MUX_): \shift_reg_gold [4] -> \shift_reg [4]
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$1155_gold ($_MUX_): \data_reg_gold [5] -> \data_reg [5]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$1154_gold ($_MUX_): \shift_reg_gold [3] -> \shift_reg [3]
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$1154_gold ($_MUX_): \data_reg_gold [4] -> \data_reg [4]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$1153_gold ($_MUX_): \shift_reg_gold [2] -> \shift_reg [2]
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$1153_gold ($_MUX_): \data_reg_gold [3] -> \data_reg [3]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$1152_gold ($_MUX_): \shift_reg_gold [1] -> \shift_reg [1]
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$1152_gold ($_MUX_): \data_reg_gold [2] -> \data_reg [2]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$1151_gold ($_MUX_): \shift_reg_gold [0] -> \shift_reg [0]
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$1151_gold ($_MUX_): \data_reg_gold [1] -> \data_reg [1]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$1150_gold ($_MUX_): \sda_gold -> \sda
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$1150_gold ($_MUX_): \data_reg_gold [0] -> \data_reg [0]
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$1132_gold ($_MUX_): \sda_gold -> \sda
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1708_gold ($_AND_): \addr_reg_gold [2] -> \addr_reg [2]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1707_gold ($_AND_): \addr_reg_gold [1] -> \addr_reg [1]
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$1128_gold ($_MUX_): \stop_cmd_gold -> \stop_cmd
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1706_gold ($_AND_): \addr_reg_gold [0] -> \addr_reg [0]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1705_gold ($_AND_): \rw_bit_gold -> \rw_bit
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1550_gold ($_AND_): \shift_reg_gold [7] -> \shift_reg [7]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$3013_gold ($_NOT_): \clk_cnt_gold [3] -> \clk_cnt [3]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2068_gold ($_AND_): \status_gold [0] -> \status [0]
+Changing input A of cell $auto$simplemap.cc:157:simplemap_reduce$1109_gold ($_OR_): \fsm_state_gold [2] -> \fsm_state [2]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2994_gold ($_OR_): \clk_cnt_gold [6] -> \clk_cnt [6]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$3135_gold ($_NOT_): \fsm_state_gold [3] -> \fsm_state [3]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2070_gold ($_AND_): \status_gold [2] -> \status [2]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2071_gold ($_AND_): \status_gold [3] -> \status [3]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2132_gold ($_AND_): \data_reg_gold [0] -> \data_reg [0]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1578_gold ($_AND_): \start_cmd_gold -> \start_cmd
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2171_gold ($_AND_): \divider_gold [7] -> \divider [7]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$3089_gold ($_NOT_): \bit_cnt_gold [1] -> \bit_cnt [1]
+Changing input B of cell $auto$simplemap.cc:198:logic_reduce$1032_gold ($_OR_): \clk_cnt_gold [7] -> \clk_cnt [7]
+Changing input A of cell $auto$simplemap.cc:198:logic_reduce$1032_gold ($_OR_): \clk_cnt_gold [6] -> \clk_cnt [6]
+Changing input B of cell $auto$simplemap.cc:198:logic_reduce$1031_gold ($_OR_): \clk_cnt_gold [5] -> \clk_cnt [5]
+Changing input A of cell $auto$simplemap.cc:198:logic_reduce$1031_gold ($_OR_): \clk_cnt_gold [4] -> \clk_cnt [4]
+Changing input B of cell $auto$simplemap.cc:198:logic_reduce$1030_gold ($_OR_): \clk_cnt_gold [3] -> \clk_cnt [3]
+Changing input A of cell $auto$simplemap.cc:198:logic_reduce$1030_gold ($_OR_): \clk_cnt_gold [2] -> \clk_cnt [2]
+Changing input B of cell $auto$simplemap.cc:198:logic_reduce$1029_gold ($_OR_): \clk_cnt_gold [1] -> \clk_cnt [1]
+Changing input A of cell $auto$simplemap.cc:198:logic_reduce$1029_gold ($_OR_): \clk_cnt_gold [0] -> \clk_cnt [0]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1687_gold ($_AND_): \shift_reg_gold [5] -> \shift_reg [5]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1686_gold ($_AND_): \shift_reg_gold [4] -> \shift_reg [4]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1685_gold ($_AND_): \shift_reg_gold [3] -> \shift_reg [3]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1684_gold ($_AND_): \shift_reg_gold [2] -> \shift_reg [2]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1683_gold ($_AND_): \shift_reg_gold [1] -> \shift_reg [1]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1682_gold ($_AND_): \shift_reg_gold [0] -> \shift_reg [0]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1681_gold ($_AND_): \sda_gold -> \sda
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$3017_gold ($_NOT_): \clk_cnt_gold [4] -> \clk_cnt [4]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2168_gold ($_AND_): \divider_gold [4] -> \divider [4]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2637_gold ($_OR_): \bit_cnt_gold [1] -> \bit_cnt [1]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2137_gold ($_AND_): \data_reg_gold [5] -> \data_reg [5]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$3008_gold ($_AND_): \clk_cnt_gold [0] -> \clk_cnt [0]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$3095_gold ($_NOT_): \clk_cnt_gold [0] -> \clk_cnt [0]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$3021_gold ($_NOT_): \clk_cnt_gold [7] -> \clk_cnt [7]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$3015_gold ($_NOT_): \clk_cnt_gold [2] -> \clk_cnt [2]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$3001_gold ($_OR_): \clk_cnt_gold [5] -> \clk_cnt [5]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$3004_gold ($_OR_): \clk_cnt_gold [3] -> \clk_cnt [3]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$2638_gold ($_AND_): \bit_cnt_gold [0] -> \bit_cnt [0]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$3093_gold ($_NOT_): \bit_cnt_gold [3] -> \bit_cnt [3]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2069_gold ($_AND_): \status_gold [1] -> \status [1]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$2635_gold ($_AND_): \bit_cnt_gold [2] -> \bit_cnt [2]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2164_gold ($_AND_): \divider_gold [0] -> \divider [0]
+Changing input D of cell $auto$ff.cc:337:slice$861_gold ($_SDFFE_PN0P_): \sda_gold -> \sda
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$1235_gold ($_MUX_): \shift_reg_gold [6] -> \shift_reg [6]
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$1227_gold ($_MUX_): \stop_cmd_gold -> \stop_cmd
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$1227_gold ($_MUX_): \data_reg_gold [7] -> \data_reg [7]
+Changing input A of cell $auto$simplemap.cc:157:simplemap_reduce$914_gold ($_OR_): \start_cmd_gold -> \start_cmd
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$1205_gold ($_MUX_): \divider_gold [7] -> \divider [7]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$1173_gold ($_MUX_): \data_reg_gold [7] -> \data_reg [7]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$1165_gold ($_MUX_): \data_reg_gold [7] -> \data_reg [7]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2133_gold ($_AND_): \data_reg_gold [1] -> \data_reg [1]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$1157_gold ($_MUX_): \shift_reg_gold [6] -> \shift_reg [6]
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$1157_gold ($_MUX_): \data_reg_gold [7] -> \data_reg [7]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$1145_gold ($_MUX_): \start_cmd_gold -> \start_cmd
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$1144_gold ($_MUX_): \start_cmd_gold -> \start_cmd
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$1139_gold ($_MUX_): \stop_cmd_gold -> \stop_cmd
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$1138_gold ($_MUX_): \stop_cmd_gold -> \stop_cmd
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2036_gold ($_AND_): \ctrl_gold [0] -> \ctrl [0]
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$1133_gold ($_MUX_): \sda_gold -> \sda
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$1129_gold ($_MUX_): \stop_cmd_gold -> \stop_cmd
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2104_gold ($_AND_): \addr_reg_gold [4] -> \addr_reg [4]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2167_gold ($_AND_): \divider_gold [3] -> \divider [3]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2136_gold ($_AND_): \data_reg_gold [4] -> \data_reg [4]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2037_gold ($_AND_): \ctrl_gold [1] -> \ctrl [1]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$3099_gold ($_NOT_): \bit_cnt_gold [0] -> \bit_cnt [0]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2105_gold ($_AND_): \addr_reg_gold [5] -> \addr_reg [5]
+Changing input A of cell $auto$simplemap.cc:227:simplemap_lognot$1079_gold ($_NOT_): \wb_ack_o_gold -> \wb_ack_o
+Changing input B of cell $auto$simplemap.cc:256:simplemap_logbin$1077_gold ($_AND_): \ctrl_gold [3] -> \ctrl [3]
+Changing input A of cell $auto$simplemap.cc:256:simplemap_logbin$1077_gold ($_AND_): \status_gold [1] -> \status [1]
+Changing input A of cell $auto$simplemap.cc:46:simplemap_not$1076_gold ($_NOT_): \scl_gold -> \scl
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2106_gold ($_AND_): \addr_reg_gold [6] -> \addr_reg [6]
+Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$1039_gold ($_MUX_): \sda_out_gold -> \sda_out
+Setting undriven nets to undef: $techmap$sub$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_ina219/rtl/i2c_master.v:101$66.$auto$alumacc.cc:512:replace_alu$1040.CO_gold [7]
+Setting undriven nets to undef: $techmap$sub$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_ina219/rtl/i2c_master.v:184$73.$auto$alumacc.cc:512:replace_alu$1055.CO_gold [3]
+Setting undriven nets to undef: \wb_ack_o_gate
+Setting undriven nets to undef: \scl_gate
+Setting undriven nets to undef: \sda_gate
+Setting undriven nets to undef: \irq_done_gate
+Setting undriven nets to undef: \_497__gate
+Setting undriven nets to undef: \_496__gate
+Setting undriven nets to undef: \_495__gate
+Setting undriven nets to undef: \_494__gate
+Setting undriven nets to undef: \_493__gate
+Setting undriven nets to undef: \_492__gate
+Setting undriven nets to undef: \_491__gate
+Setting undriven nets to undef: \_490__gate
+
+26. Executing EQUIV_SIMPLE pass.
+Found 97 unproven $equiv cells (20 groups) in i2c_master:
+ Grouping SAT models for \wb_dat_o:
+  Trying to prove $equiv for \wb_dat_o [0]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [1]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [2]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [3]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [4]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [5]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [6]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [7]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [8]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [9]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [10]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [11]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [12]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [13]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [14]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [15]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [16]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [17]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [18]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [19]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [20]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [21]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [22]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [23]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [24]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [25]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [26]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [27]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [28]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [29]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [30]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [31]:ezsat
+ success!
+  Trying to prove $equiv for \wb_ack_o:ezsat
+ failed.
+ Grouping SAT models for \addr_reg:
+  Trying to prove $equiv for \addr_reg [0]:ezsat
+ failed.
+  Trying to prove $equiv for \addr_reg [1]:ezsat
+ failed.
+  Trying to prove $equiv for \addr_reg [2]:ezsat
+ failed.
+  Trying to prove $equiv for \addr_reg [3]:ezsat
+ failed.
+  Trying to prove $equiv for \addr_reg [4]:ezsat
+ failed.
+  Trying to prove $equiv for \addr_reg [5]:ezsat
+ failed.
+  Trying to prove $equiv for \addr_reg [6]:ezsat
+ failed.
+ Grouping SAT models for \fsm_state:
+  Trying to prove $equiv for \fsm_state [0]:ezsat
+ failed.
+  Trying to prove $equiv for \fsm_state [1]:ezsat
+ failed.
+  Trying to prove $equiv for \fsm_state [2]:ezsat
+ failed.
+  Trying to prove $equiv for \fsm_state [3]:ezsat
+ failed.
+ Grouping SAT models for \shift_reg:
+  Trying to prove $equiv for \shift_reg [0]:ezsat
+ failed.
+  Trying to prove $equiv for \shift_reg [1]:ezsat
+ failed.
+  Trying to prove $equiv for \shift_reg [2]:ezsat
+ failed.
+  Trying to prove $equiv for \shift_reg [3]:ezsat
+ failed.
+  Trying to prove $equiv for \shift_reg [4]:ezsat
+ failed.
+  Trying to prove $equiv for \shift_reg [5]:ezsat
+ failed.
+  Trying to prove $equiv for \shift_reg [6]:ezsat
+ failed.
+  Trying to prove $equiv for \shift_reg [7]:ezsat
+ failed.
+  Trying to prove $equiv for \scl:ezsat
+ failed.
+  Trying to prove $equiv for \sda:ezsat
+ failed.
+  Trying to prove $equiv for \irq_done:ezsat
+ failed.
+ Grouping SAT models for \divider:
+  Trying to prove $equiv for \divider [0]:ezsat
+ failed.
+  Trying to prove $equiv for \divider [1]:ezsat
+ failed.
+  Trying to prove $equiv for \divider [2]:ezsat
+ failed.
+  Trying to prove $equiv for \divider [3]:ezsat
+ failed.
+  Trying to prove $equiv for \divider [4]:ezsat
+ failed.
+  Trying to prove $equiv for \divider [5]:ezsat
+ failed.
+  Trying to prove $equiv for \divider [6]:ezsat
+ failed.
+  Trying to prove $equiv for \divider [7]:ezsat
+ failed.
+ Grouping SAT models for \clk_cnt:
+  Trying to prove $equiv for \clk_cnt [0]:ezsat
+ failed.
+  Trying to prove $equiv for \clk_cnt [1]:ezsat
+ failed.
+  Trying to prove $equiv for \clk_cnt [2]:ezsat
+ failed.
+  Trying to prove $equiv for \clk_cnt [3]:ezsat
+ failed.
+  Trying to prove $equiv for \clk_cnt [4]:ezsat
+ failed.
+  Trying to prove $equiv for \clk_cnt [5]:ezsat
+ failed.
+  Trying to prove $equiv for \clk_cnt [6]:ezsat
+ failed.
+  Trying to prove $equiv for \clk_cnt [7]:ezsat
+ failed.
+ Grouping SAT models for \ctrl:
+  Trying to prove $equiv for \ctrl [0]:ezsat
+ failed.
+  Trying to prove $equiv for \ctrl [1]:ezsat
+ failed.
+  Trying to prove $equiv for \ctrl [2]:ezsat
+ failed.
+  Trying to prove $equiv for \ctrl [3]:ezsat
+ failed.
+ Grouping SAT models for \status:
+  Trying to prove $equiv for \status [0]:ezsat
+ failed.
+  Trying to prove $equiv for \status [1]:ezsat
+ failed.
+  Trying to prove $equiv for \status [2]:ezsat
+ failed.
+  Trying to prove $equiv for \status [3]:ezsat
+ failed.
+ Grouping SAT models for \data_reg:
+  Trying to prove $equiv for \data_reg [0]:ezsat
+ failed.
+  Trying to prove $equiv for \data_reg [1]:ezsat
+ failed.
+  Trying to prove $equiv for \data_reg [2]:ezsat
+ failed.
+  Trying to prove $equiv for \data_reg [3]:ezsat
+ failed.
+  Trying to prove $equiv for \data_reg [4]:ezsat
+ failed.
+  Trying to prove $equiv for \data_reg [5]:ezsat
+ failed.
+  Trying to prove $equiv for \data_reg [6]:ezsat
+ failed.
+  Trying to prove $equiv for \data_reg [7]:ezsat
+ failed.
+  Trying to prove $equiv for \start_cmd:ezsat
+ failed.
+  Trying to prove $equiv for \stop_cmd:ezsat
+ failed.
+  Trying to prove $equiv for \rw_bit:ezsat
+ failed.
+ Grouping SAT models for \bit_cnt:
+  Trying to prove $equiv for \bit_cnt [0]:ezsat
+ failed.
+  Trying to prove $equiv for \bit_cnt [1]:ezsat
+ failed.
+  Trying to prove $equiv for \bit_cnt [2]:ezsat
+ failed.
+  Trying to prove $equiv for \bit_cnt [3]:ezsat
+ failed.
+  Trying to prove $equiv for \scl_out:ezsat
+ failed.
+  Trying to prove $equiv for \sda_out:ezsat
+ failed.
+  Trying to prove $equiv for \scl_oe:ezsat
+ success!
+Proved 25 previously unproven $equiv cells.
+
+27. Executing EQUIV_INDUCT pass.
+Found 72 unproven $equiv cells in module i2c_master:

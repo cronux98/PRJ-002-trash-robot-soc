@@ -1,0 +1,8 @@
+# running in i2c_master_induction/src/
+read -formal i2c_master.v
+prep -top i2c_master
+
+hierarchy -smtcheck
+rename -witness
+write_jny -no-connections ../model/design.json
+write_rtlil ../model/design.il

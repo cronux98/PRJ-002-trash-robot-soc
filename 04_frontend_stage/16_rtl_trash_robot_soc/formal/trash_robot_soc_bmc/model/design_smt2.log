@@ -1,0 +1,85 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.65+71 (git sha1 e56c6a954, clang++ 18.1.8 -fPIC -O3)
+
+-- Executing script file `design_smt2.ys' --
+
+1. Executing RTLIL frontend.
+Input filename: design_prep.il
+
+2. Executing HIERARCHY pass (managing design hierarchy).
+Attribute `top' found on module `trash_robot_soc'. Setting top module to trash_robot_soc.
+
+2.1. Analyzing design hierarchy..
+Top module:  \trash_robot_soc
+
+2.2. Analyzing design hierarchy..
+Top module:  \trash_robot_soc
+Removed 0 unused modules.
+Module trash_robot_soc directly or indirectly contains formal properties -> setting "keep" attribute.
+
+3. Executing FORMALFF pass.
+
+4. Executing DFFUNMAP pass (unmap clock enable and synchronous reset from FFs).
+
+5. Printing statistics.
+
+=== trash_robot_soc ===
+
+        +----------Local Count, excluding submodules.
+        | 
+     4372 wires
+    35999 wire bits
+     1316 public wires
+    16017 public wire bits
+       16 ports
+       60 port bits
+        1 memories
+     1024 memory bits
+     4464 cells
+       13   $add
+       24   $and
+      847   $anyinit
+      214   $anyseq
+       23   $assert
+        3   $assume
+        2   $div
+      245   $eq
+       30   $ff
+        3   $ge
+       15   $gt
+        1   $initstate
+        1   $le
+      153   $logic_and
+       79   $logic_not
+       34   $logic_or
+        6   $lt
+       32   $meminit
+        2   $memrd_v2
+        1   $memwr_v2
+        3   $mul
+     1735   $mux
+       80   $ne
+        4   $neg
+       17   $not
+        7   $or
+      107   $pmux
+      628   $reduce_and
+       55   $reduce_bool
+       61   $reduce_or
+       17   $scopeinfo
+        1   $shl
+       19   $sub
+        2   $xor
+
+6. Executing SMT2 backend.
+
+6.1. Executing BMUXMAP pass.
+
+6.2. Executing DEMUXMAP pass.
+Creating SMT-LIBv2 representation of module trash_robot_soc.
+ERROR: Found multiple drivers for \i2c_scl.

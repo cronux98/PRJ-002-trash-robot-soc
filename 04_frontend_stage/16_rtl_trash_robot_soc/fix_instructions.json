@@ -1,0 +1,24 @@
+{
+  "audit_session": "cfcb2230-40b9-4dee-9ebc-4fa1f7388f52",
+  "retry": 0,
+  "timestamp": "2026-07-15T08:54:08+00:00",
+  "cost": 0.24,
+  "verdict": "FAIL",
+  "summary": "3/4 checks passed \u2014 1 fix generated (check 6.2: module instantiation reconciliation)",
+  "findings": [
+    "6.2 BLOCKER: promotion_report.md accounts for 16 modules (12 PROMOTED + 3 CONDITIONAL PROMOTE + 1 BLOCKED) but rtl/trash_robot_soc.v instantiates 15 module types, of which one is the BLOCKED picorv32_core. One PROMOTED or CONDITIONAL module is therefore unmapped and unverified. The supplied evidence asserts a complete 15/15 mapping, but that mapping contains only 14 non-blocked modules \u2014 the assertion contradicts its own roster.",
+    "6.2 INTEGRITY: picorv32_core carries a BLOCKED verdict (unresolved alu_add failure, TB dispute carried over from v5) yet is instantiated at rtl/trash_robot_soc.v lines 81-107 and appears in the synthesized netlist. A BLOCKED module is shipping inside the SoC top with no recorded waiver.",
+    "INTEGRITY (reporting): soc_integration_report.md claims 'Verilator (0 errors, 3 warnings)' but the Verilator log exits with '%Error: Exiting due to 3 warning(s)'. The report's characterization does not match the tool's exit behavior. This does not fall under mandatory check 6.3 (which scopes to synth/*.log), but the integration report's self-verdict of PASS rests in part on a claim its own log contradicts.",
+    "SoC-level formal verification is absent: trash_robot_soc_bmc, trash_robot_soc_cover, and trash_robot_soc_induction all report FAIL/MISSING with no PASS file. Not a mandatory Stage 6 check, but the SoC top has no formal evidence at all.",
+    "6.4 CONTEXT (not a failure): v6 at 27,213 cells passes against the v5 baseline of 26,798, but v5 itself was the regression (v4 55K \u2192 v5 26K). Measuring v6 against the regressed baseline ratifies that drop rather than detecting it \u2014 v6 is ~49% of v4's cell count. The rubric explicitly names v5 (26,798) as the comparison point, so this check passes as written; flagging for Vera in case the intended baseline was pre-regression v4."
+  ],
+  "fixes": [
+    {
+      "type": "STAGE_FIX",
+      "description": "Reconcile promotion_report.md module roster against top-level instantiations and identify the one unmapped promoted/conditional module",
+      "action": "1. Extract the authoritative module roster from the promotion report, separated by verdict: run the grep below to list every module name with its PROMOTED / CONDITIONAL PROMOTE / BLOCKED verdict. 2. Diff that roster against the 15 instantiated module types in rtl/trash_robot_soc.v. 3. For the promoted/conditional module that has no instantiation, either (a) instantiate it in rtl/trash_robot_soc.v with its Wishbone hookup into wb_interconnect and re-run synthesis, or (b) if it is intentionally out of scope for v6, downgrade its promotion_report.md verdict from PROMOTED/CONDITIONAL to DEFERRED with a written rationale so the roster and the RTL agree. 4. Separately, resolve the BLOCKED picorv32_core: a BLOCKED module must not ship inside the SoC top with an unresolved alu_add failure. Either close the TB dispute and re-promote it, or record an explicit signed waiver in promotion_report.md authorizing integration of a BLOCKED core. 5. Re-run this audit once the roster and the RTL are 1:1.",
+      "file": "/home/user/hermes_workspace/projects/IP-005/v6/07_results/promotion_report.md",
+      "command": "grep -nEi 'PROMOTED|CONDITIONAL|BLOCKED' /home/user/hermes_workspace/projects/IP-005/v6/07_results/promotion_report.md > /tmp/ip005_v6_roster.txt && grep -nE '^[[:space:]]*[a-z_0-9]+[[:space:]]+[a-z_0-9]+_inst' /home/user/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-trash_robot_soc/rtl/trash_robot_soc.v > /tmp/ip005_v6_insts.txt && diff <(grep -oE '[a-z_0-9]+' /tmp/ip005_v6_roster.txt | sort -u) <(grep -oE '^[[:space:]]*[a-z_0-9]+' /tmp/ip005_v6_insts.txt | sort -u)"
+    }
+  ]
+}

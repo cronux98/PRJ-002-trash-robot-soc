@@ -1,0 +1,2329 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.65+71 (git sha1 e56c6a954, clang++ 18.1.8 -fPIC -O3)
+
+-- Executing script file `/tmp/equiv_ultrasonic_capture.ys' --
+
+1. Executing Verilog-2005 frontend: /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v
+Parsing Verilog input from `/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v' to AST representation.
+Generating RTLIL representation for module `\ultrasonic_capture'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_fsm.v
+Parsing Verilog input from `/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_fsm.v' to AST representation.
+Generating RTLIL representation for module `\ultrasonic_fsm'.
+Warning: Replacing memory \distance_reg with list of registers. See /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_fsm.v:113
+Warning: Replacing memory \done_sticky with list of registers. See /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_fsm.v:86
+Warning: Replacing memory \glitch_filter with list of registers. See /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_fsm.v:85
+Warning: Replacing memory \capture_count with list of registers. See /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_fsm.v:84
+Warning: Replacing memory \counter with list of registers. See /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_fsm.v:83
+Warning: Replacing memory \fsm_state with list of registers. See /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_fsm.v:82
+Warning: Replacing memory \done_clear with list of registers. See /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_fsm.v:181
+Successfully finished Verilog frontend.
+
+3. Executing HIERARCHY pass (managing design hierarchy).
+
+3.1. Analyzing design hierarchy..
+Top module:  \ultrasonic_capture
+
+3.2. Analyzing design hierarchy..
+Top module:  \ultrasonic_capture
+Removing unused module `\ultrasonic_fsm'.
+Removed 1 unused modules.
+
+4. Executing PROC pass (convert processes to netlists).
+
+4.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+4.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed 2 dead cases from process $proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4 in module ultrasonic_capture.
+Marked 11 switch rules as full_case in process $proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4 in module ultrasonic_capture.
+Removed a total of 2 dead cases.
+
+4.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 7 redundant assignments.
+Promoted 6 assignments to connections.
+
+4.4. Executing PROC_INIT pass (extract init attributes).
+
+4.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \rst_ni in `\ultrasonic_capture.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4'.
+
+4.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~20 debug messages>
+
+4.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\ultrasonic_capture.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4'.
+     1/41: $4\calc_distance$func$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:183$2.$result[15:0]$54
+     2/41: $3\calc_distance$func$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:183$2.$result[15:0]$49
+     3/41: $3\calc_distance$func$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:183$2.temp[35:0]$51
+     4/41: $3\calc_distance$func$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:183$2.echo_clocks[19:0]$50
+     5/41: $0\trig_o[1:0] [1]
+     6/41: $2\calc_distance$func$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:183$2.temp[35:0]$39
+     7/41: $2\calc_distance$func$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:183$2.echo_clocks[19:0]$38
+     8/41: $2\calc_distance$func$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:183$2.$result[15:0]$37
+     9/41: $4\calc_distance$func$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:143$1.$result[15:0]$35
+    10/41: $3\calc_distance$func$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:143$1.$result[15:0]$30
+    11/41: $3\calc_distance$func$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:143$1.temp[35:0]$32
+    12/41: $3\calc_distance$func$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:143$1.echo_clocks[19:0]$31
+    13/41: $0\trig_o[1:0] [0]
+    14/41: $2\calc_distance$func$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:143$1.temp[35:0]$20
+    15/41: $2\calc_distance$func$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:143$1.echo_clocks[19:0]$19
+    16/41: $2\calc_distance$func$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:143$1.$result[15:0]$18
+    17/41: $1\calc_distance$func$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:183$2.temp[35:0]$17
+    18/41: $1\calc_distance$func$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:183$2.echo_clocks[19:0]$16
+    19/41: $1\calc_distance$func$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:183$2.$result[15:0]$15
+    20/41: $1\calc_distance$func$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:143$1.temp[35:0]$14
+    21/41: $1\calc_distance$func$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:143$1.echo_clocks[19:0]$13
+    22/41: $1\calc_distance$func$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:143$1.$result[15:0]$12
+    23/41: $0\echo_sync2[1:0]
+    24/41: $0\echo_sync1[1:0]
+    25/41: $0\ch1_start[0:0]
+    26/41: $0\ch0_start[0:0]
+    27/41: $0\irq_done[0:0]
+    28/41: $0\wb_ack_o[0:0]
+    29/41: $0\ch1_echo_prev[0:0]
+    30/41: $0\ch1_dist_val[15:0]
+    31/41: $0\ch1_echo_val[15:0]
+    32/41: $0\ch1_echo_cnt[19:0]
+    33/41: $0\ch1_trig_cnt[15:0]
+    34/41: $0\ch1_state[1:0]
+    35/41: $0\ch0_echo_prev[0:0]
+    36/41: $0\ch0_dist_val[15:0]
+    37/41: $0\ch0_echo_val[15:0]
+    38/41: $0\ch0_echo_cnt[19:0]
+    39/41: $0\ch0_trig_cnt[15:0]
+    40/41: $0\ch0_state[1:0]
+    41/41: $0\wb_dat_o[31:0]
+
+4.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+4.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\ultrasonic_capture.\wb_dat_o' using process `\ultrasonic_capture.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4'.
+  created $adff cell `$procdff$358' with positive edge clock and positive level reset.
+Creating register for signal `\ultrasonic_capture.\wb_ack_o' using process `\ultrasonic_capture.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4'.
+  created $adff cell `$procdff$363' with positive edge clock and positive level reset.
+Creating register for signal `\ultrasonic_capture.\trig_o' using process `\ultrasonic_capture.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4'.
+  created $adff cell `$procdff$368' with positive edge clock and positive level reset.
+Creating register for signal `\ultrasonic_capture.\irq_done' using process `\ultrasonic_capture.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4'.
+  created $adff cell `$procdff$373' with positive edge clock and positive level reset.
+Creating register for signal `\ultrasonic_capture.\ch0_state' using process `\ultrasonic_capture.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4'.
+  created $adff cell `$procdff$378' with positive edge clock and positive level reset.
+Creating register for signal `\ultrasonic_capture.\ch0_trig_cnt' using process `\ultrasonic_capture.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4'.
+  created $adff cell `$procdff$383' with positive edge clock and positive level reset.
+Creating register for signal `\ultrasonic_capture.\ch0_echo_cnt' using process `\ultrasonic_capture.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4'.
+  created $adff cell `$procdff$388' with positive edge clock and positive level reset.
+Creating register for signal `\ultrasonic_capture.\ch0_echo_val' using process `\ultrasonic_capture.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4'.
+  created $adff cell `$procdff$393' with positive edge clock and positive level reset.
+Creating register for signal `\ultrasonic_capture.\ch0_dist_val' using process `\ultrasonic_capture.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4'.
+  created $adff cell `$procdff$398' with positive edge clock and positive level reset.
+Creating register for signal `\ultrasonic_capture.\ch0_echo_prev' using process `\ultrasonic_capture.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4'.
+  created $adff cell `$procdff$403' with positive edge clock and positive level reset.
+Creating register for signal `\ultrasonic_capture.\ch0_start' using process `\ultrasonic_capture.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4'.
+  created $adff cell `$procdff$408' with positive edge clock and positive level reset.
+Creating register for signal `\ultrasonic_capture.\ch1_state' using process `\ultrasonic_capture.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4'.
+  created $adff cell `$procdff$413' with positive edge clock and positive level reset.
+Creating register for signal `\ultrasonic_capture.\ch1_trig_cnt' using process `\ultrasonic_capture.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4'.
+  created $adff cell `$procdff$418' with positive edge clock and positive level reset.
+Creating register for signal `\ultrasonic_capture.\ch1_echo_cnt' using process `\ultrasonic_capture.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4'.
+  created $adff cell `$procdff$423' with positive edge clock and positive level reset.
+Creating register for signal `\ultrasonic_capture.\ch1_echo_val' using process `\ultrasonic_capture.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4'.
+  created $adff cell `$procdff$428' with positive edge clock and positive level reset.
+Creating register for signal `\ultrasonic_capture.\ch1_dist_val' using process `\ultrasonic_capture.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4'.
+  created $adff cell `$procdff$433' with positive edge clock and positive level reset.
+Creating register for signal `\ultrasonic_capture.\ch1_echo_prev' using process `\ultrasonic_capture.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4'.
+  created $adff cell `$procdff$438' with positive edge clock and positive level reset.
+Creating register for signal `\ultrasonic_capture.\ch1_start' using process `\ultrasonic_capture.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4'.
+  created $adff cell `$procdff$443' with positive edge clock and positive level reset.
+Creating register for signal `\ultrasonic_capture.\echo_sync1' using process `\ultrasonic_capture.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4'.
+  created $adff cell `$procdff$448' with positive edge clock and positive level reset.
+Creating register for signal `\ultrasonic_capture.\echo_sync2' using process `\ultrasonic_capture.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4'.
+  created $adff cell `$procdff$453' with positive edge clock and positive level reset.
+Creating register for signal `\ultrasonic_capture.\calc_distance$func$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:143$1.$result' using process `\ultrasonic_capture.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4'.
+  created $adff cell `$procdff$458' with positive edge clock and positive level reset.
+Creating register for signal `\ultrasonic_capture.\calc_distance$func$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:143$1.echo_clocks' using process `\ultrasonic_capture.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4'.
+  created $adff cell `$procdff$463' with positive edge clock and positive level reset.
+Creating register for signal `\ultrasonic_capture.\calc_distance$func$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:143$1.temp' using process `\ultrasonic_capture.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4'.
+  created $adff cell `$procdff$468' with positive edge clock and positive level reset.
+Creating register for signal `\ultrasonic_capture.\calc_distance$func$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:183$2.$result' using process `\ultrasonic_capture.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4'.
+  created $adff cell `$procdff$473' with positive edge clock and positive level reset.
+Creating register for signal `\ultrasonic_capture.\calc_distance$func$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:183$2.echo_clocks' using process `\ultrasonic_capture.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4'.
+  created $adff cell `$procdff$478' with positive edge clock and positive level reset.
+Creating register for signal `\ultrasonic_capture.\calc_distance$func$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:183$2.temp' using process `\ultrasonic_capture.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4'.
+  created $adff cell `$procdff$483' with positive edge clock and positive level reset.
+
+4.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+4.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 20 empty switches in `\ultrasonic_capture.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4'.
+Removing empty process `ultrasonic_capture.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4'.
+Cleaned up 20 empty switches.
+
+4.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ultrasonic_capture.
+<suppressed ~68 debug messages>
+
+5. Executing OPT pass (performing simple optimizations).
+
+5.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ultrasonic_capture.
+<suppressed ~2 debug messages>
+
+5.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ultrasonic_capture'.
+Computing hashes of 230 cells of `\ultrasonic_capture'.
+Finding duplicate cells in `\ultrasonic_capture'.
+Computing hashes of 141 cells of `\ultrasonic_capture'.
+Finding duplicate cells in `\ultrasonic_capture'.
+<suppressed ~267 debug messages>
+Removed a total of 89 cells.
+
+5.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \ultrasonic_capture..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 1/5 on $pmux $procmux$207.
+    dead port 2/5 on $pmux $procmux$207.
+    dead port 3/5 on $pmux $procmux$207.
+    dead port 4/5 on $pmux $procmux$207.
+    dead port 5/5 on $pmux $procmux$207.
+    dead port 1/5 on $pmux $procmux$202.
+    dead port 2/5 on $pmux $procmux$202.
+    dead port 3/5 on $pmux $procmux$202.
+    dead port 4/5 on $pmux $procmux$202.
+    dead port 5/5 on $pmux $procmux$202.
+    dead port 1/5 on $pmux $procmux$197.
+    dead port 2/5 on $pmux $procmux$197.
+    dead port 3/5 on $pmux $procmux$197.
+    dead port 4/5 on $pmux $procmux$197.
+    dead port 5/5 on $pmux $procmux$197.
+    dead port 1/2 on $mux $procmux$190.
+    dead port 2/2 on $mux $procmux$190.
+    dead port 1/2 on $mux $procmux$188.
+    dead port 2/2 on $mux $procmux$188.
+    dead port 1/2 on $mux $procmux$184.
+    dead port 2/2 on $mux $procmux$184.
+    dead port 1/2 on $mux $procmux$182.
+    dead port 2/2 on $mux $procmux$182.
+    dead port 1/2 on $mux $procmux$178.
+    dead port 2/2 on $mux $procmux$178.
+    dead port 1/2 on $mux $procmux$176.
+    dead port 2/2 on $mux $procmux$176.
+    dead port 2/2 on $mux $procmux$172.
+    dead port 2/2 on $mux $procmux$170.
+    dead port 1/5 on $pmux $procmux$160.
+    dead port 2/5 on $pmux $procmux$160.
+    dead port 3/5 on $pmux $procmux$160.
+    dead port 4/5 on $pmux $procmux$160.
+    dead port 5/5 on $pmux $procmux$160.
+    dead port 1/5 on $pmux $procmux$155.
+    dead port 2/5 on $pmux $procmux$155.
+    dead port 3/5 on $pmux $procmux$155.
+    dead port 4/5 on $pmux $procmux$155.
+    dead port 5/5 on $pmux $procmux$155.
+    dead port 1/5 on $pmux $procmux$150.
+    dead port 2/5 on $pmux $procmux$150.
+    dead port 3/5 on $pmux $procmux$150.
+    dead port 4/5 on $pmux $procmux$150.
+    dead port 5/5 on $pmux $procmux$150.
+    dead port 1/2 on $mux $procmux$143.
+    dead port 2/2 on $mux $procmux$143.
+    dead port 1/2 on $mux $procmux$141.
+    dead port 2/2 on $mux $procmux$141.
+    dead port 1/2 on $mux $procmux$137.
+    dead port 2/2 on $mux $procmux$137.
+    dead port 1/2 on $mux $procmux$135.
+    dead port 2/2 on $mux $procmux$135.
+    dead port 1/2 on $mux $procmux$131.
+    dead port 2/2 on $mux $procmux$131.
+    dead port 1/2 on $mux $procmux$129.
+    dead port 2/2 on $mux $procmux$129.
+    dead port 2/2 on $mux $procmux$125.
+    dead port 2/2 on $mux $procmux$123.
+Removed 58 multiplexer ports.
+<suppressed ~83 debug messages>
+
+5.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \ultrasonic_capture.
+    New ctrl vector for $pmux cell $procmux$192: { $auto$opt_reduce.cc:135:opt_pmux$485 $procmux$338_CMP }
+    New ctrl vector for $pmux cell $procmux$145: { $auto$opt_reduce.cc:135:opt_pmux$487 $procmux$285_CMP }
+  Optimizing cells in module \ultrasonic_capture.
+Performed a total of 2 changes.
+
+5.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ultrasonic_capture'.
+Computing hashes of 121 cells of `\ultrasonic_capture'.
+Finding duplicate cells in `\ultrasonic_capture'.
+Removed a total of 0 cells.
+
+5.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $procdff$383 ($adff) from module ultrasonic_capture (D = $procmux$324_Y, Q = \ch0_trig_cnt).
+Adding EN signal on $procdff$413 ($adff) from module ultrasonic_capture (D = $procmux$276_Y, Q = \ch1_state).
+Adding EN signal on $procdff$388 ($adff) from module ultrasonic_capture (D = $procmux$313_Y, Q = \ch0_echo_cnt).
+Adding EN signal on $procdff$428 ($adff) from module ultrasonic_capture (D = \ch1_echo_cnt [15:0], Q = \ch1_echo_val).
+Adding EN signal on $procdff$378 ($adff) from module ultrasonic_capture (D = $procmux$329_Y, Q = \ch0_state).
+Adding EN signal on $procdff$393 ($adff) from module ultrasonic_capture (D = \ch0_echo_cnt [15:0], Q = \ch0_echo_val).
+Adding EN signal on $procdff$438 ($adff) from module ultrasonic_capture (D = $procmux$237_Y, Q = \ch1_echo_prev).
+Adding EN signal on $procdff$418 ($adff) from module ultrasonic_capture (D = $procmux$271_Y, Q = \ch1_trig_cnt).
+Adding EN signal on $procdff$358 ($adff) from module ultrasonic_capture (D = $procmux$343_Y, Q = \wb_dat_o).
+Adding EN signal on $procdff$398 ($adff) from module ultrasonic_capture (D = $4\calc_distance$func$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:143$1.$result[15:0]$35, Q = \ch0_dist_val).
+Adding EN signal on $procdff$433 ($adff) from module ultrasonic_capture (D = $4\calc_distance$func$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:183$2.$result[15:0]$54, Q = \ch1_dist_val).
+Adding EN signal on $procdff$403 ($adff) from module ultrasonic_capture (D = $procmux$290_Y, Q = \ch0_echo_prev).
+Adding EN signal on $procdff$423 ($adff) from module ultrasonic_capture (D = $procmux$260_Y, Q = \ch1_echo_cnt).
+Setting constant 1-bit at position 0 on $procdff$478 ($adff) from module ultrasonic_capture.
+Setting constant 1-bit at position 1 on $procdff$478 ($adff) from module ultrasonic_capture.
+Setting constant 1-bit at position 2 on $procdff$478 ($adff) from module ultrasonic_capture.
+Setting constant 1-bit at position 3 on $procdff$478 ($adff) from module ultrasonic_capture.
+Setting constant 1-bit at position 4 on $procdff$478 ($adff) from module ultrasonic_capture.
+Setting constant 1-bit at position 5 on $procdff$478 ($adff) from module ultrasonic_capture.
+Setting constant 1-bit at position 6 on $procdff$478 ($adff) from module ultrasonic_capture.
+Setting constant 1-bit at position 7 on $procdff$478 ($adff) from module ultrasonic_capture.
+Setting constant 1-bit at position 8 on $procdff$478 ($adff) from module ultrasonic_capture.
+Setting constant 1-bit at position 9 on $procdff$478 ($adff) from module ultrasonic_capture.
+Setting constant 1-bit at position 10 on $procdff$478 ($adff) from module ultrasonic_capture.
+Setting constant 1-bit at position 11 on $procdff$478 ($adff) from module ultrasonic_capture.
+Setting constant 1-bit at position 12 on $procdff$478 ($adff) from module ultrasonic_capture.
+Setting constant 1-bit at position 13 on $procdff$478 ($adff) from module ultrasonic_capture.
+Setting constant 1-bit at position 14 on $procdff$478 ($adff) from module ultrasonic_capture.
+Setting constant 1-bit at position 15 on $procdff$478 ($adff) from module ultrasonic_capture.
+Setting constant 1-bit at position 16 on $procdff$478 ($adff) from module ultrasonic_capture.
+Setting constant 1-bit at position 17 on $procdff$478 ($adff) from module ultrasonic_capture.
+Setting constant 1-bit at position 18 on $procdff$478 ($adff) from module ultrasonic_capture.
+Setting constant 1-bit at position 19 on $procdff$478 ($adff) from module ultrasonic_capture.
+Setting constant 1-bit at position 0 on $procdff$468 ($adff) from module ultrasonic_capture.
+Setting constant 1-bit at position 1 on $procdff$468 ($adff) from module ultrasonic_capture.
+Setting constant 1-bit at position 2 on $procdff$468 ($adff) from module ultrasonic_capture.
+Setting constant 1-bit at position 3 on $procdff$468 ($adff) from module ultrasonic_capture.
+Setting constant 1-bit at position 4 on $procdff$468 ($adff) from module ultrasonic_capture.
+Setting constant 1-bit at position 5 on $procdff$468 ($adff) from module ultrasonic_capture.
+Setting constant 1-bit at position 6 on $procdff$468 ($adff) from module ultrasonic_capture.
+Setting constant 1-bit at position 7 on $procdff$468 ($adff) from module ultrasonic_capture.
+Setting constant 1-bit at position 8 on $procdff$468 ($adff) from module ultrasonic_capture.
+Setting constant 1-bit at position 9 on $procdff$468 ($adff) from module ultrasonic_capture.
+Setting constant 1-bit at position 10 on $procdff$468 ($adff) from module ultrasonic_capture.
+Setting constant 1-bit at position 11 on $procdff$468 ($adff) from module ultrasonic_capture.
+Setting constant 1-bit at position 12 on $procdff$468 ($adff) from module ultrasonic_capture.
+Setting constant 1-bit at position 13 on $procdff$468 ($adff) from module ultrasonic_capture.
+Setting constant 1-bit at position 14 on $procdff$468 ($adff) from module ultrasonic_capture.
+Setting constant 1-bit at position 15 on $procdff$468 ($adff) from module ultrasonic_capture.
+Setting constant 1-bit at position 16 on $procdff$468 ($adff) from module ultrasonic_capture.
+Setting constant 1-bit at position 17 on $procdff$468 ($adff) from module ultrasonic_capture.
+Setting constant 1-bit at position 18 on $procdff$468 ($adff) from module ultrasonic_capture.
+Setting constant 1-bit at position 19 on $procdff$468 ($adff) from module ultrasonic_capture.
+Setting constant 1-bit at position 20 on $procdff$468 ($adff) from module ultrasonic_capture.
+Setting constant 1-bit at position 21 on $procdff$468 ($adff) from module ultrasonic_capture.
+Setting constant 1-bit at position 22 on $procdff$468 ($adff) from module ultrasonic_capture.
+Setting constant 1-bit at position 23 on $procdff$468 ($adff) from module ultrasonic_capture.
+Setting constant 1-bit at position 24 on $procdff$468 ($adff) from module ultrasonic_capture.
+Setting constant 1-bit at position 25 on $procdff$468 ($adff) from module ultrasonic_capture.
+Setting constant 1-bit at position 26 on $procdff$468 ($adff) from module ultrasonic_capture.
+Setting constant 1-bit at position 27 on $procdff$468 ($adff) from module ultrasonic_capture.
+Setting constant 1-bit at position 28 on $procdff$468 ($adff) from module ultrasonic_capture.
+Setting constant 1-bit at position 29 on $procdff$468 ($adff) from module ultrasonic_capture.
+Setting constant 1-bit at position 30 on $procdff$468 ($adff) from module ultrasonic_capture.
+Setting constant 1-bit at position 31 on $procdff$468 ($adff) from module ultrasonic_capture.
+Setting constant 1-bit at position 32 on $procdff$468 ($adff) from module ultrasonic_capture.
+Setting constant 1-bit at position 33 on $procdff$468 ($adff) from module ultrasonic_capture.
+Setting constant 1-bit at position 34 on $procdff$468 ($adff) from module ultrasonic_capture.
+Setting constant 1-bit at position 35 on $procdff$468 ($adff) from module ultrasonic_capture.
+Setting constant 1-bit at position 0 on $procdff$458 ($adff) from module ultrasonic_capture.
+Setting constant 1-bit at position 1 on $procdff$458 ($adff) from module ultrasonic_capture.
+Setting constant 1-bit at position 2 on $procdff$458 ($adff) from module ultrasonic_capture.
+Setting constant 1-bit at position 3 on $procdff$458 ($adff) from module ultrasonic_capture.
+Setting constant 1-bit at position 4 on $procdff$458 ($adff) from module ultrasonic_capture.
+Setting constant 1-bit at position 5 on $procdff$458 ($adff) from module ultrasonic_capture.
+Setting constant 1-bit at position 6 on $procdff$458 ($adff) from module ultrasonic_capture.
+Setting constant 1-bit at position 7 on $procdff$458 ($adff) from module ultrasonic_capture.
+Setting constant 1-bit at position 8 on $procdff$458 ($adff) from module ultrasonic_capture.
+Setting constant 1-bit at position 9 on $procdff$458 ($adff) from module ultrasonic_capture.
+Setting constant 1-bit at position 10 on $procdff$458 ($adff) from module ultrasonic_capture.
+Setting constant 1-bit at position 11 on $procdff$458 ($adff) from module ultrasonic_capture.
+Setting constant 1-bit at position 12 on $procdff$458 ($adff) from module ultrasonic_capture.
+Setting constant 1-bit at position 13 on $procdff$458 ($adff) from module ultrasonic_capture.
+Setting constant 1-bit at position 14 on $procdff$458 ($adff) from module ultrasonic_capture.
+Setting constant 1-bit at position 15 on $procdff$458 ($adff) from module ultrasonic_capture.
+
+5.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ultrasonic_capture..
+Removed 13 unused cells and 238 unused wires.
+<suppressed ~15 debug messages>
+
+5.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ultrasonic_capture.
+<suppressed ~8 debug messages>
+
+5.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+5.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \ultrasonic_capture..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~59 debug messages>
+
+5.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \ultrasonic_capture.
+Performed a total of 0 changes.
+
+5.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ultrasonic_capture'.
+Computing hashes of 143 cells of `\ultrasonic_capture'.
+Finding duplicate cells in `\ultrasonic_capture'.
+Computing hashes of 133 cells of `\ultrasonic_capture'.
+Finding duplicate cells in `\ultrasonic_capture'.
+<suppressed ~30 debug messages>
+Removed a total of 10 cells.
+
+5.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ultrasonic_capture..
+Removed 0 unused cells and 10 unused wires.
+<suppressed ~1 debug messages>
+
+5.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ultrasonic_capture.
+
+5.16. Rerunning OPT passes. (Maybe there is more to do..)
+
+5.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \ultrasonic_capture..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~59 debug messages>
+
+5.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \ultrasonic_capture.
+Performed a total of 0 changes.
+
+5.19. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ultrasonic_capture'.
+Computing hashes of 133 cells of `\ultrasonic_capture'.
+Finding duplicate cells in `\ultrasonic_capture'.
+Removed a total of 0 cells.
+
+5.20. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ultrasonic_capture..
+
+5.22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ultrasonic_capture.
+
+5.23. Finished fast OPT passes. (There is nothing left to do.)
+
+6. Executing ASYNC2SYNC pass.
+Replacing ultrasonic_capture.$auto$ff.cc:337:slice$568 ($adffe): ARST=\rst_ni, D=$0\ch1_echo_cnt[19:0], Q=\ch1_echo_cnt
+Replacing ultrasonic_capture.$auto$ff.cc:337:slice$561 ($adffe): ARST=\rst_ni, D=$0\ch0_echo_prev[0:0], Q=\ch0_echo_prev
+Replacing ultrasonic_capture.$procdff$368 ($adff): ARST=\rst_ni, D=$0\trig_o[1:0], Q=\trig_o
+Replacing ultrasonic_capture.$auto$ff.cc:337:slice$558 ($adffe): ARST=\rst_ni, D=$4\calc_distance$func$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:183$2.$result[15:0]$54, Q=\ch1_dist_val
+Replacing ultrasonic_capture.$procdff$363 ($adff): ARST=\rst_ni, D=$0\wb_ack_o[0:0], Q=\wb_ack_o
+Replacing ultrasonic_capture.$procdff$443 ($adff): ARST=\rst_ni, D=$0\ch1_start[0:0], Q=\ch1_start
+Replacing ultrasonic_capture.$auto$ff.cc:337:slice$555 ($adffe): ARST=\rst_ni, D=$4\calc_distance$func$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:143$1.$result[15:0]$35, Q=\ch0_dist_val
+Replacing ultrasonic_capture.$auto$ff.cc:337:slice$550 ($adffe): ARST=\rst_ni, D=$procmux$343_Y, Q=\wb_dat_o
+Replacing ultrasonic_capture.$auto$ff.cc:337:slice$541 ($adffe): ARST=\rst_ni, D=$0\ch1_trig_cnt[15:0], Q=\ch1_trig_cnt
+Replacing ultrasonic_capture.$auto$ff.cc:337:slice$534 ($adffe): ARST=\rst_ni, D=$0\ch1_echo_prev[0:0], Q=\ch1_echo_prev
+Replacing ultrasonic_capture.$procdff$408 ($adff): ARST=\rst_ni, D=$0\ch0_start[0:0], Q=\ch0_start
+Replacing ultrasonic_capture.$auto$ff.cc:337:slice$531 ($adffe): ARST=\rst_ni, D=\ch0_echo_cnt [15:0], Q=\ch0_echo_val
+Replacing ultrasonic_capture.$auto$ff.cc:337:slice$520 ($adffe): ARST=\rst_ni, D=$0\ch0_state[1:0], Q=\ch0_state
+Replacing ultrasonic_capture.$procdff$453 ($adff): ARST=\rst_ni, D=\echo_sync1, Q=\echo_sync2
+Replacing ultrasonic_capture.$auto$ff.cc:337:slice$517 ($adffe): ARST=\rst_ni, D=\ch1_echo_cnt [15:0], Q=\ch1_echo_val
+Replacing ultrasonic_capture.$auto$ff.cc:337:slice$508 ($adffe): ARST=\rst_ni, D=$0\ch0_echo_cnt[19:0], Q=\ch0_echo_cnt
+Replacing ultrasonic_capture.$procdff$448 ($adff): ARST=\rst_ni, D=\echo_i, Q=\echo_sync1
+Replacing ultrasonic_capture.$auto$ff.cc:337:slice$497 ($adffe): ARST=\rst_ni, D=$0\ch1_state[1:0], Q=\ch1_state
+Replacing ultrasonic_capture.$auto$ff.cc:337:slice$488 ($adffe): ARST=\rst_ni, D=$0\ch0_trig_cnt[15:0], Q=\ch0_trig_cnt
+Replacing ultrasonic_capture.$procdff$373 ($adff): ARST=\rst_ni, D=$0\irq_done[0:0], Q=\irq_done
+
+7. Executing MEMORY pass.
+
+7.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+7.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+7.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+7.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+7.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+7.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ultrasonic_capture..
+
+7.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+7.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+7.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ultrasonic_capture..
+
+7.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+7.11. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+8. Executing OPT pass (performing simple optimizations).
+
+8.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ultrasonic_capture.
+
+8.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ultrasonic_capture'.
+Computing hashes of 153 cells of `\ultrasonic_capture'.
+Finding duplicate cells in `\ultrasonic_capture'.
+Removed a total of 0 cells.
+
+8.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \ultrasonic_capture..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~95 debug messages>
+
+8.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \ultrasonic_capture.
+Performed a total of 0 changes.
+
+8.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ultrasonic_capture'.
+Computing hashes of 153 cells of `\ultrasonic_capture'.
+Finding duplicate cells in `\ultrasonic_capture'.
+Removed a total of 0 cells.
+
+8.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding SRST signal on $procdff$443 ($sdff) from module ultrasonic_capture (D = $procmux$213_Y, Q = $auto$async2sync.cc:253:execute$587, rval = 1'0).
+Adding SRST signal on $procdff$408 ($sdff) from module ultrasonic_capture (D = $procmux$222_Y, Q = $auto$async2sync.cc:253:execute$597, rval = 1'0).
+Adding SRST signal on $procdff$453 ($sdff) from module ultrasonic_capture (D = $auto$async2sync.cc:253:execute$609, Q = $auto$async2sync.cc:253:execute$603, rval = 2'00).
+
+8.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ultrasonic_capture..
+Removed 7 unused cells and 7 unused wires.
+<suppressed ~9 debug messages>
+
+8.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ultrasonic_capture.
+
+8.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+8.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \ultrasonic_capture..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~87 debug messages>
+
+8.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \ultrasonic_capture.
+Performed a total of 0 changes.
+
+8.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ultrasonic_capture'.
+Computing hashes of 148 cells of `\ultrasonic_capture'.
+Finding duplicate cells in `\ultrasonic_capture'.
+Computing hashes of 147 cells of `\ultrasonic_capture'.
+Finding duplicate cells in `\ultrasonic_capture'.
+<suppressed ~3 debug messages>
+Removed a total of 1 cells.
+
+8.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+8.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ultrasonic_capture..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+8.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ultrasonic_capture.
+
+8.16. Rerunning OPT passes. (Maybe there is more to do..)
+
+8.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \ultrasonic_capture..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~87 debug messages>
+
+8.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \ultrasonic_capture.
+Performed a total of 0 changes.
+
+8.19. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ultrasonic_capture'.
+Computing hashes of 147 cells of `\ultrasonic_capture'.
+Finding duplicate cells in `\ultrasonic_capture'.
+Removed a total of 0 cells.
+
+8.20. Executing OPT_DFF pass (perform DFF optimizations).
+
+8.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ultrasonic_capture..
+
+8.22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ultrasonic_capture.
+
+8.23. Finished fast OPT passes. (There is nothing left to do.)
+
+9. Executing TECHMAP pass (map to technology primitives).
+
+9.1. Executing Verilog-2005 frontend: /home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v
+Parsing Verilog input from `/home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu_brent_kung'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `$__div_mod_u'.
+Generating RTLIL representation for module `$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Generating RTLIL representation for module `$connect'.
+Generating RTLIL representation for module `$input_port'.
+Successfully finished Verilog frontend.
+
+9.2. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $sdff.
+Using extmapper simplemap for cells of type $reduce_and.
+Using extmapper simplemap for cells of type $mux.
+Using extmapper simplemap for cells of type $ne.
+Using extmapper simplemap for cells of type $sdffe.
+Using extmapper simplemap for cells of type $not.
+Using extmapper simplemap for cells of type $reduce_bool.
+Using extmapper simplemap for cells of type $reduce_or.
+Running "alumacc" on wrapper $extern:wrap:$gt:Y_WIDTH=1:B_WIDTH=32:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$gt:Y_WIDTH=1:B_WIDTH=32:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$gt:Y_WIDTH=1:B_WIDTH=32:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Running "alumacc" on wrapper $extern:wrap:$sub:Y_WIDTH=16:B_WIDTH=16:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$sub:Y_WIDTH=16:B_WIDTH=16:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$sub:Y_WIDTH=16:B_WIDTH=16:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Using extmapper simplemap for cells of type $logic_not.
+Using extmapper simplemap for cells of type $logic_and.
+Running "alumacc" on wrapper $extern:wrap:$add:Y_WIDTH=20:B_WIDTH=20:A_WIDTH=20:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$add:Y_WIDTH=20:B_WIDTH=20:A_WIDTH=20:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$add:Y_WIDTH=20:B_WIDTH=20:A_WIDTH=20:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Running "alumacc" on wrapper $extern:wrap:$gt:Y_WIDTH=1:B_WIDTH=32:A_WIDTH=20:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$gt:Y_WIDTH=1:B_WIDTH=32:A_WIDTH=20:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$gt:Y_WIDTH=1:B_WIDTH=32:A_WIDTH=20:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Running "alumacc" on wrapper $extern:wrap:$mul:Y_WIDTH=34:B_WIDTH=18:A_WIDTH=20:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$mul:Y_WIDTH=34:B_WIDTH=18:A_WIDTH=20:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$mul:Y_WIDTH=34:B_WIDTH=18:A_WIDTH=20:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Running "alumacc" on wrapper $extern:wrap:$gt:Y_WIDTH=1:B_WIDTH=36:A_WIDTH=36:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$gt:Y_WIDTH=1:B_WIDTH=36:A_WIDTH=36:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$gt:Y_WIDTH=1:B_WIDTH=36:A_WIDTH=36:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $paramod$6df0329addda9228fcc2546de2aaf14ad26c98e1\_90_div for cells of type $div.
+Using template $paramod$c5c783b17ab1d780abfad8cfe6563a0a7b47a3b0\_90_pmux for cells of type $pmux.
+Using template $paramod$e1288d0841f06aa42a27023fd45c512a560ab9b3\_90_pmux for cells of type $pmux.
+Using template $paramod$0d149ffe75563ef6fcc1a3dddc59d00af28651a7\_90_pmux for cells of type $pmux.
+Using extmapper simplemap for cells of type $eq.
+Using template $paramod$068ad458e7761d78e5eed8238508872e7b0aef95\_90_pmux for cells of type $pmux.
+Using template $paramod$59b03ae2620a41577de8da5f5c97b2919e82362b\_90_pmux for cells of type $pmux.
+Using extmapper simplemap for cells of type $and.
+Using template $paramod$6df0329addda9228fcc2546de2aaf14ad26c98e1$__div_mod_trunc for cells of type $__div_mod_trunc.
+Using template $paramod$9fb24bf0faa43f804d3c379242188667e42c235c\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $or.
+Using extmapper maccmap for cells of type $macc_v2.
+  add \ch1_echo_cnt * 18'000000000000011001 (20x18 bits, unsigned)
+Using template $paramod$a73b73c5f5a1d9d7f80c290f47c75c83218240f1\_90_alu for cells of type $alu.
+Using template $paramod$6fc37af1c109ae54e8aed83fcd995c12d378ce93\_90_alu for cells of type $alu.
+Using template $paramod$6df0329addda9228fcc2546de2aaf14ad26c98e1\_90_alu for cells of type $alu.
+Using template $paramod$2bd81f420048247ff6903399c560fe0f8bd48ccc\_90_alu for cells of type $alu.
+  add \ch0_echo_cnt * 18'000000000000011001 (20x18 bits, unsigned)
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000100010 for cells of type $fa.
+Using template $paramod$dbef6e48cd28208af1b77a9bd7dfc80580f16131\_90_alu for cells of type $alu.
+Running "alumacc" on wrapper $extern:wrap:$neg:Y_WIDTH=16:A_WIDTH=16:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$neg:Y_WIDTH=16:A_WIDTH=16:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$neg:Y_WIDTH=16:A_WIDTH=16:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $paramod$__div_mod_u\WIDTH=32'00000000000000000000000000010000 for cells of type $__div_mod_u.
+Using extmapper simplemap for cells of type $pos.
+Using extmapper simplemap for cells of type $xor.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000100100 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000100100 for cells of type $lcu.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000100000 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000100000 for cells of type $lcu.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000010100 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000010100 for cells of type $lcu.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000010000 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000010000 for cells of type $lcu.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000100010 for cells of type $lcu.
+Using template $paramod$02488ff6fa51b28bbfa470bdd9b0e548b3357746\_90_alu for cells of type $alu.
+Running "alumacc" on wrapper $extern:wrap:$ge:Y_WIDTH=1:B_WIDTH=16:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$ge:Y_WIDTH=1:B_WIDTH=16:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$ge:Y_WIDTH=1:B_WIDTH=16:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Running "alumacc" on wrapper $extern:wrap:$sub:Y_WIDTH=17:B_WIDTH=17:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$sub:Y_WIDTH=17:B_WIDTH=17:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$sub:Y_WIDTH=17:B_WIDTH=17:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Running "alumacc" on wrapper $extern:wrap:$ge:Y_WIDTH=1:B_WIDTH=17:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$ge:Y_WIDTH=1:B_WIDTH=17:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$ge:Y_WIDTH=1:B_WIDTH=17:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Running "alumacc" on wrapper $extern:wrap:$sub:Y_WIDTH=18:B_WIDTH=18:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$sub:Y_WIDTH=18:B_WIDTH=18:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$sub:Y_WIDTH=18:B_WIDTH=18:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Running "alumacc" on wrapper $extern:wrap:$ge:Y_WIDTH=1:B_WIDTH=18:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$ge:Y_WIDTH=1:B_WIDTH=18:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$ge:Y_WIDTH=1:B_WIDTH=18:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Running "alumacc" on wrapper $extern:wrap:$sub:Y_WIDTH=19:B_WIDTH=19:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$sub:Y_WIDTH=19:B_WIDTH=19:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$sub:Y_WIDTH=19:B_WIDTH=19:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Running "alumacc" on wrapper $extern:wrap:$ge:Y_WIDTH=1:B_WIDTH=19:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$ge:Y_WIDTH=1:B_WIDTH=19:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$ge:Y_WIDTH=1:B_WIDTH=19:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Running "alumacc" on wrapper $extern:wrap:$sub:Y_WIDTH=20:B_WIDTH=20:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$sub:Y_WIDTH=20:B_WIDTH=20:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$sub:Y_WIDTH=20:B_WIDTH=20:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Running "alumacc" on wrapper $extern:wrap:$ge:Y_WIDTH=1:B_WIDTH=20:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$ge:Y_WIDTH=1:B_WIDTH=20:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$ge:Y_WIDTH=1:B_WIDTH=20:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Running "alumacc" on wrapper $extern:wrap:$sub:Y_WIDTH=21:B_WIDTH=21:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$sub:Y_WIDTH=21:B_WIDTH=21:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$sub:Y_WIDTH=21:B_WIDTH=21:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Running "alumacc" on wrapper $extern:wrap:$ge:Y_WIDTH=1:B_WIDTH=21:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$ge:Y_WIDTH=1:B_WIDTH=21:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$ge:Y_WIDTH=1:B_WIDTH=21:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Running "alumacc" on wrapper $extern:wrap:$sub:Y_WIDTH=22:B_WIDTH=22:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$sub:Y_WIDTH=22:B_WIDTH=22:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$sub:Y_WIDTH=22:B_WIDTH=22:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Running "alumacc" on wrapper $extern:wrap:$ge:Y_WIDTH=1:B_WIDTH=22:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$ge:Y_WIDTH=1:B_WIDTH=22:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$ge:Y_WIDTH=1:B_WIDTH=22:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Running "alumacc" on wrapper $extern:wrap:$sub:Y_WIDTH=23:B_WIDTH=23:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$sub:Y_WIDTH=23:B_WIDTH=23:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$sub:Y_WIDTH=23:B_WIDTH=23:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Running "alumacc" on wrapper $extern:wrap:$ge:Y_WIDTH=1:B_WIDTH=23:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$ge:Y_WIDTH=1:B_WIDTH=23:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$ge:Y_WIDTH=1:B_WIDTH=23:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Running "alumacc" on wrapper $extern:wrap:$sub:Y_WIDTH=24:B_WIDTH=24:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$sub:Y_WIDTH=24:B_WIDTH=24:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$sub:Y_WIDTH=24:B_WIDTH=24:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Running "alumacc" on wrapper $extern:wrap:$ge:Y_WIDTH=1:B_WIDTH=24:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$ge:Y_WIDTH=1:B_WIDTH=24:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$ge:Y_WIDTH=1:B_WIDTH=24:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Running "alumacc" on wrapper $extern:wrap:$sub:Y_WIDTH=25:B_WIDTH=25:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$sub:Y_WIDTH=25:B_WIDTH=25:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$sub:Y_WIDTH=25:B_WIDTH=25:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Running "alumacc" on wrapper $extern:wrap:$ge:Y_WIDTH=1:B_WIDTH=25:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$ge:Y_WIDTH=1:B_WIDTH=25:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$ge:Y_WIDTH=1:B_WIDTH=25:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Running "alumacc" on wrapper $extern:wrap:$sub:Y_WIDTH=26:B_WIDTH=26:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$sub:Y_WIDTH=26:B_WIDTH=26:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$sub:Y_WIDTH=26:B_WIDTH=26:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Running "alumacc" on wrapper $extern:wrap:$ge:Y_WIDTH=1:B_WIDTH=26:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$ge:Y_WIDTH=1:B_WIDTH=26:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$ge:Y_WIDTH=1:B_WIDTH=26:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Running "alumacc" on wrapper $extern:wrap:$sub:Y_WIDTH=27:B_WIDTH=27:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$sub:Y_WIDTH=27:B_WIDTH=27:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$sub:Y_WIDTH=27:B_WIDTH=27:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Running "alumacc" on wrapper $extern:wrap:$ge:Y_WIDTH=1:B_WIDTH=27:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$ge:Y_WIDTH=1:B_WIDTH=27:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$ge:Y_WIDTH=1:B_WIDTH=27:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Running "alumacc" on wrapper $extern:wrap:$sub:Y_WIDTH=28:B_WIDTH=28:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$sub:Y_WIDTH=28:B_WIDTH=28:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$sub:Y_WIDTH=28:B_WIDTH=28:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Running "alumacc" on wrapper $extern:wrap:$ge:Y_WIDTH=1:B_WIDTH=28:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$ge:Y_WIDTH=1:B_WIDTH=28:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$ge:Y_WIDTH=1:B_WIDTH=28:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Running "alumacc" on wrapper $extern:wrap:$sub:Y_WIDTH=29:B_WIDTH=29:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$sub:Y_WIDTH=29:B_WIDTH=29:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$sub:Y_WIDTH=29:B_WIDTH=29:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Running "alumacc" on wrapper $extern:wrap:$ge:Y_WIDTH=1:B_WIDTH=29:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$ge:Y_WIDTH=1:B_WIDTH=29:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$ge:Y_WIDTH=1:B_WIDTH=29:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Running "alumacc" on wrapper $extern:wrap:$sub:Y_WIDTH=30:B_WIDTH=30:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$sub:Y_WIDTH=30:B_WIDTH=30:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$sub:Y_WIDTH=30:B_WIDTH=30:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Running "alumacc" on wrapper $extern:wrap:$ge:Y_WIDTH=1:B_WIDTH=30:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$ge:Y_WIDTH=1:B_WIDTH=30:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$ge:Y_WIDTH=1:B_WIDTH=30:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Running "alumacc" on wrapper $extern:wrap:$sub:Y_WIDTH=31:B_WIDTH=31:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$sub:Y_WIDTH=31:B_WIDTH=31:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$sub:Y_WIDTH=31:B_WIDTH=31:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Running "alumacc" on wrapper $extern:wrap:$ge:Y_WIDTH=1:B_WIDTH=31:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$ge:Y_WIDTH=1:B_WIDTH=31:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$ge:Y_WIDTH=1:B_WIDTH=31:A_WIDTH=16:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $paramod$d66a711d7e97d14a7c7a9fd9e900c39b1fc36cfa\_90_alu for cells of type $alu.
+Using template $paramod$8359f4ac8e08a95551ec17e9becbee696d87568d\_90_alu for cells of type $alu.
+Using template $paramod$3e9f586ebf39197c9185418e155ec5725178e703\_90_alu for cells of type $alu.
+Using template $paramod$99f84fe1e34117baf970301335fa146f92b93eb7\_90_alu for cells of type $alu.
+Using template $paramod$10caef7eb223495dec7ca6c51abc18dbd379ce45\_90_alu for cells of type $alu.
+Using template $paramod$6ae352d62dfc78ea1f63c7f3961ba142be4a2f93\_90_alu for cells of type $alu.
+Using template $paramod$7bdc7d89ea9376c9c454fd05d9b64ca6288b61c9\_90_alu for cells of type $alu.
+Using template $paramod$96a374a77d27fe2a5f65189ccd5c4d82c02f3e0c\_90_alu for cells of type $alu.
+Using template $paramod$c01a73249af533291d6c07bc7dff8edfd9012ebf\_90_alu for cells of type $alu.
+Using template $paramod$4dafc65fa46f14914da22e0fac43fee737cf5e98\_90_alu for cells of type $alu.
+Using template $paramod$6514813ccfd0fbcd872b47be16e9bc3f005ba67f\_90_alu for cells of type $alu.
+Using template $paramod$90cb621aa18d0bfc972ff6df82973fce6d62f25a\_90_alu for cells of type $alu.
+Using template $paramod$28a6ec5648d14f65107108cc45dfc9433b8b29ab\_90_alu for cells of type $alu.
+Using template $paramod$1b1e81b08462e7f621826ba0c290068af8e4e550\_90_alu for cells of type $alu.
+Using template $paramod$1c5b0982e801b857faf786570d1281fe30bbf0dc\_90_alu for cells of type $alu.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000010001 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000010001 for cells of type $lcu.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000010010 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000010010 for cells of type $lcu.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000010011 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000010011 for cells of type $lcu.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000010101 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000010101 for cells of type $lcu.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000010110 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000010110 for cells of type $lcu.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000010111 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000010111 for cells of type $lcu.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000011000 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000011000 for cells of type $lcu.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000011001 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000011001 for cells of type $lcu.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000011010 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000011010 for cells of type $lcu.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000011011 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000011011 for cells of type $lcu.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000011100 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000011100 for cells of type $lcu.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000011101 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000011101 for cells of type $lcu.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000011110 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000011110 for cells of type $lcu.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000011111 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000011111 for cells of type $lcu.
+No more expansions possible.
+<suppressed ~14046 debug messages>
+
+10. Executing OPT pass (performing simple optimizations).
+
+10.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ultrasonic_capture.
+<suppressed ~27448 debug messages>
+
+10.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ultrasonic_capture'.
+Computing hashes of 8563 cells of `\ultrasonic_capture'.
+Finding duplicate cells in `\ultrasonic_capture'.
+Computing hashes of 7201 cells of `\ultrasonic_capture'.
+Finding duplicate cells in `\ultrasonic_capture'.
+Computing hashes of 6363 cells of `\ultrasonic_capture'.
+Finding duplicate cells in `\ultrasonic_capture'.
+Computing hashes of 5919 cells of `\ultrasonic_capture'.
+Finding duplicate cells in `\ultrasonic_capture'.
+Computing hashes of 5667 cells of `\ultrasonic_capture'.
+Finding duplicate cells in `\ultrasonic_capture'.
+Computing hashes of 5386 cells of `\ultrasonic_capture'.
+Finding duplicate cells in `\ultrasonic_capture'.
+Computing hashes of 5190 cells of `\ultrasonic_capture'.
+Finding duplicate cells in `\ultrasonic_capture'.
+Computing hashes of 4850 cells of `\ultrasonic_capture'.
+Finding duplicate cells in `\ultrasonic_capture'.
+Computing hashes of 4638 cells of `\ultrasonic_capture'.
+Finding duplicate cells in `\ultrasonic_capture'.
+Computing hashes of 4394 cells of `\ultrasonic_capture'.
+Finding duplicate cells in `\ultrasonic_capture'.
+Computing hashes of 4290 cells of `\ultrasonic_capture'.
+Finding duplicate cells in `\ultrasonic_capture'.
+Computing hashes of 4198 cells of `\ultrasonic_capture'.
+Finding duplicate cells in `\ultrasonic_capture'.
+Computing hashes of 4174 cells of `\ultrasonic_capture'.
+Finding duplicate cells in `\ultrasonic_capture'.
+Computing hashes of 4164 cells of `\ultrasonic_capture'.
+Finding duplicate cells in `\ultrasonic_capture'.
+<suppressed ~13197 debug messages>
+Removed a total of 4399 cells.
+
+10.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \ultrasonic_capture..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+10.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \ultrasonic_capture.
+Performed a total of 0 changes.
+
+10.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ultrasonic_capture'.
+Computing hashes of 4164 cells of `\ultrasonic_capture'.
+Finding duplicate cells in `\ultrasonic_capture'.
+Removed a total of 0 cells.
+
+10.6. Executing OPT_DFF pass (perform DFF optimizations).
+Setting constant 0-bit at position 0 on $auto$ff.cc:337:slice$992 ($_SDFFE_PN0P_) from module ultrasonic_capture.
+
+10.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ultrasonic_capture..
+Removed 1194 unused cells and 12655 unused wires.
+<suppressed ~1195 debug messages>
+
+10.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ultrasonic_capture.
+<suppressed ~1 debug messages>
+
+10.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+10.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \ultrasonic_capture..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+10.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \ultrasonic_capture.
+Performed a total of 0 changes.
+
+10.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ultrasonic_capture'.
+Computing hashes of 2968 cells of `\ultrasonic_capture'.
+Finding duplicate cells in `\ultrasonic_capture'.
+Removed a total of 0 cells.
+
+10.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+10.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ultrasonic_capture..
+
+10.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ultrasonic_capture.
+
+10.16. Finished fast OPT passes. (There is nothing left to do.)
+
+11. Executing FLATTEN pass (flatten design).
+
+12. Executing OPT pass (performing simple optimizations).
+
+12.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ultrasonic_capture.
+
+12.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ultrasonic_capture'.
+Computing hashes of 2968 cells of `\ultrasonic_capture'.
+Finding duplicate cells in `\ultrasonic_capture'.
+Removed a total of 0 cells.
+
+12.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \ultrasonic_capture..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+12.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \ultrasonic_capture.
+Performed a total of 0 changes.
+
+12.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ultrasonic_capture'.
+Computing hashes of 2968 cells of `\ultrasonic_capture'.
+Finding duplicate cells in `\ultrasonic_capture'.
+Removed a total of 0 cells.
+
+12.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+12.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ultrasonic_capture..
+
+12.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ultrasonic_capture.
+
+12.9. Finished fast OPT passes. (There is nothing left to do.)
+
+13. Executing Liberty frontend: /home/smdadmin/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130B/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+Imported 428 cell types from liberty file.
+
+14. Executing Verilog-2005 frontend: /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/synth/ultrasonic_capture_netlist.v
+Parsing Verilog input from `/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/synth/ultrasonic_capture_netlist.v' to AST representation.
+Generating RTLIL representation for module `\ultrasonic_capture'.
+Successfully finished Verilog frontend.
+
+15. Executing HIERARCHY pass (managing design hierarchy).
+
+15.1. Analyzing design hierarchy..
+Top module:  \ultrasonic_capture
+
+15.2. Analyzing design hierarchy..
+Top module:  \ultrasonic_capture
+Removed 0 unused modules.
+
+16. Executing PROC pass (convert processes to netlists).
+
+16.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+16.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed a total of 0 dead cases.
+
+16.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 0 assignments to connections.
+
+16.4. Executing PROC_INIT pass (extract init attributes).
+
+16.5. Executing PROC_ARST pass (detect async resets in processes).
+
+16.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+
+16.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+
+16.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+16.9. Executing PROC_DFF pass (convert process syncs to FFs).
+
+16.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+16.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+16.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ultrasonic_capture.
+
+17. Executing OPT pass (performing simple optimizations).
+
+17.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ultrasonic_capture.
+
+17.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ultrasonic_capture'.
+Computing hashes of 1305 cells of `\ultrasonic_capture'.
+Finding duplicate cells in `\ultrasonic_capture'.
+Removed a total of 0 cells.
+
+17.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \ultrasonic_capture..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+17.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \ultrasonic_capture.
+Performed a total of 0 changes.
+
+17.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ultrasonic_capture'.
+Computing hashes of 1305 cells of `\ultrasonic_capture'.
+Finding duplicate cells in `\ultrasonic_capture'.
+Removed a total of 0 cells.
+
+17.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+17.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ultrasonic_capture..
+Removed 0 unused cells and 1330 unused wires.
+<suppressed ~1 debug messages>
+
+17.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ultrasonic_capture.
+
+17.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+17.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \ultrasonic_capture..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+17.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \ultrasonic_capture.
+Performed a total of 0 changes.
+
+17.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ultrasonic_capture'.
+Computing hashes of 1305 cells of `\ultrasonic_capture'.
+Finding duplicate cells in `\ultrasonic_capture'.
+Removed a total of 0 cells.
+
+17.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+17.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ultrasonic_capture..
+
+17.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ultrasonic_capture.
+
+17.16. Finished fast OPT passes. (There is nothing left to do.)
+
+18. Executing ASYNC2SYNC pass.
+
+19. Executing MEMORY pass.
+
+19.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+19.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+19.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+19.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+19.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+19.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ultrasonic_capture..
+
+19.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+19.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+19.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ultrasonic_capture..
+
+19.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+19.11. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+20. Executing OPT pass (performing simple optimizations).
+
+20.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ultrasonic_capture.
+
+20.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ultrasonic_capture'.
+Computing hashes of 1305 cells of `\ultrasonic_capture'.
+Finding duplicate cells in `\ultrasonic_capture'.
+Removed a total of 0 cells.
+
+20.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \ultrasonic_capture..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+20.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \ultrasonic_capture.
+Performed a total of 0 changes.
+
+20.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ultrasonic_capture'.
+Computing hashes of 1305 cells of `\ultrasonic_capture'.
+Finding duplicate cells in `\ultrasonic_capture'.
+Removed a total of 0 cells.
+
+20.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+20.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ultrasonic_capture..
+
+20.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ultrasonic_capture.
+
+20.9. Finished fast OPT passes. (There is nothing left to do.)
+
+21. Executing TECHMAP pass (map to technology primitives).
+
+21.1. Executing Verilog-2005 frontend: /home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v
+Parsing Verilog input from `/home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu_brent_kung'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `$__div_mod_u'.
+Generating RTLIL representation for module `$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Generating RTLIL representation for module `$connect'.
+Generating RTLIL representation for module `$input_port'.
+Successfully finished Verilog frontend.
+
+21.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~77 debug messages>
+
+22. Executing OPT pass (performing simple optimizations).
+
+22.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ultrasonic_capture.
+
+22.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ultrasonic_capture'.
+Computing hashes of 1305 cells of `\ultrasonic_capture'.
+Finding duplicate cells in `\ultrasonic_capture'.
+Removed a total of 0 cells.
+
+22.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \ultrasonic_capture..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+22.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \ultrasonic_capture.
+Performed a total of 0 changes.
+
+22.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ultrasonic_capture'.
+Computing hashes of 1305 cells of `\ultrasonic_capture'.
+Finding duplicate cells in `\ultrasonic_capture'.
+Removed a total of 0 cells.
+
+22.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+22.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ultrasonic_capture..
+
+22.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ultrasonic_capture.
+
+22.9. Finished fast OPT passes. (There is nothing left to do.)
+
+23. Executing FLATTEN pass (flatten design).
+
+24. Executing OPT pass (performing simple optimizations).
+
+24.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ultrasonic_capture.
+
+24.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ultrasonic_capture'.
+Computing hashes of 1305 cells of `\ultrasonic_capture'.
+Finding duplicate cells in `\ultrasonic_capture'.
+Removed a total of 0 cells.
+
+24.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \ultrasonic_capture..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+24.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \ultrasonic_capture.
+Performed a total of 0 changes.
+
+24.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ultrasonic_capture'.
+Computing hashes of 1305 cells of `\ultrasonic_capture'.
+Finding duplicate cells in `\ultrasonic_capture'.
+Removed a total of 0 cells.
+
+24.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+24.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ultrasonic_capture..
+
+24.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ultrasonic_capture.
+
+24.9. Finished fast OPT passes. (There is nothing left to do.)
+
+25. Executing EQUIV_MAKE pass (creating equiv checking module).
+Presumably equivalent wires: echo_sync2_gold (\echo_sync2_gold), echo_sync2_gate ({ \_1463__gate \_1462__gate }) -> echo_sync2
+Presumably equivalent wires: ch1_start_gold (\ch1_start_gold), ch1_start_gate (\_1441__gate) -> ch1_start
+Presumably equivalent wires: ch1_echo_prev_gold (\ch1_echo_prev_gold), ch1_echo_prev_gate (\_1424__gate) -> ch1_echo_prev
+Presumably equivalent wires: ch1_dist_val_gold ({ \ch1_dist_val_gold [14] \ch1_dist_val_gold [14] \ch1_dist_val_gold [14] \ch1_dist_val_gold [14] \ch1_dist_val_gold [14] \ch1_dist_val_gold [14] \ch1_dist_val_gold [14] \ch1_dist_val_gold [14] \ch1_dist_val_gold [14] \ch1_dist_val_gold [14] \ch1_dist_val_gold [5:0] }), ch1_dist_val_gate ({ \_1398__gate \_1398__gate \_1398__gate \_1398__gate \_1398__gate \_1398__gate \_1398__gate \_1398__gate \_1398__gate \_1398__gate \_1403__gate \_1402__gate \_1401__gate \_1400__gate \_1399__gate \_1397__gate }) -> ch1_dist_val
+Presumably equivalent wires: ch1_echo_val_gold (\ch1_echo_val_gold), ch1_echo_val_gate ({ \_1431__gate \_1430__gate \_1429__gate \_1428__gate \_1427__gate \_1426__gate \_1440__gate \_1439__gate \_1438__gate \_1437__gate \_1436__gate \_1435__gate \_1434__gate \_1433__gate \_1432__gate \_1425__gate }) -> ch1_echo_val
+Presumably equivalent wires: ch1_echo_cnt_gold (\ch1_echo_cnt_gold), ch1_echo_cnt_gate ({ \_1414__gate \_1413__gate \_1412__gate \_1411__gate \_1410__gate \_1409__gate \_1408__gate \_1407__gate \_1406__gate \_1405__gate \_1423__gate \_1422__gate \_1421__gate \_1420__gate \_1419__gate \_1418__gate \_1417__gate \_1416__gate \_1415__gate \_1404__gate }) -> ch1_echo_cnt
+Presumably equivalent wires: ch1_trig_cnt_gold (\ch1_trig_cnt_gold), ch1_trig_cnt_gate ({ \_1452__gate \_1451__gate \_1450__gate \_1449__gate \_1448__gate \_1447__gate \_1461__gate \_1460__gate \_1459__gate \_1458__gate \_1457__gate \_1456__gate \_1455__gate \_1454__gate \_1453__gate \_1446__gate }) -> ch1_trig_cnt
+Presumably equivalent wires: ch0_start_gold (\ch0_start_gold), ch0_start_gate (\_1376__gate) -> ch0_start
+Presumably equivalent wires: ch0_echo_prev_gold (\ch0_echo_prev_gold), ch0_echo_prev_gate (\_1359__gate) -> ch0_echo_prev
+Presumably equivalent wires: ch0_dist_val_gold ({ \ch0_dist_val_gold [14] \ch0_dist_val_gold [14] \ch0_dist_val_gold [14] \ch0_dist_val_gold [14] \ch0_dist_val_gold [14] \ch0_dist_val_gold [14] \ch0_dist_val_gold [14] \ch0_dist_val_gold [14] \ch0_dist_val_gold [14] \ch0_dist_val_gold [14] \ch0_dist_val_gold [5:0] }), ch0_dist_val_gate ({ \_1333__gate \_1333__gate \_1333__gate \_1333__gate \_1333__gate \_1333__gate \_1333__gate \_1333__gate \_1333__gate \_1333__gate \_1338__gate \_1337__gate \_1336__gate \_1335__gate \_1334__gate \_1332__gate }) -> ch0_dist_val
+Presumably equivalent wires: ch0_echo_val_gold (\ch0_echo_val_gold), ch0_echo_val_gate ({ \_1366__gate \_1365__gate \_1364__gate \_1363__gate \_1362__gate \_1361__gate \_1375__gate \_1374__gate \_1373__gate \_1372__gate \_1371__gate \_1370__gate \_1369__gate \_1368__gate \_1367__gate \_1360__gate }) -> ch0_echo_val
+Presumably equivalent wires: ch0_echo_cnt_gold (\ch0_echo_cnt_gold), ch0_echo_cnt_gate ({ \_1349__gate \_1348__gate \_1347__gate \_1346__gate \_1345__gate \_1344__gate \_1343__gate \_1342__gate \_1341__gate \_1340__gate \_1358__gate \_1357__gate \_1356__gate \_1355__gate \_1354__gate \_1353__gate \_1352__gate \_1351__gate \_1350__gate \_1339__gate }) -> ch0_echo_cnt
+Presumably equivalent wires: ch0_trig_cnt_gold (\ch0_trig_cnt_gold), ch0_trig_cnt_gate ({ \_1387__gate \_1386__gate \_1385__gate \_1384__gate \_1383__gate \_1382__gate \_1396__gate \_1395__gate \_1394__gate \_1393__gate \_1392__gate \_1391__gate \_1390__gate \_1389__gate \_1388__gate \_1381__gate }) -> ch0_trig_cnt
+Presumably equivalent wires: irq_done_gold (\irq_done_gold), irq_done_gate (\irq_done_gate) -> irq_done
+Presumably equivalent wires: echo_i_gold (\echo_i_gold), echo_i_gate (\echo_i_gate) -> echo_i
+Presumably equivalent wires: trig_o_gold (\trig_o_gold), trig_o_gate (\trig_o_gate) -> trig_o
+Presumably equivalent wires: wb_ack_o_gold (\wb_ack_o_gold), wb_ack_o_gate (\wb_ack_o_gate) -> wb_ack_o
+Presumably equivalent wires: wb_cyc_i_gold (\wb_cyc_i_gold), wb_cyc_i_gate (\wb_cyc_i_gate) -> wb_cyc_i
+Presumably equivalent wires: wb_stb_i_gold (\wb_stb_i_gold), wb_stb_i_gate (\wb_stb_i_gate) -> wb_stb_i
+Presumably equivalent wires: wb_we_i_gold (\wb_we_i_gold), wb_we_i_gate (\wb_we_i_gate) -> wb_we_i
+Presumably equivalent wires: wb_sel_i_gold (\wb_sel_i_gold), wb_sel_i_gate (\wb_sel_i_gate) -> wb_sel_i
+Presumably equivalent wires: wb_dat_o_gold ({ 16'0000000000000000 \wb_dat_o_gold [15:0] }), wb_dat_o_gate ({ 16'0000000000000000 \_2480__gate \_2479__gate \_2478__gate \_2477__gate \_2476__gate \_2475__gate \_2489__gate \_2488__gate \_2487__gate \_2486__gate \_2485__gate \_2484__gate \_2483__gate \_2482__gate \_2481__gate \_2474__gate }) -> wb_dat_o
+Presumably equivalent wires: wb_dat_i_gold (\wb_dat_i_gold), wb_dat_i_gate (\wb_dat_i_gate) -> wb_dat_i
+Presumably equivalent wires: wb_adr_i_gold (\wb_adr_i_gold), wb_adr_i_gate (\wb_adr_i_gate) -> wb_adr_i
+Presumably equivalent wires: rst_ni_gold (\rst_ni_gold), rst_ni_gate (\rst_ni_gate) -> rst_ni
+Presumably equivalent wires: clk_i_gold (\clk_i_gold), clk_i_gate (\clk_i_gate) -> clk_i
+Changing input Q of cell _3932__gate (sky130_fd_sc_hd__dfrtp_1): \_2479__gate -> \wb_dat_o [14]
+Changing input Q of cell _3931__gate (sky130_fd_sc_hd__dfrtp_1): \_2478__gate -> \wb_dat_o [13]
+Changing input Q of cell _3930__gate (sky130_fd_sc_hd__dfrtp_1): \_2477__gate -> \wb_dat_o [12]
+Changing input Q of cell _3929__gate (sky130_fd_sc_hd__dfrtp_1): \_2476__gate -> \wb_dat_o [11]
+Changing input Q of cell _3928__gate (sky130_fd_sc_hd__dfrtp_1): \_2475__gate -> \wb_dat_o [10]
+Changing input Q of cell _3927__gate (sky130_fd_sc_hd__dfrtp_1): \_2489__gate -> \wb_dat_o [9]
+Changing input Q of cell _3926__gate (sky130_fd_sc_hd__dfrtp_1): \_2488__gate -> \wb_dat_o [8]
+Changing input Q of cell _3925__gate (sky130_fd_sc_hd__dfrtp_1): \_2487__gate -> \wb_dat_o [7]
+Changing input Q of cell _3924__gate (sky130_fd_sc_hd__dfrtp_1): \_2486__gate -> \wb_dat_o [6]
+Changing input Q of cell _3923__gate (sky130_fd_sc_hd__dfrtp_1): \_2485__gate -> \wb_dat_o [5]
+Changing input Q of cell _3922__gate (sky130_fd_sc_hd__dfrtp_1): \_2484__gate -> \wb_dat_o [4]
+Changing input Q of cell _3921__gate (sky130_fd_sc_hd__dfrtp_1): \_2483__gate -> \wb_dat_o [3]
+Changing input Q of cell _3920__gate (sky130_fd_sc_hd__dfrtp_1): \_2482__gate -> \wb_dat_o [2]
+Changing input Q of cell _3919__gate (sky130_fd_sc_hd__dfrtp_1): \_2481__gate -> \wb_dat_o [1]
+Changing input Q of cell _3918__gate (sky130_fd_sc_hd__dfrtp_1): \_2474__gate -> \wb_dat_o [0]
+Changing input Q of cell _3911__gate (sky130_fd_sc_hd__dfrtp_1): \irq_done_gate -> \irq_done
+Changing input Q of cell _3910__gate (sky130_fd_sc_hd__dfrtp_1): \trig_o_gate [1] -> \trig_o [1]
+Changing input Q of cell _3909__gate (sky130_fd_sc_hd__dfrtp_1): \trig_o_gate [0] -> \trig_o [0]
+Changing input Q of cell _3908__gate (sky130_fd_sc_hd__dfrtp_1): \wb_ack_o_gate -> \wb_ack_o
+Changing input A of cell _3744__gate (sky130_fd_sc_hd__nor2_1): \_2480__gate -> \wb_dat_o [15]
+Changing input A of cell _3204__gate (sky130_fd_sc_hd__nor2_1): \_2474__gate -> \wb_dat_o [0]
+Changing input A of cell _3198__gate (sky130_fd_sc_hd__nor2_1): \_2481__gate -> \wb_dat_o [1]
+Changing input A of cell _3195__gate (sky130_fd_sc_hd__nor2_1): \_2482__gate -> \wb_dat_o [2]
+Changing input A of cell _3189__gate (sky130_fd_sc_hd__nor2_1): \_2483__gate -> \wb_dat_o [3]
+Changing input A of cell _3185__gate (sky130_fd_sc_hd__nor2_1): \_2484__gate -> \wb_dat_o [4]
+Changing input A of cell _3181__gate (sky130_fd_sc_hd__nor2_1): \_2485__gate -> \wb_dat_o [5]
+Changing input A of cell _3176__gate (sky130_fd_sc_hd__nor2_1): \_2486__gate -> \wb_dat_o [6]
+Changing input A of cell _3172__gate (sky130_fd_sc_hd__nor2_1): \_2487__gate -> \wb_dat_o [7]
+Changing input A of cell _3168__gate (sky130_fd_sc_hd__nor2_1): \_2488__gate -> \wb_dat_o [8]
+Changing input A of cell _3164__gate (sky130_fd_sc_hd__nor2_1): \_2489__gate -> \wb_dat_o [9]
+Changing input A of cell _3160__gate (sky130_fd_sc_hd__nor2_1): \_2475__gate -> \wb_dat_o [10]
+Changing input A of cell _3156__gate (sky130_fd_sc_hd__nor2_1): \_2476__gate -> \wb_dat_o [11]
+Changing input A of cell _3152__gate (sky130_fd_sc_hd__nor2_1): \_2477__gate -> \wb_dat_o [12]
+Changing input A of cell _3148__gate (sky130_fd_sc_hd__nor2_1): \_2478__gate -> \wb_dat_o [13]
+Changing input A of cell _3144__gate (sky130_fd_sc_hd__nor2_1): \_2479__gate -> \wb_dat_o [14]
+Changing input A_N of cell _3102__gate (sky130_fd_sc_hd__nand3b_1): \wb_ack_o_gate -> \wb_ack_o
+Changing input Q of cell _3933__gate (sky130_fd_sc_hd__dfrtp_1): \_2480__gate -> \wb_dat_o [15]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$6121_gold ($_AND_): \ch0_echo_cnt_gold [16] -> \ch0_echo_cnt [16]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$6121_gold ($_AND_): \ch0_echo_cnt_gold [17] -> \ch0_echo_cnt [17]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$6120_gold ($_AND_): \ch0_echo_cnt_gold [15] -> \ch0_echo_cnt [15]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$6120_gold ($_AND_): \ch0_echo_cnt_gold [16] -> \ch0_echo_cnt [16]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$6119_gold ($_AND_): \ch0_echo_cnt_gold [14] -> \ch0_echo_cnt [14]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$6119_gold ($_AND_): \ch0_echo_cnt_gold [15] -> \ch0_echo_cnt [15]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$13130_gold ($_AND_): \ch1_echo_cnt_gold [12] -> \ch1_echo_cnt [12]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$41334_gold ($_NOT_): \ch1_trig_cnt_gold [9] -> \ch1_trig_cnt [9]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$10548_gold ($_XOR_): \ch1_echo_cnt_gold [13] -> \ch1_echo_cnt [13]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$9090_gold ($_XOR_): \ch1_echo_cnt_gold [14] -> \ch1_echo_cnt [14]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$9090_gold ($_XOR_): \ch1_echo_cnt_gold [13] -> \ch1_echo_cnt [13]
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$13815_gold ($_MUX_): \ch0_echo_cnt_gold [0] -> \ch0_echo_cnt [0]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$13422_gold ($_OR_): \ch1_trig_cnt_gold [8] -> \ch1_trig_cnt [8]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$7510_gold ($_AND_): \ch0_echo_cnt_gold [15] -> \ch0_echo_cnt [15]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$9114_gold ($_AND_): \ch1_echo_cnt_gold [3] -> \ch1_echo_cnt [3]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$9114_gold ($_AND_): \ch1_echo_cnt_gold [4] -> \ch1_echo_cnt [4]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$9113_gold ($_AND_): \ch1_echo_cnt_gold [2] -> \ch1_echo_cnt [2]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$9113_gold ($_AND_): \ch1_echo_cnt_gold [3] -> \ch1_echo_cnt [3]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$35402_gold ($_AND_): \ch0_echo_cnt_gold [2] -> \ch0_echo_cnt [2]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$6118_gold ($_AND_): \ch0_echo_cnt_gold [13] -> \ch0_echo_cnt [13]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$6118_gold ($_AND_): \ch0_echo_cnt_gold [14] -> \ch0_echo_cnt [14]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$6117_gold ($_AND_): \ch0_echo_cnt_gold [12] -> \ch0_echo_cnt [12]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$6117_gold ($_AND_): \ch0_echo_cnt_gold [13] -> \ch0_echo_cnt [13]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$10514_gold ($_AND_): \ch1_echo_cnt_gold [13] -> \ch1_echo_cnt [13]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$10541_gold ($_XOR_): \ch1_echo_cnt_gold [6] -> \ch1_echo_cnt [6]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$7538_gold ($_XOR_): \ch0_echo_cnt_gold [9] -> \ch0_echo_cnt [9]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$5088_gold ($_XOR_): \ch1_echo_cnt_gold [12] -> \ch1_echo_cnt [12]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$9078_gold ($_XOR_): \ch1_echo_cnt_gold [2] -> \ch1_echo_cnt [2]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$9078_gold ($_XOR_): \ch1_echo_cnt_gold [1] -> \ch1_echo_cnt [1]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$29909_gold ($_OR_): \ch1_echo_cnt_gold [2] -> \ch1_echo_cnt [2]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$6116_gold ($_AND_): \ch0_echo_cnt_gold [11] -> \ch0_echo_cnt [11]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$6116_gold ($_AND_): \ch0_echo_cnt_gold [12] -> \ch0_echo_cnt [12]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$41442_gold ($_NOT_): \ch1_echo_cnt_gold [3] -> \ch1_echo_cnt [3]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$7504_gold ($_AND_): \ch0_echo_cnt_gold [9] -> \ch0_echo_cnt [9]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$6115_gold ($_AND_): \ch0_echo_cnt_gold [10] -> \ch0_echo_cnt [10]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$6115_gold ($_AND_): \ch0_echo_cnt_gold [11] -> \ch0_echo_cnt [11]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$13126_gold ($_OR_): \ch1_echo_cnt_gold [15] -> \ch1_echo_cnt [15]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$6114_gold ($_AND_): \ch0_echo_cnt_gold [9] -> \ch0_echo_cnt [9]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$6114_gold ($_AND_): \ch0_echo_cnt_gold [10] -> \ch0_echo_cnt [10]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$41396_gold ($_NOT_): \ch1_trig_cnt_gold [11] -> \ch1_trig_cnt [11]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$7546_gold ($_XOR_): \ch0_echo_cnt_gold [17] -> \ch0_echo_cnt [17]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$13474_gold ($_OR_): \ch1_trig_cnt_gold [1] -> \ch1_trig_cnt [1]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$9112_gold ($_AND_): \ch1_echo_cnt_gold [1] -> \ch1_echo_cnt [1]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$9112_gold ($_AND_): \ch1_echo_cnt_gold [2] -> \ch1_echo_cnt [2]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$9089_gold ($_XOR_): \ch1_echo_cnt_gold [13] -> \ch1_echo_cnt [13]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$9089_gold ($_XOR_): \ch1_echo_cnt_gold [12] -> \ch1_echo_cnt [12]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$14974_gold ($_AND_): \ch0_echo_cnt_gold [10] -> \ch0_echo_cnt [10]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$5079_gold ($_XOR_): \ch1_echo_cnt_gold [3] -> \ch1_echo_cnt [3]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$9086_gold ($_XOR_): \ch1_echo_cnt_gold [10] -> \ch1_echo_cnt [10]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$9086_gold ($_XOR_): \ch1_echo_cnt_gold [9] -> \ch1_echo_cnt [9]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$6113_gold ($_AND_): \ch0_echo_cnt_gold [8] -> \ch0_echo_cnt [8]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$6113_gold ($_AND_): \ch0_echo_cnt_gold [9] -> \ch0_echo_cnt [9]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$8504_gold ($_AND_): \ch0_echo_cnt_gold [19] -> \ch0_echo_cnt [19]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$6112_gold ($_AND_): \ch0_echo_cnt_gold [7] -> \ch0_echo_cnt [7]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$6112_gold ($_AND_): \ch0_echo_cnt_gold [8] -> \ch0_echo_cnt [8]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$6111_gold ($_AND_): \ch0_echo_cnt_gold [6] -> \ch0_echo_cnt [6]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$6111_gold ($_AND_): \ch0_echo_cnt_gold [7] -> \ch0_echo_cnt [7]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$6110_gold ($_AND_): \ch0_echo_cnt_gold [5] -> \ch0_echo_cnt [5]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$6110_gold ($_AND_): \ch0_echo_cnt_gold [6] -> \ch0_echo_cnt [6]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$6109_gold ($_AND_): \ch0_echo_cnt_gold [4] -> \ch0_echo_cnt [4]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$6109_gold ($_AND_): \ch0_echo_cnt_gold [5] -> \ch0_echo_cnt [5]
+Changing input B of cell $auto$simplemap.cc:157:simplemap_reduce$17003_gold ($_AND_): \ch0_echo_cnt_gold [1] -> \ch0_echo_cnt [1]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$7506_gold ($_AND_): \ch0_echo_cnt_gold [11] -> \ch0_echo_cnt [11]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$41216_gold ($_NOT_): \ch0_echo_cnt_gold [16] -> \ch0_echo_cnt [16]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$13142_gold ($_AND_): \ch1_echo_cnt_gold [4] -> \ch1_echo_cnt [4]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$10517_gold ($_AND_): \ch1_echo_cnt_gold [16] -> \ch1_echo_cnt [16]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$6108_gold ($_AND_): \ch0_echo_cnt_gold [3] -> \ch0_echo_cnt [3]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$6108_gold ($_AND_): \ch0_echo_cnt_gold [4] -> \ch0_echo_cnt [4]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$5094_gold ($_XOR_): \ch1_echo_cnt_gold [18] -> \ch1_echo_cnt [18]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$5078_gold ($_XOR_): \ch1_echo_cnt_gold [2] -> \ch1_echo_cnt [2]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$9125_gold ($_AND_): \ch1_echo_cnt_gold [14] -> \ch1_echo_cnt [14]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$9125_gold ($_AND_): \ch1_echo_cnt_gold [15] -> \ch1_echo_cnt [15]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$6107_gold ($_AND_): \ch0_echo_cnt_gold [2] -> \ch0_echo_cnt [2]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$6107_gold ($_AND_): \ch0_echo_cnt_gold [3] -> \ch0_echo_cnt [3]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$6106_gold ($_AND_): \ch0_echo_cnt_gold [1] -> \ch0_echo_cnt [1]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$6106_gold ($_AND_): \ch0_echo_cnt_gold [2] -> \ch0_echo_cnt [2]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$41406_gold ($_NOT_): \ch1_trig_cnt_gold [14] -> \ch1_trig_cnt [14]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$13431_gold ($_OR_): \ch1_trig_cnt_gold [6] -> \ch1_trig_cnt [6]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$7537_gold ($_XOR_): \ch0_echo_cnt_gold [8] -> \ch0_echo_cnt [8]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$5081_gold ($_XOR_): \ch1_echo_cnt_gold [5] -> \ch1_echo_cnt [5]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$10512_gold ($_AND_): \ch1_echo_cnt_gold [11] -> \ch1_echo_cnt [11]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$40602_gold ($_NOT_): \ch1_echo_cnt_gold [1] -> \ch1_echo_cnt [1]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$13428_gold ($_OR_): \ch1_trig_cnt_gold [12] -> \ch1_trig_cnt [12]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$15065_gold ($_OR_): \ch0_trig_cnt_gold [10] -> \ch0_trig_cnt [10]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$41134_gold ($_NOT_): \ch0_trig_cnt_gold [9] -> \ch0_trig_cnt [9]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$7536_gold ($_XOR_): \ch0_echo_cnt_gold [7] -> \ch0_echo_cnt [7]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$10510_gold ($_AND_): \ch1_echo_cnt_gold [9] -> \ch1_echo_cnt [9]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$5092_gold ($_XOR_): \ch1_echo_cnt_gold [16] -> \ch1_echo_cnt [16]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$13419_gold ($_OR_): \ch1_trig_cnt_gold [10] -> \ch1_trig_cnt [10]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$15737_gold ($_AND_): \ch0_echo_cnt_gold [2] -> \ch0_echo_cnt [2]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$13120_gold ($_OR_): \ch1_echo_cnt_gold [19] -> \ch1_echo_cnt [19]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$13135_gold ($_OR_): \ch1_echo_cnt_gold [9] -> \ch1_echo_cnt [9]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$13141_gold ($_OR_): \ch1_echo_cnt_gold [5] -> \ch1_echo_cnt [5]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$13136_gold ($_AND_): \ch1_echo_cnt_gold [8] -> \ch1_echo_cnt [8]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$41202_gold ($_NOT_): \ch0_trig_cnt_gold [12] -> \ch0_trig_cnt [12]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$41390_gold ($_NOT_): \ch1_trig_cnt_gold [7] -> \ch1_trig_cnt [7]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$29510_gold ($_AND_): \ch1_echo_cnt_gold [0] -> \ch1_echo_cnt [0]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$5091_gold ($_XOR_): \ch1_echo_cnt_gold [15] -> \ch1_echo_cnt [15]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$7512_gold ($_AND_): \ch0_echo_cnt_gold [17] -> \ch0_echo_cnt [17]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$41394_gold ($_NOT_): \ch1_trig_cnt_gold [8] -> \ch1_trig_cnt [8]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$5085_gold ($_XOR_): \ch1_echo_cnt_gold [9] -> \ch1_echo_cnt [9]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$9077_gold ($_XOR_): \ch1_echo_cnt_gold [1] -> \ch1_echo_cnt [1]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$9077_gold ($_XOR_): \ch1_echo_cnt_gold [0] -> \ch1_echo_cnt [0]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$41418_gold ($_NOT_): \ch1_echo_cnt_gold [15] -> \ch1_echo_cnt [15]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$10542_gold ($_XOR_): \ch1_echo_cnt_gold [7] -> \ch1_echo_cnt [7]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$41122_gold ($_NOT_): \ch0_trig_cnt_gold [15] -> \ch0_trig_cnt [15]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$5086_gold ($_XOR_): \ch1_echo_cnt_gold [10] -> \ch1_echo_cnt [10]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$13258_gold ($_AND_): \ch1_echo_cnt_gold [2] -> \ch1_echo_cnt [2]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$30273_gold ($_OR_): \ch1_echo_cnt_gold [1] -> \ch1_echo_cnt [1]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$7535_gold ($_XOR_): \ch0_echo_cnt_gold [6] -> \ch0_echo_cnt [6]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$41416_gold ($_NOT_): \ch1_echo_cnt_gold [16] -> \ch1_echo_cnt [16]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$25830_gold ($_AND_): \ch1_echo_cnt_gold [0] -> \ch1_echo_cnt [0]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$5095_gold ($_XOR_): \ch1_echo_cnt_gold [19] -> \ch1_echo_cnt [19]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$41136_gold ($_NOT_): \ch0_trig_cnt_gold [8] -> \ch0_trig_cnt [8]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$6089_gold ($_XOR_): \ch0_echo_cnt_gold [19] -> \ch0_echo_cnt [19]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$6089_gold ($_XOR_): \ch0_echo_cnt_gold [18] -> \ch0_echo_cnt [18]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$39270_gold ($_NOT_): \ch0_echo_cnt_gold [1] -> \ch0_echo_cnt [1]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$6088_gold ($_XOR_): \ch0_echo_cnt_gold [18] -> \ch0_echo_cnt [18]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$6088_gold ($_XOR_): \ch0_echo_cnt_gold [17] -> \ch0_echo_cnt [17]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$14929_gold ($_AND_): \ch0_echo_cnt_gold [18] -> \ch0_echo_cnt [18]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$33543_gold ($_OR_): \ch0_echo_cnt_gold [1] -> \ch0_echo_cnt [1]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$6087_gold ($_XOR_): \ch0_echo_cnt_gold [17] -> \ch0_echo_cnt [17]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$6087_gold ($_XOR_): \ch0_echo_cnt_gold [16] -> \ch0_echo_cnt [16]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$6086_gold ($_XOR_): \ch0_echo_cnt_gold [16] -> \ch0_echo_cnt [16]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$6086_gold ($_XOR_): \ch0_echo_cnt_gold [15] -> \ch0_echo_cnt [15]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$10515_gold ($_AND_): \ch1_echo_cnt_gold [14] -> \ch1_echo_cnt [14]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$6085_gold ($_XOR_): \ch0_echo_cnt_gold [15] -> \ch0_echo_cnt [15]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$6085_gold ($_XOR_): \ch0_echo_cnt_gold [14] -> \ch0_echo_cnt [14]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$6084_gold ($_XOR_): \ch0_echo_cnt_gold [14] -> \ch0_echo_cnt [14]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$6084_gold ($_XOR_): \ch0_echo_cnt_gold [13] -> \ch0_echo_cnt [13]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$6083_gold ($_XOR_): \ch0_echo_cnt_gold [13] -> \ch0_echo_cnt [13]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$6083_gold ($_XOR_): \ch0_echo_cnt_gold [12] -> \ch0_echo_cnt [12]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$27071_gold ($_AND_): \ch1_echo_cnt_gold [2] -> \ch1_echo_cnt [2]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$7503_gold ($_AND_): \ch0_echo_cnt_gold [8] -> \ch0_echo_cnt [8]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$6082_gold ($_XOR_): \ch0_echo_cnt_gold [12] -> \ch0_echo_cnt [12]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$6082_gold ($_XOR_): \ch0_echo_cnt_gold [11] -> \ch0_echo_cnt [11]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$41434_gold ($_NOT_): \ch1_echo_cnt_gold [7] -> \ch1_echo_cnt [7]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$9111_gold ($_AND_): \ch1_echo_cnt_gold [0] -> \ch1_echo_cnt [0]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$9111_gold ($_AND_): \ch1_echo_cnt_gold [1] -> \ch1_echo_cnt [1]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$7540_gold ($_XOR_): \ch0_echo_cnt_gold [11] -> \ch0_echo_cnt [11]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$6081_gold ($_XOR_): \ch0_echo_cnt_gold [11] -> \ch0_echo_cnt [11]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$6081_gold ($_XOR_): \ch0_echo_cnt_gold [10] -> \ch0_echo_cnt [10]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$6080_gold ($_XOR_): \ch0_echo_cnt_gold [10] -> \ch0_echo_cnt [10]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$6080_gold ($_XOR_): \ch0_echo_cnt_gold [9] -> \ch0_echo_cnt [9]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$41226_gold ($_NOT_): \ch0_echo_cnt_gold [11] -> \ch0_echo_cnt [11]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$14923_gold ($_AND_): \ch0_echo_cnt_gold [8] -> \ch0_echo_cnt [8]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$6079_gold ($_XOR_): \ch0_echo_cnt_gold [9] -> \ch0_echo_cnt [9]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$6079_gold ($_XOR_): \ch0_echo_cnt_gold [8] -> \ch0_echo_cnt [8]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$41432_gold ($_NOT_): \ch1_echo_cnt_gold [8] -> \ch1_echo_cnt [8]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$5087_gold ($_XOR_): \ch1_echo_cnt_gold [11] -> \ch1_echo_cnt [11]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$6078_gold ($_XOR_): \ch0_echo_cnt_gold [8] -> \ch0_echo_cnt [8]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$6078_gold ($_XOR_): \ch0_echo_cnt_gold [7] -> \ch0_echo_cnt [7]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$13138_gold ($_OR_): \ch1_echo_cnt_gold [7] -> \ch1_echo_cnt [7]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$14917_gold ($_AND_): \ch0_echo_cnt_gold [16] -> \ch0_echo_cnt [16]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$6077_gold ($_XOR_): \ch0_echo_cnt_gold [7] -> \ch0_echo_cnt [7]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$6077_gold ($_XOR_): \ch0_echo_cnt_gold [6] -> \ch0_echo_cnt [6]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$5888_gold ($_XOR_): \ch0_trig_cnt_gold [0] -> \ch0_trig_cnt [0]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$13252_gold ($_AND_): \ch1_echo_cnt_gold [6] -> \ch1_echo_cnt [6]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$15095_gold ($_OR_): \ch0_trig_cnt_gold [14] -> \ch0_trig_cnt [14]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$6076_gold ($_XOR_): \ch0_echo_cnt_gold [6] -> \ch0_echo_cnt [6]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$6076_gold ($_XOR_): \ch0_echo_cnt_gold [5] -> \ch0_echo_cnt [5]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$6075_gold ($_XOR_): \ch0_echo_cnt_gold [5] -> \ch0_echo_cnt [5]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$6075_gold ($_XOR_): \ch0_echo_cnt_gold [4] -> \ch0_echo_cnt [4]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$7508_gold ($_AND_): \ch0_echo_cnt_gold [13] -> \ch0_echo_cnt [13]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$15077_gold ($_OR_): \ch0_trig_cnt_gold [6] -> \ch0_trig_cnt [6]
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$13834_gold ($_MUX_): \ch0_echo_cnt_gold [1] -> \ch0_echo_cnt [1]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$6074_gold ($_XOR_): \ch0_echo_cnt_gold [4] -> \ch0_echo_cnt [4]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$6074_gold ($_XOR_): \ch0_echo_cnt_gold [3] -> \ch0_echo_cnt [3]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$6073_gold ($_XOR_): \ch0_echo_cnt_gold [3] -> \ch0_echo_cnt [3]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$6073_gold ($_XOR_): \ch0_echo_cnt_gold [2] -> \ch0_echo_cnt [2]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$14908_gold ($_AND_): \ch0_echo_cnt_gold [14] -> \ch0_echo_cnt [14]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$6072_gold ($_XOR_): \ch0_echo_cnt_gold [2] -> \ch0_echo_cnt [2]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$6072_gold ($_XOR_): \ch0_echo_cnt_gold [1] -> \ch0_echo_cnt [1]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$6071_gold ($_XOR_): \ch0_echo_cnt_gold [1] -> \ch0_echo_cnt [1]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$6071_gold ($_XOR_): \ch0_echo_cnt_gold [0] -> \ch0_echo_cnt [0]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$39576_gold ($_NOT_): \ch0_echo_cnt_gold [2] -> \ch0_echo_cnt [2]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$41388_gold ($_NOT_): \ch1_trig_cnt_gold [6] -> \ch1_trig_cnt [6]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$41386_gold ($_NOT_): \ch1_trig_cnt_gold [2] -> \ch1_trig_cnt [2]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$13139_gold ($_AND_): \ch1_echo_cnt_gold [6] -> \ch1_echo_cnt [6]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$13132_gold ($_OR_): \ch1_echo_cnt_gold [11] -> \ch1_echo_cnt [11]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$9124_gold ($_AND_): \ch1_echo_cnt_gold [13] -> \ch1_echo_cnt [13]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$9124_gold ($_AND_): \ch1_echo_cnt_gold [14] -> \ch1_echo_cnt [14]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$10520_gold ($_AND_): \ch1_echo_cnt_gold [19] -> \ch1_echo_cnt [19]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$14904_gold ($_AND_): \ch0_echo_cnt_gold [2] -> \ch0_echo_cnt [2]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$41130_gold ($_NOT_): \ch0_trig_cnt_gold [11] -> \ch0_trig_cnt [11]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$10507_gold ($_AND_): \ch1_echo_cnt_gold [6] -> \ch1_echo_cnt [6]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$41382_gold ($_NOT_): \ch1_trig_cnt_gold [4] -> \ch1_trig_cnt [4]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$41140_gold ($_NOT_): \ch0_trig_cnt_gold [6] -> \ch0_trig_cnt [6]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$7541_gold ($_XOR_): \ch0_echo_cnt_gold [12] -> \ch0_echo_cnt [12]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$7539_gold ($_XOR_): \ch0_echo_cnt_gold [10] -> \ch0_echo_cnt [10]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$9081_gold ($_XOR_): \ch1_echo_cnt_gold [5] -> \ch1_echo_cnt [5]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$9081_gold ($_XOR_): \ch1_echo_cnt_gold [4] -> \ch1_echo_cnt [4]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$10547_gold ($_XOR_): \ch1_echo_cnt_gold [12] -> \ch1_echo_cnt [12]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$9080_gold ($_XOR_): \ch1_echo_cnt_gold [4] -> \ch1_echo_cnt [4]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$9080_gold ($_XOR_): \ch1_echo_cnt_gold [3] -> \ch1_echo_cnt [3]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$14901_gold ($_AND_): \ch0_echo_cnt_gold [4] -> \ch0_echo_cnt [4]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$5090_gold ($_XOR_): \ch1_echo_cnt_gold [14] -> \ch1_echo_cnt [14]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$7507_gold ($_AND_): \ch0_echo_cnt_gold [12] -> \ch0_echo_cnt [12]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$13123_gold ($_OR_): \ch1_echo_cnt_gold [17] -> \ch1_echo_cnt [17]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$10551_gold ($_XOR_): \ch1_echo_cnt_gold [16] -> \ch1_echo_cnt [16]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$14899_gold ($_AND_): \ch0_echo_cnt_gold [12] -> \ch0_echo_cnt [12]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$14898_gold ($_AND_): \ch0_echo_cnt_gold [6] -> \ch0_echo_cnt [6]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$5082_gold ($_XOR_): \ch1_echo_cnt_gold [6] -> \ch1_echo_cnt [6]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$5845_gold ($_XOR_): \ch0_echo_cnt_gold [19] -> \ch0_echo_cnt [19]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$5844_gold ($_XOR_): \ch0_echo_cnt_gold [18] -> \ch0_echo_cnt [18]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$5093_gold ($_XOR_): \ch1_echo_cnt_gold [17] -> \ch1_echo_cnt [17]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$8470_gold ($_XOR_): \ch0_echo_cnt_gold [19] -> \ch0_echo_cnt [19]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$41240_gold ($_NOT_): \ch0_echo_cnt_gold [4] -> \ch0_echo_cnt [4]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$5843_gold ($_XOR_): \ch0_echo_cnt_gold [17] -> \ch0_echo_cnt [17]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$5842_gold ($_XOR_): \ch0_echo_cnt_gold [16] -> \ch0_echo_cnt [16]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$15068_gold ($_OR_): \ch0_trig_cnt_gold [8] -> \ch0_trig_cnt [8]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$5089_gold ($_XOR_): \ch1_echo_cnt_gold [13] -> \ch1_echo_cnt [13]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$5841_gold ($_XOR_): \ch0_echo_cnt_gold [15] -> \ch0_echo_cnt [15]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$5840_gold ($_XOR_): \ch0_echo_cnt_gold [14] -> \ch0_echo_cnt [14]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$9095_gold ($_XOR_): \ch1_echo_cnt_gold [19] -> \ch1_echo_cnt [19]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$9095_gold ($_XOR_): \ch1_echo_cnt_gold [18] -> \ch1_echo_cnt [18]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$41314_gold ($_NOT_): \ch1_trig_cnt_gold [0] -> \ch1_trig_cnt [0]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$10511_gold ($_AND_): \ch1_echo_cnt_gold [10] -> \ch1_echo_cnt [10]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$13121_gold ($_AND_): \ch1_echo_cnt_gold [18] -> \ch1_echo_cnt [18]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$5839_gold ($_XOR_): \ch0_echo_cnt_gold [13] -> \ch0_echo_cnt [13]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$5838_gold ($_XOR_): \ch0_echo_cnt_gold [12] -> \ch0_echo_cnt [12]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$7501_gold ($_AND_): \ch0_echo_cnt_gold [6] -> \ch0_echo_cnt [6]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$5837_gold ($_XOR_): \ch0_echo_cnt_gold [11] -> \ch0_echo_cnt [11]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$41200_gold ($_NOT_): \ch0_trig_cnt_gold [13] -> \ch0_trig_cnt [13]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$10552_gold ($_XOR_): \ch1_echo_cnt_gold [17] -> \ch1_echo_cnt [17]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$10549_gold ($_XOR_): \ch1_echo_cnt_gold [14] -> \ch1_echo_cnt [14]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$41138_gold ($_NOT_): \ch0_trig_cnt_gold [7] -> \ch0_trig_cnt [7]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$5836_gold ($_XOR_): \ch0_echo_cnt_gold [10] -> \ch0_echo_cnt [10]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$5835_gold ($_XOR_): \ch0_echo_cnt_gold [9] -> \ch0_echo_cnt [9]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$13283_gold ($_AND_): \ch1_echo_cnt_gold [18] -> \ch1_echo_cnt [18]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$5834_gold ($_XOR_): \ch0_echo_cnt_gold [8] -> \ch0_echo_cnt [8]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$9115_gold ($_AND_): \ch1_echo_cnt_gold [4] -> \ch1_echo_cnt [4]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$9115_gold ($_AND_): \ch1_echo_cnt_gold [5] -> \ch1_echo_cnt [5]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$10543_gold ($_XOR_): \ch1_echo_cnt_gold [8] -> \ch1_echo_cnt [8]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$10519_gold ($_AND_): \ch1_echo_cnt_gold [18] -> \ch1_echo_cnt [18]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$7514_gold ($_AND_): \ch0_echo_cnt_gold [19] -> \ch0_echo_cnt [19]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$5833_gold ($_XOR_): \ch0_echo_cnt_gold [7] -> \ch0_echo_cnt [7]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$5832_gold ($_XOR_): \ch0_echo_cnt_gold [6] -> \ch0_echo_cnt [6]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$5831_gold ($_XOR_): \ch0_echo_cnt_gold [5] -> \ch0_echo_cnt [5]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$5830_gold ($_XOR_): \ch0_echo_cnt_gold [4] -> \ch0_echo_cnt [4]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$5829_gold ($_XOR_): \ch0_echo_cnt_gold [3] -> \ch0_echo_cnt [3]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$9123_gold ($_AND_): \ch1_echo_cnt_gold [12] -> \ch1_echo_cnt [12]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$9123_gold ($_AND_): \ch1_echo_cnt_gold [13] -> \ch1_echo_cnt [13]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$10540_gold ($_XOR_): \ch1_echo_cnt_gold [5] -> \ch1_echo_cnt [5]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$5828_gold ($_XOR_): \ch0_echo_cnt_gold [2] -> \ch0_echo_cnt [2]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$30537_gold ($_AND_): \ch1_echo_cnt_gold [2] -> \ch1_echo_cnt [2]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$8484_gold ($_AND_): \ch0_echo_cnt_gold [0] -> \ch0_echo_cnt [0]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$8484_gold ($_AND_): \ch0_echo_cnt_gold [3] -> \ch0_echo_cnt [3]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$13145_gold ($_AND_): \ch1_echo_cnt_gold [2] -> \ch1_echo_cnt [2]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$7509_gold ($_AND_): \ch0_echo_cnt_gold [14] -> \ch0_echo_cnt [14]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$9084_gold ($_XOR_): \ch1_echo_cnt_gold [8] -> \ch1_echo_cnt [8]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$9084_gold ($_XOR_): \ch1_echo_cnt_gold [7] -> \ch1_echo_cnt [7]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$41248_gold ($_NOT_): \ch0_echo_cnt_gold [19] -> \ch0_echo_cnt [19]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$7545_gold ($_XOR_): \ch0_echo_cnt_gold [16] -> \ch0_echo_cnt [16]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$41384_gold ($_NOT_): \ch1_trig_cnt_gold [3] -> \ch1_trig_cnt [3]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$13124_gold ($_AND_): \ch1_echo_cnt_gold [16] -> \ch1_echo_cnt [16]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$26161_gold ($_AND_): \ch1_echo_cnt_gold [1] -> \ch1_echo_cnt [1]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$9094_gold ($_XOR_): \ch1_echo_cnt_gold [18] -> \ch1_echo_cnt [18]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$9094_gold ($_XOR_): \ch1_echo_cnt_gold [17] -> \ch1_echo_cnt [17]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$10545_gold ($_XOR_): \ch1_echo_cnt_gold [10] -> \ch1_echo_cnt [10]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$10550_gold ($_XOR_): \ch1_echo_cnt_gold [15] -> \ch1_echo_cnt [15]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$13127_gold ($_AND_): \ch1_echo_cnt_gold [14] -> \ch1_echo_cnt [14]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$9122_gold ($_AND_): \ch1_echo_cnt_gold [11] -> \ch1_echo_cnt [11]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$9122_gold ($_AND_): \ch1_echo_cnt_gold [12] -> \ch1_echo_cnt [12]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$11510_gold ($_AND_): \ch1_echo_cnt_gold [19] -> \ch1_echo_cnt [19]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$41322_gold ($_NOT_): \ch1_trig_cnt_gold [15] -> \ch1_trig_cnt [15]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$36112_gold ($_AND_): \ch0_echo_cnt_gold [0] -> \ch0_echo_cnt [0]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$11491_gold ($_AND_): \ch1_echo_cnt_gold [4] -> \ch1_echo_cnt [4]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$11490_gold ($_AND_): \ch1_echo_cnt_gold [0] -> \ch1_echo_cnt [0]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$11490_gold ($_AND_): \ch1_echo_cnt_gold [3] -> \ch1_echo_cnt [3]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$13133_gold ($_AND_): \ch1_echo_cnt_gold [10] -> \ch1_echo_cnt [10]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2993_gold ($_AND_): \ch1_dist_val_gold [14] -> \ch1_dist_val [14]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$10516_gold ($_AND_): \ch1_echo_cnt_gold [15] -> \ch1_echo_cnt [15]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$13144_gold ($_OR_): \ch1_echo_cnt_gold [3] -> \ch1_echo_cnt [3]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2983_gold ($_AND_): \ch1_dist_val_gold [5] -> \ch1_dist_val [5]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2982_gold ($_AND_): \ch1_dist_val_gold [4] -> \ch1_dist_val [4]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2981_gold ($_AND_): \ch1_dist_val_gold [3] -> \ch1_dist_val [3]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2980_gold ($_AND_): \ch1_dist_val_gold [2] -> \ch1_dist_val [2]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2979_gold ($_AND_): \ch1_dist_val_gold [1] -> \ch1_dist_val [1]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2978_gold ($_AND_): \ch1_dist_val_gold [0] -> \ch1_dist_val [0]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$11476_gold ($_XOR_): \ch1_echo_cnt_gold [19] -> \ch1_echo_cnt [19]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$7502_gold ($_AND_): \ch0_echo_cnt_gold [7] -> \ch0_echo_cnt [7]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$13449_gold ($_OR_): \ch1_trig_cnt_gold [14] -> \ch1_trig_cnt [14]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2961_gold ($_AND_): \ch0_dist_val_gold [14] -> \ch0_dist_val [14]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$9117_gold ($_AND_): \ch1_echo_cnt_gold [6] -> \ch1_echo_cnt [6]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$9117_gold ($_AND_): \ch1_echo_cnt_gold [7] -> \ch1_echo_cnt [7]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$10513_gold ($_AND_): \ch1_echo_cnt_gold [12] -> \ch1_echo_cnt [12]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2951_gold ($_AND_): \ch0_dist_val_gold [5] -> \ch0_dist_val [5]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2950_gold ($_AND_): \ch0_dist_val_gold [4] -> \ch0_dist_val [4]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2949_gold ($_AND_): \ch0_dist_val_gold [3] -> \ch0_dist_val [3]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2948_gold ($_AND_): \ch0_dist_val_gold [2] -> \ch0_dist_val [2]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2947_gold ($_AND_): \ch0_dist_val_gold [1] -> \ch0_dist_val [1]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2946_gold ($_AND_): \ch0_dist_val_gold [0] -> \ch0_dist_val [0]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$41380_gold ($_NOT_): \ch1_trig_cnt_gold [5] -> \ch1_trig_cnt [5]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$8451_gold ($_XOR_): \ch0_echo_cnt_gold [4] -> \ch0_echo_cnt [4]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$41378_gold ($_NOT_): \ch1_trig_cnt_gold [1] -> \ch1_trig_cnt [1]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$10508_gold ($_AND_): \ch1_echo_cnt_gold [7] -> \ch1_echo_cnt [7]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2929_gold ($_AND_): \ch1_echo_val_gold [15] -> \ch1_echo_val [15]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2928_gold ($_AND_): \ch1_echo_val_gold [14] -> \ch1_echo_val [14]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2927_gold ($_AND_): \ch1_echo_val_gold [13] -> \ch1_echo_val [13]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2926_gold ($_AND_): \ch1_echo_val_gold [12] -> \ch1_echo_val [12]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2925_gold ($_AND_): \ch1_echo_val_gold [11] -> \ch1_echo_val [11]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2924_gold ($_AND_): \ch1_echo_val_gold [10] -> \ch1_echo_val [10]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2923_gold ($_AND_): \ch1_echo_val_gold [9] -> \ch1_echo_val [9]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2922_gold ($_AND_): \ch1_echo_val_gold [8] -> \ch1_echo_val [8]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2921_gold ($_AND_): \ch1_echo_val_gold [7] -> \ch1_echo_val [7]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2920_gold ($_AND_): \ch1_echo_val_gold [6] -> \ch1_echo_val [6]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2919_gold ($_AND_): \ch1_echo_val_gold [5] -> \ch1_echo_val [5]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2918_gold ($_AND_): \ch1_echo_val_gold [4] -> \ch1_echo_val [4]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2917_gold ($_AND_): \ch1_echo_val_gold [3] -> \ch1_echo_val [3]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2916_gold ($_AND_): \ch1_echo_val_gold [2] -> \ch1_echo_val [2]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2915_gold ($_AND_): \ch1_echo_val_gold [1] -> \ch1_echo_val [1]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2914_gold ($_AND_): \ch1_echo_val_gold [0] -> \ch1_echo_val [0]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$41446_gold ($_NOT_): \ch1_echo_cnt_gold [18] -> \ch1_echo_cnt [18]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$9083_gold ($_XOR_): \ch1_echo_cnt_gold [7] -> \ch1_echo_cnt [7]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$9083_gold ($_XOR_): \ch1_echo_cnt_gold [6] -> \ch1_echo_cnt [6]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2897_gold ($_AND_): \ch0_echo_val_gold [15] -> \ch0_echo_val [15]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2896_gold ($_AND_): \ch0_echo_val_gold [14] -> \ch0_echo_val [14]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2895_gold ($_AND_): \ch0_echo_val_gold [13] -> \ch0_echo_val [13]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2894_gold ($_AND_): \ch0_echo_val_gold [12] -> \ch0_echo_val [12]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2893_gold ($_AND_): \ch0_echo_val_gold [11] -> \ch0_echo_val [11]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2892_gold ($_AND_): \ch0_echo_val_gold [10] -> \ch0_echo_val [10]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2891_gold ($_AND_): \ch0_echo_val_gold [9] -> \ch0_echo_val [9]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2890_gold ($_AND_): \ch0_echo_val_gold [8] -> \ch0_echo_val [8]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2889_gold ($_AND_): \ch0_echo_val_gold [7] -> \ch0_echo_val [7]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2888_gold ($_AND_): \ch0_echo_val_gold [6] -> \ch0_echo_val [6]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2887_gold ($_AND_): \ch0_echo_val_gold [5] -> \ch0_echo_val [5]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2886_gold ($_AND_): \ch0_echo_val_gold [4] -> \ch0_echo_val [4]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2885_gold ($_AND_): \ch0_echo_val_gold [3] -> \ch0_echo_val [3]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2884_gold ($_AND_): \ch0_echo_val_gold [2] -> \ch0_echo_val [2]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2883_gold ($_AND_): \ch0_echo_val_gold [1] -> \ch0_echo_val [1]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2882_gold ($_AND_): \ch0_echo_val_gold [0] -> \ch0_echo_val [0]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$40456_gold ($_NOT_): \ch1_echo_cnt_gold [0] -> \ch1_echo_cnt [0]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$41420_gold ($_NOT_): \ch1_echo_cnt_gold [14] -> \ch1_echo_cnt [14]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$41426_gold ($_NOT_): \ch1_echo_cnt_gold [11] -> \ch1_echo_cnt [11]
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$11931_gold ($_MUX_): \ch1_echo_cnt_gold [0] -> \ch1_echo_cnt [0]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$41206_gold ($_NOT_): \ch0_trig_cnt_gold [14] -> \ch0_trig_cnt [14]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$41436_gold ($_NOT_): \ch1_echo_cnt_gold [6] -> \ch1_echo_cnt [6]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$10553_gold ($_XOR_): \ch1_echo_cnt_gold [18] -> \ch1_echo_cnt [18]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$41222_gold ($_NOT_): \ch0_echo_cnt_gold [13] -> \ch0_echo_cnt [13]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$41228_gold ($_NOT_): \ch0_echo_cnt_gold [10] -> \ch0_echo_cnt [10]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$13774_gold ($_AND_): \ch1_trig_cnt_gold [2] -> \ch1_trig_cnt [2]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$8485_gold ($_AND_): \ch0_echo_cnt_gold [4] -> \ch0_echo_cnt [4]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$13328_gold ($_AND_): \ch1_echo_cnt_gold [10] -> \ch1_echo_cnt [10]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$41208_gold ($_NOT_): \ch0_echo_cnt_gold [0] -> \ch0_echo_cnt [0]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$41132_gold ($_NOT_): \ch0_trig_cnt_gold [10] -> \ch0_trig_cnt [10]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$41430_gold ($_NOT_): \ch1_echo_cnt_gold [9] -> \ch1_echo_cnt [9]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$13773_gold ($_OR_): \ch1_trig_cnt_gold [3] -> \ch1_trig_cnt [3]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$9079_gold ($_XOR_): \ch1_echo_cnt_gold [3] -> \ch1_echo_cnt [3]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$9079_gold ($_XOR_): \ch1_echo_cnt_gold [2] -> \ch1_echo_cnt [2]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$8450_gold ($_XOR_): \ch0_echo_cnt_gold [3] -> \ch0_echo_cnt [3]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$8450_gold ($_XOR_): \ch0_echo_cnt_gold [0] -> \ch0_echo_cnt [0]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$10518_gold ($_AND_): \ch1_echo_cnt_gold [17] -> \ch1_echo_cnt [17]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$41220_gold ($_NOT_): \ch0_echo_cnt_gold [14] -> \ch0_echo_cnt [14]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$41142_gold ($_NOT_): \ch0_trig_cnt_gold [5] -> \ch0_trig_cnt [5]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$7511_gold ($_AND_): \ch0_echo_cnt_gold [16] -> \ch0_echo_cnt [16]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$41236_gold ($_NOT_): \ch0_echo_cnt_gold [6] -> \ch0_echo_cnt [6]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$9091_gold ($_XOR_): \ch1_echo_cnt_gold [15] -> \ch1_echo_cnt [15]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$9091_gold ($_XOR_): \ch1_echo_cnt_gold [14] -> \ch1_echo_cnt [14]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$9082_gold ($_XOR_): \ch1_echo_cnt_gold [6] -> \ch1_echo_cnt [6]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$9082_gold ($_XOR_): \ch1_echo_cnt_gold [5] -> \ch1_echo_cnt [5]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$13771_gold ($_AND_): \ch1_trig_cnt_gold [4] -> \ch1_trig_cnt [4]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$13770_gold ($_OR_): \ch1_trig_cnt_gold [5] -> \ch1_trig_cnt [5]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$41214_gold ($_NOT_): \ch0_echo_cnt_gold [17] -> \ch0_echo_cnt [17]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$13417_gold ($_OR_): \ch1_trig_cnt_gold [2] -> \ch1_trig_cnt [2]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$5245_gold ($_XOR_): \ch1_trig_cnt_gold [0] -> \ch1_trig_cnt [0]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$41116_gold ($_NOT_): \ch0_trig_cnt_gold [1] -> \ch0_trig_cnt [1]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$33180_gold ($_AND_): \ch0_echo_cnt_gold [0] -> \ch0_echo_cnt [0]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$33180_gold ($_AND_): \ch0_echo_cnt_gold [1] -> \ch0_echo_cnt [1]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$13768_gold ($_AND_): \ch1_trig_cnt_gold [6] -> \ch1_trig_cnt [6]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$41448_gold ($_NOT_): \ch1_echo_cnt_gold [19] -> \ch1_echo_cnt [19]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$15121_gold ($_AND_): \ch0_trig_cnt_gold [0] -> \ch0_trig_cnt [0]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$13767_gold ($_OR_): \ch1_trig_cnt_gold [7] -> \ch1_trig_cnt [7]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$5083_gold ($_XOR_): \ch1_echo_cnt_gold [7] -> \ch1_echo_cnt [7]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$9087_gold ($_XOR_): \ch1_echo_cnt_gold [11] -> \ch1_echo_cnt [11]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$9087_gold ($_XOR_): \ch1_echo_cnt_gold [10] -> \ch1_echo_cnt [10]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$7513_gold ($_AND_): \ch0_echo_cnt_gold [18] -> \ch0_echo_cnt [18]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$10546_gold ($_XOR_): \ch1_echo_cnt_gold [11] -> \ch1_echo_cnt [11]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$13765_gold ($_AND_): \ch1_trig_cnt_gold [8] -> \ch1_trig_cnt [8]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$41414_gold ($_NOT_): \ch1_echo_cnt_gold [17] -> \ch1_echo_cnt [17]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$13764_gold ($_OR_): \ch1_trig_cnt_gold [9] -> \ch1_trig_cnt [9]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$15063_gold ($_OR_): \ch0_trig_cnt_gold [2] -> \ch0_trig_cnt [2]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$41332_gold ($_NOT_): \ch1_trig_cnt_gold [10] -> \ch1_trig_cnt [10]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$41422_gold ($_NOT_): \ch1_echo_cnt_gold [13] -> \ch1_echo_cnt [13]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$41428_gold ($_NOT_): \ch1_echo_cnt_gold [10] -> \ch1_echo_cnt [10]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$13277_gold ($_AND_): \ch1_echo_cnt_gold [8] -> \ch1_echo_cnt [8]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$41438_gold ($_NOT_): \ch1_echo_cnt_gold [5] -> \ch1_echo_cnt [5]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$7505_gold ($_AND_): \ch0_echo_cnt_gold [10] -> \ch0_echo_cnt [10]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$7500_gold ($_AND_): \ch0_echo_cnt_gold [5] -> \ch0_echo_cnt [5]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$40686_gold ($_NOT_): \ch1_echo_cnt_gold [2] -> \ch1_echo_cnt [2]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$11457_gold ($_XOR_): \ch1_echo_cnt_gold [4] -> \ch1_echo_cnt [4]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$41186_gold ($_NOT_): \ch0_trig_cnt_gold [2] -> \ch0_trig_cnt [2]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$13762_gold ($_AND_): \ch1_trig_cnt_gold [10] -> \ch1_trig_cnt [10]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$13761_gold ($_OR_): \ch1_trig_cnt_gold [11] -> \ch1_trig_cnt [11]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$41224_gold ($_NOT_): \ch0_echo_cnt_gold [12] -> \ch0_echo_cnt [12]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$11456_gold ($_XOR_): \ch1_echo_cnt_gold [3] -> \ch1_echo_cnt [3]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$11456_gold ($_XOR_): \ch1_echo_cnt_gold [0] -> \ch1_echo_cnt [0]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$14791_gold ($_AND_): \ch0_echo_cnt_gold [2] -> \ch0_echo_cnt [2]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$14790_gold ($_OR_): \ch0_echo_cnt_gold [3] -> \ch0_echo_cnt [3]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$41230_gold ($_NOT_): \ch0_echo_cnt_gold [9] -> \ch0_echo_cnt [9]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$14788_gold ($_AND_): \ch0_echo_cnt_gold [4] -> \ch0_echo_cnt [4]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$41400_gold ($_NOT_): \ch1_trig_cnt_gold [13] -> \ch1_trig_cnt [13]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$9127_gold ($_AND_): \ch1_echo_cnt_gold [16] -> \ch1_echo_cnt [16]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$9127_gold ($_AND_): \ch1_echo_cnt_gold [17] -> \ch1_echo_cnt [17]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$14787_gold ($_OR_): \ch0_echo_cnt_gold [5] -> \ch0_echo_cnt [5]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$14785_gold ($_AND_): \ch0_echo_cnt_gold [6] -> \ch0_echo_cnt [6]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$14784_gold ($_OR_): \ch0_echo_cnt_gold [7] -> \ch0_echo_cnt [7]
+Changing input A of cell $auto$simplemap.cc:157:simplemap_reduce$16976_gold ($_AND_): \ch0_echo_cnt_gold [0] -> \ch0_echo_cnt [0]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$14782_gold ($_AND_): \ch0_echo_cnt_gold [8] -> \ch0_echo_cnt [8]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$14781_gold ($_OR_): \ch0_echo_cnt_gold [9] -> \ch0_echo_cnt [9]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$13475_gold ($_AND_): \ch1_trig_cnt_gold [0] -> \ch1_trig_cnt [0]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$41242_gold ($_NOT_): \ch0_echo_cnt_gold [3] -> \ch0_echo_cnt [3]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$13759_gold ($_AND_): \ch1_trig_cnt_gold [12] -> \ch1_trig_cnt [12]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$14779_gold ($_AND_): \ch0_echo_cnt_gold [10] -> \ch0_echo_cnt [10]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$14778_gold ($_OR_): \ch0_echo_cnt_gold [11] -> \ch0_echo_cnt [11]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$13758_gold ($_OR_): \ch1_trig_cnt_gold [13] -> \ch1_trig_cnt [13]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$9088_gold ($_XOR_): \ch1_echo_cnt_gold [12] -> \ch1_echo_cnt [12]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$9088_gold ($_XOR_): \ch1_echo_cnt_gold [11] -> \ch1_echo_cnt [11]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$5084_gold ($_XOR_): \ch1_echo_cnt_gold [8] -> \ch1_echo_cnt [8]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$14776_gold ($_AND_): \ch0_echo_cnt_gold [12] -> \ch0_echo_cnt [12]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$14775_gold ($_OR_): \ch0_echo_cnt_gold [13] -> \ch0_echo_cnt [13]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$41440_gold ($_NOT_): \ch1_echo_cnt_gold [4] -> \ch1_echo_cnt [4]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$14773_gold ($_AND_): \ch0_echo_cnt_gold [14] -> \ch0_echo_cnt [14]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$14772_gold ($_OR_): \ch0_echo_cnt_gold [15] -> \ch0_echo_cnt [15]
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$11967_gold ($_MUX_): \ch1_echo_cnt_gold [1] -> \ch1_echo_cnt [1]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$41234_gold ($_NOT_): \ch0_echo_cnt_gold [7] -> \ch0_echo_cnt [7]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$9116_gold ($_AND_): \ch1_echo_cnt_gold [5] -> \ch1_echo_cnt [5]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$9116_gold ($_AND_): \ch1_echo_cnt_gold [6] -> \ch1_echo_cnt [6]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$41238_gold ($_NOT_): \ch0_echo_cnt_gold [5] -> \ch0_echo_cnt [5]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$10509_gold ($_AND_): \ch1_echo_cnt_gold [8] -> \ch1_echo_cnt [8]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$13756_gold ($_AND_): \ch1_trig_cnt_gold [14] -> \ch1_trig_cnt [14]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$14770_gold ($_AND_): \ch0_echo_cnt_gold [16] -> \ch0_echo_cnt [16]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$13755_gold ($_OR_): \ch1_trig_cnt_gold [15] -> \ch1_trig_cnt [15]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$13414_gold ($_OR_): \ch1_trig_cnt_gold [4] -> \ch1_trig_cnt [4]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$14769_gold ($_OR_): \ch0_echo_cnt_gold [17] -> \ch0_echo_cnt [17]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$14767_gold ($_AND_): \ch0_echo_cnt_gold [18] -> \ch0_echo_cnt [18]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$14766_gold ($_OR_): \ch0_echo_cnt_gold [19] -> \ch0_echo_cnt [19]
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$12041_gold ($_MUX_): \ch1_echo_cnt_gold [2] -> \ch1_echo_cnt [2]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$9126_gold ($_AND_): \ch1_echo_cnt_gold [15] -> \ch1_echo_cnt [15]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$9126_gold ($_AND_): \ch1_echo_cnt_gold [16] -> \ch1_echo_cnt [16]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$7544_gold ($_XOR_): \ch0_echo_cnt_gold [15] -> \ch0_echo_cnt [15]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$41218_gold ($_NOT_): \ch0_echo_cnt_gold [15] -> \ch0_echo_cnt [15]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$13262_gold ($_AND_): \ch1_echo_cnt_gold [14] -> \ch1_echo_cnt [14]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$5080_gold ($_XOR_): \ch1_echo_cnt_gold [4] -> \ch1_echo_cnt [4]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$15120_gold ($_OR_): \ch0_trig_cnt_gold [1] -> \ch0_trig_cnt [1]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$15420_gold ($_AND_): \ch0_trig_cnt_gold [2] -> \ch0_trig_cnt [2]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$41232_gold ($_NOT_): \ch0_echo_cnt_gold [8] -> \ch0_echo_cnt [8]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$15419_gold ($_OR_): \ch0_trig_cnt_gold [3] -> \ch0_trig_cnt [3]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$15417_gold ($_AND_): \ch0_trig_cnt_gold [4] -> \ch0_trig_cnt [4]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$15416_gold ($_OR_): \ch0_trig_cnt_gold [5] -> \ch0_trig_cnt [5]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$9121_gold ($_AND_): \ch1_echo_cnt_gold [10] -> \ch1_echo_cnt [10]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$9121_gold ($_AND_): \ch1_echo_cnt_gold [11] -> \ch1_echo_cnt [11]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$15414_gold ($_AND_): \ch0_trig_cnt_gold [6] -> \ch0_trig_cnt [6]
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$1617_gold ($_MUX_): \ch0_start_gold -> \ch0_start
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$1581_gold ($_MUX_): \ch0_start_gold -> \ch0_start
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$15413_gold ($_OR_): \ch0_trig_cnt_gold [7] -> \ch0_trig_cnt [7]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$10506_gold ($_AND_): \ch1_echo_cnt_gold [5] -> \ch1_echo_cnt [5]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$18123_gold ($_XOR_): \ch1_echo_cnt_gold [0] -> \ch1_echo_cnt [0]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$9120_gold ($_AND_): \ch1_echo_cnt_gold [9] -> \ch1_echo_cnt [9]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$9120_gold ($_AND_): \ch1_echo_cnt_gold [10] -> \ch1_echo_cnt [10]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$9119_gold ($_AND_): \ch1_echo_cnt_gold [8] -> \ch1_echo_cnt [8]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$9119_gold ($_AND_): \ch1_echo_cnt_gold [9] -> \ch1_echo_cnt [9]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$15411_gold ($_AND_): \ch0_trig_cnt_gold [8] -> \ch0_trig_cnt [8]
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$1529_gold ($_MUX_): \echo_sync2_gold [0] -> \echo_sync2 [0]
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$1528_gold ($_MUX_): \echo_sync2_gold [0] -> \echo_sync2 [0]
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$1527_gold ($_MUX_): \echo_sync2_gold [0] -> \echo_sync2 [0]
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$1526_gold ($_MUX_): \echo_sync2_gold [0] -> \echo_sync2 [0]
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$1525_gold ($_MUX_): \echo_sync2_gold [0] -> \echo_sync2 [0]
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$1524_gold ($_MUX_): \echo_sync2_gold [0] -> \echo_sync2 [0]
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$1523_gold ($_MUX_): \echo_sync2_gold [0] -> \echo_sync2 [0]
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$1522_gold ($_MUX_): \echo_sync2_gold [0] -> \echo_sync2 [0]
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$1521_gold ($_MUX_): \echo_sync2_gold [0] -> \echo_sync2 [0]
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$1520_gold ($_MUX_): \echo_sync2_gold [0] -> \echo_sync2 [0]
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$1519_gold ($_MUX_): \echo_sync2_gold [0] -> \echo_sync2 [0]
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$1518_gold ($_MUX_): \echo_sync2_gold [0] -> \echo_sync2 [0]
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$1517_gold ($_MUX_): \echo_sync2_gold [0] -> \echo_sync2 [0]
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$1516_gold ($_MUX_): \echo_sync2_gold [0] -> \echo_sync2 [0]
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$1515_gold ($_MUX_): \echo_sync2_gold [0] -> \echo_sync2 [0]
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$1514_gold ($_MUX_): \echo_sync2_gold [0] -> \echo_sync2 [0]
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$1513_gold ($_MUX_): \echo_sync2_gold [0] -> \echo_sync2 [0]
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$1512_gold ($_MUX_): \echo_sync2_gold [0] -> \echo_sync2 [0]
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$1511_gold ($_MUX_): \echo_sync2_gold [0] -> \echo_sync2 [0]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$13255_gold ($_AND_): \ch1_echo_cnt_gold [4] -> \ch1_echo_cnt [4]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$15410_gold ($_OR_): \ch0_trig_cnt_gold [9] -> \ch0_trig_cnt [9]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$15408_gold ($_AND_): \ch0_trig_cnt_gold [10] -> \ch0_trig_cnt [10]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2413_gold ($_AND_): \echo_sync2_gold [0] -> \echo_sync2 [0]
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$1485_gold ($_MUX_): \ch1_start_gold -> \ch1_start
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$10554_gold ($_XOR_): \ch1_echo_cnt_gold [19] -> \ch1_echo_cnt [19]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$13271_gold ($_AND_): \ch1_echo_cnt_gold [16] -> \ch1_echo_cnt [16]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$41246_gold ($_NOT_): \ch0_echo_cnt_gold [18] -> \ch0_echo_cnt [18]
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$1441_gold ($_MUX_): \ch1_start_gold -> \ch1_start
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$15407_gold ($_OR_): \ch0_trig_cnt_gold [11] -> \ch0_trig_cnt [11]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$7534_gold ($_XOR_): \ch0_echo_cnt_gold [5] -> \ch0_echo_cnt [5]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$33660_gold ($_OR_): \ch0_echo_cnt_gold [2] -> \ch0_echo_cnt [2]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$15405_gold ($_AND_): \ch0_trig_cnt_gold [12] -> \ch0_trig_cnt [12]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$15060_gold ($_OR_): \ch0_trig_cnt_gold [4] -> \ch0_trig_cnt [4]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$15404_gold ($_OR_): \ch0_trig_cnt_gold [13] -> \ch0_trig_cnt [13]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$15402_gold ($_AND_): \ch0_trig_cnt_gold [14] -> \ch0_trig_cnt [14]
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$1345_gold ($_MUX_): \echo_sync2_gold [1] -> \echo_sync2 [1]
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$1344_gold ($_MUX_): \echo_sync2_gold [1] -> \echo_sync2 [1]
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$1343_gold ($_MUX_): \echo_sync2_gold [1] -> \echo_sync2 [1]
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$1342_gold ($_MUX_): \echo_sync2_gold [1] -> \echo_sync2 [1]
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$1341_gold ($_MUX_): \echo_sync2_gold [1] -> \echo_sync2 [1]
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$1340_gold ($_MUX_): \echo_sync2_gold [1] -> \echo_sync2 [1]
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$1339_gold ($_MUX_): \echo_sync2_gold [1] -> \echo_sync2 [1]
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$1338_gold ($_MUX_): \echo_sync2_gold [1] -> \echo_sync2 [1]
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$1337_gold ($_MUX_): \echo_sync2_gold [1] -> \echo_sync2 [1]
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$1336_gold ($_MUX_): \echo_sync2_gold [1] -> \echo_sync2 [1]
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$1335_gold ($_MUX_): \echo_sync2_gold [1] -> \echo_sync2 [1]
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$1334_gold ($_MUX_): \echo_sync2_gold [1] -> \echo_sync2 [1]
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$1333_gold ($_MUX_): \echo_sync2_gold [1] -> \echo_sync2 [1]
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$1332_gold ($_MUX_): \echo_sync2_gold [1] -> \echo_sync2 [1]
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$1331_gold ($_MUX_): \echo_sync2_gold [1] -> \echo_sync2 [1]
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$1330_gold ($_MUX_): \echo_sync2_gold [1] -> \echo_sync2 [1]
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$1329_gold ($_MUX_): \echo_sync2_gold [1] -> \echo_sync2 [1]
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$1328_gold ($_MUX_): \echo_sync2_gold [1] -> \echo_sync2 [1]
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$1327_gold ($_MUX_): \echo_sync2_gold [1] -> \echo_sync2 [1]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$15401_gold ($_OR_): \ch0_trig_cnt_gold [15] -> \ch0_trig_cnt [15]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$1735_gold ($_AND_): \echo_sync2_gold [1] -> \echo_sync2 [1]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$7543_gold ($_XOR_): \ch0_echo_cnt_gold [14] -> \ch0_echo_cnt [14]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$7542_gold ($_XOR_): \ch0_echo_cnt_gold [13] -> \ch0_echo_cnt [13]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$10544_gold ($_XOR_): \ch1_echo_cnt_gold [9] -> \ch1_echo_cnt [9]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$41182_gold ($_NOT_): \ch0_trig_cnt_gold [4] -> \ch0_trig_cnt [4]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$13129_gold ($_OR_): \ch1_echo_cnt_gold [13] -> \ch1_echo_cnt [13]
+Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$13874_gold ($_MUX_): \ch0_echo_cnt_gold [2] -> \ch0_echo_cnt [2]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$9093_gold ($_XOR_): \ch1_echo_cnt_gold [17] -> \ch1_echo_cnt [17]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$9093_gold ($_XOR_): \ch1_echo_cnt_gold [16] -> \ch1_echo_cnt [16]
+Changing input D of cell $auto$ff.cc:337:slice$1102_gold ($_SDFFE_PN0P_): \ch1_echo_cnt_gold [14] -> \ch1_echo_cnt [14]
+Changing input D of cell $auto$ff.cc:337:slice$1101_gold ($_SDFFE_PN0P_): \ch1_echo_cnt_gold [13] -> \ch1_echo_cnt [13]
+Changing input D of cell $auto$ff.cc:337:slice$1100_gold ($_SDFFE_PN0P_): \ch1_echo_cnt_gold [12] -> \ch1_echo_cnt [12]
+Changing input D of cell $auto$ff.cc:337:slice$1099_gold ($_SDFFE_PN0P_): \ch1_echo_cnt_gold [11] -> \ch1_echo_cnt [11]
+Changing input D of cell $auto$ff.cc:337:slice$1098_gold ($_SDFFE_PN0P_): \ch1_echo_cnt_gold [10] -> \ch1_echo_cnt [10]
+Changing input D of cell $auto$ff.cc:337:slice$1097_gold ($_SDFFE_PN0P_): \ch1_echo_cnt_gold [9] -> \ch1_echo_cnt [9]
+Changing input D of cell $auto$ff.cc:337:slice$1096_gold ($_SDFFE_PN0P_): \ch1_echo_cnt_gold [8] -> \ch1_echo_cnt [8]
+Changing input D of cell $auto$ff.cc:337:slice$1095_gold ($_SDFFE_PN0P_): \ch1_echo_cnt_gold [7] -> \ch1_echo_cnt [7]
+Changing input D of cell $auto$ff.cc:337:slice$1094_gold ($_SDFFE_PN0P_): \ch1_echo_cnt_gold [6] -> \ch1_echo_cnt [6]
+Changing input D of cell $auto$ff.cc:337:slice$1093_gold ($_SDFFE_PN0P_): \ch1_echo_cnt_gold [5] -> \ch1_echo_cnt [5]
+Changing input D of cell $auto$ff.cc:337:slice$1092_gold ($_SDFFE_PN0P_): \ch1_echo_cnt_gold [4] -> \ch1_echo_cnt [4]
+Changing input D of cell $auto$ff.cc:337:slice$1091_gold ($_SDFFE_PN0P_): \ch1_echo_cnt_gold [3] -> \ch1_echo_cnt [3]
+Changing input D of cell $auto$ff.cc:337:slice$1090_gold ($_SDFFE_PN0P_): \ch1_echo_cnt_gold [2] -> \ch1_echo_cnt [2]
+Changing input D of cell $auto$ff.cc:337:slice$1089_gold ($_SDFFE_PN0P_): \ch1_echo_cnt_gold [1] -> \ch1_echo_cnt [1]
+Changing input D of cell $auto$ff.cc:337:slice$1088_gold ($_SDFFE_PN0P_): \ch1_echo_cnt_gold [0] -> \ch1_echo_cnt [0]
+Changing input D of cell $auto$ff.cc:337:slice$1051_gold ($_SDFFE_PN0P_): \ch0_echo_cnt_gold [14] -> \ch0_echo_cnt [14]
+Changing input D of cell $auto$ff.cc:337:slice$1050_gold ($_SDFFE_PN0P_): \ch0_echo_cnt_gold [13] -> \ch0_echo_cnt [13]
+Changing input D of cell $auto$ff.cc:337:slice$1049_gold ($_SDFFE_PN0P_): \ch0_echo_cnt_gold [12] -> \ch0_echo_cnt [12]
+Changing input D of cell $auto$ff.cc:337:slice$1048_gold ($_SDFFE_PN0P_): \ch0_echo_cnt_gold [11] -> \ch0_echo_cnt [11]
+Changing input D of cell $auto$ff.cc:337:slice$1047_gold ($_SDFFE_PN0P_): \ch0_echo_cnt_gold [10] -> \ch0_echo_cnt [10]
+Changing input D of cell $auto$ff.cc:337:slice$1046_gold ($_SDFFE_PN0P_): \ch0_echo_cnt_gold [9] -> \ch0_echo_cnt [9]
+Changing input D of cell $auto$ff.cc:337:slice$1045_gold ($_SDFFE_PN0P_): \ch0_echo_cnt_gold [8] -> \ch0_echo_cnt [8]
+Changing input D of cell $auto$ff.cc:337:slice$1044_gold ($_SDFFE_PN0P_): \ch0_echo_cnt_gold [7] -> \ch0_echo_cnt [7]
+Changing input D of cell $auto$ff.cc:337:slice$1043_gold ($_SDFFE_PN0P_): \ch0_echo_cnt_gold [6] -> \ch0_echo_cnt [6]
+Changing input D of cell $auto$ff.cc:337:slice$1042_gold ($_SDFFE_PN0P_): \ch0_echo_cnt_gold [5] -> \ch0_echo_cnt [5]
+Changing input D of cell $auto$ff.cc:337:slice$1041_gold ($_SDFFE_PN0P_): \ch0_echo_cnt_gold [4] -> \ch0_echo_cnt [4]
+Changing input D of cell $auto$ff.cc:337:slice$1040_gold ($_SDFFE_PN0P_): \ch0_echo_cnt_gold [3] -> \ch0_echo_cnt [3]
+Changing input D of cell $auto$ff.cc:337:slice$1039_gold ($_SDFFE_PN0P_): \ch0_echo_cnt_gold [2] -> \ch0_echo_cnt [2]
+Changing input D of cell $auto$ff.cc:337:slice$1038_gold ($_SDFFE_PN0P_): \ch0_echo_cnt_gold [1] -> \ch0_echo_cnt [1]
+Changing input D of cell $auto$ff.cc:337:slice$1037_gold ($_SDFFE_PN0P_): \ch0_echo_cnt_gold [0] -> \ch0_echo_cnt [0]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$41114_gold ($_NOT_): \ch0_trig_cnt_gold [0] -> \ch0_trig_cnt [0]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$41184_gold ($_NOT_): \ch0_trig_cnt_gold [3] -> \ch0_trig_cnt [3]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$9085_gold ($_XOR_): \ch1_echo_cnt_gold [9] -> \ch1_echo_cnt [9]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$9085_gold ($_XOR_): \ch1_echo_cnt_gold [8] -> \ch1_echo_cnt [8]
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$41402_gold ($_NOT_): \ch1_trig_cnt_gold [12] -> \ch1_trig_cnt [12]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$9092_gold ($_XOR_): \ch1_echo_cnt_gold [16] -> \ch1_echo_cnt [16]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$9092_gold ($_XOR_): \ch1_echo_cnt_gold [15] -> \ch1_echo_cnt [15]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$7547_gold ($_XOR_): \ch0_echo_cnt_gold [18] -> \ch0_echo_cnt [18]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$6123_gold ($_AND_): \ch0_echo_cnt_gold [18] -> \ch0_echo_cnt [18]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$6123_gold ($_AND_): \ch0_echo_cnt_gold [19] -> \ch0_echo_cnt [19]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$9118_gold ($_AND_): \ch1_echo_cnt_gold [7] -> \ch1_echo_cnt [7]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$9118_gold ($_AND_): \ch1_echo_cnt_gold [8] -> \ch1_echo_cnt [8]
+Changing input D of cell $auto$ff.cc:337:slice$1052_gold ($_SDFFE_PN0P_): \ch0_echo_cnt_gold [15] -> \ch0_echo_cnt [15]
+Changing input A of cell $auto$simplemap.cc:157:simplemap_reduce$1117_gold ($_OR_): \echo_sync2_gold [0] -> \echo_sync2 [0]
+Changing input A of cell $auto$simplemap.cc:157:simplemap_reduce$1163_gold ($_OR_): \ch1_start_gold -> \ch1_start
+Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$41424_gold ($_NOT_): \ch1_echo_cnt_gold [12] -> \ch1_echo_cnt [12]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$15074_gold ($_OR_): \ch0_trig_cnt_gold [12] -> \ch0_trig_cnt [12]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$7548_gold ($_XOR_): \ch0_echo_cnt_gold [19] -> \ch0_echo_cnt [19]
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$1530_gold ($_MUX_): \echo_sync2_gold [0] -> \echo_sync2 [0]
+Changing input D of cell $auto$ff.cc:337:slice$1103_gold ($_SDFFE_PN0P_): \ch1_echo_cnt_gold [15] -> \ch1_echo_cnt [15]
+Changing input A of cell $auto$simplemap.cc:157:simplemap_reduce$1083_gold ($_OR_): \ch0_start_gold -> \ch0_start
+Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$1346_gold ($_MUX_): \echo_sync2_gold [1] -> \echo_sync2 [1]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$9129_gold ($_AND_): \ch1_echo_cnt_gold [18] -> \ch1_echo_cnt [18]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$9129_gold ($_AND_): \ch1_echo_cnt_gold [19] -> \ch1_echo_cnt [19]
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$9128_gold ($_AND_): \ch1_echo_cnt_gold [17] -> \ch1_echo_cnt [17]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$9128_gold ($_AND_): \ch1_echo_cnt_gold [18] -> \ch1_echo_cnt [18]
+Changing input A of cell $auto$simplemap.cc:157:simplemap_reduce$901_gold ($_OR_): \echo_sync2_gold [1] -> \echo_sync2 [1]
+Changing input A of cell $auto$simplemap.cc:227:simplemap_lognot$1257_gold ($_NOT_): \wb_ack_o_gold -> \wb_ack_o
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$13253_gold ($_AND_): \ch1_echo_cnt_gold [12] -> \ch1_echo_cnt [12]
+Changing input A of cell $auto$simplemap.cc:256:simplemap_logbin$1254_gold ($_AND_): \ch1_echo_prev_gold -> \ch1_echo_prev
+Changing input A of cell $auto$simplemap.cc:227:simplemap_lognot$1253_gold ($_NOT_): \echo_sync2_gold [1] -> \echo_sync2 [1]
+Changing input B of cell $auto$simplemap.cc:256:simplemap_logbin$1252_gold ($_AND_): \echo_sync2_gold [1] -> \echo_sync2 [1]
+Changing input A of cell $auto$simplemap.cc:227:simplemap_lognot$1251_gold ($_NOT_): \ch1_echo_prev_gold -> \ch1_echo_prev
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$22709_gold ($_XOR_): \ch0_echo_cnt_gold [0] -> \ch0_echo_cnt [0]
+Changing input A of cell $auto$simplemap.cc:256:simplemap_logbin$1224_gold ($_AND_): \ch0_echo_prev_gold -> \ch0_echo_prev
+Changing input A of cell $auto$simplemap.cc:227:simplemap_lognot$1223_gold ($_NOT_): \echo_sync2_gold [0] -> \echo_sync2 [0]
+Changing input B of cell $auto$simplemap.cc:256:simplemap_logbin$1219_gold ($_AND_): \echo_sync2_gold [0] -> \echo_sync2 [0]
+Changing input A of cell $auto$simplemap.cc:227:simplemap_lognot$1218_gold ($_NOT_): \ch0_echo_prev_gold -> \ch0_echo_prev
+Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$6122_gold ($_AND_): \ch0_echo_cnt_gold [17] -> \ch0_echo_cnt [17]
+Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$6122_gold ($_AND_): \ch0_echo_cnt_gold [18] -> \ch0_echo_cnt [18]
+Setting undriven nets to undef: \_2474__gate
+Setting undriven nets to undef: \_2475__gate
+Setting undriven nets to undef: \_2476__gate
+Setting undriven nets to undef: \_2477__gate
+Setting undriven nets to undef: \_2478__gate
+Setting undriven nets to undef: \_2479__gate
+Setting undriven nets to undef: \_2480__gate
+Setting undriven nets to undef: \_2481__gate
+Setting undriven nets to undef: \_2482__gate
+Setting undriven nets to undef: \_2483__gate
+Setting undriven nets to undef: \_2484__gate
+Setting undriven nets to undef: \_2485__gate
+Setting undriven nets to undef: \_2486__gate
+Setting undriven nets to undef: \_2487__gate
+Setting undriven nets to undef: \_2488__gate
+Setting undriven nets to undef: \_2489__gate
+Setting undriven nets to undef: \irq_done_gate
+Setting undriven nets to undef: \trig_o_gate
+Setting undriven nets to undef: \wb_ack_o_gate
+Setting undriven nets to undef: $techmap$gt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:77$34.$auto$alumacc.cc:512:replace_alu$1240.Y_gold [28:5]
+Setting undriven nets to undef: $techmap$gt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:77$34.$auto$alumacc.cc:512:replace_alu$1240.CO_gold [6:5]
+Setting undriven nets to undef: $techmap$gt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:77$34.$auto$alumacc.cc:512:replace_alu$1240.CO_gold [14:8]
+Setting undriven nets to undef: $techmap$gt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:77$34.$auto$alumacc.cc:512:replace_alu$1240.CO_gold [27:16]
+Setting undriven nets to undef: $techmap$techmap$div$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:80$55.div_mod.div_mod_u.$ge$/home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v:339$4378.$auto$alumacc.cc:512:replace_alu$11916.Y_gold [16]
+Setting undriven nets to undef: $auto$simplemap.cc:148:simplemap_reduce$17088_gold [2]
+Setting undriven nets to undef: $auto$simplemap.cc:148:simplemap_reduce$17088_gold [4]
+Setting undriven nets to undef: $auto$simplemap.cc:148:simplemap_reduce$17088_gold [6]
+Setting undriven nets to undef: $techmap$gt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:167$40.$auto$alumacc.cc:512:replace_alu$1204.Y_gold [15:4]
+Setting undriven nets to undef: $techmap$gt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:167$40.$auto$alumacc.cc:512:replace_alu$1204.CO_gold [6:4]
+Setting undriven nets to undef: $techmap$gt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:167$40.$auto$alumacc.cc:512:replace_alu$1204.CO_gold [14:8]
+Setting undriven nets to undef: $auto$simplemap.cc:148:simplemap_reduce$16415_gold [3]
+Setting undriven nets to undef: $auto$simplemap.cc:148:simplemap_reduce$16415_gold [5]
+Setting undriven nets to undef: $auto$simplemap.cc:148:simplemap_reduce$16415_gold [7]
+Setting undriven nets to undef: $techmap$sub$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:168$41.$auto$alumacc.cc:512:replace_alu$1215.CO_gold [15]
+Setting undriven nets to undef: $auto$simplemap.cc:148:simplemap_reduce$16191_gold [1]
+Setting undriven nets to undef: $techmap$add$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:180$44.$auto$alumacc.cc:512:replace_alu$1220.CO_gold [19]
+Setting undriven nets to undef: $techmap$gt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:181$47.$auto$alumacc.cc:512:replace_alu$1226.Y_gold [19:4]
+Setting undriven nets to undef: $techmap$gt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:181$47.$auto$alumacc.cc:512:replace_alu$1226.CO_gold [6:4]
+Setting undriven nets to undef: $techmap$gt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:181$47.$auto$alumacc.cc:512:replace_alu$1226.CO_gold [14:8]
+Setting undriven nets to undef: $techmap$gt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:181$47.$auto$alumacc.cc:512:replace_alu$1226.CO_gold [18:16]
+Setting undriven nets to undef: $techmap$techmap$div$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:80$36.div_mod.div_mod_u.$ge$/home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v:339$4378.$auto$alumacc.cc:512:replace_alu$11916.Y_gold [16]
+Setting undriven nets to undef: $techmap$techmap$div$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:80$55.div_mod.div_mod_u.$ge$/home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v:339$4382.$auto$alumacc.cc:512:replace_alu$11882.CO_gold [6:4]
+Setting undriven nets to undef: $techmap$techmap$div$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:80$55.div_mod.div_mod_u.$ge$/home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v:339$4382.$auto$alumacc.cc:512:replace_alu$11882.CO_gold [14:8]
+Setting undriven nets to undef: $techmap$techmap$div$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:80$55.div_mod.div_mod_u.$ge$/home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v:339$4382.$auto$alumacc.cc:512:replace_alu$11882.P_gold [2]
+Setting undriven nets to undef: $techmap$gt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:77$53.$auto$alumacc.cc:512:replace_alu$1240.Y_gold [28:5]
+Setting undriven nets to undef: $techmap$gt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:77$53.$auto$alumacc.cc:512:replace_alu$1240.CO_gold [6:5]
+Setting undriven nets to undef: $techmap$gt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:77$53.$auto$alumacc.cc:512:replace_alu$1240.CO_gold [14:8]
+Setting undriven nets to undef: $techmap$gt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:77$53.$auto$alumacc.cc:512:replace_alu$1240.CO_gold [27:16]
+Setting undriven nets to undef: $auto$simplemap.cc:148:simplemap_reduce$16164_gold [1]
+Setting undriven nets to undef: $auto$simplemap.cc:148:simplemap_reduce$16380_gold [6]
+Setting undriven nets to undef: $auto$simplemap.cc:148:simplemap_reduce$16948_gold [1]
+Setting undriven nets to undef: $auto$simplemap.cc:148:simplemap_reduce$17151_gold [3]
+Setting undriven nets to undef: $auto$simplemap.cc:148:simplemap_reduce$17151_gold [5]
+Setting undriven nets to undef: $auto$simplemap.cc:148:simplemap_reduce$17151_gold [7]
+Setting undriven nets to undef: $techmap$techmap$div$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:80$36.div_mod.div_mod_u.$ge$/home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v:339$4382.$auto$alumacc.cc:512:replace_alu$11882.CO_gold [6:4]
+Setting undriven nets to undef: $techmap$techmap$div$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:80$36.div_mod.div_mod_u.$ge$/home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v:339$4382.$auto$alumacc.cc:512:replace_alu$11882.CO_gold [14:8]
+Setting undriven nets to undef: $techmap$techmap$div$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:80$36.div_mod.div_mod_u.$ge$/home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v:339$4382.$auto$alumacc.cc:512:replace_alu$11882.P_gold [2]
+Setting undriven nets to undef: $auto$simplemap.cc:148:simplemap_reduce$16346_gold [2]
+Setting undriven nets to undef: $auto$simplemap.cc:148:simplemap_reduce$16346_gold [4]
+Setting undriven nets to undef: $auto$simplemap.cc:148:simplemap_reduce$16346_gold [6]
+Setting undriven nets to undef: $auto$simplemap.cc:148:simplemap_reduce$16924_gold [1]
+Setting undriven nets to undef: $div$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:80$36.div_mod.div_mod_u.chaindata_gold [255:242]
+Setting undriven nets to undef: $techmap$techmap$div$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:80$36.div_mod.div_mod_u.$ge$/home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v:339$4322.$auto$alumacc.cc:512:replace_alu$12497.Y_gold [15:5]
+Setting undriven nets to undef: $techmap$techmap$div$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:80$36.div_mod.div_mod_u.$ge$/home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v:339$4322.$auto$alumacc.cc:512:replace_alu$12497.CO_gold [15:5]
+Setting undriven nets to undef: $div$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:80$55.div_mod.div_mod_u.chaindata_gold [255:242]
+Setting undriven nets to undef: $auto$simplemap.cc:148:simplemap_reduce$16488_gold [4]
+Setting undriven nets to undef: $auto$simplemap.cc:148:simplemap_reduce$16488_gold [7]
+Setting undriven nets to undef: $auto$simplemap.cc:148:simplemap_reduce$17218_gold [4]
+Setting undriven nets to undef: $auto$simplemap.cc:148:simplemap_reduce$17218_gold [7]
+Setting undriven nets to undef: $auto$simplemap.cc:148:simplemap_reduce$17119_gold [6]
+Setting undriven nets to undef: $techmap$techmap$div$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:80$36.div_mod.$neg$/home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v:371$1754.$auto$alumacc.cc:512:replace_alu$4297.CO_gold [15:4]
+Setting undriven nets to undef: $techmap$techmap$div$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:80$36.div_mod.$neg$/home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v:371$1754.$auto$alumacc.cc:512:replace_alu$4297.BB_gold [8]
+Setting undriven nets to undef: $techmap$techmap$div$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:80$36.div_mod.$neg$/home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v:371$1754.$auto$alumacc.cc:512:replace_alu$4297.BB_gold [15:12]
+Setting undriven nets to undef: $techmap$gt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:127$21.$auto$alumacc.cc:512:replace_alu$1204.Y_gold [15:4]
+Setting undriven nets to undef: $techmap$techmap$div$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:80$55.div_mod.div_mod_u.$ge$/home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v:339$4322.$auto$alumacc.cc:512:replace_alu$12497.Y_gold [15:5]
+Setting undriven nets to undef: $techmap$gt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:127$21.$auto$alumacc.cc:512:replace_alu$1204.CO_gold [6:4]
+Setting undriven nets to undef: $techmap$gt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:127$21.$auto$alumacc.cc:512:replace_alu$1204.CO_gold [14:8]
+Setting undriven nets to undef: $techmap$techmap$div$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:80$55.div_mod.div_mod_u.$ge$/home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v:339$4322.$auto$alumacc.cc:512:replace_alu$12497.CO_gold [15:5]
+Setting undriven nets to undef: $techmap$sub$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:128$22.$auto$alumacc.cc:512:replace_alu$1215.CO_gold [15]
+Setting undriven nets to undef: $techmap$add$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:140$25.$auto$alumacc.cc:512:replace_alu$1220.CO_gold [19]
+Setting undriven nets to undef: $techmap$techmap$div$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:80$55.div_mod.$neg$/home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v:371$1754.$auto$alumacc.cc:512:replace_alu$4297.CO_gold [15:4]
+Setting undriven nets to undef: $techmap$techmap$div$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:80$55.div_mod.$neg$/home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v:371$1754.$auto$alumacc.cc:512:replace_alu$4297.BB_gold [8]
+Setting undriven nets to undef: $techmap$techmap$div$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:80$55.div_mod.$neg$/home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v:371$1754.$auto$alumacc.cc:512:replace_alu$4297.BB_gold [15:12]
+Setting undriven nets to undef: $techmap$gt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:141$28.$auto$alumacc.cc:512:replace_alu$1226.Y_gold [19:4]
+Setting undriven nets to undef: $techmap$gt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:141$28.$auto$alumacc.cc:512:replace_alu$1226.CO_gold [6:4]
+Setting undriven nets to undef: $techmap$gt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:141$28.$auto$alumacc.cc:512:replace_alu$1226.CO_gold [14:8]
+Setting undriven nets to undef: $techmap$gt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:141$28.$auto$alumacc.cc:512:replace_alu$1226.CO_gold [18:16]
+
+26. Executing EQUIV_SIMPLE pass.
+Found 178 unproven $equiv cells (17 groups) in ultrasonic_capture:
+ Grouping SAT models for \wb_dat_o:
+  Trying to prove $equiv for \wb_dat_o [0]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [1]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [2]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [3]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [4]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [5]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [6]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [7]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [8]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [9]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [10]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [11]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [12]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [13]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [14]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [15]:ezsat
+ failed.
+  Trying to prove $equiv for \wb_dat_o [16]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [17]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [18]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [19]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [20]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [21]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [22]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [23]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [24]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [25]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [26]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [27]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [28]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [29]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [30]:ezsat
+ success!
+  Trying to prove $equiv for \wb_dat_o [31]:ezsat
+ success!
+  Trying to prove $equiv for \wb_ack_o:ezsat
+ failed.
+ Grouping SAT models for \trig_o:
+  Trying to prove $equiv for \trig_o [0]:ezsat
+ failed.
+  Trying to prove $equiv for \trig_o [1]:ezsat
+ failed.
+  Trying to prove $equiv for \irq_done:ezsat
+ failed.
+ Grouping SAT models for \ch0_trig_cnt:
+  Trying to prove $equiv for \ch0_trig_cnt [0]:ezsat
+ failed.
+  Trying to prove $equiv for \ch0_trig_cnt [1]:ezsat
+ failed.
+  Trying to prove $equiv for \ch0_trig_cnt [2]:ezsat
+ failed.
+  Trying to prove $equiv for \ch0_trig_cnt [3]:ezsat
+ failed.
+  Trying to prove $equiv for \ch0_trig_cnt [4]:ezsat
+ failed.
+  Trying to prove $equiv for \ch0_trig_cnt [5]:ezsat
+ failed.
+  Trying to prove $equiv for \ch0_trig_cnt [6]:ezsat
+ failed.
+  Trying to prove $equiv for \ch0_trig_cnt [7]:ezsat
+ failed.
+  Trying to prove $equiv for \ch0_trig_cnt [8]:ezsat
+ failed.
+  Trying to prove $equiv for \ch0_trig_cnt [9]:ezsat
+ failed.
+  Trying to prove $equiv for \ch0_trig_cnt [10]:ezsat
+ failed.
+  Trying to prove $equiv for \ch0_trig_cnt [11]:ezsat
+ failed.
+  Trying to prove $equiv for \ch0_trig_cnt [12]:ezsat
+ failed.
+  Trying to prove $equiv for \ch0_trig_cnt [13]:ezsat
+ failed.
+  Trying to prove $equiv for \ch0_trig_cnt [14]:ezsat
+ failed.
+  Trying to prove $equiv for \ch0_trig_cnt [15]:ezsat
+ failed.
+ Grouping SAT models for \ch0_echo_cnt:
+  Trying to prove $equiv for \ch0_echo_cnt [0]:ezsat
+ failed.
+  Trying to prove $equiv for \ch0_echo_cnt [1]:ezsat
+ failed.
+  Trying to prove $equiv for \ch0_echo_cnt [2]:ezsat
+ failed.
+  Trying to prove $equiv for \ch0_echo_cnt [3]:ezsat
+ failed.
+  Trying to prove $equiv for \ch0_echo_cnt [4]:ezsat
+ failed.
+  Trying to prove $equiv for \ch0_echo_cnt [5]:ezsat
+ failed.
+  Trying to prove $equiv for \ch0_echo_cnt [6]:ezsat
+ failed.
+  Trying to prove $equiv for \ch0_echo_cnt [7]:ezsat
+ failed.
+  Trying to prove $equiv for \ch0_echo_cnt [8]:ezsat
+ failed.
+  Trying to prove $equiv for \ch0_echo_cnt [9]:ezsat
+ failed.
+  Trying to prove $equiv for \ch0_echo_cnt [10]:ezsat
+ failed.
+  Trying to prove $equiv for \ch0_echo_cnt [11]:ezsat
+ failed.
+  Trying to prove $equiv for \ch0_echo_cnt [12]:ezsat
+ failed.
+  Trying to prove $equiv for \ch0_echo_cnt [13]:ezsat
+ failed.
+  Trying to prove $equiv for \ch0_echo_cnt [14]:ezsat
+ failed.
+  Trying to prove $equiv for \ch0_echo_cnt [15]:ezsat
+ failed.
+  Trying to prove $equiv for \ch0_echo_cnt [16]:ezsat
+ failed.
+  Trying to prove $equiv for \ch0_echo_cnt [17]:ezsat
+ failed.
+  Trying to prove $equiv for \ch0_echo_cnt [18]:ezsat
+ failed.
+  Trying to prove $equiv for \ch0_echo_cnt [19]:ezsat
+ failed.
+ Grouping SAT models for \ch0_echo_val:
+  Trying to prove $equiv for \ch0_echo_val [0]:ezsat
+ failed.
+  Trying to prove $equiv for \ch0_echo_val [1]:ezsat
+ failed.
+  Trying to prove $equiv for \ch0_echo_val [2]:ezsat
+ failed.
+  Trying to prove $equiv for \ch0_echo_val [3]:ezsat
+ failed.
+  Trying to prove $equiv for \ch0_echo_val [4]:ezsat
+ failed.
+  Trying to prove $equiv for \ch0_echo_val [5]:ezsat
+ failed.
+  Trying to prove $equiv for \ch0_echo_val [6]:ezsat
+ failed.
+  Trying to prove $equiv for \ch0_echo_val [7]:ezsat
+ failed.
+  Trying to prove $equiv for \ch0_echo_val [8]:ezsat
+ failed.
+  Trying to prove $equiv for \ch0_echo_val [9]:ezsat
+ failed.
+  Trying to prove $equiv for \ch0_echo_val [10]:ezsat
+ failed.
+  Trying to prove $equiv for \ch0_echo_val [11]:ezsat
+ failed.
+  Trying to prove $equiv for \ch0_echo_val [12]:ezsat
+ failed.
+  Trying to prove $equiv for \ch0_echo_val [13]:ezsat
+ failed.
+  Trying to prove $equiv for \ch0_echo_val [14]:ezsat
+ failed.
+  Trying to prove $equiv for \ch0_echo_val [15]:ezsat
+ failed.
+ Grouping SAT models for \ch0_dist_val:
+  Trying to prove $equiv for \ch0_dist_val [0]:ezsat
+ failed.
+  Trying to prove $equiv for \ch0_dist_val [1]:ezsat
+ failed.
+  Trying to prove $equiv for \ch0_dist_val [2]:ezsat
+ failed.
+  Trying to prove $equiv for \ch0_dist_val [3]:ezsat
+ failed.
+  Trying to prove $equiv for \ch0_dist_val [4]:ezsat
+ failed.
+  Trying to prove $equiv for \ch0_dist_val [5]:ezsat
+ failed.
+  Trying to prove $equiv for \ch0_dist_val [6]:ezsat
+ failed.
+  Trying to prove $equiv for \ch0_dist_val [7]:ezsat
+ failed.
+  Trying to prove $equiv for \ch0_dist_val [8]:ezsat
+ failed.
+  Trying to prove $equiv for \ch0_dist_val [9]:ezsat
+ failed.
+  Trying to prove $equiv for \ch0_dist_val [10]:ezsat
+ failed.
+  Trying to prove $equiv for \ch0_dist_val [11]:ezsat
+ failed.
+  Trying to prove $equiv for \ch0_dist_val [12]:ezsat
+ failed.
+  Trying to prove $equiv for \ch0_dist_val [13]:ezsat
+ failed.
+  Trying to prove $equiv for \ch0_dist_val [14]:ezsat
+ failed.
+  Trying to prove $equiv for \ch0_dist_val [15]:ezsat
+ failed.
+  Trying to prove $equiv for \ch0_echo_prev:ezsat
+ failed.
+  Trying to prove $equiv for \ch0_start:ezsat
+ failed.
+ Grouping SAT models for \ch1_trig_cnt:
+  Trying to prove $equiv for \ch1_trig_cnt [0]:ezsat
+ failed.
+  Trying to prove $equiv for \ch1_trig_cnt [1]:ezsat
+ failed.
+  Trying to prove $equiv for \ch1_trig_cnt [2]:ezsat
+ failed.
+  Trying to prove $equiv for \ch1_trig_cnt [3]:ezsat
+ failed.
+  Trying to prove $equiv for \ch1_trig_cnt [4]:ezsat
+ failed.
+  Trying to prove $equiv for \ch1_trig_cnt [5]:ezsat
+ failed.
+  Trying to prove $equiv for \ch1_trig_cnt [6]:ezsat
+ failed.
+  Trying to prove $equiv for \ch1_trig_cnt [7]:ezsat
+ failed.
+  Trying to prove $equiv for \ch1_trig_cnt [8]:ezsat
+ failed.
+  Trying to prove $equiv for \ch1_trig_cnt [9]:ezsat
+ failed.
+  Trying to prove $equiv for \ch1_trig_cnt [10]:ezsat
+ failed.
+  Trying to prove $equiv for \ch1_trig_cnt [11]:ezsat
+ failed.
+  Trying to prove $equiv for \ch1_trig_cnt [12]:ezsat
+ failed.
+  Trying to prove $equiv for \ch1_trig_cnt [13]:ezsat
+ failed.
+  Trying to prove $equiv for \ch1_trig_cnt [14]:ezsat
+ failed.
+  Trying to prove $equiv for \ch1_trig_cnt [15]:ezsat
+ failed.
+ Grouping SAT models for \ch1_echo_cnt:
+  Trying to prove $equiv for \ch1_echo_cnt [0]:ezsat
+ failed.
+  Trying to prove $equiv for \ch1_echo_cnt [1]:ezsat
+ failed.
+  Trying to prove $equiv for \ch1_echo_cnt [2]:ezsat
+ failed.
+  Trying to prove $equiv for \ch1_echo_cnt [3]:ezsat
+ failed.
+  Trying to prove $equiv for \ch1_echo_cnt [4]:ezsat
+ failed.
+  Trying to prove $equiv for \ch1_echo_cnt [5]:ezsat
+ failed.
+  Trying to prove $equiv for \ch1_echo_cnt [6]:ezsat
+ failed.
+  Trying to prove $equiv for \ch1_echo_cnt [7]:ezsat
+ failed.
+  Trying to prove $equiv for \ch1_echo_cnt [8]:ezsat
+ failed.
+  Trying to prove $equiv for \ch1_echo_cnt [9]:ezsat
+ failed.
+  Trying to prove $equiv for \ch1_echo_cnt [10]:ezsat
+ failed.
+  Trying to prove $equiv for \ch1_echo_cnt [11]:ezsat
+ failed.
+  Trying to prove $equiv for \ch1_echo_cnt [12]:ezsat
+ failed.
+  Trying to prove $equiv for \ch1_echo_cnt [13]:ezsat
+ failed.
+  Trying to prove $equiv for \ch1_echo_cnt [14]:ezsat
+ failed.
+  Trying to prove $equiv for \ch1_echo_cnt [15]:ezsat
+ failed.
+  Trying to prove $equiv for \ch1_echo_cnt [16]:ezsat
+ failed.
+  Trying to prove $equiv for \ch1_echo_cnt [17]:ezsat
+ failed.
+  Trying to prove $equiv for \ch1_echo_cnt [18]:ezsat
+ failed.
+  Trying to prove $equiv for \ch1_echo_cnt [19]:ezsat
+ failed.
+ Grouping SAT models for \ch1_echo_val:
+  Trying to prove $equiv for \ch1_echo_val [0]:ezsat
+ failed.
+  Trying to prove $equiv for \ch1_echo_val [1]:ezsat
+ failed.
+  Trying to prove $equiv for \ch1_echo_val [2]:ezsat
+ failed.
+  Trying to prove $equiv for \ch1_echo_val [3]:ezsat
+ failed.
+  Trying to prove $equiv for \ch1_echo_val [4]:ezsat
+ failed.
+  Trying to prove $equiv for \ch1_echo_val [5]:ezsat
+ failed.
+  Trying to prove $equiv for \ch1_echo_val [6]:ezsat
+ failed.
+  Trying to prove $equiv for \ch1_echo_val [7]:ezsat
+ failed.
+  Trying to prove $equiv for \ch1_echo_val [8]:ezsat
+ failed.
+  Trying to prove $equiv for \ch1_echo_val [9]:ezsat
+ failed.
+  Trying to prove $equiv for \ch1_echo_val [10]:ezsat
+ failed.
+  Trying to prove $equiv for \ch1_echo_val [11]:ezsat
+ failed.
+  Trying to prove $equiv for \ch1_echo_val [12]:ezsat
+ failed.
+  Trying to prove $equiv for \ch1_echo_val [13]:ezsat
+ failed.
+  Trying to prove $equiv for \ch1_echo_val [14]:ezsat
+ failed.
+  Trying to prove $equiv for \ch1_echo_val [15]:ezsat
+ failed.
+ Grouping SAT models for \ch1_dist_val:
+  Trying to prove $equiv for \ch1_dist_val [0]:ezsat
+ failed.
+  Trying to prove $equiv for \ch1_dist_val [1]:ezsat
+ failed.
+  Trying to prove $equiv for \ch1_dist_val [2]:ezsat
+ failed.
+  Trying to prove $equiv for \ch1_dist_val [3]:ezsat
+ failed.
+  Trying to prove $equiv for \ch1_dist_val [4]:ezsat
+ failed.
+  Trying to prove $equiv for \ch1_dist_val [5]:ezsat
+ failed.
+  Trying to prove $equiv for \ch1_dist_val [6]:ezsat
+ failed.
+  Trying to prove $equiv for \ch1_dist_val [7]:ezsat
+ failed.
+  Trying to prove $equiv for \ch1_dist_val [8]:ezsat
+ failed.
+  Trying to prove $equiv for \ch1_dist_val [9]:ezsat
+ failed.
+  Trying to prove $equiv for \ch1_dist_val [10]:ezsat
+ failed.
+  Trying to prove $equiv for \ch1_dist_val [11]:ezsat
+ failed.
+  Trying to prove $equiv for \ch1_dist_val [12]:ezsat
+ failed.
+  Trying to prove $equiv for \ch1_dist_val [13]:ezsat
+ failed.
+  Trying to prove $equiv for \ch1_dist_val [14]:ezsat
+ failed.
+  Trying to prove $equiv for \ch1_dist_val [15]:ezsat
+ failed.
+  Trying to prove $equiv for \ch1_echo_prev:ezsat
+ failed.
+  Trying to prove $equiv for \ch1_start:ezsat
+ failed.
+ Grouping SAT models for \echo_sync2:
+  Trying to prove $equiv for \echo_sync2 [0]:ezsat
+ failed.
+  Trying to prove $equiv for \echo_sync2 [1]:ezsat
+ failed.
+Proved 16 previously unproven $equiv cells.
+
+27. Executing EQUIV_INDUCT pass.
+Found 162 unproven $equiv cells in module ultrasonic_capture:

@@ -1,0 +1,23 @@
+##   0:00:00  Solver: z3
+##   0:00:00  Checking assumptions in step 0..
+##   0:00:00  Checking assertions in step 0..
+##   0:00:00  Checking assumptions in step 1..
+##   0:00:00  Checking assertions in step 1..
+##   0:00:00  Checking assumptions in step 2..
+##   0:00:00  Checking assertions in step 2..
+##   0:00:00  Checking assumptions in step 3..
+##   0:00:03  Checking assertions in step 3..
+##   0:00:03  Checking assumptions in step 4..
+##   0:00:04  Checking assertions in step 4..
+##   0:00:04  Checking assumptions in step 5..
+##   0:00:28  Checking assertions in step 5..
+##   0:00:28  Checking assumptions in step 6..
+##   0:00:50  Checking assertions in step 6..
+##   0:00:50  Checking assumptions in step 7..
+##   0:01:45  Checking assertions in step 7..
+##   0:01:45  Checking assumptions in step 8..
+##   0:02:45  waiting for solver (1 minute)
+##   0:04:38  Checking assertions in step 8..
+##   0:04:38  Checking assumptions in step 9..
+##   0:05:38  waiting for solver (1 minute)
+##   0:09:38  waiting for solver (5 minutes)

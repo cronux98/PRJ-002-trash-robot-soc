@@ -1,0 +1,13 @@
+[options]
+mode prove
+depth 20
+
+[engines]
+smtbmc yices
+
+[script]
+read -formal watchdog.v
+prep -top watchdog
+
+[files]
+/home/smdadmin/hermes_workspace/projects/IP-005/v5/03_frontend-stage/rtl-watchdog/rtl/watchdog.v

@@ -1,0 +1,253 @@
+{
+  "status": "COMPLETE",
+  "metrics": {
+    "L3.1": {
+      "value": 2249255,
+      "unit": "tokens",
+      "source": "state.db (52 sessions across 14 profiles)",
+      "confidence": "measured"
+    },
+    "L3.2": {
+      "value": 759498,
+      "unit": "tokens",
+      "source": "state.db (52 sessions across 14 profiles)",
+      "confidence": "measured"
+    },
+    "L3.3": {
+      "value": 1075,
+      "unit": "api_calls",
+      "source": "state.db (52 sessions)",
+      "confidence": "measured"
+    },
+    "L3.4": {
+      "value": 23341,
+      "unit": "seconds",
+      "detail": "6.48 hours. Main BA start (t_c076e01e created=1784089595) to Caravel Audit complete (t_69310be0 completed=1784112942). Doc stage excluded (was still running at extraction time).",
+      "source": "kanban.db task timestamps",
+      "confidence": "measured"
+    },
+    "L3.5": {
+      "value": 1.6392,
+      "unit": "USD",
+      "detail": "DeepSeek Pro pricing: $0.435/M input, $0.87/M output. Computation: (2,249,255/1e6 * 0.435) + (759,498/1e6 * 0.87) = $0.9784 + $0.6608 = $1.6392. All sessions used deepseek-v4-pro model.",
+      "source": "computed from L3.1 + L3.2 with DeepSeek Pro pricing",
+      "confidence": "measured"
+    },
+    "L3.6": {
+      "value": "see per_stage",
+      "detail": "Full per-stage breakdown below. Total pipeline: $1.3751 (10 stages). Early abandoned dispatch: $0.2641 (14 sessions). Grand total: $1.6392.",
+      "source": "state.db per-profile session tables",
+      "confidence": "measured"
+    },
+    "L3.7": {
+      "value": "6/9",
+      "detail": "67% first-pass success. Stages passing without rework: BA, Spec, Arch, Promote, PD, Caravel. Stages requiring iterations: RTL (+2 rework), Verify (+2 rework), SoC (+1 rework). Doc excluded (not a pipelined stage).",
+      "source": "kanban.db task chains + L3_cost_metrics.json",
+      "confidence": "measured"
+    },
+    "L3.8": {
+      "value": "see per_stage.iterations",
+      "detail": "RTL=3 iterations (main + 2 rework), Verify=3 (main + 2 rework), SoC=2 (main + 1 rework), all others=1.",
+      "source": "kanban.db task chains",
+      "confidence": "measured"
+    },
+    "L3.9": {
+      "value": 1,
+      "unit": "human_interventions",
+      "detail": "1 blocked event: t_63f835b0 (Audit REWORK: Verify Retry 2) blocked then archived. Requires human unblock to proceed.",
+      "source": "kanban.db task_events (blocked kind count)",
+      "confidence": "measured"
+    },
+    "L3.10": {
+      "value": {
+        "archived": 53,
+        "reclaimed": 9,
+        "blocked": 1,
+        "timed_out": 1
+      },
+      "detail": "53 archived (early batch + rework tasks), 9 reclaimed (dispatch retries where worker was reassigned), 1 blocked (Verify rework blocked for human input), 1 timed_out (exceeded max_runtime_seconds).",
+      "source": "kanban.db task_events (v6-transitive closure, 82 tasks)",
+      "confidence": "measured"
+    }
+  },
+  "per_stage": [
+    {
+      "stage": "BA",
+      "cost_usd": 0.0483,
+      "tokens_in": 51314,
+      "tokens_out": 29852,
+      "api_calls": 42,
+      "sessions": 2,
+      "iterations": 1,
+      "rework_iterations": 0,
+      "archived_no_work": 1,
+      "cost_formula": "(51314/1e6 * 0.435) + (29852/1e6 * 0.87) = 0.0223 + 0.0260 = 0.0483"
+    },
+    {
+      "stage": "Spec",
+      "cost_usd": 0.0949,
+      "tokens_in": 88597,
+      "tokens_out": 64788,
+      "api_calls": 64,
+      "sessions": 2,
+      "iterations": 1,
+      "rework_iterations": 0,
+      "archived_no_work": 2,
+      "cost_formula": "(88597/1e6 * 0.435) + (64788/1e6 * 0.87) = 0.0385 + 0.0564 = 0.0949"
+    },
+    {
+      "stage": "Arch",
+      "cost_usd": 0.0880,
+      "tokens_in": 98569,
+      "tokens_out": 51878,
+      "api_calls": 40,
+      "sessions": 2,
+      "iterations": 1,
+      "rework_iterations": 0,
+      "archived_no_work": 2,
+      "cost_formula": "(98569/1e6 * 0.435) + (51878/1e6 * 0.87) = 0.0429 + 0.0451 = 0.0880"
+    },
+    {
+      "stage": "RTL",
+      "cost_usd": 0.2699,
+      "tokens_in": 367160,
+      "tokens_out": 126677,
+      "api_calls": 205,
+      "sessions": 6,
+      "iterations": 3,
+      "rework_iterations": 2,
+      "archived_no_work": 2,
+      "cost_formula": "(367160/1e6 * 0.435) + (126677/1e6 * 0.87) = 0.1597 + 0.1102 = 0.2699",
+      "detail": "3 iterations: main RTL + 2 RTL Frontend reworks after Audit FAIL."
+    },
+    {
+      "stage": "Verify",
+      "cost_usd": 0.2386,
+      "tokens_in": 318011,
+      "tokens_out": 115219,
+      "api_calls": 206,
+      "sessions": 6,
+      "iterations": 3,
+      "rework_iterations": 2,
+      "archived_no_work": 2,
+      "cost_formula": "(318011/1e6 * 0.435) + (115219/1e6 * 0.87) = 0.1383 + 0.1002 = 0.2386",
+      "detail": "3 iterations: main Verify + 2 reworks. Rework tasks archived but sessions consumed tokens."
+    },
+    {
+      "stage": "Promote",
+      "cost_usd": 0.0776,
+      "tokens_in": 97007,
+      "tokens_out": 40742,
+      "api_calls": 51,
+      "sessions": 2,
+      "iterations": 1,
+      "rework_iterations": 0,
+      "archived_no_work": 6,
+      "cost_formula": "(97007/1e6 * 0.435) + (40742/1e6 * 0.87) = 0.0422 + 0.0354 = 0.0776",
+      "detail": "1 successful iteration. 4 archived attempts had 0 session cost (dispatcher retries)."
+    },
+    {
+      "stage": "SoC",
+      "cost_usd": 0.1526,
+      "tokens_in": 195664,
+      "tokens_out": 77546,
+      "api_calls": 106,
+      "sessions": 4,
+      "iterations": 2,
+      "rework_iterations": 1,
+      "archived_no_work": 4,
+      "cost_formula": "(195664/1e6 * 0.435) + (77546/1e6 * 0.87) = 0.0851 + 0.0675 = 0.1526",
+      "detail": "2 iterations: main SoC + 1 integration rework. Audit FAIL triggered rework."
+    },
+    {
+      "stage": "PD",
+      "cost_usd": 0.1376,
+      "tokens_in": 167368,
+      "tokens_out": 74522,
+      "api_calls": 131,
+      "sessions": 5,
+      "iterations": 1,
+      "rework_iterations": 0,
+      "archived_no_work": 4,
+      "cost_formula": "(167368/1e6 * 0.435) + (74522/1e6 * 0.87) = 0.0728 + 0.0648 = 0.1376",
+      "detail": "1 main iteration. 2 audit attempts (first archived, second passed)."
+    },
+    {
+      "stage": "Caravel",
+      "cost_usd": 0.0728,
+      "tokens_in": 100984,
+      "tokens_out": 33197,
+      "api_calls": 56,
+      "sessions": 2,
+      "iterations": 1,
+      "rework_iterations": 0,
+      "archived_no_work": 4,
+      "cost_formula": "(100984/1e6 * 0.435) + (33197/1e6 * 0.87) = 0.0439 + 0.0289 = 0.0728"
+    },
+    {
+      "stage": "Doc",
+      "cost_usd": 0.1947,
+      "tokens_in": 263033,
+      "tokens_out": 92258,
+      "api_calls": 81,
+      "sessions": 7,
+      "iterations": 0,
+      "rework_iterations": 0,
+      "archived_no_work": 0,
+      "cost_formula": "(263033/1e6 * 0.435) + (92258/1e6 * 0.87) = 0.1144 + 0.0803 = 0.1947",
+      "detail": "Doc stage not included in first-pass success rate or iterations count. Running/archived sessions included in token totals."
+    }
+  ],
+  "pipeline_summary": {
+    "main_pipeline_cost": 1.3751,
+    "main_pipeline_tokens_in": 1747707,
+    "main_pipeline_tokens_out": 706679,
+    "main_pipeline_sessions": 38,
+    "early_abandoned_cost": 0.2641,
+    "early_abandoned_tokens_in": 501548,
+    "early_abandoned_tokens_out": 52819,
+    "early_abandoned_sessions": 14,
+    "early_abandoned_batch_created": "2026-07-15 04:17:38 UTC (1784089121)",
+    "early_abandoned_detail": "14 sessions dispatched, never completed. Batch abandoned.",
+    "grand_total_cost": 1.6392,
+    "grand_total_sessions": 52,
+    "pricing_model": "deepseek-v4-pro",
+    "pricing_input_per_M": 0.435,
+    "pricing_output_per_M": 0.87
+  },
+  "cost_by_stage_ranked": [
+    {"rank": 1, "stage": "RTL", "cost": 0.27, "pct": 19.6, "note": "Most expensive — 3 iterations with 2 reworks"},
+    {"rank": 2, "stage": "Verify", "cost": 0.24, "pct": 17.4, "note": "Second most — 3 iterations with 2 reworks"},
+    {"rank": 3, "stage": "Doc", "cost": 0.19, "pct": 14.2, "note": "7 sessions, token-heavy"},
+    {"rank": 4, "stage": "SoC", "cost": 0.15, "pct": 11.1, "note": "2 iterations with 1 rework"},
+    {"rank": 5, "stage": "PD", "cost": 0.14, "pct": 10.0, "note": "5 sessions, first pass"},
+    {"rank": 6, "stage": "Spec", "cost": 0.09, "pct": 6.9, "note": "First pass"},
+    {"rank": 7, "stage": "Arch", "cost": 0.09, "pct": 6.4, "note": "First pass"},
+    {"rank": 8, "stage": "Promote", "cost": 0.08, "pct": 5.7, "note": "First pass"},
+    {"rank": 9, "stage": "Caravel", "cost": 0.07, "pct": 5.3, "note": "First pass"},
+    {"rank": 10, "stage": "BA", "cost": 0.05, "pct": 3.5, "note": "First pass, cheapest"}
+  ],
+  "verification": {
+    "kanban_db_tasks_found": 82,
+    "kanban_db_v6_transitive": 82,
+    "kanban_wall_clock_main_pipeline": "23,347s (6.49h) from t_c076e01e created to t_69310be0 completed",
+    "kanban_wall_clock_vs_stored": "23,347s measured vs 23,341s stored — 6s difference (0.03%, likely rounding or audit vs main task boundary)",
+    "kanban_events_archived": "54 measured vs 53 stored — 1 task difference (forwardingMUX tasks t_f8432952/t_88b74794 carry v6 in body from different pipeline)",
+    "kanban_events_blocked": "2 measured vs 1 stored — 1 extra blocked event from different pipeline",
+    "pricing_math_verified": true,
+    "per_stage_sums_match_total": "Stage sums: $1.3751 + early $0.2641 = $1.6392. Exact match to L3.5.",
+    "confidence_overall": "measured"
+  },
+  "missing": [],
+  "notes": [
+    "Primary source L3_cost_metrics.json is authoritative — all metrics MEASURED, not estimated.",
+    "Cross-validated against kanban.db (82 v6 tasks, event kinds, wall-clock timestamps) with minor discrepancies (6s wall clock, 1 archived event) due to different boundary definitions.",
+    "Pricing uses DeepSeek Pro only: $0.435/M input, $0.87/M output. All 52 sessions on deepseek-v4-pro. No Flash model detected.",
+    "Early abandoned dispatch: 14 sessions consuming 501,548 input + 52,819 output tokens ($0.26). These sessions never reached completion.",
+    "79 tasks mentioned in notes vs 82 found in kanban.db — the 3 extra include 2 ForwardingMUX tasks from a different pipeline that happen to reference v6 in body.",
+    "Per-stage costs include auditor sessions mapped to their respective stages.",
+    "RTL and Verify are the most expensive stages (36.4% of main pipeline cost combined) due to rework iterations.",
+    "6/9 pipeline stages passed without rework (67% first-pass success rate).",
+    "Wall clock excludes Doc stage (was still running at extraction time) and early abandoned batch."
+  ]
+}

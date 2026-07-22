@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>IP-005 v6 — Memory Map</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #0d1117; color: #c9d1d9; font-family: 'Courier New', monospace; padding: 24px; }
+h1 { color: #58a6ff; font-size: 18px; margin-bottom: 16px; text-align: center; }
+.map { display: flex; flex-direction: column; gap: 2px; max-width: 800px; margin: 0 auto; }
+.row { display: flex; height: 24px; align-items: center; font-size: 11px; }
+.row .addr { width: 90px; color: #8b949e; text-align: right; padding-right: 8px; }
+.row .bar { flex: 1; height: 100%; border-radius: 2px; display: flex; align-items: center; padding-left: 6px; font-size: 10px; font-weight: bold; }
+.bar-sram { background: #d29922; color: #0d1117; }
+.bar-reserved { background: #21262d; color: #484f58; }
+.bar-uart { background: #58a6ff; color: #0d1117; }
+.bar-i2c { background: #3fb950; color: #0d1117; }
+.bar-gpio { background: #a371f7; color: #0d1117; }
+.bar-timer { background: #f0883e; color: #0d1117; }
+.bar-motor { background: #f85149; color: #0d1117; }
+.bar-ultra { background: #79c0ff; color: #0d1117; }
+.bar-weight { background: #d2a8ff; color: #0d1117; }
+.bar-gov { background: #ff7b72; color: #0d1117; }
+.bar-pwr { background: #56d364; color: #0d1117; }
+.bar-intc { background: #e3b341; color: #0d1117; }
+.bar-wdt { background: #f778ba; color: #0d1117; }
+.legend { display: flex; flex-wrap: wrap; gap: 4px 16px; margin: 16px auto; max-width: 800px; justify-content: center; font-size: 11px; }
+.legend span { padding: 2px 6px; border-radius: 2px; }
+</style>
+</head>
+<body>
+<h1>IP-005 v6 — Memory Map (64KB Address Space)</h1>
+
+<div class="map">
+  <!-- 0x0000 - 0x0FFF: SRAM + Reserved -->
+  <div class="row"><div class="addr">0x0000</div><div class="bar bar-sram" style="width:3.1%;">SRAM 512B</div></div>
+  <div class="row"><div class="addr">0x0200</div><div class="bar bar-reserved" style="width:10.9%;"></div></div>
+  <!-- 0x1000 - 0x1FFF: Reserved block -->
+  <div class="row"><div class="addr">0x1000</div><div class="bar bar-reserved" style="width:12.5%;">Rsvd</div></div>
+  <!-- 0x2000 - 0x2FFF: UART -->
+  <div class="row"><div class="addr">0x2000</div><div class="bar bar-uart" style="width:12.5%;">UART</div></div>
+  <!-- 0x3000 - 0x3FFF: SPI reserved -->
+  <div class="row"><div class="addr">0x3000</div><div class="bar bar-reserved" style="width:12.5%;">SPI Rsvd</div></div>
+  <!-- 0x4000 - 0x4FFF: I2C HX711 -->
+  <div class="row"><div class="addr">0x4000</div><div class="bar bar-i2c" style="width:12.5%;">I²C HX711</div></div>
+  <!-- 0x5000 - 0x5FFF: GPIO -->
+  <div class="row"><div class="addr">0x5000</div><div class="bar bar-gpio" style="width:12.5%;">GPIO</div></div>
+  <!-- 0x6000 - 0x6FFF: Timer -->
+  <div class="row"><div class="addr">0x6000</div><div class="bar bar-timer" style="width:12.5%;">Timer</div></div>
+  <!-- 0x7000 - 0x7FFF: Motor PWM -->
+  <div class="row"><div class="addr">0x7000</div><div class="bar bar-motor" style="width:12.5%;">Motor PWM</div></div>
+  <!-- 0x8000 - 0x8FFF: Ultrasonic -->
+  <div class="row"><div class="addr">0x8000</div><div class="bar bar-ultra" style="width:12.5%;">Ultrasonic</div></div>
+  <!-- 0x9000 - 0x9FFF: Weight -->
+  <div class="row"><div class="addr">0x9000</div><div class="bar bar-weight" style="width:12.5%;">Weight</div></div>
+  <!-- 0xA000 - 0xAFFF: I2C INA219 -->
+  <div class="row"><div class="addr">0xA000</div><div class="bar bar-i2c" style="width:12.5%;">I²C INA219</div></div>
+  <!-- 0xB000 - 0xBFFF: I2C DS3231 -->
+  <div class="row"><div class="addr">0xB000</div><div class="bar bar-i2c" style="width:12.5%;">I²C DS3231</div></div>
+  <!-- 0xC000 - 0xCFFF: Interrupt Ctrl -->
+  <div class="row"><div class="addr">0xC000</div><div class="bar bar-intc" style="width:12.5%;">INTC</div></div>
+  <!-- 0xD000 - 0xDFFF: Watchdog -->
+  <div class="row"><div class="addr">0xD000</div><div class="bar bar-wdt" style="width:12.5%;">WDT</div></div>
+  <!-- 0xE000 - 0xEFFF: Power Mgr -->
+  <div class="row"><div class="addr">0xE000</div><div class="bar bar-pwr" style="width:12.5%;">Power Mgr</div></div>
+  <!-- 0xF000 - 0xFFFF: Reserved -->
+  <div class="row"><div class="addr">0xF000</div><div class="bar bar-reserved" style="width:12.5%;">Future</div></div>
+</div>
+
+<div class="legend">
+  <span class="bar-sram">SRAM (512B)</span>
+  <span class="bar-uart">UART</span>
+  <span class="bar-i2c">I²C Master ×3</span>
+  <span class="bar-gpio">GPIO</span>
+  <span class="bar-timer">Timer</span>
+  <span class="bar-motor">Motor PWM</span>
+  <span class="bar-ultra">Ultrasonic</span>
+  <span class="bar-weight">Weight Detect</span>
+  <span class="bar-intc">Interrupt Ctrl</span>
+  <span class="bar-wdt">Watchdog</span>
+  <span class="bar-pwr">Power Mgr</span>
+  <span class="bar-reserved">Reserved</span>
+</div>
+
+<p style="text-align:center; color:#484f58; font-size:10px; margin-top: 16px;">
+Address decode: wb_adr[15:12] · 4KB per slot · 16-bit address bus · 64KB total
+</p>
+</body>
+</html>

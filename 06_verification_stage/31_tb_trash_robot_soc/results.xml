@@ -1,0 +1,9 @@
+<testsuites name="results">
+  <testsuite name="all" package="all">
+    <property name="random_seed" value="1784096463" />
+    <testcase name="test_reset" classname="test_trash_robot_soc" file="/home/smdadmin/hermes_workspace/projects/IP-005/v6/06_verification/tb-trash_robot_soc/test_trash_robot_soc.py" lineno="39" time="0.0013358592987060547" sim_time_ns="151.0" ratio_time="113035.85650544352" />
+    <testcase name="test_boot_idle" classname="test_trash_robot_soc" file="/home/smdadmin/hermes_workspace/projects/IP-005/v6/06_verification/tb-trash_robot_soc/test_trash_robot_soc.py" lineno="63" time="0.01584148406982422" sim_time_ns="5041.0" ratio_time="318215.1355126121" />
+    <testcase name="test_peripheral_port_connectivity" classname="test_trash_robot_soc" file="/home/smdadmin/hermes_workspace/projects/IP-005/v6/06_verification/tb-trash_robot_soc/test_trash_robot_soc.py" lineno="86" time="0.0007631778717041016" sim_time_ns="121.0" ratio_time="158547.5738831615" />
+    <testcase name="test_irq_routing" classname="test_trash_robot_soc" file="/home/smdadmin/hermes_workspace/projects/IP-005/v6/06_verification/tb-trash_robot_soc/test_trash_robot_soc.py" lineno="115" time="0.004588127136230469" sim_time_ns="1541.0" ratio_time="335866.8917065059" />
+  </testsuite>
+</testsuites>

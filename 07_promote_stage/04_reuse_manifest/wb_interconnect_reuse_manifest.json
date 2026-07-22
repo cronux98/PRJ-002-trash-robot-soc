@@ -1,0 +1,52 @@
+{
+  "module": "wb_interconnect",
+  "provenance_type": "self",
+  "source_project": "IP-005 v6",
+  "source_date": "2026-07-15",
+  "promotion_verdict": "PROMOTED",
+  "category": "interfaces",
+  "research_path": "research/interfaces/wb_interconnect/",
+  "qualification": {
+    "lint": "PASS (0 errors)",
+    "formal_bmc": "PASS (config.sby)",
+    "formal_status": "COND",
+    "synthesis": "PASS (0 latches, 0 unmapped cells)",
+    "equivalence": "CONDITIONAL PASS (sky130 SAT limitation \u2014 documented)",
+    "verification_rtl": "4/4 PASS",
+    "verification_gls": "4/4 PASS",
+    "coverage_tier": "A",
+    "coverage_line_pct": null,
+    "coverage_toggle_pct": null,
+    "coverage_toggle_bins": 300
+  },
+  "metrics": {
+    "cell_count": 367,
+    "dff_count": 32,
+    "total_cells": 367
+  },
+  "interface": {
+    "bus_protocol": "Wishbone B4",
+    "clock_domain": "sys_clk",
+    "ports": [
+      "wb_clk_i",
+      "wb_rst_i",
+      "wbm_adr_o[31:0]",
+      "wbm_dat_o[31:0]",
+      "wbm_dat_i[31:0]",
+      "wbm_we_o",
+      "wbm_sel_o[3:0]",
+      "wbm_stb_o",
+      "wbm_ack_i",
+      "wbm_cyc_o",
+      "wbs_adr_i[31:0]",
+      "wbs_dat_i[31:0]",
+      "wbs_dat_o[31:0]",
+      "wbs_we_i",
+      "wbs_sel_i[3:0]",
+      "wbs_stb_i",
+      "wbs_ack_o",
+      "wbs_cyc_i"
+    ]
+  },
+  "dependencies": []
+}

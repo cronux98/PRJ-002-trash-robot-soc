@@ -1,0 +1,1085 @@
+{
+  "generated": "2026-07-15T00:00:00Z",
+  "source": "02_architecture-stage/architecture_doc.md",
+  "core": {
+    "isa": "rv32im",
+    "abi": "ilp32",
+    "trap_addr": "0x00000000",
+    "mtvec_mode": "direct",
+    "cpu": "picorv32",
+    "clock_mhz": 33.3
+  },
+  "regions": [
+    {
+      "name": "SRAM",
+      "base": "0x0000",
+      "size": 512,
+      "attrs": "rwx",
+      "words": 128,
+      "note": "Unified Von Neumann, 128x32"
+    },
+    {
+      "name": "RESERVED_SRAM_EXP",
+      "base": "0x1000",
+      "size": 4096,
+      "attrs": "rwx",
+      "note": "Reserved for SRAM expansion"
+    },
+    {
+      "name": "PERIPH_UART",
+      "base": "0x2000",
+      "size": 4096,
+      "attrs": "rw"
+    },
+    {
+      "name": "RESERVED_SPI",
+      "base": "0x3000",
+      "size": 4096,
+      "attrs": "rw",
+      "note": "SPI slot (reserved, unpopulated)"
+    },
+    {
+      "name": "PERIPH_I2C_HX711",
+      "base": "0x4000",
+      "size": 4096,
+      "attrs": "rw"
+    },
+    {
+      "name": "PERIPH_GPIO",
+      "base": "0x5000",
+      "size": 4096,
+      "attrs": "rw"
+    },
+    {
+      "name": "PERIPH_TIMER",
+      "base": "0x6000",
+      "size": 4096,
+      "attrs": "rw"
+    },
+    {
+      "name": "PERIPH_MOTOR_PWM",
+      "base": "0x7000",
+      "size": 4096,
+      "attrs": "rw"
+    },
+    {
+      "name": "PERIPH_ULTRASONIC",
+      "base": "0x8000",
+      "size": 4096,
+      "attrs": "rw"
+    },
+    {
+      "name": "PERIPH_WEIGHT_DETECT",
+      "base": "0x9000",
+      "size": 4096,
+      "attrs": "rw"
+    },
+    {
+      "name": "PERIPH_I2C_INA219",
+      "base": "0xA000",
+      "size": 4096,
+      "attrs": "rw"
+    },
+    {
+      "name": "PERIPH_I2C_DS3231",
+      "base": "0xB000",
+      "size": 4096,
+      "attrs": "rw"
+    },
+    {
+      "name": "PERIPH_INTERRUPT_CTRL",
+      "base": "0xC000",
+      "size": 4096,
+      "attrs": "rw"
+    },
+    {
+      "name": "PERIPH_WATCHDOG",
+      "base": "0xD000",
+      "size": 4096,
+      "attrs": "rw"
+    },
+    {
+      "name": "PERIPH_POWER_MGR",
+      "base": "0xE000",
+      "size": 4096,
+      "attrs": "rw"
+    },
+    {
+      "name": "RESERVED_TOP",
+      "base": "0xF000",
+      "size": 4096,
+      "attrs": "rw",
+      "note": "Reserved"
+    }
+  ],
+  "peripherals": [
+    {
+      "name": "UART",
+      "base": "0x2000",
+      "irq": [
+        1,
+        2
+      ],
+      "registers": [
+        {
+          "name": "DATA",
+          "offset": "0x00",
+          "access": "rw",
+          "fields": [
+            {
+              "name": "TXDATA",
+              "bits": [
+                7,
+                0
+              ],
+              "access": "wo"
+            },
+            {
+              "name": "RXDATA",
+              "bits": [
+                7,
+                0
+              ],
+              "access": "ro"
+            }
+          ]
+        },
+        {
+          "name": "STATUS",
+          "offset": "0x04",
+          "access": "rw",
+          "fields": [
+            {
+              "name": "TX_READY",
+              "bits": [
+                0
+              ],
+              "access": "ro"
+            },
+            {
+              "name": "RX_VALID",
+              "bits": [
+                1
+              ],
+              "access": "ro"
+            }
+          ]
+        },
+        {
+          "name": "CONTROL",
+          "offset": "0x08",
+          "access": "rw",
+          "fields": [
+            {
+              "name": "TX_ENABLE",
+              "bits": [
+                0
+              ],
+              "access": "rw"
+            },
+            {
+              "name": "RX_ENABLE",
+              "bits": [
+                1
+              ],
+              "access": "rw"
+            },
+            {
+              "name": "IRQ_ENABLE",
+              "bits": [
+                2
+              ],
+              "access": "rw"
+            }
+          ]
+        },
+        {
+          "name": "BAUD_DIV",
+          "offset": "0x0C",
+          "access": "rw",
+          "fields": [
+            {
+              "name": "DIVISOR",
+              "bits": [
+                15,
+                0
+              ],
+              "access": "rw"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "GPIO",
+      "base": "0x5000",
+      "irq": [
+        3,
+        4,
+        5,
+        14
+      ],
+      "registers": [
+        {
+          "name": "DATA_OUT",
+          "offset": "0x00",
+          "access": "rw",
+          "fields": [
+            {
+              "name": "OUT",
+              "bits": [
+                15,
+                0
+              ],
+              "access": "rw"
+            }
+          ]
+        },
+        {
+          "name": "DATA_IN",
+          "offset": "0x04",
+          "access": "ro",
+          "fields": [
+            {
+              "name": "IN",
+              "bits": [
+                15,
+                0
+              ],
+              "access": "ro"
+            }
+          ]
+        },
+        {
+          "name": "DIRECTION",
+          "offset": "0x08",
+          "access": "rw",
+          "fields": [
+            {
+              "name": "DIR",
+              "bits": [
+                15,
+                0
+              ],
+              "access": "rw"
+            }
+          ]
+        },
+        {
+          "name": "IRQ_MASK",
+          "offset": "0x0C",
+          "access": "rw",
+          "fields": [
+            {
+              "name": "MASK",
+              "bits": [
+                15,
+                0
+              ],
+              "access": "rw"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "TIMER",
+      "base": "0x6000",
+      "irq": [
+        0
+      ],
+      "registers": [
+        {
+          "name": "COUNT",
+          "offset": "0x00",
+          "access": "ro",
+          "fields": [
+            {
+              "name": "VALUE",
+              "bits": [
+                31,
+                0
+              ],
+              "access": "ro"
+            }
+          ]
+        },
+        {
+          "name": "COMPARE",
+          "offset": "0x04",
+          "access": "rw",
+          "fields": [
+            {
+              "name": "THRESHOLD",
+              "bits": [
+                31,
+                0
+              ],
+              "access": "rw"
+            }
+          ]
+        },
+        {
+          "name": "CONTROL",
+          "offset": "0x08",
+          "access": "rw",
+          "fields": [
+            {
+              "name": "ENABLE",
+              "bits": [
+                0
+              ],
+              "access": "rw"
+            },
+            {
+              "name": "IRQ_ENABLE",
+              "bits": [
+                1
+              ],
+              "access": "rw"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "WATCHDOG",
+      "base": "0xD000",
+      "irq": [
+        12
+      ],
+      "registers": [
+        {
+          "name": "MAGIC",
+          "offset": "0x00",
+          "access": "wo",
+          "fields": [
+            {
+              "name": "KEY",
+              "bits": [
+                31,
+                0
+              ],
+              "access": "wo",
+              "note": "0xACCE5515 reloads"
+            }
+          ]
+        },
+        {
+          "name": "TIMEOUT",
+          "offset": "0x04",
+          "access": "rw",
+          "fields": [
+            {
+              "name": "CYCLES",
+              "bits": [
+                31,
+                0
+              ],
+              "access": "rw"
+            }
+          ]
+        },
+        {
+          "name": "STATUS",
+          "offset": "0x08",
+          "access": "ro",
+          "fields": [
+            {
+              "name": "TRIPPED",
+              "bits": [
+                0
+              ],
+              "access": "ro"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "MOTOR_PWM",
+      "base": "0x7000",
+      "irq": [
+        6
+      ],
+      "registers": [
+        {
+          "name": "PHASE_A",
+          "offset": "0x00",
+          "access": "rw",
+          "fields": [
+            {
+              "name": "PHASE",
+              "bits": [
+                0
+              ],
+              "access": "rw"
+            },
+            {
+              "name": "ENABLE",
+              "bits": [
+                1
+              ],
+              "access": "rw"
+            }
+          ]
+        },
+        {
+          "name": "PHASE_B",
+          "offset": "0x04",
+          "access": "rw",
+          "fields": [
+            {
+              "name": "PHASE",
+              "bits": [
+                0
+              ],
+              "access": "rw"
+            },
+            {
+              "name": "ENABLE",
+              "bits": [
+                1
+              ],
+              "access": "rw"
+            }
+          ]
+        },
+        {
+          "name": "PHASE_C",
+          "offset": "0x08",
+          "access": "rw",
+          "fields": [
+            {
+              "name": "PHASE",
+              "bits": [
+                0
+              ],
+              "access": "rw"
+            },
+            {
+              "name": "ENABLE",
+              "bits": [
+                1
+              ],
+              "access": "rw"
+            }
+          ]
+        },
+        {
+          "name": "PHASE_D",
+          "offset": "0x0C",
+          "access": "rw",
+          "fields": [
+            {
+              "name": "PHASE",
+              "bits": [
+                0
+              ],
+              "access": "rw"
+            },
+            {
+              "name": "ENABLE",
+              "bits": [
+                1
+              ],
+              "access": "rw"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "I2C_HX711",
+      "base": "0x4000",
+      "irq": [
+        9
+      ],
+      "registers": [
+        {
+          "name": "DATA",
+          "offset": "0x00",
+          "access": "rw",
+          "fields": [
+            {
+              "name": "TXDATA",
+              "bits": [
+                7,
+                0
+              ],
+              "access": "wo"
+            },
+            {
+              "name": "RXDATA",
+              "bits": [
+                7,
+                0
+              ],
+              "access": "ro"
+            }
+          ]
+        },
+        {
+          "name": "STATUS",
+          "offset": "0x04",
+          "access": "rw",
+          "fields": [
+            {
+              "name": "BUSY",
+              "bits": [
+                0
+              ],
+              "access": "ro"
+            },
+            {
+              "name": "ACK",
+              "bits": [
+                1
+              ],
+              "access": "ro"
+            }
+          ]
+        },
+        {
+          "name": "ADDR",
+          "offset": "0x08",
+          "access": "rw",
+          "fields": [
+            {
+              "name": "SLAVE_ADDR",
+              "bits": [
+                6,
+                0
+              ],
+              "access": "rw"
+            }
+          ]
+        },
+        {
+          "name": "CONTROL",
+          "offset": "0x0C",
+          "access": "rw",
+          "fields": [
+            {
+              "name": "START",
+              "bits": [
+                0
+              ],
+              "access": "rw"
+            },
+            {
+              "name": "STOP",
+              "bits": [
+                1
+              ],
+              "access": "rw"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "I2C_INA219",
+      "base": "0xA000",
+      "irq": [
+        10
+      ],
+      "registers": [
+        {
+          "name": "DATA",
+          "offset": "0x00",
+          "access": "rw",
+          "fields": [
+            {
+              "name": "TXDATA",
+              "bits": [
+                7,
+                0
+              ],
+              "access": "wo"
+            },
+            {
+              "name": "RXDATA",
+              "bits": [
+                7,
+                0
+              ],
+              "access": "ro"
+            }
+          ]
+        },
+        {
+          "name": "STATUS",
+          "offset": "0x04",
+          "access": "rw",
+          "fields": [
+            {
+              "name": "BUSY",
+              "bits": [
+                0
+              ],
+              "access": "ro"
+            },
+            {
+              "name": "ACK",
+              "bits": [
+                1
+              ],
+              "access": "ro"
+            }
+          ]
+        },
+        {
+          "name": "ADDR",
+          "offset": "0x08",
+          "access": "rw",
+          "fields": [
+            {
+              "name": "SLAVE_ADDR",
+              "bits": [
+                6,
+                0
+              ],
+              "access": "rw"
+            }
+          ]
+        },
+        {
+          "name": "CONTROL",
+          "offset": "0x0C",
+          "access": "rw",
+          "fields": [
+            {
+              "name": "START",
+              "bits": [
+                0
+              ],
+              "access": "rw"
+            },
+            {
+              "name": "STOP",
+              "bits": [
+                1
+              ],
+              "access": "rw"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "I2C_DS3231",
+      "base": "0xB000",
+      "irq": [
+        11
+      ],
+      "registers": [
+        {
+          "name": "DATA",
+          "offset": "0x00",
+          "access": "rw",
+          "fields": [
+            {
+              "name": "TXDATA",
+              "bits": [
+                7,
+                0
+              ],
+              "access": "wo"
+            },
+            {
+              "name": "RXDATA",
+              "bits": [
+                7,
+                0
+              ],
+              "access": "ro"
+            }
+          ]
+        },
+        {
+          "name": "STATUS",
+          "offset": "0x04",
+          "access": "rw",
+          "fields": [
+            {
+              "name": "BUSY",
+              "bits": [
+                0
+              ],
+              "access": "ro"
+            },
+            {
+              "name": "ACK",
+              "bits": [
+                1
+              ],
+              "access": "ro"
+            }
+          ]
+        },
+        {
+          "name": "ADDR",
+          "offset": "0x08",
+          "access": "rw",
+          "fields": [
+            {
+              "name": "SLAVE_ADDR",
+              "bits": [
+                6,
+                0
+              ],
+              "access": "rw"
+            }
+          ]
+        },
+        {
+          "name": "CONTROL",
+          "offset": "0x0C",
+          "access": "rw",
+          "fields": [
+            {
+              "name": "START",
+              "bits": [
+                0
+              ],
+              "access": "rw"
+            },
+            {
+              "name": "STOP",
+              "bits": [
+                1
+              ],
+              "access": "rw"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ULTRASONIC_CAPTURE",
+      "base": "0x8000",
+      "irq": [
+        7
+      ],
+      "registers": [
+        {
+          "name": "TRIGGER",
+          "offset": "0x00",
+          "access": "rw",
+          "fields": [
+            {
+              "name": "PULSE",
+              "bits": [
+                0
+              ],
+              "access": "rw"
+            }
+          ]
+        },
+        {
+          "name": "ECHO_COUNT_A",
+          "offset": "0x04",
+          "access": "ro",
+          "fields": [
+            {
+              "name": "US",
+              "bits": [
+                31,
+                0
+              ],
+              "access": "ro"
+            }
+          ]
+        },
+        {
+          "name": "ECHO_COUNT_B",
+          "offset": "0x08",
+          "access": "ro",
+          "fields": [
+            {
+              "name": "US",
+              "bits": [
+                31,
+                0
+              ],
+              "access": "ro"
+            }
+          ]
+        },
+        {
+          "name": "CONTROL",
+          "offset": "0x0C",
+          "access": "rw",
+          "fields": [
+            {
+              "name": "ENABLE",
+              "bits": [
+                0
+              ],
+              "access": "rw"
+            },
+            {
+              "name": "IRQ_ENABLE",
+              "bits": [
+                1
+              ],
+              "access": "rw"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "WEIGHT_DETECT",
+      "base": "0x9000",
+      "irq": [
+        8
+      ],
+      "registers": [
+        {
+          "name": "THRESHOLD",
+          "offset": "0x00",
+          "access": "rw",
+          "fields": [
+            {
+              "name": "VALUE",
+              "bits": [
+                31,
+                0
+              ],
+              "access": "rw"
+            }
+          ]
+        },
+        {
+          "name": "STATUS",
+          "offset": "0x04",
+          "access": "ro",
+          "fields": [
+            {
+              "name": "DETECTED",
+              "bits": [
+                0
+              ],
+              "access": "ro"
+            },
+            {
+              "name": "CURRENT",
+              "bits": [
+                31,
+                1
+              ],
+              "access": "ro"
+            }
+          ]
+        },
+        {
+          "name": "CONTROL",
+          "offset": "0x08",
+          "access": "rw",
+          "fields": [
+            {
+              "name": "ENABLE",
+              "bits": [
+                0
+              ],
+              "access": "rw"
+            },
+            {
+              "name": "IRQ_ENABLE",
+              "bits": [
+                1
+              ],
+              "access": "rw"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "INTERRUPT_CTRL",
+      "base": "0xC000",
+      "irq": [],
+      "registers": [
+        {
+          "name": "PENDING",
+          "offset": "0x00",
+          "access": "ro",
+          "fields": [
+            {
+              "name": "PENDING",
+              "bits": [
+                15,
+                0
+              ],
+              "access": "ro"
+            }
+          ]
+        },
+        {
+          "name": "MASK",
+          "offset": "0x04",
+          "access": "rw",
+          "fields": [
+            {
+              "name": "MASK",
+              "bits": [
+                15,
+                0
+              ],
+              "access": "rw"
+            }
+          ]
+        },
+        {
+          "name": "PRIORITY",
+          "offset": "0x08",
+          "access": "ro",
+          "fields": [
+            {
+              "name": "ACTIVE_IRQ",
+              "bits": [
+                3,
+                0
+              ],
+              "access": "ro"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "POWER_MGR",
+      "base": "0xE000",
+      "irq": [
+        13
+      ],
+      "registers": [
+        {
+          "name": "STATE",
+          "offset": "0x00",
+          "access": "rw",
+          "fields": [
+            {
+              "name": "MODE",
+              "bits": [
+                1,
+                0
+              ],
+              "access": "rw",
+              "note": "00=ACTIVE, 01=SLEEP, 10=WAKE"
+            }
+          ]
+        },
+        {
+          "name": "CLK_GATE",
+          "offset": "0x04",
+          "access": "rw",
+          "fields": [
+            {
+              "name": "MASK",
+              "bits": [
+                15,
+                0
+              ],
+              "access": "rw"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "interrupt_map": [
+    {
+      "source": "timer",
+      "priority": 0,
+      "channel": 0,
+      "level": "HIGH"
+    },
+    {
+      "source": "uart_rx",
+      "priority": 1,
+      "channel": 1,
+      "level": "HIGH"
+    },
+    {
+      "source": "uart_tx",
+      "priority": 2,
+      "channel": 2,
+      "level": "MED"
+    },
+    {
+      "source": "gpio0",
+      "priority": 3,
+      "channel": 3,
+      "level": "HIGH"
+    },
+    {
+      "source": "gpio1",
+      "priority": 4,
+      "channel": 4,
+      "level": "HIGH"
+    },
+    {
+      "source": "gpio2",
+      "priority": 5,
+      "channel": 5,
+      "level": "MED"
+    },
+    {
+      "source": "motor_pwm",
+      "priority": 6,
+      "channel": 6,
+      "level": "MED"
+    },
+    {
+      "source": "ultrasonic_capture",
+      "priority": 7,
+      "channel": 7,
+      "level": "MED"
+    },
+    {
+      "source": "weight_detect",
+      "priority": 8,
+      "channel": 8,
+      "level": "MED"
+    },
+    {
+      "source": "i2c_hx711",
+      "priority": 9,
+      "channel": 9,
+      "level": "LOW"
+    },
+    {
+      "source": "i2c_ina219",
+      "priority": 10,
+      "channel": 10,
+      "level": "LOW"
+    },
+    {
+      "source": "i2c_ds3231",
+      "priority": 11,
+      "channel": 11,
+      "level": "LOW"
+    },
+    {
+      "source": "watchdog",
+      "priority": 12,
+      "channel": 12,
+      "level": "HIGH"
+    },
+    {
+      "source": "power_mgr",
+      "priority": 13,
+      "channel": 13,
+      "level": "LOW"
+    },
+    {
+      "source": "gpio3",
+      "priority": 14,
+      "channel": 14,
+      "level": "LOW"
+    }
+  ]
+}

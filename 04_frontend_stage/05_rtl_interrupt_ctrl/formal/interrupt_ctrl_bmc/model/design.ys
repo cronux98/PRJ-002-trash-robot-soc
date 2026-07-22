@@ -1,0 +1,8 @@
+# running in interrupt_ctrl_bmc/src/
+read -formal interrupt_ctrl.v
+prep -top interrupt_ctrl
+
+hierarchy -smtcheck
+rename -witness
+write_jny -no-connections ../model/design.json
+write_rtlil ../model/design.il

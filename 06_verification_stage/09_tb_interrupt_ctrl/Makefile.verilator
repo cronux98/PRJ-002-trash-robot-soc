@@ -1,0 +1,9 @@
+SIM = verilator
+TOPLEVEL_LANG = verilog
+VERILOG_SOURCES = ../../03_frontend-stage/rtl-interrupt_ctrl/rtl/interrupt_ctrl.v
+TOPLEVEL = interrupt_ctrl
+COCOTB_TEST_MODULES = test_interrupt_ctrl
+COMPILE_ARGS = --coverage --coverage-line --coverage-toggle -Wno-fatal -Wno-WIDTH -Wno-UNUSED -Wno-UNOPTFLAT -Wno-DECLFILENAME -Wno-PINCONNECTEMPTY -Wno-PINMISSING -Wno-TIMESCALEMOD
+EXTRA_ARGS = --trace --trace-vcd
+
+include $(shell cocotb-config --makefiles)/Makefile.sim

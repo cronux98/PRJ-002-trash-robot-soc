@@ -1,0 +1,64 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.65+71 (git sha1 e56c6a954, clang++ 18.1.8 -fPIC -O3)
+
+-- Executing script file `design_smt2.ys' --
+
+1. Executing RTLIL frontend.
+Input filename: design_prep.il
+
+2. Executing HIERARCHY pass (managing design hierarchy).
+Attribute `top' found on module `i2c_master'. Setting top module to i2c_master.
+
+2.1. Analyzing design hierarchy..
+Top module:  \i2c_master
+
+2.2. Analyzing design hierarchy..
+Top module:  \i2c_master
+Removed 0 unused modules.
+
+3. Executing FORMALFF pass.
+
+4. Executing DFFUNMAP pass (unmap clock enable and synchronous reset from FFs).
+
+5. Printing statistics.
+
+=== i2c_master ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      171 wires
+      740 wire bits
+       49 public wires
+      268 public wire bits
+       13 ports
+      109 port bits
+      167 cells
+       19   $anyinit
+        1   $assume
+       12   $eq
+        1   $gt
+        4   $logic_and
+        4   $logic_not
+      108   $mux
+        1   $ne
+        2   $not
+        8   $pmux
+        1   $reduce_bool
+        4   $reduce_or
+        2   $sub
+
+6. Executing SMT2 backend.
+
+6.1. Executing BMUXMAP pass.
+
+6.2. Executing DEMUXMAP pass.
+Creating SMT-LIBv2 representation of module i2c_master.
+
+End of script. Logfile hash: 1274790216, time: 0.01s, user: 0.01s, system: 0.01s, MEM: 15.98 MB peak
+Yosys 0.65+71 (git sha1 e56c6a954, clang++ 18.1.8 -fPIC -O3)
+Time spent: 58% 2x write_smt2 (0 sec), 28% 2x read_rtlil (0 sec), ...

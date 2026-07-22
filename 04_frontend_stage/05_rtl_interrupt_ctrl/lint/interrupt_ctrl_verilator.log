@@ -1,0 +1,13 @@
+%Warning-MULTITOP: /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-interrupt_ctrl/rtl/intc.v:7:8: Multiple top level modules
+                                                                                                                         : ... Suggest see manual; fix the duplicates, or use --top-module to select top.
+                   ... For warning description see https://verilator.org/warn/MULTITOP?v=5.049
+                   ... Use "/* verilator lint_off MULTITOP */" and lint_on around source to disable this message.
+                                                                                                                         : ... Top module 'interrupt_ctrl'
+    7 | module interrupt_ctrl (
+      |        ^~~~~~~~~~~~~~
+                                                                                                                         : ... Top module 'intc'
+    7 | module intc (
+      |        ^~~~
+- V e r i l a t i o n   R e p o r t: Verilator 5.049 devel rev v5.048-4-ge4803f29b (mod)
+- Verilator: Built from 0.059 MB sources in 3 modules, into 0.041 MB in 3 C++ files needing 0.000 MB
+- Verilator: Walltime 0.013 s (elab=0.001, cvt=0.007, bld=0.000); cpu 0.013 s on 1 threads; allocated 21.195 MB

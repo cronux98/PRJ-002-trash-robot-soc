@@ -1,0 +1,22 @@
+%Warning-UNDRIVEN: rtl-trash_robot_soc/rtl/trash_robot_soc.v:68:17: Bits of signal are not driven: 'irq_sources'[15:12]
+                                                                  : ... note: In instance 'trash_robot_soc'
+   68 |     wire [15:0] irq_sources;
+      |                 ^~~~~~~~~~~
+                   ... For warning description see https://verilator.org/warn/UNDRIVEN?v=5.049
+                   ... Use "/* verilator lint_off UNDRIVEN */" and lint_on around source to disable this message.
+%Warning-UNUSEDSIGNAL: rtl-trash_robot_soc/rtl/trash_robot_soc.v:76:10: Signal is not used: 'clk_en'
+                                                                      : ... note: In instance 'trash_robot_soc'
+   76 |     wire clk_en;
+      |          ^~~~~~
+                       ... For warning description see https://verilator.org/warn/UNUSEDSIGNAL?v=5.049
+                       ... Use "/* verilator lint_off UNUSEDSIGNAL */" and lint_on around source to disable this message.
+%Warning-SYNCASYNCNET: rtl-trash_robot_soc/rtl/trash_robot_soc.v:75:10: Signal flopped as both synchronous and async: 'trash_robot_soc.sys_rst_n_int'
+                       rtl-wb_interconnect/rtl/wb_interconnect.v:328:14: ... Location of async usage
+  328 |         if (!rst_ni) begin
+      |              ^~~~~~
+                       rtl-picorv32_core/rtl/picorv32_core.v:398:8: ... Location of sync usage
+  398 |   if (!resetn) begin
+      |        ^~~~~~
+                       ... For warning description see https://verilator.org/warn/SYNCASYNCNET?v=5.049
+                       ... Use "/* verilator lint_off SYNCASYNCNET */" and lint_on around source to disable this message.
+%Error: Exiting due to 3 warning(s)

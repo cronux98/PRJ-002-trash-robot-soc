@@ -1,0 +1,13 @@
+[options]
+mode prove
+depth 20
+
+[engines]
+smtbmc yices
+
+[script]
+read -formal gpio.v
+prep -top gpio
+
+[files]
+/home/smdadmin/hermes_workspace/projects/IP-005/v5/03_frontend-stage/rtl-gpio/rtl/gpio.v

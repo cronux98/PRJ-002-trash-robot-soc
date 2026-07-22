@@ -1,0 +1,13 @@
+%Warning-MULTITOP: /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_hx711/rtl/i2c_controller.v:7:8: Multiple top level modules
+                                                                                                                              : ... Suggest see manual; fix the duplicates, or use --top-module to select top.
+                   ... For warning description see https://verilator.org/warn/MULTITOP?v=5.049
+                   ... Use "/* verilator lint_off MULTITOP */" and lint_on around source to disable this message.
+                                                                                                                              : ... Top module 'i2c_master'
+    7 | module i2c_master (
+      |        ^~~~~~~~~~
+                                                                                                                              : ... Top module 'i2c_controller'
+    7 | module i2c_controller (
+      |        ^~~~~~~~~~~~~~
+- V e r i l a t i o n   R e p o r t: Verilator 5.049 devel rev v5.048-4-ge4803f29b (mod)
+- Verilator: Built from 0.080 MB sources in 3 modules, into 0.046 MB in 3 C++ files needing 0.000 MB
+- Verilator: Walltime 0.017 s (elab=0.002, cvt=0.009, bld=0.000); cpu 0.017 s on 1 threads; allocated 21.402 MB

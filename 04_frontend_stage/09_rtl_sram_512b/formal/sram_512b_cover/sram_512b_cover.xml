@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+<testsuite timestamp="2026-07-14T15:13:23" hostname="smdtest02" package="sram_512b" id="0" name="cover" tests="0" errors="0" failures="0" time="5" skipped="0">
+<properties>
+<property name="os" value="Linux"/>
+<property name="expect" value="PASS"/>
+<property name="status" value="PASS"/>
+</properties>
+<testcase classname="cover" name="build execution" time="0">
+</testcase>
+<system-out>SBY 15:13:20 [sram_512b_bmc] Removing directory '/home/smdadmin/hermes_workspace/projects/IP-005/v5/03_frontend-stage/rtl-sram_512b/formal/sram_512b_bmc'.
+SBY 15:13:20 [sram_512b_induction] Removing directory '/home/smdadmin/hermes_workspace/projects/IP-005/v5/03_frontend-stage/rtl-sram_512b/formal/sram_512b_induction'.
+SBY 15:13:20 [sram_512b_cover] Removing directory '/home/smdadmin/hermes_workspace/projects/IP-005/v5/03_frontend-stage/rtl-sram_512b/formal/sram_512b_cover'.
+SBY 15:13:20 [sram_512b_cover] Copy '/home/smdadmin/hermes_workspace/projects/IP-005/v5/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v' to '/home/smdadmin/hermes_workspace/projects/IP-005/v5/03_frontend-stage/rtl-sram_512b/formal/sram_512b_cover/src/sram_512b.v'.
+SBY 15:13:20 [sram_512b_cover] engine_0: smtbmc yices
+SBY 15:13:20 [sram_512b_cover] base: starting process &quot;cd sram_512b_cover/src; yosys -ql ../model/design.log ../model/design.ys&quot;
+SBY 15:13:21 [sram_512b_cover] base: Warning: Replacing memory \mem with list of registers. See sram_512b.v:39
+SBY 15:13:22 [sram_512b_cover] base: finished (returncode=0)
+SBY 15:13:22 [sram_512b_cover] prep: starting process &quot;cd sram_512b_cover/model; yosys -ql design_prep.log design_prep.ys&quot;
+SBY 15:13:23 [sram_512b_cover] prep: finished (returncode=0)
+SBY 15:13:23 [sram_512b_cover] smt2: starting process &quot;cd sram_512b_cover/model; yosys -ql design_smt2.log design_smt2.ys&quot;
+SBY 15:13:23 [sram_512b_cover] smt2: finished (returncode=0)
+SBY 15:13:23 [sram_512b_cover] engine_0: starting process &quot;cd sram_512b_cover; /home/smdadmin/oss-cad-suite/bin/yosys-smtbmc -s yices --presat --unroll -c --noprogress -t 20  --append 0 --dump-vcd engine_0/trace%.vcd --dump-yw engine_0/trace%.yw --dump-vlogtb engine_0/trace%_tb.v --dump-smtc engine_0/trace%.smtc model/design_smt2.smt2&quot;
+SBY 15:13:23 [sram_512b_cover] engine_0: ##   0:00:00  Solver: yices
+SBY 15:13:23 [sram_512b_cover] engine_0: ##   0:00:00  Status: passed
+SBY 15:13:23 [sram_512b_cover] engine_0: finished (returncode=0)
+SBY 15:13:23 [sram_512b_cover] engine_0: Status returned by engine: pass
+SBY 15:13:23 [sram_512b_cover] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:02 (2)
+SBY 15:13:23 [sram_512b_cover] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:05 (5)
+SBY 15:13:23 [sram_512b_cover] summary: engine_0 (smtbmc yices) returned pass
+SBY 15:13:23 [sram_512b_cover] summary: engine_0 did not produce any traces
+SBY 15:13:23 [sram_512b_cover] DONE (PASS, rc=0)
+</system-out>
+<system-err>
+</system-err>
+</testsuite>
+</testsuites>

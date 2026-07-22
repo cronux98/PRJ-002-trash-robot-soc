@@ -1,0 +1,355 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.65+71 (git sha1 e56c6a954, clang++ 18.1.8 -fPIC -O3)
+
+-- Executing script file `../model/design.ys' --
+
+1. Executing Verilog-2005 frontend: ultrasonic_capture.v
+Parsing formal SystemVerilog input from `ultrasonic_capture.v' to AST representation.
+Storing AST representation for module `$abstract\ultrasonic_capture'.
+Successfully finished Verilog frontend.
+
+2. Executing PREP pass.
+
+2.1. Executing HIERARCHY pass (managing design hierarchy).
+
+2.2. Executing AST frontend in derive mode using pre-parsed AST for module `\ultrasonic_capture'.
+Generating RTLIL representation for module `\ultrasonic_capture'.
+
+2.2.1. Analyzing design hierarchy..
+Top module:  \ultrasonic_capture
+
+2.2.2. Analyzing design hierarchy..
+Top module:  \ultrasonic_capture
+Removing unused module `$abstract\ultrasonic_capture'.
+Removed 1 unused modules.
+
+2.3. Executing PROC pass (convert processes to netlists).
+
+2.3.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+2.3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed 2 dead cases from process $proc$ultrasonic_capture.v:84$4 in module ultrasonic_capture.
+Marked 11 switch rules as full_case in process $proc$ultrasonic_capture.v:84$4 in module ultrasonic_capture.
+Removed a total of 2 dead cases.
+
+2.3.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 7 redundant assignments.
+Promoted 6 assignments to connections.
+
+2.3.4. Executing PROC_INIT pass (extract init attributes).
+
+2.3.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \rst_ni in `\ultrasonic_capture.$proc$ultrasonic_capture.v:84$4'.
+
+2.3.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~20 debug messages>
+
+2.3.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\ultrasonic_capture.$proc$ultrasonic_capture.v:84$4'.
+     1/41: $4\calc_distance$func$ultrasonic_capture.v:183$2.$result[15:0]$54
+     2/41: $3\calc_distance$func$ultrasonic_capture.v:183$2.$result[15:0]$49
+     3/41: $3\calc_distance$func$ultrasonic_capture.v:183$2.temp[35:0]$51
+     4/41: $3\calc_distance$func$ultrasonic_capture.v:183$2.echo_clocks[19:0]$50
+     5/41: $0\trig_o[1:0] [1]
+     6/41: $2\calc_distance$func$ultrasonic_capture.v:183$2.temp[35:0]$39
+     7/41: $2\calc_distance$func$ultrasonic_capture.v:183$2.echo_clocks[19:0]$38
+     8/41: $2\calc_distance$func$ultrasonic_capture.v:183$2.$result[15:0]$37
+     9/41: $4\calc_distance$func$ultrasonic_capture.v:143$1.$result[15:0]$35
+    10/41: $3\calc_distance$func$ultrasonic_capture.v:143$1.$result[15:0]$30
+    11/41: $3\calc_distance$func$ultrasonic_capture.v:143$1.temp[35:0]$32
+    12/41: $3\calc_distance$func$ultrasonic_capture.v:143$1.echo_clocks[19:0]$31
+    13/41: $0\trig_o[1:0] [0]
+    14/41: $2\calc_distance$func$ultrasonic_capture.v:143$1.temp[35:0]$20
+    15/41: $2\calc_distance$func$ultrasonic_capture.v:143$1.echo_clocks[19:0]$19
+    16/41: $2\calc_distance$func$ultrasonic_capture.v:143$1.$result[15:0]$18
+    17/41: $1\calc_distance$func$ultrasonic_capture.v:183$2.temp[35:0]$17
+    18/41: $1\calc_distance$func$ultrasonic_capture.v:183$2.echo_clocks[19:0]$16
+    19/41: $1\calc_distance$func$ultrasonic_capture.v:183$2.$result[15:0]$15
+    20/41: $1\calc_distance$func$ultrasonic_capture.v:143$1.temp[35:0]$14
+    21/41: $1\calc_distance$func$ultrasonic_capture.v:143$1.echo_clocks[19:0]$13
+    22/41: $1\calc_distance$func$ultrasonic_capture.v:143$1.$result[15:0]$12
+    23/41: $0\echo_sync2[1:0]
+    24/41: $0\echo_sync1[1:0]
+    25/41: $0\ch1_start[0:0]
+    26/41: $0\ch0_start[0:0]
+    27/41: $0\irq_done[0:0]
+    28/41: $0\wb_ack_o[0:0]
+    29/41: $0\ch1_echo_prev[0:0]
+    30/41: $0\ch1_dist_val[15:0]
+    31/41: $0\ch1_echo_val[15:0]
+    32/41: $0\ch1_echo_cnt[19:0]
+    33/41: $0\ch1_trig_cnt[15:0]
+    34/41: $0\ch1_state[1:0]
+    35/41: $0\ch0_echo_prev[0:0]
+    36/41: $0\ch0_dist_val[15:0]
+    37/41: $0\ch0_echo_val[15:0]
+    38/41: $0\ch0_echo_cnt[19:0]
+    39/41: $0\ch0_trig_cnt[15:0]
+    40/41: $0\ch0_state[1:0]
+    41/41: $0\wb_dat_o[31:0]
+
+2.3.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+2.3.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\ultrasonic_capture.\wb_dat_o' using process `\ultrasonic_capture.$proc$ultrasonic_capture.v:84$4'.
+  created $adff cell `$procdff$301' with positive edge clock and positive level reset.
+Creating register for signal `\ultrasonic_capture.\wb_ack_o' using process `\ultrasonic_capture.$proc$ultrasonic_capture.v:84$4'.
+  created $adff cell `$procdff$306' with positive edge clock and positive level reset.
+Creating register for signal `\ultrasonic_capture.\trig_o' using process `\ultrasonic_capture.$proc$ultrasonic_capture.v:84$4'.
+  created $adff cell `$procdff$311' with positive edge clock and positive level reset.
+Creating register for signal `\ultrasonic_capture.\irq_done' using process `\ultrasonic_capture.$proc$ultrasonic_capture.v:84$4'.
+  created $adff cell `$procdff$316' with positive edge clock and positive level reset.
+Creating register for signal `\ultrasonic_capture.\ch0_state' using process `\ultrasonic_capture.$proc$ultrasonic_capture.v:84$4'.
+  created $adff cell `$procdff$321' with positive edge clock and positive level reset.
+Creating register for signal `\ultrasonic_capture.\ch0_trig_cnt' using process `\ultrasonic_capture.$proc$ultrasonic_capture.v:84$4'.
+  created $adff cell `$procdff$326' with positive edge clock and positive level reset.
+Creating register for signal `\ultrasonic_capture.\ch0_echo_cnt' using process `\ultrasonic_capture.$proc$ultrasonic_capture.v:84$4'.
+  created $adff cell `$procdff$331' with positive edge clock and positive level reset.
+Creating register for signal `\ultrasonic_capture.\ch0_echo_val' using process `\ultrasonic_capture.$proc$ultrasonic_capture.v:84$4'.
+  created $adff cell `$procdff$336' with positive edge clock and positive level reset.
+Creating register for signal `\ultrasonic_capture.\ch0_dist_val' using process `\ultrasonic_capture.$proc$ultrasonic_capture.v:84$4'.
+  created $adff cell `$procdff$341' with positive edge clock and positive level reset.
+Creating register for signal `\ultrasonic_capture.\ch0_echo_prev' using process `\ultrasonic_capture.$proc$ultrasonic_capture.v:84$4'.
+  created $adff cell `$procdff$346' with positive edge clock and positive level reset.
+Creating register for signal `\ultrasonic_capture.\ch0_start' using process `\ultrasonic_capture.$proc$ultrasonic_capture.v:84$4'.
+  created $adff cell `$procdff$351' with positive edge clock and positive level reset.
+Creating register for signal `\ultrasonic_capture.\ch1_state' using process `\ultrasonic_capture.$proc$ultrasonic_capture.v:84$4'.
+  created $adff cell `$procdff$356' with positive edge clock and positive level reset.
+Creating register for signal `\ultrasonic_capture.\ch1_trig_cnt' using process `\ultrasonic_capture.$proc$ultrasonic_capture.v:84$4'.
+  created $adff cell `$procdff$361' with positive edge clock and positive level reset.
+Creating register for signal `\ultrasonic_capture.\ch1_echo_cnt' using process `\ultrasonic_capture.$proc$ultrasonic_capture.v:84$4'.
+  created $adff cell `$procdff$366' with positive edge clock and positive level reset.
+Creating register for signal `\ultrasonic_capture.\ch1_echo_val' using process `\ultrasonic_capture.$proc$ultrasonic_capture.v:84$4'.
+  created $adff cell `$procdff$371' with positive edge clock and positive level reset.
+Creating register for signal `\ultrasonic_capture.\ch1_dist_val' using process `\ultrasonic_capture.$proc$ultrasonic_capture.v:84$4'.
+  created $adff cell `$procdff$376' with positive edge clock and positive level reset.
+Creating register for signal `\ultrasonic_capture.\ch1_echo_prev' using process `\ultrasonic_capture.$proc$ultrasonic_capture.v:84$4'.
+  created $adff cell `$procdff$381' with positive edge clock and positive level reset.
+Creating register for signal `\ultrasonic_capture.\ch1_start' using process `\ultrasonic_capture.$proc$ultrasonic_capture.v:84$4'.
+  created $adff cell `$procdff$386' with positive edge clock and positive level reset.
+Creating register for signal `\ultrasonic_capture.\echo_sync1' using process `\ultrasonic_capture.$proc$ultrasonic_capture.v:84$4'.
+  created $adff cell `$procdff$391' with positive edge clock and positive level reset.
+Creating register for signal `\ultrasonic_capture.\echo_sync2' using process `\ultrasonic_capture.$proc$ultrasonic_capture.v:84$4'.
+  created $adff cell `$procdff$396' with positive edge clock and positive level reset.
+Creating register for signal `\ultrasonic_capture.\calc_distance$func$ultrasonic_capture.v:143$1.$result' using process `\ultrasonic_capture.$proc$ultrasonic_capture.v:84$4'.
+  created $adff cell `$procdff$401' with positive edge clock and positive level reset.
+Creating register for signal `\ultrasonic_capture.\calc_distance$func$ultrasonic_capture.v:143$1.echo_clocks' using process `\ultrasonic_capture.$proc$ultrasonic_capture.v:84$4'.
+  created $adff cell `$procdff$406' with positive edge clock and positive level reset.
+Creating register for signal `\ultrasonic_capture.\calc_distance$func$ultrasonic_capture.v:143$1.temp' using process `\ultrasonic_capture.$proc$ultrasonic_capture.v:84$4'.
+  created $adff cell `$procdff$411' with positive edge clock and positive level reset.
+Creating register for signal `\ultrasonic_capture.\calc_distance$func$ultrasonic_capture.v:183$2.$result' using process `\ultrasonic_capture.$proc$ultrasonic_capture.v:84$4'.
+  created $adff cell `$procdff$416' with positive edge clock and positive level reset.
+Creating register for signal `\ultrasonic_capture.\calc_distance$func$ultrasonic_capture.v:183$2.echo_clocks' using process `\ultrasonic_capture.$proc$ultrasonic_capture.v:84$4'.
+  created $adff cell `$procdff$421' with positive edge clock and positive level reset.
+Creating register for signal `\ultrasonic_capture.\calc_distance$func$ultrasonic_capture.v:183$2.temp' using process `\ultrasonic_capture.$proc$ultrasonic_capture.v:84$4'.
+  created $adff cell `$procdff$426' with positive edge clock and positive level reset.
+
+2.3.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+2.3.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 20 empty switches in `\ultrasonic_capture.$proc$ultrasonic_capture.v:84$4'.
+Removing empty process `ultrasonic_capture.$proc$ultrasonic_capture.v:84$4'.
+Cleaned up 20 empty switches.
+
+2.3.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ultrasonic_capture.
+<suppressed ~68 debug messages>
+
+2.4. Executing FUTURE pass.
+
+2.5. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ultrasonic_capture.
+
+2.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ultrasonic_capture..
+Removed 82 unused cells and 197 unused wires.
+<suppressed ~88 debug messages>
+
+2.7. Executing CHECK pass (checking for obvious problems).
+Checking module ultrasonic_capture...
+Found and reported 0 problems.
+
+2.8. Executing OPT pass (performing simple optimizations).
+
+2.8.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ultrasonic_capture.
+
+2.8.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ultrasonic_capture'.
+Computing hashes of 148 cells of `\ultrasonic_capture'.
+Finding duplicate cells in `\ultrasonic_capture'.
+Computing hashes of 117 cells of `\ultrasonic_capture'.
+Finding duplicate cells in `\ultrasonic_capture'.
+<suppressed ~93 debug messages>
+Removed a total of 31 cells.
+
+2.8.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \ultrasonic_capture..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 2/2 on $mux $procmux$115.
+    dead port 2/2 on $mux $procmux$113.
+    dead port 2/2 on $mux $procmux$68.
+    dead port 2/2 on $mux $procmux$66.
+Removed 4 multiplexer ports.
+<suppressed ~75 debug messages>
+
+2.8.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \ultrasonic_capture.
+    New ctrl vector for $pmux cell $procmux$135: { $auto$opt_reduce.cc:135:opt_pmux$428 $procmux$238_CMP }
+    New ctrl vector for $pmux cell $procmux$88: { $auto$opt_reduce.cc:135:opt_pmux$430 $procmux$228_CMP }
+  Optimizing cells in module \ultrasonic_capture.
+Performed a total of 2 changes.
+
+2.8.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ultrasonic_capture'.
+Computing hashes of 115 cells of `\ultrasonic_capture'.
+Finding duplicate cells in `\ultrasonic_capture'.
+Removed a total of 0 cells.
+
+2.8.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ultrasonic_capture..
+Removed 0 unused cells and 35 unused wires.
+<suppressed ~1 debug messages>
+
+2.8.7. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ultrasonic_capture.
+
+2.8.8. Rerunning OPT passes. (Maybe there is more to do..)
+
+2.8.9. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \ultrasonic_capture..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~71 debug messages>
+
+2.8.10. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \ultrasonic_capture.
+Performed a total of 0 changes.
+
+2.8.11. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ultrasonic_capture'.
+Computing hashes of 115 cells of `\ultrasonic_capture'.
+Finding duplicate cells in `\ultrasonic_capture'.
+Removed a total of 0 cells.
+
+2.8.12. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ultrasonic_capture..
+
+2.8.13. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ultrasonic_capture.
+
+2.8.14. Finished fast OPT passes. (There is nothing left to do.)
+
+2.9. Executing WREDUCE pass (reducing word size of cells).
+Removed top 5 bits (of 16) from port B of cell ultrasonic_capture.$div$ultrasonic_capture.v:80$55 ($div).
+Removed top 5 bits (of 16) from port B of cell ultrasonic_capture.$div$ultrasonic_capture.v:80$36 ($div).
+Removed top 31 bits (of 32) from port B of cell ultrasonic_capture.$gt$ultrasonic_capture.v:127$21 ($gt).
+Removed top 15 bits (of 16) from port B of cell ultrasonic_capture.$sub$ultrasonic_capture.v:128$22 ($sub).
+Removed top 19 bits (of 20) from port B of cell ultrasonic_capture.$add$ultrasonic_capture.v:140$25 ($add).
+Removed top 31 bits (of 32) from port B of cell ultrasonic_capture.$gt$ultrasonic_capture.v:141$28 ($gt).
+Removed top 13 bits (of 20) from port B of cell ultrasonic_capture.$mul$ultrasonic_capture.v:76$33 ($mul).
+Removed top 9 bits (of 36) from port Y of cell ultrasonic_capture.$mul$ultrasonic_capture.v:76$33 ($mul).
+Removed top 9 bits (of 36) from port A of cell ultrasonic_capture.$gt$ultrasonic_capture.v:77$34 ($gt).
+Removed top 13 bits (of 36) from port B of cell ultrasonic_capture.$gt$ultrasonic_capture.v:77$34 ($gt).
+Removed top 31 bits (of 32) from port B of cell ultrasonic_capture.$gt$ultrasonic_capture.v:167$40 ($gt).
+Removed top 15 bits (of 16) from port B of cell ultrasonic_capture.$sub$ultrasonic_capture.v:168$41 ($sub).
+Removed top 19 bits (of 20) from port B of cell ultrasonic_capture.$add$ultrasonic_capture.v:180$44 ($add).
+Removed top 31 bits (of 32) from port B of cell ultrasonic_capture.$gt$ultrasonic_capture.v:181$47 ($gt).
+Removed top 13 bits (of 20) from port B of cell ultrasonic_capture.$mul$ultrasonic_capture.v:76$52 ($mul).
+Removed top 9 bits (of 36) from port Y of cell ultrasonic_capture.$mul$ultrasonic_capture.v:76$52 ($mul).
+Removed top 9 bits (of 36) from port A of cell ultrasonic_capture.$gt$ultrasonic_capture.v:77$53 ($gt).
+Removed top 13 bits (of 36) from port B of cell ultrasonic_capture.$gt$ultrasonic_capture.v:77$53 ($gt).
+Removed top 1 bits (of 2) from port B of cell ultrasonic_capture.$procmux$228_CMP0 ($eq).
+Removed top 1 bits (of 2) from port B of cell ultrasonic_capture.$procmux$238_CMP0 ($eq).
+Removed top 16 bits (of 32) from mux cell ultrasonic_capture.$procmux$286 ($pmux).
+Removed top 1 bits (of 3) from port B of cell ultrasonic_capture.$procmux$289_CMP0 ($eq).
+Removed top 1 bits (of 3) from port B of cell ultrasonic_capture.$procmux$290_CMP0 ($eq).
+Removed top 2 bits (of 3) from port B of cell ultrasonic_capture.$procmux$291_CMP0 ($eq).
+Removed top 9 bits (of 36) from wire ultrasonic_capture.$mul$ultrasonic_capture.v:76$52_Y.
+Removed top 9 bits (of 36) from wire ultrasonic_capture.$mul$ultrasonic_capture.v:76$33_Y.
+Removed top 16 bits (of 32) from wire ultrasonic_capture.$procmux$286_Y.
+
+2.10. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ultrasonic_capture..
+Removed 0 unused cells and 3 unused wires.
+<suppressed ~1 debug messages>
+
+2.11. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+2.12. Executing OPT pass (performing simple optimizations).
+
+2.12.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ultrasonic_capture.
+
+2.12.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ultrasonic_capture'.
+Computing hashes of 115 cells of `\ultrasonic_capture'.
+Finding duplicate cells in `\ultrasonic_capture'.
+Removed a total of 0 cells.
+
+2.12.3. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ultrasonic_capture..
+
+2.12.4. Finished fast OPT passes.
+
+2.13. Executing SORT pass.
+
+2.14. Printing statistics.
+
+=== ultrasonic_capture ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      123 wires
+     1015 wire bits
+       29 public wires
+      259 public wire bits
+       13 ports
+      111 port bits
+      115 cells
+        2   $add
+       20   $adff
+        2   $div
+       11   $eq
+        6   $gt
+        8   $logic_and
+        8   $logic_not
+        2   $mul
+       41   $mux
+       11   $pmux
+        2   $reduce_or
+        2   $sub
+
+2.15. Executing CHECK pass (checking for obvious problems).
+Checking module ultrasonic_capture...
+Found and reported 0 problems.
+
+3. Executing HIERARCHY pass (managing design hierarchy).
+Attribute `top' found on module `ultrasonic_capture'. Setting top module to ultrasonic_capture.
+
+3.1. Analyzing design hierarchy..
+Top module:  \ultrasonic_capture
+
+3.2. Analyzing design hierarchy..
+Top module:  \ultrasonic_capture
+Removed 0 unused modules.
+
+4. Executing jny backend.
+
+5. Executing RTLIL backend.
+Output filename: ../model/design.il
+
+End of script. Logfile hash: d0a50fcaa1, time: 0.07s, user: 0.07s, system: 0.01s, MEM: 17.15 MB peak
+Yosys 0.65+71 (git sha1 e56c6a954, clang++ 18.1.8 -fPIC -O3)
+Time spent: 17% 5x opt_clean (0 sec), 15% 2x check (0 sec), ...

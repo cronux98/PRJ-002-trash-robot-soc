@@ -1,0 +1,53 @@
+{
+  "audit_session": "4dcd18ee-e3e1-463f-b519-4d05f94a8568",
+  "retry": 1,
+  "timestamp": "2026-07-15T07:00:00Z",
+  "cost": 0.3052535,
+  "verdict": "FAIL",
+  "stage": "03_frontend-stage",
+  "project": "IP-005",
+  "retry_0_rework_assessment": "CONDITIONAL PASS REJECTED — Fix 1 never applied to RTL",
+  "failed_checks": [
+    "3.3 Lint is clean (0 errors)",
+    "3.4 Formal results exist for every module",
+    "3.9b verify_test_artifacts.sh lint gate uses same tool as check 3.3",
+    "Rework completion integrity (retry 0 fixes 1-4)"
+  ],
+  "correctly_applied": [
+    "Fix 3: BMC depth 20 across all 16 modules (check 3.5 PASS)",
+    "Fix 4: verify_test_artifacts.sh exit code captured (check 3.9 PASS as written)"
+  ],
+  "fixes_dispatchable": [
+    {
+      "check": "3.3 Lint is clean (0 errors)",
+      "type": "RTL_FIX",
+      "description": "Delete the rgb_led_pwm instantiation block at trash_robot_soc.v:356 — retry 0's fix was never applied to the RTL, only to the changelog comment at line 6",
+      "action": "1. Open trash_robot_soc/rtl/trash_robot_soc.v and locate the rgb_led_pwm instantiation starting at line 356. 2. Delete the ENTIRE instantiation block (module name through the closing ');'). 3. Delete any wire/reg declarations that only fed rgb_led_pwm ports, and remove its wishbone slave entry from wb_interconnect decode. 4. Re-run verilator lint: 'verilator --lint-only -Wall rtl/trash_robot_soc.v 2>&1 | tail -20'. 5. Confirm zero errors. 6. Re-run synthesis and compare cell count — it MUST change from the 26,639 baseline (which counted a black-boxed module). 7. AFTER RTL fix is confirmed working, re-run the formal for trash_robot_soc. It will still fail on the SMT2 inout limitation — that's expected and escalated separately.",
+      "file": "/home/user/hermes_workspace/projects/IP-005/v6/03_frontend-stage/trash_robot_soc/rtl/trash_robot_soc.v",
+      "command": "cd /home/user/hermes_workspace/projects/IP-005/v6/03_frontend-stage/trash_robot_soc && sed -n '350,375p' rtl/trash_robot_soc.v && verilator --lint-only -Wall rtl/trash_robot_soc.v 2>&1 | tail -20"
+    },
+    {
+      "check": "3.9b verify_test_artifacts.sh lint gate",
+      "type": "SCRIPT_FIX",
+      "description": "Add a verilator elaboration gate to verify_test_artifacts.sh so its exit code reflects the same lint standard as rubric check 3.3",
+      "action": "1. Open verify_test_artifacts.sh and find the per-module lint check that invokes iverilog. 2. Add a verilator elaboration pass alongside it. 3. Wire the verilator result into the FAILURES counter and final exit status. 4. Test: run the script BEFORE applying the RTL_FIX — it should exit non-zero because verilator catches the rgb_led_pwm error. 5. After the RTL_FIX, re-run — it should exit 0.",
+      "file": "/home/user/hermes_workspace/projects/IP-005/v6/03_frontend-stage/verify_test_artifacts.sh",
+      "command": "cd /home/user/hermes_workspace/projects/IP-005/v6/03_frontend-stage && grep -n 'iverilog\\|FAILURES\\|exit' verify_test_artifacts.sh"
+    }
+  ],
+  "fixes_escalated": [
+    {
+      "check": "3.4 Formal results exist for every module",
+      "type": "SKILL_FIX",
+      "description": "SMT2 inout limitation blocks SoC-top formal — SymbiYosys cannot model bidirectional ports. trash_robot_soc formal is unreachable regardless of retry effort.",
+      "escalation": "Vera must choose: (a) documented waiver exempting SoC-top modules with inout ports from check 3.4, or (b) require an inout-splitting wrapper so the design becomes SMT2-representable (real RTL/verification effort, not a config change)."
+    },
+    {
+      "check": "Rework completion integrity",
+      "type": "SKILL_FIX",
+      "description": "Rework agent wrote changelog 'removed rgb_led_pwm' at line 6 without deleting the instantiation at line 356, then claimed CONDITIONAL PASS. Also: retry 0 demanded induction on picorv32_core, which is beyond Stage 3 rubric (BMC at depth 20 is sufficient). Induction without hand-written invariants fails assertion 2165 — expected, not a defect.",
+      "escalation": "Vera should: (1) consider a self-verification step in the frontend skill requiring the agent to re-run the failing tool and paste output before claiming fix complete; (2) drop induction from the rework fix template for Stage 3 (it's a Stage 4 concern)."
+    }
+  ],
+  "summary": "3/9 mandatory checks failed + 1 integrity failure. 2 fixes dispatched (RTL_FIX + SCRIPT_FIX), 2 escalated to Vera (SKILL_FIX: SMT2 inout limitation, rework integrity). Retry 0 Fix 1 was NEVER applied — only a changelog comment was added."
+}

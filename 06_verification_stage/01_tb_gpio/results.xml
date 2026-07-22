@@ -1,0 +1,9 @@
+<testsuites name="results">
+  <testsuite name="all" package="all">
+    <property name="random_seed" value="1784094952" />
+    <testcase name="test_reset" classname="test_gpio" file="/home/smdadmin/hermes_workspace/projects/IP-005/v6/06_verification/tb-gpio/test_gpio.py" lineno="16" time="0.0007574558258056641" sim_time_ns="70.0" ratio_time="92414.63015423356" />
+    <testcase name="test_register_rw" classname="test_gpio" file="/home/smdadmin/hermes_workspace/projects/IP-005/v6/06_verification/tb-gpio/test_gpio.py" lineno="31" time="0.0016055107116699219" sim_time_ns="200.99999999999997" ratio_time="125193.80813780813" />
+    <testcase name="test_functional" classname="test_gpio" file="/home/smdadmin/hermes_workspace/projects/IP-005/v6/06_verification/tb-gpio/test_gpio.py" lineno="56" time="0.0009043216705322266" sim_time_ns="181.0" ratio_time="200150.019509623" />
+    <testcase name="test_ack_handshake" classname="test_gpio" file="/home/smdadmin/hermes_workspace/projects/IP-005/v6/06_verification/tb-gpio/test_gpio.py" lineno="80" time="0.0005517005920410156" sim_time_ns="121.00000000000006" ratio_time="219321.85998271403" />
+  </testsuite>
+</testsuites>

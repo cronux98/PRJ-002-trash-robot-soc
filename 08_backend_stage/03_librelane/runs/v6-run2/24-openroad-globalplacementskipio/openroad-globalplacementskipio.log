@@ -1,0 +1,125 @@
+Reading timing models for corner nom_tt_025C_1v80…
+Reading timing library for the 'nom_tt_025C_1v80' corner at '/home/smdadmin/.hermes/profiles/physical-design-agent/home/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib'…
+Reading OpenROAD database at '/home/smdadmin/hermes_workspace/projects/IP-005/v6/04_backend-stage/librelane/runs/v6-run2/21-openroad-generatepdn/trash_robot_soc.odb'…
+Reading design constraints file at '/nix/store/ps0r3qpgjh1lqyqacra33rvxsjgkd874-python3-3.13.9-env/lib/python3.13/site-packages/librelane/scripts/base.sdc'…
+[INFO] Using clock clk_i…
+[INFO] Setting output delay to: 6.0
+[INFO] Setting input delay to: 6.0
+[INFO] Setting load to: 0.033442
+[INFO] Setting clock uncertainty to: 0.25
+[INFO] Setting clock transition to: 0.1499999999999999944488848768742172978818416595458984375
+[INFO] Setting timing derate to: 5%
++ global_placement -density 0.568697 -skip_io -pad_right 0 -pad_left 0 -init_wirelength_coef 0.25
+[INFO GPL-0001] ---- Initialize GPL Main Data Structures
+[INFO GPL-0002] DBU: 1000
+[INFO GPL-0003] SiteSize: (  0.460  2.720 ) um
+[INFO GPL-0004] CoreBBox: (  5.520 10.880 ) ( 950.360 954.720 ) um
+[INFO GPL-0036] Movable instances area:     402035.584 um^2
+[INFO GPL-0037] Total instances area:       420578.368 um^2
+[INFO GPL-0035] Pin density area adjust:     50388.215 um^2
+[INFO GPL-0032] ---- Initialize Region: Top-level
+[INFO GPL-0006] Number of instances:             44799
+[INFO GPL-0007] Movable instances:               31367
+[INFO GPL-0008] Fixed instances:                 13432
+[INFO GPL-0009] Dummy instances:                     0
+[INFO GPL-0010] Number of nets:                  31384
+[INFO GPL-0011] Number of pins:                 121438
+[INFO GPL-0012] Die BBox:  (  0.000  0.000 ) ( 956.245 966.965 ) um
+[INFO GPL-0013] Core BBox: (  5.520 10.880 ) ( 950.360 954.720 ) um
+[INFO GPL-0016] Core area:                  891777.786 um^2
+[INFO GPL-0014] Region name: top-level.
+[INFO GPL-0015] Region area:                891777.786 um^2
+[INFO GPL-0017] Fixed instances area:        18542.784 um^2
+[INFO GPL-0018] Movable instances area:     452423.799 um^2
+[INFO GPL-0019] Utilization:                    51.810 %
+[INFO GPL-0020] Standard cells area:        452423.799 um^2
+[INFO GPL-0021] Large instances area:            0.000 um^2
+[INFO GPL-0005] ---- Execute Conjugate Gradient Initial Placement.
+[INFO GPL-0051] Source of initial instance position counters:
+	Odb location = 0	Core center = 31367	Region center = 0
+[INFO GPL-0033] ---- Initialize Nesterov Region: Top-level
+[INFO GPL-0023] Placement target density:       0.5687
+[INFO GPL-0024] Movable insts average area:     14.424 um^2
+[INFO GPL-0025] Ideal bin area:                 25.362 um^2
+[INFO GPL-0026] Ideal bin count:                 35161
+[INFO GPL-0027] Total bin area:             891777.786 um^2
+[INFO GPL-0028] Bin count (X, Y):         128 ,    128
+[INFO GPL-0029] Bin size (W * H):       7.382 *  7.374 um
+[INFO GPL-0030] Number of bins:                  16384
+[INFO GPL-0007] ---- Execute Nesterov Global Placement.
+[INFO GPL-0031] HPWL: Half-Perimeter Wirelength
+Iteration | Overflow |     HPWL (um) |  HPWL(%) |   Penalty | Group
+---------------------------------------------------------------
+        0 |   0.9996 |  9.126402e+04 |   +0.00% |  2.80e-16 |      
+       10 |   0.9993 |  5.906990e+04 |  -35.28% |  4.56e-16 |      
+       20 |   0.9992 |  5.856238e+04 |   -0.86% |  7.43e-16 |      
+       30 |   0.9992 |  5.843905e+04 |   -0.21% |  1.21e-15 |      
+       40 |   0.9992 |  5.841312e+04 |   -0.04% |  1.97e-15 |      
+       50 |   0.9992 |  5.843082e+04 |   +0.03% |  3.21e-15 |      
+       60 |   0.9992 |  5.846032e+04 |   +0.05% |  5.23e-15 |      
+       70 |   0.9991 |  5.852609e+04 |   +0.11% |  8.52e-15 |      
+       80 |   0.9991 |  5.865628e+04 |   +0.22% |  1.39e-14 |      
+       90 |   0.9991 |  5.897207e+04 |   +0.54% |  2.26e-14 |      
+      100 |   0.9991 |  5.976976e+04 |   +1.35% |  3.68e-14 |      
+      110 |   0.9988 |  6.161247e+04 |   +3.08% |  6.00e-14 |      
+      120 |   0.9984 |  6.512198e+04 |   +5.70% |  9.77e-14 |      
+      130 |   0.9972 |  7.086696e+04 |   +8.82% |  1.59e-13 |      
+      140 |   0.9956 |  7.972990e+04 |  +12.51% |  2.59e-13 |      
+      150 |   0.9938 |  9.430380e+04 |  +18.28% |  4.21e-13 |      
+      160 |   0.9893 |  1.180125e+05 |  +25.14% |  6.84e-13 |      
+      170 |   0.9835 |  1.463771e+05 |  +24.04% |  1.11e-12 |      
+      180 |   0.9750 |  1.726840e+05 |  +17.97% |  1.80e-12 |      
+      190 |   0.9657 |  2.014237e+05 |  +16.64% |  2.93e-12 |      
+      200 |   0.9531 |  2.403598e+05 |  +19.33% |  4.75e-12 |      
+      210 |   0.9382 |  2.867349e+05 |  +19.29% |  7.70e-12 |      
+      220 |   0.9189 |  3.361450e+05 |  +17.23% |  1.25e-11 |      
+      230 |   0.8937 |  3.905242e+05 |  +16.18% |  2.02e-11 |      
+      240 |   0.8640 |  4.498773e+05 |  +15.20% |  3.27e-11 |      
+      250 |   0.8331 |  5.111511e+05 |  +13.62% |  5.29e-11 |      
+      260 |   0.7998 |  5.717951e+05 |  +11.86% |  8.56e-11 |      
+      270 |   0.7647 |  6.302403e+05 |  +10.22% |  1.39e-10 |      
+      280 |   0.7236 |  6.914771e+05 |   +9.72% |  2.24e-10 |      
+      290 |   0.6815 |  7.422284e+05 |   +7.34% |  3.63e-10 |      
+      300 |   0.6347 |  7.857931e+05 |   +5.87% |  5.89e-10 |      
+      310 |   0.5888 |  8.141016e+05 |   +3.60% |  9.55e-10 |      
+      320 |   0.5378 |  8.429101e+05 |   +3.54% |  1.55e-09 |      
+      330 |   0.4813 |  8.595964e+05 |   +1.98% |  2.52e-09 |      
+      340 |   0.4237 |  8.757289e+05 |   +1.88% |  4.10e-09 |      
+      350 |   0.3720 |  8.890568e+05 |   +1.52% |  6.67e-09 |      
+      360 |   0.3275 |  8.906525e+05 |   +0.18% |  1.04e-08 |      
+      370 |   0.2962 |  8.894948e+05 |   -0.13% |  1.54e-08 |      
+      380 |   0.2665 |  8.878944e+05 |   -0.18% |  2.26e-08 |      
+      390 |   0.2400 |  8.870239e+05 |   -0.10% |  3.34e-08 |      
+      400 |   0.2149 |  8.855945e+05 |   -0.16% |  4.91e-08 |      
+      410 |   0.1906 |  8.848252e+05 |   -0.09% |  7.24e-08 |      
+      420 |   0.1701 |  8.835397e+05 |   -0.15% |  1.07e-07 |      
+      430 |   0.1489 |  8.825210e+05 |   -0.12% |  1.57e-07 |      
+      440 |   0.1313 |  8.825286e+05 |   +0.00% |  2.31e-07 |      
+      450 |   0.1124 |  8.831063e+05 |   +0.07% |  3.41e-07 |      
+      459 |   0.0987 |  8.841060e+05 |          |  5.02e-07 |      
+---------------------------------------------------------------
+[INFO GPL-1001] Global placement finished at iteration 459
+[INFO GPL-1002] Placed Cell Area            452423.7995
+[INFO GPL-1003] Available Free Area         873235.0016
+[INFO GPL-1004] Minimum Feasible Density        0.5200 (cell_area / free_area)
+[INFO GPL-1006]   Suggested Target Densities:
+[INFO GPL-1007]     - For 90% usage of free space: 0.5757
+[INFO GPL-1008]     - For 80% usage of free space: 0.6476
+[INFO GPL-1014] Final placement area: 452423.80 (+0.00%)
+Setting global connections for newly added cells…
+[INFO] Setting global connections...
+[INFO ODB-0403] 0 connections made, 0 conflicts skipped.
+Updating metrics…
+Cell type report:                       Count       Area
+  Fill cell                               694    2605.00
+  Tap cell                              12738   15937.79
+  Buffer                                   32     120.12
+  Inverter                                467    1752.93
+  Sequential cell                        7260  160428.86
+  Multi-Input combinational cell        23608  239733.67
+  Total                                 44799  420578.37
+Writing OpenROAD database to '/home/smdadmin/hermes_workspace/projects/IP-005/v6/04_backend-stage/librelane/runs/v6-run2/24-openroad-globalplacementskipio/trash_robot_soc.odb'…
+Writing netlist to '/home/smdadmin/hermes_workspace/projects/IP-005/v6/04_backend-stage/librelane/runs/v6-run2/24-openroad-globalplacementskipio/trash_robot_soc.nl.v'…
+Writing powered netlist to '/home/smdadmin/hermes_workspace/projects/IP-005/v6/04_backend-stage/librelane/runs/v6-run2/24-openroad-globalplacementskipio/trash_robot_soc.pnl.v'…
+Writing layout to '/home/smdadmin/hermes_workspace/projects/IP-005/v6/04_backend-stage/librelane/runs/v6-run2/24-openroad-globalplacementskipio/trash_robot_soc.def'…
+Writing timing constraints to '/home/smdadmin/hermes_workspace/projects/IP-005/v6/04_backend-stage/librelane/runs/v6-run2/24-openroad-globalplacementskipio/trash_robot_soc.sdc'…

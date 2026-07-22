@@ -1,0 +1,79 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.65+71 (git sha1 e56c6a954, clang++ 18.1.8 -fPIC -O3)
+
+-- Executing script file `design_prep.ys' --
+
+1. Executing RTLIL frontend.
+Input filename: design.il
+
+2. Executing SCC pass (detecting logic loops).
+Found 0 SCCs in module gpio.
+Found 0 SCCs.
+
+3. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+
+4. Executing MEMORY_NORDFF pass (extracting $dff cells from memories).
+
+5. Executing ASYNC2SYNC pass.
+Replacing gpio.$procdff$100 ($adff): ARST=\rst_ni, D=\gpio_i, Q=\gpio_sync1
+Replacing gpio.$procdff$105 ($adff): ARST=\rst_ni, D=\gpio_sync1, Q=\gpio_sync2
+Replacing gpio.$procdff$55 ($adff): ARST=\rst_ni, D=$0\wb_dat_o[31:0], Q=\wb_dat_o
+Replacing gpio.$procdff$60 ($adff): ARST=\rst_ni, D=$0\wb_ack_o[0:0], Q=\wb_ack_o
+Replacing gpio.$procdff$65 ($adff): ARST=\rst_ni, D=\out_reg, Q=\gpio_o
+Replacing gpio.$procdff$70 ($adff): ARST=\rst_ni, D=\dir_reg, Q=\gpio_oe
+Replacing gpio.$procdff$75 ($adff): ARST=\rst_ni, D=$0\irq_pin[0:0], Q=\irq_pin
+Replacing gpio.$procdff$80 ($adff): ARST=\rst_ni, D=$0\dir_reg[11:0], Q=\dir_reg
+Replacing gpio.$procdff$85 ($adff): ARST=\rst_ni, D=$0\out_reg[11:0], Q=\out_reg
+Replacing gpio.$procdff$90 ($adff): ARST=\rst_ni, D=$0\irq_cfg[11:0], Q=\irq_cfg
+Replacing gpio.$procdff$95 ($adff): ARST=\rst_ni, D=\gpio_sync2, Q=\gpio_prev
+
+6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \gpio..
+
+7. Executing FORMALFF pass.
+
+8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \gpio..
+Removed 1 unused cells and 1 unused wires.
+<suppressed ~2 debug messages>
+
+9. Executing CHECK pass (checking for obvious problems).
+Checking module gpio...
+Found and reported 0 problems.
+
+10. Executing SETUNDEF pass (replace undef values with defined constants).
+
+11. Executing OPT pass (performing simple optimizations).
+
+11.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module gpio.
+
+11.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\gpio'.
+Computing hashes of 56 cells of `\gpio'.
+Finding duplicate cells in `\gpio'.
+Removed a total of 0 cells.
+
+11.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+11.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \gpio..
+
+11.5. Finished fast OPT passes.
+
+12. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \gpio..
+Removed 0 unused cells and 11 unused wires.
+<suppressed ~1 debug messages>
+
+13. Executing RTLIL backend.
+Output filename: ../model/design_prep.il
+
+End of script. Logfile hash: 5ad603887b, time: 0.01s, user: 0.01s, system: 0.01s, MEM: 14.70 MB peak
+Yosys 0.65+71 (git sha1 e56c6a954, clang++ 18.1.8 -fPIC -O3)
+Time spent: 37% 4x opt_clean (0 sec), 13% 1x check (0 sec), ...

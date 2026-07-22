@@ -1,0 +1,85 @@
+Reading timing models for corner nom_tt_025C_1v80…
+Reading timing library for the 'nom_tt_025C_1v80' corner at '/home/smdadmin/.hermes/profiles/physical-design-agent/home/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib'…
+Reading OpenROAD database at '/home/smdadmin/hermes_workspace/projects/IP-005/v6/04_backend-stage/librelane/runs/v6-run2/37-openroad-resizertimingpostcts/trash_robot_soc.odb'…
+Reading design constraints file at '/nix/store/ps0r3qpgjh1lqyqacra33rvxsjgkd874-python3-3.13.9-env/lib/python3.13/site-packages/librelane/scripts/base.sdc'…
+[INFO] Using clock clk_i…
+[INFO] Setting output delay to: 6.0
+[INFO] Setting input delay to: 6.0
+[INFO] Setting load to: 0.033442
+[INFO] Setting clock uncertainty to: 0.25
+[INFO] Setting clock transition to: 0.1499999999999999944488848768742172978818416595458984375
+[INFO] Setting timing derate to: 5%
+[INFO] Setting signal min routing layer to: met1 and clock min routing layer to met1. 
+[INFO] Setting signal max routing layer to: met5 and clock max routing layer to met5. 
++ global_route -congestion_iterations 50 -verbose
+[INFO GRT-0020] Min routing layer: met1
+[INFO GRT-0021] Max routing layer: met5
+[INFO GRT-0022] Global adjustment: 30%
+[INFO GRT-0023] Grid origin: (0, 0)
+[INFO GRT-0088] Layer li1     Track-Pitch = 0.4600  line-2-Via Pitch: 0.3400
+[INFO GRT-0088] Layer met1    Track-Pitch = 0.3400  line-2-Via Pitch: 0.3400
+[INFO GRT-0088] Layer met2    Track-Pitch = 0.4600  line-2-Via Pitch: 0.3500
+[INFO GRT-0088] Layer met3    Track-Pitch = 0.6800  line-2-Via Pitch: 0.6150
+[INFO GRT-0088] Layer met4    Track-Pitch = 0.9200  line-2-Via Pitch: 1.0400
+[INFO GRT-0088] Layer met5    Track-Pitch = 3.4000  line-2-Via Pitch: 3.1100
+[INFO GRT-0003] Macros: 0
+[INFO GRT-0004] Blockages: 116389
+[INFO GRT-0019] Found 908 clock nets.
+[INFO GRT-0001] Minimum degree: 2
+[INFO GRT-0002] Maximum degree: 17
+
+[INFO GRT-0053] Routing resources analysis:
+          Routing      Original      Derated      Resource
+Layer     Direction    Resources     Resources    Reduction (%)
+---------------------------------------------------------------
+li1        Vertical            0             0          0.00%
+met1       Horizontal     254911        169601          33.47%
+met2       Vertical       281144        187016          33.48%
+met3       Horizontal     192441        132204          31.30%
+met4       Vertical       140159         84263          39.88%
+met5       Horizontal      36579         18906          48.31%
+---------------------------------------------------------------
+
+[INFO GRT-0101] Running extra iterations to remove overflow.
+[INFO GRT-0102] Start extra iteration 1/50
+[INFO GRT-0102] Start extra iteration 2/50
+[INFO GRT-0102] Start extra iteration 3/50
+[INFO GRT-0102] Start extra iteration 4/50
+[INFO GRT-0197] Via related to pin nodes: 252716
+[INFO GRT-0198] Via related Steiner nodes: 6680
+[INFO GRT-0199] Via filling finished.
+[INFO GRT-0111] Final number of vias: 328027
+[INFO GRT-0112] Final usage 3D: 1254406
+
+[INFO GRT-0096] Final congestion report:
+Layer         Resource        Demand        Usage (%)    Max H / Max V / Total Overflow
+---------------------------------------------------------------------------------------
+li1                  0             0            0.00%             0 /  0 /  0
+met1            169601         97946           57.75%             0 /  0 /  0
+met2            187016        105403           56.36%             0 /  0 /  0
+met3            132204         41877           31.68%             0 /  0 /  0
+met4             84263         22382           26.56%             0 /  0 /  0
+met5             18906          2717           14.37%             0 /  0 /  0
+---------------------------------------------------------------------------------------
+Total           591990        270325           45.66%             0 /  0 /  0
+
+[INFO GRT-0018] Total wirelength: 2628913 um
+[INFO GRT-0014] Routed nets: 43875
+[INFO GRT-0303] Global routing runtime = 00:00:09
+Setting global connections for newly added cells…
+[INFO] Setting global connections...
+[INFO ODB-0403] 0 connections made, 0 conflicts skipped.
+Updating metrics…
+Cell type report:                       Count       Area
+  Fill cell                               694    2605.00
+  Tap cell                              12738   15937.79
+  Buffer                                   32     120.12
+  Clock buffer                           1151   16505.83
+  Timing Repair Buffer                  11584  110757.48
+  Inverter                                467    1752.93
+  Clock inverter                           67     743.21
+  Sequential cell                        7260  160428.86
+  Multi-Input combinational cell        23608  240256.68
+  Total                                 57601  549107.89
+Writing OpenROAD database to '/home/smdadmin/hermes_workspace/projects/IP-005/v6/04_backend-stage/librelane/runs/v6-run2/39-openroad-globalrouting/trash_robot_soc.odb'…
+Writing layout to '/home/smdadmin/hermes_workspace/projects/IP-005/v6/04_backend-stage/librelane/runs/v6-run2/39-openroad-globalrouting/trash_robot_soc.def'…

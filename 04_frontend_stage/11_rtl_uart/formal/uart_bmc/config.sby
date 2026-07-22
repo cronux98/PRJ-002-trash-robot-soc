@@ -1,0 +1,13 @@
+[options]
+mode bmc
+depth 20
+
+[engines]
+smtbmc yices
+
+[script]
+read -formal uart.v
+prep -top uart
+
+[files]
+/home/smdadmin/hermes_workspace/projects/IP-005/v5/03_frontend-stage/rtl-uart/rtl/uart.v

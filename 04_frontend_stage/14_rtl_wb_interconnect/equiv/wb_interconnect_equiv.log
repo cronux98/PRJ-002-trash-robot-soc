@@ -1,0 +1,2889 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.65+71 (git sha1 e56c6a954, clang++ 18.1.8 -fPIC -O3)
+
+-- Executing script file `/tmp/equiv_wb_interconnect.ys' --
+
+1. Executing Verilog-2005 frontend: /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-wb_interconnect/rtl/wb_interconnect.v
+Parsing Verilog input from `/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-wb_interconnect/rtl/wb_interconnect.v' to AST representation.
+Generating RTLIL representation for module `\wb_interconnect'.
+Successfully finished Verilog frontend.
+
+2. Executing HIERARCHY pass (managing design hierarchy).
+
+2.1. Analyzing design hierarchy..
+Top module:  \wb_interconnect
+
+2.2. Analyzing design hierarchy..
+Top module:  \wb_interconnect
+Removed 0 unused modules.
+
+3. Executing PROC pass (convert processes to netlists).
+
+3.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 2 switch rules as full_case in process $proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-wb_interconnect/rtl/wb_interconnect.v:327$68 in module wb_interconnect.
+Removed a total of 0 dead cases.
+
+3.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 0 assignments to connections.
+
+3.4. Executing PROC_INIT pass (extract init attributes).
+
+3.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \rst_ni in `\wb_interconnect.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-wb_interconnect/rtl/wb_interconnect.v:327$68'.
+
+3.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~2 debug messages>
+
+3.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\wb_interconnect.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-wb_interconnect/rtl/wb_interconnect.v:327$68'.
+     1/1: $0\m_wb_dat_o[31:0]
+
+3.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+3.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\wb_interconnect.\m_wb_dat_o' using process `\wb_interconnect.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-wb_interconnect/rtl/wb_interconnect.v:327$68'.
+  created $adff cell `$procdff$82' with positive edge clock and positive level reset.
+
+3.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+3.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 2 empty switches in `\wb_interconnect.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-wb_interconnect/rtl/wb_interconnect.v:327$68'.
+Removing empty process `wb_interconnect.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-wb_interconnect/rtl/wb_interconnect.v:327$68'.
+Cleaned up 2 empty switches.
+
+3.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module wb_interconnect.
+<suppressed ~3 debug messages>
+
+4. Executing OPT pass (performing simple optimizations).
+
+4.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module wb_interconnect.
+
+4.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\wb_interconnect'.
+Computing hashes of 75 cells of `\wb_interconnect'.
+Finding duplicate cells in `\wb_interconnect'.
+Removed a total of 0 cells.
+
+4.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \wb_interconnect..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~30 debug messages>
+
+4.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \wb_interconnect.
+Performed a total of 0 changes.
+
+4.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\wb_interconnect'.
+Computing hashes of 75 cells of `\wb_interconnect'.
+Finding duplicate cells in `\wb_interconnect'.
+Removed a total of 0 cells.
+
+4.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $procdff$82 ($adff) from module wb_interconnect (D = $procmux$76_Y, Q = \m_wb_dat_o).
+
+4.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \wb_interconnect..
+Removed 2 unused cells and 48 unused wires.
+<suppressed ~3 debug messages>
+
+4.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module wb_interconnect.
+<suppressed ~1 debug messages>
+
+4.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+4.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \wb_interconnect..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~30 debug messages>
+
+4.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \wb_interconnect.
+Performed a total of 0 changes.
+
+4.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\wb_interconnect'.
+Computing hashes of 74 cells of `\wb_interconnect'.
+Finding duplicate cells in `\wb_interconnect'.
+Removed a total of 0 cells.
+
+4.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \wb_interconnect..
+
+4.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module wb_interconnect.
+
+4.16. Finished fast OPT passes. (There is nothing left to do.)
+
+5. Executing ASYNC2SYNC pass.
+Replacing wb_interconnect.$auto$ff.cc:337:slice$83 ($adffe): ARST=\rst_ni, D=$0\m_wb_dat_o[31:0], Q=\m_wb_dat_o
+
+6. Executing MEMORY pass.
+
+6.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+6.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+6.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+6.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+6.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+6.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \wb_interconnect..
+
+6.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+6.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+6.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \wb_interconnect..
+
+6.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+6.11. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+7. Executing OPT pass (performing simple optimizations).
+
+7.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module wb_interconnect.
+
+7.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\wb_interconnect'.
+Computing hashes of 75 cells of `\wb_interconnect'.
+Finding duplicate cells in `\wb_interconnect'.
+Removed a total of 0 cells.
+
+7.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \wb_interconnect..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~32 debug messages>
+
+7.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \wb_interconnect.
+Performed a total of 0 changes.
+
+7.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\wb_interconnect'.
+Computing hashes of 75 cells of `\wb_interconnect'.
+Finding duplicate cells in `\wb_interconnect'.
+Removed a total of 0 cells.
+
+7.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+7.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \wb_interconnect..
+
+7.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module wb_interconnect.
+
+7.9. Finished fast OPT passes. (There is nothing left to do.)
+
+8. Executing TECHMAP pass (map to technology primitives).
+
+8.1. Executing Verilog-2005 frontend: /home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v
+Parsing Verilog input from `/home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu_brent_kung'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `$__div_mod_u'.
+Generating RTLIL representation for module `$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Generating RTLIL representation for module `$connect'.
+Generating RTLIL representation for module `$input_port'.
+Successfully finished Verilog frontend.
+
+8.2. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $mux.
+Using extmapper simplemap for cells of type $reduce_bool.
+Using extmapper simplemap for cells of type $sdffe.
+Using extmapper simplemap for cells of type $logic_not.
+Using extmapper simplemap for cells of type $eq.
+Using extmapper simplemap for cells of type $reduce_or.
+Using extmapper simplemap for cells of type $and.
+Using extmapper simplemap for cells of type $logic_and.
+No more expansions possible.
+<suppressed ~152 debug messages>
+
+9. Executing OPT pass (performing simple optimizations).
+
+9.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module wb_interconnect.
+<suppressed ~669 debug messages>
+
+9.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\wb_interconnect'.
+Computing hashes of 895 cells of `\wb_interconnect'.
+Finding duplicate cells in `\wb_interconnect'.
+Computing hashes of 755 cells of `\wb_interconnect'.
+Finding duplicate cells in `\wb_interconnect'.
+Computing hashes of 699 cells of `\wb_interconnect'.
+Finding duplicate cells in `\wb_interconnect'.
+Computing hashes of 677 cells of `\wb_interconnect'.
+Finding duplicate cells in `\wb_interconnect'.
+<suppressed ~654 debug messages>
+Removed a total of 218 cells.
+
+9.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \wb_interconnect..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+9.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \wb_interconnect.
+Performed a total of 0 changes.
+
+9.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\wb_interconnect'.
+Computing hashes of 677 cells of `\wb_interconnect'.
+Finding duplicate cells in `\wb_interconnect'.
+Removed a total of 0 cells.
+
+9.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+9.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \wb_interconnect..
+Removed 0 unused cells and 59 unused wires.
+<suppressed ~1 debug messages>
+
+9.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module wb_interconnect.
+
+9.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+9.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \wb_interconnect..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+9.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \wb_interconnect.
+Performed a total of 0 changes.
+
+9.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\wb_interconnect'.
+Computing hashes of 677 cells of `\wb_interconnect'.
+Finding duplicate cells in `\wb_interconnect'.
+Removed a total of 0 cells.
+
+9.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+9.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \wb_interconnect..
+
+9.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module wb_interconnect.
+
+9.16. Finished fast OPT passes. (There is nothing left to do.)
+
+10. Executing FLATTEN pass (flatten design).
+
+11. Executing OPT pass (performing simple optimizations).
+
+11.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module wb_interconnect.
+
+11.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\wb_interconnect'.
+Computing hashes of 677 cells of `\wb_interconnect'.
+Finding duplicate cells in `\wb_interconnect'.
+Removed a total of 0 cells.
+
+11.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \wb_interconnect..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+11.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \wb_interconnect.
+Performed a total of 0 changes.
+
+11.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\wb_interconnect'.
+Computing hashes of 677 cells of `\wb_interconnect'.
+Finding duplicate cells in `\wb_interconnect'.
+Removed a total of 0 cells.
+
+11.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+11.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \wb_interconnect..
+
+11.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module wb_interconnect.
+
+11.9. Finished fast OPT passes. (There is nothing left to do.)
+
+12. Executing Liberty frontend: /home/smdadmin/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130B/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+Imported 428 cell types from liberty file.
+
+13. Executing Verilog-2005 frontend: /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-wb_interconnect/synth/wb_interconnect_netlist.v
+Parsing Verilog input from `/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-wb_interconnect/synth/wb_interconnect_netlist.v' to AST representation.
+Generating RTLIL representation for module `\wb_interconnect'.
+Successfully finished Verilog frontend.
+
+14. Executing HIERARCHY pass (managing design hierarchy).
+
+14.1. Analyzing design hierarchy..
+Top module:  \wb_interconnect
+
+14.2. Analyzing design hierarchy..
+Top module:  \wb_interconnect
+Removed 0 unused modules.
+
+15. Executing PROC pass (convert processes to netlists).
+
+15.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+15.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed a total of 0 dead cases.
+
+15.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 0 assignments to connections.
+
+15.4. Executing PROC_INIT pass (extract init attributes).
+
+15.5. Executing PROC_ARST pass (detect async resets in processes).
+
+15.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+
+15.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+
+15.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+15.9. Executing PROC_DFF pass (convert process syncs to FFs).
+
+15.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+15.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+15.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module wb_interconnect.
+
+16. Executing OPT pass (performing simple optimizations).
+
+16.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module wb_interconnect.
+
+16.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\wb_interconnect'.
+Computing hashes of 367 cells of `\wb_interconnect'.
+Finding duplicate cells in `\wb_interconnect'.
+Removed a total of 0 cells.
+
+16.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \wb_interconnect..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+16.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \wb_interconnect.
+Performed a total of 0 changes.
+
+16.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\wb_interconnect'.
+Computing hashes of 367 cells of `\wb_interconnect'.
+Finding duplicate cells in `\wb_interconnect'.
+Removed a total of 0 cells.
+
+16.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+16.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \wb_interconnect..
+Removed 0 unused cells and 1383 unused wires.
+<suppressed ~1 debug messages>
+
+16.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module wb_interconnect.
+
+16.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+16.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \wb_interconnect..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+16.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \wb_interconnect.
+Performed a total of 0 changes.
+
+16.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\wb_interconnect'.
+Computing hashes of 367 cells of `\wb_interconnect'.
+Finding duplicate cells in `\wb_interconnect'.
+Removed a total of 0 cells.
+
+16.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+16.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \wb_interconnect..
+
+16.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module wb_interconnect.
+
+16.16. Finished fast OPT passes. (There is nothing left to do.)
+
+17. Executing ASYNC2SYNC pass.
+
+18. Executing MEMORY pass.
+
+18.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+18.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+18.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+18.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+18.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+18.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \wb_interconnect..
+
+18.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+18.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+18.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \wb_interconnect..
+
+18.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+18.11. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+19. Executing OPT pass (performing simple optimizations).
+
+19.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module wb_interconnect.
+
+19.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\wb_interconnect'.
+Computing hashes of 367 cells of `\wb_interconnect'.
+Finding duplicate cells in `\wb_interconnect'.
+Removed a total of 0 cells.
+
+19.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \wb_interconnect..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+19.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \wb_interconnect.
+Performed a total of 0 changes.
+
+19.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\wb_interconnect'.
+Computing hashes of 367 cells of `\wb_interconnect'.
+Finding duplicate cells in `\wb_interconnect'.
+Removed a total of 0 cells.
+
+19.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+19.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \wb_interconnect..
+
+19.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module wb_interconnect.
+
+19.9. Finished fast OPT passes. (There is nothing left to do.)
+
+20. Executing TECHMAP pass (map to technology primitives).
+
+20.1. Executing Verilog-2005 frontend: /home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v
+Parsing Verilog input from `/home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu_brent_kung'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `$__div_mod_u'.
+Generating RTLIL representation for module `$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Generating RTLIL representation for module `$connect'.
+Generating RTLIL representation for module `$input_port'.
+Successfully finished Verilog frontend.
+
+20.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~77 debug messages>
+
+21. Executing OPT pass (performing simple optimizations).
+
+21.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module wb_interconnect.
+
+21.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\wb_interconnect'.
+Computing hashes of 367 cells of `\wb_interconnect'.
+Finding duplicate cells in `\wb_interconnect'.
+Removed a total of 0 cells.
+
+21.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \wb_interconnect..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+21.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \wb_interconnect.
+Performed a total of 0 changes.
+
+21.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\wb_interconnect'.
+Computing hashes of 367 cells of `\wb_interconnect'.
+Finding duplicate cells in `\wb_interconnect'.
+Removed a total of 0 cells.
+
+21.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+21.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \wb_interconnect..
+
+21.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module wb_interconnect.
+
+21.9. Finished fast OPT passes. (There is nothing left to do.)
+
+22. Executing FLATTEN pass (flatten design).
+
+23. Executing OPT pass (performing simple optimizations).
+
+23.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module wb_interconnect.
+
+23.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\wb_interconnect'.
+Computing hashes of 367 cells of `\wb_interconnect'.
+Finding duplicate cells in `\wb_interconnect'.
+Removed a total of 0 cells.
+
+23.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \wb_interconnect..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+23.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \wb_interconnect.
+Performed a total of 0 changes.
+
+23.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\wb_interconnect'.
+Computing hashes of 367 cells of `\wb_interconnect'.
+Finding duplicate cells in `\wb_interconnect'.
+Removed a total of 0 cells.
+
+23.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+23.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \wb_interconnect..
+
+23.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module wb_interconnect.
+
+23.9. Finished fast OPT passes. (There is nothing left to do.)
+
+24. Executing EQUIV_MAKE pass (creating equiv checking module).
+Presumably equivalent wires: ack_comb_gold (\ack_comb_gold), ack_comb_gate (\_0929__gate) -> ack_comb
+Presumably equivalent wires: s12_wb_ack_i_gold (\s12_wb_ack_i_gold), s12_wb_ack_i_gate (\s12_wb_ack_i_gate) -> s12_wb_ack_i
+Presumably equivalent wires: s12_wb_cyc_o_gold (\s12_wb_cyc_o_gold), s12_wb_cyc_o_gate (\_1369__gate) -> s12_wb_cyc_o
+Presumably equivalent wires: s12_wb_stb_o_gold (\s12_wb_stb_o_gold), s12_wb_stb_o_gate (\_1402__gate) -> s12_wb_stb_o
+Presumably equivalent wires: s12_wb_we_o_gold (\m_wb_we_i_gold), s12_wb_we_o_gate (\m_wb_we_i_gate) -> s12_wb_we_o
+Presumably equivalent wires: s12_wb_sel_o_gold (\m_wb_sel_i_gold), s12_wb_sel_o_gate (\m_wb_sel_i_gate) -> s12_wb_sel_o
+Presumably equivalent wires: s12_wb_dat_i_gold (\s12_wb_dat_i_gold), s12_wb_dat_i_gate (\s12_wb_dat_i_gate) -> s12_wb_dat_i
+Presumably equivalent wires: s12_wb_dat_o_gold (\m_wb_dat_i_gold), s12_wb_dat_o_gate (\m_wb_dat_i_gate) -> s12_wb_dat_o
+Presumably equivalent wires: s12_wb_adr_o_gold (\m_wb_adr_i_gold), s12_wb_adr_o_gate (\m_wb_adr_i_gate) -> s12_wb_adr_o
+Presumably equivalent wires: s11_wb_ack_i_gold (\s11_wb_ack_i_gold), s11_wb_ack_i_gate (\s11_wb_ack_i_gate) -> s11_wb_ack_i
+Presumably equivalent wires: s11_wb_cyc_o_gold (\s11_wb_cyc_o_gold), s11_wb_cyc_o_gate (\_1334__gate) -> s11_wb_cyc_o
+Presumably equivalent wires: s11_wb_stb_o_gold (\s11_wb_stb_o_gold), s11_wb_stb_o_gate (\_1367__gate) -> s11_wb_stb_o
+Presumably equivalent wires: s11_wb_we_o_gold (\m_wb_we_i_gold), s11_wb_we_o_gate (\m_wb_we_i_gate) -> s11_wb_we_o
+Presumably equivalent wires: s11_wb_sel_o_gold (\m_wb_sel_i_gold), s11_wb_sel_o_gate (\m_wb_sel_i_gate) -> s11_wb_sel_o
+Presumably equivalent wires: s11_wb_dat_i_gold (\s11_wb_dat_i_gold), s11_wb_dat_i_gate (\s11_wb_dat_i_gate) -> s11_wb_dat_i
+Presumably equivalent wires: s11_wb_dat_o_gold (\m_wb_dat_i_gold), s11_wb_dat_o_gate (\m_wb_dat_i_gate) -> s11_wb_dat_o
+Presumably equivalent wires: s11_wb_adr_o_gold (\m_wb_adr_i_gold), s11_wb_adr_o_gate (\m_wb_adr_i_gate) -> s11_wb_adr_o
+Presumably equivalent wires: s10_wb_ack_i_gold (\s10_wb_ack_i_gold), s10_wb_ack_i_gate (\s10_wb_ack_i_gate) -> s10_wb_ack_i
+Presumably equivalent wires: s10_wb_cyc_o_gold (\s10_wb_cyc_o_gold), s10_wb_cyc_o_gate (\_1299__gate) -> s10_wb_cyc_o
+Presumably equivalent wires: s10_wb_stb_o_gold (\s10_wb_stb_o_gold), s10_wb_stb_o_gate (\_1332__gate) -> s10_wb_stb_o
+Presumably equivalent wires: s10_wb_we_o_gold (\m_wb_we_i_gold), s10_wb_we_o_gate (\m_wb_we_i_gate) -> s10_wb_we_o
+Presumably equivalent wires: s10_wb_sel_o_gold (\m_wb_sel_i_gold), s10_wb_sel_o_gate (\m_wb_sel_i_gate) -> s10_wb_sel_o
+Presumably equivalent wires: s10_wb_dat_i_gold (\s10_wb_dat_i_gold), s10_wb_dat_i_gate (\s10_wb_dat_i_gate) -> s10_wb_dat_i
+Presumably equivalent wires: s10_wb_dat_o_gold (\m_wb_dat_i_gold), s10_wb_dat_o_gate (\m_wb_dat_i_gate) -> s10_wb_dat_o
+Presumably equivalent wires: s10_wb_adr_o_gold (\m_wb_adr_i_gold), s10_wb_adr_o_gate (\m_wb_adr_i_gate) -> s10_wb_adr_o
+Presumably equivalent wires: s9_wb_ack_i_gold (\s9_wb_ack_i_gold), s9_wb_ack_i_gate (\s9_wb_ack_i_gate) -> s9_wb_ack_i
+Presumably equivalent wires: s9_wb_cyc_o_gold (\s9_wb_cyc_o_gold), s9_wb_cyc_o_gate (\_1684__gate) -> s9_wb_cyc_o
+Presumably equivalent wires: s9_wb_stb_o_gold (\s9_wb_stb_o_gold), s9_wb_stb_o_gate (\_1717__gate) -> s9_wb_stb_o
+Presumably equivalent wires: s9_wb_we_o_gold (\m_wb_we_i_gold), s9_wb_we_o_gate (\m_wb_we_i_gate) -> s9_wb_we_o
+Presumably equivalent wires: s9_wb_sel_o_gold (\m_wb_sel_i_gold), s9_wb_sel_o_gate (\m_wb_sel_i_gate) -> s9_wb_sel_o
+Presumably equivalent wires: s9_wb_dat_i_gold (\s9_wb_dat_i_gold), s9_wb_dat_i_gate (\s9_wb_dat_i_gate) -> s9_wb_dat_i
+Presumably equivalent wires: s9_wb_dat_o_gold (\m_wb_dat_i_gold), s9_wb_dat_o_gate (\m_wb_dat_i_gate) -> s9_wb_dat_o
+Presumably equivalent wires: s9_wb_adr_o_gold (\m_wb_adr_i_gold), s9_wb_adr_o_gate (\m_wb_adr_i_gate) -> s9_wb_adr_o
+Presumably equivalent wires: s8_wb_ack_i_gold (\s8_wb_ack_i_gold), s8_wb_ack_i_gate (\s8_wb_ack_i_gate) -> s8_wb_ack_i
+Presumably equivalent wires: s8_wb_cyc_o_gold (\s8_wb_cyc_o_gold), s8_wb_cyc_o_gate (\_1649__gate) -> s8_wb_cyc_o
+Presumably equivalent wires: s8_wb_stb_o_gold (\s8_wb_stb_o_gold), s8_wb_stb_o_gate (\_1682__gate) -> s8_wb_stb_o
+Presumably equivalent wires: s8_wb_we_o_gold (\m_wb_we_i_gold), s8_wb_we_o_gate (\m_wb_we_i_gate) -> s8_wb_we_o
+Presumably equivalent wires: s8_wb_sel_o_gold (\m_wb_sel_i_gold), s8_wb_sel_o_gate (\m_wb_sel_i_gate) -> s8_wb_sel_o
+Presumably equivalent wires: s8_wb_dat_i_gold (\s8_wb_dat_i_gold), s8_wb_dat_i_gate (\s8_wb_dat_i_gate) -> s8_wb_dat_i
+Presumably equivalent wires: s8_wb_dat_o_gold (\m_wb_dat_i_gold), s8_wb_dat_o_gate (\m_wb_dat_i_gate) -> s8_wb_dat_o
+Presumably equivalent wires: s8_wb_adr_o_gold (\m_wb_adr_i_gold), s8_wb_adr_o_gate (\m_wb_adr_i_gate) -> s8_wb_adr_o
+Presumably equivalent wires: s7_wb_ack_i_gold (\s7_wb_ack_i_gold), s7_wb_ack_i_gate (\s7_wb_ack_i_gate) -> s7_wb_ack_i
+Presumably equivalent wires: s7_wb_cyc_o_gold (\s7_wb_cyc_o_gold), s7_wb_cyc_o_gate (\_1614__gate) -> s7_wb_cyc_o
+Presumably equivalent wires: s7_wb_stb_o_gold (\s7_wb_stb_o_gold), s7_wb_stb_o_gate (\_1647__gate) -> s7_wb_stb_o
+Presumably equivalent wires: s7_wb_we_o_gold (\m_wb_we_i_gold), s7_wb_we_o_gate (\m_wb_we_i_gate) -> s7_wb_we_o
+Presumably equivalent wires: s7_wb_sel_o_gold (\m_wb_sel_i_gold), s7_wb_sel_o_gate (\m_wb_sel_i_gate) -> s7_wb_sel_o
+Presumably equivalent wires: s7_wb_dat_i_gold (\s7_wb_dat_i_gold), s7_wb_dat_i_gate (\s7_wb_dat_i_gate) -> s7_wb_dat_i
+Presumably equivalent wires: s7_wb_dat_o_gold (\m_wb_dat_i_gold), s7_wb_dat_o_gate (\m_wb_dat_i_gate) -> s7_wb_dat_o
+Presumably equivalent wires: s7_wb_adr_o_gold (\m_wb_adr_i_gold), s7_wb_adr_o_gate (\m_wb_adr_i_gate) -> s7_wb_adr_o
+Presumably equivalent wires: s6_wb_ack_i_gold (\s6_wb_ack_i_gold), s6_wb_ack_i_gate (\s6_wb_ack_i_gate) -> s6_wb_ack_i
+Presumably equivalent wires: s6_wb_cyc_o_gold (\s6_wb_cyc_o_gold), s6_wb_cyc_o_gate (\_1579__gate) -> s6_wb_cyc_o
+Presumably equivalent wires: s6_wb_stb_o_gold (\s6_wb_stb_o_gold), s6_wb_stb_o_gate (\_1612__gate) -> s6_wb_stb_o
+Presumably equivalent wires: s6_wb_we_o_gold (\m_wb_we_i_gold), s6_wb_we_o_gate (\m_wb_we_i_gate) -> s6_wb_we_o
+Presumably equivalent wires: s6_wb_sel_o_gold (\m_wb_sel_i_gold), s6_wb_sel_o_gate (\m_wb_sel_i_gate) -> s6_wb_sel_o
+Presumably equivalent wires: s6_wb_dat_i_gold (\s6_wb_dat_i_gold), s6_wb_dat_i_gate (\s6_wb_dat_i_gate) -> s6_wb_dat_i
+Presumably equivalent wires: s6_wb_dat_o_gold (\m_wb_dat_i_gold), s6_wb_dat_o_gate (\m_wb_dat_i_gate) -> s6_wb_dat_o
+Presumably equivalent wires: s6_wb_adr_o_gold (\m_wb_adr_i_gold), s6_wb_adr_o_gate (\m_wb_adr_i_gate) -> s6_wb_adr_o
+Presumably equivalent wires: s5_wb_ack_i_gold (\s5_wb_ack_i_gold), s5_wb_ack_i_gate (\s5_wb_ack_i_gate) -> s5_wb_ack_i
+Presumably equivalent wires: s5_wb_cyc_o_gold (\s5_wb_cyc_o_gold), s5_wb_cyc_o_gate (\_1544__gate) -> s5_wb_cyc_o
+Presumably equivalent wires: s5_wb_stb_o_gold (\s5_wb_stb_o_gold), s5_wb_stb_o_gate (\_1577__gate) -> s5_wb_stb_o
+Presumably equivalent wires: s5_wb_we_o_gold (\m_wb_we_i_gold), s5_wb_we_o_gate (\m_wb_we_i_gate) -> s5_wb_we_o
+Presumably equivalent wires: s5_wb_sel_o_gold (\m_wb_sel_i_gold), s5_wb_sel_o_gate (\m_wb_sel_i_gate) -> s5_wb_sel_o
+Presumably equivalent wires: s5_wb_dat_i_gold (\s5_wb_dat_i_gold), s5_wb_dat_i_gate (\s5_wb_dat_i_gate) -> s5_wb_dat_i
+Presumably equivalent wires: s5_wb_dat_o_gold (\m_wb_dat_i_gold), s5_wb_dat_o_gate (\m_wb_dat_i_gate) -> s5_wb_dat_o
+Presumably equivalent wires: s5_wb_adr_o_gold (\m_wb_adr_i_gold), s5_wb_adr_o_gate (\m_wb_adr_i_gate) -> s5_wb_adr_o
+Presumably equivalent wires: s4_wb_ack_i_gold (\s4_wb_ack_i_gold), s4_wb_ack_i_gate (\s4_wb_ack_i_gate) -> s4_wb_ack_i
+Presumably equivalent wires: s4_wb_cyc_o_gold (\s4_wb_cyc_o_gold), s4_wb_cyc_o_gate (\_1509__gate) -> s4_wb_cyc_o
+Presumably equivalent wires: s4_wb_stb_o_gold (\s4_wb_stb_o_gold), s4_wb_stb_o_gate (\_1542__gate) -> s4_wb_stb_o
+Presumably equivalent wires: s4_wb_we_o_gold (\m_wb_we_i_gold), s4_wb_we_o_gate (\m_wb_we_i_gate) -> s4_wb_we_o
+Presumably equivalent wires: s4_wb_sel_o_gold (\m_wb_sel_i_gold), s4_wb_sel_o_gate (\m_wb_sel_i_gate) -> s4_wb_sel_o
+Presumably equivalent wires: s4_wb_dat_i_gold (\s4_wb_dat_i_gold), s4_wb_dat_i_gate (\s4_wb_dat_i_gate) -> s4_wb_dat_i
+Presumably equivalent wires: s4_wb_dat_o_gold (\m_wb_dat_i_gold), s4_wb_dat_o_gate (\m_wb_dat_i_gate) -> s4_wb_dat_o
+Presumably equivalent wires: s4_wb_adr_o_gold (\m_wb_adr_i_gold), s4_wb_adr_o_gate (\m_wb_adr_i_gate) -> s4_wb_adr_o
+Presumably equivalent wires: s3_wb_ack_i_gold (\s3_wb_ack_i_gold), s3_wb_ack_i_gate (\s3_wb_ack_i_gate) -> s3_wb_ack_i
+Presumably equivalent wires: s3_wb_cyc_o_gold (\s3_wb_cyc_o_gold), s3_wb_cyc_o_gate (\_1474__gate) -> s3_wb_cyc_o
+Presumably equivalent wires: s3_wb_stb_o_gold (\s3_wb_stb_o_gold), s3_wb_stb_o_gate (\_1507__gate) -> s3_wb_stb_o
+Presumably equivalent wires: s3_wb_we_o_gold (\m_wb_we_i_gold), s3_wb_we_o_gate (\m_wb_we_i_gate) -> s3_wb_we_o
+Presumably equivalent wires: s3_wb_sel_o_gold (\m_wb_sel_i_gold), s3_wb_sel_o_gate (\m_wb_sel_i_gate) -> s3_wb_sel_o
+Presumably equivalent wires: s3_wb_dat_i_gold (\s3_wb_dat_i_gold), s3_wb_dat_i_gate (\s3_wb_dat_i_gate) -> s3_wb_dat_i
+Presumably equivalent wires: s3_wb_dat_o_gold (\m_wb_dat_i_gold), s3_wb_dat_o_gate (\m_wb_dat_i_gate) -> s3_wb_dat_o
+Presumably equivalent wires: s3_wb_adr_o_gold (\m_wb_adr_i_gold), s3_wb_adr_o_gate (\m_wb_adr_i_gate) -> s3_wb_adr_o
+Presumably equivalent wires: s2_wb_ack_i_gold (\s2_wb_ack_i_gold), s2_wb_ack_i_gate (\s2_wb_ack_i_gate) -> s2_wb_ack_i
+Presumably equivalent wires: s2_wb_cyc_o_gold (\s2_wb_cyc_o_gold), s2_wb_cyc_o_gate (\_1439__gate) -> s2_wb_cyc_o
+Presumably equivalent wires: s2_wb_stb_o_gold (\s2_wb_stb_o_gold), s2_wb_stb_o_gate (\_1472__gate) -> s2_wb_stb_o
+Presumably equivalent wires: s2_wb_we_o_gold (\m_wb_we_i_gold), s2_wb_we_o_gate (\m_wb_we_i_gate) -> s2_wb_we_o
+Presumably equivalent wires: s2_wb_sel_o_gold (\m_wb_sel_i_gold), s2_wb_sel_o_gate (\m_wb_sel_i_gate) -> s2_wb_sel_o
+Presumably equivalent wires: s2_wb_dat_i_gold (\s2_wb_dat_i_gold), s2_wb_dat_i_gate (\s2_wb_dat_i_gate) -> s2_wb_dat_i
+Presumably equivalent wires: s2_wb_dat_o_gold (\m_wb_dat_i_gold), s2_wb_dat_o_gate (\m_wb_dat_i_gate) -> s2_wb_dat_o
+Presumably equivalent wires: s2_wb_adr_o_gold (\m_wb_adr_i_gold), s2_wb_adr_o_gate (\m_wb_adr_i_gate) -> s2_wb_adr_o
+Presumably equivalent wires: s1_wb_ack_i_gold (\s1_wb_ack_i_gold), s1_wb_ack_i_gate (\s1_wb_ack_i_gate) -> s1_wb_ack_i
+Presumably equivalent wires: s1_wb_cyc_o_gold (\s1_wb_cyc_o_gold), s1_wb_cyc_o_gate (\_1404__gate) -> s1_wb_cyc_o
+Presumably equivalent wires: s1_wb_stb_o_gold (\s1_wb_stb_o_gold), s1_wb_stb_o_gate (\_1437__gate) -> s1_wb_stb_o
+Presumably equivalent wires: s1_wb_we_o_gold (\m_wb_we_i_gold), s1_wb_we_o_gate (\m_wb_we_i_gate) -> s1_wb_we_o
+Presumably equivalent wires: s1_wb_sel_o_gold (\m_wb_sel_i_gold), s1_wb_sel_o_gate (\m_wb_sel_i_gate) -> s1_wb_sel_o
+Presumably equivalent wires: s1_wb_dat_i_gold (\s1_wb_dat_i_gold), s1_wb_dat_i_gate (\s1_wb_dat_i_gate) -> s1_wb_dat_i
+Presumably equivalent wires: s1_wb_dat_o_gold (\m_wb_dat_i_gold), s1_wb_dat_o_gate (\m_wb_dat_i_gate) -> s1_wb_dat_o
+Presumably equivalent wires: s1_wb_adr_o_gold (\m_wb_adr_i_gold), s1_wb_adr_o_gate (\m_wb_adr_i_gate) -> s1_wb_adr_o
+Presumably equivalent wires: s0_wb_ack_i_gold (\s0_wb_ack_i_gold), s0_wb_ack_i_gate (\s0_wb_ack_i_gate) -> s0_wb_ack_i
+Presumably equivalent wires: s0_wb_cyc_o_gold (\s0_wb_cyc_o_gold), s0_wb_cyc_o_gate (\_1264__gate) -> s0_wb_cyc_o
+Presumably equivalent wires: s0_wb_stb_o_gold (\s0_wb_stb_o_gold), s0_wb_stb_o_gate (\_1297__gate) -> s0_wb_stb_o
+Presumably equivalent wires: s0_wb_we_o_gold (\m_wb_we_i_gold), s0_wb_we_o_gate (\m_wb_we_i_gate) -> s0_wb_we_o
+Presumably equivalent wires: s0_wb_sel_o_gold (\m_wb_sel_i_gold), s0_wb_sel_o_gate (\m_wb_sel_i_gate) -> s0_wb_sel_o
+Presumably equivalent wires: s0_wb_dat_i_gold (\s0_wb_dat_i_gold), s0_wb_dat_i_gate (\s0_wb_dat_i_gate) -> s0_wb_dat_i
+Presumably equivalent wires: s0_wb_dat_o_gold (\m_wb_dat_i_gold), s0_wb_dat_o_gate (\m_wb_dat_i_gate) -> s0_wb_dat_o
+Presumably equivalent wires: s0_wb_adr_o_gold (\m_wb_adr_i_gold), s0_wb_adr_o_gate (\m_wb_adr_i_gate) -> s0_wb_adr_o
+Presumably equivalent wires: m_wb_ack_o_gold (\ack_comb_gold), m_wb_ack_o_gate (\_0929__gate) -> m_wb_ack_o
+Presumably equivalent wires: m_wb_cyc_i_gold (\m_wb_cyc_i_gold), m_wb_cyc_i_gate (\m_wb_cyc_i_gate) -> m_wb_cyc_i
+Presumably equivalent wires: m_wb_stb_i_gold (\m_wb_stb_i_gold), m_wb_stb_i_gate (\m_wb_stb_i_gate) -> m_wb_stb_i
+Presumably equivalent wires: m_wb_we_i_gold (\m_wb_we_i_gold), m_wb_we_i_gate (\m_wb_we_i_gate) -> m_wb_we_i
+Presumably equivalent wires: m_wb_sel_i_gold (\m_wb_sel_i_gold), m_wb_sel_i_gate (\m_wb_sel_i_gate) -> m_wb_sel_i
+Presumably equivalent wires: m_wb_dat_o_gold (\m_wb_dat_o_gold), m_wb_dat_o_gate ({ \_0978__gate \_0977__gate \_0975__gate \_0974__gate \_0973__gate \_0972__gate \_0971__gate \_0970__gate \_0969__gate \_0968__gate \_0967__gate \_0966__gate \_0964__gate \_0963__gate \_0962__gate \_0961__gate \_0960__gate \_0959__gate \_0958__gate \_0957__gate \_0956__gate \_0955__gate \_0985__gate \_0984__gate \_0983__gate \_0982__gate \_0981__gate \_0980__gate \_0979__gate \_0976__gate \_0965__gate \_0954__gate }) -> m_wb_dat_o
+Presumably equivalent wires: m_wb_dat_i_gold (\m_wb_dat_i_gold), m_wb_dat_i_gate (\m_wb_dat_i_gate) -> m_wb_dat_i
+Presumably equivalent wires: m_wb_adr_i_gold (\m_wb_adr_i_gold), m_wb_adr_i_gate (\m_wb_adr_i_gate) -> m_wb_adr_i
+Presumably equivalent wires: rst_ni_gold (\rst_ni_gold), rst_ni_gate (\rst_ni_gate) -> rst_ni
+Presumably equivalent wires: clk_i_gold (\clk_i_gold), clk_i_gate (\clk_i_gate) -> clk_i
+Changing input Q of cell _2115__gate (sky130_fd_sc_hd__dfrtp_1): \_0977__gate -> \m_wb_dat_o [30]
+Changing input Q of cell _2114__gate (sky130_fd_sc_hd__dfrtp_1): \_0975__gate -> \m_wb_dat_o [29]
+Changing input Q of cell _2113__gate (sky130_fd_sc_hd__dfrtp_1): \_0974__gate -> \m_wb_dat_o [28]
+Changing input Q of cell _2112__gate (sky130_fd_sc_hd__dfrtp_1): \_0973__gate -> \m_wb_dat_o [27]
+Changing input Q of cell _2111__gate (sky130_fd_sc_hd__dfrtp_1): \_0972__gate -> \m_wb_dat_o [26]
+Changing input Q of cell _2110__gate (sky130_fd_sc_hd__dfrtp_1): \_0971__gate -> \m_wb_dat_o [25]
+Changing input Q of cell _2109__gate (sky130_fd_sc_hd__dfrtp_1): \_0970__gate -> \m_wb_dat_o [24]
+Changing input Q of cell _2108__gate (sky130_fd_sc_hd__dfrtp_1): \_0969__gate -> \m_wb_dat_o [23]
+Changing input Q of cell _2107__gate (sky130_fd_sc_hd__dfrtp_1): \_0968__gate -> \m_wb_dat_o [22]
+Changing input Q of cell _2106__gate (sky130_fd_sc_hd__dfrtp_1): \_0967__gate -> \m_wb_dat_o [21]
+Changing input Q of cell _2105__gate (sky130_fd_sc_hd__dfrtp_1): \_0966__gate -> \m_wb_dat_o [20]
+Changing input Q of cell _2104__gate (sky130_fd_sc_hd__dfrtp_1): \_0964__gate -> \m_wb_dat_o [19]
+Changing input Q of cell _2103__gate (sky130_fd_sc_hd__dfrtp_1): \_0963__gate -> \m_wb_dat_o [18]
+Changing input Q of cell _2102__gate (sky130_fd_sc_hd__dfrtp_1): \_0962__gate -> \m_wb_dat_o [17]
+Changing input Q of cell _2101__gate (sky130_fd_sc_hd__dfrtp_1): \_0961__gate -> \m_wb_dat_o [16]
+Changing input Q of cell _2100__gate (sky130_fd_sc_hd__dfrtp_1): \_0960__gate -> \m_wb_dat_o [15]
+Changing input Q of cell _2099__gate (sky130_fd_sc_hd__dfrtp_1): \_0959__gate -> \m_wb_dat_o [14]
+Changing input Q of cell _2098__gate (sky130_fd_sc_hd__dfrtp_1): \_0958__gate -> \m_wb_dat_o [13]
+Changing input Q of cell _2097__gate (sky130_fd_sc_hd__dfrtp_1): \_0957__gate -> \m_wb_dat_o [12]
+Changing input Q of cell _2096__gate (sky130_fd_sc_hd__dfrtp_1): \_0956__gate -> \m_wb_dat_o [11]
+Changing input Q of cell _2095__gate (sky130_fd_sc_hd__dfrtp_1): \_0955__gate -> \m_wb_dat_o [10]
+Changing input Q of cell _2094__gate (sky130_fd_sc_hd__dfrtp_1): \_0985__gate -> \m_wb_dat_o [9]
+Changing input Q of cell _2093__gate (sky130_fd_sc_hd__dfrtp_1): \_0984__gate -> \m_wb_dat_o [8]
+Changing input Q of cell _2092__gate (sky130_fd_sc_hd__dfrtp_1): \_0983__gate -> \m_wb_dat_o [7]
+Changing input Q of cell _2091__gate (sky130_fd_sc_hd__dfrtp_1): \_0982__gate -> \m_wb_dat_o [6]
+Changing input Q of cell _2090__gate (sky130_fd_sc_hd__dfrtp_1): \_0981__gate -> \m_wb_dat_o [5]
+Changing input Q of cell _2089__gate (sky130_fd_sc_hd__dfrtp_1): \_0980__gate -> \m_wb_dat_o [4]
+Changing input Q of cell _2088__gate (sky130_fd_sc_hd__dfrtp_1): \_0979__gate -> \m_wb_dat_o [3]
+Changing input Q of cell _2087__gate (sky130_fd_sc_hd__dfrtp_1): \_0976__gate -> \m_wb_dat_o [2]
+Changing input Q of cell _2086__gate (sky130_fd_sc_hd__dfrtp_1): \_0965__gate -> \m_wb_dat_o [1]
+Changing input Q of cell _2085__gate (sky130_fd_sc_hd__dfrtp_1): \_0954__gate -> \m_wb_dat_o [0]
+Changing input A1 of cell _2084__gate (sky130_fd_sc_hd__a22o_1): \_0969__gate -> \m_wb_dat_o [23]
+Changing input A1_N of cell _2077__gate (sky130_fd_sc_hd__o2bb2ai_1): \_0970__gate -> \m_wb_dat_o [24]
+Changing input A1 of cell _2069__gate (sky130_fd_sc_hd__a22o_1): \_0971__gate -> \m_wb_dat_o [25]
+Changing input A1 of cell _2062__gate (sky130_fd_sc_hd__a22o_1): \_0978__gate -> \m_wb_dat_o [31]
+Changing input A1_N of cell _2055__gate (sky130_fd_sc_hd__o2bb2ai_1): \_0972__gate -> \m_wb_dat_o [26]
+Changing input A1 of cell _2047__gate (sky130_fd_sc_hd__a22o_1): \_0973__gate -> \m_wb_dat_o [27]
+Changing input A1_N of cell _2040__gate (sky130_fd_sc_hd__o2bb2ai_1): \_0974__gate -> \m_wb_dat_o [28]
+Changing input A1_N of cell _2032__gate (sky130_fd_sc_hd__o2bb2ai_1): \_0975__gate -> \m_wb_dat_o [29]
+Changing input A1 of cell _2024__gate (sky130_fd_sc_hd__a22o_1): \_0977__gate -> \m_wb_dat_o [30]
+Changing input A1 of cell _2017__gate (sky130_fd_sc_hd__a22o_1): \_0954__gate -> \m_wb_dat_o [0]
+Changing input A1_N of cell _2010__gate (sky130_fd_sc_hd__o2bb2ai_1): \_0965__gate -> \m_wb_dat_o [1]
+Changing input A1_N of cell _2002__gate (sky130_fd_sc_hd__o2bb2ai_1): \_0976__gate -> \m_wb_dat_o [2]
+Changing input A1 of cell _1994__gate (sky130_fd_sc_hd__a22o_1): \_0979__gate -> \m_wb_dat_o [3]
+Changing input A1_N of cell _1987__gate (sky130_fd_sc_hd__o2bb2ai_1): \_0980__gate -> \m_wb_dat_o [4]
+Changing input A1_N of cell _1979__gate (sky130_fd_sc_hd__o2bb2ai_1): \_0981__gate -> \m_wb_dat_o [5]
+Changing input A1 of cell _1971__gate (sky130_fd_sc_hd__a22o_1): \_0982__gate -> \m_wb_dat_o [6]
+Changing input A1 of cell _1964__gate (sky130_fd_sc_hd__a22o_1): \_0983__gate -> \m_wb_dat_o [7]
+Changing input A1_N of cell _1957__gate (sky130_fd_sc_hd__o2bb2ai_1): \_0984__gate -> \m_wb_dat_o [8]
+Changing input A1_N of cell _1949__gate (sky130_fd_sc_hd__o2bb2ai_1): \_0985__gate -> \m_wb_dat_o [9]
+Changing input A1 of cell _1941__gate (sky130_fd_sc_hd__a22o_1): \_0955__gate -> \m_wb_dat_o [10]
+Changing input A1_N of cell _1934__gate (sky130_fd_sc_hd__o2bb2ai_1): \_0956__gate -> \m_wb_dat_o [11]
+Changing input A1 of cell _1926__gate (sky130_fd_sc_hd__a22o_1): \_0957__gate -> \m_wb_dat_o [12]
+Changing input A1 of cell _1919__gate (sky130_fd_sc_hd__a22o_1): \_0958__gate -> \m_wb_dat_o [13]
+Changing input A1 of cell _1912__gate (sky130_fd_sc_hd__a22o_1): \_0959__gate -> \m_wb_dat_o [14]
+Changing input A1_N of cell _1905__gate (sky130_fd_sc_hd__o2bb2ai_1): \_0960__gate -> \m_wb_dat_o [15]
+Changing input A1_N of cell _1897__gate (sky130_fd_sc_hd__o2bb2ai_1): \_0961__gate -> \m_wb_dat_o [16]
+Changing input A1 of cell _1889__gate (sky130_fd_sc_hd__a22o_1): \_0962__gate -> \m_wb_dat_o [17]
+Changing input A1_N of cell _1882__gate (sky130_fd_sc_hd__o2bb2ai_1): \_0963__gate -> \m_wb_dat_o [18]
+Changing input A1 of cell _1874__gate (sky130_fd_sc_hd__a22o_1): \_0964__gate -> \m_wb_dat_o [19]
+Changing input A1 of cell _1867__gate (sky130_fd_sc_hd__a22o_1): \_0966__gate -> \m_wb_dat_o [20]
+Changing input A1_N of cell _1860__gate (sky130_fd_sc_hd__o2bb2ai_1): \_0967__gate -> \m_wb_dat_o [21]
+Changing input A1 of cell _1852__gate (sky130_fd_sc_hd__a22o_1): \_0968__gate -> \m_wb_dat_o [22]
+Changing input X of cell _1839__gate (sky130_fd_sc_hd__and2_0): \_1297__gate -> \s0_wb_stb_o
+Changing input X of cell _1838__gate (sky130_fd_sc_hd__and2_0): \_1264__gate -> \s0_wb_cyc_o
+Changing input X of cell _1837__gate (sky130_fd_sc_hd__and2_0): \_1437__gate -> \s1_wb_stb_o
+Changing input X of cell _1836__gate (sky130_fd_sc_hd__and2_0): \_1404__gate -> \s1_wb_cyc_o
+Changing input X of cell _1835__gate (sky130_fd_sc_hd__and2_0): \_1472__gate -> \s2_wb_stb_o
+Changing input X of cell _1834__gate (sky130_fd_sc_hd__and2_0): \_1439__gate -> \s2_wb_cyc_o
+Changing input X of cell _1833__gate (sky130_fd_sc_hd__lpflow_isobufsrc_1): \_1507__gate -> \s3_wb_stb_o
+Changing input X of cell _1832__gate (sky130_fd_sc_hd__lpflow_isobufsrc_1): \_1474__gate -> \s3_wb_cyc_o
+Changing input X of cell _1831__gate (sky130_fd_sc_hd__and2_0): \_1542__gate -> \s4_wb_stb_o
+Changing input X of cell _1830__gate (sky130_fd_sc_hd__and2_0): \_1509__gate -> \s4_wb_cyc_o
+Changing input X of cell _1829__gate (sky130_fd_sc_hd__and2_0): \_1577__gate -> \s5_wb_stb_o
+Changing input X of cell _1828__gate (sky130_fd_sc_hd__and2_0): \_1544__gate -> \s5_wb_cyc_o
+Changing input X of cell _1827__gate (sky130_fd_sc_hd__lpflow_isobufsrc_1): \_1612__gate -> \s6_wb_stb_o
+Changing input X of cell _1826__gate (sky130_fd_sc_hd__lpflow_isobufsrc_1): \_1579__gate -> \s6_wb_cyc_o
+Changing input X of cell _1825__gate (sky130_fd_sc_hd__and2_0): \_1647__gate -> \s7_wb_stb_o
+Changing input X of cell _1824__gate (sky130_fd_sc_hd__and2_0): \_1614__gate -> \s7_wb_cyc_o
+Changing input X of cell _1823__gate (sky130_fd_sc_hd__and2_0): \_1682__gate -> \s8_wb_stb_o
+Changing input X of cell _1822__gate (sky130_fd_sc_hd__and2_0): \_1649__gate -> \s8_wb_cyc_o
+Changing input X of cell _1821__gate (sky130_fd_sc_hd__and2_0): \_1717__gate -> \s9_wb_stb_o
+Changing input X of cell _1820__gate (sky130_fd_sc_hd__and2_0): \_1684__gate -> \s9_wb_cyc_o
+Changing input X of cell _1819__gate (sky130_fd_sc_hd__and2_0): \_1332__gate -> \s10_wb_stb_o
+Changing input X of cell _1818__gate (sky130_fd_sc_hd__and2_0): \_1299__gate -> \s10_wb_cyc_o
+Changing input X of cell _1817__gate (sky130_fd_sc_hd__and2_0): \_1367__gate -> \s11_wb_stb_o
+Changing input X of cell _1816__gate (sky130_fd_sc_hd__and2_0): \_1334__gate -> \s11_wb_cyc_o
+Changing input X of cell _1815__gate (sky130_fd_sc_hd__lpflow_isobufsrc_1): \_1402__gate -> \s12_wb_stb_o
+Changing input X of cell _1814__gate (sky130_fd_sc_hd__lpflow_isobufsrc_1): \_1369__gate -> \s12_wb_cyc_o
+Changing input Y of cell _1813__gate (sky130_fd_sc_hd__clkinv_1): \_0929__gate -> \m_wb_ack_o
+Changing input Q of cell _2116__gate (sky130_fd_sc_hd__dfrtp_1): \_0978__gate -> \m_wb_dat_o [31]
+Changing input A of cell $auto$simplemap.cc:256:simplemap_logbin$1331_gold ($_AND_): \ack_comb_gold -> \m_wb_ack_o
+Changing input A of cell $auto$simplemap.cc:256:simplemap_logbin$1329_gold ($_AND_): \ack_comb_gold -> \m_wb_ack_o
+Setting undriven nets to undef: \_1402__gate
+Setting undriven nets to undef: \_1404__gate
+Setting undriven nets to undef: \_1437__gate
+Setting undriven nets to undef: \_1439__gate
+Setting undriven nets to undef: \_1472__gate
+Setting undriven nets to undef: \_1474__gate
+Setting undriven nets to undef: \_1507__gate
+Setting undriven nets to undef: \_1509__gate
+Setting undriven nets to undef: \_1542__gate
+Setting undriven nets to undef: \_1544__gate
+Setting undriven nets to undef: \_1577__gate
+Setting undriven nets to undef: \_1579__gate
+Setting undriven nets to undef: \_1612__gate
+Setting undriven nets to undef: \_1614__gate
+Setting undriven nets to undef: \_1264__gate
+Setting undriven nets to undef: \_0929__gate
+Setting undriven nets to undef: \_1647__gate
+Setting undriven nets to undef: \_1649__gate
+Setting undriven nets to undef: \_0954__gate
+Setting undriven nets to undef: \_1297__gate
+Setting undriven nets to undef: \_0955__gate
+Setting undriven nets to undef: \_1299__gate
+Setting undriven nets to undef: \_0956__gate
+Setting undriven nets to undef: \_0957__gate
+Setting undriven nets to undef: \_0958__gate
+Setting undriven nets to undef: \_0959__gate
+Setting undriven nets to undef: \_0960__gate
+Setting undriven nets to undef: \_0961__gate
+Setting undriven nets to undef: \_0962__gate
+Setting undriven nets to undef: \_0963__gate
+Setting undriven nets to undef: \_0964__gate
+Setting undriven nets to undef: \_0965__gate
+Setting undriven nets to undef: \_0966__gate
+Setting undriven nets to undef: \_0967__gate
+Setting undriven nets to undef: \_0968__gate
+Setting undriven nets to undef: \_0969__gate
+Setting undriven nets to undef: \_0970__gate
+Setting undriven nets to undef: \_0971__gate
+Setting undriven nets to undef: \_0972__gate
+Setting undriven nets to undef: \_0973__gate
+Setting undriven nets to undef: \_1682__gate
+Setting undriven nets to undef: \_0974__gate
+Setting undriven nets to undef: \_1684__gate
+Setting undriven nets to undef: \_0975__gate
+Setting undriven nets to undef: \_0976__gate
+Setting undriven nets to undef: \_0977__gate
+Setting undriven nets to undef: \_0978__gate
+Setting undriven nets to undef: \_0979__gate
+Setting undriven nets to undef: \_0980__gate
+Setting undriven nets to undef: \_0981__gate
+Setting undriven nets to undef: \_0982__gate
+Setting undriven nets to undef: \_0983__gate
+Setting undriven nets to undef: \_0984__gate
+Setting undriven nets to undef: \_0985__gate
+Setting undriven nets to undef: \_1332__gate
+Setting undriven nets to undef: \_1334__gate
+Setting undriven nets to undef: \_1717__gate
+Setting undriven nets to undef: \_1367__gate
+Setting undriven nets to undef: \_1369__gate
+
+25. Executing EQUIV_SIMPLE pass.
+Found 957 unproven $equiv cells (81 groups) in wb_interconnect:
+ Grouping SAT models for \m_wb_dat_o:
+  Trying to prove $equiv for \m_wb_dat_o [0]:ezsat
+ failed.
+  Trying to prove $equiv for \m_wb_dat_o [1]:ezsat
+ failed.
+  Trying to prove $equiv for \m_wb_dat_o [2]:ezsat
+ failed.
+  Trying to prove $equiv for \m_wb_dat_o [3]:ezsat
+ failed.
+  Trying to prove $equiv for \m_wb_dat_o [4]:ezsat
+ failed.
+  Trying to prove $equiv for \m_wb_dat_o [5]:ezsat
+ failed.
+  Trying to prove $equiv for \m_wb_dat_o [6]:ezsat
+ failed.
+  Trying to prove $equiv for \m_wb_dat_o [7]:ezsat
+ failed.
+  Trying to prove $equiv for \m_wb_dat_o [8]:ezsat
+ failed.
+  Trying to prove $equiv for \m_wb_dat_o [9]:ezsat
+ failed.
+  Trying to prove $equiv for \m_wb_dat_o [10]:ezsat
+ failed.
+  Trying to prove $equiv for \m_wb_dat_o [11]:ezsat
+ failed.
+  Trying to prove $equiv for \m_wb_dat_o [12]:ezsat
+ failed.
+  Trying to prove $equiv for \m_wb_dat_o [13]:ezsat
+ failed.
+  Trying to prove $equiv for \m_wb_dat_o [14]:ezsat
+ failed.
+  Trying to prove $equiv for \m_wb_dat_o [15]:ezsat
+ failed.
+  Trying to prove $equiv for \m_wb_dat_o [16]:ezsat
+ failed.
+  Trying to prove $equiv for \m_wb_dat_o [17]:ezsat
+ failed.
+  Trying to prove $equiv for \m_wb_dat_o [18]:ezsat
+ failed.
+  Trying to prove $equiv for \m_wb_dat_o [19]:ezsat
+ failed.
+  Trying to prove $equiv for \m_wb_dat_o [20]:ezsat
+ failed.
+  Trying to prove $equiv for \m_wb_dat_o [21]:ezsat
+ failed.
+  Trying to prove $equiv for \m_wb_dat_o [22]:ezsat
+ failed.
+  Trying to prove $equiv for \m_wb_dat_o [23]:ezsat
+ failed.
+  Trying to prove $equiv for \m_wb_dat_o [24]:ezsat
+ failed.
+  Trying to prove $equiv for \m_wb_dat_o [25]:ezsat
+ failed.
+  Trying to prove $equiv for \m_wb_dat_o [26]:ezsat
+ failed.
+  Trying to prove $equiv for \m_wb_dat_o [27]:ezsat
+ failed.
+  Trying to prove $equiv for \m_wb_dat_o [28]:ezsat
+ failed.
+  Trying to prove $equiv for \m_wb_dat_o [29]:ezsat
+ failed.
+  Trying to prove $equiv for \m_wb_dat_o [30]:ezsat
+ failed.
+  Trying to prove $equiv for \m_wb_dat_o [31]:ezsat
+ failed.
+  Trying to prove $equiv for \m_wb_ack_o:ezsat
+ failed.
+ Grouping SAT models for \s0_wb_adr_o:
+  Trying to prove $equiv for \s0_wb_adr_o [0]:ezsat
+ success!
+  Trying to prove $equiv for \s0_wb_adr_o [1]:ezsat
+ success!
+  Trying to prove $equiv for \s0_wb_adr_o [2]:ezsat
+ success!
+  Trying to prove $equiv for \s0_wb_adr_o [3]:ezsat
+ success!
+  Trying to prove $equiv for \s0_wb_adr_o [4]:ezsat
+ success!
+  Trying to prove $equiv for \s0_wb_adr_o [5]:ezsat
+ success!
+  Trying to prove $equiv for \s0_wb_adr_o [6]:ezsat
+ success!
+  Trying to prove $equiv for \s0_wb_adr_o [7]:ezsat
+ success!
+  Trying to prove $equiv for \s0_wb_adr_o [8]:ezsat
+ success!
+  Trying to prove $equiv for \s0_wb_adr_o [9]:ezsat
+ success!
+  Trying to prove $equiv for \s0_wb_adr_o [10]:ezsat
+ success!
+  Trying to prove $equiv for \s0_wb_adr_o [11]:ezsat
+ success!
+  Trying to prove $equiv for \s0_wb_adr_o [12]:ezsat
+ success!
+  Trying to prove $equiv for \s0_wb_adr_o [13]:ezsat
+ success!
+  Trying to prove $equiv for \s0_wb_adr_o [14]:ezsat
+ success!
+  Trying to prove $equiv for \s0_wb_adr_o [15]:ezsat
+ success!
+  Trying to prove $equiv for \s0_wb_adr_o [16]:ezsat
+ success!
+  Trying to prove $equiv for \s0_wb_adr_o [17]:ezsat
+ success!
+  Trying to prove $equiv for \s0_wb_adr_o [18]:ezsat
+ success!
+  Trying to prove $equiv for \s0_wb_adr_o [19]:ezsat
+ success!
+  Trying to prove $equiv for \s0_wb_adr_o [20]:ezsat
+ success!
+  Trying to prove $equiv for \s0_wb_adr_o [21]:ezsat
+ success!
+  Trying to prove $equiv for \s0_wb_adr_o [22]:ezsat
+ success!
+  Trying to prove $equiv for \s0_wb_adr_o [23]:ezsat
+ success!
+  Trying to prove $equiv for \s0_wb_adr_o [24]:ezsat
+ success!
+  Trying to prove $equiv for \s0_wb_adr_o [25]:ezsat
+ success!
+  Trying to prove $equiv for \s0_wb_adr_o [26]:ezsat
+ success!
+  Trying to prove $equiv for \s0_wb_adr_o [27]:ezsat
+ success!
+  Trying to prove $equiv for \s0_wb_adr_o [28]:ezsat
+ success!
+  Trying to prove $equiv for \s0_wb_adr_o [29]:ezsat
+ success!
+  Trying to prove $equiv for \s0_wb_adr_o [30]:ezsat
+ success!
+  Trying to prove $equiv for \s0_wb_adr_o [31]:ezsat
+ success!
+ Grouping SAT models for \s0_wb_dat_o:
+  Trying to prove $equiv for \s0_wb_dat_o [0]:ezsat
+ success!
+  Trying to prove $equiv for \s0_wb_dat_o [1]:ezsat
+ success!
+  Trying to prove $equiv for \s0_wb_dat_o [2]:ezsat
+ success!
+  Trying to prove $equiv for \s0_wb_dat_o [3]:ezsat
+ success!
+  Trying to prove $equiv for \s0_wb_dat_o [4]:ezsat
+ success!
+  Trying to prove $equiv for \s0_wb_dat_o [5]:ezsat
+ success!
+  Trying to prove $equiv for \s0_wb_dat_o [6]:ezsat
+ success!
+  Trying to prove $equiv for \s0_wb_dat_o [7]:ezsat
+ success!
+  Trying to prove $equiv for \s0_wb_dat_o [8]:ezsat
+ success!
+  Trying to prove $equiv for \s0_wb_dat_o [9]:ezsat
+ success!
+  Trying to prove $equiv for \s0_wb_dat_o [10]:ezsat
+ success!
+  Trying to prove $equiv for \s0_wb_dat_o [11]:ezsat
+ success!
+  Trying to prove $equiv for \s0_wb_dat_o [12]:ezsat
+ success!
+  Trying to prove $equiv for \s0_wb_dat_o [13]:ezsat
+ success!
+  Trying to prove $equiv for \s0_wb_dat_o [14]:ezsat
+ success!
+  Trying to prove $equiv for \s0_wb_dat_o [15]:ezsat
+ success!
+  Trying to prove $equiv for \s0_wb_dat_o [16]:ezsat
+ success!
+  Trying to prove $equiv for \s0_wb_dat_o [17]:ezsat
+ success!
+  Trying to prove $equiv for \s0_wb_dat_o [18]:ezsat
+ success!
+  Trying to prove $equiv for \s0_wb_dat_o [19]:ezsat
+ success!
+  Trying to prove $equiv for \s0_wb_dat_o [20]:ezsat
+ success!
+  Trying to prove $equiv for \s0_wb_dat_o [21]:ezsat
+ success!
+  Trying to prove $equiv for \s0_wb_dat_o [22]:ezsat
+ success!
+  Trying to prove $equiv for \s0_wb_dat_o [23]:ezsat
+ success!
+  Trying to prove $equiv for \s0_wb_dat_o [24]:ezsat
+ success!
+  Trying to prove $equiv for \s0_wb_dat_o [25]:ezsat
+ success!
+  Trying to prove $equiv for \s0_wb_dat_o [26]:ezsat
+ success!
+  Trying to prove $equiv for \s0_wb_dat_o [27]:ezsat
+ success!
+  Trying to prove $equiv for \s0_wb_dat_o [28]:ezsat
+ success!
+  Trying to prove $equiv for \s0_wb_dat_o [29]:ezsat
+ success!
+  Trying to prove $equiv for \s0_wb_dat_o [30]:ezsat
+ success!
+  Trying to prove $equiv for \s0_wb_dat_o [31]:ezsat
+ success!
+ Grouping SAT models for \s0_wb_sel_o:
+  Trying to prove $equiv for \s0_wb_sel_o [0]:ezsat
+ success!
+  Trying to prove $equiv for \s0_wb_sel_o [1]:ezsat
+ success!
+  Trying to prove $equiv for \s0_wb_sel_o [2]:ezsat
+ success!
+  Trying to prove $equiv for \s0_wb_sel_o [3]:ezsat
+ success!
+  Trying to prove $equiv for \s0_wb_we_o:ezsat
+ success!
+  Trying to prove $equiv for \s0_wb_stb_o:ezsat
+ failed.
+  Trying to prove $equiv for \s0_wb_cyc_o:ezsat
+ failed.
+ Grouping SAT models for \s1_wb_adr_o:
+  Trying to prove $equiv for \s1_wb_adr_o [0]:ezsat
+ success!
+  Trying to prove $equiv for \s1_wb_adr_o [1]:ezsat
+ success!
+  Trying to prove $equiv for \s1_wb_adr_o [2]:ezsat
+ success!
+  Trying to prove $equiv for \s1_wb_adr_o [3]:ezsat
+ success!
+  Trying to prove $equiv for \s1_wb_adr_o [4]:ezsat
+ success!
+  Trying to prove $equiv for \s1_wb_adr_o [5]:ezsat
+ success!
+  Trying to prove $equiv for \s1_wb_adr_o [6]:ezsat
+ success!
+  Trying to prove $equiv for \s1_wb_adr_o [7]:ezsat
+ success!
+  Trying to prove $equiv for \s1_wb_adr_o [8]:ezsat
+ success!
+  Trying to prove $equiv for \s1_wb_adr_o [9]:ezsat
+ success!
+  Trying to prove $equiv for \s1_wb_adr_o [10]:ezsat
+ success!
+  Trying to prove $equiv for \s1_wb_adr_o [11]:ezsat
+ success!
+  Trying to prove $equiv for \s1_wb_adr_o [12]:ezsat
+ success!
+  Trying to prove $equiv for \s1_wb_adr_o [13]:ezsat
+ success!
+  Trying to prove $equiv for \s1_wb_adr_o [14]:ezsat
+ success!
+  Trying to prove $equiv for \s1_wb_adr_o [15]:ezsat
+ success!
+  Trying to prove $equiv for \s1_wb_adr_o [16]:ezsat
+ success!
+  Trying to prove $equiv for \s1_wb_adr_o [17]:ezsat
+ success!
+  Trying to prove $equiv for \s1_wb_adr_o [18]:ezsat
+ success!
+  Trying to prove $equiv for \s1_wb_adr_o [19]:ezsat
+ success!
+  Trying to prove $equiv for \s1_wb_adr_o [20]:ezsat
+ success!
+  Trying to prove $equiv for \s1_wb_adr_o [21]:ezsat
+ success!
+  Trying to prove $equiv for \s1_wb_adr_o [22]:ezsat
+ success!
+  Trying to prove $equiv for \s1_wb_adr_o [23]:ezsat
+ success!
+  Trying to prove $equiv for \s1_wb_adr_o [24]:ezsat
+ success!
+  Trying to prove $equiv for \s1_wb_adr_o [25]:ezsat
+ success!
+  Trying to prove $equiv for \s1_wb_adr_o [26]:ezsat
+ success!
+  Trying to prove $equiv for \s1_wb_adr_o [27]:ezsat
+ success!
+  Trying to prove $equiv for \s1_wb_adr_o [28]:ezsat
+ success!
+  Trying to prove $equiv for \s1_wb_adr_o [29]:ezsat
+ success!
+  Trying to prove $equiv for \s1_wb_adr_o [30]:ezsat
+ success!
+  Trying to prove $equiv for \s1_wb_adr_o [31]:ezsat
+ success!
+ Grouping SAT models for \s1_wb_dat_o:
+  Trying to prove $equiv for \s1_wb_dat_o [0]:ezsat
+ success!
+  Trying to prove $equiv for \s1_wb_dat_o [1]:ezsat
+ success!
+  Trying to prove $equiv for \s1_wb_dat_o [2]:ezsat
+ success!
+  Trying to prove $equiv for \s1_wb_dat_o [3]:ezsat
+ success!
+  Trying to prove $equiv for \s1_wb_dat_o [4]:ezsat
+ success!
+  Trying to prove $equiv for \s1_wb_dat_o [5]:ezsat
+ success!
+  Trying to prove $equiv for \s1_wb_dat_o [6]:ezsat
+ success!
+  Trying to prove $equiv for \s1_wb_dat_o [7]:ezsat
+ success!
+  Trying to prove $equiv for \s1_wb_dat_o [8]:ezsat
+ success!
+  Trying to prove $equiv for \s1_wb_dat_o [9]:ezsat
+ success!
+  Trying to prove $equiv for \s1_wb_dat_o [10]:ezsat
+ success!
+  Trying to prove $equiv for \s1_wb_dat_o [11]:ezsat
+ success!
+  Trying to prove $equiv for \s1_wb_dat_o [12]:ezsat
+ success!
+  Trying to prove $equiv for \s1_wb_dat_o [13]:ezsat
+ success!
+  Trying to prove $equiv for \s1_wb_dat_o [14]:ezsat
+ success!
+  Trying to prove $equiv for \s1_wb_dat_o [15]:ezsat
+ success!
+  Trying to prove $equiv for \s1_wb_dat_o [16]:ezsat
+ success!
+  Trying to prove $equiv for \s1_wb_dat_o [17]:ezsat
+ success!
+  Trying to prove $equiv for \s1_wb_dat_o [18]:ezsat
+ success!
+  Trying to prove $equiv for \s1_wb_dat_o [19]:ezsat
+ success!
+  Trying to prove $equiv for \s1_wb_dat_o [20]:ezsat
+ success!
+  Trying to prove $equiv for \s1_wb_dat_o [21]:ezsat
+ success!
+  Trying to prove $equiv for \s1_wb_dat_o [22]:ezsat
+ success!
+  Trying to prove $equiv for \s1_wb_dat_o [23]:ezsat
+ success!
+  Trying to prove $equiv for \s1_wb_dat_o [24]:ezsat
+ success!
+  Trying to prove $equiv for \s1_wb_dat_o [25]:ezsat
+ success!
+  Trying to prove $equiv for \s1_wb_dat_o [26]:ezsat
+ success!
+  Trying to prove $equiv for \s1_wb_dat_o [27]:ezsat
+ success!
+  Trying to prove $equiv for \s1_wb_dat_o [28]:ezsat
+ success!
+  Trying to prove $equiv for \s1_wb_dat_o [29]:ezsat
+ success!
+  Trying to prove $equiv for \s1_wb_dat_o [30]:ezsat
+ success!
+  Trying to prove $equiv for \s1_wb_dat_o [31]:ezsat
+ success!
+ Grouping SAT models for \s1_wb_sel_o:
+  Trying to prove $equiv for \s1_wb_sel_o [0]:ezsat
+ success!
+  Trying to prove $equiv for \s1_wb_sel_o [1]:ezsat
+ success!
+  Trying to prove $equiv for \s1_wb_sel_o [2]:ezsat
+ success!
+  Trying to prove $equiv for \s1_wb_sel_o [3]:ezsat
+ success!
+  Trying to prove $equiv for \s1_wb_we_o:ezsat
+ success!
+  Trying to prove $equiv for \s1_wb_stb_o:ezsat
+ failed.
+  Trying to prove $equiv for \s1_wb_cyc_o:ezsat
+ failed.
+ Grouping SAT models for \s2_wb_adr_o:
+  Trying to prove $equiv for \s2_wb_adr_o [0]:ezsat
+ success!
+  Trying to prove $equiv for \s2_wb_adr_o [1]:ezsat
+ success!
+  Trying to prove $equiv for \s2_wb_adr_o [2]:ezsat
+ success!
+  Trying to prove $equiv for \s2_wb_adr_o [3]:ezsat
+ success!
+  Trying to prove $equiv for \s2_wb_adr_o [4]:ezsat
+ success!
+  Trying to prove $equiv for \s2_wb_adr_o [5]:ezsat
+ success!
+  Trying to prove $equiv for \s2_wb_adr_o [6]:ezsat
+ success!
+  Trying to prove $equiv for \s2_wb_adr_o [7]:ezsat
+ success!
+  Trying to prove $equiv for \s2_wb_adr_o [8]:ezsat
+ success!
+  Trying to prove $equiv for \s2_wb_adr_o [9]:ezsat
+ success!
+  Trying to prove $equiv for \s2_wb_adr_o [10]:ezsat
+ success!
+  Trying to prove $equiv for \s2_wb_adr_o [11]:ezsat
+ success!
+  Trying to prove $equiv for \s2_wb_adr_o [12]:ezsat
+ success!
+  Trying to prove $equiv for \s2_wb_adr_o [13]:ezsat
+ success!
+  Trying to prove $equiv for \s2_wb_adr_o [14]:ezsat
+ success!
+  Trying to prove $equiv for \s2_wb_adr_o [15]:ezsat
+ success!
+  Trying to prove $equiv for \s2_wb_adr_o [16]:ezsat
+ success!
+  Trying to prove $equiv for \s2_wb_adr_o [17]:ezsat
+ success!
+  Trying to prove $equiv for \s2_wb_adr_o [18]:ezsat
+ success!
+  Trying to prove $equiv for \s2_wb_adr_o [19]:ezsat
+ success!
+  Trying to prove $equiv for \s2_wb_adr_o [20]:ezsat
+ success!
+  Trying to prove $equiv for \s2_wb_adr_o [21]:ezsat
+ success!
+  Trying to prove $equiv for \s2_wb_adr_o [22]:ezsat
+ success!
+  Trying to prove $equiv for \s2_wb_adr_o [23]:ezsat
+ success!
+  Trying to prove $equiv for \s2_wb_adr_o [24]:ezsat
+ success!
+  Trying to prove $equiv for \s2_wb_adr_o [25]:ezsat
+ success!
+  Trying to prove $equiv for \s2_wb_adr_o [26]:ezsat
+ success!
+  Trying to prove $equiv for \s2_wb_adr_o [27]:ezsat
+ success!
+  Trying to prove $equiv for \s2_wb_adr_o [28]:ezsat
+ success!
+  Trying to prove $equiv for \s2_wb_adr_o [29]:ezsat
+ success!
+  Trying to prove $equiv for \s2_wb_adr_o [30]:ezsat
+ success!
+  Trying to prove $equiv for \s2_wb_adr_o [31]:ezsat
+ success!
+ Grouping SAT models for \s2_wb_dat_o:
+  Trying to prove $equiv for \s2_wb_dat_o [0]:ezsat
+ success!
+  Trying to prove $equiv for \s2_wb_dat_o [1]:ezsat
+ success!
+  Trying to prove $equiv for \s2_wb_dat_o [2]:ezsat
+ success!
+  Trying to prove $equiv for \s2_wb_dat_o [3]:ezsat
+ success!
+  Trying to prove $equiv for \s2_wb_dat_o [4]:ezsat
+ success!
+  Trying to prove $equiv for \s2_wb_dat_o [5]:ezsat
+ success!
+  Trying to prove $equiv for \s2_wb_dat_o [6]:ezsat
+ success!
+  Trying to prove $equiv for \s2_wb_dat_o [7]:ezsat
+ success!
+  Trying to prove $equiv for \s2_wb_dat_o [8]:ezsat
+ success!
+  Trying to prove $equiv for \s2_wb_dat_o [9]:ezsat
+ success!
+  Trying to prove $equiv for \s2_wb_dat_o [10]:ezsat
+ success!
+  Trying to prove $equiv for \s2_wb_dat_o [11]:ezsat
+ success!
+  Trying to prove $equiv for \s2_wb_dat_o [12]:ezsat
+ success!
+  Trying to prove $equiv for \s2_wb_dat_o [13]:ezsat
+ success!
+  Trying to prove $equiv for \s2_wb_dat_o [14]:ezsat
+ success!
+  Trying to prove $equiv for \s2_wb_dat_o [15]:ezsat
+ success!
+  Trying to prove $equiv for \s2_wb_dat_o [16]:ezsat
+ success!
+  Trying to prove $equiv for \s2_wb_dat_o [17]:ezsat
+ success!
+  Trying to prove $equiv for \s2_wb_dat_o [18]:ezsat
+ success!
+  Trying to prove $equiv for \s2_wb_dat_o [19]:ezsat
+ success!
+  Trying to prove $equiv for \s2_wb_dat_o [20]:ezsat
+ success!
+  Trying to prove $equiv for \s2_wb_dat_o [21]:ezsat
+ success!
+  Trying to prove $equiv for \s2_wb_dat_o [22]:ezsat
+ success!
+  Trying to prove $equiv for \s2_wb_dat_o [23]:ezsat
+ success!
+  Trying to prove $equiv for \s2_wb_dat_o [24]:ezsat
+ success!
+  Trying to prove $equiv for \s2_wb_dat_o [25]:ezsat
+ success!
+  Trying to prove $equiv for \s2_wb_dat_o [26]:ezsat
+ success!
+  Trying to prove $equiv for \s2_wb_dat_o [27]:ezsat
+ success!
+  Trying to prove $equiv for \s2_wb_dat_o [28]:ezsat
+ success!
+  Trying to prove $equiv for \s2_wb_dat_o [29]:ezsat
+ success!
+  Trying to prove $equiv for \s2_wb_dat_o [30]:ezsat
+ success!
+  Trying to prove $equiv for \s2_wb_dat_o [31]:ezsat
+ success!
+ Grouping SAT models for \s2_wb_sel_o:
+  Trying to prove $equiv for \s2_wb_sel_o [0]:ezsat
+ success!
+  Trying to prove $equiv for \s2_wb_sel_o [1]:ezsat
+ success!
+  Trying to prove $equiv for \s2_wb_sel_o [2]:ezsat
+ success!
+  Trying to prove $equiv for \s2_wb_sel_o [3]:ezsat
+ success!
+  Trying to prove $equiv for \s2_wb_we_o:ezsat
+ success!
+  Trying to prove $equiv for \s2_wb_stb_o:ezsat
+ failed.
+  Trying to prove $equiv for \s2_wb_cyc_o:ezsat
+ failed.
+ Grouping SAT models for \s3_wb_adr_o:
+  Trying to prove $equiv for \s3_wb_adr_o [0]:ezsat
+ success!
+  Trying to prove $equiv for \s3_wb_adr_o [1]:ezsat
+ success!
+  Trying to prove $equiv for \s3_wb_adr_o [2]:ezsat
+ success!
+  Trying to prove $equiv for \s3_wb_adr_o [3]:ezsat
+ success!
+  Trying to prove $equiv for \s3_wb_adr_o [4]:ezsat
+ success!
+  Trying to prove $equiv for \s3_wb_adr_o [5]:ezsat
+ success!
+  Trying to prove $equiv for \s3_wb_adr_o [6]:ezsat
+ success!
+  Trying to prove $equiv for \s3_wb_adr_o [7]:ezsat
+ success!
+  Trying to prove $equiv for \s3_wb_adr_o [8]:ezsat
+ success!
+  Trying to prove $equiv for \s3_wb_adr_o [9]:ezsat
+ success!
+  Trying to prove $equiv for \s3_wb_adr_o [10]:ezsat
+ success!
+  Trying to prove $equiv for \s3_wb_adr_o [11]:ezsat
+ success!
+  Trying to prove $equiv for \s3_wb_adr_o [12]:ezsat
+ success!
+  Trying to prove $equiv for \s3_wb_adr_o [13]:ezsat
+ success!
+  Trying to prove $equiv for \s3_wb_adr_o [14]:ezsat
+ success!
+  Trying to prove $equiv for \s3_wb_adr_o [15]:ezsat
+ success!
+  Trying to prove $equiv for \s3_wb_adr_o [16]:ezsat
+ success!
+  Trying to prove $equiv for \s3_wb_adr_o [17]:ezsat
+ success!
+  Trying to prove $equiv for \s3_wb_adr_o [18]:ezsat
+ success!
+  Trying to prove $equiv for \s3_wb_adr_o [19]:ezsat
+ success!
+  Trying to prove $equiv for \s3_wb_adr_o [20]:ezsat
+ success!
+  Trying to prove $equiv for \s3_wb_adr_o [21]:ezsat
+ success!
+  Trying to prove $equiv for \s3_wb_adr_o [22]:ezsat
+ success!
+  Trying to prove $equiv for \s3_wb_adr_o [23]:ezsat
+ success!
+  Trying to prove $equiv for \s3_wb_adr_o [24]:ezsat
+ success!
+  Trying to prove $equiv for \s3_wb_adr_o [25]:ezsat
+ success!
+  Trying to prove $equiv for \s3_wb_adr_o [26]:ezsat
+ success!
+  Trying to prove $equiv for \s3_wb_adr_o [27]:ezsat
+ success!
+  Trying to prove $equiv for \s3_wb_adr_o [28]:ezsat
+ success!
+  Trying to prove $equiv for \s3_wb_adr_o [29]:ezsat
+ success!
+  Trying to prove $equiv for \s3_wb_adr_o [30]:ezsat
+ success!
+  Trying to prove $equiv for \s3_wb_adr_o [31]:ezsat
+ success!
+ Grouping SAT models for \s3_wb_dat_o:
+  Trying to prove $equiv for \s3_wb_dat_o [0]:ezsat
+ success!
+  Trying to prove $equiv for \s3_wb_dat_o [1]:ezsat
+ success!
+  Trying to prove $equiv for \s3_wb_dat_o [2]:ezsat
+ success!
+  Trying to prove $equiv for \s3_wb_dat_o [3]:ezsat
+ success!
+  Trying to prove $equiv for \s3_wb_dat_o [4]:ezsat
+ success!
+  Trying to prove $equiv for \s3_wb_dat_o [5]:ezsat
+ success!
+  Trying to prove $equiv for \s3_wb_dat_o [6]:ezsat
+ success!
+  Trying to prove $equiv for \s3_wb_dat_o [7]:ezsat
+ success!
+  Trying to prove $equiv for \s3_wb_dat_o [8]:ezsat
+ success!
+  Trying to prove $equiv for \s3_wb_dat_o [9]:ezsat
+ success!
+  Trying to prove $equiv for \s3_wb_dat_o [10]:ezsat
+ success!
+  Trying to prove $equiv for \s3_wb_dat_o [11]:ezsat
+ success!
+  Trying to prove $equiv for \s3_wb_dat_o [12]:ezsat
+ success!
+  Trying to prove $equiv for \s3_wb_dat_o [13]:ezsat
+ success!
+  Trying to prove $equiv for \s3_wb_dat_o [14]:ezsat
+ success!
+  Trying to prove $equiv for \s3_wb_dat_o [15]:ezsat
+ success!
+  Trying to prove $equiv for \s3_wb_dat_o [16]:ezsat
+ success!
+  Trying to prove $equiv for \s3_wb_dat_o [17]:ezsat
+ success!
+  Trying to prove $equiv for \s3_wb_dat_o [18]:ezsat
+ success!
+  Trying to prove $equiv for \s3_wb_dat_o [19]:ezsat
+ success!
+  Trying to prove $equiv for \s3_wb_dat_o [20]:ezsat
+ success!
+  Trying to prove $equiv for \s3_wb_dat_o [21]:ezsat
+ success!
+  Trying to prove $equiv for \s3_wb_dat_o [22]:ezsat
+ success!
+  Trying to prove $equiv for \s3_wb_dat_o [23]:ezsat
+ success!
+  Trying to prove $equiv for \s3_wb_dat_o [24]:ezsat
+ success!
+  Trying to prove $equiv for \s3_wb_dat_o [25]:ezsat
+ success!
+  Trying to prove $equiv for \s3_wb_dat_o [26]:ezsat
+ success!
+  Trying to prove $equiv for \s3_wb_dat_o [27]:ezsat
+ success!
+  Trying to prove $equiv for \s3_wb_dat_o [28]:ezsat
+ success!
+  Trying to prove $equiv for \s3_wb_dat_o [29]:ezsat
+ success!
+  Trying to prove $equiv for \s3_wb_dat_o [30]:ezsat
+ success!
+  Trying to prove $equiv for \s3_wb_dat_o [31]:ezsat
+ success!
+ Grouping SAT models for \s3_wb_sel_o:
+  Trying to prove $equiv for \s3_wb_sel_o [0]:ezsat
+ success!
+  Trying to prove $equiv for \s3_wb_sel_o [1]:ezsat
+ success!
+  Trying to prove $equiv for \s3_wb_sel_o [2]:ezsat
+ success!
+  Trying to prove $equiv for \s3_wb_sel_o [3]:ezsat
+ success!
+  Trying to prove $equiv for \s3_wb_we_o:ezsat
+ success!
+  Trying to prove $equiv for \s3_wb_stb_o:ezsat
+ failed.
+  Trying to prove $equiv for \s3_wb_cyc_o:ezsat
+ failed.
+ Grouping SAT models for \s4_wb_adr_o:
+  Trying to prove $equiv for \s4_wb_adr_o [0]:ezsat
+ success!
+  Trying to prove $equiv for \s4_wb_adr_o [1]:ezsat
+ success!
+  Trying to prove $equiv for \s4_wb_adr_o [2]:ezsat
+ success!
+  Trying to prove $equiv for \s4_wb_adr_o [3]:ezsat
+ success!
+  Trying to prove $equiv for \s4_wb_adr_o [4]:ezsat
+ success!
+  Trying to prove $equiv for \s4_wb_adr_o [5]:ezsat
+ success!
+  Trying to prove $equiv for \s4_wb_adr_o [6]:ezsat
+ success!
+  Trying to prove $equiv for \s4_wb_adr_o [7]:ezsat
+ success!
+  Trying to prove $equiv for \s4_wb_adr_o [8]:ezsat
+ success!
+  Trying to prove $equiv for \s4_wb_adr_o [9]:ezsat
+ success!
+  Trying to prove $equiv for \s4_wb_adr_o [10]:ezsat
+ success!
+  Trying to prove $equiv for \s4_wb_adr_o [11]:ezsat
+ success!
+  Trying to prove $equiv for \s4_wb_adr_o [12]:ezsat
+ success!
+  Trying to prove $equiv for \s4_wb_adr_o [13]:ezsat
+ success!
+  Trying to prove $equiv for \s4_wb_adr_o [14]:ezsat
+ success!
+  Trying to prove $equiv for \s4_wb_adr_o [15]:ezsat
+ success!
+  Trying to prove $equiv for \s4_wb_adr_o [16]:ezsat
+ success!
+  Trying to prove $equiv for \s4_wb_adr_o [17]:ezsat
+ success!
+  Trying to prove $equiv for \s4_wb_adr_o [18]:ezsat
+ success!
+  Trying to prove $equiv for \s4_wb_adr_o [19]:ezsat
+ success!
+  Trying to prove $equiv for \s4_wb_adr_o [20]:ezsat
+ success!
+  Trying to prove $equiv for \s4_wb_adr_o [21]:ezsat
+ success!
+  Trying to prove $equiv for \s4_wb_adr_o [22]:ezsat
+ success!
+  Trying to prove $equiv for \s4_wb_adr_o [23]:ezsat
+ success!
+  Trying to prove $equiv for \s4_wb_adr_o [24]:ezsat
+ success!
+  Trying to prove $equiv for \s4_wb_adr_o [25]:ezsat
+ success!
+  Trying to prove $equiv for \s4_wb_adr_o [26]:ezsat
+ success!
+  Trying to prove $equiv for \s4_wb_adr_o [27]:ezsat
+ success!
+  Trying to prove $equiv for \s4_wb_adr_o [28]:ezsat
+ success!
+  Trying to prove $equiv for \s4_wb_adr_o [29]:ezsat
+ success!
+  Trying to prove $equiv for \s4_wb_adr_o [30]:ezsat
+ success!
+  Trying to prove $equiv for \s4_wb_adr_o [31]:ezsat
+ success!
+ Grouping SAT models for \s4_wb_dat_o:
+  Trying to prove $equiv for \s4_wb_dat_o [0]:ezsat
+ success!
+  Trying to prove $equiv for \s4_wb_dat_o [1]:ezsat
+ success!
+  Trying to prove $equiv for \s4_wb_dat_o [2]:ezsat
+ success!
+  Trying to prove $equiv for \s4_wb_dat_o [3]:ezsat
+ success!
+  Trying to prove $equiv for \s4_wb_dat_o [4]:ezsat
+ success!
+  Trying to prove $equiv for \s4_wb_dat_o [5]:ezsat
+ success!
+  Trying to prove $equiv for \s4_wb_dat_o [6]:ezsat
+ success!
+  Trying to prove $equiv for \s4_wb_dat_o [7]:ezsat
+ success!
+  Trying to prove $equiv for \s4_wb_dat_o [8]:ezsat
+ success!
+  Trying to prove $equiv for \s4_wb_dat_o [9]:ezsat
+ success!
+  Trying to prove $equiv for \s4_wb_dat_o [10]:ezsat
+ success!
+  Trying to prove $equiv for \s4_wb_dat_o [11]:ezsat
+ success!
+  Trying to prove $equiv for \s4_wb_dat_o [12]:ezsat
+ success!
+  Trying to prove $equiv for \s4_wb_dat_o [13]:ezsat
+ success!
+  Trying to prove $equiv for \s4_wb_dat_o [14]:ezsat
+ success!
+  Trying to prove $equiv for \s4_wb_dat_o [15]:ezsat
+ success!
+  Trying to prove $equiv for \s4_wb_dat_o [16]:ezsat
+ success!
+  Trying to prove $equiv for \s4_wb_dat_o [17]:ezsat
+ success!
+  Trying to prove $equiv for \s4_wb_dat_o [18]:ezsat
+ success!
+  Trying to prove $equiv for \s4_wb_dat_o [19]:ezsat
+ success!
+  Trying to prove $equiv for \s4_wb_dat_o [20]:ezsat
+ success!
+  Trying to prove $equiv for \s4_wb_dat_o [21]:ezsat
+ success!
+  Trying to prove $equiv for \s4_wb_dat_o [22]:ezsat
+ success!
+  Trying to prove $equiv for \s4_wb_dat_o [23]:ezsat
+ success!
+  Trying to prove $equiv for \s4_wb_dat_o [24]:ezsat
+ success!
+  Trying to prove $equiv for \s4_wb_dat_o [25]:ezsat
+ success!
+  Trying to prove $equiv for \s4_wb_dat_o [26]:ezsat
+ success!
+  Trying to prove $equiv for \s4_wb_dat_o [27]:ezsat
+ success!
+  Trying to prove $equiv for \s4_wb_dat_o [28]:ezsat
+ success!
+  Trying to prove $equiv for \s4_wb_dat_o [29]:ezsat
+ success!
+  Trying to prove $equiv for \s4_wb_dat_o [30]:ezsat
+ success!
+  Trying to prove $equiv for \s4_wb_dat_o [31]:ezsat
+ success!
+ Grouping SAT models for \s4_wb_sel_o:
+  Trying to prove $equiv for \s4_wb_sel_o [0]:ezsat
+ success!
+  Trying to prove $equiv for \s4_wb_sel_o [1]:ezsat
+ success!
+  Trying to prove $equiv for \s4_wb_sel_o [2]:ezsat
+ success!
+  Trying to prove $equiv for \s4_wb_sel_o [3]:ezsat
+ success!
+  Trying to prove $equiv for \s4_wb_we_o:ezsat
+ success!
+  Trying to prove $equiv for \s4_wb_stb_o:ezsat
+ failed.
+  Trying to prove $equiv for \s4_wb_cyc_o:ezsat
+ failed.
+ Grouping SAT models for \s5_wb_adr_o:
+  Trying to prove $equiv for \s5_wb_adr_o [0]:ezsat
+ success!
+  Trying to prove $equiv for \s5_wb_adr_o [1]:ezsat
+ success!
+  Trying to prove $equiv for \s5_wb_adr_o [2]:ezsat
+ success!
+  Trying to prove $equiv for \s5_wb_adr_o [3]:ezsat
+ success!
+  Trying to prove $equiv for \s5_wb_adr_o [4]:ezsat
+ success!
+  Trying to prove $equiv for \s5_wb_adr_o [5]:ezsat
+ success!
+  Trying to prove $equiv for \s5_wb_adr_o [6]:ezsat
+ success!
+  Trying to prove $equiv for \s5_wb_adr_o [7]:ezsat
+ success!
+  Trying to prove $equiv for \s5_wb_adr_o [8]:ezsat
+ success!
+  Trying to prove $equiv for \s5_wb_adr_o [9]:ezsat
+ success!
+  Trying to prove $equiv for \s5_wb_adr_o [10]:ezsat
+ success!
+  Trying to prove $equiv for \s5_wb_adr_o [11]:ezsat
+ success!
+  Trying to prove $equiv for \s5_wb_adr_o [12]:ezsat
+ success!
+  Trying to prove $equiv for \s5_wb_adr_o [13]:ezsat
+ success!
+  Trying to prove $equiv for \s5_wb_adr_o [14]:ezsat
+ success!
+  Trying to prove $equiv for \s5_wb_adr_o [15]:ezsat
+ success!
+  Trying to prove $equiv for \s5_wb_adr_o [16]:ezsat
+ success!
+  Trying to prove $equiv for \s5_wb_adr_o [17]:ezsat
+ success!
+  Trying to prove $equiv for \s5_wb_adr_o [18]:ezsat
+ success!
+  Trying to prove $equiv for \s5_wb_adr_o [19]:ezsat
+ success!
+  Trying to prove $equiv for \s5_wb_adr_o [20]:ezsat
+ success!
+  Trying to prove $equiv for \s5_wb_adr_o [21]:ezsat
+ success!
+  Trying to prove $equiv for \s5_wb_adr_o [22]:ezsat
+ success!
+  Trying to prove $equiv for \s5_wb_adr_o [23]:ezsat
+ success!
+  Trying to prove $equiv for \s5_wb_adr_o [24]:ezsat
+ success!
+  Trying to prove $equiv for \s5_wb_adr_o [25]:ezsat
+ success!
+  Trying to prove $equiv for \s5_wb_adr_o [26]:ezsat
+ success!
+  Trying to prove $equiv for \s5_wb_adr_o [27]:ezsat
+ success!
+  Trying to prove $equiv for \s5_wb_adr_o [28]:ezsat
+ success!
+  Trying to prove $equiv for \s5_wb_adr_o [29]:ezsat
+ success!
+  Trying to prove $equiv for \s5_wb_adr_o [30]:ezsat
+ success!
+  Trying to prove $equiv for \s5_wb_adr_o [31]:ezsat
+ success!
+ Grouping SAT models for \s5_wb_dat_o:
+  Trying to prove $equiv for \s5_wb_dat_o [0]:ezsat
+ success!
+  Trying to prove $equiv for \s5_wb_dat_o [1]:ezsat
+ success!
+  Trying to prove $equiv for \s5_wb_dat_o [2]:ezsat
+ success!
+  Trying to prove $equiv for \s5_wb_dat_o [3]:ezsat
+ success!
+  Trying to prove $equiv for \s5_wb_dat_o [4]:ezsat
+ success!
+  Trying to prove $equiv for \s5_wb_dat_o [5]:ezsat
+ success!
+  Trying to prove $equiv for \s5_wb_dat_o [6]:ezsat
+ success!
+  Trying to prove $equiv for \s5_wb_dat_o [7]:ezsat
+ success!
+  Trying to prove $equiv for \s5_wb_dat_o [8]:ezsat
+ success!
+  Trying to prove $equiv for \s5_wb_dat_o [9]:ezsat
+ success!
+  Trying to prove $equiv for \s5_wb_dat_o [10]:ezsat
+ success!
+  Trying to prove $equiv for \s5_wb_dat_o [11]:ezsat
+ success!
+  Trying to prove $equiv for \s5_wb_dat_o [12]:ezsat
+ success!
+  Trying to prove $equiv for \s5_wb_dat_o [13]:ezsat
+ success!
+  Trying to prove $equiv for \s5_wb_dat_o [14]:ezsat
+ success!
+  Trying to prove $equiv for \s5_wb_dat_o [15]:ezsat
+ success!
+  Trying to prove $equiv for \s5_wb_dat_o [16]:ezsat
+ success!
+  Trying to prove $equiv for \s5_wb_dat_o [17]:ezsat
+ success!
+  Trying to prove $equiv for \s5_wb_dat_o [18]:ezsat
+ success!
+  Trying to prove $equiv for \s5_wb_dat_o [19]:ezsat
+ success!
+  Trying to prove $equiv for \s5_wb_dat_o [20]:ezsat
+ success!
+  Trying to prove $equiv for \s5_wb_dat_o [21]:ezsat
+ success!
+  Trying to prove $equiv for \s5_wb_dat_o [22]:ezsat
+ success!
+  Trying to prove $equiv for \s5_wb_dat_o [23]:ezsat
+ success!
+  Trying to prove $equiv for \s5_wb_dat_o [24]:ezsat
+ success!
+  Trying to prove $equiv for \s5_wb_dat_o [25]:ezsat
+ success!
+  Trying to prove $equiv for \s5_wb_dat_o [26]:ezsat
+ success!
+  Trying to prove $equiv for \s5_wb_dat_o [27]:ezsat
+ success!
+  Trying to prove $equiv for \s5_wb_dat_o [28]:ezsat
+ success!
+  Trying to prove $equiv for \s5_wb_dat_o [29]:ezsat
+ success!
+  Trying to prove $equiv for \s5_wb_dat_o [30]:ezsat
+ success!
+  Trying to prove $equiv for \s5_wb_dat_o [31]:ezsat
+ success!
+ Grouping SAT models for \s5_wb_sel_o:
+  Trying to prove $equiv for \s5_wb_sel_o [0]:ezsat
+ success!
+  Trying to prove $equiv for \s5_wb_sel_o [1]:ezsat
+ success!
+  Trying to prove $equiv for \s5_wb_sel_o [2]:ezsat
+ success!
+  Trying to prove $equiv for \s5_wb_sel_o [3]:ezsat
+ success!
+  Trying to prove $equiv for \s5_wb_we_o:ezsat
+ success!
+  Trying to prove $equiv for \s5_wb_stb_o:ezsat
+ failed.
+  Trying to prove $equiv for \s5_wb_cyc_o:ezsat
+ failed.
+ Grouping SAT models for \s6_wb_adr_o:
+  Trying to prove $equiv for \s6_wb_adr_o [0]:ezsat
+ success!
+  Trying to prove $equiv for \s6_wb_adr_o [1]:ezsat
+ success!
+  Trying to prove $equiv for \s6_wb_adr_o [2]:ezsat
+ success!
+  Trying to prove $equiv for \s6_wb_adr_o [3]:ezsat
+ success!
+  Trying to prove $equiv for \s6_wb_adr_o [4]:ezsat
+ success!
+  Trying to prove $equiv for \s6_wb_adr_o [5]:ezsat
+ success!
+  Trying to prove $equiv for \s6_wb_adr_o [6]:ezsat
+ success!
+  Trying to prove $equiv for \s6_wb_adr_o [7]:ezsat
+ success!
+  Trying to prove $equiv for \s6_wb_adr_o [8]:ezsat
+ success!
+  Trying to prove $equiv for \s6_wb_adr_o [9]:ezsat
+ success!
+  Trying to prove $equiv for \s6_wb_adr_o [10]:ezsat
+ success!
+  Trying to prove $equiv for \s6_wb_adr_o [11]:ezsat
+ success!
+  Trying to prove $equiv for \s6_wb_adr_o [12]:ezsat
+ success!
+  Trying to prove $equiv for \s6_wb_adr_o [13]:ezsat
+ success!
+  Trying to prove $equiv for \s6_wb_adr_o [14]:ezsat
+ success!
+  Trying to prove $equiv for \s6_wb_adr_o [15]:ezsat
+ success!
+  Trying to prove $equiv for \s6_wb_adr_o [16]:ezsat
+ success!
+  Trying to prove $equiv for \s6_wb_adr_o [17]:ezsat
+ success!
+  Trying to prove $equiv for \s6_wb_adr_o [18]:ezsat
+ success!
+  Trying to prove $equiv for \s6_wb_adr_o [19]:ezsat
+ success!
+  Trying to prove $equiv for \s6_wb_adr_o [20]:ezsat
+ success!
+  Trying to prove $equiv for \s6_wb_adr_o [21]:ezsat
+ success!
+  Trying to prove $equiv for \s6_wb_adr_o [22]:ezsat
+ success!
+  Trying to prove $equiv for \s6_wb_adr_o [23]:ezsat
+ success!
+  Trying to prove $equiv for \s6_wb_adr_o [24]:ezsat
+ success!
+  Trying to prove $equiv for \s6_wb_adr_o [25]:ezsat
+ success!
+  Trying to prove $equiv for \s6_wb_adr_o [26]:ezsat
+ success!
+  Trying to prove $equiv for \s6_wb_adr_o [27]:ezsat
+ success!
+  Trying to prove $equiv for \s6_wb_adr_o [28]:ezsat
+ success!
+  Trying to prove $equiv for \s6_wb_adr_o [29]:ezsat
+ success!
+  Trying to prove $equiv for \s6_wb_adr_o [30]:ezsat
+ success!
+  Trying to prove $equiv for \s6_wb_adr_o [31]:ezsat
+ success!
+ Grouping SAT models for \s6_wb_dat_o:
+  Trying to prove $equiv for \s6_wb_dat_o [0]:ezsat
+ success!
+  Trying to prove $equiv for \s6_wb_dat_o [1]:ezsat
+ success!
+  Trying to prove $equiv for \s6_wb_dat_o [2]:ezsat
+ success!
+  Trying to prove $equiv for \s6_wb_dat_o [3]:ezsat
+ success!
+  Trying to prove $equiv for \s6_wb_dat_o [4]:ezsat
+ success!
+  Trying to prove $equiv for \s6_wb_dat_o [5]:ezsat
+ success!
+  Trying to prove $equiv for \s6_wb_dat_o [6]:ezsat
+ success!
+  Trying to prove $equiv for \s6_wb_dat_o [7]:ezsat
+ success!
+  Trying to prove $equiv for \s6_wb_dat_o [8]:ezsat
+ success!
+  Trying to prove $equiv for \s6_wb_dat_o [9]:ezsat
+ success!
+  Trying to prove $equiv for \s6_wb_dat_o [10]:ezsat
+ success!
+  Trying to prove $equiv for \s6_wb_dat_o [11]:ezsat
+ success!
+  Trying to prove $equiv for \s6_wb_dat_o [12]:ezsat
+ success!
+  Trying to prove $equiv for \s6_wb_dat_o [13]:ezsat
+ success!
+  Trying to prove $equiv for \s6_wb_dat_o [14]:ezsat
+ success!
+  Trying to prove $equiv for \s6_wb_dat_o [15]:ezsat
+ success!
+  Trying to prove $equiv for \s6_wb_dat_o [16]:ezsat
+ success!
+  Trying to prove $equiv for \s6_wb_dat_o [17]:ezsat
+ success!
+  Trying to prove $equiv for \s6_wb_dat_o [18]:ezsat
+ success!
+  Trying to prove $equiv for \s6_wb_dat_o [19]:ezsat
+ success!
+  Trying to prove $equiv for \s6_wb_dat_o [20]:ezsat
+ success!
+  Trying to prove $equiv for \s6_wb_dat_o [21]:ezsat
+ success!
+  Trying to prove $equiv for \s6_wb_dat_o [22]:ezsat
+ success!
+  Trying to prove $equiv for \s6_wb_dat_o [23]:ezsat
+ success!
+  Trying to prove $equiv for \s6_wb_dat_o [24]:ezsat
+ success!
+  Trying to prove $equiv for \s6_wb_dat_o [25]:ezsat
+ success!
+  Trying to prove $equiv for \s6_wb_dat_o [26]:ezsat
+ success!
+  Trying to prove $equiv for \s6_wb_dat_o [27]:ezsat
+ success!
+  Trying to prove $equiv for \s6_wb_dat_o [28]:ezsat
+ success!
+  Trying to prove $equiv for \s6_wb_dat_o [29]:ezsat
+ success!
+  Trying to prove $equiv for \s6_wb_dat_o [30]:ezsat
+ success!
+  Trying to prove $equiv for \s6_wb_dat_o [31]:ezsat
+ success!
+ Grouping SAT models for \s6_wb_sel_o:
+  Trying to prove $equiv for \s6_wb_sel_o [0]:ezsat
+ success!
+  Trying to prove $equiv for \s6_wb_sel_o [1]:ezsat
+ success!
+  Trying to prove $equiv for \s6_wb_sel_o [2]:ezsat
+ success!
+  Trying to prove $equiv for \s6_wb_sel_o [3]:ezsat
+ success!
+  Trying to prove $equiv for \s6_wb_we_o:ezsat
+ success!
+  Trying to prove $equiv for \s6_wb_stb_o:ezsat
+ failed.
+  Trying to prove $equiv for \s6_wb_cyc_o:ezsat
+ failed.
+ Grouping SAT models for \s7_wb_adr_o:
+  Trying to prove $equiv for \s7_wb_adr_o [0]:ezsat
+ success!
+  Trying to prove $equiv for \s7_wb_adr_o [1]:ezsat
+ success!
+  Trying to prove $equiv for \s7_wb_adr_o [2]:ezsat
+ success!
+  Trying to prove $equiv for \s7_wb_adr_o [3]:ezsat
+ success!
+  Trying to prove $equiv for \s7_wb_adr_o [4]:ezsat
+ success!
+  Trying to prove $equiv for \s7_wb_adr_o [5]:ezsat
+ success!
+  Trying to prove $equiv for \s7_wb_adr_o [6]:ezsat
+ success!
+  Trying to prove $equiv for \s7_wb_adr_o [7]:ezsat
+ success!
+  Trying to prove $equiv for \s7_wb_adr_o [8]:ezsat
+ success!
+  Trying to prove $equiv for \s7_wb_adr_o [9]:ezsat
+ success!
+  Trying to prove $equiv for \s7_wb_adr_o [10]:ezsat
+ success!
+  Trying to prove $equiv for \s7_wb_adr_o [11]:ezsat
+ success!
+  Trying to prove $equiv for \s7_wb_adr_o [12]:ezsat
+ success!
+  Trying to prove $equiv for \s7_wb_adr_o [13]:ezsat
+ success!
+  Trying to prove $equiv for \s7_wb_adr_o [14]:ezsat
+ success!
+  Trying to prove $equiv for \s7_wb_adr_o [15]:ezsat
+ success!
+  Trying to prove $equiv for \s7_wb_adr_o [16]:ezsat
+ success!
+  Trying to prove $equiv for \s7_wb_adr_o [17]:ezsat
+ success!
+  Trying to prove $equiv for \s7_wb_adr_o [18]:ezsat
+ success!
+  Trying to prove $equiv for \s7_wb_adr_o [19]:ezsat
+ success!
+  Trying to prove $equiv for \s7_wb_adr_o [20]:ezsat
+ success!
+  Trying to prove $equiv for \s7_wb_adr_o [21]:ezsat
+ success!
+  Trying to prove $equiv for \s7_wb_adr_o [22]:ezsat
+ success!
+  Trying to prove $equiv for \s7_wb_adr_o [23]:ezsat
+ success!
+  Trying to prove $equiv for \s7_wb_adr_o [24]:ezsat
+ success!
+  Trying to prove $equiv for \s7_wb_adr_o [25]:ezsat
+ success!
+  Trying to prove $equiv for \s7_wb_adr_o [26]:ezsat
+ success!
+  Trying to prove $equiv for \s7_wb_adr_o [27]:ezsat
+ success!
+  Trying to prove $equiv for \s7_wb_adr_o [28]:ezsat
+ success!
+  Trying to prove $equiv for \s7_wb_adr_o [29]:ezsat
+ success!
+  Trying to prove $equiv for \s7_wb_adr_o [30]:ezsat
+ success!
+  Trying to prove $equiv for \s7_wb_adr_o [31]:ezsat
+ success!
+ Grouping SAT models for \s7_wb_dat_o:
+  Trying to prove $equiv for \s7_wb_dat_o [0]:ezsat
+ success!
+  Trying to prove $equiv for \s7_wb_dat_o [1]:ezsat
+ success!
+  Trying to prove $equiv for \s7_wb_dat_o [2]:ezsat
+ success!
+  Trying to prove $equiv for \s7_wb_dat_o [3]:ezsat
+ success!
+  Trying to prove $equiv for \s7_wb_dat_o [4]:ezsat
+ success!
+  Trying to prove $equiv for \s7_wb_dat_o [5]:ezsat
+ success!
+  Trying to prove $equiv for \s7_wb_dat_o [6]:ezsat
+ success!
+  Trying to prove $equiv for \s7_wb_dat_o [7]:ezsat
+ success!
+  Trying to prove $equiv for \s7_wb_dat_o [8]:ezsat
+ success!
+  Trying to prove $equiv for \s7_wb_dat_o [9]:ezsat
+ success!
+  Trying to prove $equiv for \s7_wb_dat_o [10]:ezsat
+ success!
+  Trying to prove $equiv for \s7_wb_dat_o [11]:ezsat
+ success!
+  Trying to prove $equiv for \s7_wb_dat_o [12]:ezsat
+ success!
+  Trying to prove $equiv for \s7_wb_dat_o [13]:ezsat
+ success!
+  Trying to prove $equiv for \s7_wb_dat_o [14]:ezsat
+ success!
+  Trying to prove $equiv for \s7_wb_dat_o [15]:ezsat
+ success!
+  Trying to prove $equiv for \s7_wb_dat_o [16]:ezsat
+ success!
+  Trying to prove $equiv for \s7_wb_dat_o [17]:ezsat
+ success!
+  Trying to prove $equiv for \s7_wb_dat_o [18]:ezsat
+ success!
+  Trying to prove $equiv for \s7_wb_dat_o [19]:ezsat
+ success!
+  Trying to prove $equiv for \s7_wb_dat_o [20]:ezsat
+ success!
+  Trying to prove $equiv for \s7_wb_dat_o [21]:ezsat
+ success!
+  Trying to prove $equiv for \s7_wb_dat_o [22]:ezsat
+ success!
+  Trying to prove $equiv for \s7_wb_dat_o [23]:ezsat
+ success!
+  Trying to prove $equiv for \s7_wb_dat_o [24]:ezsat
+ success!
+  Trying to prove $equiv for \s7_wb_dat_o [25]:ezsat
+ success!
+  Trying to prove $equiv for \s7_wb_dat_o [26]:ezsat
+ success!
+  Trying to prove $equiv for \s7_wb_dat_o [27]:ezsat
+ success!
+  Trying to prove $equiv for \s7_wb_dat_o [28]:ezsat
+ success!
+  Trying to prove $equiv for \s7_wb_dat_o [29]:ezsat
+ success!
+  Trying to prove $equiv for \s7_wb_dat_o [30]:ezsat
+ success!
+  Trying to prove $equiv for \s7_wb_dat_o [31]:ezsat
+ success!
+ Grouping SAT models for \s7_wb_sel_o:
+  Trying to prove $equiv for \s7_wb_sel_o [0]:ezsat
+ success!
+  Trying to prove $equiv for \s7_wb_sel_o [1]:ezsat
+ success!
+  Trying to prove $equiv for \s7_wb_sel_o [2]:ezsat
+ success!
+  Trying to prove $equiv for \s7_wb_sel_o [3]:ezsat
+ success!
+  Trying to prove $equiv for \s7_wb_we_o:ezsat
+ success!
+  Trying to prove $equiv for \s7_wb_stb_o:ezsat
+ failed.
+  Trying to prove $equiv for \s7_wb_cyc_o:ezsat
+ failed.
+ Grouping SAT models for \s8_wb_adr_o:
+  Trying to prove $equiv for \s8_wb_adr_o [0]:ezsat
+ success!
+  Trying to prove $equiv for \s8_wb_adr_o [1]:ezsat
+ success!
+  Trying to prove $equiv for \s8_wb_adr_o [2]:ezsat
+ success!
+  Trying to prove $equiv for \s8_wb_adr_o [3]:ezsat
+ success!
+  Trying to prove $equiv for \s8_wb_adr_o [4]:ezsat
+ success!
+  Trying to prove $equiv for \s8_wb_adr_o [5]:ezsat
+ success!
+  Trying to prove $equiv for \s8_wb_adr_o [6]:ezsat
+ success!
+  Trying to prove $equiv for \s8_wb_adr_o [7]:ezsat
+ success!
+  Trying to prove $equiv for \s8_wb_adr_o [8]:ezsat
+ success!
+  Trying to prove $equiv for \s8_wb_adr_o [9]:ezsat
+ success!
+  Trying to prove $equiv for \s8_wb_adr_o [10]:ezsat
+ success!
+  Trying to prove $equiv for \s8_wb_adr_o [11]:ezsat
+ success!
+  Trying to prove $equiv for \s8_wb_adr_o [12]:ezsat
+ success!
+  Trying to prove $equiv for \s8_wb_adr_o [13]:ezsat
+ success!
+  Trying to prove $equiv for \s8_wb_adr_o [14]:ezsat
+ success!
+  Trying to prove $equiv for \s8_wb_adr_o [15]:ezsat
+ success!
+  Trying to prove $equiv for \s8_wb_adr_o [16]:ezsat
+ success!
+  Trying to prove $equiv for \s8_wb_adr_o [17]:ezsat
+ success!
+  Trying to prove $equiv for \s8_wb_adr_o [18]:ezsat
+ success!
+  Trying to prove $equiv for \s8_wb_adr_o [19]:ezsat
+ success!
+  Trying to prove $equiv for \s8_wb_adr_o [20]:ezsat
+ success!
+  Trying to prove $equiv for \s8_wb_adr_o [21]:ezsat
+ success!
+  Trying to prove $equiv for \s8_wb_adr_o [22]:ezsat
+ success!
+  Trying to prove $equiv for \s8_wb_adr_o [23]:ezsat
+ success!
+  Trying to prove $equiv for \s8_wb_adr_o [24]:ezsat
+ success!
+  Trying to prove $equiv for \s8_wb_adr_o [25]:ezsat
+ success!
+  Trying to prove $equiv for \s8_wb_adr_o [26]:ezsat
+ success!
+  Trying to prove $equiv for \s8_wb_adr_o [27]:ezsat
+ success!
+  Trying to prove $equiv for \s8_wb_adr_o [28]:ezsat
+ success!
+  Trying to prove $equiv for \s8_wb_adr_o [29]:ezsat
+ success!
+  Trying to prove $equiv for \s8_wb_adr_o [30]:ezsat
+ success!
+  Trying to prove $equiv for \s8_wb_adr_o [31]:ezsat
+ success!
+ Grouping SAT models for \s8_wb_dat_o:
+  Trying to prove $equiv for \s8_wb_dat_o [0]:ezsat
+ success!
+  Trying to prove $equiv for \s8_wb_dat_o [1]:ezsat
+ success!
+  Trying to prove $equiv for \s8_wb_dat_o [2]:ezsat
+ success!
+  Trying to prove $equiv for \s8_wb_dat_o [3]:ezsat
+ success!
+  Trying to prove $equiv for \s8_wb_dat_o [4]:ezsat
+ success!
+  Trying to prove $equiv for \s8_wb_dat_o [5]:ezsat
+ success!
+  Trying to prove $equiv for \s8_wb_dat_o [6]:ezsat
+ success!
+  Trying to prove $equiv for \s8_wb_dat_o [7]:ezsat
+ success!
+  Trying to prove $equiv for \s8_wb_dat_o [8]:ezsat
+ success!
+  Trying to prove $equiv for \s8_wb_dat_o [9]:ezsat
+ success!
+  Trying to prove $equiv for \s8_wb_dat_o [10]:ezsat
+ success!
+  Trying to prove $equiv for \s8_wb_dat_o [11]:ezsat
+ success!
+  Trying to prove $equiv for \s8_wb_dat_o [12]:ezsat
+ success!
+  Trying to prove $equiv for \s8_wb_dat_o [13]:ezsat
+ success!
+  Trying to prove $equiv for \s8_wb_dat_o [14]:ezsat
+ success!
+  Trying to prove $equiv for \s8_wb_dat_o [15]:ezsat
+ success!
+  Trying to prove $equiv for \s8_wb_dat_o [16]:ezsat
+ success!
+  Trying to prove $equiv for \s8_wb_dat_o [17]:ezsat
+ success!
+  Trying to prove $equiv for \s8_wb_dat_o [18]:ezsat
+ success!
+  Trying to prove $equiv for \s8_wb_dat_o [19]:ezsat
+ success!
+  Trying to prove $equiv for \s8_wb_dat_o [20]:ezsat
+ success!
+  Trying to prove $equiv for \s8_wb_dat_o [21]:ezsat
+ success!
+  Trying to prove $equiv for \s8_wb_dat_o [22]:ezsat
+ success!
+  Trying to prove $equiv for \s8_wb_dat_o [23]:ezsat
+ success!
+  Trying to prove $equiv for \s8_wb_dat_o [24]:ezsat
+ success!
+  Trying to prove $equiv for \s8_wb_dat_o [25]:ezsat
+ success!
+  Trying to prove $equiv for \s8_wb_dat_o [26]:ezsat
+ success!
+  Trying to prove $equiv for \s8_wb_dat_o [27]:ezsat
+ success!
+  Trying to prove $equiv for \s8_wb_dat_o [28]:ezsat
+ success!
+  Trying to prove $equiv for \s8_wb_dat_o [29]:ezsat
+ success!
+  Trying to prove $equiv for \s8_wb_dat_o [30]:ezsat
+ success!
+  Trying to prove $equiv for \s8_wb_dat_o [31]:ezsat
+ success!
+ Grouping SAT models for \s8_wb_sel_o:
+  Trying to prove $equiv for \s8_wb_sel_o [0]:ezsat
+ success!
+  Trying to prove $equiv for \s8_wb_sel_o [1]:ezsat
+ success!
+  Trying to prove $equiv for \s8_wb_sel_o [2]:ezsat
+ success!
+  Trying to prove $equiv for \s8_wb_sel_o [3]:ezsat
+ success!
+  Trying to prove $equiv for \s8_wb_we_o:ezsat
+ success!
+  Trying to prove $equiv for \s8_wb_stb_o:ezsat
+ failed.
+  Trying to prove $equiv for \s8_wb_cyc_o:ezsat
+ failed.
+ Grouping SAT models for \s9_wb_adr_o:
+  Trying to prove $equiv for \s9_wb_adr_o [0]:ezsat
+ success!
+  Trying to prove $equiv for \s9_wb_adr_o [1]:ezsat
+ success!
+  Trying to prove $equiv for \s9_wb_adr_o [2]:ezsat
+ success!
+  Trying to prove $equiv for \s9_wb_adr_o [3]:ezsat
+ success!
+  Trying to prove $equiv for \s9_wb_adr_o [4]:ezsat
+ success!
+  Trying to prove $equiv for \s9_wb_adr_o [5]:ezsat
+ success!
+  Trying to prove $equiv for \s9_wb_adr_o [6]:ezsat
+ success!
+  Trying to prove $equiv for \s9_wb_adr_o [7]:ezsat
+ success!
+  Trying to prove $equiv for \s9_wb_adr_o [8]:ezsat
+ success!
+  Trying to prove $equiv for \s9_wb_adr_o [9]:ezsat
+ success!
+  Trying to prove $equiv for \s9_wb_adr_o [10]:ezsat
+ success!
+  Trying to prove $equiv for \s9_wb_adr_o [11]:ezsat
+ success!
+  Trying to prove $equiv for \s9_wb_adr_o [12]:ezsat
+ success!
+  Trying to prove $equiv for \s9_wb_adr_o [13]:ezsat
+ success!
+  Trying to prove $equiv for \s9_wb_adr_o [14]:ezsat
+ success!
+  Trying to prove $equiv for \s9_wb_adr_o [15]:ezsat
+ success!
+  Trying to prove $equiv for \s9_wb_adr_o [16]:ezsat
+ success!
+  Trying to prove $equiv for \s9_wb_adr_o [17]:ezsat
+ success!
+  Trying to prove $equiv for \s9_wb_adr_o [18]:ezsat
+ success!
+  Trying to prove $equiv for \s9_wb_adr_o [19]:ezsat
+ success!
+  Trying to prove $equiv for \s9_wb_adr_o [20]:ezsat
+ success!
+  Trying to prove $equiv for \s9_wb_adr_o [21]:ezsat
+ success!
+  Trying to prove $equiv for \s9_wb_adr_o [22]:ezsat
+ success!
+  Trying to prove $equiv for \s9_wb_adr_o [23]:ezsat
+ success!
+  Trying to prove $equiv for \s9_wb_adr_o [24]:ezsat
+ success!
+  Trying to prove $equiv for \s9_wb_adr_o [25]:ezsat
+ success!
+  Trying to prove $equiv for \s9_wb_adr_o [26]:ezsat
+ success!
+  Trying to prove $equiv for \s9_wb_adr_o [27]:ezsat
+ success!
+  Trying to prove $equiv for \s9_wb_adr_o [28]:ezsat
+ success!
+  Trying to prove $equiv for \s9_wb_adr_o [29]:ezsat
+ success!
+  Trying to prove $equiv for \s9_wb_adr_o [30]:ezsat
+ success!
+  Trying to prove $equiv for \s9_wb_adr_o [31]:ezsat
+ success!
+ Grouping SAT models for \s9_wb_dat_o:
+  Trying to prove $equiv for \s9_wb_dat_o [0]:ezsat
+ success!
+  Trying to prove $equiv for \s9_wb_dat_o [1]:ezsat
+ success!
+  Trying to prove $equiv for \s9_wb_dat_o [2]:ezsat
+ success!
+  Trying to prove $equiv for \s9_wb_dat_o [3]:ezsat
+ success!
+  Trying to prove $equiv for \s9_wb_dat_o [4]:ezsat
+ success!
+  Trying to prove $equiv for \s9_wb_dat_o [5]:ezsat
+ success!
+  Trying to prove $equiv for \s9_wb_dat_o [6]:ezsat
+ success!
+  Trying to prove $equiv for \s9_wb_dat_o [7]:ezsat
+ success!
+  Trying to prove $equiv for \s9_wb_dat_o [8]:ezsat
+ success!
+  Trying to prove $equiv for \s9_wb_dat_o [9]:ezsat
+ success!
+  Trying to prove $equiv for \s9_wb_dat_o [10]:ezsat
+ success!
+  Trying to prove $equiv for \s9_wb_dat_o [11]:ezsat
+ success!
+  Trying to prove $equiv for \s9_wb_dat_o [12]:ezsat
+ success!
+  Trying to prove $equiv for \s9_wb_dat_o [13]:ezsat
+ success!
+  Trying to prove $equiv for \s9_wb_dat_o [14]:ezsat
+ success!
+  Trying to prove $equiv for \s9_wb_dat_o [15]:ezsat
+ success!
+  Trying to prove $equiv for \s9_wb_dat_o [16]:ezsat
+ success!
+  Trying to prove $equiv for \s9_wb_dat_o [17]:ezsat
+ success!
+  Trying to prove $equiv for \s9_wb_dat_o [18]:ezsat
+ success!
+  Trying to prove $equiv for \s9_wb_dat_o [19]:ezsat
+ success!
+  Trying to prove $equiv for \s9_wb_dat_o [20]:ezsat
+ success!
+  Trying to prove $equiv for \s9_wb_dat_o [21]:ezsat
+ success!
+  Trying to prove $equiv for \s9_wb_dat_o [22]:ezsat
+ success!
+  Trying to prove $equiv for \s9_wb_dat_o [23]:ezsat
+ success!
+  Trying to prove $equiv for \s9_wb_dat_o [24]:ezsat
+ success!
+  Trying to prove $equiv for \s9_wb_dat_o [25]:ezsat
+ success!
+  Trying to prove $equiv for \s9_wb_dat_o [26]:ezsat
+ success!
+  Trying to prove $equiv for \s9_wb_dat_o [27]:ezsat
+ success!
+  Trying to prove $equiv for \s9_wb_dat_o [28]:ezsat
+ success!
+  Trying to prove $equiv for \s9_wb_dat_o [29]:ezsat
+ success!
+  Trying to prove $equiv for \s9_wb_dat_o [30]:ezsat
+ success!
+  Trying to prove $equiv for \s9_wb_dat_o [31]:ezsat
+ success!
+ Grouping SAT models for \s9_wb_sel_o:
+  Trying to prove $equiv for \s9_wb_sel_o [0]:ezsat
+ success!
+  Trying to prove $equiv for \s9_wb_sel_o [1]:ezsat
+ success!
+  Trying to prove $equiv for \s9_wb_sel_o [2]:ezsat
+ success!
+  Trying to prove $equiv for \s9_wb_sel_o [3]:ezsat
+ success!
+  Trying to prove $equiv for \s9_wb_we_o:ezsat
+ success!
+  Trying to prove $equiv for \s9_wb_stb_o:ezsat
+ failed.
+  Trying to prove $equiv for \s9_wb_cyc_o:ezsat
+ failed.
+ Grouping SAT models for \s10_wb_adr_o:
+  Trying to prove $equiv for \s10_wb_adr_o [0]:ezsat
+ success!
+  Trying to prove $equiv for \s10_wb_adr_o [1]:ezsat
+ success!
+  Trying to prove $equiv for \s10_wb_adr_o [2]:ezsat
+ success!
+  Trying to prove $equiv for \s10_wb_adr_o [3]:ezsat
+ success!
+  Trying to prove $equiv for \s10_wb_adr_o [4]:ezsat
+ success!
+  Trying to prove $equiv for \s10_wb_adr_o [5]:ezsat
+ success!
+  Trying to prove $equiv for \s10_wb_adr_o [6]:ezsat
+ success!
+  Trying to prove $equiv for \s10_wb_adr_o [7]:ezsat
+ success!
+  Trying to prove $equiv for \s10_wb_adr_o [8]:ezsat
+ success!
+  Trying to prove $equiv for \s10_wb_adr_o [9]:ezsat
+ success!
+  Trying to prove $equiv for \s10_wb_adr_o [10]:ezsat
+ success!
+  Trying to prove $equiv for \s10_wb_adr_o [11]:ezsat
+ success!
+  Trying to prove $equiv for \s10_wb_adr_o [12]:ezsat
+ success!
+  Trying to prove $equiv for \s10_wb_adr_o [13]:ezsat
+ success!
+  Trying to prove $equiv for \s10_wb_adr_o [14]:ezsat
+ success!
+  Trying to prove $equiv for \s10_wb_adr_o [15]:ezsat
+ success!
+  Trying to prove $equiv for \s10_wb_adr_o [16]:ezsat
+ success!
+  Trying to prove $equiv for \s10_wb_adr_o [17]:ezsat
+ success!
+  Trying to prove $equiv for \s10_wb_adr_o [18]:ezsat
+ success!
+  Trying to prove $equiv for \s10_wb_adr_o [19]:ezsat
+ success!
+  Trying to prove $equiv for \s10_wb_adr_o [20]:ezsat
+ success!
+  Trying to prove $equiv for \s10_wb_adr_o [21]:ezsat
+ success!
+  Trying to prove $equiv for \s10_wb_adr_o [22]:ezsat
+ success!
+  Trying to prove $equiv for \s10_wb_adr_o [23]:ezsat
+ success!
+  Trying to prove $equiv for \s10_wb_adr_o [24]:ezsat
+ success!
+  Trying to prove $equiv for \s10_wb_adr_o [25]:ezsat
+ success!
+  Trying to prove $equiv for \s10_wb_adr_o [26]:ezsat
+ success!
+  Trying to prove $equiv for \s10_wb_adr_o [27]:ezsat
+ success!
+  Trying to prove $equiv for \s10_wb_adr_o [28]:ezsat
+ success!
+  Trying to prove $equiv for \s10_wb_adr_o [29]:ezsat
+ success!
+  Trying to prove $equiv for \s10_wb_adr_o [30]:ezsat
+ success!
+  Trying to prove $equiv for \s10_wb_adr_o [31]:ezsat
+ success!
+ Grouping SAT models for \s10_wb_dat_o:
+  Trying to prove $equiv for \s10_wb_dat_o [0]:ezsat
+ success!
+  Trying to prove $equiv for \s10_wb_dat_o [1]:ezsat
+ success!
+  Trying to prove $equiv for \s10_wb_dat_o [2]:ezsat
+ success!
+  Trying to prove $equiv for \s10_wb_dat_o [3]:ezsat
+ success!
+  Trying to prove $equiv for \s10_wb_dat_o [4]:ezsat
+ success!
+  Trying to prove $equiv for \s10_wb_dat_o [5]:ezsat
+ success!
+  Trying to prove $equiv for \s10_wb_dat_o [6]:ezsat
+ success!
+  Trying to prove $equiv for \s10_wb_dat_o [7]:ezsat
+ success!
+  Trying to prove $equiv for \s10_wb_dat_o [8]:ezsat
+ success!
+  Trying to prove $equiv for \s10_wb_dat_o [9]:ezsat
+ success!
+  Trying to prove $equiv for \s10_wb_dat_o [10]:ezsat
+ success!
+  Trying to prove $equiv for \s10_wb_dat_o [11]:ezsat
+ success!
+  Trying to prove $equiv for \s10_wb_dat_o [12]:ezsat
+ success!
+  Trying to prove $equiv for \s10_wb_dat_o [13]:ezsat
+ success!
+  Trying to prove $equiv for \s10_wb_dat_o [14]:ezsat
+ success!
+  Trying to prove $equiv for \s10_wb_dat_o [15]:ezsat
+ success!
+  Trying to prove $equiv for \s10_wb_dat_o [16]:ezsat
+ success!
+  Trying to prove $equiv for \s10_wb_dat_o [17]:ezsat
+ success!
+  Trying to prove $equiv for \s10_wb_dat_o [18]:ezsat
+ success!
+  Trying to prove $equiv for \s10_wb_dat_o [19]:ezsat
+ success!
+  Trying to prove $equiv for \s10_wb_dat_o [20]:ezsat
+ success!
+  Trying to prove $equiv for \s10_wb_dat_o [21]:ezsat
+ success!
+  Trying to prove $equiv for \s10_wb_dat_o [22]:ezsat
+ success!
+  Trying to prove $equiv for \s10_wb_dat_o [23]:ezsat
+ success!
+  Trying to prove $equiv for \s10_wb_dat_o [24]:ezsat
+ success!
+  Trying to prove $equiv for \s10_wb_dat_o [25]:ezsat
+ success!
+  Trying to prove $equiv for \s10_wb_dat_o [26]:ezsat
+ success!
+  Trying to prove $equiv for \s10_wb_dat_o [27]:ezsat
+ success!
+  Trying to prove $equiv for \s10_wb_dat_o [28]:ezsat
+ success!
+  Trying to prove $equiv for \s10_wb_dat_o [29]:ezsat
+ success!
+  Trying to prove $equiv for \s10_wb_dat_o [30]:ezsat
+ success!
+  Trying to prove $equiv for \s10_wb_dat_o [31]:ezsat
+ success!
+ Grouping SAT models for \s10_wb_sel_o:
+  Trying to prove $equiv for \s10_wb_sel_o [0]:ezsat
+ success!
+  Trying to prove $equiv for \s10_wb_sel_o [1]:ezsat
+ success!
+  Trying to prove $equiv for \s10_wb_sel_o [2]:ezsat
+ success!
+  Trying to prove $equiv for \s10_wb_sel_o [3]:ezsat
+ success!
+  Trying to prove $equiv for \s10_wb_we_o:ezsat
+ success!
+  Trying to prove $equiv for \s10_wb_stb_o:ezsat
+ failed.
+  Trying to prove $equiv for \s10_wb_cyc_o:ezsat
+ failed.
+ Grouping SAT models for \s11_wb_adr_o:
+  Trying to prove $equiv for \s11_wb_adr_o [0]:ezsat
+ success!
+  Trying to prove $equiv for \s11_wb_adr_o [1]:ezsat
+ success!
+  Trying to prove $equiv for \s11_wb_adr_o [2]:ezsat
+ success!
+  Trying to prove $equiv for \s11_wb_adr_o [3]:ezsat
+ success!
+  Trying to prove $equiv for \s11_wb_adr_o [4]:ezsat
+ success!
+  Trying to prove $equiv for \s11_wb_adr_o [5]:ezsat
+ success!
+  Trying to prove $equiv for \s11_wb_adr_o [6]:ezsat
+ success!
+  Trying to prove $equiv for \s11_wb_adr_o [7]:ezsat
+ success!
+  Trying to prove $equiv for \s11_wb_adr_o [8]:ezsat
+ success!
+  Trying to prove $equiv for \s11_wb_adr_o [9]:ezsat
+ success!
+  Trying to prove $equiv for \s11_wb_adr_o [10]:ezsat
+ success!
+  Trying to prove $equiv for \s11_wb_adr_o [11]:ezsat
+ success!
+  Trying to prove $equiv for \s11_wb_adr_o [12]:ezsat
+ success!
+  Trying to prove $equiv for \s11_wb_adr_o [13]:ezsat
+ success!
+  Trying to prove $equiv for \s11_wb_adr_o [14]:ezsat
+ success!
+  Trying to prove $equiv for \s11_wb_adr_o [15]:ezsat
+ success!
+  Trying to prove $equiv for \s11_wb_adr_o [16]:ezsat
+ success!
+  Trying to prove $equiv for \s11_wb_adr_o [17]:ezsat
+ success!
+  Trying to prove $equiv for \s11_wb_adr_o [18]:ezsat
+ success!
+  Trying to prove $equiv for \s11_wb_adr_o [19]:ezsat
+ success!
+  Trying to prove $equiv for \s11_wb_adr_o [20]:ezsat
+ success!
+  Trying to prove $equiv for \s11_wb_adr_o [21]:ezsat
+ success!
+  Trying to prove $equiv for \s11_wb_adr_o [22]:ezsat
+ success!
+  Trying to prove $equiv for \s11_wb_adr_o [23]:ezsat
+ success!
+  Trying to prove $equiv for \s11_wb_adr_o [24]:ezsat
+ success!
+  Trying to prove $equiv for \s11_wb_adr_o [25]:ezsat
+ success!
+  Trying to prove $equiv for \s11_wb_adr_o [26]:ezsat
+ success!
+  Trying to prove $equiv for \s11_wb_adr_o [27]:ezsat
+ success!
+  Trying to prove $equiv for \s11_wb_adr_o [28]:ezsat
+ success!
+  Trying to prove $equiv for \s11_wb_adr_o [29]:ezsat
+ success!
+  Trying to prove $equiv for \s11_wb_adr_o [30]:ezsat
+ success!
+  Trying to prove $equiv for \s11_wb_adr_o [31]:ezsat
+ success!
+ Grouping SAT models for \s11_wb_dat_o:
+  Trying to prove $equiv for \s11_wb_dat_o [0]:ezsat
+ success!
+  Trying to prove $equiv for \s11_wb_dat_o [1]:ezsat
+ success!
+  Trying to prove $equiv for \s11_wb_dat_o [2]:ezsat
+ success!
+  Trying to prove $equiv for \s11_wb_dat_o [3]:ezsat
+ success!
+  Trying to prove $equiv for \s11_wb_dat_o [4]:ezsat
+ success!
+  Trying to prove $equiv for \s11_wb_dat_o [5]:ezsat
+ success!
+  Trying to prove $equiv for \s11_wb_dat_o [6]:ezsat
+ success!
+  Trying to prove $equiv for \s11_wb_dat_o [7]:ezsat
+ success!
+  Trying to prove $equiv for \s11_wb_dat_o [8]:ezsat
+ success!
+  Trying to prove $equiv for \s11_wb_dat_o [9]:ezsat
+ success!
+  Trying to prove $equiv for \s11_wb_dat_o [10]:ezsat
+ success!
+  Trying to prove $equiv for \s11_wb_dat_o [11]:ezsat
+ success!
+  Trying to prove $equiv for \s11_wb_dat_o [12]:ezsat
+ success!
+  Trying to prove $equiv for \s11_wb_dat_o [13]:ezsat
+ success!
+  Trying to prove $equiv for \s11_wb_dat_o [14]:ezsat
+ success!
+  Trying to prove $equiv for \s11_wb_dat_o [15]:ezsat
+ success!
+  Trying to prove $equiv for \s11_wb_dat_o [16]:ezsat
+ success!
+  Trying to prove $equiv for \s11_wb_dat_o [17]:ezsat
+ success!
+  Trying to prove $equiv for \s11_wb_dat_o [18]:ezsat
+ success!
+  Trying to prove $equiv for \s11_wb_dat_o [19]:ezsat
+ success!
+  Trying to prove $equiv for \s11_wb_dat_o [20]:ezsat
+ success!
+  Trying to prove $equiv for \s11_wb_dat_o [21]:ezsat
+ success!
+  Trying to prove $equiv for \s11_wb_dat_o [22]:ezsat
+ success!
+  Trying to prove $equiv for \s11_wb_dat_o [23]:ezsat
+ success!
+  Trying to prove $equiv for \s11_wb_dat_o [24]:ezsat
+ success!
+  Trying to prove $equiv for \s11_wb_dat_o [25]:ezsat
+ success!
+  Trying to prove $equiv for \s11_wb_dat_o [26]:ezsat
+ success!
+  Trying to prove $equiv for \s11_wb_dat_o [27]:ezsat
+ success!
+  Trying to prove $equiv for \s11_wb_dat_o [28]:ezsat
+ success!
+  Trying to prove $equiv for \s11_wb_dat_o [29]:ezsat
+ success!
+  Trying to prove $equiv for \s11_wb_dat_o [30]:ezsat
+ success!
+  Trying to prove $equiv for \s11_wb_dat_o [31]:ezsat
+ success!
+ Grouping SAT models for \s11_wb_sel_o:
+  Trying to prove $equiv for \s11_wb_sel_o [0]:ezsat
+ success!
+  Trying to prove $equiv for \s11_wb_sel_o [1]:ezsat
+ success!
+  Trying to prove $equiv for \s11_wb_sel_o [2]:ezsat
+ success!
+  Trying to prove $equiv for \s11_wb_sel_o [3]:ezsat
+ success!
+  Trying to prove $equiv for \s11_wb_we_o:ezsat
+ success!
+  Trying to prove $equiv for \s11_wb_stb_o:ezsat
+ failed.
+  Trying to prove $equiv for \s11_wb_cyc_o:ezsat
+ failed.
+ Grouping SAT models for \s12_wb_adr_o:
+  Trying to prove $equiv for \s12_wb_adr_o [0]:ezsat
+ success!
+  Trying to prove $equiv for \s12_wb_adr_o [1]:ezsat
+ success!
+  Trying to prove $equiv for \s12_wb_adr_o [2]:ezsat
+ success!
+  Trying to prove $equiv for \s12_wb_adr_o [3]:ezsat
+ success!
+  Trying to prove $equiv for \s12_wb_adr_o [4]:ezsat
+ success!
+  Trying to prove $equiv for \s12_wb_adr_o [5]:ezsat
+ success!
+  Trying to prove $equiv for \s12_wb_adr_o [6]:ezsat
+ success!
+  Trying to prove $equiv for \s12_wb_adr_o [7]:ezsat
+ success!
+  Trying to prove $equiv for \s12_wb_adr_o [8]:ezsat
+ success!
+  Trying to prove $equiv for \s12_wb_adr_o [9]:ezsat
+ success!
+  Trying to prove $equiv for \s12_wb_adr_o [10]:ezsat
+ success!
+  Trying to prove $equiv for \s12_wb_adr_o [11]:ezsat
+ success!
+  Trying to prove $equiv for \s12_wb_adr_o [12]:ezsat
+ success!
+  Trying to prove $equiv for \s12_wb_adr_o [13]:ezsat
+ success!
+  Trying to prove $equiv for \s12_wb_adr_o [14]:ezsat
+ success!
+  Trying to prove $equiv for \s12_wb_adr_o [15]:ezsat
+ success!
+  Trying to prove $equiv for \s12_wb_adr_o [16]:ezsat
+ success!
+  Trying to prove $equiv for \s12_wb_adr_o [17]:ezsat
+ success!
+  Trying to prove $equiv for \s12_wb_adr_o [18]:ezsat
+ success!
+  Trying to prove $equiv for \s12_wb_adr_o [19]:ezsat
+ success!
+  Trying to prove $equiv for \s12_wb_adr_o [20]:ezsat
+ success!
+  Trying to prove $equiv for \s12_wb_adr_o [21]:ezsat
+ success!
+  Trying to prove $equiv for \s12_wb_adr_o [22]:ezsat
+ success!
+  Trying to prove $equiv for \s12_wb_adr_o [23]:ezsat
+ success!
+  Trying to prove $equiv for \s12_wb_adr_o [24]:ezsat
+ success!
+  Trying to prove $equiv for \s12_wb_adr_o [25]:ezsat
+ success!
+  Trying to prove $equiv for \s12_wb_adr_o [26]:ezsat
+ success!
+  Trying to prove $equiv for \s12_wb_adr_o [27]:ezsat
+ success!
+  Trying to prove $equiv for \s12_wb_adr_o [28]:ezsat
+ success!
+  Trying to prove $equiv for \s12_wb_adr_o [29]:ezsat
+ success!
+  Trying to prove $equiv for \s12_wb_adr_o [30]:ezsat
+ success!
+  Trying to prove $equiv for \s12_wb_adr_o [31]:ezsat
+ success!
+ Grouping SAT models for \s12_wb_dat_o:
+  Trying to prove $equiv for \s12_wb_dat_o [0]:ezsat
+ success!
+  Trying to prove $equiv for \s12_wb_dat_o [1]:ezsat
+ success!
+  Trying to prove $equiv for \s12_wb_dat_o [2]:ezsat
+ success!
+  Trying to prove $equiv for \s12_wb_dat_o [3]:ezsat
+ success!
+  Trying to prove $equiv for \s12_wb_dat_o [4]:ezsat
+ success!
+  Trying to prove $equiv for \s12_wb_dat_o [5]:ezsat
+ success!
+  Trying to prove $equiv for \s12_wb_dat_o [6]:ezsat
+ success!
+  Trying to prove $equiv for \s12_wb_dat_o [7]:ezsat
+ success!
+  Trying to prove $equiv for \s12_wb_dat_o [8]:ezsat
+ success!
+  Trying to prove $equiv for \s12_wb_dat_o [9]:ezsat
+ success!
+  Trying to prove $equiv for \s12_wb_dat_o [10]:ezsat
+ success!
+  Trying to prove $equiv for \s12_wb_dat_o [11]:ezsat
+ success!
+  Trying to prove $equiv for \s12_wb_dat_o [12]:ezsat
+ success!
+  Trying to prove $equiv for \s12_wb_dat_o [13]:ezsat
+ success!
+  Trying to prove $equiv for \s12_wb_dat_o [14]:ezsat
+ success!
+  Trying to prove $equiv for \s12_wb_dat_o [15]:ezsat
+ success!
+  Trying to prove $equiv for \s12_wb_dat_o [16]:ezsat
+ success!
+  Trying to prove $equiv for \s12_wb_dat_o [17]:ezsat
+ success!
+  Trying to prove $equiv for \s12_wb_dat_o [18]:ezsat
+ success!
+  Trying to prove $equiv for \s12_wb_dat_o [19]:ezsat
+ success!
+  Trying to prove $equiv for \s12_wb_dat_o [20]:ezsat
+ success!
+  Trying to prove $equiv for \s12_wb_dat_o [21]:ezsat
+ success!
+  Trying to prove $equiv for \s12_wb_dat_o [22]:ezsat
+ success!
+  Trying to prove $equiv for \s12_wb_dat_o [23]:ezsat
+ success!
+  Trying to prove $equiv for \s12_wb_dat_o [24]:ezsat
+ success!
+  Trying to prove $equiv for \s12_wb_dat_o [25]:ezsat
+ success!
+  Trying to prove $equiv for \s12_wb_dat_o [26]:ezsat
+ success!
+  Trying to prove $equiv for \s12_wb_dat_o [27]:ezsat
+ success!
+  Trying to prove $equiv for \s12_wb_dat_o [28]:ezsat
+ success!
+  Trying to prove $equiv for \s12_wb_dat_o [29]:ezsat
+ success!
+  Trying to prove $equiv for \s12_wb_dat_o [30]:ezsat
+ success!
+  Trying to prove $equiv for \s12_wb_dat_o [31]:ezsat
+ success!
+ Grouping SAT models for \s12_wb_sel_o:
+  Trying to prove $equiv for \s12_wb_sel_o [0]:ezsat
+ success!
+  Trying to prove $equiv for \s12_wb_sel_o [1]:ezsat
+ success!
+  Trying to prove $equiv for \s12_wb_sel_o [2]:ezsat
+ success!
+  Trying to prove $equiv for \s12_wb_sel_o [3]:ezsat
+ success!
+  Trying to prove $equiv for \s12_wb_we_o:ezsat
+ success!
+  Trying to prove $equiv for \s12_wb_stb_o:ezsat
+ failed.
+  Trying to prove $equiv for \s12_wb_cyc_o:ezsat
+ failed.
+  Trying to prove $equiv for \ack_comb:ezsat
+ failed.
+Proved 897 previously unproven $equiv cells.
+
+26. Executing EQUIV_INDUCT pass.
+Found 60 unproven $equiv cells in module wb_interconnect:

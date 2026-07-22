@@ -1,0 +1,139 @@
+%Warning-MODDUP: rtl-i2c_hx711/rtl/i2c_controller.v:7:8: Duplicate declaration of module: 'i2c_controller'
+    7 | module i2c_controller (
+      |        ^~~~~~~~~~~~~~
+                 rtl-i2c_ds3231/rtl/i2c_controller.v:7:8: ... Location of original declaration
+    7 | module i2c_controller (
+      |        ^~~~~~~~~~~~~~
+                 ... For warning description see https://verilator.org/warn/MODDUP?v=5.049
+                 ... Use "/* verilator lint_off MODDUP */" and lint_on around source to disable this message.
+%Warning-MODDUP: rtl-i2c_hx711/rtl/i2c_master.v:7:8: Duplicate declaration of module: 'i2c_master'
+    7 | module i2c_master (
+      |        ^~~~~~~~~~
+                 rtl-i2c_ds3231/rtl/i2c_master.v:7:8: ... Location of original declaration
+    7 | module i2c_master (
+      |        ^~~~~~~~~~
+%Warning-MODDUP: rtl-i2c_ina219/rtl/i2c_controller.v:7:8: Duplicate declaration of module: 'i2c_controller'
+    7 | module i2c_controller (
+      |        ^~~~~~~~~~~~~~
+                 rtl-i2c_ds3231/rtl/i2c_controller.v:7:8: ... Location of original declaration
+    7 | module i2c_controller (
+      |        ^~~~~~~~~~~~~~
+%Warning-MODDUP: rtl-i2c_ina219/rtl/i2c_master.v:7:8: Duplicate declaration of module: 'i2c_master'
+    7 | module i2c_master (
+      |        ^~~~~~~~~~
+                 rtl-i2c_ds3231/rtl/i2c_master.v:7:8: ... Location of original declaration
+    7 | module i2c_master (
+      |        ^~~~~~~~~~
+%Warning-MULTITOP: rtl-interrupt_ctrl/rtl/intc.v:7:8: Multiple top level modules
+                                                    : ... Suggest see manual; fix the duplicates, or use --top-module to select top.
+                   ... For warning description see https://verilator.org/warn/MULTITOP?v=5.049
+                   ... Use "/* verilator lint_off MULTITOP */" and lint_on around source to disable this message.
+                                                    : ... Top module 'i2c_controller'
+    7 | module i2c_controller (
+      |        ^~~~~~~~~~~~~~
+                                                    : ... Top module 'intc'
+    7 | module intc (
+      |        ^~~~
+                                                    : ... Top module 'motor_pwm_ctrl'
+    6 | module motor_pwm_ctrl (
+      |        ^~~~~~~~~~~~~~
+                                                    : ... Top module 'picorv32_regs'
+ 2176 | module picorv32_regs (
+      |        ^~~~~~~~~~~~~
+                                                    : ... Top module 'picorv32_axi'
+ 2519 | module picorv32_axi #(
+      |        ^~~~~~~~~~~~
+                                                    : ... Top module 'picorv32_wb'
+ 2817 | module picorv32_wb #(
+      |        ^~~~~~~~~~~
+                                                    : ... Top module 'timer_pwm'
+    7 | module timer_pwm (
+      |        ^~~~~~~~~
+                                                    : ... Top module 'trash_robot_soc'
+   11 | module trash_robot_soc (
+      |        ^~~~~~~~~~~~~~~
+                                                    : ... Top module 'ultrasonic_fsm'
+    7 | module ultrasonic_fsm (
+      |        ^~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: rtl-gpio/rtl/gpio.v:7:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+    7 | module gpio (
+      |        ^~~~
+                       rtl-picorv32_core/rtl/picorv32_core.v:69:8: ... Location of module with timescale
+   69 | module picorv32 #(
+      |        ^~~~~~~~
+                       ... For warning description see https://verilator.org/warn/TIMESCALEMOD?v=5.049
+                       ... Use "/* verilator lint_off TIMESCALEMOD */" and lint_on around source to disable this message.
+%Warning-TIMESCALEMOD: rtl-i2c_ds3231/rtl/i2c_controller.v:7:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+    7 | module i2c_controller (
+      |        ^~~~~~~~~~~~~~
+                       rtl-picorv32_core/rtl/picorv32_core.v:69:8: ... Location of module with timescale
+   69 | module picorv32 #(
+      |        ^~~~~~~~
+%Warning-TIMESCALEMOD: rtl-i2c_ds3231/rtl/i2c_master.v:7:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+    7 | module i2c_master (
+      |        ^~~~~~~~~~
+                       rtl-picorv32_core/rtl/picorv32_core.v:69:8: ... Location of module with timescale
+   69 | module picorv32 #(
+      |        ^~~~~~~~
+%Warning-TIMESCALEMOD: rtl-interrupt_ctrl/rtl/intc.v:7:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+    7 | module intc (
+      |        ^~~~
+                       rtl-picorv32_core/rtl/picorv32_core.v:69:8: ... Location of module with timescale
+   69 | module picorv32 #(
+      |        ^~~~~~~~
+%Warning-TIMESCALEMOD: rtl-interrupt_ctrl/rtl/interrupt_ctrl.v:7:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+    7 | module interrupt_ctrl (
+      |        ^~~~~~~~~~~~~~
+                       rtl-picorv32_core/rtl/picorv32_core.v:69:8: ... Location of module with timescale
+   69 | module picorv32 #(
+      |        ^~~~~~~~
+%Warning-TIMESCALEMOD: rtl-motor_pwm/rtl/motor_pwm_ctrl.v:6:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+    6 | module motor_pwm_ctrl (
+      |        ^~~~~~~~~~~~~~
+                       rtl-picorv32_core/rtl/picorv32_core.v:69:8: ... Location of module with timescale
+   69 | module picorv32 #(
+      |        ^~~~~~~~
+%Warning-TIMESCALEMOD: rtl-motor_pwm/rtl/motor_pwm.v:7:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+    7 | module motor_pwm (
+      |        ^~~~~~~~~
+                       rtl-picorv32_core/rtl/picorv32_core.v:69:8: ... Location of module with timescale
+   69 | module picorv32 #(
+      |        ^~~~~~~~
+%Warning-WIDTHEXPAND: rtl-ultrasonic_capture/rtl/ultrasonic_fsm.v:119:55: Operator GTE expects 32 or 21 bits on the LHS, but LHS's ARRAYSEL generates 5 bits.
+                                                                        : ... note: In instance 'ultrasonic_fsm'
+  119 |                                 if (glitch_filter[ch] >= MIN_ECHO_CYCLES - 1) begin
+      |                                                       ^~
+                      ... For warning description see https://verilator.org/warn/WIDTHEXPAND?v=5.049
+                      ... Use "/* verilator lint_off WIDTHEXPAND */" and lint_on around source to disable this message.
+%Warning-UNDRIVEN: rtl-trash_robot_soc/rtl/trash_robot_soc.v:38:24: Signal is not driven: 'wdt_rst_n'
+                                                                  : ... note: In instance 'trash_robot_soc'
+   38 |     output wire        wdt_rst_n,
+      |                        ^~~~~~~~~
+                   ... For warning description see https://verilator.org/warn/UNDRIVEN?v=5.049
+                   ... Use "/* verilator lint_off UNDRIVEN */" and lint_on around source to disable this message.
+%Warning-UNDRIVEN: rtl-trash_robot_soc/rtl/trash_robot_soc.v:68:17: Bits of signal are not driven: 'irq_sources'[15:12]
+                                                                  : ... note: In instance 'trash_robot_soc'
+   68 |     wire [15:0] irq_sources;
+      |                 ^~~~~~~~~~~
+%Warning-UNUSEDSIGNAL: rtl-trash_robot_soc/rtl/trash_robot_soc.v:76:10: Signal is not used: 'clk_en'
+                                                                      : ... note: In instance 'trash_robot_soc'
+   76 |     wire clk_en;
+      |          ^~~~~~
+                       ... For warning description see https://verilator.org/warn/UNUSEDSIGNAL?v=5.049
+                       ... Use "/* verilator lint_off UNUSEDSIGNAL */" and lint_on around source to disable this message.
+%Warning-UNUSEDSIGNAL: rtl-ultrasonic_capture/rtl/ultrasonic_fsm.v:47:51: Signal is not used: 'echo_sync4'
+                                                                        : ... note: In instance 'ultrasonic_fsm'
+   47 |     reg [1:0] echo_sync1, echo_sync2, echo_sync3, echo_sync4;
+      |                                                   ^~~~~~~~~~
+%Warning-SYNCASYNCNET: rtl-trash_robot_soc/rtl/trash_robot_soc.v:75:10: Signal flopped as both synchronous and async: 'trash_robot_soc.sys_rst_n_int'
+                       rtl-wb_interconnect/rtl/wb_interconnect.v:328:14: ... Location of async usage
+  328 |         if (!rst_ni) begin
+      |              ^~~~~~
+                       rtl-picorv32_core/rtl/picorv32_core.v:398:8: ... Location of sync usage
+  398 |   if (!resetn) begin
+      |        ^~~~~~
+                       ... For warning description see https://verilator.org/warn/SYNCASYNCNET?v=5.049
+                       ... Use "/* verilator lint_off SYNCASYNCNET */" and lint_on around source to disable this message.
+- V e r i l a t i o n   R e p o r t: Verilator 5.049 devel rev v5.048-4-ge4803f29b (mod)
+- Verilator: Built from 3.383 MB sources in 27 modules, into 0.698 MB in 4 C++ files needing 0.000 MB
+- Verilator: Walltime 0.251 s (elab=0.034, cvt=0.163, bld=0.000); cpu 0.251 s on 1 threads; allocated 37.945 MB

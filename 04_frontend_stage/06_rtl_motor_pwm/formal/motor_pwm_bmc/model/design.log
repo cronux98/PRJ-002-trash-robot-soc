@@ -1,0 +1,280 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.65+71 (git sha1 e56c6a954, clang++ 18.1.8 -fPIC -O3)
+
+-- Executing script file `../model/design.ys' --
+
+1. Executing Verilog-2005 frontend: motor_pwm.v
+Parsing formal SystemVerilog input from `motor_pwm.v' to AST representation.
+Storing AST representation for module `$abstract\motor_pwm'.
+Successfully finished Verilog frontend.
+
+2. Executing PREP pass.
+
+2.1. Executing HIERARCHY pass (managing design hierarchy).
+
+2.2. Executing AST frontend in derive mode using pre-parsed AST for module `\motor_pwm'.
+Generating RTLIL representation for module `\motor_pwm'.
+
+2.2.1. Analyzing design hierarchy..
+Top module:  \motor_pwm
+
+2.2.2. Analyzing design hierarchy..
+Top module:  \motor_pwm
+Removing unused module `$abstract\motor_pwm'.
+Removed 1 unused modules.
+
+2.3. Executing PROC pass (convert processes to netlists).
+
+2.3.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+2.3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 4 switch rules as full_case in process $proc$motor_pwm.v:54$10 in module motor_pwm.
+Removed a total of 0 dead cases.
+
+2.3.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 6 redundant assignments.
+Promoted 0 assignments to connections.
+
+2.3.4. Executing PROC_INIT pass (extract init attributes).
+
+2.3.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \rst_ni in `\motor_pwm.$proc$motor_pwm.v:54$10'.
+
+2.3.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~5 debug messages>
+
+2.3.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\motor_pwm.$proc$motor_pwm.v:54$10'.
+     1/18: $0\pwm_cnt[15:0]
+     2/18: $0\irq_fault[0:0]
+     3/18: $0\status_fault[3:0]
+     4/18: $0\pwm_b[3:0] [3]
+     5/18: $0\pwm_a[3:0] [3]
+     6/18: $0\pwm_b[3:0] [2]
+     7/18: $0\pwm_a[3:0] [2]
+     8/18: $0\pwm_b[3:0] [1]
+     9/18: $0\pwm_a[3:0] [1]
+    10/18: $0\pwm_b[3:0] [0]
+    11/18: $0\pwm_a[3:0] [0]
+    12/18: $0\wb_ack_o[0:0]
+    13/18: $0\ctrl[7:0]
+    14/18: $0\duty_d[15:0]
+    15/18: $0\duty_c[15:0]
+    16/18: $0\duty_b[15:0]
+    17/18: $0\duty_a[15:0]
+    18/18: $0\wb_dat_o[31:0]
+
+2.3.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+2.3.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\motor_pwm.\wb_dat_o' using process `\motor_pwm.$proc$motor_pwm.v:54$10'.
+  created $adff cell `$procdff$102' with positive edge clock and positive level reset.
+Creating register for signal `\motor_pwm.\wb_ack_o' using process `\motor_pwm.$proc$motor_pwm.v:54$10'.
+  created $adff cell `$procdff$107' with positive edge clock and positive level reset.
+Creating register for signal `\motor_pwm.\pwm_a' using process `\motor_pwm.$proc$motor_pwm.v:54$10'.
+  created $adff cell `$procdff$112' with positive edge clock and positive level reset.
+Creating register for signal `\motor_pwm.\pwm_b' using process `\motor_pwm.$proc$motor_pwm.v:54$10'.
+  created $adff cell `$procdff$117' with positive edge clock and positive level reset.
+Creating register for signal `\motor_pwm.\irq_fault' using process `\motor_pwm.$proc$motor_pwm.v:54$10'.
+  created $adff cell `$procdff$122' with positive edge clock and positive level reset.
+Creating register for signal `\motor_pwm.\duty_a' using process `\motor_pwm.$proc$motor_pwm.v:54$10'.
+  created $adff cell `$procdff$127' with positive edge clock and positive level reset.
+Creating register for signal `\motor_pwm.\duty_b' using process `\motor_pwm.$proc$motor_pwm.v:54$10'.
+  created $adff cell `$procdff$132' with positive edge clock and positive level reset.
+Creating register for signal `\motor_pwm.\duty_c' using process `\motor_pwm.$proc$motor_pwm.v:54$10'.
+  created $adff cell `$procdff$137' with positive edge clock and positive level reset.
+Creating register for signal `\motor_pwm.\duty_d' using process `\motor_pwm.$proc$motor_pwm.v:54$10'.
+  created $adff cell `$procdff$142' with positive edge clock and positive level reset.
+Creating register for signal `\motor_pwm.\ctrl' using process `\motor_pwm.$proc$motor_pwm.v:54$10'.
+  created $adff cell `$procdff$147' with positive edge clock and positive level reset.
+Creating register for signal `\motor_pwm.\status_fault' using process `\motor_pwm.$proc$motor_pwm.v:54$10'.
+  created $adff cell `$procdff$152' with positive edge clock and positive level reset.
+Creating register for signal `\motor_pwm.\pwm_cnt' using process `\motor_pwm.$proc$motor_pwm.v:54$10'.
+  created $adff cell `$procdff$157' with positive edge clock and positive level reset.
+
+2.3.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+2.3.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 5 empty switches in `\motor_pwm.$proc$motor_pwm.v:54$10'.
+Removing empty process `motor_pwm.$proc$motor_pwm.v:54$10'.
+Cleaned up 5 empty switches.
+
+2.3.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module motor_pwm.
+<suppressed ~26 debug messages>
+
+2.4. Executing FUTURE pass.
+
+2.5. Executing OPT_EXPR pass (perform const folding).
+Optimizing module motor_pwm.
+
+2.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \motor_pwm..
+Removed 14 unused cells and 62 unused wires.
+<suppressed ~16 debug messages>
+
+2.7. Executing CHECK pass (checking for obvious problems).
+Checking module motor_pwm...
+Found and reported 0 problems.
+
+2.8. Executing OPT pass (performing simple optimizations).
+
+2.8.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module motor_pwm.
+
+2.8.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\motor_pwm'.
+Computing hashes of 70 cells of `\motor_pwm'.
+Finding duplicate cells in `\motor_pwm'.
+Computing hashes of 64 cells of `\motor_pwm'.
+Finding duplicate cells in `\motor_pwm'.
+<suppressed ~18 debug messages>
+Removed a total of 6 cells.
+
+2.8.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \motor_pwm..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~40 debug messages>
+
+2.8.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \motor_pwm.
+Performed a total of 0 changes.
+
+2.8.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\motor_pwm'.
+Computing hashes of 64 cells of `\motor_pwm'.
+Finding duplicate cells in `\motor_pwm'.
+Removed a total of 0 cells.
+
+2.8.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \motor_pwm..
+Removed 0 unused cells and 6 unused wires.
+<suppressed ~1 debug messages>
+
+2.8.7. Executing OPT_EXPR pass (perform const folding).
+Optimizing module motor_pwm.
+
+2.8.8. Rerunning OPT passes. (Maybe there is more to do..)
+
+2.8.9. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \motor_pwm..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~40 debug messages>
+
+2.8.10. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \motor_pwm.
+Performed a total of 0 changes.
+
+2.8.11. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\motor_pwm'.
+Computing hashes of 64 cells of `\motor_pwm'.
+Finding duplicate cells in `\motor_pwm'.
+Removed a total of 0 cells.
+
+2.8.12. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \motor_pwm..
+
+2.8.13. Executing OPT_EXPR pass (perform const folding).
+Optimizing module motor_pwm.
+
+2.8.14. Finished fast OPT passes. (There is nothing left to do.)
+
+2.9. Executing WREDUCE pass (reducing word size of cells).
+Removed top 5 bits (of 16) from port B of cell motor_pwm.$gt$motor_pwm.v:49$2 ($gt).
+Removed top 5 bits (of 16) from port B of cell motor_pwm.$gt$motor_pwm.v:50$4 ($gt).
+Removed top 5 bits (of 16) from port B of cell motor_pwm.$gt$motor_pwm.v:51$6 ($gt).
+Removed top 5 bits (of 16) from port B of cell motor_pwm.$gt$motor_pwm.v:52$8 ($gt).
+Removed top 5 bits (of 16) from port B of cell motor_pwm.$ge$motor_pwm.v:73$12 ($ge).
+Removed top 15 bits (of 16) from port B of cell motor_pwm.$add$motor_pwm.v:76$13 ($add).
+Removed top 16 bits (of 32) from mux cell motor_pwm.$procmux$86 ($pmux).
+Removed top 1 bits (of 3) from port B of cell motor_pwm.$procmux$89_CMP0 ($eq).
+Removed top 1 bits (of 3) from port B of cell motor_pwm.$procmux$90_CMP0 ($eq).
+Removed top 2 bits (of 3) from port B of cell motor_pwm.$procmux$91_CMP0 ($eq).
+Removed top 16 bits (of 32) from wire motor_pwm.$procmux$86_Y.
+
+2.10. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \motor_pwm..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+2.11. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+2.12. Executing OPT pass (performing simple optimizations).
+
+2.12.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module motor_pwm.
+
+2.12.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\motor_pwm'.
+Computing hashes of 64 cells of `\motor_pwm'.
+Finding duplicate cells in `\motor_pwm'.
+Removed a total of 0 cells.
+
+2.12.3. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \motor_pwm..
+
+2.12.4. Finished fast OPT passes.
+
+2.13. Executing SORT pass.
+
+2.14. Printing statistics.
+
+=== motor_pwm ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       70 wires
+      659 wire bits
+       25 public wires
+      275 public wire bits
+       14 ports
+      119 port bits
+       64 cells
+        1   $add
+       12   $adff
+        5   $eq
+        1   $ge
+        4   $gt
+        6   $logic_and
+        2   $logic_not
+        4   $lt
+       26   $mux
+        1   $or
+        1   $pmux
+        1   $reduce_or
+
+2.15. Executing CHECK pass (checking for obvious problems).
+Checking module motor_pwm...
+Found and reported 0 problems.
+
+3. Executing HIERARCHY pass (managing design hierarchy).
+Attribute `top' found on module `motor_pwm'. Setting top module to motor_pwm.
+
+3.1. Analyzing design hierarchy..
+Top module:  \motor_pwm
+
+3.2. Analyzing design hierarchy..
+Top module:  \motor_pwm
+Removed 0 unused modules.
+
+4. Executing jny backend.
+
+5. Executing RTLIL backend.
+Output filename: ../model/design.il
+
+End of script. Logfile hash: c2d6daf31a, time: 0.02s, user: 0.02s, system: 0.00s, MEM: 15.43 MB peak
+Yosys 0.65+71 (git sha1 e56c6a954, clang++ 18.1.8 -fPIC -O3)
+Time spent: 21% 5x opt_clean (0 sec), 13% 2x hierarchy (0 sec), ...

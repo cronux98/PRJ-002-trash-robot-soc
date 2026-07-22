@@ -1,0 +1,75 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.65+71 (git sha1 e56c6a954, clang++ 18.1.8 -fPIC -O3)
+
+-- Executing script file `design_prep.ys' --
+
+1. Executing RTLIL frontend.
+Input filename: design.il
+
+2. Executing SCC pass (detecting logic loops).
+Found 0 SCCs in module power_mgr.
+Found 0 SCCs.
+
+3. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+
+4. Executing MEMORY_NORDFF pass (extracting $dff cells from memories).
+
+5. Executing ASYNC2SYNC pass.
+Replacing power_mgr.$procdff$47 ($adff): ARST=\rst_ni, D=$0\wb_dat_o[31:0], Q=\wb_dat_o
+Replacing power_mgr.$procdff$52 ($adff): ARST=\rst_ni, D=$0\wb_ack_o[0:0], Q=\wb_ack_o
+Replacing power_mgr.$procdff$57 ($adff): ARST=\rst_ni, D=\sync_ff2, Q=\sys_rst_n_o
+Replacing power_mgr.$procdff$62 ($adff): ARST=\rst_ni, D=$0\ext_rst_flag[0:0], Q=\ext_rst_flag
+Replacing power_mgr.$procdff$67 ($adff): ARST=\rst_ni, D=$0\wdt_rst_flag[0:0], Q=\wdt_rst_flag
+Replacing power_mgr.$procdff$72 ($adff): ARST=\int_rst_n, D=1'1, Q=\sync_ff1
+Replacing power_mgr.$procdff$77 ($adff): ARST=\int_rst_n, D=\sync_ff1, Q=\sync_ff2
+
+6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \power_mgr..
+
+7. Executing FORMALFF pass.
+
+8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \power_mgr..
+Removed 2 unused cells and 2 unused wires.
+<suppressed ~3 debug messages>
+
+9. Executing CHECK pass (checking for obvious problems).
+Checking module power_mgr...
+Found and reported 0 problems.
+
+10. Executing SETUNDEF pass (replace undef values with defined constants).
+
+11. Executing OPT pass (performing simple optimizations).
+
+11.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module power_mgr.
+
+11.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\power_mgr'.
+Computing hashes of 39 cells of `\power_mgr'.
+Finding duplicate cells in `\power_mgr'.
+Removed a total of 0 cells.
+
+11.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+11.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \power_mgr..
+
+11.5. Finished fast OPT passes.
+
+12. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \power_mgr..
+Removed 0 unused cells and 7 unused wires.
+<suppressed ~1 debug messages>
+
+13. Executing RTLIL backend.
+Output filename: ../model/design_prep.il
+
+End of script. Logfile hash: 0923ce4869, time: 0.01s, user: 0.01s, system: 0.01s, MEM: 15.30 MB peak
+Yosys 0.65+71 (git sha1 e56c6a954, clang++ 18.1.8 -fPIC -O3)
+Time spent: 34% 4x opt_clean (0 sec), 10% 2x read_rtlil (0 sec), ...

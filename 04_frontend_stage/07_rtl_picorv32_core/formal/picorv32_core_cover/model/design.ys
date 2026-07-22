@@ -1,0 +1,8 @@
+# running in picorv32_core_cover/src/
+read -formal picorv32_core.v
+prep -top picorv32
+
+hierarchy -smtcheck
+rename -witness
+write_jny -no-connections ../model/design.json
+write_rtlil ../model/design.il

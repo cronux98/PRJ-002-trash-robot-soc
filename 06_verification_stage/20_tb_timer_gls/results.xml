@@ -1,0 +1,9 @@
+<testsuites name="results">
+  <testsuite name="all" package="all">
+    <property name="random_seed" value="1784094955" />
+    <testcase name="test_reset" classname="test_timer" file="/home/smdadmin/hermes_workspace/projects/IP-005/v6/06_verification/tb-timer_gls/test_timer.py" lineno="16" time="0.002700328826904297" sim_time_ns="70.0" ratio_time="25922.768850432632" />
+    <testcase name="test_register_rw" classname="test_timer" file="/home/smdadmin/hermes_workspace/projects/IP-005/v6/06_verification/tb-timer_gls/test_timer.py" lineno="32" time="0.0038161277770996094" sim_time_ns="261.0" ratio_time="68393.93627389728" />
+    <testcase name="test_functional" classname="test_timer" file="/home/smdadmin/hermes_workspace/projects/IP-005/v6/06_verification/tb-timer_gls/test_timer.py" lineno="65" time="0.003889322280883789" sim_time_ns="320.99999999999994" ratio_time="82533.65929013668" />
+    <testcase name="test_ack_handshake" classname="test_timer" file="/home/smdadmin/hermes_workspace/projects/IP-005/v6/06_verification/tb-timer_gls/test_timer.py" lineno="90" time="0.00141143798828125" sim_time_ns="121.0" ratio_time="85728.17297297297" />
+  </testsuite>
+</testsuites>

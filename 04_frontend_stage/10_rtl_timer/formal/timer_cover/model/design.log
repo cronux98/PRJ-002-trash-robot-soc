@@ -1,0 +1,264 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.65+71 (git sha1 e56c6a954, clang++ 18.1.8 -fPIC -O3)
+
+-- Executing script file `../model/design.ys' --
+
+1. Executing Verilog-2005 frontend: timer.v
+Parsing formal SystemVerilog input from `timer.v' to AST representation.
+Storing AST representation for module `$abstract\timer'.
+Successfully finished Verilog frontend.
+
+2. Executing PREP pass.
+
+2.1. Executing HIERARCHY pass (managing design hierarchy).
+
+2.2. Executing AST frontend in derive mode using pre-parsed AST for module `\timer'.
+Generating RTLIL representation for module `\timer'.
+
+2.2.1. Analyzing design hierarchy..
+Top module:  \timer
+
+2.2.2. Analyzing design hierarchy..
+Top module:  \timer
+Removing unused module `$abstract\timer'.
+Removed 1 unused modules.
+
+2.3. Executing PROC pass (convert processes to netlists).
+
+2.3.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+2.3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 4 switch rules as full_case in process $proc$timer.v:42$2 in module timer.
+Removed a total of 0 dead cases.
+
+2.3.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 3 redundant assignments.
+Promoted 0 assignments to connections.
+
+2.3.4. Executing PROC_INIT pass (extract init attributes).
+
+2.3.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \rst_ni in `\timer.$proc$timer.v:42$2'.
+
+2.3.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~12 debug messages>
+
+2.3.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\timer.$proc$timer.v:42$2'.
+     1/13: $0\irq_cmpb[0:0]
+     2/13: $0\irq_cmpa[0:0]
+     3/13: $0\wb_ack_o[0:0]
+     4/13: $0\status_wrap[0:0]
+     5/13: $0\status_cmpb[0:0]
+     6/13: $0\status_cmpa[0:0]
+     7/13: $0\ctrl_auto_reload[0:0]
+     8/13: $0\ctrl_enable[0:0]
+     9/13: $0\compare_b[31:0]
+    10/13: $0\compare_a[31:0]
+    11/13: $0\reload[31:0]
+    12/13: $0\counter[31:0]
+    13/13: $0\wb_dat_o[31:0]
+
+2.3.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+2.3.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\timer.\wb_dat_o' using process `\timer.$proc$timer.v:42$2'.
+  created $adff cell `$procdff$151' with positive edge clock and positive level reset.
+Creating register for signal `\timer.\wb_ack_o' using process `\timer.$proc$timer.v:42$2'.
+  created $adff cell `$procdff$156' with positive edge clock and positive level reset.
+Creating register for signal `\timer.\irq_cmpa' using process `\timer.$proc$timer.v:42$2'.
+  created $adff cell `$procdff$161' with positive edge clock and positive level reset.
+Creating register for signal `\timer.\irq_cmpb' using process `\timer.$proc$timer.v:42$2'.
+  created $adff cell `$procdff$166' with positive edge clock and positive level reset.
+Creating register for signal `\timer.\counter' using process `\timer.$proc$timer.v:42$2'.
+  created $adff cell `$procdff$171' with positive edge clock and positive level reset.
+Creating register for signal `\timer.\reload' using process `\timer.$proc$timer.v:42$2'.
+  created $adff cell `$procdff$176' with positive edge clock and positive level reset.
+Creating register for signal `\timer.\compare_a' using process `\timer.$proc$timer.v:42$2'.
+  created $adff cell `$procdff$181' with positive edge clock and positive level reset.
+Creating register for signal `\timer.\compare_b' using process `\timer.$proc$timer.v:42$2'.
+  created $adff cell `$procdff$186' with positive edge clock and positive level reset.
+Creating register for signal `\timer.\ctrl_enable' using process `\timer.$proc$timer.v:42$2'.
+  created $adff cell `$procdff$191' with positive edge clock and positive level reset.
+Creating register for signal `\timer.\ctrl_auto_reload' using process `\timer.$proc$timer.v:42$2'.
+  created $adff cell `$procdff$196' with positive edge clock and positive level reset.
+Creating register for signal `\timer.\status_cmpa' using process `\timer.$proc$timer.v:42$2'.
+  created $adff cell `$procdff$201' with positive edge clock and positive level reset.
+Creating register for signal `\timer.\status_cmpb' using process `\timer.$proc$timer.v:42$2'.
+  created $adff cell `$procdff$206' with positive edge clock and positive level reset.
+Creating register for signal `\timer.\status_wrap' using process `\timer.$proc$timer.v:42$2'.
+  created $adff cell `$procdff$211' with positive edge clock and positive level reset.
+
+2.3.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+2.3.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 12 empty switches in `\timer.$proc$timer.v:42$2'.
+Removing empty process `timer.$proc$timer.v:42$2'.
+Cleaned up 12 empty switches.
+
+2.3.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module timer.
+<suppressed ~32 debug messages>
+
+2.4. Executing FUTURE pass.
+
+2.5. Executing OPT_EXPR pass (perform const folding).
+Optimizing module timer.
+
+2.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \timer..
+Removed 15 unused cells and 80 unused wires.
+<suppressed ~17 debug messages>
+
+2.7. Executing CHECK pass (checking for obvious problems).
+Checking module timer...
+Found and reported 0 problems.
+
+2.8. Executing OPT pass (performing simple optimizations).
+
+2.8.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module timer.
+
+2.8.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\timer'.
+Computing hashes of 89 cells of `\timer'.
+Finding duplicate cells in `\timer'.
+Computing hashes of 79 cells of `\timer'.
+Finding duplicate cells in `\timer'.
+<suppressed ~30 debug messages>
+Removed a total of 10 cells.
+
+2.8.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \timer..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~102 debug messages>
+
+2.8.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \timer.
+Performed a total of 0 changes.
+
+2.8.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\timer'.
+Computing hashes of 79 cells of `\timer'.
+Finding duplicate cells in `\timer'.
+Removed a total of 0 cells.
+
+2.8.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \timer..
+Removed 0 unused cells and 10 unused wires.
+<suppressed ~1 debug messages>
+
+2.8.7. Executing OPT_EXPR pass (perform const folding).
+Optimizing module timer.
+
+2.8.8. Rerunning OPT passes. (Maybe there is more to do..)
+
+2.8.9. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \timer..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~102 debug messages>
+
+2.8.10. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \timer.
+Performed a total of 0 changes.
+
+2.8.11. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\timer'.
+Computing hashes of 79 cells of `\timer'.
+Finding duplicate cells in `\timer'.
+Removed a total of 0 cells.
+
+2.8.12. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \timer..
+
+2.8.13. Executing OPT_EXPR pass (perform const folding).
+Optimizing module timer.
+
+2.8.14. Finished fast OPT passes. (There is nothing left to do.)
+
+2.9. Executing WREDUCE pass (reducing word size of cells).
+Removed top 31 bits (of 32) from port B of cell timer.$sub$timer.v:70$7 ($sub).
+Removed top 1 bits (of 3) from port B of cell timer.$procmux$138_CMP0 ($eq).
+Removed top 1 bits (of 3) from port B of cell timer.$procmux$139_CMP0 ($eq).
+Removed top 2 bits (of 3) from port B of cell timer.$procmux$140_CMP0 ($eq).
+
+2.10. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \timer..
+
+2.11. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+2.12. Executing OPT pass (performing simple optimizations).
+
+2.12.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module timer.
+
+2.12.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\timer'.
+Computing hashes of 79 cells of `\timer'.
+Finding duplicate cells in `\timer'.
+Removed a total of 0 cells.
+
+2.12.3. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \timer..
+
+2.12.4. Finished fast OPT passes.
+
+2.13. Executing SORT pass.
+
+2.14. Printing statistics.
+
+=== timer ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       87 wires
+      896 wire bits
+       21 public wires
+      241 public wire bits
+       12 ports
+      108 port bits
+       79 cells
+       13   $adff
+        7   $eq
+        5   $logic_and
+        3   $logic_not
+       47   $mux
+        1   $pmux
+        2   $reduce_bool
+        1   $sub
+
+2.15. Executing CHECK pass (checking for obvious problems).
+Checking module timer...
+Found and reported 0 problems.
+
+3. Executing HIERARCHY pass (managing design hierarchy).
+Attribute `top' found on module `timer'. Setting top module to timer.
+
+3.1. Analyzing design hierarchy..
+Top module:  \timer
+
+3.2. Analyzing design hierarchy..
+Top module:  \timer
+Removed 0 unused modules.
+
+4. Executing jny backend.
+
+5. Executing RTLIL backend.
+Output filename: ../model/design.il
+
+End of script. Logfile hash: 30d23b8186, time: 0.04s, user: 0.04s, system: 0.00s, MEM: 15.28 MB peak
+Yosys 0.65+71 (git sha1 e56c6a954, clang++ 18.1.8 -fPIC -O3)
+Time spent: 21% 5x opt_clean (0 sec), 14% 2x check (0 sec), ...
