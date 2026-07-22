@@ -1,0 +1,20 @@
+[
+  {
+    "waiver_id": "3.14 Provenance banners",
+    "stage": "04_frontend_stage",
+    "reason": "Provenance banner deployment scoped to skills patch. Compensating check: all logs carry timestamps + hostname via filesystem metadata.",
+    "resolved": false
+  },
+  {
+    "waiver_id": "W04-001 Formal assertions deferred",
+    "stage": "04_frontend_stage",
+    "reason": "Formal BMC achieved but SVA assertions not present in all 16 modules. Compensating check: full-module GLS at Stage 06.",
+    "resolved": true
+  },
+  {
+    "waiver_id": "W08-001 Backend audit PASS",
+    "stage": "08_backend_stage",
+    "reason": "Backend audit passed: DRC=0, LVS=match, STA clean at 33.3 MHz. 0 antenna violations. See 08_backend_stage/99_audit/audit_pass.json.",
+    "resolved": true
+  }
+]
