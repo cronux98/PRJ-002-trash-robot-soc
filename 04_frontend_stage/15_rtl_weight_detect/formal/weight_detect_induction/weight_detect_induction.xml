@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-<testsuite timestamp="2026-07-14T15:13:41" hostname="smdtest02" package="weight_detect" id="0" name="induction" tests="0" errors="0" failures="0" time="0" skipped="0">
+<testsuite timestamp="2026-07-14T15:13:41" hostname="buildhost" package="weight_detect" id="0" name="induction" tests="0" errors="0" failures="0" time="0" skipped="0">
 <properties>
 <property name="os" value="Linux"/>
 <property name="expect" value="PASS"/>
@@ -8,9 +8,9 @@
 </properties>
 <testcase classname="induction" name="build execution" time="0">
 </testcase>
-<system-out>SBY 15:13:41 [weight_detect_bmc] Removing directory '/home/smdadmin/hermes_workspace/projects/IP-005/v5/03_frontend-stage/rtl-weight_detect/formal/weight_detect_bmc'.
-SBY 15:13:41 [weight_detect_induction] Removing directory '/home/smdadmin/hermes_workspace/projects/IP-005/v5/03_frontend-stage/rtl-weight_detect/formal/weight_detect_induction'.
-SBY 15:13:41 [weight_detect_induction] Copy '/home/smdadmin/hermes_workspace/projects/IP-005/v5/03_frontend-stage/rtl-weight_detect/rtl/weight_detect.v' to '/home/smdadmin/hermes_workspace/projects/IP-005/v5/03_frontend-stage/rtl-weight_detect/formal/weight_detect_induction/src/weight_detect.v'.
+<system-out>SBY 15:13:41 [weight_detect_bmc] Removing directory '~/hermes_workspace/projects/IP-005/v5/03_frontend-stage/rtl-weight_detect/formal/weight_detect_bmc'.
+SBY 15:13:41 [weight_detect_induction] Removing directory '~/hermes_workspace/projects/IP-005/v5/03_frontend-stage/rtl-weight_detect/formal/weight_detect_induction'.
+SBY 15:13:41 [weight_detect_induction] Copy '~/hermes_workspace/projects/IP-005/v5/03_frontend-stage/rtl-weight_detect/rtl/weight_detect.v' to '~/hermes_workspace/projects/IP-005/v5/03_frontend-stage/rtl-weight_detect/formal/weight_detect_induction/src/weight_detect.v'.
 SBY 15:13:41 [weight_detect_induction] engine_0: smtbmc yices
 SBY 15:13:41 [weight_detect_induction] base: starting process &quot;cd weight_detect_induction/src; yosys -ql ../model/design.log ../model/design.ys&quot;
 SBY 15:13:41 [weight_detect_induction] base: finished (returncode=0)
@@ -18,8 +18,8 @@ SBY 15:13:41 [weight_detect_induction] prep: starting process &quot;cd weight_de
 SBY 15:13:41 [weight_detect_induction] prep: finished (returncode=0)
 SBY 15:13:41 [weight_detect_induction] smt2: starting process &quot;cd weight_detect_induction/model; yosys -ql design_smt2.log design_smt2.ys&quot;
 SBY 15:13:41 [weight_detect_induction] smt2: finished (returncode=0)
-SBY 15:13:41 [weight_detect_induction] engine_0.basecase: starting process &quot;cd weight_detect_induction; /home/smdadmin/oss-cad-suite/bin/yosys-smtbmc -s yices --presat --unroll --noprogress -t 20  --append 0 --dump-vcd engine_0/trace.vcd --dump-yw engine_0/trace.yw --dump-vlogtb engine_0/trace_tb.v --dump-smtc engine_0/trace.smtc model/design_smt2.smt2&quot;
-SBY 15:13:41 [weight_detect_induction] engine_0.induction: starting process &quot;cd weight_detect_induction; /home/smdadmin/oss-cad-suite/bin/yosys-smtbmc -s yices --presat --unroll -i --noprogress -t 20  --append 0 --dump-vcd engine_0/trace_induct.vcd --dump-yw engine_0/trace_induct.yw --dump-vlogtb engine_0/trace_induct_tb.v --dump-smtc engine_0/trace_induct.smtc model/design_smt2.smt2&quot;
+SBY 15:13:41 [weight_detect_induction] engine_0.basecase: starting process &quot;cd weight_detect_induction; ~/oss-cad-suite/bin/yosys-smtbmc -s yices --presat --unroll --noprogress -t 20  --append 0 --dump-vcd engine_0/trace.vcd --dump-yw engine_0/trace.yw --dump-vlogtb engine_0/trace_tb.v --dump-smtc engine_0/trace.smtc model/design_smt2.smt2&quot;
+SBY 15:13:41 [weight_detect_induction] engine_0.induction: starting process &quot;cd weight_detect_induction; ~/oss-cad-suite/bin/yosys-smtbmc -s yices --presat --unroll -i --noprogress -t 20  --append 0 --dump-vcd engine_0/trace_induct.vcd --dump-yw engine_0/trace_induct.yw --dump-vlogtb engine_0/trace_induct_tb.v --dump-smtc engine_0/trace_induct.smtc model/design_smt2.smt2&quot;
 SBY 15:13:41 [weight_detect_induction] engine_0.induction: ##   0:00:00  Solver: yices
 SBY 15:13:41 [weight_detect_induction] engine_0.basecase: ##   0:00:00  Solver: yices
 SBY 15:13:41 [weight_detect_induction] engine_0.induction: ##   0:00:00  Trying induction in step 20..

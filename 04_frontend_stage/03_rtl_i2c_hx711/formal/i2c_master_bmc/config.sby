@@ -10,4 +10,4 @@ read -formal i2c_master.v
 prep -top i2c_master
 
 [files]
-/home/smdadmin/hermes_workspace/projects/IP-005/v5/03_frontend-stage/rtl-i2c_master/rtl/i2c_master.v
+~/hermes_workspace/projects/IP-005/v5/03_frontend-stage/rtl-i2c_master/rtl/i2c_master.v

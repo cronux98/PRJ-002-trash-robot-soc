@@ -21,4 +21,4 @@ read -formal interrupt_ctrl.v
 prep -top interrupt_ctrl
 
 [files]
-/home/smdadmin/hermes_workspace/projects/IP-005/v5/03_frontend-stage/rtl-interrupt_ctrl/rtl/interrupt_ctrl.v
+~/hermes_workspace/projects/IP-005/v5/03_frontend-stage/rtl-interrupt_ctrl/rtl/interrupt_ctrl.v

@@ -8,21 +8,21 @@
 
 -- Executing script file `/tmp/equiv_motor_pwm.ys' --
 
-1. Executing Verilog-2005 frontend: /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v
-Parsing Verilog input from `/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v' to AST representation.
+1. Executing Verilog-2005 frontend: ~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v
+Parsing Verilog input from `~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v' to AST representation.
 Generating RTLIL representation for module `\motor_pwm'.
 Successfully finished Verilog frontend.
 
-2. Executing Verilog-2005 frontend: /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm_ctrl.v
-Parsing Verilog input from `/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm_ctrl.v' to AST representation.
+2. Executing Verilog-2005 frontend: ~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm_ctrl.v
+Parsing Verilog input from `~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm_ctrl.v' to AST representation.
 Generating RTLIL representation for module `\motor_pwm_ctrl'.
-Warning: Replacing memory \fsm_state with list of registers. See /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm_ctrl.v:77
-Warning: Replacing memory \dead_counter with list of registers. See /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm_ctrl.v:76
-Warning: Replacing memory \pwm_counter with list of registers. See /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm_ctrl.v:75
-Warning: Replacing memory \dead_time_reg with list of registers. See /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm_ctrl.v:215
-Warning: Replacing memory \duty_reg with list of registers. See /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm_ctrl.v:211
-Warning: Replacing memory \period_reg with list of registers. See /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm_ctrl.v:207
-Note: Assuming pure combinatorial block at /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm_ctrl.v:135.5-166.8 in
+Warning: Replacing memory \fsm_state with list of registers. See ~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm_ctrl.v:77
+Warning: Replacing memory \dead_counter with list of registers. See ~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm_ctrl.v:76
+Warning: Replacing memory \pwm_counter with list of registers. See ~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm_ctrl.v:75
+Warning: Replacing memory \dead_time_reg with list of registers. See ~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm_ctrl.v:215
+Warning: Replacing memory \duty_reg with list of registers. See ~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm_ctrl.v:211
+Warning: Replacing memory \period_reg with list of registers. See ~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm_ctrl.v:207
+Note: Assuming pure combinatorial block at ~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm_ctrl.v:135.5-166.8 in
 compliance with IEC 62142(E):2005 / IEEE Std. 1364.1(E):2002. Recommending
 use of @* instead of @(...) for better match of synthesis and simulation.
 Successfully finished Verilog frontend.
@@ -43,7 +43,7 @@ Removed 1 unused modules.
 Cleaned up 0 empty switches.
 
 4.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
-Marked 4 switch rules as full_case in process $proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:54$10 in module motor_pwm.
+Marked 4 switch rules as full_case in process $proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:54$10 in module motor_pwm.
 Removed a total of 0 dead cases.
 
 4.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
@@ -53,14 +53,14 @@ Promoted 0 assignments to connections.
 4.4. Executing PROC_INIT pass (extract init attributes).
 
 4.5. Executing PROC_ARST pass (detect async resets in processes).
-Found async reset \rst_ni in `\motor_pwm.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:54$10'.
+Found async reset \rst_ni in `\motor_pwm.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:54$10'.
 
 4.6. Executing PROC_ROM pass (convert switches to ROMs).
 Converted 0 switches.
 <suppressed ~5 debug messages>
 
 4.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
-Creating decoders for process `\motor_pwm.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:54$10'.
+Creating decoders for process `\motor_pwm.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:54$10'.
      1/18: $0\pwm_cnt[15:0]
      2/18: $0\irq_fault[0:0]
      3/18: $0\status_fault[3:0]
@@ -83,36 +83,36 @@ Creating decoders for process `\motor_pwm.$proc$/home/smdadmin/hermes_workspace/
 4.8. Executing PROC_DLATCH pass (convert process syncs to latches).
 
 4.9. Executing PROC_DFF pass (convert process syncs to FFs).
-Creating register for signal `\motor_pwm.\wb_dat_o' using process `\motor_pwm.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:54$10'.
+Creating register for signal `\motor_pwm.\wb_dat_o' using process `\motor_pwm.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:54$10'.
   created $adff cell `$procdff$244' with positive edge clock and positive level reset.
-Creating register for signal `\motor_pwm.\wb_ack_o' using process `\motor_pwm.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:54$10'.
+Creating register for signal `\motor_pwm.\wb_ack_o' using process `\motor_pwm.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:54$10'.
   created $adff cell `$procdff$249' with positive edge clock and positive level reset.
-Creating register for signal `\motor_pwm.\pwm_a' using process `\motor_pwm.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:54$10'.
+Creating register for signal `\motor_pwm.\pwm_a' using process `\motor_pwm.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:54$10'.
   created $adff cell `$procdff$254' with positive edge clock and positive level reset.
-Creating register for signal `\motor_pwm.\pwm_b' using process `\motor_pwm.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:54$10'.
+Creating register for signal `\motor_pwm.\pwm_b' using process `\motor_pwm.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:54$10'.
   created $adff cell `$procdff$259' with positive edge clock and positive level reset.
-Creating register for signal `\motor_pwm.\irq_fault' using process `\motor_pwm.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:54$10'.
+Creating register for signal `\motor_pwm.\irq_fault' using process `\motor_pwm.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:54$10'.
   created $adff cell `$procdff$264' with positive edge clock and positive level reset.
-Creating register for signal `\motor_pwm.\duty_a' using process `\motor_pwm.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:54$10'.
+Creating register for signal `\motor_pwm.\duty_a' using process `\motor_pwm.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:54$10'.
   created $adff cell `$procdff$269' with positive edge clock and positive level reset.
-Creating register for signal `\motor_pwm.\duty_b' using process `\motor_pwm.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:54$10'.
+Creating register for signal `\motor_pwm.\duty_b' using process `\motor_pwm.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:54$10'.
   created $adff cell `$procdff$274' with positive edge clock and positive level reset.
-Creating register for signal `\motor_pwm.\duty_c' using process `\motor_pwm.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:54$10'.
+Creating register for signal `\motor_pwm.\duty_c' using process `\motor_pwm.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:54$10'.
   created $adff cell `$procdff$279' with positive edge clock and positive level reset.
-Creating register for signal `\motor_pwm.\duty_d' using process `\motor_pwm.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:54$10'.
+Creating register for signal `\motor_pwm.\duty_d' using process `\motor_pwm.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:54$10'.
   created $adff cell `$procdff$284' with positive edge clock and positive level reset.
-Creating register for signal `\motor_pwm.\ctrl' using process `\motor_pwm.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:54$10'.
+Creating register for signal `\motor_pwm.\ctrl' using process `\motor_pwm.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:54$10'.
   created $adff cell `$procdff$289' with positive edge clock and positive level reset.
-Creating register for signal `\motor_pwm.\status_fault' using process `\motor_pwm.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:54$10'.
+Creating register for signal `\motor_pwm.\status_fault' using process `\motor_pwm.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:54$10'.
   created $adff cell `$procdff$294' with positive edge clock and positive level reset.
-Creating register for signal `\motor_pwm.\pwm_cnt' using process `\motor_pwm.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:54$10'.
+Creating register for signal `\motor_pwm.\pwm_cnt' using process `\motor_pwm.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:54$10'.
   created $adff cell `$procdff$299' with positive edge clock and positive level reset.
 
 4.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
 
 4.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
-Found and cleaned up 5 empty switches in `\motor_pwm.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:54$10'.
-Removing empty process `motor_pwm.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:54$10'.
+Found and cleaned up 5 empty switches in `\motor_pwm.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:54$10'.
+Removing empty process `motor_pwm.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:54$10'.
 Cleaned up 5 empty switches.
 
 4.12. Executing OPT_EXPR pass (perform const folding).
@@ -270,7 +270,7 @@ Finding duplicate cells in `\motor_pwm'.
 Removed a total of 0 cells.
 
 8.6. Executing OPT_DFF pass (perform DFF optimizations).
-Adding SRST signal on $procdff$299 ($sdff) from module motor_pwm (D = $add$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:76$13_Y, Q = $auto$async2sync.cc:253:execute$332, rval = 16'0000000000000000).
+Adding SRST signal on $procdff$299 ($sdff) from module motor_pwm (D = $add$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:76$13_Y, Q = $auto$async2sync.cc:253:execute$332, rval = 16'0000000000000000).
 
 8.7. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \motor_pwm..
@@ -312,8 +312,8 @@ Optimizing module motor_pwm.
 
 9. Executing TECHMAP pass (map to technology primitives).
 
-9.1. Executing Verilog-2005 frontend: /home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v
-Parsing Verilog input from `/home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v' to AST representation.
+9.1. Executing Verilog-2005 frontend: ~/oss-cad-suite/lib/../share/yosys/techmap.v
+Parsing Verilog input from `~/oss-cad-suite/lib/../share/yosys/techmap.v' to AST representation.
 Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
 Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
 Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
@@ -485,11 +485,11 @@ Optimizing module motor_pwm.
 
 12.9. Finished fast OPT passes. (There is nothing left to do.)
 
-13. Executing Liberty frontend: /home/smdadmin/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130B/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+13. Executing Liberty frontend: ~/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130B/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 Imported 428 cell types from liberty file.
 
-14. Executing Verilog-2005 frontend: /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/synth/motor_pwm_netlist.v
-Parsing Verilog input from `/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/synth/motor_pwm_netlist.v' to AST representation.
+14. Executing Verilog-2005 frontend: ~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/synth/motor_pwm_netlist.v
+Parsing Verilog input from `~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/synth/motor_pwm_netlist.v' to AST representation.
 Generating RTLIL representation for module `\motor_pwm'.
 Successfully finished Verilog frontend.
 
@@ -670,8 +670,8 @@ Optimizing module motor_pwm.
 
 21. Executing TECHMAP pass (map to technology primitives).
 
-21.1. Executing Verilog-2005 frontend: /home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v
-Parsing Verilog input from `/home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v' to AST representation.
+21.1. Executing Verilog-2005 frontend: ~/oss-cad-suite/lib/../share/yosys/techmap.v
+Parsing Verilog input from `~/oss-cad-suite/lib/../share/yosys/techmap.v' to AST representation.
 Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
 Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
 Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
@@ -1316,34 +1316,34 @@ Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$763_gold ($_MUX_):
 Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$747_gold ($_MUX_): \duty_b_gold [15] -> \duty_b [15]
 Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$731_gold ($_MUX_): \duty_a_gold [15] -> \duty_a [15]
 Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$3593_gold ($_NOT_): \duty_a_gold [4] -> \duty_a [4]
-Setting undriven nets to undef: $techmap$gt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:51$6.$auto$alumacc.cc:512:replace_alu$705.CO_gold [2]
-Setting undriven nets to undef: $techmap$gt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:51$6.$auto$alumacc.cc:512:replace_alu$705.CO_gold [6:4]
-Setting undriven nets to undef: $techmap$gt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:51$6.$auto$alumacc.cc:512:replace_alu$705.CO_gold [14:8]
-Setting undriven nets to undef: $techmap$gt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:52$8.$auto$alumacc.cc:512:replace_alu$705.CO_gold [2]
-Setting undriven nets to undef: $techmap$gt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:52$8.$auto$alumacc.cc:512:replace_alu$705.CO_gold [6:4]
-Setting undriven nets to undef: $techmap$gt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:52$8.$auto$alumacc.cc:512:replace_alu$705.CO_gold [14:8]
-Setting undriven nets to undef: $techmap$ge$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:73$12.$auto$alumacc.cc:512:replace_alu$781.CO_gold [2]
-Setting undriven nets to undef: $techmap$ge$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:73$12.$auto$alumacc.cc:512:replace_alu$781.CO_gold [6:4]
-Setting undriven nets to undef: $techmap$ge$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:73$12.$auto$alumacc.cc:512:replace_alu$781.CO_gold [14:8]
-Setting undriven nets to undef: $techmap$add$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:76$13.$auto$alumacc.cc:512:replace_alu$794.CO_gold [15]
-Setting undriven nets to undef: $techmap$lt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:81$14.$auto$alumacc.cc:512:replace_alu$798.CO_gold [2]
-Setting undriven nets to undef: $techmap$lt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:81$14.$auto$alumacc.cc:512:replace_alu$798.CO_gold [6:4]
-Setting undriven nets to undef: $techmap$lt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:81$14.$auto$alumacc.cc:512:replace_alu$798.CO_gold [14:8]
-Setting undriven nets to undef: $techmap$lt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:84$16.$auto$alumacc.cc:512:replace_alu$798.CO_gold [2]
-Setting undriven nets to undef: $techmap$lt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:84$16.$auto$alumacc.cc:512:replace_alu$798.CO_gold [6:4]
-Setting undriven nets to undef: $techmap$lt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:84$16.$auto$alumacc.cc:512:replace_alu$798.CO_gold [14:8]
-Setting undriven nets to undef: $techmap$lt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:87$18.$auto$alumacc.cc:512:replace_alu$798.CO_gold [2]
-Setting undriven nets to undef: $techmap$lt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:87$18.$auto$alumacc.cc:512:replace_alu$798.CO_gold [6:4]
-Setting undriven nets to undef: $techmap$lt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:87$18.$auto$alumacc.cc:512:replace_alu$798.CO_gold [14:8]
-Setting undriven nets to undef: $techmap$lt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:90$20.$auto$alumacc.cc:512:replace_alu$798.CO_gold [2]
-Setting undriven nets to undef: $techmap$lt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:90$20.$auto$alumacc.cc:512:replace_alu$798.CO_gold [6:4]
-Setting undriven nets to undef: $techmap$lt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:90$20.$auto$alumacc.cc:512:replace_alu$798.CO_gold [14:8]
-Setting undriven nets to undef: $techmap$gt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:49$2.$auto$alumacc.cc:512:replace_alu$705.CO_gold [2]
-Setting undriven nets to undef: $techmap$gt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:49$2.$auto$alumacc.cc:512:replace_alu$705.CO_gold [6:4]
-Setting undriven nets to undef: $techmap$gt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:49$2.$auto$alumacc.cc:512:replace_alu$705.CO_gold [14:8]
-Setting undriven nets to undef: $techmap$gt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:50$4.$auto$alumacc.cc:512:replace_alu$705.CO_gold [2]
-Setting undriven nets to undef: $techmap$gt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:50$4.$auto$alumacc.cc:512:replace_alu$705.CO_gold [6:4]
-Setting undriven nets to undef: $techmap$gt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:50$4.$auto$alumacc.cc:512:replace_alu$705.CO_gold [14:8]
+Setting undriven nets to undef: $techmap$gt$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:51$6.$auto$alumacc.cc:512:replace_alu$705.CO_gold [2]
+Setting undriven nets to undef: $techmap$gt$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:51$6.$auto$alumacc.cc:512:replace_alu$705.CO_gold [6:4]
+Setting undriven nets to undef: $techmap$gt$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:51$6.$auto$alumacc.cc:512:replace_alu$705.CO_gold [14:8]
+Setting undriven nets to undef: $techmap$gt$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:52$8.$auto$alumacc.cc:512:replace_alu$705.CO_gold [2]
+Setting undriven nets to undef: $techmap$gt$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:52$8.$auto$alumacc.cc:512:replace_alu$705.CO_gold [6:4]
+Setting undriven nets to undef: $techmap$gt$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:52$8.$auto$alumacc.cc:512:replace_alu$705.CO_gold [14:8]
+Setting undriven nets to undef: $techmap$ge$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:73$12.$auto$alumacc.cc:512:replace_alu$781.CO_gold [2]
+Setting undriven nets to undef: $techmap$ge$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:73$12.$auto$alumacc.cc:512:replace_alu$781.CO_gold [6:4]
+Setting undriven nets to undef: $techmap$ge$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:73$12.$auto$alumacc.cc:512:replace_alu$781.CO_gold [14:8]
+Setting undriven nets to undef: $techmap$add$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:76$13.$auto$alumacc.cc:512:replace_alu$794.CO_gold [15]
+Setting undriven nets to undef: $techmap$lt$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:81$14.$auto$alumacc.cc:512:replace_alu$798.CO_gold [2]
+Setting undriven nets to undef: $techmap$lt$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:81$14.$auto$alumacc.cc:512:replace_alu$798.CO_gold [6:4]
+Setting undriven nets to undef: $techmap$lt$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:81$14.$auto$alumacc.cc:512:replace_alu$798.CO_gold [14:8]
+Setting undriven nets to undef: $techmap$lt$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:84$16.$auto$alumacc.cc:512:replace_alu$798.CO_gold [2]
+Setting undriven nets to undef: $techmap$lt$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:84$16.$auto$alumacc.cc:512:replace_alu$798.CO_gold [6:4]
+Setting undriven nets to undef: $techmap$lt$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:84$16.$auto$alumacc.cc:512:replace_alu$798.CO_gold [14:8]
+Setting undriven nets to undef: $techmap$lt$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:87$18.$auto$alumacc.cc:512:replace_alu$798.CO_gold [2]
+Setting undriven nets to undef: $techmap$lt$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:87$18.$auto$alumacc.cc:512:replace_alu$798.CO_gold [6:4]
+Setting undriven nets to undef: $techmap$lt$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:87$18.$auto$alumacc.cc:512:replace_alu$798.CO_gold [14:8]
+Setting undriven nets to undef: $techmap$lt$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:90$20.$auto$alumacc.cc:512:replace_alu$798.CO_gold [2]
+Setting undriven nets to undef: $techmap$lt$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:90$20.$auto$alumacc.cc:512:replace_alu$798.CO_gold [6:4]
+Setting undriven nets to undef: $techmap$lt$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:90$20.$auto$alumacc.cc:512:replace_alu$798.CO_gold [14:8]
+Setting undriven nets to undef: $techmap$gt$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:49$2.$auto$alumacc.cc:512:replace_alu$705.CO_gold [2]
+Setting undriven nets to undef: $techmap$gt$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:49$2.$auto$alumacc.cc:512:replace_alu$705.CO_gold [6:4]
+Setting undriven nets to undef: $techmap$gt$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:49$2.$auto$alumacc.cc:512:replace_alu$705.CO_gold [14:8]
+Setting undriven nets to undef: $techmap$gt$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:50$4.$auto$alumacc.cc:512:replace_alu$705.CO_gold [2]
+Setting undriven nets to undef: $techmap$gt$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:50$4.$auto$alumacc.cc:512:replace_alu$705.CO_gold [6:4]
+Setting undriven nets to undef: $techmap$gt$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:50$4.$auto$alumacc.cc:512:replace_alu$705.CO_gold [14:8]
 Setting undriven nets to undef: \wb_ack_o_gate
 Setting undriven nets to undef: \pwm_a_gate
 Setting undriven nets to undef: \pwm_b_gate

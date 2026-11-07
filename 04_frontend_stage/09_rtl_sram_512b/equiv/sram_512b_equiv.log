@@ -8,10 +8,10 @@
 
 -- Executing script file `/tmp/equiv_sram_512b.ys' --
 
-1. Executing Verilog-2005 frontend: /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v
-Parsing Verilog input from `/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v' to AST representation.
+1. Executing Verilog-2005 frontend: ~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v
+Parsing Verilog input from `~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v' to AST representation.
 Generating RTLIL representation for module `\sram_512b'.
-Warning: Replacing memory \mem with list of registers. See /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:39
+Warning: Replacing memory \mem with list of registers. See ~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:39
 Successfully finished Verilog frontend.
 
 2. Executing HIERARCHY pass (managing design hierarchy).
@@ -29,8 +29,8 @@ Removed 0 unused modules.
 Cleaned up 0 empty switches.
 
 3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
-Removed 1 dead cases from process $proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7 in module sram_512b.
-Marked 12 switch rules as full_case in process $proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7 in module sram_512b.
+Removed 1 dead cases from process $proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7 in module sram_512b.
+Marked 12 switch rules as full_case in process $proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7 in module sram_512b.
 Removed a total of 1 dead cases.
 
 3.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
@@ -40,17 +40,17 @@ Promoted 10 assignments to connections.
 3.4. Executing PROC_INIT pass (extract init attributes).
 
 3.5. Executing PROC_ARST pass (detect async resets in processes).
-Found async reset \rst_ni in `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Found async reset \rst_ni in `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
 
 3.6. Executing PROC_ROM pass (convert switches to ROMs).
 Converted 0 switches.
 <suppressed ~11 debug messages>
 
 3.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
-Creating decoders for process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
-     1/553: $4$mem2reg_rd$\mem$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:44$5_DATA[31:0]$60
-     2/553: $4$mem2reg_wr$\mem$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:42$4_ADDR[6:0]$58
-     3/553: $4$mem2reg_wr$\mem$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:42$4_DATA[31:0]$59
+Creating decoders for process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+     1/553: $4$mem2reg_rd$\mem$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:44$5_DATA[31:0]$60
+     2/553: $4$mem2reg_wr$\mem$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:42$4_ADDR[6:0]$58
+     3/553: $4$mem2reg_wr$\mem$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:42$4_DATA[31:0]$59
      4/553: $0\mem[127][31:0] [31:24]
      5/553: $0\mem[127][31:0] [23:16]
      6/553: $0\mem[126][31:0] [23:16]
@@ -180,7 +180,7 @@ Creating decoders for process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/
    130/553: $0\mem[2][31:0] [23:16]
    131/553: $0\mem[1][31:0] [23:16]
    132/553: $0\mem[0][31:0] [23:16]
-   133/553: $4$mem2reg_wr$\mem$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:41$3_DATA[31:0]$57
+   133/553: $4$mem2reg_wr$\mem$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:41$3_DATA[31:0]$57
    134/553: $0\mem[126][31:0] [31:24]
    135/553: $0\mem[127][31:0] [15:8]
    136/553: $0\mem[126][31:0] [15:8]
@@ -310,7 +310,7 @@ Creating decoders for process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/
    260/553: $0\mem[2][31:0] [15:8]
    261/553: $0\mem[1][31:0] [15:8]
    262/553: $0\mem[0][31:0] [15:8]
-   263/553: $4$mem2reg_wr$\mem$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:40$2_DATA[31:0]$55
+   263/553: $4$mem2reg_wr$\mem$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:40$2_DATA[31:0]$55
    264/553: $0\mem[125][31:0] [31:24]
    265/553: $0\mem[127][31:0] [7:0]
    266/553: $0\mem[126][31:0] [7:0]
@@ -440,38 +440,38 @@ Creating decoders for process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/
    390/553: $0\mem[2][31:0] [7:0]
    391/553: $0\mem[1][31:0] [7:0]
    392/553: $0\mem[0][31:0] [7:0]
-   393/553: $4$mem2reg_wr$\mem$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:39$1_DATA[31:0]$53
-   394/553: $3$mem2reg_wr$\mem$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:42$4_DATA[31:0]$49
-   395/553: $3$mem2reg_wr$\mem$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:42$4_ADDR[6:0]$48
-   396/553: $3$mem2reg_wr$\mem$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:41$3_DATA[31:0]$47
-   397/553: $3$mem2reg_wr$\mem$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:41$3_ADDR[6:0]$46
-   398/553: $3$mem2reg_wr$\mem$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:40$2_DATA[31:0]$45
-   399/553: $3$mem2reg_wr$\mem$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:40$2_ADDR[6:0]$44
-   400/553: $3$mem2reg_wr$\mem$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:39$1_DATA[31:0]$43
-   401/553: $3$mem2reg_wr$\mem$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:39$1_ADDR[6:0]$42
-   402/553: $3$mem2reg_rd$\mem$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:44$5_DATA[31:0]$51
-   403/553: $3$mem2reg_rd$\mem$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:44$5_ADDR[6:0]$50
-   404/553: $2$mem2reg_rd$\mem$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:44$5_DATA[31:0]$41
-   405/553: $2$mem2reg_rd$\mem$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:44$5_ADDR[6:0]$40
-   406/553: $2$mem2reg_wr$\mem$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:42$4_DATA[31:0]$39
-   407/553: $2$mem2reg_wr$\mem$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:42$4_ADDR[6:0]$38
-   408/553: $2$mem2reg_wr$\mem$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:41$3_DATA[31:0]$37
-   409/553: $2$mem2reg_wr$\mem$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:41$3_ADDR[6:0]$36
-   410/553: $2$mem2reg_wr$\mem$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:40$2_DATA[31:0]$35
-   411/553: $2$mem2reg_wr$\mem$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:40$2_ADDR[6:0]$34
-   412/553: $2$mem2reg_wr$\mem$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:39$1_DATA[31:0]$33
-   413/553: $2$mem2reg_wr$\mem$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:39$1_ADDR[6:0]$32
+   393/553: $4$mem2reg_wr$\mem$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:39$1_DATA[31:0]$53
+   394/553: $3$mem2reg_wr$\mem$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:42$4_DATA[31:0]$49
+   395/553: $3$mem2reg_wr$\mem$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:42$4_ADDR[6:0]$48
+   396/553: $3$mem2reg_wr$\mem$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:41$3_DATA[31:0]$47
+   397/553: $3$mem2reg_wr$\mem$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:41$3_ADDR[6:0]$46
+   398/553: $3$mem2reg_wr$\mem$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:40$2_DATA[31:0]$45
+   399/553: $3$mem2reg_wr$\mem$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:40$2_ADDR[6:0]$44
+   400/553: $3$mem2reg_wr$\mem$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:39$1_DATA[31:0]$43
+   401/553: $3$mem2reg_wr$\mem$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:39$1_ADDR[6:0]$42
+   402/553: $3$mem2reg_rd$\mem$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:44$5_DATA[31:0]$51
+   403/553: $3$mem2reg_rd$\mem$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:44$5_ADDR[6:0]$50
+   404/553: $2$mem2reg_rd$\mem$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:44$5_DATA[31:0]$41
+   405/553: $2$mem2reg_rd$\mem$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:44$5_ADDR[6:0]$40
+   406/553: $2$mem2reg_wr$\mem$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:42$4_DATA[31:0]$39
+   407/553: $2$mem2reg_wr$\mem$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:42$4_ADDR[6:0]$38
+   408/553: $2$mem2reg_wr$\mem$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:41$3_DATA[31:0]$37
+   409/553: $2$mem2reg_wr$\mem$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:41$3_ADDR[6:0]$36
+   410/553: $2$mem2reg_wr$\mem$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:40$2_DATA[31:0]$35
+   411/553: $2$mem2reg_wr$\mem$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:40$2_ADDR[6:0]$34
+   412/553: $2$mem2reg_wr$\mem$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:39$1_DATA[31:0]$33
+   413/553: $2$mem2reg_wr$\mem$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:39$1_ADDR[6:0]$32
    414/553: $0\wb_ack_o[0:0]
-   415/553: $1$mem2reg_rd$\mem$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:44$5_DATA[31:0]$28
-   416/553: $1$mem2reg_rd$\mem$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:44$5_ADDR[6:0]$27
-   417/553: $1$mem2reg_wr$\mem$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:42$4_DATA[31:0]$26
-   418/553: $1$mem2reg_wr$\mem$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:42$4_ADDR[6:0]$25
-   419/553: $1$mem2reg_wr$\mem$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:41$3_DATA[31:0]$24
-   420/553: $1$mem2reg_wr$\mem$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:41$3_ADDR[6:0]$23
-   421/553: $1$mem2reg_wr$\mem$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:40$2_DATA[31:0]$22
-   422/553: $1$mem2reg_wr$\mem$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:40$2_ADDR[6:0]$21
-   423/553: $1$mem2reg_wr$\mem$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:39$1_DATA[31:0]$20
-   424/553: $1$mem2reg_wr$\mem$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:39$1_ADDR[6:0]$19
+   415/553: $1$mem2reg_rd$\mem$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:44$5_DATA[31:0]$28
+   416/553: $1$mem2reg_rd$\mem$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:44$5_ADDR[6:0]$27
+   417/553: $1$mem2reg_wr$\mem$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:42$4_DATA[31:0]$26
+   418/553: $1$mem2reg_wr$\mem$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:42$4_ADDR[6:0]$25
+   419/553: $1$mem2reg_wr$\mem$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:41$3_DATA[31:0]$24
+   420/553: $1$mem2reg_wr$\mem$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:41$3_ADDR[6:0]$23
+   421/553: $1$mem2reg_wr$\mem$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:40$2_DATA[31:0]$22
+   422/553: $1$mem2reg_wr$\mem$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:40$2_ADDR[6:0]$21
+   423/553: $1$mem2reg_wr$\mem$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:39$1_DATA[31:0]$20
+   424/553: $1$mem2reg_wr$\mem$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:39$1_ADDR[6:0]$19
    425/553: $0\mem[124][31:0] [31:24]
    426/553: $0\mem[123][31:0] [31:24]
    427/553: $0\mem[122][31:0] [31:24]
@@ -597,300 +597,300 @@ Creating decoders for process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/
    547/553: $0\mem[2][31:0] [31:24]
    548/553: $0\mem[1][31:0] [31:24]
    549/553: $0\mem[0][31:0] [31:24]
-   550/553: $4$mem2reg_wr$\mem$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:41$3_ADDR[6:0]$56
-   551/553: $4$mem2reg_wr$\mem$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:40$2_ADDR[6:0]$54
-   552/553: $4$mem2reg_wr$\mem$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:39$1_ADDR[6:0]$52
+   550/553: $4$mem2reg_wr$\mem$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:41$3_ADDR[6:0]$56
+   551/553: $4$mem2reg_wr$\mem$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:40$2_ADDR[6:0]$54
+   552/553: $4$mem2reg_wr$\mem$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:39$1_ADDR[6:0]$52
    553/553: $0\wb_dat_o[31:0]
 
 3.8. Executing PROC_DLATCH pass (convert process syncs to latches).
 
 3.9. Executing PROC_DFF pass (convert process syncs to FFs).
-Creating register for signal `\sram_512b.\wb_dat_o' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\wb_dat_o' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $adff cell `$procdff$38515' with positive edge clock and positive level reset.
-Creating register for signal `\sram_512b.\wb_ack_o' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\wb_ack_o' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $adff cell `$procdff$38520' with positive edge clock and positive level reset.
-Creating register for signal `\sram_512b.\mem[0]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[0]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$38527' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[1]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[1]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$38534' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[2]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[2]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$38541' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[3]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[3]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$38548' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[4]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[4]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$38555' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[5]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[5]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$38562' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[6]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[6]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$38569' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[7]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[7]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$38576' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[8]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[8]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$38583' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[9]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[9]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$38590' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[10]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[10]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$38597' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[11]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[11]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$38604' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[12]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[12]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$38611' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[13]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[13]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$38618' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[14]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[14]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$38625' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[15]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[15]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$38632' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[16]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[16]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$38639' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[17]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[17]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$38646' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[18]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[18]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$38653' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[19]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[19]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$38660' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[20]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[20]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$38667' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[21]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[21]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$38674' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[22]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[22]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$38681' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[23]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[23]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$38688' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[24]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[24]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$38695' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[25]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[25]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$38702' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[26]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[26]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$38709' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[27]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[27]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$38716' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[28]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[28]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$38723' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[29]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[29]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$38730' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[30]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[30]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$38737' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[31]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[31]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$38744' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[32]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[32]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$38751' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[33]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[33]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$38758' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[34]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[34]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$38765' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[35]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[35]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$38772' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[36]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[36]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$38779' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[37]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[37]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$38786' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[38]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[38]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$38793' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[39]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[39]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$38800' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[40]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[40]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$38807' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[41]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[41]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$38814' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[42]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[42]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$38821' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[43]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[43]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$38828' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[44]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[44]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$38835' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[45]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[45]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$38842' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[46]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[46]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$38849' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[47]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[47]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$38856' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[48]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[48]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$38863' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[49]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[49]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$38870' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[50]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[50]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$38877' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[51]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[51]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$38884' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[52]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[52]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$38891' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[53]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[53]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$38898' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[54]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[54]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$38905' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[55]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[55]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$38912' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[56]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[56]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$38919' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[57]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[57]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$38926' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[58]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[58]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$38933' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[59]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[59]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$38940' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[60]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[60]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$38947' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[61]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[61]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$38954' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[62]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[62]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$38961' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[63]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[63]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$38968' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[64]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[64]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$38975' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[65]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[65]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$38982' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[66]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[66]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$38989' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[67]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[67]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$38996' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[68]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[68]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$39003' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[69]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[69]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$39010' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[70]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[70]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$39017' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[71]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[71]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$39024' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[72]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[72]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$39031' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[73]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[73]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$39038' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[74]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[74]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$39045' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[75]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[75]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$39052' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[76]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[76]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$39059' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[77]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[77]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$39066' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[78]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[78]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$39073' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[79]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[79]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$39080' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[80]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[80]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$39087' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[81]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[81]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$39094' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[82]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[82]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$39101' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[83]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[83]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$39108' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[84]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[84]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$39115' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[85]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[85]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$39122' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[86]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[86]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$39129' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[87]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[87]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$39136' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[88]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[88]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$39143' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[89]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[89]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$39150' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[90]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[90]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$39157' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[91]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[91]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$39164' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[92]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[92]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$39171' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[93]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[93]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$39178' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[94]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[94]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$39185' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[95]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[95]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$39192' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[96]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[96]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$39199' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[97]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[97]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$39206' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[98]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[98]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$39213' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[99]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[99]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$39220' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[100]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[100]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$39227' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[101]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[101]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$39234' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[102]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[102]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$39241' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[103]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[103]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$39248' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[104]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[104]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$39255' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[105]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[105]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$39262' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[106]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[106]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$39269' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[107]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[107]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$39276' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[108]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[108]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$39283' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[109]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[109]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$39290' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[110]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[110]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$39297' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[111]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[111]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$39304' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[112]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[112]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$39311' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[113]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[113]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$39318' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[114]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[114]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$39325' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[115]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[115]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$39332' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[116]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[116]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$39339' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[117]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[117]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$39346' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[118]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[118]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$39353' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[119]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[119]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$39360' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[120]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[120]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$39367' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[121]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[121]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$39374' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[122]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[122]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$39381' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[123]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[123]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$39388' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[124]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[124]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$39395' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[125]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[125]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$39402' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[126]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[126]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$39409' with positive edge clock.
-Creating register for signal `\sram_512b.\mem[127]' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.\mem[127]' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $dff cell `$procdff$39416' with positive edge clock.
-Creating register for signal `\sram_512b.$mem2reg_wr$\mem$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:39$1_ADDR' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.$mem2reg_wr$\mem$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:39$1_ADDR' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $adff cell `$procdff$39421' with positive edge clock and positive level reset.
-Creating register for signal `\sram_512b.$mem2reg_wr$\mem$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:39$1_DATA' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.$mem2reg_wr$\mem$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:39$1_DATA' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $adff cell `$procdff$39426' with positive edge clock and positive level reset.
-Creating register for signal `\sram_512b.$mem2reg_wr$\mem$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:40$2_ADDR' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.$mem2reg_wr$\mem$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:40$2_ADDR' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $adff cell `$procdff$39431' with positive edge clock and positive level reset.
-Creating register for signal `\sram_512b.$mem2reg_wr$\mem$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:40$2_DATA' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.$mem2reg_wr$\mem$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:40$2_DATA' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $adff cell `$procdff$39436' with positive edge clock and positive level reset.
-Creating register for signal `\sram_512b.$mem2reg_wr$\mem$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:41$3_ADDR' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.$mem2reg_wr$\mem$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:41$3_ADDR' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $adff cell `$procdff$39441' with positive edge clock and positive level reset.
-Creating register for signal `\sram_512b.$mem2reg_wr$\mem$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:41$3_DATA' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.$mem2reg_wr$\mem$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:41$3_DATA' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $adff cell `$procdff$39446' with positive edge clock and positive level reset.
-Creating register for signal `\sram_512b.$mem2reg_wr$\mem$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:42$4_ADDR' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.$mem2reg_wr$\mem$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:42$4_ADDR' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $adff cell `$procdff$39451' with positive edge clock and positive level reset.
-Creating register for signal `\sram_512b.$mem2reg_wr$\mem$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:42$4_DATA' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.$mem2reg_wr$\mem$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:42$4_DATA' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $adff cell `$procdff$39456' with positive edge clock and positive level reset.
-Creating register for signal `\sram_512b.$mem2reg_rd$\mem$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:44$5_ADDR' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.$mem2reg_rd$\mem$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:44$5_ADDR' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $adff cell `$procdff$39461' with positive edge clock and positive level reset.
-Creating register for signal `\sram_512b.$mem2reg_rd$\mem$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:44$5_DATA' using process `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Creating register for signal `\sram_512b.$mem2reg_rd$\mem$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:44$5_DATA' using process `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
   created $adff cell `$procdff$39466' with positive edge clock and positive level reset.
 
 3.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
 
 3.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
-Found and cleaned up 11 empty switches in `\sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
-Removing empty process `sram_512b.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Found and cleaned up 11 empty switches in `\sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
+Removing empty process `sram_512b.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:32$7'.
 Cleaned up 11 empty switches.
 
 3.12. Executing OPT_EXPR pass (perform const folding).
@@ -1044,7 +1044,7 @@ Adding EN signal on $procdff$38968 ($dff) from module sram_512b (D = \wb_dat_i [
 Adding EN signal on $procdff$38968 ($dff) from module sram_512b (D = \wb_dat_i [15:8], Q = \mem[63] [15:8]).
 Adding EN signal on $procdff$38968 ($dff) from module sram_512b (D = \wb_dat_i [7:0], Q = \mem[63] [7:0]).
 Adding EN signal on $procdff$38968 ($dff) from module sram_512b (D = \wb_dat_i [31:24], Q = \mem[63] [31:24]).
-Adding EN signal on $procdff$38515 ($adff) from module sram_512b (D = $4$mem2reg_rd$\mem$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:44$5_DATA[31:0]$60, Q = \wb_dat_o).
+Adding EN signal on $procdff$38515 ($adff) from module sram_512b (D = $4$mem2reg_rd$\mem$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:44$5_DATA[31:0]$60, Q = \wb_dat_o).
 Adding EN signal on $procdff$39381 ($dff) from module sram_512b (D = \wb_dat_i [23:16], Q = \mem[122] [23:16]).
 Adding EN signal on $procdff$39381 ($dff) from module sram_512b (D = \wb_dat_i [15:8], Q = \mem[122] [15:8]).
 Adding EN signal on $procdff$39381 ($dff) from module sram_512b (D = \wb_dat_i [7:0], Q = \mem[122] [7:0]).
@@ -1633,7 +1633,7 @@ Optimizing module sram_512b.
 
 5. Executing ASYNC2SYNC pass.
 Replacing sram_512b.$procdff$38520 ($adff): ARST=\rst_ni, D=$0\wb_ack_o[0:0], Q=\wb_ack_o
-Replacing sram_512b.$auto$ff.cc:337:slice$39479 ($adffe): ARST=\rst_ni, D=$4$mem2reg_rd$\mem$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:44$5_DATA[31:0]$60, Q=\wb_dat_o
+Replacing sram_512b.$auto$ff.cc:337:slice$39479 ($adffe): ARST=\rst_ni, D=$4$mem2reg_rd$\mem$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:44$5_DATA[31:0]$60, Q=\wb_dat_o
 
 6. Executing MEMORY pass.
 
@@ -1705,8 +1705,8 @@ Optimizing module sram_512b.
 
 8. Executing TECHMAP pass (map to technology primitives).
 
-8.1. Executing Verilog-2005 frontend: /home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v
-Parsing Verilog input from `/home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v' to AST representation.
+8.1. Executing Verilog-2005 frontend: ~/oss-cad-suite/lib/../share/yosys/techmap.v
+Parsing Verilog input from `~/oss-cad-suite/lib/../share/yosys/techmap.v' to AST representation.
 Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
 Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
 Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
@@ -1863,11 +1863,11 @@ Optimizing module sram_512b.
 
 11.9. Finished fast OPT passes. (There is nothing left to do.)
 
-12. Executing Liberty frontend: /home/smdadmin/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130B/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+12. Executing Liberty frontend: ~/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130B/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 Imported 428 cell types from liberty file.
 
-13. Executing Verilog-2005 frontend: /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/synth/sram_512b_netlist.v
-Parsing Verilog input from `/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/synth/sram_512b_netlist.v' to AST representation.
+13. Executing Verilog-2005 frontend: ~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/synth/sram_512b_netlist.v
+Parsing Verilog input from `~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/synth/sram_512b_netlist.v' to AST representation.
 Generating RTLIL representation for module `\sram_512b'.
 Successfully finished Verilog frontend.
 
@@ -2048,8 +2048,8 @@ Optimizing module sram_512b.
 
 20. Executing TECHMAP pass (map to technology primitives).
 
-20.1. Executing Verilog-2005 frontend: /home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v
-Parsing Verilog input from `/home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v' to AST representation.
+20.1. Executing Verilog-2005 frontend: ~/oss-cad-suite/lib/../share/yosys/techmap.v
+Parsing Verilog input from `~/oss-cad-suite/lib/../share/yosys/techmap.v' to AST representation.
 Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
 Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
 Generating RTLIL representation for module `\_90_simplemap_logic_ops'.

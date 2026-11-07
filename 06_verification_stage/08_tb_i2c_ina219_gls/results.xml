@@ -1,9 +1,9 @@
 <testsuites name="results">
   <testsuite name="all" package="all">
     <property name="random_seed" value="1784094931" />
-    <testcase name="test_reset" classname="test_i2c_ina219" file="/home/smdadmin/hermes_workspace/projects/IP-005/v6/06_verification/tb-i2c_ina219_gls/test_i2c_ina219.py" lineno="13" time="0.001592874526977539" sim_time_ns="70.0" ratio_time="43945.70872623859" />
-    <testcase name="test_register_rw" classname="test_i2c_ina219" file="/home/smdadmin/hermes_workspace/projects/IP-005/v6/06_verification/tb-i2c_ina219_gls/test_i2c_ina219.py" lineno="27" time="0.002684354782104492" sim_time_ns="200.99999999999997" ratio_time="74878.32880362375" />
-    <testcase name="test_fsm_start_stop" classname="test_i2c_ina219" file="/home/smdadmin/hermes_workspace/projects/IP-005/v6/06_verification/tb-i2c_ina219_gls/test_i2c_ina219.py" lineno="54" time="0.02988266944885254" sim_time_ns="5141.0" ratio_time="172039.5163758507" />
-    <testcase name="test_ack_handshake" classname="test_i2c_ina219" file="/home/smdadmin/hermes_workspace/projects/IP-005/v6/06_verification/tb-i2c_ina219_gls/test_i2c_ina219.py" lineno="77" time="0.0013689994812011719" sim_time_ns="121.0" ratio_time="88385.71647509579" />
+    <testcase name="test_reset" classname="test_i2c_ina219" file="~/hermes_workspace/projects/IP-005/v6/06_verification/tb-i2c_ina219_gls/test_i2c_ina219.py" lineno="13" time="0.001592874526977539" sim_time_ns="70.0" ratio_time="43945.70872623859" />
+    <testcase name="test_register_rw" classname="test_i2c_ina219" file="~/hermes_workspace/projects/IP-005/v6/06_verification/tb-i2c_ina219_gls/test_i2c_ina219.py" lineno="27" time="0.002684354782104492" sim_time_ns="200.99999999999997" ratio_time="74878.32880362375" />
+    <testcase name="test_fsm_start_stop" classname="test_i2c_ina219" file="~/hermes_workspace/projects/IP-005/v6/06_verification/tb-i2c_ina219_gls/test_i2c_ina219.py" lineno="54" time="0.02988266944885254" sim_time_ns="5141.0" ratio_time="172039.5163758507" />
+    <testcase name="test_ack_handshake" classname="test_i2c_ina219" file="~/hermes_workspace/projects/IP-005/v6/06_verification/tb-i2c_ina219_gls/test_i2c_ina219.py" lineno="77" time="0.0013689994812011719" sim_time_ns="121.0" ratio_time="88385.71647509579" />
   </testsuite>
 </testsuites>

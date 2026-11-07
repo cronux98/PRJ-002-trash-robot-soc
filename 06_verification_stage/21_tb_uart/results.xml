@@ -1,11 +1,11 @@
 <testsuites name="results">
   <testsuite name="all" package="all">
     <property name="random_seed" value="1784095025" />
-    <testcase name="test_reset" classname="test_uart" file="/home/smdadmin/hermes_workspace/projects/IP-005/v6/06_verification/tb-uart/test_uart.py" lineno="21" time="0.0007152557373046875" sim_time_ns="70.0" ratio_time="97867.09333333334" />
-    <testcase name="test_register_rw" classname="test_uart" file="/home/smdadmin/hermes_workspace/projects/IP-005/v6/06_verification/tb-uart/test_uart.py" lineno="34" time="0.0009162425994873047" sim_time_ns="141.0" ratio_time="153889.37392661982" />
-    <testcase name="test_tx_serial" classname="test_uart" file="/home/smdadmin/hermes_workspace/projects/IP-005/v6/06_verification/tb-uart/test_uart.py" lineno="54" time="0.05469107627868652" sim_time_ns="36601.0" ratio_time="669231.6642937169" />
-    <testcase name="test_rx_serial" classname="test_uart" file="/home/smdadmin/hermes_workspace/projects/IP-005/v6/06_verification/tb-uart/test_uart.py" lineno="79" time="0.04455137252807617" sim_time_ns="32421.0" ratio_time="727721.6875769284" />
-    <testcase name="test_frame_error" classname="test_uart" file="/home/smdadmin/hermes_workspace/projects/IP-005/v6/06_verification/tb-uart/test_uart.py" lineno="116" time="0.04266023635864258" sim_time_ns="31001.0" ratio_time="726695.4580226905" />
-    <testcase name="test_ack_handshake" classname="test_uart" file="/home/smdadmin/hermes_workspace/projects/IP-005/v6/06_verification/tb-uart/test_uart.py" lineno="142" time="0.0005877017974853516" sim_time_ns="121.0" ratio_time="205886.72778904665" />
+    <testcase name="test_reset" classname="test_uart" file="~/hermes_workspace/projects/IP-005/v6/06_verification/tb-uart/test_uart.py" lineno="21" time="0.0007152557373046875" sim_time_ns="70.0" ratio_time="97867.09333333334" />
+    <testcase name="test_register_rw" classname="test_uart" file="~/hermes_workspace/projects/IP-005/v6/06_verification/tb-uart/test_uart.py" lineno="34" time="0.0009162425994873047" sim_time_ns="141.0" ratio_time="153889.37392661982" />
+    <testcase name="test_tx_serial" classname="test_uart" file="~/hermes_workspace/projects/IP-005/v6/06_verification/tb-uart/test_uart.py" lineno="54" time="0.05469107627868652" sim_time_ns="36601.0" ratio_time="669231.6642937169" />
+    <testcase name="test_rx_serial" classname="test_uart" file="~/hermes_workspace/projects/IP-005/v6/06_verification/tb-uart/test_uart.py" lineno="79" time="0.04455137252807617" sim_time_ns="32421.0" ratio_time="727721.6875769284" />
+    <testcase name="test_frame_error" classname="test_uart" file="~/hermes_workspace/projects/IP-005/v6/06_verification/tb-uart/test_uart.py" lineno="116" time="0.04266023635864258" sim_time_ns="31001.0" ratio_time="726695.4580226905" />
+    <testcase name="test_ack_handshake" classname="test_uart" file="~/hermes_workspace/projects/IP-005/v6/06_verification/tb-uart/test_uart.py" lineno="142" time="0.0005877017974853516" sim_time_ns="121.0" ratio_time="205886.72778904665" />
   </testsuite>
 </testsuites>

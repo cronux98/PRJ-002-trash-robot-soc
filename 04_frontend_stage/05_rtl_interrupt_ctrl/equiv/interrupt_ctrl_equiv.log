@@ -8,13 +8,13 @@
 
 -- Executing script file `/tmp/equiv_interrupt_ctrl.ys' --
 
-1. Executing Verilog-2005 frontend: /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-interrupt_ctrl/rtl/intc.v
-Parsing Verilog input from `/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-interrupt_ctrl/rtl/intc.v' to AST representation.
+1. Executing Verilog-2005 frontend: ~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-interrupt_ctrl/rtl/intc.v
+Parsing Verilog input from `~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-interrupt_ctrl/rtl/intc.v' to AST representation.
 Generating RTLIL representation for module `\intc'.
 Successfully finished Verilog frontend.
 
-2. Executing Verilog-2005 frontend: /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-interrupt_ctrl/rtl/interrupt_ctrl.v
-Parsing Verilog input from `/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-interrupt_ctrl/rtl/interrupt_ctrl.v' to AST representation.
+2. Executing Verilog-2005 frontend: ~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-interrupt_ctrl/rtl/interrupt_ctrl.v
+Parsing Verilog input from `~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-interrupt_ctrl/rtl/interrupt_ctrl.v' to AST representation.
 Generating RTLIL representation for module `\interrupt_ctrl'.
 Successfully finished Verilog frontend.
 
@@ -34,7 +34,7 @@ Removed 1 unused modules.
 Cleaned up 0 empty switches.
 
 4.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
-Marked 3 switch rules as full_case in process $proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-interrupt_ctrl/rtl/interrupt_ctrl.v:44$78 in module interrupt_ctrl.
+Marked 3 switch rules as full_case in process $proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-interrupt_ctrl/rtl/interrupt_ctrl.v:44$78 in module interrupt_ctrl.
 Removed a total of 0 dead cases.
 
 4.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
@@ -44,14 +44,14 @@ Promoted 0 assignments to connections.
 4.4. Executing PROC_INIT pass (extract init attributes).
 
 4.5. Executing PROC_ARST pass (detect async resets in processes).
-Found async reset \rst_ni in `\interrupt_ctrl.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-interrupt_ctrl/rtl/interrupt_ctrl.v:44$78'.
+Found async reset \rst_ni in `\interrupt_ctrl.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-interrupt_ctrl/rtl/interrupt_ctrl.v:44$78'.
 
 4.6. Executing PROC_ROM pass (convert switches to ROMs).
 Converted 0 switches.
 <suppressed ~4 debug messages>
 
 4.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
-Creating decoders for process `\interrupt_ctrl.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-interrupt_ctrl/rtl/interrupt_ctrl.v:44$78'.
+Creating decoders for process `\interrupt_ctrl.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-interrupt_ctrl/rtl/interrupt_ctrl.v:44$78'.
      1/7: $0\irq_out[0:0]
      2/7: $0\pending[15:0]
      3/7: $0\irq_in_prev[15:0]
@@ -63,26 +63,26 @@ Creating decoders for process `\interrupt_ctrl.$proc$/home/smdadmin/hermes_works
 4.8. Executing PROC_DLATCH pass (convert process syncs to latches).
 
 4.9. Executing PROC_DFF pass (convert process syncs to FFs).
-Creating register for signal `\interrupt_ctrl.\wb_dat_o' using process `\interrupt_ctrl.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-interrupt_ctrl/rtl/interrupt_ctrl.v:44$78'.
+Creating register for signal `\interrupt_ctrl.\wb_dat_o' using process `\interrupt_ctrl.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-interrupt_ctrl/rtl/interrupt_ctrl.v:44$78'.
   created $adff cell `$procdff$135' with positive edge clock and positive level reset.
-Creating register for signal `\interrupt_ctrl.\wb_ack_o' using process `\interrupt_ctrl.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-interrupt_ctrl/rtl/interrupt_ctrl.v:44$78'.
+Creating register for signal `\interrupt_ctrl.\wb_ack_o' using process `\interrupt_ctrl.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-interrupt_ctrl/rtl/interrupt_ctrl.v:44$78'.
   created $adff cell `$procdff$140' with positive edge clock and positive level reset.
-Creating register for signal `\interrupt_ctrl.\irq_out' using process `\interrupt_ctrl.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-interrupt_ctrl/rtl/interrupt_ctrl.v:44$78'.
+Creating register for signal `\interrupt_ctrl.\irq_out' using process `\interrupt_ctrl.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-interrupt_ctrl/rtl/interrupt_ctrl.v:44$78'.
   created $adff cell `$procdff$145' with positive edge clock and positive level reset.
-Creating register for signal `\interrupt_ctrl.\pending' using process `\interrupt_ctrl.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-interrupt_ctrl/rtl/interrupt_ctrl.v:44$78'.
+Creating register for signal `\interrupt_ctrl.\pending' using process `\interrupt_ctrl.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-interrupt_ctrl/rtl/interrupt_ctrl.v:44$78'.
   created $adff cell `$procdff$150' with positive edge clock and positive level reset.
-Creating register for signal `\interrupt_ctrl.\enable' using process `\interrupt_ctrl.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-interrupt_ctrl/rtl/interrupt_ctrl.v:44$78'.
+Creating register for signal `\interrupt_ctrl.\enable' using process `\interrupt_ctrl.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-interrupt_ctrl/rtl/interrupt_ctrl.v:44$78'.
   created $adff cell `$procdff$155' with positive edge clock and positive level reset.
-Creating register for signal `\interrupt_ctrl.\edge_cfg' using process `\interrupt_ctrl.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-interrupt_ctrl/rtl/interrupt_ctrl.v:44$78'.
+Creating register for signal `\interrupt_ctrl.\edge_cfg' using process `\interrupt_ctrl.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-interrupt_ctrl/rtl/interrupt_ctrl.v:44$78'.
   created $adff cell `$procdff$160' with positive edge clock and positive level reset.
-Creating register for signal `\interrupt_ctrl.\irq_in_prev' using process `\interrupt_ctrl.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-interrupt_ctrl/rtl/interrupt_ctrl.v:44$78'.
+Creating register for signal `\interrupt_ctrl.\irq_in_prev' using process `\interrupt_ctrl.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-interrupt_ctrl/rtl/interrupt_ctrl.v:44$78'.
   created $adff cell `$procdff$165' with positive edge clock and positive level reset.
 
 4.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
 
 4.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
-Found and cleaned up 4 empty switches in `\interrupt_ctrl.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-interrupt_ctrl/rtl/interrupt_ctrl.v:44$78'.
-Removing empty process `interrupt_ctrl.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-interrupt_ctrl/rtl/interrupt_ctrl.v:44$78'.
+Found and cleaned up 4 empty switches in `\interrupt_ctrl.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-interrupt_ctrl/rtl/interrupt_ctrl.v:44$78'.
+Removing empty process `interrupt_ctrl.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-interrupt_ctrl/rtl/interrupt_ctrl.v:44$78'.
 Cleaned up 4 empty switches.
 
 4.12. Executing OPT_EXPR pass (perform const folding).
@@ -243,8 +243,8 @@ Optimizing module interrupt_ctrl.
 
 9. Executing TECHMAP pass (map to technology primitives).
 
-9.1. Executing Verilog-2005 frontend: /home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v
-Parsing Verilog input from `/home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v' to AST representation.
+9.1. Executing Verilog-2005 frontend: ~/oss-cad-suite/lib/../share/yosys/techmap.v
+Parsing Verilog input from `~/oss-cad-suite/lib/../share/yosys/techmap.v' to AST representation.
 Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
 Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
 Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
@@ -402,11 +402,11 @@ Optimizing module interrupt_ctrl.
 
 12.9. Finished fast OPT passes. (There is nothing left to do.)
 
-13. Executing Liberty frontend: /home/smdadmin/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130B/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+13. Executing Liberty frontend: ~/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130B/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 Imported 428 cell types from liberty file.
 
-14. Executing Verilog-2005 frontend: /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-interrupt_ctrl/synth/interrupt_ctrl_netlist.v
-Parsing Verilog input from `/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-interrupt_ctrl/synth/interrupt_ctrl_netlist.v' to AST representation.
+14. Executing Verilog-2005 frontend: ~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-interrupt_ctrl/synth/interrupt_ctrl_netlist.v
+Parsing Verilog input from `~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-interrupt_ctrl/synth/interrupt_ctrl_netlist.v' to AST representation.
 Generating RTLIL representation for module `\interrupt_ctrl'.
 Successfully finished Verilog frontend.
 
@@ -587,8 +587,8 @@ Optimizing module interrupt_ctrl.
 
 21. Executing TECHMAP pass (map to technology primitives).
 
-21.1. Executing Verilog-2005 frontend: /home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v
-Parsing Verilog input from `/home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v' to AST representation.
+21.1. Executing Verilog-2005 frontend: ~/oss-cad-suite/lib/../share/yosys/techmap.v
+Parsing Verilog input from `~/oss-cad-suite/lib/../share/yosys/techmap.v' to AST representation.
 Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
 Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
 Generating RTLIL representation for module `\_90_simplemap_logic_ops'.

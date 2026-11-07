@@ -8,8 +8,8 @@
 
 -- Executing script file `/tmp/equiv_picorv32.ys' --
 
-1. Executing Verilog-2005 frontend: /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v
-Parsing Verilog input from `/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v' to AST representation.
+1. Executing Verilog-2005 frontend: ~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v
+Parsing Verilog input from `~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v' to AST representation.
 Generating RTLIL representation for module `\picorv32'.
 Generating RTLIL representation for module `\picorv32_regs'.
 Generating RTLIL representation for module `\picorv32_pcpi_mul'.
@@ -39,30 +39,30 @@ Removed 7 unused modules.
 3. Executing PROC pass (convert processes to netlists).
 
 3.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
-Found and cleaned up 1 empty switch in `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:213$685'.
-Removing empty process `picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:213$685'.
-Found and cleaned up 17 empty switches in `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
-Found and cleaned up 1 empty switch in `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1350$490'.
-Found and cleaned up 6 empty switches in `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:553$129'.
-Removing empty process `picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:553$129'.
+Found and cleaned up 1 empty switch in `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:213$685'.
+Removing empty process `picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:213$685'.
+Found and cleaned up 17 empty switches in `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
+Found and cleaned up 1 empty switch in `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1350$490'.
+Found and cleaned up 6 empty switches in `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:553$129'.
+Removing empty process `picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:553$129'.
 Cleaned up 25 empty switches.
 
 3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
-Marked 34 switch rules as full_case in process $proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506 in module picorv32.
-Marked 1 switch rules as full_case in process $proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1339$481 in module picorv32.
-Marked 2 switch rules as full_case in process $proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1311$469 in module picorv32.
-Marked 2 switch rules as full_case in process $proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1297$464 in module picorv32.
-Marked 8 switch rules as full_case in process $proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1188$429 in module picorv32.
-Marked 3 switch rules as full_case in process $proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169 in module picorv32.
-Marked 3 switch rules as full_case in process $proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:814$167 in module picorv32.
-Marked 2 switch rules as full_case in process $proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:783$163 in module picorv32.
-Marked 47 switch rules as full_case in process $proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:707$162 in module picorv32.
-Marked 4 switch rules as full_case in process $proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:572$138 in module picorv32.
-Marked 1 switch rules as full_case in process $proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:437$100 in module picorv32.
-Removed 2 dead cases from process $proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:408$97 in module picorv32.
-Marked 2 switch rules as full_case in process $proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:408$97 in module picorv32.
-Marked 1 switch rules as full_case in process $proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:397$92 in module picorv32.
-Marked 1 switch rules as full_case in process $proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:332$18 in module picorv32.
+Marked 34 switch rules as full_case in process $proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506 in module picorv32.
+Marked 1 switch rules as full_case in process $proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1339$481 in module picorv32.
+Marked 2 switch rules as full_case in process $proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1311$469 in module picorv32.
+Marked 2 switch rules as full_case in process $proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1297$464 in module picorv32.
+Marked 8 switch rules as full_case in process $proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1188$429 in module picorv32.
+Marked 3 switch rules as full_case in process $proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169 in module picorv32.
+Marked 3 switch rules as full_case in process $proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:814$167 in module picorv32.
+Marked 2 switch rules as full_case in process $proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:783$163 in module picorv32.
+Marked 47 switch rules as full_case in process $proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:707$162 in module picorv32.
+Marked 4 switch rules as full_case in process $proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:572$138 in module picorv32.
+Marked 1 switch rules as full_case in process $proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:437$100 in module picorv32.
+Removed 2 dead cases from process $proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:408$97 in module picorv32.
+Marked 2 switch rules as full_case in process $proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:408$97 in module picorv32.
+Marked 1 switch rules as full_case in process $proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:397$92 in module picorv32.
+Marked 1 switch rules as full_case in process $proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:332$18 in module picorv32.
 Removed a total of 2 dead cases.
 
 3.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
@@ -78,7 +78,7 @@ Converted 0 switches.
 <suppressed ~186 debug messages>
 
 3.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
-Creating decoders for process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
+Creating decoders for process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
      1/78: $17\next_irq_pending[2:2]
      2/78: $16\next_irq_pending[2:2]
      3/78: $15\next_irq_pending[2:2]
@@ -157,24 +157,24 @@ Creating decoders for process `\picorv32.$proc$/home/smdadmin/hermes_workspace/p
     76/78: $0\count_instr[63:0]
     77/78: $0\eoi[31:0]
     78/78: $0\pcpi_valid[0:0]
-Creating decoders for process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1350$490'.
-Creating decoders for process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1339$481'.
-     1/3: $1$memwr$\cpuregs$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1346$17_EN[31:0]$489
-     2/3: $1$memwr$\cpuregs$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1346$17_DATA[31:0]$488
-     3/3: $1$memwr$\cpuregs$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1346$17_ADDR[4:0]$487
-Creating decoders for process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1311$469'.
+Creating decoders for process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1350$490'.
+Creating decoders for process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1339$481'.
+     1/3: $1$memwr$\cpuregs$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1346$17_EN[31:0]$489
+     2/3: $1$memwr$\cpuregs$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1346$17_DATA[31:0]$488
+     3/3: $1$memwr$\cpuregs$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1346$17_ADDR[4:0]$487
+Creating decoders for process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1311$469'.
      1/4: $2\cpuregs_write[0:0]
      2/4: $2\cpuregs_wrdata[31:0]
      3/4: $1\cpuregs_wrdata[31:0]
      4/4: $1\cpuregs_write[0:0]
-Creating decoders for process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1297$464'.
+Creating decoders for process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1297$464'.
      1/2: $2\clear_prefetched_high_word[0:0]
      2/2: $1\clear_prefetched_high_word[0:0]
-Creating decoders for process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1295$463'.
-Creating decoders for process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1251$441'.
+Creating decoders for process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1295$463'.
+Creating decoders for process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1251$441'.
      1/2: $1\alu_out[31:0]
      2/2: $1\alu_out_0[0:0]
-Creating decoders for process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1188$429'.
+Creating decoders for process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1188$429'.
      1/8: $8\dbg_ascii_state[127:0]
      2/8: $7\dbg_ascii_state[127:0]
      3/8: $6\dbg_ascii_state[127:0]
@@ -183,7 +183,7 @@ Creating decoders for process `\picorv32.$proc$/home/smdadmin/hermes_workspace/p
      6/8: $3\dbg_ascii_state[127:0]
      7/8: $2\dbg_ascii_state[127:0]
      8/8: $1\dbg_ascii_state[127:0]
-Creating decoders for process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
+Creating decoders for process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
      1/76: $0\decoded_rs1[4:0] [4]
      2/76: $0\decoded_imm_j[31:0] [10]
      3/76: $0\decoded_imm_j[31:0] [7]
@@ -260,7 +260,7 @@ Creating decoders for process `\picorv32.$proc$/home/smdadmin/hermes_workspace/p
     74/76: $0\instr_auipc[0:0]
     75/76: $0\instr_lui[0:0]
     76/76: $0\pcpi_insn[31:0]
-Creating decoders for process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:814$167'.
+Creating decoders for process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:814$167'.
      1/13: $3\dbg_insn_opcode[31:0]
      2/13: $2\dbg_insn_rd[4:0]
      3/13: $2\dbg_insn_rs2[4:0]
@@ -274,7 +274,7 @@ Creating decoders for process `\picorv32.$proc$/home/smdadmin/hermes_workspace/p
     11/13: $1\dbg_insn_imm[31:0]
     12/13: $1\dbg_ascii_instr[63:0]
     13/13: $1\dbg_insn_opcode[31:0]
-Creating decoders for process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:783$163'.
+Creating decoders for process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:783$163'.
      1/8: $0\cached_insn_rd[4:0]
      2/8: $0\cached_insn_rs2[4:0]
      3/8: $0\cached_insn_rs1[4:0]
@@ -283,7 +283,7 @@ Creating decoders for process `\picorv32.$proc$/home/smdadmin/hermes_workspace/p
      6/8: $0\cached_ascii_instr[63:0]
      7/8: $0\dbg_valid_insn[0:0]
      8/8: $0\dbg_insn_addr[31:0]
-Creating decoders for process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:707$162'.
+Creating decoders for process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:707$162'.
      1/47: $47\new_ascii_instr[63:0]
      2/47: $46\new_ascii_instr[63:0]
      3/47: $45\new_ascii_instr[63:0]
@@ -331,7 +331,7 @@ Creating decoders for process `\picorv32.$proc$/home/smdadmin/hermes_workspace/p
     45/47: $3\new_ascii_instr[63:0]
     46/47: $2\new_ascii_instr[63:0]
     47/47: $1\new_ascii_instr[63:0]
-Creating decoders for process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:572$138'.
+Creating decoders for process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:572$138'.
      1/9: $0\mem_16bit_buffer[15:0]
      2/9: $0\prefetched_high_word[0:0]
      3/9: $0\mem_la_secondword[0:0]
@@ -341,8 +341,8 @@ Creating decoders for process `\picorv32.$proc$/home/smdadmin/hermes_workspace/p
      7/9: $0\mem_addr[31:0]
      8/9: $0\mem_instr[0:0]
      9/9: $0\mem_valid[0:0]
-Creating decoders for process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1241$674'.
-Creating decoders for process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:437$100'.
+Creating decoders for process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1241$674'.
+Creating decoders for process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:437$100'.
      1/9: $0\mem_rdata_q[31:0] [31]
      2/9: $0\mem_rdata_q[31:0] [7]
      3/9: $0\mem_rdata_q[31:0] [24:20]
@@ -352,396 +352,396 @@ Creating decoders for process `\picorv32.$proc$/home/smdadmin/hermes_workspace/p
      7/9: $0\mem_rdata_q[31:0] [11:8]
      8/9: $0\mem_rdata_q[31:0] [30:25]
      9/9: $0\next_insn_opcode[31:0]
-Creating decoders for process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:408$97'.
+Creating decoders for process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:408$97'.
      1/5: $3\mem_rdata_word[31:0]
      2/5: $2\mem_rdata_word[31:0]
      3/5: $1\mem_rdata_word[31:0]
      4/5: $1\mem_la_wstrb[3:0]
      5/5: $1\mem_la_wdata[31:0]
-Creating decoders for process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:397$92'.
+Creating decoders for process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:397$92'.
      1/2: $0\last_mem_valid[0:0]
      2/2: $0\mem_la_firstword_reg[0:0]
-Creating decoders for process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:332$18'.
+Creating decoders for process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:332$18'.
      1/2: $1\pcpi_int_rd[31:0]
      2/2: $1\pcpi_int_wr[0:0]
 
 3.8. Executing PROC_DLATCH pass (convert process syncs to latches).
-No latch inferred for signal `\picorv32.\cpuregs_rs1' from process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1350$490'.
-No latch inferred for signal `\picorv32.\cpuregs_rs2' from process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1350$490'.
-No latch inferred for signal `\picorv32.\decoded_rs' from process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1350$490'.
-No latch inferred for signal `\picorv32.\cpuregs_write' from process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1311$469'.
-No latch inferred for signal `\picorv32.\cpuregs_wrdata' from process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1311$469'.
-No latch inferred for signal `\picorv32.\clear_prefetched_high_word' from process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1297$464'.
-No latch inferred for signal `\picorv32.\alu_out' from process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1251$441'.
-No latch inferred for signal `\picorv32.\alu_out_0' from process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1251$441'.
-No latch inferred for signal `\picorv32.\dbg_ascii_state' from process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1188$429'.
-No latch inferred for signal `\picorv32.\dbg_insn_opcode' from process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:814$167'.
-No latch inferred for signal `\picorv32.\dbg_ascii_instr' from process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:814$167'.
-No latch inferred for signal `\picorv32.\dbg_insn_imm' from process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:814$167'.
-No latch inferred for signal `\picorv32.\dbg_insn_rs1' from process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:814$167'.
-No latch inferred for signal `\picorv32.\dbg_insn_rs2' from process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:814$167'.
-No latch inferred for signal `\picorv32.\dbg_insn_rd' from process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:814$167'.
-No latch inferred for signal `\picorv32.\new_ascii_instr' from process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:707$162'.
-No latch inferred for signal `\picorv32.\alu_add_sub' from process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1241$674'.
-No latch inferred for signal `\picorv32.\alu_shl' from process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1241$674'.
-No latch inferred for signal `\picorv32.\alu_shr' from process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1241$674'.
-No latch inferred for signal `\picorv32.\alu_eq' from process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1241$674'.
-No latch inferred for signal `\picorv32.\alu_ltu' from process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1241$674'.
-No latch inferred for signal `\picorv32.\alu_lts' from process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1241$674'.
-No latch inferred for signal `\picorv32.\mem_la_wdata' from process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:408$97'.
-No latch inferred for signal `\picorv32.\mem_la_wstrb' from process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:408$97'.
-No latch inferred for signal `\picorv32.\mem_rdata_word' from process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:408$97'.
-No latch inferred for signal `\picorv32.\pcpi_int_wr' from process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:332$18'.
-No latch inferred for signal `\picorv32.\pcpi_int_rd' from process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:332$18'.
-No latch inferred for signal `\picorv32.\pcpi_int_wait' from process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:332$18'.
-No latch inferred for signal `\picorv32.\pcpi_int_ready' from process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:332$18'.
+No latch inferred for signal `\picorv32.\cpuregs_rs1' from process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1350$490'.
+No latch inferred for signal `\picorv32.\cpuregs_rs2' from process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1350$490'.
+No latch inferred for signal `\picorv32.\decoded_rs' from process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1350$490'.
+No latch inferred for signal `\picorv32.\cpuregs_write' from process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1311$469'.
+No latch inferred for signal `\picorv32.\cpuregs_wrdata' from process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1311$469'.
+No latch inferred for signal `\picorv32.\clear_prefetched_high_word' from process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1297$464'.
+No latch inferred for signal `\picorv32.\alu_out' from process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1251$441'.
+No latch inferred for signal `\picorv32.\alu_out_0' from process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1251$441'.
+No latch inferred for signal `\picorv32.\dbg_ascii_state' from process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1188$429'.
+No latch inferred for signal `\picorv32.\dbg_insn_opcode' from process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:814$167'.
+No latch inferred for signal `\picorv32.\dbg_ascii_instr' from process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:814$167'.
+No latch inferred for signal `\picorv32.\dbg_insn_imm' from process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:814$167'.
+No latch inferred for signal `\picorv32.\dbg_insn_rs1' from process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:814$167'.
+No latch inferred for signal `\picorv32.\dbg_insn_rs2' from process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:814$167'.
+No latch inferred for signal `\picorv32.\dbg_insn_rd' from process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:814$167'.
+No latch inferred for signal `\picorv32.\new_ascii_instr' from process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:707$162'.
+No latch inferred for signal `\picorv32.\alu_add_sub' from process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1241$674'.
+No latch inferred for signal `\picorv32.\alu_shl' from process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1241$674'.
+No latch inferred for signal `\picorv32.\alu_shr' from process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1241$674'.
+No latch inferred for signal `\picorv32.\alu_eq' from process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1241$674'.
+No latch inferred for signal `\picorv32.\alu_ltu' from process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1241$674'.
+No latch inferred for signal `\picorv32.\alu_lts' from process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1241$674'.
+No latch inferred for signal `\picorv32.\mem_la_wdata' from process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:408$97'.
+No latch inferred for signal `\picorv32.\mem_la_wstrb' from process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:408$97'.
+No latch inferred for signal `\picorv32.\mem_rdata_word' from process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:408$97'.
+No latch inferred for signal `\picorv32.\pcpi_int_wr' from process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:332$18'.
+No latch inferred for signal `\picorv32.\pcpi_int_rd' from process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:332$18'.
+No latch inferred for signal `\picorv32.\pcpi_int_wait' from process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:332$18'.
+No latch inferred for signal `\picorv32.\pcpi_int_ready' from process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:332$18'.
 
 3.9. Executing PROC_DFF pass (convert process syncs to FFs).
-Creating register for signal `\picorv32.\trap' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
+Creating register for signal `\picorv32.\trap' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
   created $dff cell `$procdff$3572' with positive edge clock.
-Creating register for signal `\picorv32.\pcpi_valid' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
+Creating register for signal `\picorv32.\pcpi_valid' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
   created $dff cell `$procdff$3573' with positive edge clock.
-Creating register for signal `\picorv32.\eoi' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
+Creating register for signal `\picorv32.\eoi' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
   created $dff cell `$procdff$3574' with positive edge clock.
-Creating register for signal `\picorv32.\trace_valid' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
+Creating register for signal `\picorv32.\trace_valid' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
   created $dff cell `$procdff$3575' with positive edge clock.
-Creating register for signal `\picorv32.\trace_data' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
+Creating register for signal `\picorv32.\trace_data' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
   created $dff cell `$procdff$3576' with positive edge clock.
-Creating register for signal `\picorv32.\count_cycle' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
+Creating register for signal `\picorv32.\count_cycle' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
   created $dff cell `$procdff$3577' with positive edge clock.
-Creating register for signal `\picorv32.\count_instr' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
+Creating register for signal `\picorv32.\count_instr' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
   created $dff cell `$procdff$3578' with positive edge clock.
-Creating register for signal `\picorv32.\reg_pc' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
+Creating register for signal `\picorv32.\reg_pc' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
   created $dff cell `$procdff$3579' with positive edge clock.
-Creating register for signal `\picorv32.\reg_next_pc' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
+Creating register for signal `\picorv32.\reg_next_pc' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
   created $dff cell `$procdff$3580' with positive edge clock.
-Creating register for signal `\picorv32.\reg_op1' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
+Creating register for signal `\picorv32.\reg_op1' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
   created $dff cell `$procdff$3581' with positive edge clock.
-Creating register for signal `\picorv32.\reg_op2' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
+Creating register for signal `\picorv32.\reg_op2' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
   created $dff cell `$procdff$3582' with positive edge clock.
-Creating register for signal `\picorv32.\reg_out' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
+Creating register for signal `\picorv32.\reg_out' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
   created $dff cell `$procdff$3583' with positive edge clock.
-Creating register for signal `\picorv32.\reg_sh' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
+Creating register for signal `\picorv32.\reg_sh' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
   created $dff cell `$procdff$3584' with positive edge clock.
-Creating register for signal `\picorv32.\irq_delay' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
+Creating register for signal `\picorv32.\irq_delay' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
   created $dff cell `$procdff$3585' with positive edge clock.
-Creating register for signal `\picorv32.\irq_active' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
+Creating register for signal `\picorv32.\irq_active' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
   created $dff cell `$procdff$3586' with positive edge clock.
-Creating register for signal `\picorv32.\irq_mask' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
+Creating register for signal `\picorv32.\irq_mask' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
   created $dff cell `$procdff$3587' with positive edge clock.
-Creating register for signal `\picorv32.\irq_pending' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
+Creating register for signal `\picorv32.\irq_pending' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
   created $dff cell `$procdff$3588' with positive edge clock.
-Creating register for signal `\picorv32.\timer' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
+Creating register for signal `\picorv32.\timer' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
   created $dff cell `$procdff$3589' with positive edge clock.
-Creating register for signal `\picorv32.\mem_wordsize' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
+Creating register for signal `\picorv32.\mem_wordsize' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
   created $dff cell `$procdff$3590' with positive edge clock.
-Creating register for signal `\picorv32.\mem_do_prefetch' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
+Creating register for signal `\picorv32.\mem_do_prefetch' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
   created $dff cell `$procdff$3591' with positive edge clock.
-Creating register for signal `\picorv32.\mem_do_rinst' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
+Creating register for signal `\picorv32.\mem_do_rinst' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
   created $dff cell `$procdff$3592' with positive edge clock.
-Creating register for signal `\picorv32.\mem_do_rdata' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
+Creating register for signal `\picorv32.\mem_do_rdata' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
   created $dff cell `$procdff$3593' with positive edge clock.
-Creating register for signal `\picorv32.\mem_do_wdata' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
+Creating register for signal `\picorv32.\mem_do_wdata' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
   created $dff cell `$procdff$3594' with positive edge clock.
-Creating register for signal `\picorv32.\decoder_trigger' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
+Creating register for signal `\picorv32.\decoder_trigger' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
   created $dff cell `$procdff$3595' with positive edge clock.
-Creating register for signal `\picorv32.\decoder_trigger_q' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
+Creating register for signal `\picorv32.\decoder_trigger_q' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
   created $dff cell `$procdff$3596' with positive edge clock.
-Creating register for signal `\picorv32.\decoder_pseudo_trigger' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
+Creating register for signal `\picorv32.\decoder_pseudo_trigger' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
   created $dff cell `$procdff$3597' with positive edge clock.
-Creating register for signal `\picorv32.\decoder_pseudo_trigger_q' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
+Creating register for signal `\picorv32.\decoder_pseudo_trigger_q' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
   created $dff cell `$procdff$3598' with positive edge clock.
-Creating register for signal `\picorv32.\dbg_rs1val' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
+Creating register for signal `\picorv32.\dbg_rs1val' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
   created $dff cell `$procdff$3599' with positive edge clock.
-Creating register for signal `\picorv32.\dbg_rs2val' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
+Creating register for signal `\picorv32.\dbg_rs2val' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
   created $dff cell `$procdff$3600' with positive edge clock.
-Creating register for signal `\picorv32.\dbg_rs1val_valid' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
+Creating register for signal `\picorv32.\dbg_rs1val_valid' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
   created $dff cell `$procdff$3601' with positive edge clock.
-Creating register for signal `\picorv32.\dbg_rs2val_valid' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
+Creating register for signal `\picorv32.\dbg_rs2val_valid' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
   created $dff cell `$procdff$3602' with positive edge clock.
-Creating register for signal `\picorv32.\cpu_state' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
+Creating register for signal `\picorv32.\cpu_state' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
   created $dff cell `$procdff$3603' with positive edge clock.
-Creating register for signal `\picorv32.\irq_state' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
+Creating register for signal `\picorv32.\irq_state' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
   created $dff cell `$procdff$3604' with positive edge clock.
-Creating register for signal `\picorv32.\set_mem_do_rinst' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
+Creating register for signal `\picorv32.\set_mem_do_rinst' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
   created $dff cell `$procdff$3605' with positive edge clock.
-Creating register for signal `\picorv32.\set_mem_do_rdata' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
+Creating register for signal `\picorv32.\set_mem_do_rdata' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
   created $dff cell `$procdff$3606' with positive edge clock.
-Creating register for signal `\picorv32.\set_mem_do_wdata' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
+Creating register for signal `\picorv32.\set_mem_do_wdata' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
   created $dff cell `$procdff$3607' with positive edge clock.
-Creating register for signal `\picorv32.\latched_store' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
+Creating register for signal `\picorv32.\latched_store' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
   created $dff cell `$procdff$3608' with positive edge clock.
-Creating register for signal `\picorv32.\latched_stalu' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
+Creating register for signal `\picorv32.\latched_stalu' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
   created $dff cell `$procdff$3609' with positive edge clock.
-Creating register for signal `\picorv32.\latched_branch' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
+Creating register for signal `\picorv32.\latched_branch' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
   created $dff cell `$procdff$3610' with positive edge clock.
-Creating register for signal `\picorv32.\latched_compr' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
+Creating register for signal `\picorv32.\latched_compr' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
   created $dff cell `$procdff$3611' with positive edge clock.
-Creating register for signal `\picorv32.\latched_trace' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
+Creating register for signal `\picorv32.\latched_trace' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
   created $dff cell `$procdff$3612' with positive edge clock.
-Creating register for signal `\picorv32.\latched_is_lu' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
+Creating register for signal `\picorv32.\latched_is_lu' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
   created $dff cell `$procdff$3613' with positive edge clock.
-Creating register for signal `\picorv32.\latched_is_lh' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
+Creating register for signal `\picorv32.\latched_is_lh' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
   created $dff cell `$procdff$3614' with positive edge clock.
-Creating register for signal `\picorv32.\latched_is_lb' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
+Creating register for signal `\picorv32.\latched_is_lb' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
   created $dff cell `$procdff$3615' with positive edge clock.
-Creating register for signal `\picorv32.\latched_rd' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
+Creating register for signal `\picorv32.\latched_rd' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
   created $dff cell `$procdff$3616' with positive edge clock.
-Creating register for signal `\picorv32.\current_pc' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
+Creating register for signal `\picorv32.\current_pc' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
   created $dff cell `$procdff$3617' with positive edge clock.
-Creating register for signal `\picorv32.\pcpi_timeout' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
+Creating register for signal `\picorv32.\pcpi_timeout' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
   created $dff cell `$procdff$3618' with positive edge clock.
-Creating register for signal `\picorv32.\next_irq_pending' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
+Creating register for signal `\picorv32.\next_irq_pending' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
   created $dff cell `$procdff$3619' with positive edge clock.
-Creating register for signal `\picorv32.\do_waitirq' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
+Creating register for signal `\picorv32.\do_waitirq' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
   created $dff cell `$procdff$3620' with positive edge clock.
-Creating register for signal `\picorv32.\alu_out_q' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
+Creating register for signal `\picorv32.\alu_out_q' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
   created $dff cell `$procdff$3621' with positive edge clock.
-Creating register for signal `\picorv32.\alu_out_0_q' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
+Creating register for signal `\picorv32.\alu_out_0_q' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
   created $dff cell `$procdff$3622' with positive edge clock.
-Creating register for signal `\picorv32.\alu_wait' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
+Creating register for signal `\picorv32.\alu_wait' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
   created $dff cell `$procdff$3623' with positive edge clock.
-Creating register for signal `\picorv32.\alu_wait_2' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
+Creating register for signal `\picorv32.\alu_wait_2' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
   created $dff cell `$procdff$3624' with positive edge clock.
-Creating register for signal `\picorv32.$memwr$\cpuregs$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1346$17_ADDR' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1339$481'.
+Creating register for signal `\picorv32.$memwr$\cpuregs$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1346$17_ADDR' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1339$481'.
   created $dff cell `$procdff$3625' with positive edge clock.
-Creating register for signal `\picorv32.$memwr$\cpuregs$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1346$17_DATA' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1339$481'.
+Creating register for signal `\picorv32.$memwr$\cpuregs$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1346$17_DATA' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1339$481'.
   created $dff cell `$procdff$3626' with positive edge clock.
-Creating register for signal `\picorv32.$memwr$\cpuregs$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1346$17_EN' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1339$481'.
+Creating register for signal `\picorv32.$memwr$\cpuregs$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1346$17_EN' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1339$481'.
   created $dff cell `$procdff$3627' with positive edge clock.
-Creating register for signal `\picorv32.\clear_prefetched_high_word_q' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1295$463'.
+Creating register for signal `\picorv32.\clear_prefetched_high_word_q' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1295$463'.
   created $dff cell `$procdff$3628' with positive edge clock.
-Creating register for signal `\picorv32.\pcpi_insn' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
+Creating register for signal `\picorv32.\pcpi_insn' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
   created $dff cell `$procdff$3629' with positive edge clock.
-Creating register for signal `\picorv32.\instr_lui' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
+Creating register for signal `\picorv32.\instr_lui' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
   created $dff cell `$procdff$3630' with positive edge clock.
-Creating register for signal `\picorv32.\instr_auipc' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
+Creating register for signal `\picorv32.\instr_auipc' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
   created $dff cell `$procdff$3631' with positive edge clock.
-Creating register for signal `\picorv32.\instr_jal' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
+Creating register for signal `\picorv32.\instr_jal' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
   created $dff cell `$procdff$3632' with positive edge clock.
-Creating register for signal `\picorv32.\instr_jalr' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
+Creating register for signal `\picorv32.\instr_jalr' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
   created $dff cell `$procdff$3633' with positive edge clock.
-Creating register for signal `\picorv32.\instr_beq' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
+Creating register for signal `\picorv32.\instr_beq' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
   created $dff cell `$procdff$3634' with positive edge clock.
-Creating register for signal `\picorv32.\instr_bne' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
+Creating register for signal `\picorv32.\instr_bne' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
   created $dff cell `$procdff$3635' with positive edge clock.
-Creating register for signal `\picorv32.\instr_blt' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
+Creating register for signal `\picorv32.\instr_blt' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
   created $dff cell `$procdff$3636' with positive edge clock.
-Creating register for signal `\picorv32.\instr_bge' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
+Creating register for signal `\picorv32.\instr_bge' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
   created $dff cell `$procdff$3637' with positive edge clock.
-Creating register for signal `\picorv32.\instr_bltu' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
+Creating register for signal `\picorv32.\instr_bltu' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
   created $dff cell `$procdff$3638' with positive edge clock.
-Creating register for signal `\picorv32.\instr_bgeu' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
+Creating register for signal `\picorv32.\instr_bgeu' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
   created $dff cell `$procdff$3639' with positive edge clock.
-Creating register for signal `\picorv32.\instr_lb' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
+Creating register for signal `\picorv32.\instr_lb' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
   created $dff cell `$procdff$3640' with positive edge clock.
-Creating register for signal `\picorv32.\instr_lh' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
+Creating register for signal `\picorv32.\instr_lh' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
   created $dff cell `$procdff$3641' with positive edge clock.
-Creating register for signal `\picorv32.\instr_lw' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
+Creating register for signal `\picorv32.\instr_lw' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
   created $dff cell `$procdff$3642' with positive edge clock.
-Creating register for signal `\picorv32.\instr_lbu' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
+Creating register for signal `\picorv32.\instr_lbu' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
   created $dff cell `$procdff$3643' with positive edge clock.
-Creating register for signal `\picorv32.\instr_lhu' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
+Creating register for signal `\picorv32.\instr_lhu' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
   created $dff cell `$procdff$3644' with positive edge clock.
-Creating register for signal `\picorv32.\instr_sb' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
+Creating register for signal `\picorv32.\instr_sb' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
   created $dff cell `$procdff$3645' with positive edge clock.
-Creating register for signal `\picorv32.\instr_sh' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
+Creating register for signal `\picorv32.\instr_sh' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
   created $dff cell `$procdff$3646' with positive edge clock.
-Creating register for signal `\picorv32.\instr_sw' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
+Creating register for signal `\picorv32.\instr_sw' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
   created $dff cell `$procdff$3647' with positive edge clock.
-Creating register for signal `\picorv32.\instr_addi' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
+Creating register for signal `\picorv32.\instr_addi' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
   created $dff cell `$procdff$3648' with positive edge clock.
-Creating register for signal `\picorv32.\instr_slti' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
+Creating register for signal `\picorv32.\instr_slti' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
   created $dff cell `$procdff$3649' with positive edge clock.
-Creating register for signal `\picorv32.\instr_sltiu' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
+Creating register for signal `\picorv32.\instr_sltiu' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
   created $dff cell `$procdff$3650' with positive edge clock.
-Creating register for signal `\picorv32.\instr_xori' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
+Creating register for signal `\picorv32.\instr_xori' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
   created $dff cell `$procdff$3651' with positive edge clock.
-Creating register for signal `\picorv32.\instr_ori' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
+Creating register for signal `\picorv32.\instr_ori' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
   created $dff cell `$procdff$3652' with positive edge clock.
-Creating register for signal `\picorv32.\instr_andi' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
+Creating register for signal `\picorv32.\instr_andi' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
   created $dff cell `$procdff$3653' with positive edge clock.
-Creating register for signal `\picorv32.\instr_slli' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
+Creating register for signal `\picorv32.\instr_slli' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
   created $dff cell `$procdff$3654' with positive edge clock.
-Creating register for signal `\picorv32.\instr_srli' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
+Creating register for signal `\picorv32.\instr_srli' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
   created $dff cell `$procdff$3655' with positive edge clock.
-Creating register for signal `\picorv32.\instr_srai' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
+Creating register for signal `\picorv32.\instr_srai' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
   created $dff cell `$procdff$3656' with positive edge clock.
-Creating register for signal `\picorv32.\instr_add' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
+Creating register for signal `\picorv32.\instr_add' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
   created $dff cell `$procdff$3657' with positive edge clock.
-Creating register for signal `\picorv32.\instr_sub' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
+Creating register for signal `\picorv32.\instr_sub' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
   created $dff cell `$procdff$3658' with positive edge clock.
-Creating register for signal `\picorv32.\instr_sll' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
+Creating register for signal `\picorv32.\instr_sll' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
   created $dff cell `$procdff$3659' with positive edge clock.
-Creating register for signal `\picorv32.\instr_slt' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
+Creating register for signal `\picorv32.\instr_slt' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
   created $dff cell `$procdff$3660' with positive edge clock.
-Creating register for signal `\picorv32.\instr_sltu' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
+Creating register for signal `\picorv32.\instr_sltu' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
   created $dff cell `$procdff$3661' with positive edge clock.
-Creating register for signal `\picorv32.\instr_xor' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
+Creating register for signal `\picorv32.\instr_xor' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
   created $dff cell `$procdff$3662' with positive edge clock.
-Creating register for signal `\picorv32.\instr_srl' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
+Creating register for signal `\picorv32.\instr_srl' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
   created $dff cell `$procdff$3663' with positive edge clock.
-Creating register for signal `\picorv32.\instr_sra' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
+Creating register for signal `\picorv32.\instr_sra' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
   created $dff cell `$procdff$3664' with positive edge clock.
-Creating register for signal `\picorv32.\instr_or' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
+Creating register for signal `\picorv32.\instr_or' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
   created $dff cell `$procdff$3665' with positive edge clock.
-Creating register for signal `\picorv32.\instr_and' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
+Creating register for signal `\picorv32.\instr_and' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
   created $dff cell `$procdff$3666' with positive edge clock.
-Creating register for signal `\picorv32.\instr_rdcycle' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
+Creating register for signal `\picorv32.\instr_rdcycle' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
   created $dff cell `$procdff$3667' with positive edge clock.
-Creating register for signal `\picorv32.\instr_rdcycleh' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
+Creating register for signal `\picorv32.\instr_rdcycleh' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
   created $dff cell `$procdff$3668' with positive edge clock.
-Creating register for signal `\picorv32.\instr_rdinstr' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
+Creating register for signal `\picorv32.\instr_rdinstr' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
   created $dff cell `$procdff$3669' with positive edge clock.
-Creating register for signal `\picorv32.\instr_rdinstrh' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
+Creating register for signal `\picorv32.\instr_rdinstrh' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
   created $dff cell `$procdff$3670' with positive edge clock.
-Creating register for signal `\picorv32.\instr_ecall_ebreak' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
+Creating register for signal `\picorv32.\instr_ecall_ebreak' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
   created $dff cell `$procdff$3671' with positive edge clock.
-Creating register for signal `\picorv32.\instr_getq' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
+Creating register for signal `\picorv32.\instr_getq' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
   created $dff cell `$procdff$3672' with positive edge clock.
-Creating register for signal `\picorv32.\instr_setq' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
+Creating register for signal `\picorv32.\instr_setq' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
   created $dff cell `$procdff$3673' with positive edge clock.
-Creating register for signal `\picorv32.\instr_retirq' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
+Creating register for signal `\picorv32.\instr_retirq' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
   created $dff cell `$procdff$3674' with positive edge clock.
-Creating register for signal `\picorv32.\instr_maskirq' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
+Creating register for signal `\picorv32.\instr_maskirq' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
   created $dff cell `$procdff$3675' with positive edge clock.
-Creating register for signal `\picorv32.\instr_waitirq' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
+Creating register for signal `\picorv32.\instr_waitirq' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
   created $dff cell `$procdff$3676' with positive edge clock.
-Creating register for signal `\picorv32.\instr_timer' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
+Creating register for signal `\picorv32.\instr_timer' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
   created $dff cell `$procdff$3677' with positive edge clock.
-Creating register for signal `\picorv32.\decoded_rd' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
+Creating register for signal `\picorv32.\decoded_rd' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
   created $dff cell `$procdff$3678' with positive edge clock.
-Creating register for signal `\picorv32.\decoded_rs1' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
+Creating register for signal `\picorv32.\decoded_rs1' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
   created $dff cell `$procdff$3679' with positive edge clock.
-Creating register for signal `\picorv32.\decoded_rs2' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
+Creating register for signal `\picorv32.\decoded_rs2' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
   created $dff cell `$procdff$3680' with positive edge clock.
-Creating register for signal `\picorv32.\decoded_imm' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
+Creating register for signal `\picorv32.\decoded_imm' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
   created $dff cell `$procdff$3681' with positive edge clock.
-Creating register for signal `\picorv32.\decoded_imm_j' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
+Creating register for signal `\picorv32.\decoded_imm_j' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
   created $dff cell `$procdff$3682' with positive edge clock.
-Creating register for signal `\picorv32.\compressed_instr' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
+Creating register for signal `\picorv32.\compressed_instr' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
   created $dff cell `$procdff$3683' with positive edge clock.
-Creating register for signal `\picorv32.\is_lui_auipc_jal' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
+Creating register for signal `\picorv32.\is_lui_auipc_jal' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
   created $dff cell `$procdff$3684' with positive edge clock.
-Creating register for signal `\picorv32.\is_lb_lh_lw_lbu_lhu' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
+Creating register for signal `\picorv32.\is_lb_lh_lw_lbu_lhu' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
   created $dff cell `$procdff$3685' with positive edge clock.
-Creating register for signal `\picorv32.\is_slli_srli_srai' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
+Creating register for signal `\picorv32.\is_slli_srli_srai' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
   created $dff cell `$procdff$3686' with positive edge clock.
-Creating register for signal `\picorv32.\is_jalr_addi_slti_sltiu_xori_ori_andi' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
+Creating register for signal `\picorv32.\is_jalr_addi_slti_sltiu_xori_ori_andi' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
   created $dff cell `$procdff$3687' with positive edge clock.
-Creating register for signal `\picorv32.\is_sb_sh_sw' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
+Creating register for signal `\picorv32.\is_sb_sh_sw' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
   created $dff cell `$procdff$3688' with positive edge clock.
-Creating register for signal `\picorv32.\is_sll_srl_sra' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
+Creating register for signal `\picorv32.\is_sll_srl_sra' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
   created $dff cell `$procdff$3689' with positive edge clock.
-Creating register for signal `\picorv32.\is_lui_auipc_jal_jalr_addi_add_sub' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
+Creating register for signal `\picorv32.\is_lui_auipc_jal_jalr_addi_add_sub' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
   created $dff cell `$procdff$3690' with positive edge clock.
-Creating register for signal `\picorv32.\is_slti_blt_slt' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
+Creating register for signal `\picorv32.\is_slti_blt_slt' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
   created $dff cell `$procdff$3691' with positive edge clock.
-Creating register for signal `\picorv32.\is_sltiu_bltu_sltu' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
+Creating register for signal `\picorv32.\is_sltiu_bltu_sltu' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
   created $dff cell `$procdff$3692' with positive edge clock.
-Creating register for signal `\picorv32.\is_beq_bne_blt_bge_bltu_bgeu' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
+Creating register for signal `\picorv32.\is_beq_bne_blt_bge_bltu_bgeu' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
   created $dff cell `$procdff$3693' with positive edge clock.
-Creating register for signal `\picorv32.\is_lbu_lhu_lw' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
+Creating register for signal `\picorv32.\is_lbu_lhu_lw' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
   created $dff cell `$procdff$3694' with positive edge clock.
-Creating register for signal `\picorv32.\is_alu_reg_imm' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
+Creating register for signal `\picorv32.\is_alu_reg_imm' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
   created $dff cell `$procdff$3695' with positive edge clock.
-Creating register for signal `\picorv32.\is_alu_reg_reg' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
+Creating register for signal `\picorv32.\is_alu_reg_reg' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
   created $dff cell `$procdff$3696' with positive edge clock.
-Creating register for signal `\picorv32.\is_compare' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
+Creating register for signal `\picorv32.\is_compare' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
   created $dff cell `$procdff$3697' with positive edge clock.
-Creating register for signal `\picorv32.\dbg_insn_addr' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:783$163'.
+Creating register for signal `\picorv32.\dbg_insn_addr' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:783$163'.
   created $dff cell `$procdff$3698' with positive edge clock.
-Creating register for signal `\picorv32.\q_ascii_instr' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:783$163'.
+Creating register for signal `\picorv32.\q_ascii_instr' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:783$163'.
   created $dff cell `$procdff$3699' with positive edge clock.
-Creating register for signal `\picorv32.\q_insn_imm' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:783$163'.
+Creating register for signal `\picorv32.\q_insn_imm' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:783$163'.
   created $dff cell `$procdff$3700' with positive edge clock.
-Creating register for signal `\picorv32.\q_insn_opcode' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:783$163'.
+Creating register for signal `\picorv32.\q_insn_opcode' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:783$163'.
   created $dff cell `$procdff$3701' with positive edge clock.
-Creating register for signal `\picorv32.\q_insn_rs1' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:783$163'.
+Creating register for signal `\picorv32.\q_insn_rs1' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:783$163'.
   created $dff cell `$procdff$3702' with positive edge clock.
-Creating register for signal `\picorv32.\q_insn_rs2' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:783$163'.
+Creating register for signal `\picorv32.\q_insn_rs2' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:783$163'.
   created $dff cell `$procdff$3703' with positive edge clock.
-Creating register for signal `\picorv32.\q_insn_rd' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:783$163'.
+Creating register for signal `\picorv32.\q_insn_rd' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:783$163'.
   created $dff cell `$procdff$3704' with positive edge clock.
-Creating register for signal `\picorv32.\dbg_next' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:783$163'.
+Creating register for signal `\picorv32.\dbg_next' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:783$163'.
   created $dff cell `$procdff$3705' with positive edge clock.
-Creating register for signal `\picorv32.\dbg_valid_insn' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:783$163'.
+Creating register for signal `\picorv32.\dbg_valid_insn' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:783$163'.
   created $dff cell `$procdff$3706' with positive edge clock.
-Creating register for signal `\picorv32.\cached_ascii_instr' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:783$163'.
+Creating register for signal `\picorv32.\cached_ascii_instr' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:783$163'.
   created $dff cell `$procdff$3707' with positive edge clock.
-Creating register for signal `\picorv32.\cached_insn_imm' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:783$163'.
+Creating register for signal `\picorv32.\cached_insn_imm' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:783$163'.
   created $dff cell `$procdff$3708' with positive edge clock.
-Creating register for signal `\picorv32.\cached_insn_opcode' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:783$163'.
+Creating register for signal `\picorv32.\cached_insn_opcode' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:783$163'.
   created $dff cell `$procdff$3709' with positive edge clock.
-Creating register for signal `\picorv32.\cached_insn_rs1' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:783$163'.
+Creating register for signal `\picorv32.\cached_insn_rs1' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:783$163'.
   created $dff cell `$procdff$3710' with positive edge clock.
-Creating register for signal `\picorv32.\cached_insn_rs2' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:783$163'.
+Creating register for signal `\picorv32.\cached_insn_rs2' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:783$163'.
   created $dff cell `$procdff$3711' with positive edge clock.
-Creating register for signal `\picorv32.\cached_insn_rd' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:783$163'.
+Creating register for signal `\picorv32.\cached_insn_rd' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:783$163'.
   created $dff cell `$procdff$3712' with positive edge clock.
-Creating register for signal `\picorv32.\mem_valid' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:572$138'.
+Creating register for signal `\picorv32.\mem_valid' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:572$138'.
   created $dff cell `$procdff$3713' with positive edge clock.
-Creating register for signal `\picorv32.\mem_instr' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:572$138'.
+Creating register for signal `\picorv32.\mem_instr' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:572$138'.
   created $dff cell `$procdff$3714' with positive edge clock.
-Creating register for signal `\picorv32.\mem_addr' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:572$138'.
+Creating register for signal `\picorv32.\mem_addr' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:572$138'.
   created $dff cell `$procdff$3715' with positive edge clock.
-Creating register for signal `\picorv32.\mem_wdata' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:572$138'.
+Creating register for signal `\picorv32.\mem_wdata' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:572$138'.
   created $dff cell `$procdff$3716' with positive edge clock.
-Creating register for signal `\picorv32.\mem_wstrb' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:572$138'.
+Creating register for signal `\picorv32.\mem_wstrb' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:572$138'.
   created $dff cell `$procdff$3717' with positive edge clock.
-Creating register for signal `\picorv32.\mem_state' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:572$138'.
+Creating register for signal `\picorv32.\mem_state' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:572$138'.
   created $dff cell `$procdff$3718' with positive edge clock.
-Creating register for signal `\picorv32.\mem_la_secondword' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:572$138'.
+Creating register for signal `\picorv32.\mem_la_secondword' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:572$138'.
   created $dff cell `$procdff$3719' with positive edge clock.
-Creating register for signal `\picorv32.\prefetched_high_word' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:572$138'.
+Creating register for signal `\picorv32.\prefetched_high_word' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:572$138'.
   created $dff cell `$procdff$3720' with positive edge clock.
-Creating register for signal `\picorv32.\mem_16bit_buffer' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:572$138'.
+Creating register for signal `\picorv32.\mem_16bit_buffer' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:572$138'.
   created $dff cell `$procdff$3721' with positive edge clock.
-Creating register for signal `\picorv32.\next_insn_opcode' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:437$100'.
+Creating register for signal `\picorv32.\next_insn_opcode' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:437$100'.
   created $dff cell `$procdff$3722' with positive edge clock.
-Creating register for signal `\picorv32.\mem_rdata_q' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:437$100'.
+Creating register for signal `\picorv32.\mem_rdata_q' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:437$100'.
   created $dff cell `$procdff$3723' with positive edge clock.
-Creating register for signal `\picorv32.\mem_la_firstword_reg' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:397$92'.
+Creating register for signal `\picorv32.\mem_la_firstword_reg' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:397$92'.
   created $dff cell `$procdff$3724' with positive edge clock.
-Creating register for signal `\picorv32.\last_mem_valid' using process `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:397$92'.
+Creating register for signal `\picorv32.\last_mem_valid' using process `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:397$92'.
   created $dff cell `$procdff$3725' with positive edge clock.
 
 3.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
 
 3.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
-Found and cleaned up 53 empty switches in `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
-Removing empty process `picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
-Removing empty process `picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1350$490'.
-Found and cleaned up 1 empty switch in `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1339$481'.
-Removing empty process `picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1339$481'.
-Found and cleaned up 2 empty switches in `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1311$469'.
-Removing empty process `picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1311$469'.
-Found and cleaned up 2 empty switches in `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1297$464'.
-Removing empty process `picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1297$464'.
-Removing empty process `picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1295$463'.
-Found and cleaned up 2 empty switches in `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1251$441'.
-Removing empty process `picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1251$441'.
-Found and cleaned up 8 empty switches in `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1188$429'.
-Removing empty process `picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1188$429'.
-Found and cleaned up 22 empty switches in `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
-Removing empty process `picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
-Found and cleaned up 3 empty switches in `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:814$167'.
-Removing empty process `picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:814$167'.
-Found and cleaned up 5 empty switches in `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:783$163'.
-Removing empty process `picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:783$163'.
-Found and cleaned up 47 empty switches in `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:707$162'.
-Removing empty process `picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:707$162'.
-Found and cleaned up 16 empty switches in `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:572$138'.
-Removing empty process `picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:572$138'.
-Removing empty process `picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1241$674'.
-Found and cleaned up 19 empty switches in `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:437$100'.
-Removing empty process `picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:437$100'.
-Found and cleaned up 3 empty switches in `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:408$97'.
-Removing empty process `picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:408$97'.
-Found and cleaned up 2 empty switches in `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:397$92'.
-Removing empty process `picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:397$92'.
-Found and cleaned up 1 empty switch in `\picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:332$18'.
-Removing empty process `picorv32.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:332$18'.
+Found and cleaned up 53 empty switches in `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
+Removing empty process `picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1404$506'.
+Removing empty process `picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1350$490'.
+Found and cleaned up 1 empty switch in `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1339$481'.
+Removing empty process `picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1339$481'.
+Found and cleaned up 2 empty switches in `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1311$469'.
+Removing empty process `picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1311$469'.
+Found and cleaned up 2 empty switches in `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1297$464'.
+Removing empty process `picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1297$464'.
+Removing empty process `picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1295$463'.
+Found and cleaned up 2 empty switches in `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1251$441'.
+Removing empty process `picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1251$441'.
+Found and cleaned up 8 empty switches in `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1188$429'.
+Removing empty process `picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1188$429'.
+Found and cleaned up 22 empty switches in `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
+Removing empty process `picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:863$169'.
+Found and cleaned up 3 empty switches in `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:814$167'.
+Removing empty process `picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:814$167'.
+Found and cleaned up 5 empty switches in `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:783$163'.
+Removing empty process `picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:783$163'.
+Found and cleaned up 47 empty switches in `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:707$162'.
+Removing empty process `picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:707$162'.
+Found and cleaned up 16 empty switches in `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:572$138'.
+Removing empty process `picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:572$138'.
+Removing empty process `picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1241$674'.
+Found and cleaned up 19 empty switches in `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:437$100'.
+Removing empty process `picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:437$100'.
+Found and cleaned up 3 empty switches in `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:408$97'.
+Removing empty process `picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:408$97'.
+Found and cleaned up 2 empty switches in `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:397$92'.
+Removing empty process `picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:397$92'.
+Found and cleaned up 1 empty switch in `\picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:332$18'.
+Removing empty process `picorv32.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:332$18'.
 Cleaned up 186 empty switches.
 
 3.12. Executing OPT_EXPR pass (perform const folding).
@@ -1192,10 +1192,10 @@ Running muxtree optimizer on module \picorv32..
     dead port 2/4 on $pmux $procmux$2705.
     dead port 3/4 on $pmux $procmux$2705.
     dead port 4/4 on $pmux $procmux$2705.
-    dead port 1/2 on $mux $ternary$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1542$550.
-    dead port 2/2 on $mux $ternary$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1542$550.
-    dead port 1/2 on $mux $ternary$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1543$549.
-    dead port 2/2 on $mux $ternary$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1543$549.
+    dead port 1/2 on $mux $ternary$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1542$550.
+    dead port 2/2 on $mux $ternary$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1542$550.
+    dead port 1/2 on $mux $ternary$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1543$549.
+    dead port 2/2 on $mux $ternary$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1543$549.
     dead port 1/2 on $mux $procmux$2272.
     dead port 2/2 on $mux $procmux$2272.
     dead port 1/2 on $mux $procmux$2702.
@@ -1304,22 +1304,22 @@ Running muxtree optimizer on module \picorv32..
     dead port 1/3 on $pmux $procmux$2649.
     dead port 2/3 on $pmux $procmux$2649.
     dead port 3/3 on $pmux $procmux$2649.
-    dead port 1/2 on $mux $ternary$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:498$114.
-    dead port 2/2 on $mux $ternary$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:498$114.
+    dead port 1/2 on $mux $ternary$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:498$114.
+    dead port 2/2 on $mux $ternary$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:498$114.
     dead port 1/2 on $mux $procmux$3368.
     dead port 2/2 on $mux $procmux$3368.
     dead port 1/2 on $mux $procmux$2647.
     dead port 2/2 on $mux $procmux$2647.
     dead port 1/2 on $mux $procmux$3370.
     dead port 2/2 on $mux $procmux$3370.
-    dead port 1/2 on $mux $ternary$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:388$73.
-    dead port 2/2 on $mux $ternary$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:388$73.
+    dead port 1/2 on $mux $ternary$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:388$73.
+    dead port 2/2 on $mux $ternary$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:388$73.
     dead port 3/4 on $pmux $procmux$1993.
     dead port 1/3 on $pmux $procmux$3372.
     dead port 2/3 on $pmux $procmux$3372.
     dead port 3/3 on $pmux $procmux$3372.
-    dead port 1/2 on $mux $ternary$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:370$37.
-    dead port 2/2 on $mux $ternary$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:370$37.
+    dead port 1/2 on $mux $ternary$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:370$37.
+    dead port 2/2 on $mux $ternary$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:370$37.
 Removed 548 multiplexer ports.
 <suppressed ~871 debug messages>
 
@@ -1344,7 +1344,7 @@ Removed 548 multiplexer ports.
       New ports: A=1'0, B=1'1, Y=$procmux$2361_Y [0]
       New connections: $procmux$2361_Y [31:1] = { $procmux$2361_Y [0] $procmux$2361_Y [0] $procmux$2361_Y [0] $procmux$2361_Y [0] $procmux$2361_Y [0] $procmux$2361_Y [0] $procmux$2361_Y [0] $procmux$2361_Y [0] $procmux$2361_Y [0] $procmux$2361_Y [0] $procmux$2361_Y [0] $procmux$2361_Y [0] $procmux$2361_Y [0] $procmux$2361_Y [0] $procmux$2361_Y [0] $procmux$2361_Y [0] $procmux$2361_Y [0] $procmux$2361_Y [0] $procmux$2361_Y [0] $procmux$2361_Y [0] $procmux$2361_Y [0] $procmux$2361_Y [0] $procmux$2361_Y [0] $procmux$2361_Y [0] $procmux$2361_Y [0] $procmux$2361_Y [0] $procmux$2361_Y [0] $procmux$2361_Y [0] $procmux$2361_Y [0] $procmux$2361_Y [0] $procmux$2361_Y [0] }
     New ctrl vector for $pmux cell $procmux$922: $auto$opt_reduce.cc:135:opt_pmux$3756
-    New ctrl vector for $pmux cell $procmux$1811: { $auto$opt_reduce.cc:135:opt_pmux$3758 \is_slli_srli_srai $logic_and$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1698$583_Y $reduce_or$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:694$161_Y $logic_not$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:685$159_Y }
+    New ctrl vector for $pmux cell $procmux$1811: { $auto$opt_reduce.cc:135:opt_pmux$3758 \is_slli_srli_srai $logic_and$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1698$583_Y $reduce_or$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:694$161_Y $logic_not$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:685$159_Y }
     New ctrl vector for $pmux cell $procmux$2330: $auto$opt_reduce.cc:135:opt_pmux$3760
     New ctrl vector for $pmux cell $procmux$2245: { \is_lui_auipc_jal $auto$opt_reduce.cc:135:opt_pmux$3762 }
     New ctrl vector for $pmux cell $procmux$2192: { $auto$opt_reduce.cc:135:opt_pmux$3766 $auto$opt_reduce.cc:135:opt_pmux$3764 }
@@ -1352,17 +1352,17 @@ Removed 548 multiplexer ports.
     New ctrl vector for $pmux cell $procmux$2154: $auto$opt_reduce.cc:135:opt_pmux$3770
     New ctrl vector for $pmux cell $procmux$1523: { $auto$opt_reduce.cc:135:opt_pmux$3772 \is_slli_srli_srai }
     New ctrl vector for $pmux cell $procmux$1875: $auto$opt_reduce.cc:135:opt_pmux$3774
-    New ctrl vector for $pmux cell $procmux$2009: { $auto$opt_reduce.cc:135:opt_pmux$3778 $auto$opt_reduce.cc:135:opt_pmux$3776 $logic_and$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1698$583_Y }
-    New input vector for $reduce_or cell $auto$opt_reduce.cc:129:opt_pmux$3729: { $logic_and$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1698$583_Y $logic_not$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:685$159_Y \is_jalr_addi_slti_sltiu_xori_ori_andi \is_slli_srli_srai \is_lui_auipc_jal \instr_rdinstrh \instr_rdinstr \instr_rdcycleh \instr_rdcycle }
-    New input vector for $reduce_or cell $auto$opt_reduce.cc:129:opt_pmux$3735: { $logic_and$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1698$583_Y $logic_not$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:685$159_Y \is_jalr_addi_slti_sltiu_xori_ori_andi \is_slli_srli_srai \is_lui_auipc_jal \instr_rdinstrh \instr_rdinstr \instr_rdcycleh \instr_rdcycle }
-    New input vector for $reduce_or cell $auto$opt_reduce.cc:129:opt_pmux$3741: { $logic_and$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1698$583_Y $logic_not$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:685$159_Y \is_jalr_addi_slti_sltiu_xori_ori_andi \is_slli_srli_srai \is_lui_auipc_jal \instr_rdinstrh \instr_rdinstr \instr_rdcycleh \instr_rdcycle }
-    New input vector for $reduce_or cell $auto$opt_reduce.cc:129:opt_pmux$3743: { $logic_not$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:685$159_Y \is_lui_auipc_jal \instr_rdinstrh \instr_rdinstr \instr_rdcycleh \instr_rdcycle }
-    New input vector for $reduce_or cell $auto$opt_reduce.cc:129:opt_pmux$3761: { $logic_not$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:685$159_Y \instr_rdinstrh \instr_rdinstr \instr_rdcycleh \instr_rdcycle }
-    New input vector for $reduce_or cell $auto$opt_reduce.cc:129:opt_pmux$3763: { $logic_and$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1698$583_Y $logic_not$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:685$159_Y \is_slli_srli_srai \instr_rdinstrh \instr_rdinstr \instr_rdcycleh \instr_rdcycle }
-    New input vector for $reduce_or cell $auto$opt_reduce.cc:129:opt_pmux$3767: { $logic_not$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:685$159_Y \is_lui_auipc_jal \instr_rdinstrh \instr_rdinstr \instr_rdcycleh \instr_rdcycle }
-    New input vector for $reduce_or cell $auto$opt_reduce.cc:129:opt_pmux$3771: { $logic_and$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1698$583_Y $logic_not$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:685$159_Y \is_jalr_addi_slti_sltiu_xori_ori_andi \is_lui_auipc_jal \instr_rdinstrh \instr_rdinstr \instr_rdcycleh \instr_rdcycle }
-    New input vector for $reduce_or cell $auto$opt_reduce.cc:129:opt_pmux$3773: { $logic_and$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1698$583_Y $logic_not$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:685$159_Y \is_jalr_addi_slti_sltiu_xori_ori_andi \is_slli_srli_srai \is_lui_auipc_jal \instr_rdinstrh \instr_rdinstr \instr_rdcycleh \instr_rdcycle }
-    New input vector for $reduce_or cell $auto$opt_reduce.cc:129:opt_pmux$3775: { $logic_not$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:685$159_Y \is_slli_srli_srai \instr_rdinstrh \instr_rdinstr \instr_rdcycleh \instr_rdcycle }
+    New ctrl vector for $pmux cell $procmux$2009: { $auto$opt_reduce.cc:135:opt_pmux$3778 $auto$opt_reduce.cc:135:opt_pmux$3776 $logic_and$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1698$583_Y }
+    New input vector for $reduce_or cell $auto$opt_reduce.cc:129:opt_pmux$3729: { $logic_and$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1698$583_Y $logic_not$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:685$159_Y \is_jalr_addi_slti_sltiu_xori_ori_andi \is_slli_srli_srai \is_lui_auipc_jal \instr_rdinstrh \instr_rdinstr \instr_rdcycleh \instr_rdcycle }
+    New input vector for $reduce_or cell $auto$opt_reduce.cc:129:opt_pmux$3735: { $logic_and$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1698$583_Y $logic_not$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:685$159_Y \is_jalr_addi_slti_sltiu_xori_ori_andi \is_slli_srli_srai \is_lui_auipc_jal \instr_rdinstrh \instr_rdinstr \instr_rdcycleh \instr_rdcycle }
+    New input vector for $reduce_or cell $auto$opt_reduce.cc:129:opt_pmux$3741: { $logic_and$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1698$583_Y $logic_not$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:685$159_Y \is_jalr_addi_slti_sltiu_xori_ori_andi \is_slli_srli_srai \is_lui_auipc_jal \instr_rdinstrh \instr_rdinstr \instr_rdcycleh \instr_rdcycle }
+    New input vector for $reduce_or cell $auto$opt_reduce.cc:129:opt_pmux$3743: { $logic_not$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:685$159_Y \is_lui_auipc_jal \instr_rdinstrh \instr_rdinstr \instr_rdcycleh \instr_rdcycle }
+    New input vector for $reduce_or cell $auto$opt_reduce.cc:129:opt_pmux$3761: { $logic_not$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:685$159_Y \instr_rdinstrh \instr_rdinstr \instr_rdcycleh \instr_rdcycle }
+    New input vector for $reduce_or cell $auto$opt_reduce.cc:129:opt_pmux$3763: { $logic_and$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1698$583_Y $logic_not$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:685$159_Y \is_slli_srli_srai \instr_rdinstrh \instr_rdinstr \instr_rdcycleh \instr_rdcycle }
+    New input vector for $reduce_or cell $auto$opt_reduce.cc:129:opt_pmux$3767: { $logic_not$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:685$159_Y \is_lui_auipc_jal \instr_rdinstrh \instr_rdinstr \instr_rdcycleh \instr_rdcycle }
+    New input vector for $reduce_or cell $auto$opt_reduce.cc:129:opt_pmux$3771: { $logic_and$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1698$583_Y $logic_not$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:685$159_Y \is_jalr_addi_slti_sltiu_xori_ori_andi \is_lui_auipc_jal \instr_rdinstrh \instr_rdinstr \instr_rdcycleh \instr_rdcycle }
+    New input vector for $reduce_or cell $auto$opt_reduce.cc:129:opt_pmux$3773: { $logic_and$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1698$583_Y $logic_not$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:685$159_Y \is_jalr_addi_slti_sltiu_xori_ori_andi \is_slli_srli_srai \is_lui_auipc_jal \instr_rdinstrh \instr_rdinstr \instr_rdcycleh \instr_rdcycle }
+    New input vector for $reduce_or cell $auto$opt_reduce.cc:129:opt_pmux$3775: { $logic_not$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:685$159_Y \is_slli_srli_srai \instr_rdinstrh \instr_rdinstr \instr_rdcycleh \instr_rdcycle }
   Optimizing cells in module \picorv32.
 Performed a total of 35 changes.
 
@@ -1380,7 +1380,7 @@ Finding duplicate cells in `\picorv32'.
 Removed a total of 30 cells.
 
 4.6. Executing OPT_DFF pass (perform DFF optimizations).
-Adding SRST signal on $procdff$3725 ($dff) from module picorv32 (D = $logic_and$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:404$96_Y, Q = \last_mem_valid, rval = 1'0).
+Adding SRST signal on $procdff$3725 ($dff) from module picorv32 (D = $logic_and$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:404$96_Y, Q = \last_mem_valid, rval = 1'0).
 Adding SRST signal on $procdff$3724 ($dff) from module picorv32 (D = $procmux$3558_Y, Q = \mem_la_firstword_reg, rval = 1'0).
 Adding EN signal on $auto$ff.cc:337:slice$3780 ($sdff) from module picorv32 (D = 1'0, Q = \mem_la_firstword_reg).
 Adding EN signal on $procdff$3723 ($dff) from module picorv32 (D = \mem_rdata [6:0], Q = \mem_rdata_q [6:0]).
@@ -1391,7 +1391,7 @@ Adding EN signal on $auto$ff.cc:337:slice$3788 ($sdff) from module picorv32 (D =
 Adding EN signal on $procdff$3718 ($dff) from module picorv32 (D = $procmux$3251_Y, Q = \mem_state).
 Adding EN signal on $procdff$3717 ($dff) from module picorv32 (D = $procmux$3260_Y, Q = \mem_wstrb).
 Adding EN signal on $procdff$3716 ($dff) from module picorv32 (D = \mem_la_wdata, Q = \mem_wdata).
-Adding EN signal on $procdff$3715 ($dff) from module picorv32 (D = $ternary$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:389$83_Y, Q = \mem_addr).
+Adding EN signal on $procdff$3715 ($dff) from module picorv32 (D = $ternary$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:389$83_Y, Q = \mem_addr).
 Adding EN signal on $procdff$3713 ($dff) from module picorv32 (D = $procmux$3306_Y, Q = \mem_valid).
 Adding EN signal on $procdff$3712 ($dff) from module picorv32 (D = \decoded_rd, Q = \cached_insn_rd).
 Adding SRST signal on $procdff$3706 ($dff) from module picorv32 (D = $procmux$3032_Y, Q = \dbg_valid_insn, rval = 1'0).
@@ -1406,18 +1406,18 @@ Adding EN signal on $procdff$3696 ($dff) from module picorv32 (D = $procmux$2593
 Adding EN signal on $procdff$3695 ($dff) from module picorv32 (D = $procmux$2629_Y, Q = \is_alu_reg_imm).
 Adding SRST signal on $procdff$3693 ($dff) from module picorv32 (D = $procmux$2641_Y, Q = \is_beq_bne_blt_bge_bltu_bgeu, rval = 1'0).
 Adding EN signal on $auto$ff.cc:337:slice$3838 ($sdff) from module picorv32 (D = $procmux$2639_Y, Q = \is_beq_bne_blt_bge_bltu_bgeu).
-Adding SRST signal on $procdff$3690 ($dff) from module picorv32 (D = $reduce_or$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:865$171_Y, Q = \is_lui_auipc_jal_jalr_addi_add_sub, rval = 1'0).
-Adding EN signal on $procdff$3689 ($dff) from module picorv32 (D = $logic_and$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1114$424_Y, Q = \is_sll_srl_sra).
+Adding SRST signal on $procdff$3690 ($dff) from module picorv32 (D = $reduce_or$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:865$171_Y, Q = \is_lui_auipc_jal_jalr_addi_add_sub, rval = 1'0).
+Adding EN signal on $procdff$3689 ($dff) from module picorv32 (D = $logic_and$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1114$424_Y, Q = \is_sll_srl_sra).
 Adding EN signal on $procdff$3688 ($dff) from module picorv32 (D = $procmux$2654_Y, Q = \is_sb_sh_sw).
 Adding EN signal on $procdff$3702 ($dff) from module picorv32 (D = $2\dbg_insn_rs1[4:0], Q = \q_insn_rs1).
 Adding EN signal on $procdff$3703 ($dff) from module picorv32 (D = $2\dbg_insn_rs2[4:0], Q = \q_insn_rs2).
 Adding EN signal on $procdff$3701 ($dff) from module picorv32 (D = $2\dbg_insn_opcode[31:0], Q = \q_insn_opcode).
 Adding EN signal on $procdff$3700 ($dff) from module picorv32 (D = $2\dbg_insn_imm[31:0], Q = \q_insn_imm).
 Adding EN signal on $procdff$3699 ($dff) from module picorv32 (D = $2\dbg_ascii_instr[63:0], Q = \q_ascii_instr).
-Adding EN signal on $procdff$3698 ($dff) from module picorv32 (D = $ternary$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1215$440_Y, Q = \dbg_insn_addr).
-Adding SRST signal on $procdff$3697 ($dff) from module picorv32 (D = $reduce_or$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:869$175_Y, Q = \is_compare, rval = 1'0).
-Adding EN signal on $procdff$3687 ($dff) from module picorv32 (D = $logic_or$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1105$413_Y, Q = \is_jalr_addi_slti_sltiu_xori_ori_andi).
-Adding EN signal on $procdff$3686 ($dff) from module picorv32 (D = $logic_and$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1099$404_Y, Q = \is_slli_srli_srai).
+Adding EN signal on $procdff$3698 ($dff) from module picorv32 (D = $ternary$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1215$440_Y, Q = \dbg_insn_addr).
+Adding SRST signal on $procdff$3697 ($dff) from module picorv32 (D = $reduce_or$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:869$175_Y, Q = \is_compare, rval = 1'0).
+Adding EN signal on $procdff$3687 ($dff) from module picorv32 (D = $logic_or$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1105$413_Y, Q = \is_jalr_addi_slti_sltiu_xori_ori_andi).
+Adding EN signal on $procdff$3686 ($dff) from module picorv32 (D = $logic_and$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1099$404_Y, Q = \is_slli_srli_srai).
 Adding EN signal on $procdff$3685 ($dff) from module picorv32 (D = $procmux$2674_Y, Q = \is_lb_lh_lw_lbu_lhu).
 Adding EN signal on $procdff$3683 ($dff) from module picorv32 (D = 1'0, Q = \compressed_instr).
 Adding EN signal on $procdff$3682 ($dff) from module picorv32 (D = $procmux$2487_Y, Q = \decoded_imm_j [10]).
@@ -1442,68 +1442,68 @@ Adding EN signal on $procdff$3675 ($dff) from module picorv32 (D = 1'0, Q = \ins
 Adding EN signal on $procdff$3674 ($dff) from module picorv32 (D = 1'0, Q = \instr_retirq).
 Adding EN signal on $procdff$3673 ($dff) from module picorv32 (D = 1'0, Q = \instr_setq).
 Adding EN signal on $procdff$3672 ($dff) from module picorv32 (D = 1'0, Q = \instr_getq).
-Adding EN signal on $procdff$3671 ($dff) from module picorv32 (D = $logic_or$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1091$374_Y, Q = \instr_ecall_ebreak).
-Adding EN signal on $procdff$3670 ($dff) from module picorv32 (D = $logic_and$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1089$366_Y, Q = \instr_rdinstrh).
-Adding EN signal on $procdff$3669 ($dff) from module picorv32 (D = $logic_and$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1088$361_Y, Q = \instr_rdinstr).
-Adding EN signal on $procdff$3668 ($dff) from module picorv32 (D = $logic_and$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1086$357_Y, Q = \instr_rdcycleh).
-Adding EN signal on $procdff$3667 ($dff) from module picorv32 (D = $logic_and$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1084$348_Y, Q = \instr_rdcycle).
+Adding EN signal on $procdff$3671 ($dff) from module picorv32 (D = $logic_or$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1091$374_Y, Q = \instr_ecall_ebreak).
+Adding EN signal on $procdff$3670 ($dff) from module picorv32 (D = $logic_and$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1089$366_Y, Q = \instr_rdinstrh).
+Adding EN signal on $procdff$3669 ($dff) from module picorv32 (D = $logic_and$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1088$361_Y, Q = \instr_rdinstr).
+Adding EN signal on $procdff$3668 ($dff) from module picorv32 (D = $logic_and$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1086$357_Y, Q = \instr_rdcycleh).
+Adding EN signal on $procdff$3667 ($dff) from module picorv32 (D = $logic_and$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1084$348_Y, Q = \instr_rdcycle).
 Adding SRST signal on $procdff$3666 ($dff) from module picorv32 (D = $procmux$2797_Y, Q = \instr_and, rval = 1'0).
-Adding EN signal on $auto$ff.cc:337:slice$3885 ($sdff) from module picorv32 (D = $logic_and$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1082$340_Y, Q = \instr_and).
+Adding EN signal on $auto$ff.cc:337:slice$3885 ($sdff) from module picorv32 (D = $logic_and$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1082$340_Y, Q = \instr_and).
 Adding SRST signal on $procdff$3665 ($dff) from module picorv32 (D = $procmux$2801_Y, Q = \instr_or, rval = 1'0).
-Adding EN signal on $auto$ff.cc:337:slice$3887 ($sdff) from module picorv32 (D = $logic_and$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1081$336_Y, Q = \instr_or).
+Adding EN signal on $auto$ff.cc:337:slice$3887 ($sdff) from module picorv32 (D = $logic_and$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1081$336_Y, Q = \instr_or).
 Adding SRST signal on $procdff$3664 ($dff) from module picorv32 (D = $procmux$2805_Y, Q = \instr_sra, rval = 1'0).
-Adding EN signal on $auto$ff.cc:337:slice$3889 ($sdff) from module picorv32 (D = $logic_and$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1080$332_Y, Q = \instr_sra).
+Adding EN signal on $auto$ff.cc:337:slice$3889 ($sdff) from module picorv32 (D = $logic_and$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1080$332_Y, Q = \instr_sra).
 Adding SRST signal on $procdff$3663 ($dff) from module picorv32 (D = $procmux$2809_Y, Q = \instr_srl, rval = 1'0).
-Adding EN signal on $auto$ff.cc:337:slice$3891 ($sdff) from module picorv32 (D = $logic_and$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1079$328_Y, Q = \instr_srl).
+Adding EN signal on $auto$ff.cc:337:slice$3891 ($sdff) from module picorv32 (D = $logic_and$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1079$328_Y, Q = \instr_srl).
 Adding SRST signal on $procdff$3662 ($dff) from module picorv32 (D = $procmux$2813_Y, Q = \instr_xor, rval = 1'0).
-Adding EN signal on $auto$ff.cc:337:slice$3893 ($sdff) from module picorv32 (D = $logic_and$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1078$324_Y, Q = \instr_xor).
+Adding EN signal on $auto$ff.cc:337:slice$3893 ($sdff) from module picorv32 (D = $logic_and$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1078$324_Y, Q = \instr_xor).
 Adding SRST signal on $procdff$3661 ($dff) from module picorv32 (D = $procmux$2817_Y, Q = \instr_sltu, rval = 1'0).
-Adding EN signal on $auto$ff.cc:337:slice$3895 ($sdff) from module picorv32 (D = $logic_and$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1077$320_Y, Q = \instr_sltu).
+Adding EN signal on $auto$ff.cc:337:slice$3895 ($sdff) from module picorv32 (D = $logic_and$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1077$320_Y, Q = \instr_sltu).
 Adding SRST signal on $procdff$3660 ($dff) from module picorv32 (D = $procmux$2821_Y, Q = \instr_slt, rval = 1'0).
-Adding EN signal on $auto$ff.cc:337:slice$3897 ($sdff) from module picorv32 (D = $logic_and$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1076$316_Y, Q = \instr_slt).
+Adding EN signal on $auto$ff.cc:337:slice$3897 ($sdff) from module picorv32 (D = $logic_and$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1076$316_Y, Q = \instr_slt).
 Adding SRST signal on $procdff$3659 ($dff) from module picorv32 (D = $procmux$2825_Y, Q = \instr_sll, rval = 1'0).
-Adding EN signal on $auto$ff.cc:337:slice$3899 ($sdff) from module picorv32 (D = $logic_and$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1075$312_Y, Q = \instr_sll).
+Adding EN signal on $auto$ff.cc:337:slice$3899 ($sdff) from module picorv32 (D = $logic_and$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1075$312_Y, Q = \instr_sll).
 Adding SRST signal on $procdff$3658 ($dff) from module picorv32 (D = $procmux$2829_Y, Q = \instr_sub, rval = 1'0).
-Adding EN signal on $auto$ff.cc:337:slice$3901 ($sdff) from module picorv32 (D = $logic_and$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1074$308_Y, Q = \instr_sub).
+Adding EN signal on $auto$ff.cc:337:slice$3901 ($sdff) from module picorv32 (D = $logic_and$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1074$308_Y, Q = \instr_sub).
 Adding SRST signal on $procdff$3657 ($dff) from module picorv32 (D = $procmux$2833_Y, Q = \instr_add, rval = 1'0).
-Adding EN signal on $auto$ff.cc:337:slice$3903 ($sdff) from module picorv32 (D = $logic_and$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1073$304_Y, Q = \instr_add).
-Adding EN signal on $procdff$3656 ($dff) from module picorv32 (D = $logic_and$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1071$300_Y, Q = \instr_srai).
-Adding EN signal on $procdff$3655 ($dff) from module picorv32 (D = $logic_and$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1070$296_Y, Q = \instr_srli).
+Adding EN signal on $auto$ff.cc:337:slice$3903 ($sdff) from module picorv32 (D = $logic_and$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1073$304_Y, Q = \instr_add).
+Adding EN signal on $procdff$3656 ($dff) from module picorv32 (D = $logic_and$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1071$300_Y, Q = \instr_srai).
+Adding EN signal on $procdff$3655 ($dff) from module picorv32 (D = $logic_and$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1070$296_Y, Q = \instr_srli).
 Adding EN signal on $procdff$3714 ($dff) from module picorv32 (D = $procmux$3280_Y, Q = \mem_instr).
 Adding SRST signal on $auto$ff.cc:337:slice$3907 ($dffe) from module picorv32 (D = $procmux$3278_Y, Q = \mem_instr, rval = 1'0).
-Adding EN signal on $procdff$3654 ($dff) from module picorv32 (D = $logic_and$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1069$292_Y, Q = \instr_slli).
+Adding EN signal on $procdff$3654 ($dff) from module picorv32 (D = $logic_and$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1069$292_Y, Q = \instr_slli).
 Adding SRST signal on $procdff$3653 ($dff) from module picorv32 (D = $procmux$2843_Y, Q = \instr_andi, rval = 1'0).
-Adding EN signal on $auto$ff.cc:337:slice$3916 ($sdff) from module picorv32 (D = $logic_and$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1067$288_Y, Q = \instr_andi).
+Adding EN signal on $auto$ff.cc:337:slice$3916 ($sdff) from module picorv32 (D = $logic_and$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1067$288_Y, Q = \instr_andi).
 Adding SRST signal on $procdff$3652 ($dff) from module picorv32 (D = $procmux$2847_Y, Q = \instr_ori, rval = 1'0).
-Adding EN signal on $auto$ff.cc:337:slice$3918 ($sdff) from module picorv32 (D = $logic_and$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1066$286_Y, Q = \instr_ori).
+Adding EN signal on $auto$ff.cc:337:slice$3918 ($sdff) from module picorv32 (D = $logic_and$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1066$286_Y, Q = \instr_ori).
 Adding SRST signal on $procdff$3651 ($dff) from module picorv32 (D = $procmux$2851_Y, Q = \instr_xori, rval = 1'0).
-Adding EN signal on $auto$ff.cc:337:slice$3920 ($sdff) from module picorv32 (D = $logic_and$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1065$284_Y, Q = \instr_xori).
+Adding EN signal on $auto$ff.cc:337:slice$3920 ($sdff) from module picorv32 (D = $logic_and$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1065$284_Y, Q = \instr_xori).
 Adding SRST signal on $procdff$3650 ($dff) from module picorv32 (D = $procmux$2855_Y, Q = \instr_sltiu, rval = 1'0).
-Adding EN signal on $auto$ff.cc:337:slice$3922 ($sdff) from module picorv32 (D = $logic_and$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1064$282_Y, Q = \instr_sltiu).
+Adding EN signal on $auto$ff.cc:337:slice$3922 ($sdff) from module picorv32 (D = $logic_and$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1064$282_Y, Q = \instr_sltiu).
 Adding SRST signal on $procdff$3649 ($dff) from module picorv32 (D = $procmux$2859_Y, Q = \instr_slti, rval = 1'0).
-Adding EN signal on $auto$ff.cc:337:slice$3924 ($sdff) from module picorv32 (D = $logic_and$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1063$280_Y, Q = \instr_slti).
+Adding EN signal on $auto$ff.cc:337:slice$3924 ($sdff) from module picorv32 (D = $logic_and$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1063$280_Y, Q = \instr_slti).
 Adding SRST signal on $procdff$3648 ($dff) from module picorv32 (D = $procmux$2863_Y, Q = \instr_addi, rval = 1'0).
-Adding EN signal on $auto$ff.cc:337:slice$3926 ($sdff) from module picorv32 (D = $logic_and$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1062$278_Y, Q = \instr_addi).
-Adding EN signal on $procdff$3647 ($dff) from module picorv32 (D = $logic_and$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1060$276_Y, Q = \instr_sw).
-Adding EN signal on $procdff$3644 ($dff) from module picorv32 (D = $logic_and$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1056$270_Y, Q = \instr_lhu).
-Adding EN signal on $procdff$3643 ($dff) from module picorv32 (D = $logic_and$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1055$268_Y, Q = \instr_lbu).
-Adding EN signal on $procdff$3642 ($dff) from module picorv32 (D = $logic_and$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1054$266_Y, Q = \instr_lw).
-Adding EN signal on $procdff$3641 ($dff) from module picorv32 (D = $logic_and$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1053$264_Y, Q = \instr_lh).
-Adding EN signal on $procdff$3640 ($dff) from module picorv32 (D = $logic_and$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1052$262_Y, Q = \instr_lb).
+Adding EN signal on $auto$ff.cc:337:slice$3926 ($sdff) from module picorv32 (D = $logic_and$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1062$278_Y, Q = \instr_addi).
+Adding EN signal on $procdff$3647 ($dff) from module picorv32 (D = $logic_and$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1060$276_Y, Q = \instr_sw).
+Adding EN signal on $procdff$3644 ($dff) from module picorv32 (D = $logic_and$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1056$270_Y, Q = \instr_lhu).
+Adding EN signal on $procdff$3643 ($dff) from module picorv32 (D = $logic_and$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1055$268_Y, Q = \instr_lbu).
+Adding EN signal on $procdff$3642 ($dff) from module picorv32 (D = $logic_and$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1054$266_Y, Q = \instr_lw).
+Adding EN signal on $procdff$3641 ($dff) from module picorv32 (D = $logic_and$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1053$264_Y, Q = \instr_lh).
+Adding EN signal on $procdff$3640 ($dff) from module picorv32 (D = $logic_and$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1052$262_Y, Q = \instr_lb).
 Adding SRST signal on $procdff$3639 ($dff) from module picorv32 (D = $procmux$2883_Y, Q = \instr_bgeu, rval = 1'0).
-Adding EN signal on $auto$ff.cc:337:slice$3934 ($sdff) from module picorv32 (D = $logic_and$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1050$260_Y, Q = \instr_bgeu).
+Adding EN signal on $auto$ff.cc:337:slice$3934 ($sdff) from module picorv32 (D = $logic_and$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1050$260_Y, Q = \instr_bgeu).
 Adding SRST signal on $procdff$3638 ($dff) from module picorv32 (D = $procmux$2887_Y, Q = \instr_bltu, rval = 1'0).
-Adding EN signal on $auto$ff.cc:337:slice$3936 ($sdff) from module picorv32 (D = $logic_and$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1049$258_Y, Q = \instr_bltu).
+Adding EN signal on $auto$ff.cc:337:slice$3936 ($sdff) from module picorv32 (D = $logic_and$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1049$258_Y, Q = \instr_bltu).
 Adding SRST signal on $procdff$3637 ($dff) from module picorv32 (D = $procmux$2891_Y, Q = \instr_bge, rval = 1'0).
-Adding EN signal on $auto$ff.cc:337:slice$3938 ($sdff) from module picorv32 (D = $logic_and$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1048$256_Y, Q = \instr_bge).
+Adding EN signal on $auto$ff.cc:337:slice$3938 ($sdff) from module picorv32 (D = $logic_and$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1048$256_Y, Q = \instr_bge).
 Adding SRST signal on $procdff$3636 ($dff) from module picorv32 (D = $procmux$2895_Y, Q = \instr_blt, rval = 1'0).
-Adding EN signal on $auto$ff.cc:337:slice$3940 ($sdff) from module picorv32 (D = $logic_and$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1047$254_Y, Q = \instr_blt).
+Adding EN signal on $auto$ff.cc:337:slice$3940 ($sdff) from module picorv32 (D = $logic_and$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1047$254_Y, Q = \instr_blt).
 Adding SRST signal on $procdff$3635 ($dff) from module picorv32 (D = $procmux$2899_Y, Q = \instr_bne, rval = 1'0).
-Adding EN signal on $auto$ff.cc:337:slice$3942 ($sdff) from module picorv32 (D = $logic_and$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1046$252_Y, Q = \instr_bne).
+Adding EN signal on $auto$ff.cc:337:slice$3942 ($sdff) from module picorv32 (D = $logic_and$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1046$252_Y, Q = \instr_bne).
 Adding SRST signal on $procdff$3634 ($dff) from module picorv32 (D = $procmux$2903_Y, Q = \instr_beq, rval = 1'0).
-Adding EN signal on $auto$ff.cc:337:slice$3944 ($sdff) from module picorv32 (D = $logic_and$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1045$250_Y, Q = \instr_beq).
+Adding EN signal on $auto$ff.cc:337:slice$3944 ($sdff) from module picorv32 (D = $logic_and$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1045$250_Y, Q = \instr_beq).
 Adding EN signal on $procdff$3632 ($dff) from module picorv32 (D = $procmux$2928_Y, Q = \instr_jal).
-Adding EN signal on $procdff$3631 ($dff) from module picorv32 (D = $eq$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:873$178_Y, Q = \instr_auipc).
+Adding EN signal on $procdff$3631 ($dff) from module picorv32 (D = $eq$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:873$178_Y, Q = \instr_auipc).
 Adding EN signal on $procdff$3630 ($dff) from module picorv32 (D = $procmux$2948_Y, Q = \instr_lui).
 Adding EN signal on $procdff$3629 ($dff) from module picorv32 (D = 32'x, Q = \pcpi_insn).
 Adding SRST signal on $procdff$3624 ($dff) from module picorv32 (D = $procmux$1384_Y, Q = \alu_wait_2, rval = 1'0).
@@ -1551,9 +1551,9 @@ Adding SRST signal on $procdff$3579 ($dff) from module picorv32 (D = $procmux$22
 Adding EN signal on $auto$ff.cc:337:slice$4116 ($sdff) from module picorv32 (D = $3\current_pc[31:0], Q = \reg_pc).
 Adding SRST signal on $procdff$3578 ($dff) from module picorv32 (D = $procmux$2311_Y, Q = \count_instr, rval = 64'0000000000000000000000000000000000000000000000000000000000000000).
 Adding EN signal on $auto$ff.cc:337:slice$4118 ($sdff) from module picorv32 (D = $procmux$2309_Y, Q = \count_instr).
-Adding SRST signal on $procdff$3577 ($dff) from module picorv32 (D = $add$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1435$507_Y, Q = \count_cycle, rval = 64'0000000000000000000000000000000000000000000000000000000000000000).
-Adding EN signal on $procdff$3646 ($dff) from module picorv32 (D = $logic_and$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1059$274_Y, Q = \instr_sh).
-Adding EN signal on $procdff$3645 ($dff) from module picorv32 (D = $logic_and$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1058$272_Y, Q = \instr_sb).
+Adding SRST signal on $procdff$3577 ($dff) from module picorv32 (D = $add$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1435$507_Y, Q = \count_cycle, rval = 64'0000000000000000000000000000000000000000000000000000000000000000).
+Adding EN signal on $procdff$3646 ($dff) from module picorv32 (D = $logic_and$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1059$274_Y, Q = \instr_sh).
+Adding EN signal on $procdff$3645 ($dff) from module picorv32 (D = $logic_and$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1058$272_Y, Q = \instr_sb).
 Adding SRST signal on $procdff$3574 ($dff) from module picorv32 (D = $procmux$2330_Y, Q = \eoi, rval = 0).
 Adding EN signal on $auto$ff.cc:337:slice$4123 ($sdff) from module picorv32 (D = \eoi, Q = \eoi).
 Handling D = Q on $auto$ff.cc:337:slice$4124 ($sdffe) from module picorv32 (conecting SRST instead).
@@ -1727,9 +1727,9 @@ Removed 0 multiplexer ports.
 
 4.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
   Optimizing cells in module \picorv32.
-    New ctrl vector for $pmux cell $procmux$1770: { $auto$opt_reduce.cc:135:opt_pmux$4133 $eq$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1195$435_Y $eq$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1194$434_Y $eq$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1193$433_Y $eq$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1192$432_Y $eq$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1191$431_Y }
-    New ctrl vector for $pmux cell $procmux$3290: { $auto$opt_reduce.cc:135:opt_pmux$4135 $logic_and$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:387$67_Y }
-    New ctrl vector for $pmux cell $procmux$1350: { $auto$opt_reduce.cc:135:opt_pmux$4137 $eq$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1194$434_Y }
+    New ctrl vector for $pmux cell $procmux$1770: { $auto$opt_reduce.cc:135:opt_pmux$4133 $eq$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1195$435_Y $eq$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1194$434_Y $eq$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1193$433_Y $eq$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1192$432_Y $eq$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1191$431_Y }
+    New ctrl vector for $pmux cell $procmux$3290: { $auto$opt_reduce.cc:135:opt_pmux$4135 $logic_and$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:387$67_Y }
+    New ctrl vector for $pmux cell $procmux$1350: { $auto$opt_reduce.cc:135:opt_pmux$4137 $eq$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1194$434_Y }
     New ctrl vector for $pmux cell $procmux$1333: $auto$opt_reduce.cc:135:opt_pmux$4139
   Optimizing cells in module \picorv32.
 Performed a total of 4 changes.
@@ -1747,10 +1747,10 @@ Removed a total of 29 cells.
 
 4.13. Executing OPT_DFF pass (perform DFF optimizations).
 Adding EN signal on $auto$ff.cc:337:slice$3818 ($dffe) from module picorv32 (D = $0\mem_valid[0:0], Q = \mem_valid).
-Adding EN signal on $auto$ff.cc:337:slice$4043 ($sdffe) from module picorv32 (D = $logic_and$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1575$564_Y, Q = \mem_do_prefetch).
+Adding EN signal on $auto$ff.cc:337:slice$4043 ($sdffe) from module picorv32 (D = $logic_and$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1575$564_Y, Q = \mem_do_prefetch).
 Adding EN signal on $auto$ff.cc:337:slice$3783 ($dff) from module picorv32 (D = \mem_rdata [31:7], Q = \mem_rdata_q [31:7]).
 Adding SRST signal on $procdff$3603 ($dff) from module picorv32 (D = $procmux$1855_Y, Q = \cpu_state, rval = 8'10000000).
-Adding EN signal on $auto$ff.cc:337:slice$4119 ($sdffe) from module picorv32 (D = $add$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1566$560_Y, Q = \count_instr).
+Adding EN signal on $auto$ff.cc:337:slice$4119 ($sdffe) from module picorv32 (D = $add$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1566$560_Y, Q = \count_instr).
 Handling D = Q on $auto$ff.cc:337:slice$4129 ($sdff) from module picorv32 (conecting SRST instead).
 Adding SRST signal on $auto$ff.cc:337:slice$4023 ($sdff) from module picorv32 (D = $procmux$1329_Y, Q = \decoder_pseudo_trigger, rval = 1'0).
 Setting constant 0-bit at position 0 on $auto$ff.cc:337:slice$4129 ($dffe) from module picorv32.
@@ -1778,7 +1778,7 @@ Removed 0 multiplexer ports.
 4.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
   Optimizing cells in module \picorv32.
     New input vector for $reduce_and cell $auto$opt_dff.cc:252:make_patterns_logic$4144: { $auto$opt_dff.cc:234:make_patterns_logic$3797 $auto$opt_dff.cc:234:make_patterns_logic$3821 $auto$opt_dff.cc:234:make_patterns_logic$3823 $auto$opt_dff.cc:234:make_patterns_logic$4141 }
-    New input vector for $reduce_and cell $auto$opt_dff.cc:252:make_patterns_logic$4149: { $eq$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1191$431_Y \decoder_trigger \resetn $auto$rtlil.cc:3255:Not$4147 }
+    New input vector for $reduce_and cell $auto$opt_dff.cc:252:make_patterns_logic$4149: { $eq$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1191$431_Y \decoder_trigger \resetn $auto$rtlil.cc:3255:Not$4147 }
   Optimizing cells in module \picorv32.
 Performed a total of 2 changes.
 
@@ -1932,38 +1932,38 @@ Finding duplicate cells in `\picorv32'.
 Removed a total of 0 cells.
 
 7.13. Executing OPT_DFF pass (perform DFF optimizations).
-Adding EN signal on $memory\cpuregs[0]$4166 ($dff) from module picorv32 (D = $0$memwr$\cpuregs$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1346$17_DATA[31:0]$483, Q = \cpuregs[0]).
-Adding EN signal on $memory\cpuregs[1]$4168 ($dff) from module picorv32 (D = $0$memwr$\cpuregs$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1346$17_DATA[31:0]$483, Q = \cpuregs[1]).
-Adding EN signal on $memory\cpuregs[2]$4170 ($dff) from module picorv32 (D = $0$memwr$\cpuregs$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1346$17_DATA[31:0]$483, Q = \cpuregs[2]).
-Adding EN signal on $memory\cpuregs[3]$4172 ($dff) from module picorv32 (D = $0$memwr$\cpuregs$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1346$17_DATA[31:0]$483, Q = \cpuregs[3]).
-Adding EN signal on $memory\cpuregs[4]$4174 ($dff) from module picorv32 (D = $0$memwr$\cpuregs$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1346$17_DATA[31:0]$483, Q = \cpuregs[4]).
-Adding EN signal on $memory\cpuregs[5]$4176 ($dff) from module picorv32 (D = $0$memwr$\cpuregs$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1346$17_DATA[31:0]$483, Q = \cpuregs[5]).
-Adding EN signal on $memory\cpuregs[6]$4178 ($dff) from module picorv32 (D = $0$memwr$\cpuregs$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1346$17_DATA[31:0]$483, Q = \cpuregs[6]).
-Adding EN signal on $memory\cpuregs[7]$4180 ($dff) from module picorv32 (D = $0$memwr$\cpuregs$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1346$17_DATA[31:0]$483, Q = \cpuregs[7]).
-Adding EN signal on $memory\cpuregs[8]$4182 ($dff) from module picorv32 (D = $0$memwr$\cpuregs$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1346$17_DATA[31:0]$483, Q = \cpuregs[8]).
-Adding EN signal on $memory\cpuregs[9]$4184 ($dff) from module picorv32 (D = $0$memwr$\cpuregs$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1346$17_DATA[31:0]$483, Q = \cpuregs[9]).
-Adding EN signal on $memory\cpuregs[10]$4186 ($dff) from module picorv32 (D = $0$memwr$\cpuregs$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1346$17_DATA[31:0]$483, Q = \cpuregs[10]).
-Adding EN signal on $memory\cpuregs[11]$4188 ($dff) from module picorv32 (D = $0$memwr$\cpuregs$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1346$17_DATA[31:0]$483, Q = \cpuregs[11]).
-Adding EN signal on $memory\cpuregs[12]$4190 ($dff) from module picorv32 (D = $0$memwr$\cpuregs$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1346$17_DATA[31:0]$483, Q = \cpuregs[12]).
-Adding EN signal on $memory\cpuregs[13]$4192 ($dff) from module picorv32 (D = $0$memwr$\cpuregs$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1346$17_DATA[31:0]$483, Q = \cpuregs[13]).
-Adding EN signal on $memory\cpuregs[14]$4194 ($dff) from module picorv32 (D = $0$memwr$\cpuregs$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1346$17_DATA[31:0]$483, Q = \cpuregs[14]).
-Adding EN signal on $memory\cpuregs[15]$4196 ($dff) from module picorv32 (D = $0$memwr$\cpuregs$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1346$17_DATA[31:0]$483, Q = \cpuregs[15]).
-Adding EN signal on $memory\cpuregs[16]$4198 ($dff) from module picorv32 (D = $0$memwr$\cpuregs$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1346$17_DATA[31:0]$483, Q = \cpuregs[16]).
-Adding EN signal on $memory\cpuregs[17]$4200 ($dff) from module picorv32 (D = $0$memwr$\cpuregs$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1346$17_DATA[31:0]$483, Q = \cpuregs[17]).
-Adding EN signal on $memory\cpuregs[18]$4202 ($dff) from module picorv32 (D = $0$memwr$\cpuregs$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1346$17_DATA[31:0]$483, Q = \cpuregs[18]).
-Adding EN signal on $memory\cpuregs[19]$4204 ($dff) from module picorv32 (D = $0$memwr$\cpuregs$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1346$17_DATA[31:0]$483, Q = \cpuregs[19]).
-Adding EN signal on $memory\cpuregs[20]$4206 ($dff) from module picorv32 (D = $0$memwr$\cpuregs$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1346$17_DATA[31:0]$483, Q = \cpuregs[20]).
-Adding EN signal on $memory\cpuregs[21]$4208 ($dff) from module picorv32 (D = $0$memwr$\cpuregs$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1346$17_DATA[31:0]$483, Q = \cpuregs[21]).
-Adding EN signal on $memory\cpuregs[22]$4210 ($dff) from module picorv32 (D = $0$memwr$\cpuregs$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1346$17_DATA[31:0]$483, Q = \cpuregs[22]).
-Adding EN signal on $memory\cpuregs[23]$4212 ($dff) from module picorv32 (D = $0$memwr$\cpuregs$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1346$17_DATA[31:0]$483, Q = \cpuregs[23]).
-Adding EN signal on $memory\cpuregs[24]$4214 ($dff) from module picorv32 (D = $0$memwr$\cpuregs$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1346$17_DATA[31:0]$483, Q = \cpuregs[24]).
-Adding EN signal on $memory\cpuregs[25]$4216 ($dff) from module picorv32 (D = $0$memwr$\cpuregs$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1346$17_DATA[31:0]$483, Q = \cpuregs[25]).
-Adding EN signal on $memory\cpuregs[26]$4218 ($dff) from module picorv32 (D = $0$memwr$\cpuregs$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1346$17_DATA[31:0]$483, Q = \cpuregs[26]).
-Adding EN signal on $memory\cpuregs[27]$4220 ($dff) from module picorv32 (D = $0$memwr$\cpuregs$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1346$17_DATA[31:0]$483, Q = \cpuregs[27]).
-Adding EN signal on $memory\cpuregs[28]$4222 ($dff) from module picorv32 (D = $0$memwr$\cpuregs$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1346$17_DATA[31:0]$483, Q = \cpuregs[28]).
-Adding EN signal on $memory\cpuregs[29]$4224 ($dff) from module picorv32 (D = $0$memwr$\cpuregs$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1346$17_DATA[31:0]$483, Q = \cpuregs[29]).
-Adding EN signal on $memory\cpuregs[30]$4226 ($dff) from module picorv32 (D = $0$memwr$\cpuregs$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1346$17_DATA[31:0]$483, Q = \cpuregs[30]).
-Adding EN signal on $memory\cpuregs[31]$4228 ($dff) from module picorv32 (D = $0$memwr$\cpuregs$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1346$17_DATA[31:0]$483, Q = \cpuregs[31]).
+Adding EN signal on $memory\cpuregs[0]$4166 ($dff) from module picorv32 (D = $0$memwr$\cpuregs$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1346$17_DATA[31:0]$483, Q = \cpuregs[0]).
+Adding EN signal on $memory\cpuregs[1]$4168 ($dff) from module picorv32 (D = $0$memwr$\cpuregs$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1346$17_DATA[31:0]$483, Q = \cpuregs[1]).
+Adding EN signal on $memory\cpuregs[2]$4170 ($dff) from module picorv32 (D = $0$memwr$\cpuregs$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1346$17_DATA[31:0]$483, Q = \cpuregs[2]).
+Adding EN signal on $memory\cpuregs[3]$4172 ($dff) from module picorv32 (D = $0$memwr$\cpuregs$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1346$17_DATA[31:0]$483, Q = \cpuregs[3]).
+Adding EN signal on $memory\cpuregs[4]$4174 ($dff) from module picorv32 (D = $0$memwr$\cpuregs$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1346$17_DATA[31:0]$483, Q = \cpuregs[4]).
+Adding EN signal on $memory\cpuregs[5]$4176 ($dff) from module picorv32 (D = $0$memwr$\cpuregs$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1346$17_DATA[31:0]$483, Q = \cpuregs[5]).
+Adding EN signal on $memory\cpuregs[6]$4178 ($dff) from module picorv32 (D = $0$memwr$\cpuregs$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1346$17_DATA[31:0]$483, Q = \cpuregs[6]).
+Adding EN signal on $memory\cpuregs[7]$4180 ($dff) from module picorv32 (D = $0$memwr$\cpuregs$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1346$17_DATA[31:0]$483, Q = \cpuregs[7]).
+Adding EN signal on $memory\cpuregs[8]$4182 ($dff) from module picorv32 (D = $0$memwr$\cpuregs$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1346$17_DATA[31:0]$483, Q = \cpuregs[8]).
+Adding EN signal on $memory\cpuregs[9]$4184 ($dff) from module picorv32 (D = $0$memwr$\cpuregs$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1346$17_DATA[31:0]$483, Q = \cpuregs[9]).
+Adding EN signal on $memory\cpuregs[10]$4186 ($dff) from module picorv32 (D = $0$memwr$\cpuregs$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1346$17_DATA[31:0]$483, Q = \cpuregs[10]).
+Adding EN signal on $memory\cpuregs[11]$4188 ($dff) from module picorv32 (D = $0$memwr$\cpuregs$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1346$17_DATA[31:0]$483, Q = \cpuregs[11]).
+Adding EN signal on $memory\cpuregs[12]$4190 ($dff) from module picorv32 (D = $0$memwr$\cpuregs$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1346$17_DATA[31:0]$483, Q = \cpuregs[12]).
+Adding EN signal on $memory\cpuregs[13]$4192 ($dff) from module picorv32 (D = $0$memwr$\cpuregs$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1346$17_DATA[31:0]$483, Q = \cpuregs[13]).
+Adding EN signal on $memory\cpuregs[14]$4194 ($dff) from module picorv32 (D = $0$memwr$\cpuregs$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1346$17_DATA[31:0]$483, Q = \cpuregs[14]).
+Adding EN signal on $memory\cpuregs[15]$4196 ($dff) from module picorv32 (D = $0$memwr$\cpuregs$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1346$17_DATA[31:0]$483, Q = \cpuregs[15]).
+Adding EN signal on $memory\cpuregs[16]$4198 ($dff) from module picorv32 (D = $0$memwr$\cpuregs$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1346$17_DATA[31:0]$483, Q = \cpuregs[16]).
+Adding EN signal on $memory\cpuregs[17]$4200 ($dff) from module picorv32 (D = $0$memwr$\cpuregs$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1346$17_DATA[31:0]$483, Q = \cpuregs[17]).
+Adding EN signal on $memory\cpuregs[18]$4202 ($dff) from module picorv32 (D = $0$memwr$\cpuregs$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1346$17_DATA[31:0]$483, Q = \cpuregs[18]).
+Adding EN signal on $memory\cpuregs[19]$4204 ($dff) from module picorv32 (D = $0$memwr$\cpuregs$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1346$17_DATA[31:0]$483, Q = \cpuregs[19]).
+Adding EN signal on $memory\cpuregs[20]$4206 ($dff) from module picorv32 (D = $0$memwr$\cpuregs$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1346$17_DATA[31:0]$483, Q = \cpuregs[20]).
+Adding EN signal on $memory\cpuregs[21]$4208 ($dff) from module picorv32 (D = $0$memwr$\cpuregs$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1346$17_DATA[31:0]$483, Q = \cpuregs[21]).
+Adding EN signal on $memory\cpuregs[22]$4210 ($dff) from module picorv32 (D = $0$memwr$\cpuregs$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1346$17_DATA[31:0]$483, Q = \cpuregs[22]).
+Adding EN signal on $memory\cpuregs[23]$4212 ($dff) from module picorv32 (D = $0$memwr$\cpuregs$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1346$17_DATA[31:0]$483, Q = \cpuregs[23]).
+Adding EN signal on $memory\cpuregs[24]$4214 ($dff) from module picorv32 (D = $0$memwr$\cpuregs$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1346$17_DATA[31:0]$483, Q = \cpuregs[24]).
+Adding EN signal on $memory\cpuregs[25]$4216 ($dff) from module picorv32 (D = $0$memwr$\cpuregs$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1346$17_DATA[31:0]$483, Q = \cpuregs[25]).
+Adding EN signal on $memory\cpuregs[26]$4218 ($dff) from module picorv32 (D = $0$memwr$\cpuregs$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1346$17_DATA[31:0]$483, Q = \cpuregs[26]).
+Adding EN signal on $memory\cpuregs[27]$4220 ($dff) from module picorv32 (D = $0$memwr$\cpuregs$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1346$17_DATA[31:0]$483, Q = \cpuregs[27]).
+Adding EN signal on $memory\cpuregs[28]$4222 ($dff) from module picorv32 (D = $0$memwr$\cpuregs$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1346$17_DATA[31:0]$483, Q = \cpuregs[28]).
+Adding EN signal on $memory\cpuregs[29]$4224 ($dff) from module picorv32 (D = $0$memwr$\cpuregs$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1346$17_DATA[31:0]$483, Q = \cpuregs[29]).
+Adding EN signal on $memory\cpuregs[30]$4226 ($dff) from module picorv32 (D = $0$memwr$\cpuregs$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1346$17_DATA[31:0]$483, Q = \cpuregs[30]).
+Adding EN signal on $memory\cpuregs[31]$4228 ($dff) from module picorv32 (D = $0$memwr$\cpuregs$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1346$17_DATA[31:0]$483, Q = \cpuregs[31]).
 
 7.14. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \picorv32..
@@ -2005,8 +2005,8 @@ Optimizing module picorv32.
 
 8. Executing TECHMAP pass (map to technology primitives).
 
-8.1. Executing Verilog-2005 frontend: /home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v
-Parsing Verilog input from `/home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v' to AST representation.
+8.1. Executing Verilog-2005 frontend: ~/oss-cad-suite/lib/../share/yosys/techmap.v
+Parsing Verilog input from `~/oss-cad-suite/lib/../share/yosys/techmap.v' to AST representation.
 Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
 Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
 Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
@@ -2197,7 +2197,7 @@ Removed a total of 0 cells.
 
 9.13. Executing OPT_DFF pass (perform DFF optimizations).
 Adding SRST signal on $auto$ff.cc:337:slice$6513 ($_DFFE_PP_) from module picorv32 (D = $procmux$2687.Y_B [31], Q = \decoded_imm [31], rval = 1'0).
-Adding EN signal on $auto$ff.cc:337:slice$6085 ($_SDFFE_PN0P_) from module picorv32 (D = $techmap$add$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1562$559.$auto$alumacc.cc:512:replace_alu$7898.A [0], Q = \reg_next_pc [0]).
+Adding EN signal on $auto$ff.cc:337:slice$6085 ($_SDFFE_PN0P_) from module picorv32 (D = $techmap$add$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1562$559.$auto$alumacc.cc:512:replace_alu$7898.A [0], Q = \reg_next_pc [0]).
 Adding SRST signal on $auto$ff.cc:337:slice$6483 ($_DFFE_PP_) from module picorv32 (D = $procmux$2687.Y_B [1], Q = \decoded_imm [1], rval = 1'0).
 Adding SRST signal on $auto$ff.cc:337:slice$6484 ($_DFFE_PP_) from module picorv32 (D = $procmux$2687.Y_B [2], Q = \decoded_imm [2], rval = 1'0).
 Adding SRST signal on $auto$ff.cc:337:slice$6485 ($_DFFE_PP_) from module picorv32 (D = $procmux$2687.Y_B [3], Q = \decoded_imm [3], rval = 1'0).
@@ -2338,11 +2338,11 @@ Optimizing module picorv32.
 
 11.9. Finished fast OPT passes. (There is nothing left to do.)
 
-12. Executing Liberty frontend: /home/smdadmin/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130B/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+12. Executing Liberty frontend: ~/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130B/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 Imported 428 cell types from liberty file.
 
-13. Executing Verilog-2005 frontend: /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/synth/picorv32_netlist.v
-Parsing Verilog input from `/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/synth/picorv32_netlist.v' to AST representation.
+13. Executing Verilog-2005 frontend: ~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/synth/picorv32_netlist.v
+Parsing Verilog input from `~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/synth/picorv32_netlist.v' to AST representation.
 Generating RTLIL representation for module `\picorv32'.
 Successfully finished Verilog frontend.
 
@@ -2523,8 +2523,8 @@ Optimizing module picorv32.
 
 20. Executing TECHMAP pass (map to technology primitives).
 
-20.1. Executing Verilog-2005 frontend: /home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v
-Parsing Verilog input from `/home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v' to AST representation.
+20.1. Executing Verilog-2005 frontend: ~/oss-cad-suite/lib/../share/yosys/techmap.v
+Parsing Verilog input from `~/oss-cad-suite/lib/../share/yosys/techmap.v' to AST representation.
 Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
 Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
 Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
@@ -7960,12 +7960,12 @@ Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$6902_gold ($_AND
 Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$6902_gold ($_AND_): \mem_la_wstrb_gold [1] -> \mem_la_wstrb [1]
 Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$6901_gold ($_AND_): \mem_la_write_gold -> \mem_la_write
 Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$6901_gold ($_AND_): \mem_la_wstrb_gold [0] -> \mem_la_wstrb [0]
-Changing input S of cell $techmap$shl$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:426$99.$auto$simplemap.cc:298:simplemap_mux$6892_gold ($_MUX_): \reg_op1_gold [1] -> \pcpi_rs1 [1]
-Changing input B of cell $techmap$shl$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:426$99.$auto$simplemap.cc:298:simplemap_mux$6892_gold ($_MUX_): \reg_op1_gold [0] -> \pcpi_rs1 [0]
-Changing input S of cell $techmap$shl$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:426$99.$auto$simplemap.cc:298:simplemap_mux$6889_gold ($_MUX_): \reg_op1_gold [1] -> \pcpi_rs1 [1]
-Changing input S of cell $techmap$shl$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:426$99.$auto$simplemap.cc:298:simplemap_mux$6891_gold ($_MUX_): \reg_op1_gold [1] -> \pcpi_rs1 [1]
-Changing input S of cell $techmap$shl$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:426$99.$auto$simplemap.cc:298:simplemap_mux$6890_gold ($_MUX_): \reg_op1_gold [1] -> \pcpi_rs1 [1]
-Changing input A of cell $techmap$shl$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:426$99.$auto$simplemap.cc:298:simplemap_mux$6890_gold ($_MUX_): \reg_op1_gold [0] -> \pcpi_rs1 [0]
+Changing input S of cell $techmap$shl$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:426$99.$auto$simplemap.cc:298:simplemap_mux$6892_gold ($_MUX_): \reg_op1_gold [1] -> \pcpi_rs1 [1]
+Changing input B of cell $techmap$shl$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:426$99.$auto$simplemap.cc:298:simplemap_mux$6892_gold ($_MUX_): \reg_op1_gold [0] -> \pcpi_rs1 [0]
+Changing input S of cell $techmap$shl$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:426$99.$auto$simplemap.cc:298:simplemap_mux$6889_gold ($_MUX_): \reg_op1_gold [1] -> \pcpi_rs1 [1]
+Changing input S of cell $techmap$shl$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:426$99.$auto$simplemap.cc:298:simplemap_mux$6891_gold ($_MUX_): \reg_op1_gold [1] -> \pcpi_rs1 [1]
+Changing input S of cell $techmap$shl$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:426$99.$auto$simplemap.cc:298:simplemap_mux$6890_gold ($_MUX_): \reg_op1_gold [1] -> \pcpi_rs1 [1]
+Changing input A of cell $techmap$shl$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:426$99.$auto$simplemap.cc:298:simplemap_mux$6890_gold ($_MUX_): \reg_op1_gold [0] -> \pcpi_rs1 [0]
 Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$17876_gold ($_XOR_): \count_instr_gold [58] -> \count_instr [58]
 Changing input S of cell $auto$simplemap.cc:298:simplemap_mux$6862_gold ($_MUX_): \mem_xfer_gold -> \mem_xfer
 Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$6862_gold ($_MUX_): \mem_rdata_q_gold [30] -> \mem_rdata_q [30]
@@ -8572,20 +8572,20 @@ Changing input A of cell $auto$simplemap.cc:298:simplemap_mux$5853_gold ($_MUX_)
 Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$22623_gold ($_AND_): \reg_op1_gold [20] -> \pcpi_rs1 [20]
 Setting undriven nets to undef: \mem_rdata_latched_noshuffle [6:0]
 Setting undriven nets to undef: \mem_rdata_latched [6:0]
-Setting undriven nets to undef: $techmap$add$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1319$472.$auto$alumacc.cc:512:replace_alu$7898.CO_gold [31]
-Setting undriven nets to undef: $techmap$add$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1571$561.$auto$alumacc.cc:512:replace_alu$7898.CO_gold [31]
-Setting undriven nets to undef: $techmap$add$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1566$560.$auto$alumacc.cc:512:replace_alu$7988.CO_gold [63]
+Setting undriven nets to undef: $techmap$add$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1319$472.$auto$alumacc.cc:512:replace_alu$7898.CO_gold [31]
+Setting undriven nets to undef: $techmap$add$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1571$561.$auto$alumacc.cc:512:replace_alu$7898.CO_gold [31]
+Setting undriven nets to undef: $techmap$add$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1566$560.$auto$alumacc.cc:512:replace_alu$7988.CO_gold [63]
 Setting undriven nets to undef: $procmux$2687.Y_gold [31:1]
-Setting undriven nets to undef: $techmap$add$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1899$639.$auto$alumacc.cc:512:replace_alu$7898.fa.X_gold [31]
-Setting undriven nets to undef: $techmap$add$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1571$561.$auto$alumacc.cc:512:replace_alu$7898.fa.X_gold [31]
-Setting undriven nets to undef: $techmap$add$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1808$606.$auto$alumacc.cc:512:replace_alu$7898.fa.X_gold [31]
-Setting undriven nets to undef: $techmap$add$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1242$676.$auto$alumacc.cc:512:replace_alu$7898.CO_gold [31]
-Setting undriven nets to undef: $techmap$add$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1562$559.$auto$alumacc.cc:512:replace_alu$7898.CO_gold [31]
-Setting undriven nets to undef: $techmap$add$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1808$606.$auto$alumacc.cc:512:replace_alu$7898.CO_gold [31]
-Setting undriven nets to undef: $techmap$sub$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1852$627.$auto$alumacc.cc:512:replace_alu$8116.CO_gold [4]
-Setting undriven nets to undef: $techmap$add$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1899$639.$auto$alumacc.cc:512:replace_alu$7898.CO_gold [31]
-Setting undriven nets to undef: $techmap$sub$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1852$627.$auto$alumacc.cc:512:replace_alu$8116.Y_gold [5]
-Setting undriven nets to undef: $techmap$add$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1435$507.$auto$alumacc.cc:512:replace_alu$7988.CO_gold [63]
+Setting undriven nets to undef: $techmap$add$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1899$639.$auto$alumacc.cc:512:replace_alu$7898.fa.X_gold [31]
+Setting undriven nets to undef: $techmap$add$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1571$561.$auto$alumacc.cc:512:replace_alu$7898.fa.X_gold [31]
+Setting undriven nets to undef: $techmap$add$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1808$606.$auto$alumacc.cc:512:replace_alu$7898.fa.X_gold [31]
+Setting undriven nets to undef: $techmap$add$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1242$676.$auto$alumacc.cc:512:replace_alu$7898.CO_gold [31]
+Setting undriven nets to undef: $techmap$add$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1562$559.$auto$alumacc.cc:512:replace_alu$7898.CO_gold [31]
+Setting undriven nets to undef: $techmap$add$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1808$606.$auto$alumacc.cc:512:replace_alu$7898.CO_gold [31]
+Setting undriven nets to undef: $techmap$sub$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1852$627.$auto$alumacc.cc:512:replace_alu$8116.CO_gold [4]
+Setting undriven nets to undef: $techmap$add$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1899$639.$auto$alumacc.cc:512:replace_alu$7898.CO_gold [31]
+Setting undriven nets to undef: $techmap$sub$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1852$627.$auto$alumacc.cc:512:replace_alu$8116.Y_gold [5]
+Setting undriven nets to undef: $techmap$add$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1435$507.$auto$alumacc.cc:512:replace_alu$7988.CO_gold [63]
 Setting undriven nets to undef: \next_pc_gold [1:0]
 Setting undriven nets to undef: \trap_gate
 Setting undriven nets to undef: \mem_valid_gate

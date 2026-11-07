@@ -1,5 +1,5 @@
-SBY 15:13:44 [interrupt_ctrl_bmc] Removing directory '/home/smdadmin/hermes_workspace/projects/IP-005/v5/03_frontend-stage/rtl-interrupt_ctrl/formal/interrupt_ctrl_bmc'.
-SBY 15:13:44 [interrupt_ctrl_bmc] Copy '/home/smdadmin/hermes_workspace/projects/IP-005/v5/03_frontend-stage/rtl-interrupt_ctrl/rtl/interrupt_ctrl.v' to '/home/smdadmin/hermes_workspace/projects/IP-005/v5/03_frontend-stage/rtl-interrupt_ctrl/formal/interrupt_ctrl_bmc/src/interrupt_ctrl.v'.
+SBY 15:13:44 [interrupt_ctrl_bmc] Removing directory '~/hermes_workspace/projects/IP-005/v5/03_frontend-stage/rtl-interrupt_ctrl/formal/interrupt_ctrl_bmc'.
+SBY 15:13:44 [interrupt_ctrl_bmc] Copy '~/hermes_workspace/projects/IP-005/v5/03_frontend-stage/rtl-interrupt_ctrl/rtl/interrupt_ctrl.v' to '~/hermes_workspace/projects/IP-005/v5/03_frontend-stage/rtl-interrupt_ctrl/formal/interrupt_ctrl_bmc/src/interrupt_ctrl.v'.
 SBY 15:13:44 [interrupt_ctrl_bmc] engine_0: smtbmc yices
 SBY 15:13:44 [interrupt_ctrl_bmc] base: starting process "cd interrupt_ctrl_bmc/src; yosys -ql ../model/design.log ../model/design.ys"
 SBY 15:13:44 [interrupt_ctrl_bmc] base: finished (returncode=0)
@@ -7,7 +7,7 @@ SBY 15:13:44 [interrupt_ctrl_bmc] prep: starting process "cd interrupt_ctrl_bmc/
 SBY 15:13:44 [interrupt_ctrl_bmc] prep: finished (returncode=0)
 SBY 15:13:44 [interrupt_ctrl_bmc] smt2: starting process "cd interrupt_ctrl_bmc/model; yosys -ql design_smt2.log design_smt2.ys"
 SBY 15:13:44 [interrupt_ctrl_bmc] smt2: finished (returncode=0)
-SBY 15:13:45 [interrupt_ctrl_bmc] engine_0: starting process "cd interrupt_ctrl_bmc; /home/smdadmin/oss-cad-suite/bin/yosys-smtbmc -s yices --presat --unroll --noprogress -t 20  --append 0 --dump-vcd engine_0/trace.vcd --dump-yw engine_0/trace.yw --dump-vlogtb engine_0/trace_tb.v --dump-smtc engine_0/trace.smtc model/design_smt2.smt2"
+SBY 15:13:45 [interrupt_ctrl_bmc] engine_0: starting process "cd interrupt_ctrl_bmc; ~/oss-cad-suite/bin/yosys-smtbmc -s yices --presat --unroll --noprogress -t 20  --append 0 --dump-vcd engine_0/trace.vcd --dump-yw engine_0/trace.yw --dump-vlogtb engine_0/trace_tb.v --dump-smtc engine_0/trace.smtc model/design_smt2.smt2"
 SBY 15:13:45 [interrupt_ctrl_bmc] engine_0: ##   0:00:00  Solver: yices
 SBY 15:13:45 [interrupt_ctrl_bmc] engine_0: ##   0:00:00  Checking assumptions in step 0..
 SBY 15:13:45 [interrupt_ctrl_bmc] engine_0: ##   0:00:00  Checking assertions in step 0..

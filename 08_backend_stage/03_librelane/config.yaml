@@ -1,23 +1,23 @@
 DESIGN_NAME: trash_robot_soc
 VERILOG_FILES:
-  - /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-trash_robot_soc/rtl/trash_robot_soc.v
-  - /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v
-  - /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-wb_interconnect/rtl/wb_interconnect.v
-  - /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v
-  - /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-uart/rtl/uart.v
-  - /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_hx711/rtl/i2c_master.v
-  - /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v
-  - /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm_ctrl.v
-  - /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v
-  - /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_fsm.v
-  - /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-gpio/rtl/gpio.v
-  - /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-timer/rtl/timer.v
-  - /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-timer/rtl/timer_pwm.v
-  - /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-watchdog/rtl/watchdog.v
-  - /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-interrupt_ctrl/rtl/interrupt_ctrl.v
-  - /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-interrupt_ctrl/rtl/intc.v
-  - /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-weight_detect/rtl/weight_detect.v
-  - /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-power_mgr/rtl/power_mgr.v
+  - ~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-trash_robot_soc/rtl/trash_robot_soc.v
+  - ~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v
+  - ~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-wb_interconnect/rtl/wb_interconnect.v
+  - ~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v
+  - ~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-uart/rtl/uart.v
+  - ~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_hx711/rtl/i2c_master.v
+  - ~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v
+  - ~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm_ctrl.v
+  - ~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v
+  - ~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_fsm.v
+  - ~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-gpio/rtl/gpio.v
+  - ~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-timer/rtl/timer.v
+  - ~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-timer/rtl/timer_pwm.v
+  - ~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-watchdog/rtl/watchdog.v
+  - ~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-interrupt_ctrl/rtl/interrupt_ctrl.v
+  - ~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-interrupt_ctrl/rtl/intc.v
+  - ~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-weight_detect/rtl/weight_detect.v
+  - ~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-power_mgr/rtl/power_mgr.v
 CLOCK_PERIOD: 30.0
 CLOCK_PORT: clk_i
 ERROR_ON_LINTER_ERRORS: false

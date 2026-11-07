@@ -1,43 +1,43 @@
-/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-power_mgr/rtl/power_mgr.v:7: warning: timescale for power_mgr inherited from another file.
-/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:25: ...: The inherited timescale is here.
-/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:7: warning: timescale for sram_512b inherited from another file.
-/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:25: ...: The inherited timescale is here.
-/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-timer/rtl/timer_pwm.v:7: warning: timescale for timer_pwm inherited from another file.
-/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:25: ...: The inherited timescale is here.
-/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-timer/rtl/timer.v:7: warning: timescale for timer inherited from another file.
-/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:25: ...: The inherited timescale is here.
-/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-uart/rtl/uart.v:7: warning: timescale for uart inherited from another file.
-/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:25: ...: The inherited timescale is here.
-/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:7: warning: timescale for ultrasonic_capture inherited from another file.
-/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:25: ...: The inherited timescale is here.
-/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_fsm.v:7: warning: timescale for ultrasonic_fsm inherited from another file.
-/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:25: ...: The inherited timescale is here.
-/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-watchdog/rtl/watchdog.v:7: warning: timescale for watchdog inherited from another file.
-/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:25: ...: The inherited timescale is here.
-/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-wb_interconnect/rtl/wb_interconnect.v:7: warning: timescale for wb_interconnect inherited from another file.
-/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:25: ...: The inherited timescale is here.
-/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-weight_detect/rtl/weight_detect.v:7: warning: timescale for weight_detect inherited from another file.
-/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:25: ...: The inherited timescale is here.
-/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_hx711/rtl/i2c_controller.v:7: warning: timescale for i2c_controller inherited from another file.
-/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:25: ...: The inherited timescale is here.
-/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_hx711/rtl/i2c_master.v:7: warning: timescale for i2c_master inherited from another file.
-/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:25: ...: The inherited timescale is here.
-/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-trash_robot_soc/rtl/trash_robot_soc.v:11: warning: timescale for trash_robot_soc inherited from another file.
-/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:25: ...: The inherited timescale is here.
+~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-power_mgr/rtl/power_mgr.v:7: warning: timescale for power_mgr inherited from another file.
+~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:25: ...: The inherited timescale is here.
+~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-sram_512b/rtl/sram_512b.v:7: warning: timescale for sram_512b inherited from another file.
+~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:25: ...: The inherited timescale is here.
+~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-timer/rtl/timer_pwm.v:7: warning: timescale for timer_pwm inherited from another file.
+~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:25: ...: The inherited timescale is here.
+~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-timer/rtl/timer.v:7: warning: timescale for timer inherited from another file.
+~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:25: ...: The inherited timescale is here.
+~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-uart/rtl/uart.v:7: warning: timescale for uart inherited from another file.
+~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:25: ...: The inherited timescale is here.
+~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:7: warning: timescale for ultrasonic_capture inherited from another file.
+~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:25: ...: The inherited timescale is here.
+~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_fsm.v:7: warning: timescale for ultrasonic_fsm inherited from another file.
+~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:25: ...: The inherited timescale is here.
+~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-watchdog/rtl/watchdog.v:7: warning: timescale for watchdog inherited from another file.
+~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:25: ...: The inherited timescale is here.
+~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-wb_interconnect/rtl/wb_interconnect.v:7: warning: timescale for wb_interconnect inherited from another file.
+~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:25: ...: The inherited timescale is here.
+~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-weight_detect/rtl/weight_detect.v:7: warning: timescale for weight_detect inherited from another file.
+~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:25: ...: The inherited timescale is here.
+~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_hx711/rtl/i2c_controller.v:7: warning: timescale for i2c_controller inherited from another file.
+~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:25: ...: The inherited timescale is here.
+~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_hx711/rtl/i2c_master.v:7: warning: timescale for i2c_master inherited from another file.
+~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:25: ...: The inherited timescale is here.
+~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-trash_robot_soc/rtl/trash_robot_soc.v:11: warning: timescale for trash_robot_soc inherited from another file.
+~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:25: ...: The inherited timescale is here.
 warning: Some modules have no timescale. This may cause
        : confusing timing results.	Affected modules are:
-       :   -- module gpio declared here: /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-gpio/rtl/gpio.v:7
-       :   -- module intc declared here: /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-interrupt_ctrl/rtl/intc.v:7
-       :   -- module interrupt_ctrl declared here: /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-interrupt_ctrl/rtl/interrupt_ctrl.v:7
-       :   -- module motor_pwm declared here: /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:7
-       :   -- module motor_pwm_ctrl declared here: /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm_ctrl.v:6
-/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1354: warning: @* is sensitive to all 32 words in array 'cpuregs'.
-/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1355: warning: @* is sensitive to all 32 words in array 'cpuregs'.
-/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1354: warning: @* is sensitive to all 32 words in array 'cpuregs'.
-/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1355: warning: @* is sensitive to all 32 words in array 'cpuregs'.
-/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1354: warning: @* is sensitive to all 32 words in array 'cpuregs'.
-/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1355: warning: @* is sensitive to all 32 words in array 'cpuregs'.
-/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-trash_robot_soc/rtl/trash_robot_soc.v:107: warning: Instantiating module picorv32 with dangling input port 20 (pcpi_wr) floating.
-/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-trash_robot_soc/rtl/trash_robot_soc.v:107: warning: Instantiating module picorv32 with dangling input port 21 (pcpi_rd) floating.
-/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-trash_robot_soc/rtl/trash_robot_soc.v:107: warning: Instantiating module picorv32 with dangling input port 22 (pcpi_wait) floating.
-/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-trash_robot_soc/rtl/trash_robot_soc.v:107: warning: Instantiating module picorv32 with dangling input port 23 (pcpi_ready) floating.
+       :   -- module gpio declared here: ~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-gpio/rtl/gpio.v:7
+       :   -- module intc declared here: ~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-interrupt_ctrl/rtl/intc.v:7
+       :   -- module interrupt_ctrl declared here: ~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-interrupt_ctrl/rtl/interrupt_ctrl.v:7
+       :   -- module motor_pwm declared here: ~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v:7
+       :   -- module motor_pwm_ctrl declared here: ~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm_ctrl.v:6
+~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1354: warning: @* is sensitive to all 32 words in array 'cpuregs'.
+~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1355: warning: @* is sensitive to all 32 words in array 'cpuregs'.
+~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1354: warning: @* is sensitive to all 32 words in array 'cpuregs'.
+~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1355: warning: @* is sensitive to all 32 words in array 'cpuregs'.
+~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1354: warning: @* is sensitive to all 32 words in array 'cpuregs'.
+~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v:1355: warning: @* is sensitive to all 32 words in array 'cpuregs'.
+~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-trash_robot_soc/rtl/trash_robot_soc.v:107: warning: Instantiating module picorv32 with dangling input port 20 (pcpi_wr) floating.
+~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-trash_robot_soc/rtl/trash_robot_soc.v:107: warning: Instantiating module picorv32 with dangling input port 21 (pcpi_rd) floating.
+~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-trash_robot_soc/rtl/trash_robot_soc.v:107: warning: Instantiating module picorv32 with dangling input port 22 (pcpi_wait) floating.
+~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-trash_robot_soc/rtl/trash_robot_soc.v:107: warning: Instantiating module picorv32 with dangling input port 23 (pcpi_ready) floating.

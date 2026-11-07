@@ -10,4 +10,4 @@ read -formal timer.v
 prep -top timer
 
 [files]
-/home/smdadmin/hermes_workspace/projects/IP-005/v5/03_frontend-stage/rtl-timer/rtl/timer.v
+~/hermes_workspace/projects/IP-005/v5/03_frontend-stage/rtl-timer/rtl/timer.v

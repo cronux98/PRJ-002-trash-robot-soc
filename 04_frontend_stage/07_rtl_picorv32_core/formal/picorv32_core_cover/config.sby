@@ -10,4 +10,4 @@ read -formal picorv32_core.v
 prep -top picorv32
 
 [files]
-/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v
+~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v

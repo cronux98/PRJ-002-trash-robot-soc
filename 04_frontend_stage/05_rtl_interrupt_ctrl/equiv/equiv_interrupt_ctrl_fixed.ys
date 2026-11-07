@@ -1,5 +1,5 @@
 # GOLD: RTL -> generic (flattened, async2sync'd)
-read_verilog /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-interrupt_ctrl//rtl/interrupt_ctrl.v
+read_verilog ~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-interrupt_ctrl//rtl/interrupt_ctrl.v
 hierarchy -top interrupt_ctrl
 synth -flatten -top interrupt_ctrl
 async2sync
@@ -7,8 +7,8 @@ rename interrupt_ctrl gold_interrupt_ctrl
 design -push
 
 # GATE: sky130 netlist with WHITEBOX liberty models
-read_liberty -wb -ignore_miss_func -ignore_miss_dir /home/smdadmin/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
-read_verilog /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-interrupt_ctrl//synth/interrupt_ctrl_netlist.v
+read_liberty -wb -ignore_miss_func -ignore_miss_dir ~/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog ~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-interrupt_ctrl//synth/interrupt_ctrl_netlist.v
 hierarchy -top interrupt_ctrl
 setattr -mod -unset whitebox =*
 setattr -mod -unset blackbox =*

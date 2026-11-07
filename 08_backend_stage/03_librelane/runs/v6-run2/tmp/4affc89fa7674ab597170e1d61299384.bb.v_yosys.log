@@ -8,14 +8,14 @@
 
 -- Running command `
                     verilog_defines -DUSE_POWER_PINS;
-read_verilog -sv -lib /home/smdadmin/hermes_workspace/projects/IP-005/v6/04_backend-stage/librelane/runs/v6-run2/tmp/4affc89fa7674ab597170e1d61299384.bb.v;
+read_verilog -sv -lib ~/hermes_workspace/projects/IP-005/v6/04_backend-stage/librelane/runs/v6-run2/tmp/4affc89fa7674ab597170e1d61299384.bb.v;
 
                     blackbox;
-                    write_verilog -noattr -noexpr -nohex -nodec -defparam -blackboxes /home/smdadmin/hermes_workspace/projects/IP-005/v6/04_backend-stage/librelane/runs/v6-run2/tmp/4affc89fa7674ab597170e1d61299384.bb.v;
+                    write_verilog -noattr -noexpr -nohex -nodec -defparam -blackboxes ~/hermes_workspace/projects/IP-005/v6/04_backend-stage/librelane/runs/v6-run2/tmp/4affc89fa7674ab597170e1d61299384.bb.v;
                     ' --
 
-1. Executing Verilog-2005 frontend: /home/smdadmin/hermes_workspace/projects/IP-005/v6/04_backend-stage/librelane/runs/v6-run2/tmp/4affc89fa7674ab597170e1d61299384.bb.v
-Parsing SystemVerilog input from `/home/smdadmin/hermes_workspace/projects/IP-005/v6/04_backend-stage/librelane/runs/v6-run2/tmp/4affc89fa7674ab597170e1d61299384.bb.v' to AST representation.
+1. Executing Verilog-2005 frontend: ~/hermes_workspace/projects/IP-005/v6/04_backend-stage/librelane/runs/v6-run2/tmp/4affc89fa7674ab597170e1d61299384.bb.v
+Parsing SystemVerilog input from `~/hermes_workspace/projects/IP-005/v6/04_backend-stage/librelane/runs/v6-run2/tmp/4affc89fa7674ab597170e1d61299384.bb.v' to AST representation.
 Generating RTLIL representation for module `\sky130_ef_sc_hd__decap_12'.
 Generating RTLIL representation for module `\sky130_ef_sc_hd__decap_20_12'.
 Generating RTLIL representation for module `\sky130_ef_sc_hd__decap_40_12'.

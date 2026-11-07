@@ -10,4 +10,4 @@ read -formal weight_detect.v
 prep -top weight_detect
 
 [files]
-/home/smdadmin/hermes_workspace/projects/IP-005/v5/03_frontend-stage/rtl-weight_detect/rtl/weight_detect.v
+~/hermes_workspace/projects/IP-005/v5/03_frontend-stage/rtl-weight_detect/rtl/weight_detect.v

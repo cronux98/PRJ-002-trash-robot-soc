@@ -8,8 +8,8 @@
 
 -- Executing script file `/tmp/equiv_power_mgr.ys' --
 
-1. Executing Verilog-2005 frontend: /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-power_mgr/rtl/power_mgr.v
-Parsing Verilog input from `/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-power_mgr/rtl/power_mgr.v' to AST representation.
+1. Executing Verilog-2005 frontend: ~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-power_mgr/rtl/power_mgr.v
+Parsing Verilog input from `~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-power_mgr/rtl/power_mgr.v' to AST representation.
 Generating RTLIL representation for module `\power_mgr'.
 Successfully finished Verilog frontend.
 
@@ -28,8 +28,8 @@ Removed 0 unused modules.
 Cleaned up 0 empty switches.
 
 3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
-Marked 2 switch rules as full_case in process $proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-power_mgr/rtl/power_mgr.v:60$5 in module power_mgr.
-Marked 1 switch rules as full_case in process $proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-power_mgr/rtl/power_mgr.v:47$3 in module power_mgr.
+Marked 2 switch rules as full_case in process $proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-power_mgr/rtl/power_mgr.v:60$5 in module power_mgr.
+Marked 1 switch rules as full_case in process $proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-power_mgr/rtl/power_mgr.v:47$3 in module power_mgr.
 Removed a total of 0 dead cases.
 
 3.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
@@ -39,48 +39,48 @@ Promoted 0 assignments to connections.
 3.4. Executing PROC_INIT pass (extract init attributes).
 
 3.5. Executing PROC_ARST pass (detect async resets in processes).
-Found async reset \rst_ni in `\power_mgr.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-power_mgr/rtl/power_mgr.v:60$5'.
-Found async reset \int_rst_n in `\power_mgr.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-power_mgr/rtl/power_mgr.v:47$3'.
+Found async reset \rst_ni in `\power_mgr.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-power_mgr/rtl/power_mgr.v:60$5'.
+Found async reset \int_rst_n in `\power_mgr.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-power_mgr/rtl/power_mgr.v:47$3'.
 
 3.6. Executing PROC_ROM pass (convert switches to ROMs).
 Converted 0 switches.
 <suppressed ~5 debug messages>
 
 3.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
-Creating decoders for process `\power_mgr.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-power_mgr/rtl/power_mgr.v:60$5'.
+Creating decoders for process `\power_mgr.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-power_mgr/rtl/power_mgr.v:60$5'.
      1/5: $0\sys_rst_n_o[0:0]
      2/5: $0\wb_ack_o[0:0]
      3/5: $0\wdt_rst_flag[0:0]
      4/5: $0\ext_rst_flag[0:0]
      5/5: $0\wb_dat_o[31:0]
-Creating decoders for process `\power_mgr.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-power_mgr/rtl/power_mgr.v:47$3'.
+Creating decoders for process `\power_mgr.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-power_mgr/rtl/power_mgr.v:47$3'.
      1/2: $0\sync_ff2[0:0]
      2/2: $0\sync_ff1[0:0]
 
 3.8. Executing PROC_DLATCH pass (convert process syncs to latches).
 
 3.9. Executing PROC_DFF pass (convert process syncs to FFs).
-Creating register for signal `\power_mgr.\wb_dat_o' using process `\power_mgr.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-power_mgr/rtl/power_mgr.v:60$5'.
+Creating register for signal `\power_mgr.\wb_dat_o' using process `\power_mgr.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-power_mgr/rtl/power_mgr.v:60$5'.
   created $adff cell `$procdff$47' with positive edge clock and positive level reset.
-Creating register for signal `\power_mgr.\wb_ack_o' using process `\power_mgr.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-power_mgr/rtl/power_mgr.v:60$5'.
+Creating register for signal `\power_mgr.\wb_ack_o' using process `\power_mgr.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-power_mgr/rtl/power_mgr.v:60$5'.
   created $adff cell `$procdff$52' with positive edge clock and positive level reset.
-Creating register for signal `\power_mgr.\sys_rst_n_o' using process `\power_mgr.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-power_mgr/rtl/power_mgr.v:60$5'.
+Creating register for signal `\power_mgr.\sys_rst_n_o' using process `\power_mgr.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-power_mgr/rtl/power_mgr.v:60$5'.
   created $adff cell `$procdff$57' with positive edge clock and positive level reset.
-Creating register for signal `\power_mgr.\ext_rst_flag' using process `\power_mgr.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-power_mgr/rtl/power_mgr.v:60$5'.
+Creating register for signal `\power_mgr.\ext_rst_flag' using process `\power_mgr.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-power_mgr/rtl/power_mgr.v:60$5'.
   created $adff cell `$procdff$62' with positive edge clock and positive level reset.
-Creating register for signal `\power_mgr.\wdt_rst_flag' using process `\power_mgr.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-power_mgr/rtl/power_mgr.v:60$5'.
+Creating register for signal `\power_mgr.\wdt_rst_flag' using process `\power_mgr.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-power_mgr/rtl/power_mgr.v:60$5'.
   created $adff cell `$procdff$67' with positive edge clock and positive level reset.
-Creating register for signal `\power_mgr.\sync_ff1' using process `\power_mgr.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-power_mgr/rtl/power_mgr.v:47$3'.
+Creating register for signal `\power_mgr.\sync_ff1' using process `\power_mgr.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-power_mgr/rtl/power_mgr.v:47$3'.
   created $adff cell `$procdff$72' with positive edge clock and positive level reset.
-Creating register for signal `\power_mgr.\sync_ff2' using process `\power_mgr.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-power_mgr/rtl/power_mgr.v:47$3'.
+Creating register for signal `\power_mgr.\sync_ff2' using process `\power_mgr.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-power_mgr/rtl/power_mgr.v:47$3'.
   created $adff cell `$procdff$77' with positive edge clock and positive level reset.
 
 3.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
 
 3.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
-Found and cleaned up 5 empty switches in `\power_mgr.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-power_mgr/rtl/power_mgr.v:60$5'.
-Removing empty process `power_mgr.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-power_mgr/rtl/power_mgr.v:60$5'.
-Removing empty process `power_mgr.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-power_mgr/rtl/power_mgr.v:47$3'.
+Found and cleaned up 5 empty switches in `\power_mgr.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-power_mgr/rtl/power_mgr.v:60$5'.
+Removing empty process `power_mgr.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-power_mgr/rtl/power_mgr.v:60$5'.
+Removing empty process `power_mgr.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-power_mgr/rtl/power_mgr.v:47$3'.
 Cleaned up 5 empty switches.
 
 3.12. Executing OPT_EXPR pass (perform const folding).
@@ -271,8 +271,8 @@ Optimizing module power_mgr.
 
 8. Executing TECHMAP pass (map to technology primitives).
 
-8.1. Executing Verilog-2005 frontend: /home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v
-Parsing Verilog input from `/home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v' to AST representation.
+8.1. Executing Verilog-2005 frontend: ~/oss-cad-suite/lib/../share/yosys/techmap.v
+Parsing Verilog input from `~/oss-cad-suite/lib/../share/yosys/techmap.v' to AST representation.
 Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
 Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
 Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
@@ -428,11 +428,11 @@ Optimizing module power_mgr.
 
 11.9. Finished fast OPT passes. (There is nothing left to do.)
 
-12. Executing Liberty frontend: /home/smdadmin/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130B/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+12. Executing Liberty frontend: ~/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130B/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 Imported 428 cell types from liberty file.
 
-13. Executing Verilog-2005 frontend: /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-power_mgr/synth/power_mgr_netlist.v
-Parsing Verilog input from `/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-power_mgr/synth/power_mgr_netlist.v' to AST representation.
+13. Executing Verilog-2005 frontend: ~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-power_mgr/synth/power_mgr_netlist.v
+Parsing Verilog input from `~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-power_mgr/synth/power_mgr_netlist.v' to AST representation.
 Generating RTLIL representation for module `\power_mgr'.
 Successfully finished Verilog frontend.
 
@@ -613,8 +613,8 @@ Optimizing module power_mgr.
 
 20. Executing TECHMAP pass (map to technology primitives).
 
-20.1. Executing Verilog-2005 frontend: /home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v
-Parsing Verilog input from `/home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v' to AST representation.
+20.1. Executing Verilog-2005 frontend: ~/oss-cad-suite/lib/../share/yosys/techmap.v
+Parsing Verilog input from `~/oss-cad-suite/lib/../share/yosys/techmap.v' to AST representation.
 Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
 Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
 Generating RTLIL representation for module `\_90_simplemap_logic_ops'.

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-<testsuite timestamp="2026-07-14T15:13:41" hostname="smdtest02" package="uart" id="0" name="bmc" tests="0" errors="0" failures="0" time="0" skipped="0">
+<testsuite timestamp="2026-07-14T15:13:41" hostname="buildhost" package="uart" id="0" name="bmc" tests="0" errors="0" failures="0" time="0" skipped="0">
 <properties>
 <property name="os" value="Linux"/>
 <property name="expect" value="PASS"/>
@@ -8,8 +8,8 @@
 </properties>
 <testcase classname="bmc" name="build execution" time="0">
 </testcase>
-<system-out>SBY 15:13:40 [uart_bmc] Removing directory '/home/smdadmin/hermes_workspace/projects/IP-005/v5/03_frontend-stage/rtl-uart/formal/uart_bmc'.
-SBY 15:13:40 [uart_bmc] Copy '/home/smdadmin/hermes_workspace/projects/IP-005/v5/03_frontend-stage/rtl-uart/rtl/uart.v' to '/home/smdadmin/hermes_workspace/projects/IP-005/v5/03_frontend-stage/rtl-uart/formal/uart_bmc/src/uart.v'.
+<system-out>SBY 15:13:40 [uart_bmc] Removing directory '~/hermes_workspace/projects/IP-005/v5/03_frontend-stage/rtl-uart/formal/uart_bmc'.
+SBY 15:13:40 [uart_bmc] Copy '~/hermes_workspace/projects/IP-005/v5/03_frontend-stage/rtl-uart/rtl/uart.v' to '~/hermes_workspace/projects/IP-005/v5/03_frontend-stage/rtl-uart/formal/uart_bmc/src/uart.v'.
 SBY 15:13:40 [uart_bmc] engine_0: smtbmc yices
 SBY 15:13:40 [uart_bmc] base: starting process &quot;cd uart_bmc/src; yosys -ql ../model/design.log ../model/design.ys&quot;
 SBY 15:13:40 [uart_bmc] base: finished (returncode=0)
@@ -17,7 +17,7 @@ SBY 15:13:40 [uart_bmc] prep: starting process &quot;cd uart_bmc/model; yosys -q
 SBY 15:13:41 [uart_bmc] prep: finished (returncode=0)
 SBY 15:13:41 [uart_bmc] smt2: starting process &quot;cd uart_bmc/model; yosys -ql design_smt2.log design_smt2.ys&quot;
 SBY 15:13:41 [uart_bmc] smt2: finished (returncode=0)
-SBY 15:13:41 [uart_bmc] engine_0: starting process &quot;cd uart_bmc; /home/smdadmin/oss-cad-suite/bin/yosys-smtbmc -s yices --presat --unroll --noprogress -t 20  --append 0 --dump-vcd engine_0/trace.vcd --dump-yw engine_0/trace.yw --dump-vlogtb engine_0/trace_tb.v --dump-smtc engine_0/trace.smtc model/design_smt2.smt2&quot;
+SBY 15:13:41 [uart_bmc] engine_0: starting process &quot;cd uart_bmc; ~/oss-cad-suite/bin/yosys-smtbmc -s yices --presat --unroll --noprogress -t 20  --append 0 --dump-vcd engine_0/trace.vcd --dump-yw engine_0/trace.yw --dump-vlogtb engine_0/trace_tb.v --dump-smtc engine_0/trace.smtc model/design_smt2.smt2&quot;
 SBY 15:13:41 [uart_bmc] engine_0: ##   0:00:00  Solver: yices
 SBY 15:13:41 [uart_bmc] engine_0: ##   0:00:00  Checking assumptions in step 0..
 SBY 15:13:41 [uart_bmc] engine_0: ##   0:00:00  Checking assertions in step 0..

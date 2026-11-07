@@ -1,4 +1,4 @@
-%Warning-MULTITOP: /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-interrupt_ctrl/rtl/intc.v:7:8: Multiple top level modules
+%Warning-MULTITOP: ~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-interrupt_ctrl/rtl/intc.v:7:8: Multiple top level modules
                                                                                                                          : ... Suggest see manual; fix the duplicates, or use --top-module to select top.
                    ... For warning description see https://verilator.org/warn/MULTITOP?v=5.049
                    ... Use "/* verilator lint_off MULTITOP */" and lint_on around source to disable this message.

@@ -21,4 +21,4 @@ read -formal uart.v
 prep -top uart
 
 [files]
-/home/smdadmin/hermes_workspace/projects/IP-005/v5/03_frontend-stage/rtl-uart/rtl/uart.v
+~/hermes_workspace/projects/IP-005/v5/03_frontend-stage/rtl-uart/rtl/uart.v

@@ -1,9 +1,9 @@
 <testsuites name="results">
   <testsuite name="all" package="all">
     <property name="random_seed" value="1784095007" />
-    <testcase name="test_reset" classname="test_watchdog" file="/home/smdadmin/hermes_workspace/projects/IP-005/v6/06_verification/tb-watchdog/test_watchdog.py" lineno="16" time="0.0007734298706054688" sim_time_ns="70.0" ratio_time="90505.94327990136" />
-    <testcase name="test_register_rw" classname="test_watchdog" file="/home/smdadmin/hermes_workspace/projects/IP-005/v6/06_verification/tb-watchdog/test_watchdog.py" lineno="31" time="0.0013155937194824219" sim_time_ns="200.99999999999997" ratio_time="152782.72997462846" />
-    <testcase name="test_functional" classname="test_watchdog" file="/home/smdadmin/hermes_workspace/projects/IP-005/v6/06_verification/tb-watchdog/test_watchdog.py" lineno="56" time="0.0020716190338134766" sim_time_ns="1122.0" ratio_time="541605.3732305213" />
-    <testcase name="test_ack_handshake" classname="test_watchdog" file="/home/smdadmin/hermes_workspace/projects/IP-005/v6/06_verification/tb-watchdog/test_watchdog.py" lineno="75" time="0.000568389892578125" sim_time_ns="121.0" ratio_time="212882.0402684564" />
+    <testcase name="test_reset" classname="test_watchdog" file="~/hermes_workspace/projects/IP-005/v6/06_verification/tb-watchdog/test_watchdog.py" lineno="16" time="0.0007734298706054688" sim_time_ns="70.0" ratio_time="90505.94327990136" />
+    <testcase name="test_register_rw" classname="test_watchdog" file="~/hermes_workspace/projects/IP-005/v6/06_verification/tb-watchdog/test_watchdog.py" lineno="31" time="0.0013155937194824219" sim_time_ns="200.99999999999997" ratio_time="152782.72997462846" />
+    <testcase name="test_functional" classname="test_watchdog" file="~/hermes_workspace/projects/IP-005/v6/06_verification/tb-watchdog/test_watchdog.py" lineno="56" time="0.0020716190338134766" sim_time_ns="1122.0" ratio_time="541605.3732305213" />
+    <testcase name="test_ack_handshake" classname="test_watchdog" file="~/hermes_workspace/projects/IP-005/v6/06_verification/tb-watchdog/test_watchdog.py" lineno="75" time="0.000568389892578125" sim_time_ns="121.0" ratio_time="212882.0402684564" />
   </testsuite>
 </testsuites>

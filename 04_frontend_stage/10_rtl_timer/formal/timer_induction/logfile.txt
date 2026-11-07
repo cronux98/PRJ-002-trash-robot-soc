@@ -1,6 +1,6 @@
-SBY 15:13:43 [timer_bmc] Removing directory '/home/smdadmin/hermes_workspace/projects/IP-005/v5/03_frontend-stage/rtl-timer/formal/timer_bmc'.
-SBY 15:13:43 [timer_induction] Removing directory '/home/smdadmin/hermes_workspace/projects/IP-005/v5/03_frontend-stage/rtl-timer/formal/timer_induction'.
-SBY 15:13:43 [timer_induction] Copy '/home/smdadmin/hermes_workspace/projects/IP-005/v5/03_frontend-stage/rtl-timer/rtl/timer.v' to '/home/smdadmin/hermes_workspace/projects/IP-005/v5/03_frontend-stage/rtl-timer/formal/timer_induction/src/timer.v'.
+SBY 15:13:43 [timer_bmc] Removing directory '~/hermes_workspace/projects/IP-005/v5/03_frontend-stage/rtl-timer/formal/timer_bmc'.
+SBY 15:13:43 [timer_induction] Removing directory '~/hermes_workspace/projects/IP-005/v5/03_frontend-stage/rtl-timer/formal/timer_induction'.
+SBY 15:13:43 [timer_induction] Copy '~/hermes_workspace/projects/IP-005/v5/03_frontend-stage/rtl-timer/rtl/timer.v' to '~/hermes_workspace/projects/IP-005/v5/03_frontend-stage/rtl-timer/formal/timer_induction/src/timer.v'.
 SBY 15:13:43 [timer_induction] engine_0: smtbmc yices
 SBY 15:13:43 [timer_induction] base: starting process "cd timer_induction/src; yosys -ql ../model/design.log ../model/design.ys"
 SBY 15:13:43 [timer_induction] base: finished (returncode=0)
@@ -8,8 +8,8 @@ SBY 15:13:43 [timer_induction] prep: starting process "cd timer_induction/model;
 SBY 15:13:43 [timer_induction] prep: finished (returncode=0)
 SBY 15:13:43 [timer_induction] smt2: starting process "cd timer_induction/model; yosys -ql design_smt2.log design_smt2.ys"
 SBY 15:13:43 [timer_induction] smt2: finished (returncode=0)
-SBY 15:13:43 [timer_induction] engine_0.basecase: starting process "cd timer_induction; /home/smdadmin/oss-cad-suite/bin/yosys-smtbmc -s yices --presat --unroll --noprogress -t 20  --append 0 --dump-vcd engine_0/trace.vcd --dump-yw engine_0/trace.yw --dump-vlogtb engine_0/trace_tb.v --dump-smtc engine_0/trace.smtc model/design_smt2.smt2"
-SBY 15:13:43 [timer_induction] engine_0.induction: starting process "cd timer_induction; /home/smdadmin/oss-cad-suite/bin/yosys-smtbmc -s yices --presat --unroll -i --noprogress -t 20  --append 0 --dump-vcd engine_0/trace_induct.vcd --dump-yw engine_0/trace_induct.yw --dump-vlogtb engine_0/trace_induct_tb.v --dump-smtc engine_0/trace_induct.smtc model/design_smt2.smt2"
+SBY 15:13:43 [timer_induction] engine_0.basecase: starting process "cd timer_induction; ~/oss-cad-suite/bin/yosys-smtbmc -s yices --presat --unroll --noprogress -t 20  --append 0 --dump-vcd engine_0/trace.vcd --dump-yw engine_0/trace.yw --dump-vlogtb engine_0/trace_tb.v --dump-smtc engine_0/trace.smtc model/design_smt2.smt2"
+SBY 15:13:43 [timer_induction] engine_0.induction: starting process "cd timer_induction; ~/oss-cad-suite/bin/yosys-smtbmc -s yices --presat --unroll -i --noprogress -t 20  --append 0 --dump-vcd engine_0/trace_induct.vcd --dump-yw engine_0/trace_induct.yw --dump-vlogtb engine_0/trace_induct_tb.v --dump-smtc engine_0/trace_induct.smtc model/design_smt2.smt2"
 SBY 15:13:43 [timer_induction] engine_0.basecase: ##   0:00:00  Solver: yices
 SBY 15:13:43 [timer_induction] engine_0.induction: ##   0:00:00  Solver: yices
 SBY 15:13:43 [timer_induction] engine_0.basecase: ##   0:00:00  Checking assumptions in step 0..

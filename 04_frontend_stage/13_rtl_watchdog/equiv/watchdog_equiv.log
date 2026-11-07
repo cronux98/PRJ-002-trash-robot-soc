@@ -8,8 +8,8 @@
 
 -- Executing script file `/tmp/equiv_watchdog.ys' --
 
-1. Executing Verilog-2005 frontend: /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-watchdog/rtl/watchdog.v
-Parsing Verilog input from `/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-watchdog/rtl/watchdog.v' to AST representation.
+1. Executing Verilog-2005 frontend: ~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-watchdog/rtl/watchdog.v
+Parsing Verilog input from `~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-watchdog/rtl/watchdog.v' to AST representation.
 Generating RTLIL representation for module `\watchdog'.
 Successfully finished Verilog frontend.
 
@@ -28,7 +28,7 @@ Removed 0 unused modules.
 Cleaned up 0 empty switches.
 
 3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
-Marked 4 switch rules as full_case in process $proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-watchdog/rtl/watchdog.v:48$3 in module watchdog.
+Marked 4 switch rules as full_case in process $proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-watchdog/rtl/watchdog.v:48$3 in module watchdog.
 Removed a total of 0 dead cases.
 
 3.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
@@ -38,14 +38,14 @@ Promoted 0 assignments to connections.
 3.4. Executing PROC_INIT pass (extract init attributes).
 
 3.5. Executing PROC_ARST pass (detect async resets in processes).
-Found async reset \rst_ni in `\watchdog.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-watchdog/rtl/watchdog.v:48$3'.
+Found async reset \rst_ni in `\watchdog.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-watchdog/rtl/watchdog.v:48$3'.
 
 3.6. Executing PROC_ROM pass (convert switches to ROMs).
 Converted 0 switches.
 <suppressed ~12 debug messages>
 
 3.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
-Creating decoders for process `\watchdog.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-watchdog/rtl/watchdog.v:48$3'.
+Creating decoders for process `\watchdog.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-watchdog/rtl/watchdog.v:48$3'.
      1/9: $0\irq_warn[0:0]
      2/9: $0\wb_ack_o[0:0]
      3/9: $0\rst_pulse_cnt[7:0]
@@ -59,30 +59,30 @@ Creating decoders for process `\watchdog.$proc$/home/smdadmin/hermes_workspace/p
 3.8. Executing PROC_DLATCH pass (convert process syncs to latches).
 
 3.9. Executing PROC_DFF pass (convert process syncs to FFs).
-Creating register for signal `\watchdog.\wb_dat_o' using process `\watchdog.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-watchdog/rtl/watchdog.v:48$3'.
+Creating register for signal `\watchdog.\wb_dat_o' using process `\watchdog.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-watchdog/rtl/watchdog.v:48$3'.
   created $adff cell `$procdff$111' with positive edge clock and positive level reset.
-Creating register for signal `\watchdog.\wb_ack_o' using process `\watchdog.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-watchdog/rtl/watchdog.v:48$3'.
+Creating register for signal `\watchdog.\wb_ack_o' using process `\watchdog.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-watchdog/rtl/watchdog.v:48$3'.
   created $adff cell `$procdff$116' with positive edge clock and positive level reset.
-Creating register for signal `\watchdog.\irq_warn' using process `\watchdog.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-watchdog/rtl/watchdog.v:48$3'.
+Creating register for signal `\watchdog.\irq_warn' using process `\watchdog.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-watchdog/rtl/watchdog.v:48$3'.
   created $adff cell `$procdff$121' with positive edge clock and positive level reset.
-Creating register for signal `\watchdog.\rst_out_n' using process `\watchdog.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-watchdog/rtl/watchdog.v:48$3'.
+Creating register for signal `\watchdog.\rst_out_n' using process `\watchdog.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-watchdog/rtl/watchdog.v:48$3'.
   created $adff cell `$procdff$126' with positive edge clock and positive level reset.
-Creating register for signal `\watchdog.\ctrl_enable' using process `\watchdog.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-watchdog/rtl/watchdog.v:48$3'.
+Creating register for signal `\watchdog.\ctrl_enable' using process `\watchdog.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-watchdog/rtl/watchdog.v:48$3'.
   created $adff cell `$procdff$131' with positive edge clock and positive level reset.
-Creating register for signal `\watchdog.\ctrl_locked' using process `\watchdog.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-watchdog/rtl/watchdog.v:48$3'.
+Creating register for signal `\watchdog.\ctrl_locked' using process `\watchdog.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-watchdog/rtl/watchdog.v:48$3'.
   created $adff cell `$procdff$136' with positive edge clock and positive level reset.
-Creating register for signal `\watchdog.\timeout_val' using process `\watchdog.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-watchdog/rtl/watchdog.v:48$3'.
+Creating register for signal `\watchdog.\timeout_val' using process `\watchdog.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-watchdog/rtl/watchdog.v:48$3'.
   created $adff cell `$procdff$141' with positive edge clock and positive level reset.
-Creating register for signal `\watchdog.\counter' using process `\watchdog.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-watchdog/rtl/watchdog.v:48$3'.
+Creating register for signal `\watchdog.\counter' using process `\watchdog.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-watchdog/rtl/watchdog.v:48$3'.
   created $adff cell `$procdff$146' with positive edge clock and positive level reset.
-Creating register for signal `\watchdog.\rst_pulse_cnt' using process `\watchdog.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-watchdog/rtl/watchdog.v:48$3'.
+Creating register for signal `\watchdog.\rst_pulse_cnt' using process `\watchdog.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-watchdog/rtl/watchdog.v:48$3'.
   created $adff cell `$procdff$151' with positive edge clock and positive level reset.
 
 3.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
 
 3.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
-Found and cleaned up 12 empty switches in `\watchdog.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-watchdog/rtl/watchdog.v:48$3'.
-Removing empty process `watchdog.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-watchdog/rtl/watchdog.v:48$3'.
+Found and cleaned up 12 empty switches in `\watchdog.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-watchdog/rtl/watchdog.v:48$3'.
+Removing empty process `watchdog.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-watchdog/rtl/watchdog.v:48$3'.
 Cleaned up 12 empty switches.
 
 3.12. Executing OPT_EXPR pass (perform const folding).
@@ -314,8 +314,8 @@ Optimizing module watchdog.
 
 8. Executing TECHMAP pass (map to technology primitives).
 
-8.1. Executing Verilog-2005 frontend: /home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v
-Parsing Verilog input from `/home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v' to AST representation.
+8.1. Executing Verilog-2005 frontend: ~/oss-cad-suite/lib/../share/yosys/techmap.v
+Parsing Verilog input from `~/oss-cad-suite/lib/../share/yosys/techmap.v' to AST representation.
 Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
 Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
 Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
@@ -504,11 +504,11 @@ Optimizing module watchdog.
 
 11.9. Finished fast OPT passes. (There is nothing left to do.)
 
-12. Executing Liberty frontend: /home/smdadmin/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130B/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+12. Executing Liberty frontend: ~/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130B/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 Imported 428 cell types from liberty file.
 
-13. Executing Verilog-2005 frontend: /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-watchdog/synth/watchdog_netlist.v
-Parsing Verilog input from `/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-watchdog/synth/watchdog_netlist.v' to AST representation.
+13. Executing Verilog-2005 frontend: ~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-watchdog/synth/watchdog_netlist.v
+Parsing Verilog input from `~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-watchdog/synth/watchdog_netlist.v' to AST representation.
 Generating RTLIL representation for module `\watchdog'.
 Successfully finished Verilog frontend.
 
@@ -689,8 +689,8 @@ Optimizing module watchdog.
 
 20. Executing TECHMAP pass (map to technology primitives).
 
-20.1. Executing Verilog-2005 frontend: /home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v
-Parsing Verilog input from `/home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v' to AST representation.
+20.1. Executing Verilog-2005 frontend: ~/oss-cad-suite/lib/../share/yosys/techmap.v
+Parsing Verilog input from `~/oss-cad-suite/lib/../share/yosys/techmap.v' to AST representation.
 Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
 Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
 Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
@@ -1379,13 +1379,13 @@ Changing input A of cell $auto$simplemap.cc:46:simplemap_not$284_gold ($_NOT_): 
 Changing input B of cell $auto$simplemap.cc:256:simplemap_logbin$780_gold ($_AND_): \ctrl_enable_gold -> \ctrl_enable
 Changing input A of cell $auto$simplemap.cc:227:simplemap_lognot$702_gold ($_NOT_): \wb_ack_o_gold -> \wb_ack_o
 Changing input B of cell $auto$simplemap.cc:106:simplemap_bitop$2069_gold ($_XOR_): \counter_gold [0] -> \counter [0]
-Setting undriven nets to undef: $techmap$sub$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-watchdog/rtl/watchdog.v:73$9.$auto$alumacc.cc:512:replace_alu$537.CO_gold [31]
-Setting undriven nets to undef: $techmap$sub$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-watchdog/rtl/watchdog.v:65$6.$auto$alumacc.cc:512:replace_alu$510.CO_gold [7]
-Setting undriven nets to undef: $techmap$gt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-watchdog/rtl/watchdog.v:64$5.$auto$alumacc.cc:512:replace_alu$499.Y_gold [7:4]
-Setting undriven nets to undef: $techmap$gt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-watchdog/rtl/watchdog.v:64$5.$auto$alumacc.cc:512:replace_alu$499.CO_gold [6:4]
-Setting undriven nets to undef: $techmap$gt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-watchdog/rtl/watchdog.v:77$11.$auto$alumacc.cc:512:replace_alu$615.CO_gold [6:4]
-Setting undriven nets to undef: $techmap$gt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-watchdog/rtl/watchdog.v:77$11.$auto$alumacc.cc:512:replace_alu$615.CO_gold [14:8]
-Setting undriven nets to undef: $techmap$gt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-watchdog/rtl/watchdog.v:77$11.$auto$alumacc.cc:512:replace_alu$615.CO_gold [30:16]
+Setting undriven nets to undef: $techmap$sub$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-watchdog/rtl/watchdog.v:73$9.$auto$alumacc.cc:512:replace_alu$537.CO_gold [31]
+Setting undriven nets to undef: $techmap$sub$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-watchdog/rtl/watchdog.v:65$6.$auto$alumacc.cc:512:replace_alu$510.CO_gold [7]
+Setting undriven nets to undef: $techmap$gt$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-watchdog/rtl/watchdog.v:64$5.$auto$alumacc.cc:512:replace_alu$499.Y_gold [7:4]
+Setting undriven nets to undef: $techmap$gt$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-watchdog/rtl/watchdog.v:64$5.$auto$alumacc.cc:512:replace_alu$499.CO_gold [6:4]
+Setting undriven nets to undef: $techmap$gt$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-watchdog/rtl/watchdog.v:77$11.$auto$alumacc.cc:512:replace_alu$615.CO_gold [6:4]
+Setting undriven nets to undef: $techmap$gt$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-watchdog/rtl/watchdog.v:77$11.$auto$alumacc.cc:512:replace_alu$615.CO_gold [14:8]
+Setting undriven nets to undef: $techmap$gt$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-watchdog/rtl/watchdog.v:77$11.$auto$alumacc.cc:512:replace_alu$615.CO_gold [30:16]
 Setting undriven nets to undef: \wb_ack_o_gate
 Setting undriven nets to undef: \irq_warn_gate
 Setting undriven nets to undef: \rst_out_n_gate

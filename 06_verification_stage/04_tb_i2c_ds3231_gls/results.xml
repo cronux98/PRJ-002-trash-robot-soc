@@ -1,9 +1,9 @@
 <testsuites name="results">
   <testsuite name="all" package="all">
     <property name="random_seed" value="1784094934" />
-    <testcase name="test_reset" classname="test_i2c_ds3231" file="/home/smdadmin/hermes_workspace/projects/IP-005/v6/06_verification/tb-i2c_ds3231_gls/test_i2c_ds3231.py" lineno="13" time="0.0017597675323486328" sim_time_ns="70.0" ratio_time="39777.98130334643" />
-    <testcase name="test_register_rw" classname="test_i2c_ds3231" file="/home/smdadmin/hermes_workspace/projects/IP-005/v6/06_verification/tb-i2c_ds3231_gls/test_i2c_ds3231.py" lineno="27" time="0.002596616744995117" sim_time_ns="200.99999999999997" ratio_time="77408.4201634377" />
-    <testcase name="test_fsm_start_stop" classname="test_i2c_ds3231" file="/home/smdadmin/hermes_workspace/projects/IP-005/v6/06_verification/tb-i2c_ds3231_gls/test_i2c_ds3231.py" lineno="54" time="0.02902960777282715" sim_time_ns="5141.0" ratio_time="177095.0555112969" />
-    <testcase name="test_ack_handshake" classname="test_i2c_ds3231" file="/home/smdadmin/hermes_workspace/projects/IP-005/v6/06_verification/tb-i2c_ds3231_gls/test_i2c_ds3231.py" lineno="77" time="0.001323699951171875" sim_time_ns="121.0" ratio_time="91410.44380403458" />
+    <testcase name="test_reset" classname="test_i2c_ds3231" file="~/hermes_workspace/projects/IP-005/v6/06_verification/tb-i2c_ds3231_gls/test_i2c_ds3231.py" lineno="13" time="0.0017597675323486328" sim_time_ns="70.0" ratio_time="39777.98130334643" />
+    <testcase name="test_register_rw" classname="test_i2c_ds3231" file="~/hermes_workspace/projects/IP-005/v6/06_verification/tb-i2c_ds3231_gls/test_i2c_ds3231.py" lineno="27" time="0.002596616744995117" sim_time_ns="200.99999999999997" ratio_time="77408.4201634377" />
+    <testcase name="test_fsm_start_stop" classname="test_i2c_ds3231" file="~/hermes_workspace/projects/IP-005/v6/06_verification/tb-i2c_ds3231_gls/test_i2c_ds3231.py" lineno="54" time="0.02902960777282715" sim_time_ns="5141.0" ratio_time="177095.0555112969" />
+    <testcase name="test_ack_handshake" classname="test_i2c_ds3231" file="~/hermes_workspace/projects/IP-005/v6/06_verification/tb-i2c_ds3231_gls/test_i2c_ds3231.py" lineno="77" time="0.001323699951171875" sim_time_ns="121.0" ratio_time="91410.44380403458" />
   </testsuite>
 </testsuites>

@@ -16,7 +16,7 @@ The following types are not handled by extraction and will be treated as non-ele
 Scaled tech values by 2 / 1 to match internal grid scaling
 Loading sky130A Device Generator Menu ...
 Loading "/nix/store/ps0r3qpgjh1lqyqacra33rvxsjgkd874-python3-3.13.9-env/lib/python3.13/site-packages/librelane/scripts/magic/wrapper.tcl" from command line.
-> gds read /home/smdadmin/.hermes/profiles/physical-design-agent/home/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/gds/sky130_fd_sc_hd.gds
+> gds read ~/.hermes/profiles/physical-design-agent/home/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/gds/sky130_fd_sc_hd.gds
 Warning: Calma reading is not undoable!  I hope that's OK.
 Library written using GDS-II Release 3.0
 Library name: sky130_fd_sc_hd
@@ -469,19 +469,19 @@ Reading "sky130_fd_sc_hd__a31o_1".
 Reading "sky130_fd_sc_hd__a31o_2".
 Reading "sky130_fd_sc_hd__a31o_4".
 Reading "sky130_fd_sc_hd__a31oi_1".
-> lef read /home/smdadmin/.hermes/profiles/physical-design-agent/home/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_fd_sc_hd.lef
-Reading LEF data from file /home/smdadmin/.hermes/profiles/physical-design-agent/home/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_fd_sc_hd.lef.
+> lef read ~/.hermes/profiles/physical-design-agent/home/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_fd_sc_hd.lef
+Reading LEF data from file ~/.hermes/profiles/physical-design-agent/home/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_fd_sc_hd.lef.
 This action cannot be undone.
 LEF read: Processed 56536 lines.
-> lef read /home/smdadmin/.hermes/profiles/physical-design-agent/home/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_ef_sc_hd.lef
-Reading LEF data from file /home/smdadmin/.hermes/profiles/physical-design-agent/home/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_ef_sc_hd.lef.
+> lef read ~/.hermes/profiles/physical-design-agent/home/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_ef_sc_hd.lef
+Reading LEF data from file ~/.hermes/profiles/physical-design-agent/home/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_ef_sc_hd.lef.
 This action cannot be undone.
 LEF read: Processed 582 lines.
 Cell (NEWCELL) couldn't be read
 No such file or directory
 Creating new cell
-> lef read /home/smdadmin/.hermes/profiles/physical-design-agent/home/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd__nom.tlef
-Reading LEF data from file /home/smdadmin/.hermes/profiles/physical-design-agent/home/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd__nom.tlef.
+> lef read ~/.hermes/profiles/physical-design-agent/home/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd__nom.tlef
+Reading LEF data from file ~/.hermes/profiles/physical-design-agent/home/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd__nom.tlef.
 This action cannot be undone.
 LEF read, Line 82 (Message): Unknown keyword "ANTENNAMODEL" in LEF file; ignoring.
 LEF read, Line 83 (Message): Unknown keyword "ANTENNADIFFSIDEAREARATIO" in LEF file; ignoring.
@@ -510,8 +510,8 @@ LEF read, Line 257 (Message): Unknown keyword "DENSITYCHECKSTEP" in LEF file; ig
 LEF read, Line 294 (Message): Unknown keyword "ANTENNAMODEL" in LEF file; ignoring.
 LEF read, Line 295 (Message): Unknown keyword "ANTENNADIFFSIDEAREARATIO" in LEF file; ignoring.
 LEF read: Processed 801 lines.
-> def read /home/smdadmin/hermes_workspace/projects/IP-005/v6/04_backend-stage/librelane/runs/v6-run2/52-odb-cellfrequencytables/trash_robot_soc.def -noblockage
-Reading DEF data from file /home/smdadmin/hermes_workspace/projects/IP-005/v6/04_backend-stage/librelane/runs/v6-run2/52-odb-cellfrequencytables/trash_robot_soc.def.
+> def read ~/hermes_workspace/projects/IP-005/v6/04_backend-stage/librelane/runs/v6-run2/52-odb-cellfrequencytables/trash_robot_soc.def -noblockage
+Reading DEF data from file ~/hermes_workspace/projects/IP-005/v6/04_backend-stage/librelane/runs/v6-run2/52-odb-cellfrequencytables/trash_robot_soc.def.
 This action cannot be undone.
   Processed 4 vias total.
   Processed 1 non-default rules total.

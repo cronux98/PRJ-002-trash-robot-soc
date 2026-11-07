@@ -1,7 +1,7 @@
 Using 4 threads…
 Using a tile size of (500 µm)²…
-Reading /home/smdadmin/hermes_workspace/projects/IP-005/v6/04_backend-stage/librelane/runs/v6-run2/56-magic-streamout/trash_robot_soc.magic.gds ..
-Reading /home/smdadmin/hermes_workspace/projects/IP-005/v6/04_backend-stage/librelane/runs/v6-run2/57-klayout-streamout/trash_robot_soc.klayout.gds ..
+Reading ~/hermes_workspace/projects/IP-005/v6/04_backend-stage/librelane/runs/v6-run2/56-magic-streamout/trash_robot_soc.magic.gds ..
+Reading ~/hermes_workspace/projects/IP-005/v6/04_backend-stage/librelane/runs/v6-run2/57-klayout-streamout/trash_robot_soc.klayout.gds ..
 --- Running XOR for layer 122/16 ---
 "input" in: xor.drc:109
     Polygons (raw): 154343 (flat)  104 (hierarchical)
@@ -579,8 +579,8 @@ XOR differences: 0
     Elapsed: 0.020s  Memory: 762.00M
 ---
 Total XOR differences: 0
-Writing report database: /home/smdadmin/hermes_workspace/projects/IP-005/v6/04_backend-stage/librelane/runs/v6-run2/61-klayout-xor/xor.xml ..
+Writing report database: ~/hermes_workspace/projects/IP-005/v6/04_backend-stage/librelane/runs/v6-run2/61-klayout-xor/xor.xml ..
 Total elapsed: 169.380s  Memory: 762.00M
-/home/smdadmin/hermes_workspace/projects/IP-005/v6/04_backend-stage/librelane/runs/v6-run2/56-magic-streamout/trash_robot_soc.magic.gds
-/home/smdadmin/hermes_workspace/projects/IP-005/v6/04_backend-stage/librelane/runs/v6-run2/57-klayout-streamout/trash_robot_soc.klayout.gds
+~/hermes_workspace/projects/IP-005/v6/04_backend-stage/librelane/runs/v6-run2/56-magic-streamout/trash_robot_soc.magic.gds
+~/hermes_workspace/projects/IP-005/v6/04_backend-stage/librelane/runs/v6-run2/57-klayout-streamout/trash_robot_soc.klayout.gds
 %OL_METRIC_I design__xor_difference__count 0

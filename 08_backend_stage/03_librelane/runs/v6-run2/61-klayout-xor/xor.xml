@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <report-database>
- <description>XOR /home/smdadmin/hermes_workspace/projects/IP-005/v6/04_backend-stage/librelane/runs/v6-run2/56-magic-streamout/trash_robot_soc.magic.gds vs. /home/smdadmin/hermes_workspace/projects/IP-005/v6/04_backend-stage/librelane/runs/v6-run2/57-klayout-streamout/trash_robot_soc.klayout.gds</description>
+ <description>XOR ~/hermes_workspace/projects/IP-005/v6/04_backend-stage/librelane/runs/v6-run2/56-magic-streamout/trash_robot_soc.magic.gds vs. ~/hermes_workspace/projects/IP-005/v6/04_backend-stage/librelane/runs/v6-run2/57-klayout-streamout/trash_robot_soc.klayout.gds</description>
  <original-file/>
  <generator>drc: script='/nix/store/ps0r3qpgjh1lqyqacra33rvxsjgkd874-python3-3.13.9-env/lib/python3.13/site-packages/librelane/scripts/klayout/xor.drc'</generator>
  <top-cell>trash_robot_soc</top-cell>

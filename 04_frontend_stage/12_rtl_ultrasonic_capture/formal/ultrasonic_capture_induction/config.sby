@@ -10,4 +10,4 @@ read -formal ultrasonic_capture.v
 prep -top ultrasonic_capture
 
 [files]
-/home/smdadmin/hermes_workspace/projects/IP-005/v5/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v
+~/hermes_workspace/projects/IP-005/v5/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v

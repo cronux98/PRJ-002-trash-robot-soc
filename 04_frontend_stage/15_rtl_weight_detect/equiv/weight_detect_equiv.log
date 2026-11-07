@@ -8,8 +8,8 @@
 
 -- Executing script file `/tmp/equiv_weight_detect.ys' --
 
-1. Executing Verilog-2005 frontend: /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-weight_detect/rtl/weight_detect.v
-Parsing Verilog input from `/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-weight_detect/rtl/weight_detect.v' to AST representation.
+1. Executing Verilog-2005 frontend: ~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-weight_detect/rtl/weight_detect.v
+Parsing Verilog input from `~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-weight_detect/rtl/weight_detect.v' to AST representation.
 Generating RTLIL representation for module `\weight_detect'.
 Successfully finished Verilog frontend.
 
@@ -28,7 +28,7 @@ Removed 0 unused modules.
 Cleaned up 0 empty switches.
 
 3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
-Marked 4 switch rules as full_case in process $proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-weight_detect/rtl/weight_detect.v:43$3 in module weight_detect.
+Marked 4 switch rules as full_case in process $proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-weight_detect/rtl/weight_detect.v:43$3 in module weight_detect.
 Removed a total of 0 dead cases.
 
 3.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
@@ -38,14 +38,14 @@ Promoted 0 assignments to connections.
 3.4. Executing PROC_INIT pass (extract init attributes).
 
 3.5. Executing PROC_ARST pass (detect async resets in processes).
-Found async reset \rst_ni in `\weight_detect.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-weight_detect/rtl/weight_detect.v:43$3'.
+Found async reset \rst_ni in `\weight_detect.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-weight_detect/rtl/weight_detect.v:43$3'.
 
 3.6. Executing PROC_ROM pass (convert switches to ROMs).
 Converted 0 switches.
 <suppressed ~7 debug messages>
 
 3.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
-Creating decoders for process `\weight_detect.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-weight_detect/rtl/weight_detect.v:43$3'.
+Creating decoders for process `\weight_detect.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-weight_detect/rtl/weight_detect.v:43$3'.
      1/9: $0\irq_thresh[0:0]
      2/9: $0\status_above[0:0]
      3/9: $0\wb_ack_o[0:0]
@@ -59,30 +59,30 @@ Creating decoders for process `\weight_detect.$proc$/home/smdadmin/hermes_worksp
 3.8. Executing PROC_DLATCH pass (convert process syncs to latches).
 
 3.9. Executing PROC_DFF pass (convert process syncs to FFs).
-Creating register for signal `\weight_detect.\wb_dat_o' using process `\weight_detect.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-weight_detect/rtl/weight_detect.v:43$3'.
+Creating register for signal `\weight_detect.\wb_dat_o' using process `\weight_detect.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-weight_detect/rtl/weight_detect.v:43$3'.
   created $adff cell `$procdff$74' with positive edge clock and positive level reset.
-Creating register for signal `\weight_detect.\wb_ack_o' using process `\weight_detect.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-weight_detect/rtl/weight_detect.v:43$3'.
+Creating register for signal `\weight_detect.\wb_ack_o' using process `\weight_detect.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-weight_detect/rtl/weight_detect.v:43$3'.
   created $adff cell `$procdff$79' with positive edge clock and positive level reset.
-Creating register for signal `\weight_detect.\irq_thresh' using process `\weight_detect.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-weight_detect/rtl/weight_detect.v:43$3'.
+Creating register for signal `\weight_detect.\irq_thresh' using process `\weight_detect.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-weight_detect/rtl/weight_detect.v:43$3'.
   created $adff cell `$procdff$84' with positive edge clock and positive level reset.
-Creating register for signal `\weight_detect.\weight_value' using process `\weight_detect.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-weight_detect/rtl/weight_detect.v:43$3'.
+Creating register for signal `\weight_detect.\weight_value' using process `\weight_detect.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-weight_detect/rtl/weight_detect.v:43$3'.
   created $adff cell `$procdff$89' with positive edge clock and positive level reset.
-Creating register for signal `\weight_detect.\threshold' using process `\weight_detect.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-weight_detect/rtl/weight_detect.v:43$3'.
+Creating register for signal `\weight_detect.\threshold' using process `\weight_detect.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-weight_detect/rtl/weight_detect.v:43$3'.
   created $adff cell `$procdff$94' with positive edge clock and positive level reset.
-Creating register for signal `\weight_detect.\ctrl_direction' using process `\weight_detect.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-weight_detect/rtl/weight_detect.v:43$3'.
+Creating register for signal `\weight_detect.\ctrl_direction' using process `\weight_detect.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-weight_detect/rtl/weight_detect.v:43$3'.
   created $adff cell `$procdff$99' with positive edge clock and positive level reset.
-Creating register for signal `\weight_detect.\ctrl_irq_en' using process `\weight_detect.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-weight_detect/rtl/weight_detect.v:43$3'.
+Creating register for signal `\weight_detect.\ctrl_irq_en' using process `\weight_detect.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-weight_detect/rtl/weight_detect.v:43$3'.
   created $adff cell `$procdff$104' with positive edge clock and positive level reset.
-Creating register for signal `\weight_detect.\status_above' using process `\weight_detect.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-weight_detect/rtl/weight_detect.v:43$3'.
+Creating register for signal `\weight_detect.\status_above' using process `\weight_detect.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-weight_detect/rtl/weight_detect.v:43$3'.
   created $adff cell `$procdff$109' with positive edge clock and positive level reset.
-Creating register for signal `\weight_detect.\status_irq_flag' using process `\weight_detect.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-weight_detect/rtl/weight_detect.v:43$3'.
+Creating register for signal `\weight_detect.\status_irq_flag' using process `\weight_detect.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-weight_detect/rtl/weight_detect.v:43$3'.
   created $adff cell `$procdff$114' with positive edge clock and positive level reset.
 
 3.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
 
 3.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
-Found and cleaned up 7 empty switches in `\weight_detect.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-weight_detect/rtl/weight_detect.v:43$3'.
-Removing empty process `weight_detect.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-weight_detect/rtl/weight_detect.v:43$3'.
+Found and cleaned up 7 empty switches in `\weight_detect.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-weight_detect/rtl/weight_detect.v:43$3'.
+Removing empty process `weight_detect.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-weight_detect/rtl/weight_detect.v:43$3'.
 Cleaned up 7 empty switches.
 
 3.12. Executing OPT_EXPR pass (perform const folding).
@@ -280,8 +280,8 @@ Optimizing module weight_detect.
 
 8. Executing TECHMAP pass (map to technology primitives).
 
-8.1. Executing Verilog-2005 frontend: /home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v
-Parsing Verilog input from `/home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v' to AST representation.
+8.1. Executing Verilog-2005 frontend: ~/oss-cad-suite/lib/../share/yosys/techmap.v
+Parsing Verilog input from `~/oss-cad-suite/lib/../share/yosys/techmap.v' to AST representation.
 Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
 Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
 Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
@@ -447,11 +447,11 @@ Optimizing module weight_detect.
 
 11.9. Finished fast OPT passes. (There is nothing left to do.)
 
-12. Executing Liberty frontend: /home/smdadmin/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130B/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+12. Executing Liberty frontend: ~/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130B/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 Imported 428 cell types from liberty file.
 
-13. Executing Verilog-2005 frontend: /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-weight_detect/synth/weight_detect_netlist.v
-Parsing Verilog input from `/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-weight_detect/synth/weight_detect_netlist.v' to AST representation.
+13. Executing Verilog-2005 frontend: ~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-weight_detect/synth/weight_detect_netlist.v
+Parsing Verilog input from `~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-weight_detect/synth/weight_detect_netlist.v' to AST representation.
 Generating RTLIL representation for module `\weight_detect'.
 Successfully finished Verilog frontend.
 
@@ -632,8 +632,8 @@ Optimizing module weight_detect.
 
 20. Executing TECHMAP pass (map to technology primitives).
 
-20.1. Executing Verilog-2005 frontend: /home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v
-Parsing Verilog input from `/home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v' to AST representation.
+20.1. Executing Verilog-2005 frontend: ~/oss-cad-suite/lib/../share/yosys/techmap.v
+Parsing Verilog input from `~/oss-cad-suite/lib/../share/yosys/techmap.v' to AST representation.
 Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
 Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
 Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
@@ -948,10 +948,10 @@ Changing input A of cell $auto$simplemap.cc:256:simplemap_logbin$424_gold ($_AND
 Changing input B of cell $auto$simplemap.cc:256:simplemap_logbin$423_gold ($_AND_): \ctrl_irq_en_gold -> \ctrl_irq_en
 Changing input A of cell $auto$simplemap.cc:227:simplemap_lognot$422_gold ($_NOT_): \weight_above_gold -> \weight_above
 Changing input A of cell $auto$simplemap.cc:46:simplemap_not$1069_gold ($_NOT_): \threshold_gold [6] -> \threshold [6]
-Setting undriven nets to undef: $techmap$ge$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-weight_detect/rtl/weight_detect.v:41$2.$auto$alumacc.cc:512:replace_alu$409.CO_gold [2]
-Setting undriven nets to undef: $techmap$ge$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-weight_detect/rtl/weight_detect.v:41$2.$auto$alumacc.cc:512:replace_alu$409.CO_gold [6:4]
-Setting undriven nets to undef: $techmap$ge$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-weight_detect/rtl/weight_detect.v:41$2.$auto$alumacc.cc:512:replace_alu$409.CO_gold [14:8]
-Setting undriven nets to undef: $techmap$ge$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-weight_detect/rtl/weight_detect.v:41$2.$auto$alumacc.cc:512:replace_alu$409.CO_gold [22:16]
+Setting undriven nets to undef: $techmap$ge$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-weight_detect/rtl/weight_detect.v:41$2.$auto$alumacc.cc:512:replace_alu$409.CO_gold [2]
+Setting undriven nets to undef: $techmap$ge$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-weight_detect/rtl/weight_detect.v:41$2.$auto$alumacc.cc:512:replace_alu$409.CO_gold [6:4]
+Setting undriven nets to undef: $techmap$ge$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-weight_detect/rtl/weight_detect.v:41$2.$auto$alumacc.cc:512:replace_alu$409.CO_gold [14:8]
+Setting undriven nets to undef: $techmap$ge$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-weight_detect/rtl/weight_detect.v:41$2.$auto$alumacc.cc:512:replace_alu$409.CO_gold [22:16]
 Setting undriven nets to undef: \wb_ack_o_gate
 Setting undriven nets to undef: \irq_thresh_gate
 Setting undriven nets to undef: \_507__gate

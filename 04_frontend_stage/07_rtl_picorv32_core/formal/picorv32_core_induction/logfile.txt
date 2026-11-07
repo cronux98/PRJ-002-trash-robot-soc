@@ -1,6 +1,6 @@
-SBY  5:39:00 [picorv32_core_bmc] Removing directory '/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/formal/picorv32_core_bmc'.
-SBY  5:39:00 [picorv32_core_induction] Removing directory '/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/formal/picorv32_core_induction'.
-SBY  5:39:00 [picorv32_core_induction] Copy '/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v' to '/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/formal/picorv32_core_induction/src/picorv32_core.v'.
+SBY  5:39:00 [picorv32_core_bmc] Removing directory '~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/formal/picorv32_core_bmc'.
+SBY  5:39:00 [picorv32_core_induction] Removing directory '~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/formal/picorv32_core_induction'.
+SBY  5:39:00 [picorv32_core_induction] Copy '~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/rtl/picorv32_core.v' to '~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-picorv32_core/formal/picorv32_core_induction/src/picorv32_core.v'.
 SBY  5:39:00 [picorv32_core_induction] engine_0: smtbmc yices
 SBY  5:39:00 [picorv32_core_induction] base: starting process "cd picorv32_core_induction/src; yosys -ql ../model/design.log ../model/design.ys"
 SBY  5:39:01 [picorv32_core_induction] base: finished (returncode=0)
@@ -8,9 +8,9 @@ SBY  5:39:01 [picorv32_core_induction] prep: starting process "cd picorv32_core_
 SBY  5:39:01 [picorv32_core_induction] prep: finished (returncode=0)
 SBY  5:39:01 [picorv32_core_induction] smt2: starting process "cd picorv32_core_induction/model; yosys -ql design_smt2.log design_smt2.ys"
 SBY  5:39:01 [picorv32_core_induction] smt2: finished (returncode=0)
-SBY  5:39:01 [picorv32_core_induction] engine_0.basecase: starting process "cd picorv32_core_induction; /home/smdadmin/oss-cad-suite/bin/yosys-smtbmc -s yices --presat --unroll --noprogress -t 20  --append 0 --dump-vcd engine_0/trace.vcd --dump-yw engine_0/trace.yw --dump-vlogtb engine_0/trace_tb.v --dump-smtc engine_0/trace.smtc model/design_smt2.smt2"
+SBY  5:39:01 [picorv32_core_induction] engine_0.basecase: starting process "cd picorv32_core_induction; ~/oss-cad-suite/bin/yosys-smtbmc -s yices --presat --unroll --noprogress -t 20  --append 0 --dump-vcd engine_0/trace.vcd --dump-yw engine_0/trace.yw --dump-vlogtb engine_0/trace_tb.v --dump-smtc engine_0/trace.smtc model/design_smt2.smt2"
 SBY  5:39:01 [picorv32_core_induction] engine_0.basecase: ##   0:00:00  Solver: yices
-SBY  5:39:01 [picorv32_core_induction] engine_0.induction: starting process "cd picorv32_core_induction; /home/smdadmin/oss-cad-suite/bin/yosys-smtbmc -s yices --presat --unroll -i --noprogress -t 20  --append 0 --dump-vcd engine_0/trace_induct.vcd --dump-yw engine_0/trace_induct.yw --dump-vlogtb engine_0/trace_induct_tb.v --dump-smtc engine_0/trace_induct.smtc model/design_smt2.smt2"
+SBY  5:39:01 [picorv32_core_induction] engine_0.induction: starting process "cd picorv32_core_induction; ~/oss-cad-suite/bin/yosys-smtbmc -s yices --presat --unroll -i --noprogress -t 20  --append 0 --dump-vcd engine_0/trace_induct.vcd --dump-yw engine_0/trace_induct.yw --dump-vlogtb engine_0/trace_induct_tb.v --dump-smtc engine_0/trace_induct.smtc model/design_smt2.smt2"
 SBY  5:39:01 [picorv32_core_induction] engine_0.induction: ##   0:00:00  Solver: yices
 SBY  5:39:01 [picorv32_core_induction] engine_0.basecase: ##   0:00:00  Checking assumptions in step 0..
 SBY  5:39:01 [picorv32_core_induction] engine_0.basecase: ##   0:00:00  Checking assertions in step 0..

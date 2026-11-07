@@ -1,28 +1,28 @@
-Reading technology LEF file at '/home/smdadmin/.hermes/profiles/physical-design-agent/home/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd__min.tlef'…
-[INFO ODB-0227] LEF file: /home/smdadmin/.hermes/profiles/physical-design-agent/home/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd__min.tlef, created 14 layers, 25 vias
-Reading cell LEF file at '/home/smdadmin/.hermes/profiles/physical-design-agent/home/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_fd_sc_hd.lef'…
+Reading technology LEF file at '~/.hermes/profiles/physical-design-agent/home/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd__min.tlef'…
+[INFO ODB-0227] LEF file: ~/.hermes/profiles/physical-design-agent/home/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd__min.tlef, created 14 layers, 25 vias
+Reading cell LEF file at '~/.hermes/profiles/physical-design-agent/home/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_fd_sc_hd.lef'…
 [WARNING ODB-0220] WARNING (LEFPARS-2008): NOWIREEXTENSIONATPIN statement is obsolete in version 5.6 or later.
-The NOWIREEXTENSIONATPIN statement will be ignored. See file /home/smdadmin/.hermes/profiles/physical-design-agent/home/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_fd_sc_hd.lef at line 2.
+The NOWIREEXTENSIONATPIN statement will be ignored. See file ~/.hermes/profiles/physical-design-agent/home/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_fd_sc_hd.lef at line 2.
 
-[INFO ODB-0227] LEF file: /home/smdadmin/.hermes/profiles/physical-design-agent/home/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_fd_sc_hd.lef, created 437 library cells
-Reading cell LEF file at '/home/smdadmin/.hermes/profiles/physical-design-agent/home/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_ef_sc_hd.lef'…
+[INFO ODB-0227] LEF file: ~/.hermes/profiles/physical-design-agent/home/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_fd_sc_hd.lef, created 437 library cells
+Reading cell LEF file at '~/.hermes/profiles/physical-design-agent/home/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_ef_sc_hd.lef'…
 [WARNING ODB-0220] WARNING (LEFPARS-2008): NOWIREEXTENSIONATPIN statement is obsolete in version 5.6 or later.
-The NOWIREEXTENSIONATPIN statement will be ignored. See file /home/smdadmin/.hermes/profiles/physical-design-agent/home/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_ef_sc_hd.lef at line 2.
+The NOWIREEXTENSIONATPIN statement will be ignored. See file ~/.hermes/profiles/physical-design-agent/home/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_ef_sc_hd.lef at line 2.
 
-[INFO ODB-0227] LEF file: /home/smdadmin/.hermes/profiles/physical-design-agent/home/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_ef_sc_hd.lef, created 8 library cells
-[INFO ODB-0127] Reading DEF file: /home/smdadmin/hermes_workspace/projects/IP-005/v6/04_backend-stage/librelane/runs/v6-run2/52-odb-cellfrequencytables/trash_robot_soc.def
+[INFO ODB-0227] LEF file: ~/.hermes/profiles/physical-design-agent/home/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_ef_sc_hd.lef, created 8 library cells
+[INFO ODB-0127] Reading DEF file: ~/hermes_workspace/projects/IP-005/v6/04_backend-stage/librelane/runs/v6-run2/52-odb-cellfrequencytables/trash_robot_soc.def
 [INFO ODB-0128] Design: trash_robot_soc
 [INFO ODB-0094] 		Created 100000 Insts
 [INFO ODB-0130]     Created 62 pins.
 [INFO ODB-0131]     Created 160800 components and 764772 component-terminals.
 [INFO ODB-0132]     Created 2 special nets and 617724 connections.
 [INFO ODB-0133]     Created 43875 nets and 146731 connections.
-[INFO ODB-0134] Finished DEF file: /home/smdadmin/hermes_workspace/projects/IP-005/v6/04_backend-stage/librelane/runs/v6-run2/52-odb-cellfrequencytables/trash_robot_soc.def
-Using RCX ruleset '/home/smdadmin/.hermes/profiles/physical-design-agent/home/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.tech/openlane/rules.openrcx.sky130A.min.calibre'…
+[INFO ODB-0134] Finished DEF file: ~/hermes_workspace/projects/IP-005/v6/04_backend-stage/librelane/runs/v6-run2/52-odb-cellfrequencytables/trash_robot_soc.def
+Using RCX ruleset '~/.hermes/profiles/physical-design-agent/home/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.tech/openlane/rules.openrcx.sky130A.min.calibre'…
 [INFO RCX-0431] Defined process_corner CURRENT_CORNER with ext_model_index 0
 [INFO RCX-0029] Defined extraction corner CURRENT_CORNER
-+ extract_parasitics  -ext_model_file /home/smdadmin/.hermes/profiles/physical-design-agent/home/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.tech/openlane/rules.openrcx.sky130A.min.calibre -lef_res
-[INFO RCX-0435] Reading extraction model file /home/smdadmin/.hermes/profiles/physical-design-agent/home/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.tech/openlane/rules.openrcx.sky130A.min.calibre ...
++ extract_parasitics  -ext_model_file ~/.hermes/profiles/physical-design-agent/home/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.tech/openlane/rules.openrcx.sky130A.min.calibre -lef_res
+[INFO RCX-0435] Reading extraction model file ~/.hermes/profiles/physical-design-agent/home/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.tech/openlane/rules.openrcx.sky130A.min.calibre ...
 [INFO RCX-0436] RC segment generation trash_robot_soc (max_merge_res 50.0) ...
 [INFO RCX-0040] Final 164264 rc segments
 [INFO RCX-0439] Coupling Cap extraction trash_robot_soc ...
@@ -41,5 +41,5 @@ Cell type report:                       Count       Area
   Tap cell                              12738   15937.79
   Standard cell                         44169  530565.10
   Total                                160800  891777.79
-Writing extracted parasitics to '/home/smdadmin/hermes_workspace/projects/IP-005/v6/04_backend-stage/librelane/runs/v6-run2/53-openroad-rcx/min/trash_robot_soc.min.spef'…
+Writing extracted parasitics to '~/hermes_workspace/projects/IP-005/v6/04_backend-stage/librelane/runs/v6-run2/53-openroad-rcx/min/trash_robot_soc.min.spef'…
 [INFO RCX-0443] 43875 nets finished

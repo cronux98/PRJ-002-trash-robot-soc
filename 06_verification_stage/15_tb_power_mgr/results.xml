@@ -1,9 +1,9 @@
 <testsuites name="results">
   <testsuite name="all" package="all">
     <property name="random_seed" value="1784095143" />
-    <testcase name="test_reset" classname="test_power_mgr" file="/home/smdadmin/hermes_workspace/projects/IP-005/v6/06_verification/tb-power_mgr/test_power_mgr.py" lineno="23" time="0.0008983612060546875" sim_time_ns="70.0" ratio_time="77919.66029723991" />
-    <testcase name="test_register_rw" classname="test_power_mgr" file="/home/smdadmin/hermes_workspace/projects/IP-005/v6/06_verification/tb-power_mgr/test_power_mgr.py" lineno="43" time="0.0006928443908691406" sim_time_ns="101.0" ratio_time="145775.87887130075" />
-    <testcase name="test_functional" classname="test_power_mgr" file="/home/smdadmin/hermes_workspace/projects/IP-005/v6/06_verification/tb-power_mgr/test_power_mgr.py" lineno="62" time="0.00044989585876464844" sim_time_ns="101.0" ratio_time="224496.39851616323" />
-    <testcase name="test_ack_handshake" classname="test_power_mgr" file="/home/smdadmin/hermes_workspace/projects/IP-005/v6/06_verification/tb-power_mgr/test_power_mgr.py" lineno="84" time="0.0005285739898681641" sim_time_ns="101.0" ratio_time="191080.1551646369" />
+    <testcase name="test_reset" classname="test_power_mgr" file="~/hermes_workspace/projects/IP-005/v6/06_verification/tb-power_mgr/test_power_mgr.py" lineno="23" time="0.0008983612060546875" sim_time_ns="70.0" ratio_time="77919.66029723991" />
+    <testcase name="test_register_rw" classname="test_power_mgr" file="~/hermes_workspace/projects/IP-005/v6/06_verification/tb-power_mgr/test_power_mgr.py" lineno="43" time="0.0006928443908691406" sim_time_ns="101.0" ratio_time="145775.87887130075" />
+    <testcase name="test_functional" classname="test_power_mgr" file="~/hermes_workspace/projects/IP-005/v6/06_verification/tb-power_mgr/test_power_mgr.py" lineno="62" time="0.00044989585876464844" sim_time_ns="101.0" ratio_time="224496.39851616323" />
+    <testcase name="test_ack_handshake" classname="test_power_mgr" file="~/hermes_workspace/projects/IP-005/v6/06_verification/tb-power_mgr/test_power_mgr.py" lineno="84" time="0.0005285739898681641" sim_time_ns="101.0" ratio_time="191080.1551646369" />
   </testsuite>
 </testsuites>

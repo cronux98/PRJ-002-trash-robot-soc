@@ -2598,7 +2598,7 @@ OFFGRID-ANGLES section
 "output" in: sky130A_mr.drc:1607
     Edge pairs: 0 (flat)  0 (hierarchical)
     Elapsed: 0.010s  Memory: 2069.00M
-Writing report database: /home/smdadmin/hermes_workspace/projects/IP-005/v6/04_backend-stage/librelane/runs/v6-run2/64-klayout-drc/reports/drc.klayout.lyrdb ..
+Writing report database: ~/hermes_workspace/projects/IP-005/v6/04_backend-stage/librelane/runs/v6-run2/64-klayout-drc/reports/drc.klayout.lyrdb ..
 Total elapsed: 604.360s  Memory: 1995.00M
 Args:
 	sram_exclude: false

@@ -2,7 +2,7 @@
 <report-database>
  <description>SKY130 DRC runset</description>
  <original-file/>
- <generator>drc: script='/home/smdadmin/.hermes/profiles/physical-design-agent/home/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.tech/klayout/drc/sky130A_mr.drc'</generator>
+ <generator>drc: script='~/.hermes/profiles/physical-design-agent/home/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.tech/klayout/drc/sky130A_mr.drc'</generator>
  <top-cell>trash_robot_soc</top-cell>
  <tags>
  </tags>

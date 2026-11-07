@@ -1,24 +1,24 @@
 Reading timing models for corner nom_tt_025C_1v80…
-Reading timing library for the 'nom_tt_025C_1v80' corner at '/home/smdadmin/.hermes/profiles/physical-design-agent/home/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib'…
-Reading technology LEF file at '/home/smdadmin/.hermes/profiles/physical-design-agent/home/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd__nom.tlef'…
-[INFO ODB-0227] LEF file: /home/smdadmin/.hermes/profiles/physical-design-agent/home/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd__nom.tlef, created 14 layers, 25 vias
-Reading cell LEF file at '/home/smdadmin/.hermes/profiles/physical-design-agent/home/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_fd_sc_hd.lef'…
+Reading timing library for the 'nom_tt_025C_1v80' corner at '~/.hermes/profiles/physical-design-agent/home/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib'…
+Reading technology LEF file at '~/.hermes/profiles/physical-design-agent/home/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd__nom.tlef'…
+[INFO ODB-0227] LEF file: ~/.hermes/profiles/physical-design-agent/home/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd__nom.tlef, created 14 layers, 25 vias
+Reading cell LEF file at '~/.hermes/profiles/physical-design-agent/home/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_fd_sc_hd.lef'…
 [WARNING ODB-0220] WARNING (LEFPARS-2008): NOWIREEXTENSIONATPIN statement is obsolete in version 5.6 or later.
-The NOWIREEXTENSIONATPIN statement will be ignored. See file /home/smdadmin/.hermes/profiles/physical-design-agent/home/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_fd_sc_hd.lef at line 2.
+The NOWIREEXTENSIONATPIN statement will be ignored. See file ~/.hermes/profiles/physical-design-agent/home/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_fd_sc_hd.lef at line 2.
 
-[INFO ODB-0227] LEF file: /home/smdadmin/.hermes/profiles/physical-design-agent/home/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_fd_sc_hd.lef, created 437 library cells
-Reading cell LEF file at '/home/smdadmin/.hermes/profiles/physical-design-agent/home/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_ef_sc_hd.lef'…
+[INFO ODB-0227] LEF file: ~/.hermes/profiles/physical-design-agent/home/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_fd_sc_hd.lef, created 437 library cells
+Reading cell LEF file at '~/.hermes/profiles/physical-design-agent/home/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_ef_sc_hd.lef'…
 [WARNING ODB-0220] WARNING (LEFPARS-2008): NOWIREEXTENSIONATPIN statement is obsolete in version 5.6 or later.
-The NOWIREEXTENSIONATPIN statement will be ignored. See file /home/smdadmin/.hermes/profiles/physical-design-agent/home/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_ef_sc_hd.lef at line 2.
+The NOWIREEXTENSIONATPIN statement will be ignored. See file ~/.hermes/profiles/physical-design-agent/home/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_ef_sc_hd.lef at line 2.
 
-[INFO ODB-0227] LEF file: /home/smdadmin/.hermes/profiles/physical-design-agent/home/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_ef_sc_hd.lef, created 8 library cells
-[INFO ODB-0127] Reading DEF file: /home/smdadmin/hermes_workspace/projects/IP-005/v6/04_backend-stage/librelane/runs/v6-run2/13-openroad-floorplan/trash_robot_soc.def
+[INFO ODB-0227] LEF file: ~/.hermes/profiles/physical-design-agent/home/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_ef_sc_hd.lef, created 8 library cells
+[INFO ODB-0127] Reading DEF file: ~/hermes_workspace/projects/IP-005/v6/04_backend-stage/librelane/runs/v6-run2/13-openroad-floorplan/trash_robot_soc.def
 [INFO ODB-0128] Design: trash_robot_soc
 [INFO ODB-0130]     Created 60 pins.
 [INFO ODB-0131]     Created 31367 components and 246912 component-terminals.
 [INFO ODB-0132]     Created 2 special nets and 125468 connections.
 [INFO ODB-0133]     Created 31384 nets and 121438 connections.
-[INFO ODB-0134] Finished DEF file: /home/smdadmin/hermes_workspace/projects/IP-005/v6/04_backend-stage/librelane/runs/v6-run2/13-openroad-floorplan/trash_robot_soc.def
+[INFO ODB-0134] Finished DEF file: ~/hermes_workspace/projects/IP-005/v6/04_backend-stage/librelane/runs/v6-run2/13-openroad-floorplan/trash_robot_soc.def
 %OL_CREATE_REPORT tlef_values.rpt
  time 1ns
  capacitance 1pF

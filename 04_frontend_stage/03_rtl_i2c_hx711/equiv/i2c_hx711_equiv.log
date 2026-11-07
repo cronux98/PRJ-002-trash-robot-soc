@@ -8,15 +8,15 @@
 
 -- Executing script file `/tmp/equiv_i2c_master.ys' --
 
-1. Executing Verilog-2005 frontend: /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_hx711/rtl/i2c_controller.v
-Parsing Verilog input from `/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_hx711/rtl/i2c_controller.v' to AST representation.
+1. Executing Verilog-2005 frontend: ~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_hx711/rtl/i2c_controller.v
+Parsing Verilog input from `~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_hx711/rtl/i2c_controller.v' to AST representation.
 Generating RTLIL representation for module `\i2c_controller'.
 Successfully finished Verilog frontend.
 
-2. Executing Verilog-2005 frontend: /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_hx711/rtl/i2c_master.v
-Parsing Verilog input from `/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_hx711/rtl/i2c_master.v' to AST representation.
-/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_hx711/rtl/i2c_master.v:69: Warning: Yosys has only limited support for tri-state logic at the moment.
-/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_hx711/rtl/i2c_master.v:70: Warning: Yosys has only limited support for tri-state logic at the moment.
+2. Executing Verilog-2005 frontend: ~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_hx711/rtl/i2c_master.v
+Parsing Verilog input from `~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_hx711/rtl/i2c_master.v' to AST representation.
+~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_hx711/rtl/i2c_master.v:69: Warning: Yosys has only limited support for tri-state logic at the moment.
+~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_hx711/rtl/i2c_master.v:70: Warning: Yosys has only limited support for tri-state logic at the moment.
 Generating RTLIL representation for module `\i2c_master'.
 Successfully finished Verilog frontend.
 
@@ -36,7 +36,7 @@ Removed 1 unused modules.
 Cleaned up 0 empty switches.
 
 4.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
-Marked 12 switch rules as full_case in process $proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_hx711/rtl/i2c_master.v:72$64 in module i2c_master.
+Marked 12 switch rules as full_case in process $proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_hx711/rtl/i2c_master.v:72$64 in module i2c_master.
 Removed a total of 0 dead cases.
 
 4.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
@@ -46,14 +46,14 @@ Promoted 0 assignments to connections.
 4.4. Executing PROC_INIT pass (extract init attributes).
 
 4.5. Executing PROC_ARST pass (detect async resets in processes).
-Found async reset \rst_ni in `\i2c_master.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_hx711/rtl/i2c_master.v:72$64'.
+Found async reset \rst_ni in `\i2c_master.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_hx711/rtl/i2c_master.v:72$64'.
 
 4.6. Executing PROC_ROM pass (convert switches to ROMs).
 Converted 0 switches.
 <suppressed ~18 debug messages>
 
 4.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
-Creating decoders for process `\i2c_master.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_hx711/rtl/i2c_master.v:72$64'.
+Creating decoders for process `\i2c_master.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_hx711/rtl/i2c_master.v:72$64'.
      1/22: $0\status[3:0] [3]
      2/22: $0\status[3:0] [2]
      3/22: $0\status[3:0] [1]
@@ -80,50 +80,50 @@ Creating decoders for process `\i2c_master.$proc$/home/smdadmin/hermes_workspace
 4.8. Executing PROC_DLATCH pass (convert process syncs to latches).
 
 4.9. Executing PROC_DFF pass (convert process syncs to FFs).
-Creating register for signal `\i2c_master.\wb_dat_o' using process `\i2c_master.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_hx711/rtl/i2c_master.v:72$64'.
+Creating register for signal `\i2c_master.\wb_dat_o' using process `\i2c_master.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_hx711/rtl/i2c_master.v:72$64'.
   created $adff cell `$procdff$380' with positive edge clock and positive level reset.
-Creating register for signal `\i2c_master.\wb_ack_o' using process `\i2c_master.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_hx711/rtl/i2c_master.v:72$64'.
+Creating register for signal `\i2c_master.\wb_ack_o' using process `\i2c_master.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_hx711/rtl/i2c_master.v:72$64'.
   created $adff cell `$procdff$385' with positive edge clock and positive level reset.
-Creating register for signal `\i2c_master.\addr_reg' using process `\i2c_master.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_hx711/rtl/i2c_master.v:72$64'.
+Creating register for signal `\i2c_master.\addr_reg' using process `\i2c_master.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_hx711/rtl/i2c_master.v:72$64'.
   created $adff cell `$procdff$390' with positive edge clock and positive level reset.
-Creating register for signal `\i2c_master.\fsm_state' using process `\i2c_master.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_hx711/rtl/i2c_master.v:72$64'.
+Creating register for signal `\i2c_master.\fsm_state' using process `\i2c_master.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_hx711/rtl/i2c_master.v:72$64'.
   created $adff cell `$procdff$395' with positive edge clock and positive level reset.
-Creating register for signal `\i2c_master.\shift_reg' using process `\i2c_master.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_hx711/rtl/i2c_master.v:72$64'.
+Creating register for signal `\i2c_master.\shift_reg' using process `\i2c_master.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_hx711/rtl/i2c_master.v:72$64'.
   created $adff cell `$procdff$400' with positive edge clock and positive level reset.
-Creating register for signal `\i2c_master.\irq_done' using process `\i2c_master.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_hx711/rtl/i2c_master.v:72$64'.
+Creating register for signal `\i2c_master.\irq_done' using process `\i2c_master.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_hx711/rtl/i2c_master.v:72$64'.
   created $adff cell `$procdff$405' with positive edge clock and positive level reset.
-Creating register for signal `\i2c_master.\divider' using process `\i2c_master.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_hx711/rtl/i2c_master.v:72$64'.
+Creating register for signal `\i2c_master.\divider' using process `\i2c_master.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_hx711/rtl/i2c_master.v:72$64'.
   created $adff cell `$procdff$410' with positive edge clock and positive level reset.
-Creating register for signal `\i2c_master.\clk_cnt' using process `\i2c_master.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_hx711/rtl/i2c_master.v:72$64'.
+Creating register for signal `\i2c_master.\clk_cnt' using process `\i2c_master.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_hx711/rtl/i2c_master.v:72$64'.
   created $adff cell `$procdff$415' with positive edge clock and positive level reset.
-Creating register for signal `\i2c_master.\ctrl' using process `\i2c_master.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_hx711/rtl/i2c_master.v:72$64'.
+Creating register for signal `\i2c_master.\ctrl' using process `\i2c_master.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_hx711/rtl/i2c_master.v:72$64'.
   created $adff cell `$procdff$420' with positive edge clock and positive level reset.
-Creating register for signal `\i2c_master.\status' using process `\i2c_master.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_hx711/rtl/i2c_master.v:72$64'.
+Creating register for signal `\i2c_master.\status' using process `\i2c_master.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_hx711/rtl/i2c_master.v:72$64'.
   created $adff cell `$procdff$425' with positive edge clock and positive level reset.
-Creating register for signal `\i2c_master.\data_reg' using process `\i2c_master.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_hx711/rtl/i2c_master.v:72$64'.
+Creating register for signal `\i2c_master.\data_reg' using process `\i2c_master.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_hx711/rtl/i2c_master.v:72$64'.
   created $adff cell `$procdff$430' with positive edge clock and positive level reset.
-Creating register for signal `\i2c_master.\start_cmd' using process `\i2c_master.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_hx711/rtl/i2c_master.v:72$64'.
+Creating register for signal `\i2c_master.\start_cmd' using process `\i2c_master.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_hx711/rtl/i2c_master.v:72$64'.
   created $adff cell `$procdff$435' with positive edge clock and positive level reset.
-Creating register for signal `\i2c_master.\stop_cmd' using process `\i2c_master.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_hx711/rtl/i2c_master.v:72$64'.
+Creating register for signal `\i2c_master.\stop_cmd' using process `\i2c_master.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_hx711/rtl/i2c_master.v:72$64'.
   created $adff cell `$procdff$440' with positive edge clock and positive level reset.
-Creating register for signal `\i2c_master.\rw_bit' using process `\i2c_master.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_hx711/rtl/i2c_master.v:72$64'.
+Creating register for signal `\i2c_master.\rw_bit' using process `\i2c_master.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_hx711/rtl/i2c_master.v:72$64'.
   created $adff cell `$procdff$445' with positive edge clock and positive level reset.
-Creating register for signal `\i2c_master.\bit_cnt' using process `\i2c_master.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_hx711/rtl/i2c_master.v:72$64'.
+Creating register for signal `\i2c_master.\bit_cnt' using process `\i2c_master.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_hx711/rtl/i2c_master.v:72$64'.
   created $adff cell `$procdff$450' with positive edge clock and positive level reset.
-Creating register for signal `\i2c_master.\scl_out' using process `\i2c_master.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_hx711/rtl/i2c_master.v:72$64'.
+Creating register for signal `\i2c_master.\scl_out' using process `\i2c_master.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_hx711/rtl/i2c_master.v:72$64'.
   created $adff cell `$procdff$455' with positive edge clock and positive level reset.
-Creating register for signal `\i2c_master.\sda_out' using process `\i2c_master.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_hx711/rtl/i2c_master.v:72$64'.
+Creating register for signal `\i2c_master.\sda_out' using process `\i2c_master.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_hx711/rtl/i2c_master.v:72$64'.
   created $adff cell `$procdff$460' with positive edge clock and positive level reset.
-Creating register for signal `\i2c_master.\scl_oe' using process `\i2c_master.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_hx711/rtl/i2c_master.v:72$64'.
+Creating register for signal `\i2c_master.\scl_oe' using process `\i2c_master.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_hx711/rtl/i2c_master.v:72$64'.
   created $adff cell `$procdff$465' with positive edge clock and positive level reset.
-Creating register for signal `\i2c_master.\sda_oe' using process `\i2c_master.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_hx711/rtl/i2c_master.v:72$64'.
+Creating register for signal `\i2c_master.\sda_oe' using process `\i2c_master.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_hx711/rtl/i2c_master.v:72$64'.
   created $adff cell `$procdff$470' with positive edge clock and positive level reset.
 
 4.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
 
 4.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
-Found and cleaned up 18 empty switches in `\i2c_master.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_hx711/rtl/i2c_master.v:72$64'.
-Removing empty process `i2c_master.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_hx711/rtl/i2c_master.v:72$64'.
+Found and cleaned up 18 empty switches in `\i2c_master.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_hx711/rtl/i2c_master.v:72$64'.
+Removing empty process `i2c_master.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_hx711/rtl/i2c_master.v:72$64'.
 Cleaned up 18 empty switches.
 
 4.12. Executing OPT_EXPR pass (perform const folding).
@@ -428,8 +428,8 @@ Optimizing module i2c_master.
 
 9. Executing TECHMAP pass (map to technology primitives).
 
-9.1. Executing Verilog-2005 frontend: /home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v
-Parsing Verilog input from `/home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v' to AST representation.
+9.1. Executing Verilog-2005 frontend: ~/oss-cad-suite/lib/../share/yosys/techmap.v
+Parsing Verilog input from `~/oss-cad-suite/lib/../share/yosys/techmap.v' to AST representation.
 Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
 Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
 Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
@@ -612,11 +612,11 @@ Optimizing module i2c_master.
 
 12.9. Finished fast OPT passes. (There is nothing left to do.)
 
-13. Executing Liberty frontend: /home/smdadmin/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130B/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+13. Executing Liberty frontend: ~/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130B/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 Imported 428 cell types from liberty file.
 
-14. Executing Verilog-2005 frontend: /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_hx711/synth/i2c_master_netlist.v
-Parsing Verilog input from `/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_hx711/synth/i2c_master_netlist.v' to AST representation.
+14. Executing Verilog-2005 frontend: ~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_hx711/synth/i2c_master_netlist.v
+Parsing Verilog input from `~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_hx711/synth/i2c_master_netlist.v' to AST representation.
 Generating RTLIL representation for module `\i2c_master'.
 Successfully finished Verilog frontend.
 
@@ -797,8 +797,8 @@ Optimizing module i2c_master.
 
 21. Executing TECHMAP pass (map to technology primitives).
 
-21.1. Executing Verilog-2005 frontend: /home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v
-Parsing Verilog input from `/home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v' to AST representation.
+21.1. Executing Verilog-2005 frontend: ~/oss-cad-suite/lib/../share/yosys/techmap.v
+Parsing Verilog input from `~/oss-cad-suite/lib/../share/yosys/techmap.v' to AST representation.
 Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
 Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
 Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
@@ -1148,8 +1148,8 @@ Changing input A of cell $auto$simplemap.cc:256:simplemap_logbin$1077_gold ($_AN
 Changing input A of cell $auto$simplemap.cc:46:simplemap_not$1076_gold ($_NOT_): \scl_gold -> \scl
 Changing input A of cell $auto$simplemap.cc:106:simplemap_bitop$2106_gold ($_AND_): \addr_reg_gold [6] -> \addr_reg [6]
 Changing input B of cell $auto$simplemap.cc:298:simplemap_mux$1039_gold ($_MUX_): \sda_out_gold -> \sda_out
-Setting undriven nets to undef: $techmap$sub$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_hx711/rtl/i2c_master.v:101$66.$auto$alumacc.cc:512:replace_alu$1040.CO_gold [7]
-Setting undriven nets to undef: $techmap$sub$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_hx711/rtl/i2c_master.v:184$73.$auto$alumacc.cc:512:replace_alu$1055.CO_gold [3]
+Setting undriven nets to undef: $techmap$sub$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_hx711/rtl/i2c_master.v:101$66.$auto$alumacc.cc:512:replace_alu$1040.CO_gold [7]
+Setting undriven nets to undef: $techmap$sub$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-i2c_hx711/rtl/i2c_master.v:184$73.$auto$alumacc.cc:512:replace_alu$1055.CO_gold [3]
 Setting undriven nets to undef: \wb_ack_o_gate
 Setting undriven nets to undef: \scl_gate
 Setting undriven nets to undef: \sda_gate

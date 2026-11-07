@@ -1,13 +1,13 @@
 # GOLD: RTL -> generic
-read_verilog /home/smdadmin/hermes_workspace/projects/IP-005/v5/03_frontend-stage/rtl-power_mgr/rtl/power_mgr.v
+read_verilog ~/hermes_workspace/projects/IP-005/v5/03_frontend-stage/rtl-power_mgr/rtl/power_mgr.v
 hierarchy -top power_mgr
 synth -top power_mgr
 rename power_mgr gold_power_mgr
 design -push
 
 # GATE: netlist (sky130)
-read_liberty -ignore_miss_func -lib /home/smdadmin/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130B/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
-read_verilog /home/smdadmin/hermes_workspace/projects/IP-005/v5/03_frontend-stage/rtl-power_mgr/synth/power_mgr_netlist.v
+read_liberty -ignore_miss_func -lib ~/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130B/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog ~/hermes_workspace/projects/IP-005/v5/03_frontend-stage/rtl-power_mgr/synth/power_mgr_netlist.v
 hierarchy -top power_mgr
 rename power_mgr gate_power_mgr
 design -save gate_saved

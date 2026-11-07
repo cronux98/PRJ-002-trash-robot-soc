@@ -1,9 +1,9 @@
 <testsuites name="results">
   <testsuite name="all" package="all">
     <property name="random_seed" value="1784094946" />
-    <testcase name="test_reset" classname="test_power_mgr" file="/home/smdadmin/hermes_workspace/projects/IP-005/v6/06_verification/tb-power_mgr_gls/test_power_mgr.py" lineno="23" time="0.0015020370483398438" sim_time_ns="70.0" ratio_time="46603.37777777778" />
-    <testcase name="test_register_rw" classname="test_power_mgr" file="/home/smdadmin/hermes_workspace/projects/IP-005/v6/06_verification/tb-power_mgr_gls/test_power_mgr.py" lineno="43" time="0.0013570785522460938" sim_time_ns="101.0" ratio_time="74424.57905832748" />
-    <testcase name="test_functional" classname="test_power_mgr" file="/home/smdadmin/hermes_workspace/projects/IP-005/v6/06_verification/tb-power_mgr_gls/test_power_mgr.py" lineno="62" time="0.0009438991546630859" sim_time_ns="91.0" ratio_time="96408.60419297802" />
-    <testcase name="test_ack_handshake" classname="test_power_mgr" file="/home/smdadmin/hermes_workspace/projects/IP-005/v6/06_verification/tb-power_mgr_gls/test_power_mgr.py" lineno="84" time="0.0011229515075683594" sim_time_ns="101.0" ratio_time="89941.55074309978" />
+    <testcase name="test_reset" classname="test_power_mgr" file="~/hermes_workspace/projects/IP-005/v6/06_verification/tb-power_mgr_gls/test_power_mgr.py" lineno="23" time="0.0015020370483398438" sim_time_ns="70.0" ratio_time="46603.37777777778" />
+    <testcase name="test_register_rw" classname="test_power_mgr" file="~/hermes_workspace/projects/IP-005/v6/06_verification/tb-power_mgr_gls/test_power_mgr.py" lineno="43" time="0.0013570785522460938" sim_time_ns="101.0" ratio_time="74424.57905832748" />
+    <testcase name="test_functional" classname="test_power_mgr" file="~/hermes_workspace/projects/IP-005/v6/06_verification/tb-power_mgr_gls/test_power_mgr.py" lineno="62" time="0.0009438991546630859" sim_time_ns="91.0" ratio_time="96408.60419297802" />
+    <testcase name="test_ack_handshake" classname="test_power_mgr" file="~/hermes_workspace/projects/IP-005/v6/06_verification/tb-power_mgr_gls/test_power_mgr.py" lineno="84" time="0.0011229515075683594" sim_time_ns="101.0" ratio_time="89941.55074309978" />
   </testsuite>
 </testsuites>

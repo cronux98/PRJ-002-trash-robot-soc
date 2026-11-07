@@ -10,4 +10,4 @@ read -formal motor_pwm.v
 prep -top motor_pwm
 
 [files]
-/home/smdadmin/hermes_workspace/projects/IP-005/v5/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v
+~/hermes_workspace/projects/IP-005/v5/03_frontend-stage/rtl-motor_pwm/rtl/motor_pwm.v

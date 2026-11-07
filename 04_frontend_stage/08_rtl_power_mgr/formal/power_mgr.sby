@@ -21,4 +21,4 @@ read -formal power_mgr.v
 prep -top power_mgr
 
 [files]
-/home/smdadmin/hermes_workspace/projects/IP-005/v5/03_frontend-stage/rtl-power_mgr/rtl/power_mgr.v
+~/hermes_workspace/projects/IP-005/v5/03_frontend-stage/rtl-power_mgr/rtl/power_mgr.v

@@ -8,8 +8,8 @@
 
 -- Executing script file `/tmp/equiv_test/fixed_scripts/equiv_gpio.ys' --
 
-1. Executing Verilog-2005 frontend: /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-gpio//rtl/gpio.v
-Parsing Verilog input from `/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-gpio//rtl/gpio.v' to AST representation.
+1. Executing Verilog-2005 frontend: ~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-gpio//rtl/gpio.v
+Parsing Verilog input from `~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-gpio//rtl/gpio.v' to AST representation.
 Generating RTLIL representation for module `\gpio'.
 Successfully finished Verilog frontend.
 
@@ -39,9 +39,9 @@ Removed 0 unused modules.
 Cleaned up 0 empty switches.
 
 3.2.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
-Marked 3 switch rules as full_case in process $proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-gpio//rtl/gpio.v:67$7 in module gpio.
-Marked 1 switch rules as full_case in process $proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-gpio//rtl/gpio.v:58$5 in module gpio.
-Marked 1 switch rules as full_case in process $proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-gpio//rtl/gpio.v:43$2 in module gpio.
+Marked 3 switch rules as full_case in process $proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-gpio//rtl/gpio.v:67$7 in module gpio.
+Marked 1 switch rules as full_case in process $proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-gpio//rtl/gpio.v:58$5 in module gpio.
+Marked 1 switch rules as full_case in process $proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-gpio//rtl/gpio.v:43$2 in module gpio.
 Removed a total of 0 dead cases.
 
 3.2.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
@@ -51,16 +51,16 @@ Promoted 0 assignments to connections.
 3.2.4. Executing PROC_INIT pass (extract init attributes).
 
 3.2.5. Executing PROC_ARST pass (detect async resets in processes).
-Found async reset \rst_ni in `\gpio.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-gpio//rtl/gpio.v:67$7'.
-Found async reset \rst_ni in `\gpio.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-gpio//rtl/gpio.v:58$5'.
-Found async reset \rst_ni in `\gpio.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-gpio//rtl/gpio.v:43$2'.
+Found async reset \rst_ni in `\gpio.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-gpio//rtl/gpio.v:67$7'.
+Found async reset \rst_ni in `\gpio.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-gpio//rtl/gpio.v:58$5'.
+Found async reset \rst_ni in `\gpio.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-gpio//rtl/gpio.v:43$2'.
 
 3.2.6. Executing PROC_ROM pass (convert switches to ROMs).
 Converted 0 switches.
 <suppressed ~4 debug messages>
 
 3.2.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
-Creating decoders for process `\gpio.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-gpio//rtl/gpio.v:67$7'.
+Creating decoders for process `\gpio.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-gpio//rtl/gpio.v:67$7'.
      1/8: $0\irq_pin[0:0]
      2/8: $0\gpio_oe[11:0]
      3/8: $0\gpio_o[11:0]
@@ -69,45 +69,45 @@ Creating decoders for process `\gpio.$proc$/home/smdadmin/hermes_workspace/proje
      6/8: $0\out_reg[11:0]
      7/8: $0\dir_reg[11:0]
      8/8: $0\wb_dat_o[31:0]
-Creating decoders for process `\gpio.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-gpio//rtl/gpio.v:58$5'.
+Creating decoders for process `\gpio.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-gpio//rtl/gpio.v:58$5'.
      1/1: $0\gpio_prev[11:0]
-Creating decoders for process `\gpio.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-gpio//rtl/gpio.v:43$2'.
+Creating decoders for process `\gpio.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-gpio//rtl/gpio.v:43$2'.
      1/2: $0\gpio_sync2[11:0]
      2/2: $0\gpio_sync1[11:0]
 
 3.2.8. Executing PROC_DLATCH pass (convert process syncs to latches).
 
 3.2.9. Executing PROC_DFF pass (convert process syncs to FFs).
-Creating register for signal `\gpio.\wb_dat_o' using process `\gpio.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-gpio//rtl/gpio.v:67$7'.
+Creating register for signal `\gpio.\wb_dat_o' using process `\gpio.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-gpio//rtl/gpio.v:67$7'.
   created $adff cell `$procdff$55' with positive edge clock and positive level reset.
-Creating register for signal `\gpio.\wb_ack_o' using process `\gpio.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-gpio//rtl/gpio.v:67$7'.
+Creating register for signal `\gpio.\wb_ack_o' using process `\gpio.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-gpio//rtl/gpio.v:67$7'.
   created $adff cell `$procdff$60' with positive edge clock and positive level reset.
-Creating register for signal `\gpio.\gpio_o' using process `\gpio.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-gpio//rtl/gpio.v:67$7'.
+Creating register for signal `\gpio.\gpio_o' using process `\gpio.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-gpio//rtl/gpio.v:67$7'.
   created $adff cell `$procdff$65' with positive edge clock and positive level reset.
-Creating register for signal `\gpio.\gpio_oe' using process `\gpio.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-gpio//rtl/gpio.v:67$7'.
+Creating register for signal `\gpio.\gpio_oe' using process `\gpio.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-gpio//rtl/gpio.v:67$7'.
   created $adff cell `$procdff$70' with positive edge clock and positive level reset.
-Creating register for signal `\gpio.\irq_pin' using process `\gpio.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-gpio//rtl/gpio.v:67$7'.
+Creating register for signal `\gpio.\irq_pin' using process `\gpio.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-gpio//rtl/gpio.v:67$7'.
   created $adff cell `$procdff$75' with positive edge clock and positive level reset.
-Creating register for signal `\gpio.\dir_reg' using process `\gpio.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-gpio//rtl/gpio.v:67$7'.
+Creating register for signal `\gpio.\dir_reg' using process `\gpio.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-gpio//rtl/gpio.v:67$7'.
   created $adff cell `$procdff$80' with positive edge clock and positive level reset.
-Creating register for signal `\gpio.\out_reg' using process `\gpio.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-gpio//rtl/gpio.v:67$7'.
+Creating register for signal `\gpio.\out_reg' using process `\gpio.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-gpio//rtl/gpio.v:67$7'.
   created $adff cell `$procdff$85' with positive edge clock and positive level reset.
-Creating register for signal `\gpio.\irq_cfg' using process `\gpio.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-gpio//rtl/gpio.v:67$7'.
+Creating register for signal `\gpio.\irq_cfg' using process `\gpio.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-gpio//rtl/gpio.v:67$7'.
   created $adff cell `$procdff$90' with positive edge clock and positive level reset.
-Creating register for signal `\gpio.\gpio_prev' using process `\gpio.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-gpio//rtl/gpio.v:58$5'.
+Creating register for signal `\gpio.\gpio_prev' using process `\gpio.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-gpio//rtl/gpio.v:58$5'.
   created $adff cell `$procdff$95' with positive edge clock and positive level reset.
-Creating register for signal `\gpio.\gpio_sync1' using process `\gpio.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-gpio//rtl/gpio.v:43$2'.
+Creating register for signal `\gpio.\gpio_sync1' using process `\gpio.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-gpio//rtl/gpio.v:43$2'.
   created $adff cell `$procdff$100' with positive edge clock and positive level reset.
-Creating register for signal `\gpio.\gpio_sync2' using process `\gpio.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-gpio//rtl/gpio.v:43$2'.
+Creating register for signal `\gpio.\gpio_sync2' using process `\gpio.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-gpio//rtl/gpio.v:43$2'.
   created $adff cell `$procdff$105' with positive edge clock and positive level reset.
 
 3.2.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
 
 3.2.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
-Found and cleaned up 4 empty switches in `\gpio.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-gpio//rtl/gpio.v:67$7'.
-Removing empty process `gpio.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-gpio//rtl/gpio.v:67$7'.
-Removing empty process `gpio.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-gpio//rtl/gpio.v:58$5'.
-Removing empty process `gpio.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-gpio//rtl/gpio.v:43$2'.
+Found and cleaned up 4 empty switches in `\gpio.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-gpio//rtl/gpio.v:67$7'.
+Removing empty process `gpio.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-gpio//rtl/gpio.v:67$7'.
+Removing empty process `gpio.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-gpio//rtl/gpio.v:58$5'.
+Removing empty process `gpio.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-gpio//rtl/gpio.v:43$2'.
 Cleaned up 4 empty switches.
 
 3.2.12. Executing OPT_EXPR pass (perform const folding).
@@ -499,8 +499,8 @@ Optimizing module gpio.
 
 3.22. Executing TECHMAP pass (map to technology primitives).
 
-3.22.1. Executing Verilog-2005 frontend: /home/smdadmin/.local/bin/../share/yosys/techmap.v
-Parsing Verilog input from `/home/smdadmin/.local/bin/../share/yosys/techmap.v' to AST representation.
+3.22.1. Executing Verilog-2005 frontend: ~/.local/bin/../share/yosys/techmap.v
+Parsing Verilog input from `~/.local/bin/../share/yosys/techmap.v' to AST representation.
 Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
 Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
 Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
@@ -778,7 +778,7 @@ Replacing gpio.$auto$ff.cc:337:slice$540 ($_DFF_PN0_): ARST=\rst_ni, D=$0\irq_pi
 Replacing gpio.$auto$ff.cc:337:slice$255 ($_DFFE_PN0P_): ARST=\rst_ni, D=\wb_dat_i [11], Q=\dir_reg [11]
 Renaming module \gpio to \gold_gpio.
 
-5. Executing Liberty frontend: /home/smdadmin/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+5. Executing Liberty frontend: ~/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 Ignoring cell sky130_fd_sc_hd__dlclkp_1 with missing function on output GCLK.
 Ignoring cell sky130_fd_sc_hd__dlclkp_2 with missing function on output GCLK.
 Ignoring cell sky130_fd_sc_hd__dlclkp_4 with missing function on output GCLK.
@@ -788,8 +788,8 @@ Ignoring cell sky130_fd_sc_hd__sdlclkp_4 with missing function on output GCLK.
 Imported 422 cell types from liberty file.
 <suppressed ~12 debug messages>
 
-6. Executing Verilog-2005 frontend: /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-gpio//synth/gpio_netlist.v
-Parsing Verilog input from `/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-gpio//synth/gpio_netlist.v' to AST representation.
+6. Executing Verilog-2005 frontend: ~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-gpio//synth/gpio_netlist.v
+Parsing Verilog input from `~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-gpio//synth/gpio_netlist.v' to AST representation.
 Generating RTLIL representation for module `\gpio'.
 Successfully finished Verilog frontend.
 

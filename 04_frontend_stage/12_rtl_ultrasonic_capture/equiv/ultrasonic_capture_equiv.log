@@ -8,21 +8,21 @@
 
 -- Executing script file `/tmp/equiv_ultrasonic_capture.ys' --
 
-1. Executing Verilog-2005 frontend: /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v
-Parsing Verilog input from `/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v' to AST representation.
+1. Executing Verilog-2005 frontend: ~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v
+Parsing Verilog input from `~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v' to AST representation.
 Generating RTLIL representation for module `\ultrasonic_capture'.
 Successfully finished Verilog frontend.
 
-2. Executing Verilog-2005 frontend: /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_fsm.v
-Parsing Verilog input from `/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_fsm.v' to AST representation.
+2. Executing Verilog-2005 frontend: ~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_fsm.v
+Parsing Verilog input from `~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_fsm.v' to AST representation.
 Generating RTLIL representation for module `\ultrasonic_fsm'.
-Warning: Replacing memory \distance_reg with list of registers. See /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_fsm.v:113
-Warning: Replacing memory \done_sticky with list of registers. See /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_fsm.v:86
-Warning: Replacing memory \glitch_filter with list of registers. See /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_fsm.v:85
-Warning: Replacing memory \capture_count with list of registers. See /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_fsm.v:84
-Warning: Replacing memory \counter with list of registers. See /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_fsm.v:83
-Warning: Replacing memory \fsm_state with list of registers. See /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_fsm.v:82
-Warning: Replacing memory \done_clear with list of registers. See /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_fsm.v:181
+Warning: Replacing memory \distance_reg with list of registers. See ~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_fsm.v:113
+Warning: Replacing memory \done_sticky with list of registers. See ~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_fsm.v:86
+Warning: Replacing memory \glitch_filter with list of registers. See ~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_fsm.v:85
+Warning: Replacing memory \capture_count with list of registers. See ~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_fsm.v:84
+Warning: Replacing memory \counter with list of registers. See ~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_fsm.v:83
+Warning: Replacing memory \fsm_state with list of registers. See ~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_fsm.v:82
+Warning: Replacing memory \done_clear with list of registers. See ~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_fsm.v:181
 Successfully finished Verilog frontend.
 
 3. Executing HIERARCHY pass (managing design hierarchy).
@@ -41,8 +41,8 @@ Removed 1 unused modules.
 Cleaned up 0 empty switches.
 
 4.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
-Removed 2 dead cases from process $proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4 in module ultrasonic_capture.
-Marked 11 switch rules as full_case in process $proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4 in module ultrasonic_capture.
+Removed 2 dead cases from process $proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4 in module ultrasonic_capture.
+Marked 11 switch rules as full_case in process $proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4 in module ultrasonic_capture.
 Removed a total of 2 dead cases.
 
 4.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
@@ -52,36 +52,36 @@ Promoted 6 assignments to connections.
 4.4. Executing PROC_INIT pass (extract init attributes).
 
 4.5. Executing PROC_ARST pass (detect async resets in processes).
-Found async reset \rst_ni in `\ultrasonic_capture.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4'.
+Found async reset \rst_ni in `\ultrasonic_capture.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4'.
 
 4.6. Executing PROC_ROM pass (convert switches to ROMs).
 Converted 0 switches.
 <suppressed ~20 debug messages>
 
 4.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
-Creating decoders for process `\ultrasonic_capture.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4'.
-     1/41: $4\calc_distance$func$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:183$2.$result[15:0]$54
-     2/41: $3\calc_distance$func$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:183$2.$result[15:0]$49
-     3/41: $3\calc_distance$func$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:183$2.temp[35:0]$51
-     4/41: $3\calc_distance$func$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:183$2.echo_clocks[19:0]$50
+Creating decoders for process `\ultrasonic_capture.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4'.
+     1/41: $4\calc_distance$func$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:183$2.$result[15:0]$54
+     2/41: $3\calc_distance$func$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:183$2.$result[15:0]$49
+     3/41: $3\calc_distance$func$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:183$2.temp[35:0]$51
+     4/41: $3\calc_distance$func$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:183$2.echo_clocks[19:0]$50
      5/41: $0\trig_o[1:0] [1]
-     6/41: $2\calc_distance$func$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:183$2.temp[35:0]$39
-     7/41: $2\calc_distance$func$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:183$2.echo_clocks[19:0]$38
-     8/41: $2\calc_distance$func$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:183$2.$result[15:0]$37
-     9/41: $4\calc_distance$func$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:143$1.$result[15:0]$35
-    10/41: $3\calc_distance$func$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:143$1.$result[15:0]$30
-    11/41: $3\calc_distance$func$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:143$1.temp[35:0]$32
-    12/41: $3\calc_distance$func$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:143$1.echo_clocks[19:0]$31
+     6/41: $2\calc_distance$func$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:183$2.temp[35:0]$39
+     7/41: $2\calc_distance$func$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:183$2.echo_clocks[19:0]$38
+     8/41: $2\calc_distance$func$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:183$2.$result[15:0]$37
+     9/41: $4\calc_distance$func$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:143$1.$result[15:0]$35
+    10/41: $3\calc_distance$func$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:143$1.$result[15:0]$30
+    11/41: $3\calc_distance$func$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:143$1.temp[35:0]$32
+    12/41: $3\calc_distance$func$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:143$1.echo_clocks[19:0]$31
     13/41: $0\trig_o[1:0] [0]
-    14/41: $2\calc_distance$func$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:143$1.temp[35:0]$20
-    15/41: $2\calc_distance$func$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:143$1.echo_clocks[19:0]$19
-    16/41: $2\calc_distance$func$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:143$1.$result[15:0]$18
-    17/41: $1\calc_distance$func$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:183$2.temp[35:0]$17
-    18/41: $1\calc_distance$func$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:183$2.echo_clocks[19:0]$16
-    19/41: $1\calc_distance$func$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:183$2.$result[15:0]$15
-    20/41: $1\calc_distance$func$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:143$1.temp[35:0]$14
-    21/41: $1\calc_distance$func$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:143$1.echo_clocks[19:0]$13
-    22/41: $1\calc_distance$func$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:143$1.$result[15:0]$12
+    14/41: $2\calc_distance$func$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:143$1.temp[35:0]$20
+    15/41: $2\calc_distance$func$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:143$1.echo_clocks[19:0]$19
+    16/41: $2\calc_distance$func$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:143$1.$result[15:0]$18
+    17/41: $1\calc_distance$func$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:183$2.temp[35:0]$17
+    18/41: $1\calc_distance$func$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:183$2.echo_clocks[19:0]$16
+    19/41: $1\calc_distance$func$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:183$2.$result[15:0]$15
+    20/41: $1\calc_distance$func$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:143$1.temp[35:0]$14
+    21/41: $1\calc_distance$func$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:143$1.echo_clocks[19:0]$13
+    22/41: $1\calc_distance$func$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:143$1.$result[15:0]$12
     23/41: $0\echo_sync2[1:0]
     24/41: $0\echo_sync1[1:0]
     25/41: $0\ch1_start[0:0]
@@ -105,64 +105,64 @@ Creating decoders for process `\ultrasonic_capture.$proc$/home/smdadmin/hermes_w
 4.8. Executing PROC_DLATCH pass (convert process syncs to latches).
 
 4.9. Executing PROC_DFF pass (convert process syncs to FFs).
-Creating register for signal `\ultrasonic_capture.\wb_dat_o' using process `\ultrasonic_capture.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4'.
+Creating register for signal `\ultrasonic_capture.\wb_dat_o' using process `\ultrasonic_capture.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4'.
   created $adff cell `$procdff$358' with positive edge clock and positive level reset.
-Creating register for signal `\ultrasonic_capture.\wb_ack_o' using process `\ultrasonic_capture.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4'.
+Creating register for signal `\ultrasonic_capture.\wb_ack_o' using process `\ultrasonic_capture.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4'.
   created $adff cell `$procdff$363' with positive edge clock and positive level reset.
-Creating register for signal `\ultrasonic_capture.\trig_o' using process `\ultrasonic_capture.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4'.
+Creating register for signal `\ultrasonic_capture.\trig_o' using process `\ultrasonic_capture.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4'.
   created $adff cell `$procdff$368' with positive edge clock and positive level reset.
-Creating register for signal `\ultrasonic_capture.\irq_done' using process `\ultrasonic_capture.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4'.
+Creating register for signal `\ultrasonic_capture.\irq_done' using process `\ultrasonic_capture.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4'.
   created $adff cell `$procdff$373' with positive edge clock and positive level reset.
-Creating register for signal `\ultrasonic_capture.\ch0_state' using process `\ultrasonic_capture.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4'.
+Creating register for signal `\ultrasonic_capture.\ch0_state' using process `\ultrasonic_capture.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4'.
   created $adff cell `$procdff$378' with positive edge clock and positive level reset.
-Creating register for signal `\ultrasonic_capture.\ch0_trig_cnt' using process `\ultrasonic_capture.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4'.
+Creating register for signal `\ultrasonic_capture.\ch0_trig_cnt' using process `\ultrasonic_capture.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4'.
   created $adff cell `$procdff$383' with positive edge clock and positive level reset.
-Creating register for signal `\ultrasonic_capture.\ch0_echo_cnt' using process `\ultrasonic_capture.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4'.
+Creating register for signal `\ultrasonic_capture.\ch0_echo_cnt' using process `\ultrasonic_capture.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4'.
   created $adff cell `$procdff$388' with positive edge clock and positive level reset.
-Creating register for signal `\ultrasonic_capture.\ch0_echo_val' using process `\ultrasonic_capture.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4'.
+Creating register for signal `\ultrasonic_capture.\ch0_echo_val' using process `\ultrasonic_capture.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4'.
   created $adff cell `$procdff$393' with positive edge clock and positive level reset.
-Creating register for signal `\ultrasonic_capture.\ch0_dist_val' using process `\ultrasonic_capture.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4'.
+Creating register for signal `\ultrasonic_capture.\ch0_dist_val' using process `\ultrasonic_capture.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4'.
   created $adff cell `$procdff$398' with positive edge clock and positive level reset.
-Creating register for signal `\ultrasonic_capture.\ch0_echo_prev' using process `\ultrasonic_capture.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4'.
+Creating register for signal `\ultrasonic_capture.\ch0_echo_prev' using process `\ultrasonic_capture.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4'.
   created $adff cell `$procdff$403' with positive edge clock and positive level reset.
-Creating register for signal `\ultrasonic_capture.\ch0_start' using process `\ultrasonic_capture.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4'.
+Creating register for signal `\ultrasonic_capture.\ch0_start' using process `\ultrasonic_capture.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4'.
   created $adff cell `$procdff$408' with positive edge clock and positive level reset.
-Creating register for signal `\ultrasonic_capture.\ch1_state' using process `\ultrasonic_capture.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4'.
+Creating register for signal `\ultrasonic_capture.\ch1_state' using process `\ultrasonic_capture.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4'.
   created $adff cell `$procdff$413' with positive edge clock and positive level reset.
-Creating register for signal `\ultrasonic_capture.\ch1_trig_cnt' using process `\ultrasonic_capture.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4'.
+Creating register for signal `\ultrasonic_capture.\ch1_trig_cnt' using process `\ultrasonic_capture.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4'.
   created $adff cell `$procdff$418' with positive edge clock and positive level reset.
-Creating register for signal `\ultrasonic_capture.\ch1_echo_cnt' using process `\ultrasonic_capture.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4'.
+Creating register for signal `\ultrasonic_capture.\ch1_echo_cnt' using process `\ultrasonic_capture.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4'.
   created $adff cell `$procdff$423' with positive edge clock and positive level reset.
-Creating register for signal `\ultrasonic_capture.\ch1_echo_val' using process `\ultrasonic_capture.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4'.
+Creating register for signal `\ultrasonic_capture.\ch1_echo_val' using process `\ultrasonic_capture.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4'.
   created $adff cell `$procdff$428' with positive edge clock and positive level reset.
-Creating register for signal `\ultrasonic_capture.\ch1_dist_val' using process `\ultrasonic_capture.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4'.
+Creating register for signal `\ultrasonic_capture.\ch1_dist_val' using process `\ultrasonic_capture.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4'.
   created $adff cell `$procdff$433' with positive edge clock and positive level reset.
-Creating register for signal `\ultrasonic_capture.\ch1_echo_prev' using process `\ultrasonic_capture.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4'.
+Creating register for signal `\ultrasonic_capture.\ch1_echo_prev' using process `\ultrasonic_capture.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4'.
   created $adff cell `$procdff$438' with positive edge clock and positive level reset.
-Creating register for signal `\ultrasonic_capture.\ch1_start' using process `\ultrasonic_capture.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4'.
+Creating register for signal `\ultrasonic_capture.\ch1_start' using process `\ultrasonic_capture.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4'.
   created $adff cell `$procdff$443' with positive edge clock and positive level reset.
-Creating register for signal `\ultrasonic_capture.\echo_sync1' using process `\ultrasonic_capture.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4'.
+Creating register for signal `\ultrasonic_capture.\echo_sync1' using process `\ultrasonic_capture.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4'.
   created $adff cell `$procdff$448' with positive edge clock and positive level reset.
-Creating register for signal `\ultrasonic_capture.\echo_sync2' using process `\ultrasonic_capture.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4'.
+Creating register for signal `\ultrasonic_capture.\echo_sync2' using process `\ultrasonic_capture.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4'.
   created $adff cell `$procdff$453' with positive edge clock and positive level reset.
-Creating register for signal `\ultrasonic_capture.\calc_distance$func$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:143$1.$result' using process `\ultrasonic_capture.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4'.
+Creating register for signal `\ultrasonic_capture.\calc_distance$func$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:143$1.$result' using process `\ultrasonic_capture.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4'.
   created $adff cell `$procdff$458' with positive edge clock and positive level reset.
-Creating register for signal `\ultrasonic_capture.\calc_distance$func$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:143$1.echo_clocks' using process `\ultrasonic_capture.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4'.
+Creating register for signal `\ultrasonic_capture.\calc_distance$func$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:143$1.echo_clocks' using process `\ultrasonic_capture.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4'.
   created $adff cell `$procdff$463' with positive edge clock and positive level reset.
-Creating register for signal `\ultrasonic_capture.\calc_distance$func$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:143$1.temp' using process `\ultrasonic_capture.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4'.
+Creating register for signal `\ultrasonic_capture.\calc_distance$func$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:143$1.temp' using process `\ultrasonic_capture.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4'.
   created $adff cell `$procdff$468' with positive edge clock and positive level reset.
-Creating register for signal `\ultrasonic_capture.\calc_distance$func$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:183$2.$result' using process `\ultrasonic_capture.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4'.
+Creating register for signal `\ultrasonic_capture.\calc_distance$func$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:183$2.$result' using process `\ultrasonic_capture.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4'.
   created $adff cell `$procdff$473' with positive edge clock and positive level reset.
-Creating register for signal `\ultrasonic_capture.\calc_distance$func$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:183$2.echo_clocks' using process `\ultrasonic_capture.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4'.
+Creating register for signal `\ultrasonic_capture.\calc_distance$func$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:183$2.echo_clocks' using process `\ultrasonic_capture.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4'.
   created $adff cell `$procdff$478' with positive edge clock and positive level reset.
-Creating register for signal `\ultrasonic_capture.\calc_distance$func$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:183$2.temp' using process `\ultrasonic_capture.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4'.
+Creating register for signal `\ultrasonic_capture.\calc_distance$func$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:183$2.temp' using process `\ultrasonic_capture.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4'.
   created $adff cell `$procdff$483' with positive edge clock and positive level reset.
 
 4.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
 
 4.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
-Found and cleaned up 20 empty switches in `\ultrasonic_capture.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4'.
-Removing empty process `ultrasonic_capture.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4'.
+Found and cleaned up 20 empty switches in `\ultrasonic_capture.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4'.
+Removing empty process `ultrasonic_capture.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:84$4'.
 Cleaned up 20 empty switches.
 
 4.12. Executing OPT_EXPR pass (perform const folding).
@@ -273,8 +273,8 @@ Adding EN signal on $procdff$393 ($adff) from module ultrasonic_capture (D = \ch
 Adding EN signal on $procdff$438 ($adff) from module ultrasonic_capture (D = $procmux$237_Y, Q = \ch1_echo_prev).
 Adding EN signal on $procdff$418 ($adff) from module ultrasonic_capture (D = $procmux$271_Y, Q = \ch1_trig_cnt).
 Adding EN signal on $procdff$358 ($adff) from module ultrasonic_capture (D = $procmux$343_Y, Q = \wb_dat_o).
-Adding EN signal on $procdff$398 ($adff) from module ultrasonic_capture (D = $4\calc_distance$func$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:143$1.$result[15:0]$35, Q = \ch0_dist_val).
-Adding EN signal on $procdff$433 ($adff) from module ultrasonic_capture (D = $4\calc_distance$func$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:183$2.$result[15:0]$54, Q = \ch1_dist_val).
+Adding EN signal on $procdff$398 ($adff) from module ultrasonic_capture (D = $4\calc_distance$func$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:143$1.$result[15:0]$35, Q = \ch0_dist_val).
+Adding EN signal on $procdff$433 ($adff) from module ultrasonic_capture (D = $4\calc_distance$func$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:183$2.$result[15:0]$54, Q = \ch1_dist_val).
 Adding EN signal on $procdff$403 ($adff) from module ultrasonic_capture (D = $procmux$290_Y, Q = \ch0_echo_prev).
 Adding EN signal on $procdff$423 ($adff) from module ultrasonic_capture (D = $procmux$260_Y, Q = \ch1_echo_cnt).
 Setting constant 1-bit at position 0 on $procdff$478 ($adff) from module ultrasonic_capture.
@@ -426,10 +426,10 @@ Optimizing module ultrasonic_capture.
 Replacing ultrasonic_capture.$auto$ff.cc:337:slice$568 ($adffe): ARST=\rst_ni, D=$0\ch1_echo_cnt[19:0], Q=\ch1_echo_cnt
 Replacing ultrasonic_capture.$auto$ff.cc:337:slice$561 ($adffe): ARST=\rst_ni, D=$0\ch0_echo_prev[0:0], Q=\ch0_echo_prev
 Replacing ultrasonic_capture.$procdff$368 ($adff): ARST=\rst_ni, D=$0\trig_o[1:0], Q=\trig_o
-Replacing ultrasonic_capture.$auto$ff.cc:337:slice$558 ($adffe): ARST=\rst_ni, D=$4\calc_distance$func$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:183$2.$result[15:0]$54, Q=\ch1_dist_val
+Replacing ultrasonic_capture.$auto$ff.cc:337:slice$558 ($adffe): ARST=\rst_ni, D=$4\calc_distance$func$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:183$2.$result[15:0]$54, Q=\ch1_dist_val
 Replacing ultrasonic_capture.$procdff$363 ($adff): ARST=\rst_ni, D=$0\wb_ack_o[0:0], Q=\wb_ack_o
 Replacing ultrasonic_capture.$procdff$443 ($adff): ARST=\rst_ni, D=$0\ch1_start[0:0], Q=\ch1_start
-Replacing ultrasonic_capture.$auto$ff.cc:337:slice$555 ($adffe): ARST=\rst_ni, D=$4\calc_distance$func$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:143$1.$result[15:0]$35, Q=\ch0_dist_val
+Replacing ultrasonic_capture.$auto$ff.cc:337:slice$555 ($adffe): ARST=\rst_ni, D=$4\calc_distance$func$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:143$1.$result[15:0]$35, Q=\ch0_dist_val
 Replacing ultrasonic_capture.$auto$ff.cc:337:slice$550 ($adffe): ARST=\rst_ni, D=$procmux$343_Y, Q=\wb_dat_o
 Replacing ultrasonic_capture.$auto$ff.cc:337:slice$541 ($adffe): ARST=\rst_ni, D=$0\ch1_trig_cnt[15:0], Q=\ch1_trig_cnt
 Replacing ultrasonic_capture.$auto$ff.cc:337:slice$534 ($adffe): ARST=\rst_ni, D=$0\ch1_echo_prev[0:0], Q=\ch1_echo_prev
@@ -580,8 +580,8 @@ Optimizing module ultrasonic_capture.
 
 9. Executing TECHMAP pass (map to technology primitives).
 
-9.1. Executing Verilog-2005 frontend: /home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v
-Parsing Verilog input from `/home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v' to AST representation.
+9.1. Executing Verilog-2005 frontend: ~/oss-cad-suite/lib/../share/yosys/techmap.v
+Parsing Verilog input from `~/oss-cad-suite/lib/../share/yosys/techmap.v' to AST representation.
 Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
 Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
 Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
@@ -910,11 +910,11 @@ Optimizing module ultrasonic_capture.
 
 12.9. Finished fast OPT passes. (There is nothing left to do.)
 
-13. Executing Liberty frontend: /home/smdadmin/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130B/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+13. Executing Liberty frontend: ~/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130B/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 Imported 428 cell types from liberty file.
 
-14. Executing Verilog-2005 frontend: /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/synth/ultrasonic_capture_netlist.v
-Parsing Verilog input from `/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/synth/ultrasonic_capture_netlist.v' to AST representation.
+14. Executing Verilog-2005 frontend: ~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/synth/ultrasonic_capture_netlist.v
+Parsing Verilog input from `~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/synth/ultrasonic_capture_netlist.v' to AST representation.
 Generating RTLIL representation for module `\ultrasonic_capture'.
 Successfully finished Verilog frontend.
 
@@ -1095,8 +1095,8 @@ Optimizing module ultrasonic_capture.
 
 21. Executing TECHMAP pass (map to technology primitives).
 
-21.1. Executing Verilog-2005 frontend: /home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v
-Parsing Verilog input from `/home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v' to AST representation.
+21.1. Executing Verilog-2005 frontend: ~/oss-cad-suite/lib/../share/yosys/techmap.v
+Parsing Verilog input from `~/oss-cad-suite/lib/../share/yosys/techmap.v' to AST representation.
 Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
 Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
 Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
@@ -1885,74 +1885,74 @@ Setting undriven nets to undef: \_2489__gate
 Setting undriven nets to undef: \irq_done_gate
 Setting undriven nets to undef: \trig_o_gate
 Setting undriven nets to undef: \wb_ack_o_gate
-Setting undriven nets to undef: $techmap$gt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:77$34.$auto$alumacc.cc:512:replace_alu$1240.Y_gold [28:5]
-Setting undriven nets to undef: $techmap$gt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:77$34.$auto$alumacc.cc:512:replace_alu$1240.CO_gold [6:5]
-Setting undriven nets to undef: $techmap$gt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:77$34.$auto$alumacc.cc:512:replace_alu$1240.CO_gold [14:8]
-Setting undriven nets to undef: $techmap$gt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:77$34.$auto$alumacc.cc:512:replace_alu$1240.CO_gold [27:16]
-Setting undriven nets to undef: $techmap$techmap$div$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:80$55.div_mod.div_mod_u.$ge$/home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v:339$4378.$auto$alumacc.cc:512:replace_alu$11916.Y_gold [16]
+Setting undriven nets to undef: $techmap$gt$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:77$34.$auto$alumacc.cc:512:replace_alu$1240.Y_gold [28:5]
+Setting undriven nets to undef: $techmap$gt$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:77$34.$auto$alumacc.cc:512:replace_alu$1240.CO_gold [6:5]
+Setting undriven nets to undef: $techmap$gt$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:77$34.$auto$alumacc.cc:512:replace_alu$1240.CO_gold [14:8]
+Setting undriven nets to undef: $techmap$gt$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:77$34.$auto$alumacc.cc:512:replace_alu$1240.CO_gold [27:16]
+Setting undriven nets to undef: $techmap$techmap$div$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:80$55.div_mod.div_mod_u.$ge$~/oss-cad-suite/lib/../share/yosys/techmap.v:339$4378.$auto$alumacc.cc:512:replace_alu$11916.Y_gold [16]
 Setting undriven nets to undef: $auto$simplemap.cc:148:simplemap_reduce$17088_gold [2]
 Setting undriven nets to undef: $auto$simplemap.cc:148:simplemap_reduce$17088_gold [4]
 Setting undriven nets to undef: $auto$simplemap.cc:148:simplemap_reduce$17088_gold [6]
-Setting undriven nets to undef: $techmap$gt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:167$40.$auto$alumacc.cc:512:replace_alu$1204.Y_gold [15:4]
-Setting undriven nets to undef: $techmap$gt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:167$40.$auto$alumacc.cc:512:replace_alu$1204.CO_gold [6:4]
-Setting undriven nets to undef: $techmap$gt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:167$40.$auto$alumacc.cc:512:replace_alu$1204.CO_gold [14:8]
+Setting undriven nets to undef: $techmap$gt$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:167$40.$auto$alumacc.cc:512:replace_alu$1204.Y_gold [15:4]
+Setting undriven nets to undef: $techmap$gt$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:167$40.$auto$alumacc.cc:512:replace_alu$1204.CO_gold [6:4]
+Setting undriven nets to undef: $techmap$gt$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:167$40.$auto$alumacc.cc:512:replace_alu$1204.CO_gold [14:8]
 Setting undriven nets to undef: $auto$simplemap.cc:148:simplemap_reduce$16415_gold [3]
 Setting undriven nets to undef: $auto$simplemap.cc:148:simplemap_reduce$16415_gold [5]
 Setting undriven nets to undef: $auto$simplemap.cc:148:simplemap_reduce$16415_gold [7]
-Setting undriven nets to undef: $techmap$sub$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:168$41.$auto$alumacc.cc:512:replace_alu$1215.CO_gold [15]
+Setting undriven nets to undef: $techmap$sub$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:168$41.$auto$alumacc.cc:512:replace_alu$1215.CO_gold [15]
 Setting undriven nets to undef: $auto$simplemap.cc:148:simplemap_reduce$16191_gold [1]
-Setting undriven nets to undef: $techmap$add$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:180$44.$auto$alumacc.cc:512:replace_alu$1220.CO_gold [19]
-Setting undriven nets to undef: $techmap$gt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:181$47.$auto$alumacc.cc:512:replace_alu$1226.Y_gold [19:4]
-Setting undriven nets to undef: $techmap$gt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:181$47.$auto$alumacc.cc:512:replace_alu$1226.CO_gold [6:4]
-Setting undriven nets to undef: $techmap$gt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:181$47.$auto$alumacc.cc:512:replace_alu$1226.CO_gold [14:8]
-Setting undriven nets to undef: $techmap$gt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:181$47.$auto$alumacc.cc:512:replace_alu$1226.CO_gold [18:16]
-Setting undriven nets to undef: $techmap$techmap$div$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:80$36.div_mod.div_mod_u.$ge$/home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v:339$4378.$auto$alumacc.cc:512:replace_alu$11916.Y_gold [16]
-Setting undriven nets to undef: $techmap$techmap$div$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:80$55.div_mod.div_mod_u.$ge$/home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v:339$4382.$auto$alumacc.cc:512:replace_alu$11882.CO_gold [6:4]
-Setting undriven nets to undef: $techmap$techmap$div$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:80$55.div_mod.div_mod_u.$ge$/home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v:339$4382.$auto$alumacc.cc:512:replace_alu$11882.CO_gold [14:8]
-Setting undriven nets to undef: $techmap$techmap$div$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:80$55.div_mod.div_mod_u.$ge$/home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v:339$4382.$auto$alumacc.cc:512:replace_alu$11882.P_gold [2]
-Setting undriven nets to undef: $techmap$gt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:77$53.$auto$alumacc.cc:512:replace_alu$1240.Y_gold [28:5]
-Setting undriven nets to undef: $techmap$gt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:77$53.$auto$alumacc.cc:512:replace_alu$1240.CO_gold [6:5]
-Setting undriven nets to undef: $techmap$gt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:77$53.$auto$alumacc.cc:512:replace_alu$1240.CO_gold [14:8]
-Setting undriven nets to undef: $techmap$gt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:77$53.$auto$alumacc.cc:512:replace_alu$1240.CO_gold [27:16]
+Setting undriven nets to undef: $techmap$add$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:180$44.$auto$alumacc.cc:512:replace_alu$1220.CO_gold [19]
+Setting undriven nets to undef: $techmap$gt$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:181$47.$auto$alumacc.cc:512:replace_alu$1226.Y_gold [19:4]
+Setting undriven nets to undef: $techmap$gt$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:181$47.$auto$alumacc.cc:512:replace_alu$1226.CO_gold [6:4]
+Setting undriven nets to undef: $techmap$gt$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:181$47.$auto$alumacc.cc:512:replace_alu$1226.CO_gold [14:8]
+Setting undriven nets to undef: $techmap$gt$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:181$47.$auto$alumacc.cc:512:replace_alu$1226.CO_gold [18:16]
+Setting undriven nets to undef: $techmap$techmap$div$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:80$36.div_mod.div_mod_u.$ge$~/oss-cad-suite/lib/../share/yosys/techmap.v:339$4378.$auto$alumacc.cc:512:replace_alu$11916.Y_gold [16]
+Setting undriven nets to undef: $techmap$techmap$div$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:80$55.div_mod.div_mod_u.$ge$~/oss-cad-suite/lib/../share/yosys/techmap.v:339$4382.$auto$alumacc.cc:512:replace_alu$11882.CO_gold [6:4]
+Setting undriven nets to undef: $techmap$techmap$div$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:80$55.div_mod.div_mod_u.$ge$~/oss-cad-suite/lib/../share/yosys/techmap.v:339$4382.$auto$alumacc.cc:512:replace_alu$11882.CO_gold [14:8]
+Setting undriven nets to undef: $techmap$techmap$div$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:80$55.div_mod.div_mod_u.$ge$~/oss-cad-suite/lib/../share/yosys/techmap.v:339$4382.$auto$alumacc.cc:512:replace_alu$11882.P_gold [2]
+Setting undriven nets to undef: $techmap$gt$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:77$53.$auto$alumacc.cc:512:replace_alu$1240.Y_gold [28:5]
+Setting undriven nets to undef: $techmap$gt$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:77$53.$auto$alumacc.cc:512:replace_alu$1240.CO_gold [6:5]
+Setting undriven nets to undef: $techmap$gt$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:77$53.$auto$alumacc.cc:512:replace_alu$1240.CO_gold [14:8]
+Setting undriven nets to undef: $techmap$gt$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:77$53.$auto$alumacc.cc:512:replace_alu$1240.CO_gold [27:16]
 Setting undriven nets to undef: $auto$simplemap.cc:148:simplemap_reduce$16164_gold [1]
 Setting undriven nets to undef: $auto$simplemap.cc:148:simplemap_reduce$16380_gold [6]
 Setting undriven nets to undef: $auto$simplemap.cc:148:simplemap_reduce$16948_gold [1]
 Setting undriven nets to undef: $auto$simplemap.cc:148:simplemap_reduce$17151_gold [3]
 Setting undriven nets to undef: $auto$simplemap.cc:148:simplemap_reduce$17151_gold [5]
 Setting undriven nets to undef: $auto$simplemap.cc:148:simplemap_reduce$17151_gold [7]
-Setting undriven nets to undef: $techmap$techmap$div$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:80$36.div_mod.div_mod_u.$ge$/home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v:339$4382.$auto$alumacc.cc:512:replace_alu$11882.CO_gold [6:4]
-Setting undriven nets to undef: $techmap$techmap$div$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:80$36.div_mod.div_mod_u.$ge$/home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v:339$4382.$auto$alumacc.cc:512:replace_alu$11882.CO_gold [14:8]
-Setting undriven nets to undef: $techmap$techmap$div$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:80$36.div_mod.div_mod_u.$ge$/home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v:339$4382.$auto$alumacc.cc:512:replace_alu$11882.P_gold [2]
+Setting undriven nets to undef: $techmap$techmap$div$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:80$36.div_mod.div_mod_u.$ge$~/oss-cad-suite/lib/../share/yosys/techmap.v:339$4382.$auto$alumacc.cc:512:replace_alu$11882.CO_gold [6:4]
+Setting undriven nets to undef: $techmap$techmap$div$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:80$36.div_mod.div_mod_u.$ge$~/oss-cad-suite/lib/../share/yosys/techmap.v:339$4382.$auto$alumacc.cc:512:replace_alu$11882.CO_gold [14:8]
+Setting undriven nets to undef: $techmap$techmap$div$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:80$36.div_mod.div_mod_u.$ge$~/oss-cad-suite/lib/../share/yosys/techmap.v:339$4382.$auto$alumacc.cc:512:replace_alu$11882.P_gold [2]
 Setting undriven nets to undef: $auto$simplemap.cc:148:simplemap_reduce$16346_gold [2]
 Setting undriven nets to undef: $auto$simplemap.cc:148:simplemap_reduce$16346_gold [4]
 Setting undriven nets to undef: $auto$simplemap.cc:148:simplemap_reduce$16346_gold [6]
 Setting undriven nets to undef: $auto$simplemap.cc:148:simplemap_reduce$16924_gold [1]
-Setting undriven nets to undef: $div$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:80$36.div_mod.div_mod_u.chaindata_gold [255:242]
-Setting undriven nets to undef: $techmap$techmap$div$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:80$36.div_mod.div_mod_u.$ge$/home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v:339$4322.$auto$alumacc.cc:512:replace_alu$12497.Y_gold [15:5]
-Setting undriven nets to undef: $techmap$techmap$div$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:80$36.div_mod.div_mod_u.$ge$/home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v:339$4322.$auto$alumacc.cc:512:replace_alu$12497.CO_gold [15:5]
-Setting undriven nets to undef: $div$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:80$55.div_mod.div_mod_u.chaindata_gold [255:242]
+Setting undriven nets to undef: $div$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:80$36.div_mod.div_mod_u.chaindata_gold [255:242]
+Setting undriven nets to undef: $techmap$techmap$div$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:80$36.div_mod.div_mod_u.$ge$~/oss-cad-suite/lib/../share/yosys/techmap.v:339$4322.$auto$alumacc.cc:512:replace_alu$12497.Y_gold [15:5]
+Setting undriven nets to undef: $techmap$techmap$div$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:80$36.div_mod.div_mod_u.$ge$~/oss-cad-suite/lib/../share/yosys/techmap.v:339$4322.$auto$alumacc.cc:512:replace_alu$12497.CO_gold [15:5]
+Setting undriven nets to undef: $div$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:80$55.div_mod.div_mod_u.chaindata_gold [255:242]
 Setting undriven nets to undef: $auto$simplemap.cc:148:simplemap_reduce$16488_gold [4]
 Setting undriven nets to undef: $auto$simplemap.cc:148:simplemap_reduce$16488_gold [7]
 Setting undriven nets to undef: $auto$simplemap.cc:148:simplemap_reduce$17218_gold [4]
 Setting undriven nets to undef: $auto$simplemap.cc:148:simplemap_reduce$17218_gold [7]
 Setting undriven nets to undef: $auto$simplemap.cc:148:simplemap_reduce$17119_gold [6]
-Setting undriven nets to undef: $techmap$techmap$div$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:80$36.div_mod.$neg$/home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v:371$1754.$auto$alumacc.cc:512:replace_alu$4297.CO_gold [15:4]
-Setting undriven nets to undef: $techmap$techmap$div$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:80$36.div_mod.$neg$/home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v:371$1754.$auto$alumacc.cc:512:replace_alu$4297.BB_gold [8]
-Setting undriven nets to undef: $techmap$techmap$div$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:80$36.div_mod.$neg$/home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v:371$1754.$auto$alumacc.cc:512:replace_alu$4297.BB_gold [15:12]
-Setting undriven nets to undef: $techmap$gt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:127$21.$auto$alumacc.cc:512:replace_alu$1204.Y_gold [15:4]
-Setting undriven nets to undef: $techmap$techmap$div$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:80$55.div_mod.div_mod_u.$ge$/home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v:339$4322.$auto$alumacc.cc:512:replace_alu$12497.Y_gold [15:5]
-Setting undriven nets to undef: $techmap$gt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:127$21.$auto$alumacc.cc:512:replace_alu$1204.CO_gold [6:4]
-Setting undriven nets to undef: $techmap$gt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:127$21.$auto$alumacc.cc:512:replace_alu$1204.CO_gold [14:8]
-Setting undriven nets to undef: $techmap$techmap$div$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:80$55.div_mod.div_mod_u.$ge$/home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v:339$4322.$auto$alumacc.cc:512:replace_alu$12497.CO_gold [15:5]
-Setting undriven nets to undef: $techmap$sub$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:128$22.$auto$alumacc.cc:512:replace_alu$1215.CO_gold [15]
-Setting undriven nets to undef: $techmap$add$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:140$25.$auto$alumacc.cc:512:replace_alu$1220.CO_gold [19]
-Setting undriven nets to undef: $techmap$techmap$div$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:80$55.div_mod.$neg$/home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v:371$1754.$auto$alumacc.cc:512:replace_alu$4297.CO_gold [15:4]
-Setting undriven nets to undef: $techmap$techmap$div$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:80$55.div_mod.$neg$/home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v:371$1754.$auto$alumacc.cc:512:replace_alu$4297.BB_gold [8]
-Setting undriven nets to undef: $techmap$techmap$div$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:80$55.div_mod.$neg$/home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v:371$1754.$auto$alumacc.cc:512:replace_alu$4297.BB_gold [15:12]
-Setting undriven nets to undef: $techmap$gt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:141$28.$auto$alumacc.cc:512:replace_alu$1226.Y_gold [19:4]
-Setting undriven nets to undef: $techmap$gt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:141$28.$auto$alumacc.cc:512:replace_alu$1226.CO_gold [6:4]
-Setting undriven nets to undef: $techmap$gt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:141$28.$auto$alumacc.cc:512:replace_alu$1226.CO_gold [14:8]
-Setting undriven nets to undef: $techmap$gt$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:141$28.$auto$alumacc.cc:512:replace_alu$1226.CO_gold [18:16]
+Setting undriven nets to undef: $techmap$techmap$div$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:80$36.div_mod.$neg$~/oss-cad-suite/lib/../share/yosys/techmap.v:371$1754.$auto$alumacc.cc:512:replace_alu$4297.CO_gold [15:4]
+Setting undriven nets to undef: $techmap$techmap$div$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:80$36.div_mod.$neg$~/oss-cad-suite/lib/../share/yosys/techmap.v:371$1754.$auto$alumacc.cc:512:replace_alu$4297.BB_gold [8]
+Setting undriven nets to undef: $techmap$techmap$div$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:80$36.div_mod.$neg$~/oss-cad-suite/lib/../share/yosys/techmap.v:371$1754.$auto$alumacc.cc:512:replace_alu$4297.BB_gold [15:12]
+Setting undriven nets to undef: $techmap$gt$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:127$21.$auto$alumacc.cc:512:replace_alu$1204.Y_gold [15:4]
+Setting undriven nets to undef: $techmap$techmap$div$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:80$55.div_mod.div_mod_u.$ge$~/oss-cad-suite/lib/../share/yosys/techmap.v:339$4322.$auto$alumacc.cc:512:replace_alu$12497.Y_gold [15:5]
+Setting undriven nets to undef: $techmap$gt$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:127$21.$auto$alumacc.cc:512:replace_alu$1204.CO_gold [6:4]
+Setting undriven nets to undef: $techmap$gt$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:127$21.$auto$alumacc.cc:512:replace_alu$1204.CO_gold [14:8]
+Setting undriven nets to undef: $techmap$techmap$div$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:80$55.div_mod.div_mod_u.$ge$~/oss-cad-suite/lib/../share/yosys/techmap.v:339$4322.$auto$alumacc.cc:512:replace_alu$12497.CO_gold [15:5]
+Setting undriven nets to undef: $techmap$sub$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:128$22.$auto$alumacc.cc:512:replace_alu$1215.CO_gold [15]
+Setting undriven nets to undef: $techmap$add$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:140$25.$auto$alumacc.cc:512:replace_alu$1220.CO_gold [19]
+Setting undriven nets to undef: $techmap$techmap$div$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:80$55.div_mod.$neg$~/oss-cad-suite/lib/../share/yosys/techmap.v:371$1754.$auto$alumacc.cc:512:replace_alu$4297.CO_gold [15:4]
+Setting undriven nets to undef: $techmap$techmap$div$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:80$55.div_mod.$neg$~/oss-cad-suite/lib/../share/yosys/techmap.v:371$1754.$auto$alumacc.cc:512:replace_alu$4297.BB_gold [8]
+Setting undriven nets to undef: $techmap$techmap$div$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:80$55.div_mod.$neg$~/oss-cad-suite/lib/../share/yosys/techmap.v:371$1754.$auto$alumacc.cc:512:replace_alu$4297.BB_gold [15:12]
+Setting undriven nets to undef: $techmap$gt$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:141$28.$auto$alumacc.cc:512:replace_alu$1226.Y_gold [19:4]
+Setting undriven nets to undef: $techmap$gt$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:141$28.$auto$alumacc.cc:512:replace_alu$1226.CO_gold [6:4]
+Setting undriven nets to undef: $techmap$gt$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:141$28.$auto$alumacc.cc:512:replace_alu$1226.CO_gold [14:8]
+Setting undriven nets to undef: $techmap$gt$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-ultrasonic_capture/rtl/ultrasonic_capture.v:141$28.$auto$alumacc.cc:512:replace_alu$1226.CO_gold [18:16]
 
 26. Executing EQUIV_SIMPLE pass.
 Found 178 unproven $equiv cells (17 groups) in ultrasonic_capture:

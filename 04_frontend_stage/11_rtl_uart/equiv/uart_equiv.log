@@ -8,8 +8,8 @@
 
 -- Executing script file `/tmp/equiv_uart.ys' --
 
-1. Executing Verilog-2005 frontend: /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-uart/rtl/uart.v
-Parsing Verilog input from `/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-uart/rtl/uart.v' to AST representation.
+1. Executing Verilog-2005 frontend: ~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-uart/rtl/uart.v
+Parsing Verilog input from `~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-uart/rtl/uart.v' to AST representation.
 Generating RTLIL representation for module `\uart'.
 Successfully finished Verilog frontend.
 
@@ -28,8 +28,8 @@ Removed 0 unused modules.
 Cleaned up 0 empty switches.
 
 3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
-Removed 2 dead cases from process $proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-uart/rtl/uart.v:77$4 in module uart.
-Marked 8 switch rules as full_case in process $proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-uart/rtl/uart.v:77$4 in module uart.
+Removed 2 dead cases from process $proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-uart/rtl/uart.v:77$4 in module uart.
+Marked 8 switch rules as full_case in process $proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-uart/rtl/uart.v:77$4 in module uart.
 Removed a total of 2 dead cases.
 
 3.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
@@ -39,14 +39,14 @@ Promoted 0 assignments to connections.
 3.4. Executing PROC_INIT pass (extract init attributes).
 
 3.5. Executing PROC_ARST pass (detect async resets in processes).
-Found async reset \rst_ni in `\uart.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-uart/rtl/uart.v:77$4'.
+Found async reset \rst_ni in `\uart.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-uart/rtl/uart.v:77$4'.
 
 3.6. Executing PROC_ROM pass (convert switches to ROMs).
 Converted 0 switches.
 <suppressed ~22 debug messages>
 
 3.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
-Creating decoders for process `\uart.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-uart/rtl/uart.v:77$4'.
+Creating decoders for process `\uart.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-uart/rtl/uart.v:77$4'.
      1/25: $0\status_reg[7:0] [7:4]
      2/25: $0\status_reg[7:0] [3]
      3/25: $0\status_reg[7:0] [2]
@@ -76,54 +76,54 @@ Creating decoders for process `\uart.$proc$/home/smdadmin/hermes_workspace/proje
 3.8. Executing PROC_DLATCH pass (convert process syncs to latches).
 
 3.9. Executing PROC_DFF pass (convert process syncs to FFs).
-Creating register for signal `\uart.\wb_dat_o' using process `\uart.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-uart/rtl/uart.v:77$4'.
+Creating register for signal `\uart.\wb_dat_o' using process `\uart.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-uart/rtl/uart.v:77$4'.
   created $adff cell `$procdff$220' with positive edge clock and positive level reset.
-Creating register for signal `\uart.\wb_ack_o' using process `\uart.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-uart/rtl/uart.v:77$4'.
+Creating register for signal `\uart.\wb_ack_o' using process `\uart.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-uart/rtl/uart.v:77$4'.
   created $adff cell `$procdff$225' with positive edge clock and positive level reset.
-Creating register for signal `\uart.\uart_tx' using process `\uart.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-uart/rtl/uart.v:77$4'.
+Creating register for signal `\uart.\uart_tx' using process `\uart.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-uart/rtl/uart.v:77$4'.
   created $adff cell `$procdff$230' with positive edge clock and positive level reset.
-Creating register for signal `\uart.\irq_tx' using process `\uart.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-uart/rtl/uart.v:77$4'.
+Creating register for signal `\uart.\irq_tx' using process `\uart.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-uart/rtl/uart.v:77$4'.
   created $adff cell `$procdff$235' with positive edge clock and positive level reset.
-Creating register for signal `\uart.\irq_rx' using process `\uart.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-uart/rtl/uart.v:77$4'.
+Creating register for signal `\uart.\irq_rx' using process `\uart.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-uart/rtl/uart.v:77$4'.
   created $adff cell `$procdff$240' with positive edge clock and positive level reset.
-Creating register for signal `\uart.\txdata_reg' using process `\uart.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-uart/rtl/uart.v:77$4'.
+Creating register for signal `\uart.\txdata_reg' using process `\uart.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-uart/rtl/uart.v:77$4'.
   created $adff cell `$procdff$245' with positive edge clock and positive level reset.
-Creating register for signal `\uart.\rxdata_reg' using process `\uart.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-uart/rtl/uart.v:77$4'.
+Creating register for signal `\uart.\rxdata_reg' using process `\uart.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-uart/rtl/uart.v:77$4'.
   created $adff cell `$procdff$250' with positive edge clock and positive level reset.
-Creating register for signal `\uart.\status_reg' using process `\uart.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-uart/rtl/uart.v:77$4'.
+Creating register for signal `\uart.\status_reg' using process `\uart.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-uart/rtl/uart.v:77$4'.
   created $adff cell `$procdff$255' with positive edge clock and positive level reset.
-Creating register for signal `\uart.\ctrl_reg' using process `\uart.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-uart/rtl/uart.v:77$4'.
+Creating register for signal `\uart.\ctrl_reg' using process `\uart.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-uart/rtl/uart.v:77$4'.
   created $adff cell `$procdff$260' with positive edge clock and positive level reset.
-Creating register for signal `\uart.\tx_pending' using process `\uart.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-uart/rtl/uart.v:77$4'.
+Creating register for signal `\uart.\tx_pending' using process `\uart.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-uart/rtl/uart.v:77$4'.
   created $adff cell `$procdff$265' with positive edge clock and positive level reset.
-Creating register for signal `\uart.\baud_counter' using process `\uart.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-uart/rtl/uart.v:77$4'.
+Creating register for signal `\uart.\baud_counter' using process `\uart.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-uart/rtl/uart.v:77$4'.
   created $adff cell `$procdff$270' with positive edge clock and positive level reset.
-Creating register for signal `\uart.\rx_timer' using process `\uart.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-uart/rtl/uart.v:77$4'.
+Creating register for signal `\uart.\rx_timer' using process `\uart.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-uart/rtl/uart.v:77$4'.
   created $adff cell `$procdff$275' with positive edge clock and positive level reset.
-Creating register for signal `\uart.\tx_state' using process `\uart.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-uart/rtl/uart.v:77$4'.
+Creating register for signal `\uart.\tx_state' using process `\uart.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-uart/rtl/uart.v:77$4'.
   created $adff cell `$procdff$280' with positive edge clock and positive level reset.
-Creating register for signal `\uart.\tx_bit_count' using process `\uart.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-uart/rtl/uart.v:77$4'.
+Creating register for signal `\uart.\tx_bit_count' using process `\uart.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-uart/rtl/uart.v:77$4'.
   created $adff cell `$procdff$285' with positive edge clock and positive level reset.
-Creating register for signal `\uart.\tx_shift_reg' using process `\uart.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-uart/rtl/uart.v:77$4'.
+Creating register for signal `\uart.\tx_shift_reg' using process `\uart.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-uart/rtl/uart.v:77$4'.
   created $adff cell `$procdff$290' with positive edge clock and positive level reset.
-Creating register for signal `\uart.\rx_state' using process `\uart.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-uart/rtl/uart.v:77$4'.
+Creating register for signal `\uart.\rx_state' using process `\uart.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-uart/rtl/uart.v:77$4'.
   created $adff cell `$procdff$295' with positive edge clock and positive level reset.
-Creating register for signal `\uart.\rx_bit_count' using process `\uart.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-uart/rtl/uart.v:77$4'.
+Creating register for signal `\uart.\rx_bit_count' using process `\uart.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-uart/rtl/uart.v:77$4'.
   created $adff cell `$procdff$300' with positive edge clock and positive level reset.
-Creating register for signal `\uart.\rx_shift_reg' using process `\uart.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-uart/rtl/uart.v:77$4'.
+Creating register for signal `\uart.\rx_shift_reg' using process `\uart.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-uart/rtl/uart.v:77$4'.
   created $adff cell `$procdff$305' with positive edge clock and positive level reset.
-Creating register for signal `\uart.\uart_rx_d' using process `\uart.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-uart/rtl/uart.v:77$4'.
+Creating register for signal `\uart.\uart_rx_d' using process `\uart.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-uart/rtl/uart.v:77$4'.
   created $adff cell `$procdff$310' with positive edge clock and positive level reset.
-Creating register for signal `\uart.\uart_rx_sync' using process `\uart.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-uart/rtl/uart.v:77$4'.
+Creating register for signal `\uart.\uart_rx_sync' using process `\uart.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-uart/rtl/uart.v:77$4'.
   created $adff cell `$procdff$315' with positive edge clock and positive level reset.
-Creating register for signal `\uart.\rx_done_pulse' using process `\uart.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-uart/rtl/uart.v:77$4'.
+Creating register for signal `\uart.\rx_done_pulse' using process `\uart.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-uart/rtl/uart.v:77$4'.
   created $adff cell `$procdff$320' with positive edge clock and positive level reset.
 
 3.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
 
 3.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
-Found and cleaned up 22 empty switches in `\uart.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-uart/rtl/uart.v:77$4'.
-Removing empty process `uart.$proc$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-uart/rtl/uart.v:77$4'.
+Found and cleaned up 22 empty switches in `\uart.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-uart/rtl/uart.v:77$4'.
+Removing empty process `uart.$proc$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-uart/rtl/uart.v:77$4'.
 Cleaned up 22 empty switches.
 
 3.12. Executing OPT_EXPR pass (perform const folding).
@@ -351,7 +351,7 @@ Removed a total of 0 cells.
 Adding SRST signal on $procdff$235 ($sdff) from module uart (D = \ctrl_reg [0], Q = $auto$async2sync.cc:253:execute$424, rval = 1'0).
 Adding SRST signal on $procdff$310 ($sdff) from module uart (D = $auto$async2sync.cc:253:execute$408, Q = $auto$async2sync.cc:253:execute$436, rval = 1'1).
 Adding SRST signal on $procdff$320 ($sdff) from module uart (D = $procmux$65_Y, Q = $auto$async2sync.cc:253:execute$442, rval = 1'0).
-Adding SRST signal on $procdff$270 ($sdff) from module uart (D = { $sub$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-uart/rtl/uart.v:110$6_Y [15:5] $sub$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-uart/rtl/uart.v:110$6_Y [3:2] $sub$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-uart/rtl/uart.v:110$6_Y [0] }, Q = { $auto$async2sync.cc:253:execute$444 [15:5] $auto$async2sync.cc:253:execute$444 [3:2] $auto$async2sync.cc:253:execute$444 [0] }, rval = 14'00000000000000).
+Adding SRST signal on $procdff$270 ($sdff) from module uart (D = { $sub$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-uart/rtl/uart.v:110$6_Y [15:5] $sub$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-uart/rtl/uart.v:110$6_Y [3:2] $sub$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-uart/rtl/uart.v:110$6_Y [0] }, Q = { $auto$async2sync.cc:253:execute$444 [15:5] $auto$async2sync.cc:253:execute$444 [3:2] $auto$async2sync.cc:253:execute$444 [0] }, rval = 14'00000000000000).
 
 7.7. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \uart..
@@ -393,8 +393,8 @@ Optimizing module uart.
 
 8. Executing TECHMAP pass (map to technology primitives).
 
-8.1. Executing Verilog-2005 frontend: /home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v
-Parsing Verilog input from `/home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v' to AST representation.
+8.1. Executing Verilog-2005 frontend: ~/oss-cad-suite/lib/../share/yosys/techmap.v
+Parsing Verilog input from `~/oss-cad-suite/lib/../share/yosys/techmap.v' to AST representation.
 Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
 Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
 Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
@@ -603,11 +603,11 @@ Optimizing module uart.
 
 11.9. Finished fast OPT passes. (There is nothing left to do.)
 
-12. Executing Liberty frontend: /home/smdadmin/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130B/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+12. Executing Liberty frontend: ~/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130B/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 Imported 428 cell types from liberty file.
 
-13. Executing Verilog-2005 frontend: /home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-uart/synth/uart_netlist.v
-Parsing Verilog input from `/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-uart/synth/uart_netlist.v' to AST representation.
+13. Executing Verilog-2005 frontend: ~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-uart/synth/uart_netlist.v
+Parsing Verilog input from `~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-uart/synth/uart_netlist.v' to AST representation.
 Generating RTLIL representation for module `\uart'.
 Successfully finished Verilog frontend.
 
@@ -788,8 +788,8 @@ Optimizing module uart.
 
 20. Executing TECHMAP pass (map to technology primitives).
 
-20.1. Executing Verilog-2005 frontend: /home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v
-Parsing Verilog input from `/home/smdadmin/oss-cad-suite/lib/../share/yosys/techmap.v' to AST representation.
+20.1. Executing Verilog-2005 frontend: ~/oss-cad-suite/lib/../share/yosys/techmap.v
+Parsing Verilog input from `~/oss-cad-suite/lib/../share/yosys/techmap.v' to AST representation.
 Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
 Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
 Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
@@ -1198,10 +1198,10 @@ Changing input B of cell $auto$simplemap.cc:256:simplemap_logbin$956_gold ($_AND
 Changing input A of cell $auto$simplemap.cc:256:simplemap_logbin$956_gold ($_AND_): \ctrl_reg_gold [0] -> \ctrl_reg [0]
 Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$2546_gold ($_NOT_): \rx_timer_gold [6] -> \rx_timer [6]
 Changing input A of cell $auto$opt_expr.cc:607:replace_const_cells$2540_gold ($_NOT_): \rx_timer_gold [4] -> \rx_timer [4]
-Setting undriven nets to undef: $techmap$sub$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-uart/rtl/uart.v:116$8.$auto$alumacc.cc:512:replace_alu$934.CO_gold [15]
-Setting undriven nets to undef: $techmap$add$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-uart/rtl/uart.v:145$12.$auto$alumacc.cc:512:replace_alu$957.CO_gold [3]
-Setting undriven nets to undef: $techmap$sub$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-uart/rtl/uart.v:110$6.$auto$alumacc.cc:512:replace_alu$934.CO_gold [15]
-Setting undriven nets to undef: $techmap$add$/home/smdadmin/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-uart/rtl/uart.v:176$15.$auto$alumacc.cc:512:replace_alu$957.CO_gold [3]
+Setting undriven nets to undef: $techmap$sub$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-uart/rtl/uart.v:116$8.$auto$alumacc.cc:512:replace_alu$934.CO_gold [15]
+Setting undriven nets to undef: $techmap$add$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-uart/rtl/uart.v:145$12.$auto$alumacc.cc:512:replace_alu$957.CO_gold [3]
+Setting undriven nets to undef: $techmap$sub$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-uart/rtl/uart.v:110$6.$auto$alumacc.cc:512:replace_alu$934.CO_gold [15]
+Setting undriven nets to undef: $techmap$add$~/hermes_workspace/projects/IP-005/v6/03_frontend-stage/rtl-uart/rtl/uart.v:176$15.$auto$alumacc.cc:512:replace_alu$957.CO_gold [3]
 Setting undriven nets to undef: $0\baud_counter[15:0]_gold [0]
 Setting undriven nets to undef: $0\baud_counter[15:0]_gold [3:2]
 Setting undriven nets to undef: $0\baud_counter[15:0]_gold [15:5]
